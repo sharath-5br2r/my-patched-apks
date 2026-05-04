@@ -1,6 +1,7 @@
-facebook-morphe (arm64-v8a): 490.0.0.63.82  
-facebook-morphe (arm-v7a): 490.0.0.63.82  
-trakt-morphe (all): 3.7.0  
+telegram-revanced-foss (arm64-v8a): 12.6.4  
+telegram-revanced-foss (arm-v7a): 12.6.4  
+telegram-revanced-gplay (arm64-v8a): 12.6.3  
+telegram-revanced-gplay (arm-v7a): 12.6.3  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -8,8 +9,5 @@ trakt-morphe (all): 3.7.0
 
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
-Patches: MeridianFresco/patches-1.0.0.mpp  
-[Changelog](https://github.com/MeridianFresco/morphe-meta-patches/releases/tag/v1.0.0)
-
-Patches: PixelPusher247/patches-1.3.0.mpp  
-[Changelog](https://github.com/PixelPusher247/morphe-patches/releases/tag/v1.3.0)  
+Patches: Aunali321/patches-2.0.0.rvp  
+[Changelog](https://github.com/Aunali321/ReVancedExperiments/releases/tag/v2.0.0)  
