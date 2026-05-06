@@ -50,6 +50,7 @@ const CONFIG = {
         'adobephotoshopmix': 'com.adobe.psmobile',
         'autosync': 'com.ttxapps.autosync',
         'calcnote': 'com.appumstudios.calcnote',
+        'camscanner': 'com.intsig.camscanner',
         'cricbuzz': 'com.cricbuzz.android',
         'documentscanner': 'com.cv.docscanner',
         'duolingo': 'com.duolingo',
