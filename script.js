@@ -90,7 +90,7 @@ const CONFIG = {
 
         'threads': 'com.instagram.barcelona',
         'ticktick': 'com.ticktick.task',
-        'trakt.tv': 'tv.trakt.trakt',
+        'trakttv': 'tv.trakt.trakt',
         'truecaller': 'com.truecaller',
         'tumblr': 'com.tumblr',
         'twitch': 'tv.twitch.android.app',
