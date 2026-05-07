@@ -1467,7 +1467,7 @@ function createModalBuildMarkup(build, openByDefault = false) {
         assets.forEach(asset => {
             const sizeStr = formatBytes(asset.size);
 
-            const downloads = (asset.download_count || 0).toLocaleString();
+            const downloads = formatCompactNumber(asset.download_count || 0);
 
             const variantBadge = asset.parsed.variant ? `<span class="variant-badge">${escapeHtml(asset.parsed.variant)}</span>` : '';
             downloadsMarkup += `
@@ -1650,6 +1650,12 @@ function formatBytes(bytes) {
     const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+}
+
+function formatCompactNumber(n) {
+    if (n >= 1_000_000) return (n / 1_000_000).toFixed(n % 1_000_000 === 0 ? 0 : 1).replace(/\.0$/, '') + 'M';
+    if (n >= 1_000)     return (n / 1_000).toFixed(n % 1_000 === 0 ? 0 : 1).replace(/\.0$/, '') + 'k';
+    return String(n);
 }
 
 function formatDate(value) {
