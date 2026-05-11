@@ -1735,7 +1735,7 @@ function getSearchTokens(value) {
 
 function tokensFuzzyMatch(queryToken, valueToken) {
     if (!queryToken || !valueToken) return false;
-    if (valueToken.includes(queryToken) || queryToken.includes(valueToken)) return true;
+    if (valueToken.includes(queryToken)) return true;
     if (queryToken.length < 3) return false;
     const maxDistance = getMaxEditDistance(queryToken.length);
     return isWithinEditDistance(queryToken, valueToken, maxDistance);
