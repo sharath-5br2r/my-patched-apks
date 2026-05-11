@@ -8,4 +8,4 @@ autosync-morphe (arm-v7a): 7.5.10
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 Patches: BholeyKaBhakt/patches.mpp  
-[Changelog](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.0.1-dev.1)  
+[Changelog](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.0.1)  
