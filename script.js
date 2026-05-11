@@ -265,13 +265,11 @@ function setupEventListeners() {
     });
 
     searchClearBtn.addEventListener('click', () => {
-        clearTimeout(searchTimeout);
         searchInput.value = '';
         searchTerm = '';
         syncClearBtn();
         history.replaceState(null, '', location.pathname);
         filterAndRenderReleases();
-        searchInput.focus();
     });
 
     searchInput.addEventListener('focus', (e) => {
