@@ -265,6 +265,7 @@ function setupEventListeners() {
     });
 
     searchClearBtn.addEventListener('click', () => {
+        clearTimeout(searchTimeout);
         searchInput.value = '';
         searchTerm = '';
         syncClearBtn();
