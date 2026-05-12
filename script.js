@@ -59,7 +59,11 @@ const CONFIG = {
         'fingnetworktools': 'com.overlook.android.fing',
         'googlekeyboard': 'com.google.android.inputmethod.latin',
         'googlenews': 'com.google.android.apps.magazines',
-        'googlephotos': 'com.google.android.apps.photos',
+        'googlephotos': {
+            revanced: 'app.revanced.android.apps.photos',
+            morphe: 'app.morphe.android.apps.photos',
+            default: 'com.google.android.apps.photos'
+        },
         'googlerecorder': 'com.google.android.apps.recorder',
         'iconpacker': 'cn.ommiao.iconpacker',
         'instagram': 'com.instagram.android',
@@ -102,9 +106,19 @@ const CONFIG = {
         'wpsoffice': 'cn.wps.moffice_eng',
         'twitter': 'com.twitter.android',
         'xodopdfreadereditor': 'com.xodo.pdf.reader',
-        'xrecorder': 'video.other.screenrecorder',
-        'youtube': 'com.google.android.youtube',
-        'youtubemusic': 'com.google.android.apps.youtube.music'
+        'xrecorder': 'videoeditor.videorecorder.screenrecorder',
+        'youtube': {
+            revanced: 'app.revanced.android.youtube',
+            anddea: 'anddea.youtube',
+            morphe: 'app.morphe.android.youtube',
+            default: 'com.google.android.youtube'
+        },
+        'youtubemusic': {
+            revanced: 'app.revanced.android.apps.youtube.music',
+            anddea: 'anddea.youtube.music',
+            morphe: 'app.morphe.android.apps.youtube.music',
+            default: 'com.google.android.apps.youtube.music'
+        }
     },
 
     // App-specific notices to display on App Cards
@@ -1114,12 +1128,14 @@ function createObtainiumInstructions() {
             const patchLabel = asset?.parsed?.patchName || patch?.patchName || 'patch';
             const variantLabel = asset?.parsed?.variant ? ` (${escapeHtml(asset.parsed.variant)})` : '';
 
-            // Extract the normalized variant slug (e.g., 'foss') or set as 'default'
+            // Extract normalized slugs for patch/variant-specific app ID lookup
+            const patchSlug = asset?.parsed?.patchSlug || normalizeForSearch(patch?.patchName || '');
             const variantSlug = asset?.parsed?.variant ? normalizeForSearch(asset.parsed.variant) : 'default';
 
-            // Save both the label and the variant slug
+            // Save both the label and lookup keys
             regexMap.set(result.regex, {
                 label: `${appLabel} ${patchLabel}${variantLabel}`,
+                patchSlug: patchSlug,
                 variantSlug: variantSlug
             });
         });
@@ -1133,19 +1149,11 @@ function createObtainiumInstructions() {
         ? Array.from(regexMap.entries()).map(([regex, data]) => {
 
             const label = data.label;
+            const patchSlug = data.patchSlug;
             const variantSlug = data.variantSlug;
+            const appId = resolveObtainiumAppId(activeModalAppKey, patchSlug, variantSlug);
 
-            // Advanced lookup: handles strings or nested variant objects
-            const appConfig = CONFIG.appIds[activeModalAppKey];
-            let appId = null;
-
-            if (typeof appConfig === 'string') {
-                appId = appConfig;
-            } else if (typeof appConfig === 'object' && appConfig !== null) {
-                appId = appConfig[variantSlug] || appConfig['default'];
-            }
-
-            if (!appId) console.warn(`Missing App ID for: ${activeModalAppKey} (Variant: ${variantSlug})`);
+            if (!appId) console.warn(`Missing App ID for: ${activeModalAppKey} (Patch: ${patchSlug}, Variant: ${variantSlug})`);
 
             const additionalSettings = { apkFilterRegEx: regex };
             if (modalBuildFilter === 'beta') {
@@ -1261,6 +1269,32 @@ function escapeForOnclickCopy(value) {
     return String(value || '')
         .replace(/\\/g, '\\\\')
         .replace(/'/g, "\\'");
+}
+
+function resolveObtainiumAppId(appKey, patchSlug, variantSlug) {
+    const appConfig = CONFIG.appIds[appKey];
+    if (!appConfig) return null;
+
+    if (typeof appConfig === 'string') {
+        return appConfig;
+    }
+
+    if (typeof appConfig !== 'object') {
+        return null;
+    }
+
+    const normalizedPatchSlug = normalizeForSearch(patchSlug || '');
+    const normalizedVariantSlug = normalizeForSearch(variantSlug || 'default') || 'default';
+
+    const patchConfig = normalizedPatchSlug ? appConfig[normalizedPatchSlug] : null;
+    if (typeof patchConfig === 'string') {
+        return patchConfig;
+    }
+    if (typeof patchConfig === 'object' && patchConfig !== null) {
+        return patchConfig[normalizedVariantSlug] || patchConfig.default || null;
+    }
+
+    return appConfig[normalizedVariantSlug] || appConfig.default || null;
 }
 
 function renderOpenPatchModal() {
@@ -1692,7 +1726,7 @@ function formatBytes(bytes) {
 
 function formatCompactNumber(n) {
     if (n >= 1_000_000) return (n / 1_000_000).toFixed(n % 1_000_000 === 0 ? 0 : 1).replace(/\.0$/, '') + 'M';
-    if (n >= 1_000)     return (n / 1_000).toFixed(n % 1_000 === 0 ? 0 : 1).replace(/\.0$/, '') + 'k';
+    if (n >= 1_000) return (n / 1_000).toFixed(n % 1_000 === 0 ? 0 : 1).replace(/\.0$/, '') + 'k';
     return String(n);
 }
 
