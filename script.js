@@ -46,7 +46,7 @@ const CONFIG = {
     // Keys MUST be the fully normalized appName (lowercase, no spaces, no symbols)
     // app + patch + variant, app + patch + default, app + variant, app + default, app only
     appIds: {
-        'adguard': 'com.adguard.android.contentblocker',
+        'adguard': 'com.adguard.android',
         'adobelightroom': 'com.adobe.lrmobile',
         'adobephotoshopmix': 'com.adobe.psmobile',
         'autosync': 'com.ttxapps.autosync',
