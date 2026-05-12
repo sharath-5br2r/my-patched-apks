@@ -28,7 +28,7 @@ Thank you to everyone who helps keep this project alive!
 > * 📱 **The complete list of every supported app.**
 > * 📦 Clear separation between **Stable**, **Beta** and **Variant** builds.
 > * 🏷️ Beautifully organized version numbers and download tracking.
-> * 🔄 Step-by-step instructions on how to set up automatic updates using **Obtainium**.
+> * 🔄 Step-by-step instructions on how to set up automatic updates using **Obtainium** and easy **Add to Obtainium** button.
 > 
 >
 > **🤖 Fully Automated Builds**
