@@ -9,6 +9,9 @@
 <p align="center"><a href="https://github.com/nullcpy/rvb/issues/new/choose"><img src="https://img.shields.io/badge/Report%20/%20Request%20Features-grey?style=flat&logo=github" alt="Report issues or request features"></a></p>
 
 ---
+<p align="center"><a href="https://github.com/nullcpy/rvb/issues"><img src="https://img.shields.io/badge/Issues-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/nullcpy/nullcpy.github.io/pulls"><img src="https://img.shields.io/badge/Pull%20Requests-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/nullcpy/rvb/discussions"><img src="https://img.shields.io/badge/Discussions-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/nullcpy/nullcpy.github.io/actions"><img src="https://img.shields.io/badge/Actions-2f2f2f?style=flat&logo=github&logoColor=white"></a></p>
+
+---
 
 ## 🤝 Support the Project
 
