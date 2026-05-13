@@ -1,7 +1,5 @@
-youtube-morphe-exp (arm64-v8a): 21.19.280  
-youtube-morphe-exp (arm-v7a): 21.19.280  
-youtube-music-morphe-exp (arm64-v8a): 9.18.50  
-youtube-music-morphe-exp (arm-v7a): 9.18.50  
+niagara-launcher-morphe (arm64-v8a): 1.16.4  
+niagara-launcher-morphe (arm-v7a): 1.16.4  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -9,5 +7,5 @@ youtube-music-morphe-exp (arm-v7a): 9.18.50
 
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
-Patches: MorpheApp/patches-1.27.0.mpp  
-[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.27.0)  
+Patches: hoo-dles/patches-1.31.0.mpp  
+[Changelog](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.31.0)  
