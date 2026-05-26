@@ -8,5 +8,5 @@ proton-vpn-morphe (arm-v7a): 5.17.72.0
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-cli-1.8.1-all.jar  
-Patches: hoo-dles/patches-1.33.1-dev.1.mpp  
-[Changelog](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.33.1-dev.1)  
+Patches: hoo-dles/patches-1.33.0-dev.2.mpp  
+[Changelog](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.33.0-dev.2)  
