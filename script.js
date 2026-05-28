@@ -21,7 +21,7 @@ const CONFIG = {
     knownPatchTokens: new Set(['revanced', 'morphe', 'anddea', 'rvx']),
 
     // Known tokens indicating a variant (must be lowercase)
-    variantKeywords: new Set(['exp', 'nord', 'mocha', 'privacy', 'materialu', 'foss', 'gplay', 'piko', 'adobo', 'patcheddit']),
+    variantKeywords: new Set(['exp', 'nord', 'mocha', 'privacy', 'materialu', 'foss', 'gplay', 'piko', 'adobo', 'patcheddit', 'paresh']),
 
     // Known architectures (used for regex parsing)
     knownArchs: [
