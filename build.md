@@ -1,5 +1,7 @@
-proton-vpn-morphe-paresh (arm64-v8a): 5.17.72.0  
-proton-vpn-morphe-paresh (arm-v7a): 5.17.72.0  
+google-photos-morphe (arm64-v8a): 7.78.0.920664585  
+google-photos-morphe (arm-v7a): 7.78.0.920664585  
+google-photos-revanced (arm64-v8a): 7.78.0.920664585  
+google-photos-revanced (arm-v7a): 7.78.0.920664585  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -7,6 +9,10 @@ proton-vpn-morphe-paresh (arm-v7a): 5.17.72.0
 
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
+CLI: ReVanced/revanced-cli-6.0.0-all.jar  
+Patches: Raudrobot/patches-6.1.0.rvp  
+[Changelog](https://github.com/Raudrobot/revanced-patches/releases/tag/6.1.0-patches)
+
 CLI: MorpheApp/morphe-cli-1.8.1-all.jar  
-Patches: Paresh-Maheshwari/patches-1.16.0.mpp  
-[Changelog](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.16.0)  
+Patches: RookieEnough/patches-1.0.4.mpp  
+[Changelog](https://github.com/RookieEnough/De-ReVanced/releases/tag/v1.0.4)  
