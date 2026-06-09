@@ -12,5 +12,5 @@ autosync-morphe (arm-v7a): 7.5.10
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-cli-1.9.1-all.jar  
-Patches: BholeyKaBhakt/patches-2.2.1.mpp  
-[Changelog](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.2.1)  
+Patches: BholeyKaBhakt/patches-2.3.1.mpp  
+[Changelog](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.3.1)  
