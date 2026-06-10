@@ -9,6 +9,7 @@
 <p align="center"><a href="https://github.com/nullcpy/rvb/issues/new/choose"><img src="https://img.shields.io/badge/Report%20/%20Request-405771?style=flat&logo=github" alt="Report issues or request features"></a></p>
 
 ---
+
 <p align="center"><a href="https://github.com/nullcpy/rvb/issues"><img src="https://img.shields.io/badge/Issues-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/nullcpy/nullcpy.github.io/pulls"><img src="https://img.shields.io/badge/Pull%20Requests-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/nullcpy/rvb/discussions"><img src="https://img.shields.io/badge/Discussions-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/nullcpy/nullcpy.github.io/actions"><img src="https://img.shields.io/badge/Actions-2f2f2f?style=flat&logo=github&logoColor=white"></a></p>
 
 ---
@@ -17,9 +18,8 @@
 
 Building, testing, and maintaining these automated workflows takes a significant amount of time. If this builder has saved you time or made your life easier, any support is hugely appreciated!
 
-* **❤️ [Donate](https://fahim-ahmed05.github.io/donate)** if you can.
-* **⭐ Star this repository** (This is a huge help!)
-* **📢 Share the project** with others who might find it useful.
+- **❤️ [Donate](https://fahim-ahmed05.github.io/donate)** if you can.
+- **⭐ Star this repository** (This is a huge help!)
+- **📢 Share the project** with others who might find it useful.
 
 Thank you to everyone who helps keep this project alive!
-
