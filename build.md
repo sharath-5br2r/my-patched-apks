@@ -1,3 +1,9 @@
+automate-morphe (arm64-v8a): 1.51.1  
+automate-morphe (arm-v7a): 1.51.1  
+speedtest-morphe (arm64-v8a): 7.0.3  
+speedtest-morphe (arm-v7a): 7.0.3  
+autosync-morphe (arm64-v8a): 7.5.10  
+autosync-morphe (arm-v7a): 7.5.10  
 inshorts-morphe (arm64-v8a): 6.12.15  
 inshorts-morphe (arm-v7a): 6.12.15  
 
@@ -8,5 +14,5 @@ inshorts-morphe (arm-v7a): 6.12.15
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-cli-1.9.1-all.jar  
-Patches: BholeyKaBhakt/patches-2.7.0-dev.1.mpp  
-[Changelog](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.7.0-dev.1)  
+Patches: BholeyKaBhakt/patches-2.7.0.mpp  
+[Changelog](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.7.0)  
