@@ -84,6 +84,7 @@ const CONFIG = {
     moonplus: "Moon+",
     eyecon: "Eyecon Caller ID & Spam Block",
     camscanner: "CamScanner",
+    inshorts: "Inshorts - News in 60 words"
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -115,6 +116,7 @@ const CONFIG = {
     hellochineselearnchinese: "com.hellochinese",
     iconpacker: "cn.ommiao.iconpacker",
     instagram: "com.instagram.android",
+    inshortsnewsin60words:"com.nis.app",
     imdb: "com.imdb.mobile",
     luminawallpapers: "com.lumina.wallpapers",
     macrodroid: "com.arlosoft.macrodroid",
