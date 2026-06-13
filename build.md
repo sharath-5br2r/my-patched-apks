@@ -1,17 +1,4 @@
-youtube-morphe (arm64-v8a): 20.51.39  
-youtube-morphe (arm-v7a): 20.51.39  
-youtube-music-morphe (arm64-v8a): 8.51.51  
-youtube-music-morphe (arm-v7a): 8.51.51  
-reddit-morphe (arm64-v8a): 2026.14.0  
-reddit-morphe (arm-v7a): 2026.14.0  
-youtube-morphe-nord (arm64-v8a): 20.51.39  
-youtube-morphe-nord (arm-v7a): 20.51.39  
-youtube-morphe-mocha (arm64-v8a): 20.51.39  
-youtube-morphe-mocha (arm-v7a): 20.51.39  
-youtube-morphe-exp (arm64-v8a): 21.24.363  
-youtube-morphe-exp (arm-v7a): 21.24.363  
-reddit-morphe-exp (arm64-v8a): 2026.23.0  
-reddit-morphe-exp (arm-v7a): 2026.23.0  
+youtube-music-morphe-exp (arm64-v8a): 9.22.53  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
