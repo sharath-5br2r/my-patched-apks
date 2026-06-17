@@ -1,6 +1,5 @@
-instagram-morphe-piko (arm64-v8a): 430.0.0.53.80  
-instagram-morphe (arm64-v8a): 430.0.0.53.80  
-instagram-morphe (arm-v7a): 430.0.0.53.80  
+tiktok-morphe (arm64-v8a): 43.8.3  
+tiktok-morphe (arm-v7a): 43.8.3  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -9,8 +8,5 @@ instagram-morphe (arm-v7a): 430.0.0.53.80
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-cli-1.9.1-all.jar  
-Patches: brosssh/patches-2.7.0-dev.2.mpp  
-[Changelog](https://github.com/brosssh/morphe-patches/releases/tag/v2.7.0-dev.2)
-
-Patches: crimera/patches-3.5.1-dev.1.mpp  
-[Changelog](https://github.com/crimera/piko/releases/tag/v3.5.1-dev.1)  
+Patches: icysymmetra/patches-0.3.1.mpp  
+[Changelog](https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.3.1)  
