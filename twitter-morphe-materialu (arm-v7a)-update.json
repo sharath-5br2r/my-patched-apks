@@ -1,6 +1,6 @@
 {
-  "version": "v11.81.0-release.0 (patches dev.3.mpp)",
-  "versionCode": 195,
-  "zipUrl": "https://github.com/nullcpy/rvb/releases/download/195/twitter-morphe-materialu-module-v11.81.0-release.0-arm-v7a.zip",
+  "version": "v12.0.0-release.0 (patches 1.6.2.mpp)",
+  "versionCode": 367,
+  "zipUrl": "https://github.com/nullcpy/rvb/releases/download/367/twitter-morphe-materialu-module-v12.0.0-release.0-arm-v7a.zip",
   "changelog": "https://raw.githubusercontent.com/nullcpy/rvb/update/build.md"
 }
