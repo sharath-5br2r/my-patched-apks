@@ -13,5 +13,5 @@ CLI: MorpheApp/morphe-cli-1.9.1-all.jar
 Patches: inotia00/patches-1.6.3.mpp  
 [Changelog](https://gitlab.com/inotia00/x-shim/-/releases/v1.6.3)
 
-Patches: crimera/patches-3.7.0-dev.4.mpp  
-[Changelog](https://github.com/crimera/piko/releases/tag/v3.7.0-dev.4)  
+Patches: crimera/patches-3.7.0-dev.5.mpp  
+[Changelog](https://github.com/crimera/piko/releases/tag/v3.7.0-dev.5)  
