@@ -2,20 +2,8 @@ name: Build
 
 on:
   workflow_call:
-    inputs:
-      config_file:
-        required: true
-        type: string
   workflow_dispatch:
-    inputs:
-      config_file:
-        description: "Select the config file to use"
-        required: true
-        type: choice
-        default: ".github/configs/config.manual.toml"
-        options:
-          - ".github/configs/config.manual.toml"
-
+      
 concurrency:
   group: build
   cancel-in-progress: false
@@ -69,7 +57,7 @@ jobs:
           NEXT_VER_CODE: ${{ steps.version.outputs.NEXT_VER_CODE }}
         run: |
           set -euo pipefail
-          ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
+          ./build.sh "configs/x-shim.toml"
 
       - name: Get output
         id: get_output
@@ -101,10 +89,8 @@ jobs:
           body: ${{ steps.get_output.outputs.BUILD_LOG }}
           token: ${{ secrets.GITHUB_TOKEN }}
           files: ./build/*
-          name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }}
-          tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}
-          overwrite_files: true
-          prerelease: ${{ steps.context.outputs.IS_PRERELEASE == 'true' }}
+          name: X Shim
+          tag_name: x-shim
 
 #      - name: Notify telegram
 #        env:

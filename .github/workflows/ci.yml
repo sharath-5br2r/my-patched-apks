@@ -70,15 +70,15 @@ jobs:
           RAW_TRIGGER_PRERELEASE: ${{ steps.compare.outputs.TRIGGER_PRERELEASE }}
         run: bash .github/scripts/ci_resolve_triggers.sh
 
-      - name: Notify telegram
-        if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1') }}
-        env:
-          TG_TOKEN: ${{ secrets.TG_TOKEN }}
-          TAGS_OLD: ${{ steps.compare.outputs.tags_old }}
-          TAGS_NEW: ${{ steps.compare.outputs.tags_new }}
-          TRIGGER_STABLE: ${{ steps.compare.outputs.TRIGGER_STABLE }}
-          TRIGGER_PRERELEASE: ${{ steps.compare.outputs.TRIGGER_PRERELEASE }}
-        run: bash .github/scripts/ci_notify_telegram.sh
+#      - name: Notify telegram
+#        if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1') }}
+#        env:
+#          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+#          TAGS_OLD: ${{ steps.compare.outputs.tags_old }}
+#          TAGS_NEW: ${{ steps.compare.outputs.tags_new }}
+#          TRIGGER_STABLE: ${{ steps.compare.outputs.TRIGGER_STABLE }}
+#          TRIGGER_PRERELEASE: ${{ steps.compare.outputs.TRIGGER_PRERELEASE }}
+#        run: bash .github/scripts/ci_notify_telegram.sh
 
       - name: Commit updated patch sources and configs
         if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1') }}
