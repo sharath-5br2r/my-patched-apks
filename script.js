@@ -86,13 +86,14 @@ const CONFIG = {
     eyecon: "Eyecon Caller ID & Spam Block",
     camscanner: "CamScanner",
     inshorts: "Inshorts - News in 60 words",
-    warp: "Cloudflare Warp"
+    warp: "1.1.1.1 + WARP"
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
   // Keys MUST be the fully normalized appName (lowercase, no spaces, no symbols)
   // app + patch + variant, app + patch + default, app + variant, app + default, app only
   appIds: {
+    warp: "com.cloudflare.onedotonedotonedotone",
     adguard: "com.adguard.android",
     adobelightroom: "com.adobe.lrmobile",
     adobephotoshopmix: "com.adobe.psmobile",
@@ -101,7 +102,6 @@ const CONFIG = {
     batteryguru: "com.paget96.batteryguru",
     calcnote: "com.appumstudios.calcnote",
     camscanner: "com.intsig.camscanner",
-    cloudflarewarp: "com.cloudflare.onedotonedotonedotone",
     cricbuzz: "com.cricbuzz.android",
     cryptomator: "org.cryptomator",
     documentscanner: "com.cv.docscanner",
@@ -1152,8 +1152,8 @@ function createPatchMarkup(app, patch) {
   const latestBuild =
     allMeta.length > 0
       ? allMeta.reduce((a, b) =>
-          new Date(a.publishedAt) > new Date(b.publishedAt) ? a : b,
-        ).build
+        new Date(a.publishedAt) > new Date(b.publishedAt) ? a : b,
+      ).build
       : null;
 
   const boxes = [];
@@ -1394,41 +1394,41 @@ function createObtainiumInstructions() {
   const selectedExamplesMarkup =
     Array.from(regexMap.entries()).length > 0
       ? Array.from(regexMap.entries())
-          .map(([regex, data]) => {
-            const label = data.label;
-            const patchSlug = data.patchSlug;
-            const variantSlug = data.variantSlug;
-            const appId = resolveObtainiumAppId(
-              activeModalAppKey,
-              patchSlug,
-              variantSlug,
+        .map(([regex, data]) => {
+          const label = data.label;
+          const patchSlug = data.patchSlug;
+          const variantSlug = data.variantSlug;
+          const appId = resolveObtainiumAppId(
+            activeModalAppKey,
+            patchSlug,
+            variantSlug,
+          );
+
+          if (!appId)
+            console.warn(
+              `Missing App ID for: ${activeModalAppKey} (Patch: ${patchSlug}, Variant: ${variantSlug})`,
             );
 
-            if (!appId)
-              console.warn(
-                `Missing App ID for: ${activeModalAppKey} (Patch: ${patchSlug}, Variant: ${variantSlug})`,
-              );
+          const additionalSettings = { apkFilterRegEx: regex };
+          if (modalBuildFilter === "beta") {
+            additionalSettings.includePrereleases = true;
+          }
 
-            const additionalSettings = { apkFilterRegEx: regex };
-            if (modalBuildFilter === "beta") {
-              additionalSettings.includePrereleases = true;
-            }
+          // Conditionally generate the Obtainium button HTML
+          let obtainiumButtonHtml = "";
+          if (appId) {
+            const obtainiumConfig = {
+              id: appId,
+              name: label,
+              author: CONFIG.owner,
+              url: repoUrl,
+              additionalSettings: JSON.stringify(additionalSettings),
+            };
+            const oneClickUrl = `https://apps.obtainium.imranr.dev/redirect?r=${encodeURIComponent("obtainium://app/" + JSON.stringify(obtainiumConfig))}`;
+            obtainiumButtonHtml = `<a href="${oneClickUrl}" class="copy-btn obtainium-add-btn" target="_blank" rel="noopener noreferrer">Add to Obtainium</a>`;
+          }
 
-            // Conditionally generate the Obtainium button HTML
-            let obtainiumButtonHtml = "";
-            if (appId) {
-              const obtainiumConfig = {
-                id: appId,
-                name: label,
-                author: CONFIG.owner,
-                url: repoUrl,
-                additionalSettings: JSON.stringify(additionalSettings),
-              };
-              const oneClickUrl = `https://apps.obtainium.imranr.dev/redirect?r=${encodeURIComponent("obtainium://app/" + JSON.stringify(obtainiumConfig))}`;
-              obtainiumButtonHtml = `<a href="${oneClickUrl}" class="copy-btn obtainium-add-btn" target="_blank" rel="noopener noreferrer">Add to Obtainium</a>`;
-            }
-
-            return `
+          return `
                     <div class="example">
                         <strong>${escapeHtml(label)}</strong>
                         <div class="code-with-copy ${appId ? "" : "no-obtainium"}">
@@ -1437,8 +1437,8 @@ function createObtainiumInstructions() {
                             <button type="button" class="copy-btn" ${copyCode(regex)}>Copy</button>
                         </div>
                     </div>`;
-          })
-          .join("")
+        })
+        .join("")
       : `
                     <div class="example">
                         <strong>No APK URLs found for this patch.</strong>
