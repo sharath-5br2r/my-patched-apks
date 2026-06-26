@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+if [ -f .env ]; then set -a; source .env; set +a ; fi
 set -euo pipefail
 shopt -s nullglob
 

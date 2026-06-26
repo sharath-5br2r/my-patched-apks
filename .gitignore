@@ -9,3 +9,5 @@ cmpr
 *-temporary-files
 __pycache__/
 build.json
+.env
+*.keystore
