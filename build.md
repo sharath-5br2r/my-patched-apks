@@ -1,7 +1,3 @@
-adguard-morphe-nightly (arm64-v8a): 4.14.68  
-adguard-morphe-nightly (arm-v7a): 4.14.68  
-waze-morphe (arm64-v8a): 5.19.0.2  
-waze-morphe (arm-v7a): 5.19.0.2  
 warp-morphe (arm64-v8a): 6.38.7  
 warp-morphe (arm-v7a): 6.38.7  
 
