@@ -1,4 +1,4 @@
-name: Build and patch LeviLauncher into BGMI
+name: Build dynamic Patches
 permissions: write-all
 on:
   workflow_dispatch:
@@ -36,7 +36,7 @@ jobs:
       - name: Clone code
         run: |
           git clone --depth 1 --branch ${{ env.LEVILAUNCHER_TAG }} https://github.com/0Sombra666/LeviLaunchroidUnlocked.git --recursive --shallow-submodules levilauncher
-          git clone --depth 1 --branch ${{ env.GEODE_TAG }} https://github.com/FCL-Team/Geode.git --recursive --shallow-submodules geode
+          git clone --depth 1 --branch ${{ env.GEODE_TAG }} https://github.com/geode-sdk/android-launcher.git --recursive --shallow-submodules geode
           git clone --depth 1 --branch ${{ env.FCL_TAG }} https://github.com/FCL-Team/FoldCraftLauncher.git --recursive --shallow-submodules fcl
       - name: Prepare google-services.json
         run: |
