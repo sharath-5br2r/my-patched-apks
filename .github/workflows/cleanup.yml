@@ -1,5 +1,5 @@
 name: Cleanup
-
+permissions: write-all
 on:
   workflow_call:
   workflow_dispatch:
