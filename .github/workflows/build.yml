@@ -70,7 +70,7 @@ jobs:
           NEXT_VER_CODE: ${{ steps.version.outputs.NEXT_VER_CODE }}
         run: |
           if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == "configs/exp.toml" ]]; then
-            bash ./scripts/get_morphe_experimental.sh
+            bash -x ./scripts/get_morphe_experimental.sh
             cat ./configs/exp.toml
           fi
           set -euo pipefail
