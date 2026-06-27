@@ -26,7 +26,7 @@ revenge-discord() {
 	dl_gh "NPatch" "7723mod" "latest" "npatch.jar" "jar"
 	dl_gh "revenge-xposed" "revenge-mod" "latest" "revenge.apk" "app-release.apk"
 	get_apk "com.discord" "discord" "bundle"
-    version=$(java -jar ./APKEditor.jar info -i ./download/discord.apkm -version-name  -t json | jq -r '.[].VersionName')
+    version=$(java -jar ./APKEditor.jar info -i ./download/discord.apk -version-name  -t json | jq -r '.[].VersionName')
 	java -cp "bcprov.jar:npatch.jar" -Djava.security.properties=bc.security top.nkbe.npatch.patch.NPatch ./download/discord.apk -k ks.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS -m "revenge.apk" -o ./build/
     mv ./build/discord-*-npatched.apk "./build/discord-revenge-$version.apk"
     echo -e "Patched discord-$version.apk with revenge-xposed" >> build.md

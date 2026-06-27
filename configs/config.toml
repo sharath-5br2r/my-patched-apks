@@ -1,5 +1,6 @@
 patches-version = "dev"
 enable-module-update = true
+parallel-jobs = 1
 [x-piko]
 enabled = true 
 app-name = "x"
@@ -13,17 +14,6 @@ cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter/"
 
-[google-photos-devanced]
-enabled = true
-app-name = "google-photos"
-rv-brand = "devanced"
-build-mode = "both"
-arch = "both"
-patches-source = "RookieEnough/De-ReVanced"
-cli-source = "MorpheApp/morphe-cli"
-uptodown-dlurl = "https://google-photos.en.uptodown.com/android"
-apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/photos"
-archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.apps.photos"
 
 [gboard-morphe]
 enabled = true
@@ -100,7 +90,6 @@ enabled = true
 app-name = "github"
 rv-brand = "hoo-dles"
 build-mode = "apk"
-version = "latest"
 patches-source = "hoo-dles/morphe-patches"
 included-patches = "'AMOLED dark theme'"
 cli-source = "MorpheApp/morphe-cli"
@@ -153,9 +142,9 @@ enabled = true
 cli-source = "MorpheApp/morphe-cli"
 app-name = "adobe-acrobat"
 rv-brand = "hooman"
+version = "latest"
 build-mode = "apk"
 patches-source = "arandomhooman/hoomans-morphe-patches"
-version = "latest"
 uptodown-dlurl = "https://adobe-reader.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/adobe/adobe-acrobat/"
 
@@ -166,6 +155,7 @@ app-name = "jiohotstar"
 rv-brand = "paresh"
 build-mode = "apk"
 patches-source = "Paresh-Maheshwari/paresh-patches"
+patches-source-host = "gitlab"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/jiostar-india-private-limited/jiohotstar-4/"
 
 [tiktok-icysymmetra]
