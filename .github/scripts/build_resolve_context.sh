@@ -2,7 +2,7 @@
 set -euo pipefail
 CONFIG="$1"
 
-if [ ! -f "$CONFIG" ]; then
+if [ ! -f "$CONFIG" || "$CONFIG" != "custom" ]; then
   echo "::error::Config file not found: $CONFIG"
   exit 1
 fi

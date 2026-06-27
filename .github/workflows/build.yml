@@ -16,6 +16,7 @@ on:
         options:
           - "configs/config.toml"
           - "configs/exp.toml"
+          - "custom"
 
 concurrency:
   group: build
@@ -74,7 +75,11 @@ jobs:
             cat ./configs/exp.toml
           fi
           set -euo pipefail
-          ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
+          if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == "custom" ]]; then
+            bash ./custom_patches.sh
+          else
+            ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
+          fi
 
       - name: Get output
         id: get_output
