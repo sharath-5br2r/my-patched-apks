@@ -11,11 +11,11 @@ const CONFIG = {
   // App Categories for the top filter buttons (maps filter-btn dataset to keywords)
   appCategories: {
     google: ["youtube", "google"],
-    meta: ["threads", "instagram", "messenger", "facebook"],
+    meta: ["threads", "instagram", "messenger", "facebook", "!plusmessenger"],
   },
 
   // Words ignored in the dynamic app filters (must be lowercase)
-  sharedAppWordStoplist: new Set(["google"]),
+  sharedAppWordStoplist: new Set(["google", "messenger"]),
 
   // Known tokens indicating a patch name starts (must be lowercase)
   knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx"]),
@@ -646,9 +646,15 @@ function applyAppViewFilter(apps) {
   if (CONFIG.appCategories[appViewFilter]) {
     return apps.filter((app) => {
       const name = normalizeForSearch(app.appName);
-      return CONFIG.appCategories[appViewFilter].some((keyword) =>
-        name.includes(keyword),
-      );
+      const keywords = CONFIG.appCategories[appViewFilter];
+      
+      const includes = keywords.filter(k => !k.startsWith("!"));
+      const excludes = keywords.filter(k => k.startsWith("!")).map(k => k.slice(1));
+      
+      const isIncluded = includes.some((keyword) => name.includes(keyword));
+      const isExcluded = excludes.some((keyword) => name.includes(keyword));
+      
+      return isIncluded && !isExcluded;
     });
   }
 
