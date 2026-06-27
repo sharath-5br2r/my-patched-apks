@@ -342,7 +342,7 @@ get_apk() {
 	local base_url="https://www.apkmirror.com"
 	local html=""
 
-	local apps_json="./config/fiorenmas-apps.json"
+	local apps_json="./configs/fiorenmas-apps.json"
 	local list_url example_url
 	list_url=$(jq -r --arg pkg "$pkg_name" '.apkmirror[$pkg].list_url // empty' "$apps_json")
 	example_url=$(jq -r --arg pkg "$pkg_name" '.apkmirror[$pkg].example_url // empty' "$apps_json")
