@@ -9,9 +9,9 @@ amazon-india(){
     rm -f ./build/*.idsig
     echo -e "Signed amazon-india-$version.apk" >> build.md
     echo -e '"amazon-india": { "exts": ["apk"], "name": "amazon-india","arch": "all","patch": "none", "version": "'$version'"},' >> build.json
+    unset version
 }
 amazon-alexa(){
-    unset version
 	get_apk "com.amazon.dee.app" "amazon-alexa" "bundle" "universal"
 	java -jar APKEditor.jar m -i ./download/amazon-alexa.apkm -o amazon-alexa.apk
     version=$(java -jar ./APKEditor.jar info -i ./download/amazon-alexa.apk -version-name  -t json | jq -r '.[].VersionName')
@@ -19,18 +19,19 @@ amazon-alexa(){
     rm -f ./build/*.idsig
     echo -e "Signed amazon-alexa-$version.apk" >> build.md
     echo -e '"amazon-alexa": { "exts": ["apk"], "name": "amazon-alexa","arch": "all","patch": "none", "version": "'$version'"},' >> build.json
+    unset version
 }
 revenge-discord() {
 	# Patch Revenge:
-    unset version
 	dl_gh "NPatch" "7723mod" "latest" "npatch.jar" "jar"
 	dl_gh "revenge-xposed" "revenge-mod" "latest" "revenge.apk" "app-release.apk"
 	get_apk "com.discord" "discord" "bundle"
     version=$(java -jar ./APKEditor.jar info -i ./download/discord.apkm -version-name  -t json | jq -r '.[].VersionName')
-	java -cp "bcprov.jar:npatch.jar" -Djava.security.properties=bc.security top.nkbe.npatch.patch.NPatch ./download/discord.apk -k ks.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS -m "revenge.apk" -o ./build/}
+	java -cp "bcprov.jar:npatch.jar" -Djava.security.properties=bc.security top.nkbe.npatch.patch.NPatch ./download/discord.apk -k ks.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS -m "revenge.apk" -o ./build/
     mv ./build/discord-*-npatched.apk "./build/discord-revenge-$version.apk"
     echo -e "Patched discord-$version.apk with revenge-xposed" >> build.md
     echo -e '"discord-revenge": { "exts": ["apk"], "name": "discord-revenge","arch": "all","patch": "revenge-mod/revenge-xposed", "version": "'$version'"},' >> build.json
+    unset version
 }
 dolphin-sdk29() {
     _fs_get https://dolphin-emu.org/download/
@@ -71,10 +72,13 @@ winlator-pubgvn() {
     echo -e "Patched Winlator-Ludashi with com.vng.pubgmobile package name" >> build.md
     echo -e '"winlator-pubgvn": { "exts": ["apk"], "name": "winlator-pubgvn","arch": "all","patch": "pubgvn", "version": "'$tag'"},' >> build.json
 }
-echo -e '}' >> build.json
+
 amazon-alexa
 amazon-india
 revenge-discord
 dolphin-sdk29
 eden-pubg
 winlator-pubgvn
+
+echo -e '}' >> build.json
+cat build.json | jq -c . > build.json.tmp && mv build.json.tmp build.json
