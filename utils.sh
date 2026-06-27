@@ -681,7 +681,7 @@ dl_apkmirror() {
 	local node dlurl=""
 	node=$($HTMLQ "div.table-row.headerFont:nth-last-child(1)" -r "span:nth-child(n+3)" <<<"$resp")
 	if [ "$node" ]; then
-		for type in APK BUNDLE; do
+		for type in BUNDLE APK; do
 			if dlurl=$(apkmirror_search "$resp" "$dpi" "$arch" "$type"); then
 				[ "$type" = "BUNDLE" ] && is_bundle=true || is_bundle=false
 				break

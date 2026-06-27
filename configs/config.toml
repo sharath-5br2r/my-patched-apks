@@ -51,6 +51,7 @@ cli-source = "MorpheApp/morphe-cli"
 #uptodown-dlurl = "https://instagram.en.uptodown.com/android"
 #archive-dlurl = "https://archive.org/download/geologically/apks/com.instagram.android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
+dpi = "480dpi"
 
 [fing-paresh]
 enabled = true
@@ -128,6 +129,7 @@ enabled = true
 app-name = "proton-vpn"
 rv-brand = "paresh"
 build-mode = "apk"
+version = "latest"
 patches-source = "Paresh-Maheshwari/paresh-patches"
 patches-source-host = "gitlab"
 cli-source = "MorpheApp/morphe-cli"
