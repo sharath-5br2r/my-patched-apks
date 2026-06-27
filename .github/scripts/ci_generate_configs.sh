@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
-BASE_CONFIG="config.toml"
-BASE_CONFIG_STABLE=".github/configs/config.stable.toml"
-BASE_CONFIG_DEV=".github/configs/config.dev.toml"
+BASE_CONFIG="configs/config.toml"
+#BASE_CONFIG_STABLE=".github/configs/config.stable.toml"
+#BASE_CONFIG_DEV=".github/configs/config.dev.toml"
 
 [ -n "${TAGS_OLD:-}" ] || TAGS_OLD='{}'
 [ -n "${TAGS_NEW:-}" ] || TAGS_NEW='{}'
@@ -24,6 +24,15 @@ jq -rn --argjson new "$TAGS_NEW" --argjson old "$TAGS_OLD" '
       | $e.value.repo | ascii_downcase
   ]
 ' > active.prerelease.json
+
+jq -rn --argjson new "$TAGS_NEW" --argjson old "$TAGS_OLD" '
+  [ $new | to_entries[] | . as $e
+      | ($old[$e.key] // {}) as $o
+      | select($e.value.latest != "" and $e.value.latest != ($o.latest // ""))
+      | select($e.value.enabled != false)
+      | $e.value.repo | ascii_downcase
+  ]
+' > active.latest.json
 
 yq -o=json '.' "$BASE_CONFIG" > base.json
 
@@ -67,4 +76,18 @@ if [ "${TRIGGER_PRERELEASE:-0}" = "1" ]; then
       else . end
     )
   ' config.dev.json > .github/configs/config.dev.updated.json
+fi
+
+if [ "${TRIGGER_LATEST:-0}" = "1" ]; then
+  jq --slurpfile active active.latest.json '
+    { "parallel-jobs": 1, "enable-module-update": true } as $force |
+    ($force + . + $force) |
+    map_values(
+      if type == "object" then
+        . as $app |
+        (($app["patches-source"] // "ReVanced/revanced-patches") | ascii_downcase | gsub("[\"'\''\\n\\r\\t]"; " ") | split(" ") | map(select(. != ""))) as $srcs |
+        if (($srcs - $active[0]) != $srcs) then $app else ($app | .enabled = false) end
+      else . end
+    )
+  ' base.json > .github/configs/config.latest.updated.json
 fi

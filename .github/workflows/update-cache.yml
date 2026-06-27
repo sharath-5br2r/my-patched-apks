@@ -1,8 +1,7 @@
-name: Update Releases Cache
+name: Update Releases Website Cache
 
 on:
-  repository_dispatch:
-    types: [ update-catalog-cache ]
+  workflow_call:
   schedule:
     - cron: "0 2 * * *" # 02:00 AM UTC everyday
   workflow_dispatch:
@@ -22,20 +21,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
-
-      - name: Remove older workflow runs
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh run list -L400 --repo "$GITHUB_REPOSITORY" --json databaseId -q '.[].databaseId' |
-            tail -n+10 |
-            xargs -IID gh api "repos/$GITHUB_REPOSITORY/actions/runs/ID" -X DELETE || :
+        with: 
+          ref: gh-pages
 
       - name: Fetch releases from GitHub API
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api --paginate repos/nullcpy/rvb/releases > releases_new.json
+          gh api --paginate repos/sharath-5br2r/patched-apks-builder-2nd/releases > releases_new.json
 
           # Validate: must be a non-empty JSON array
           COUNT=$(jq 'if type == "array" then length else 0 end' releases_new.json)
@@ -52,11 +45,3 @@ jobs:
         with:
           commit_message: "update releases cache"
           file_pattern: releases.json
-
-  trigger_notify_failure:
-    needs: [ update-cache ]
-    if: failure()
-    uses: ./.github/workflows/notify.yml
-    with:
-      workflow_name: "Update Releases Cache"
-    secrets: inherit

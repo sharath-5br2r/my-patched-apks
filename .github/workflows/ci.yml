@@ -58,18 +58,15 @@ jobs:
         env:
           TAGS_OLD: ${{ steps.compare.outputs.tags_old }}
           TAGS_NEW: ${{ steps.compare.outputs.tags_new }}
-          TRIGGER_STABLE: ${{ steps.compare.outputs.TRIGGER_STABLE }}
-          TRIGGER_PRERELEASE: ${{ steps.compare.outputs.TRIGGER_PRERELEASE }}
+          TRIGGER_LATEST: ${{ steps.compare.outputs.TRIGGER_LATEST }}
         run: bash .github/scripts/ci_generate_configs.sh
 
       - name: Resolve effective triggers
         id: effective_triggers
         env:
           CREATED: ${{ steps.ensure_patch_sources.outputs.created }}
-          RAW_TRIGGER_STABLE: ${{ steps.compare.outputs.TRIGGER_STABLE }}
-          RAW_TRIGGER_PRERELEASE: ${{ steps.compare.outputs.TRIGGER_PRERELEASE }}
+          RAW_TRIGGER_LATEST: ${{ steps.compare.outputs.TRIGGER_LATEST }}
         run: bash .github/scripts/ci_resolve_triggers.sh
-
 #      - name: Notify telegram
 #        if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1') }}
 #        env:
@@ -81,7 +78,7 @@ jobs:
 #        run: bash .github/scripts/ci_notify_telegram.sh
 
       - name: Commit updated patch sources and configs
-        if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1') }}
+        if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_LATEST == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1') }}
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
@@ -89,38 +86,28 @@ jobs:
           file_pattern: .github/configs/*.json
           commit_message: "Update patch sources and generated configs [skip ci]"
 
-  build_dev:
+  build:
     needs: check_patch
-    if: ${{ needs.check_patch.outputs.trigger_prerelease == '1' }}
+    uses: ./.github/workflows/build.yml
+    if: needs.check_patch.outputs.trigger_stable == '1'
+    with:
+      config_file: "configs/config.toml"
+    secrets: inherit
+  build_custom:
+    needs: [check_patch, build]
+    if: ${{ always()  && needs.check_patch.result == 'success' && needs.build.result != 'cancelled' }}
     uses: ./.github/workflows/build.yml
     with:
-      config_file: ".github/configs/config.dev.updated.json"
+      config_file: "custom"
     secrets: inherit
-
-  build_stable:
-    needs: [check_patch, build_dev]
-    if: ${{ always() && needs.check_patch.outputs.trigger_stable == '1' && needs.check_patch.result == 'success' && needs.build_dev.result != 'cancelled' }}
-    uses: ./.github/workflows/build.yml
-    with:
-      config_file: ".github/configs/config.stable.updated.json"
-    secrets: inherit
-
   trigger_cleanup:
-    needs: [build_dev, build_stable]
-    if: ${{ always() && (needs.build_dev.result == 'success' || needs.build_stable.result == 'success') }}
+    needs: [build, build_custom]
+    if: ${{ always() && (needs.build.result == 'success' || needs.build_custom.result == 'success') }}
     uses: ./.github/workflows/cleanup.yml
     secrets: inherit
-
   trigger_website_update:
-    needs: [build_dev, build_stable, trigger_cleanup]
-    if: ${{ always() && (needs.build_dev.result == 'success' || needs.build_stable.result == 'success') }}
-    uses: ./.github/workflows/update-website.yml
+    needs: [build, build_custom, trigger_cleanup]
+    if: ${{ always() && (needs.build.result == 'success' || needs.build_custom.result == 'success') }}
+    uses: ./.github/workflows/update-cache.yml
     secrets: inherit
 
-  trigger_notify_failure:
-    needs: [check_patch, build_dev, build_stable]
-    if: ${{ failure() }}
-    uses: ./.github/workflows/notify.yml
-    with:
-      workflow_name: "CI"
-    secrets: inherit

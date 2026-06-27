@@ -38,21 +38,24 @@ while read -r id repo host enabled enabledStable enabledDev; do
     if [ "$host" = "gitlab" ]; then
       stable=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "" and (.tag_name | test("(?i)(dev|alpha|beta|rc)") | not))) | sort_by(.released_at // .created_at // "") | reverse | .[0].tag_name // "")')
       pre=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "" and (.tag_name | test("(?i)(dev|alpha|beta|rc)")))) | sort_by(.released_at // .created_at // "") | reverse | .[0].tag_name // "")')
+      latest=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "")) | sort_by(.released_at // .created_at // "") | reverse | .[0].tag_name // "")')
     else
       stable=$(echo "$api_response" | jq -r '(map(select(.prerelease == false and .tag_name != null and .tag_name != "")) | sort_by(.published_at) | reverse | .[0].tag_name // "")')
       pre=$(echo "$api_response" | jq -r '(map(select(.prerelease == true and .tag_name != null and .tag_name != "")) | sort_by(.published_at) | reverse | .[0].tag_name // "")')
+      latest=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "")) | sort_by(.published_at) | reverse | .[0].tag_name // "")')
     fi
 
-    jq -n --arg id "$id" --arg stable "$stable" --arg pre "$pre" \
-      '{($id): {"stable": $stable, "prerelease": $pre, "blocked": false}}' >> updates.jsonl
+    jq -n --arg id "$id" --arg stable "$stable" --arg pre "$pre" --arg latest "$latest" \
+      '{($id): {"stable": $stable, "prerelease": $pre, "latest": $latest, "blocked": false}}' >> updates.jsonl
   else
     echo "::warning::API error or rate limit for $repo. Retaining previous state."
     old_stable=$(echo "$BASE_JSON" | jq -r ".\"$id\".stable // \"\"")
     old_pre=$(echo "$BASE_JSON" | jq -r ".\"$id\".prerelease // \"\"")
+    old_latest=$(echo "$BASE_JSON" | jq -r ".\"$id\".latest // \"\"")
     old_blocked=$(echo "$BASE_JSON" | jq -r ".\"$id\".blocked // false")
-    
-    jq -n --arg id "$id" --arg stable "$old_stable" --arg pre "$old_pre" --argjson blocked "$old_blocked" \
-      '{($id): {"stable": $stable, "prerelease": $pre, "blocked": $blocked}}' >> updates.jsonl
+
+    jq -n --arg id "$id" --arg stable "$old_stable" --arg pre "$old_pre" --arg latest "$old_latest" --argjson blocked "$old_blocked" \
+      '{($id): {"stable": $stable, "prerelease": $pre, "latest": $latest, "blocked": $blocked}}' >> updates.jsonl
   fi
 
 done < <(echo "$BASE_JSON" | jq -r 'to_entries[] | select(.value.repo != "") | "\(.key) \(.value.repo) \((.value.host // "github") | ascii_downcase) \(if .value.enabled == false then false else true end) \(if .value.enabledStable == false then false else true end) \(if .value.enabledDev == false then false else true end)"')
