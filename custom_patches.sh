@@ -5,7 +5,7 @@ amazon-india(){
 	get_apk "in.amazon.mShop.android.shopping" "amazon-india" "bundle"
 	java -jar APKEditor.jar m -i ./download/amazon-india.apkm -o amazon-india.apk
     version=$(java -jar ./APKEditor.jar info -i ./download/amazon-india.apk -version-name  -t json | jq -r '.[].VersionName')
-	sign "./download/amazon-india.apk" ./build/amazon-india-$version.apk
+	sign "./amazon-india.apk" ./build/amazon-india-$version.apk
     rm -f ./build/*.idsig
     echo -e "Signed amazon-india-$version.apk" >> build.md
     echo -e '"amazon-india": { "exts": ["apk"], "name": "amazon-india","arch": "all","patch": "none", "version": "'$version'"},' >> build.json
@@ -15,7 +15,7 @@ amazon-alexa(){
 	get_apk "com.amazon.dee.app" "amazon-alexa" "bundle" "universal"
 	java -jar APKEditor.jar m -i ./download/amazon-alexa.apkm -o amazon-alexa.apk
     version=$(java -jar ./APKEditor.jar info -i ./download/amazon-alexa.apk -version-name  -t json | jq -r '.[].VersionName')
-	sign "./download/amazon-alexa.apk" ./build/amazon-alexa-$version.apk
+	sign "./amazon-alexa.apk" ./build/amazon-alexa-$version.apk
     rm -f ./build/*.idsig
     echo -e "Signed amazon-alexa-$version.apk" >> build.md
     echo -e '"amazon-alexa": { "exts": ["apk"], "name": "amazon-alexa","arch": "all","patch": "none", "version": "'$version'"},' >> build.json
