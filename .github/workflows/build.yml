@@ -71,6 +71,7 @@ jobs:
         run: |
           if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == "configs/exp.toml" ]]; then
             bash ./scripts/get_morphe_experimental.sh
+            cat ./configs/exp.toml
           fi
           set -euo pipefail
           ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
