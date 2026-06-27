@@ -4,8 +4,8 @@
  * ==========================================
  */
 const CONFIG = {
-  owner: "nullcpy",
-  repo: "rvb",
+  owner: "sharath-5br2r",
+  repo: "patched-apks-builder-2nd",
   cacheDuration: 5, // Cache duration in minutes
 
   // App Categories for the top filter buttons (maps filter-btn dataset to keywords)
@@ -18,23 +18,13 @@ const CONFIG = {
   sharedAppWordStoplist: new Set(["google"]),
 
   // Known tokens indicating a patch name starts (must be lowercase)
-  knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx"]),
+  knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx", "jasonmu1994", "paresh", "piko", "binarymend", "hoo-dles", "xtra", "revenge", "hooman", "icysymmetra", "sdk29", "pubg", "bgmi", "pubgkr", "pubgvn", "sign", "ood"]),
 
   // Known tokens indicating a variant (must be lowercase)
   variantKeywords: new Set([
-    "exp",
-    "nord",
-    "mocha",
-    "privacy",
-    "materialu",
-    "foss",
-    "gplay",
-    "piko",
-    "adobo",
-    "patcheddit",
-    "paresh",
-    "nightly",
-  ]),
+    "x86_64",
+    "arm64-v8a",
+  ],
 
   // Known architectures (used for regex parsing)
   knownArchs: [
@@ -47,14 +37,15 @@ const CONFIG = {
     "x86_64",
     "x86",
     "universal",
-    "all",
+    "all"
   ],
 
   // Brand name overrides (keys must be lowercase)
   brandOverrides: {
     youtube: "YouTube",
     revanced: "ReVanced",
-    tiktok: "TikTok",
+    morphe: "Morphe",
+    ic: "TikTok",
     soundcloud: "SoundCloud",
     xrecorder: "XRecorder",
     calcnote: "CalcNote",
@@ -86,7 +77,25 @@ const CONFIG = {
     eyecon: "Eyecon Caller ID & Spam Block",
     camscanner: "CamScanner",
     inshorts: "Inshorts - News in 60 words",
-    warp: "1.1.1.1 + WARP"
+    warp: "1.1.1.1 + WARP",
+    x: "X",
+    jiohotstar: "JioHotstar",
+    pubg: "PUBG Mobile Spoof",
+    bgmi: "Battlegrounds Mobile India Spoof",
+    cod: "Call of Duty Mobile Spoof",
+    pubgkr: "PUBG Mobile KR Spoof",
+    pubgvn: "PUBG Mobile VN Spoof",
+    sdk29: "SDK 29 Storage fix",
+    dolphin: "Dolphin Emulator",
+    eden: "Eden Nightly",
+    xtra: "Xtra patches for Morphe",
+    revenge: "Revenge patches",
+    hooman: "Hooman's patches for Morphe",
+    icysymmetra: "TikTok patches for Morphe",
+    geode: "Geode Launcher",
+    winlator: "Winlator Ludashi",
+    fcl: "Fold Craft Launcher",
+    sign: "Resigned For Compatibility",
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -94,6 +103,9 @@ const CONFIG = {
   // app + patch + variant, app + patch + default, app + variant, app + default, app only
   appIds: {
     "1111warp": "com.cloudflare.onedotonedotonedotone",
+    amazonalexa: "com.amazon.dee.app",
+    amazonindia: "in.amazon.mShop.android.shopping",
+    adobeacrobat: "com.adobe.reader",
     adguard: "com.adguard.android",
     adobelightroom: "com.adobe.lrmobile",
     adobephotoshopmix: "com.adobe.psmobile",
@@ -105,10 +117,23 @@ const CONFIG = {
     cricbuzz: "com.cricbuzz.android",
     cryptomator: "org.cryptomator",
     documentscanner: "com.cv.docscanner",
+    dolphinemulator: "org.dolphinemu.dolphinemu",
     duolingo: "com.duolingo",
+    edennightly: {
+      default: "dev.eden_emulator.nightly",
+      pubg: "com.tencent.ig,"
+    },
     eyeconcalleridspamblock: "com.eyecon.global",
     facebook: "com.facebook.katana",
     fingnetworktools: "com.overlook.android.fing",
+    foldcraftlauncher: {
+      default: "com.tungsten.fcl",
+      cod: "com.activision.callofduty.shooter",
+    },
+    geodelauncher: {
+      default: "com.geode.launcher",
+      pubgkr: "com.pubg.krmobile"
+    },
     googlekeyboard: "com.google.android.inputmethod.latin",
     googlenews: "com.google.android.apps.magazines",
     googlephotos: {
@@ -122,6 +147,11 @@ const CONFIG = {
     instagram: "com.instagram.android",
     inshortsnewsin60words: "com.nis.app",
     imdb: "com.imdb.mobile",
+    jiohotstar: "in.startv.hotstar",
+    levilauncherunlocked: {
+      default: "org.levimc.launcher",
+      bgmi: "com.pubg.imobile",
+    },
     luminawallpapers: "com.lumina.wallpapers",
     macrodroid: "com.arlosoft.macrodroid",
     merriamwebsterdictionary: "com.merriamwebster",
@@ -167,6 +197,10 @@ const CONFIG = {
     rar: "com.rarlab.rar",
     wpsoffice: "cn.wps.moffice_eng",
     waze: "com.waze",
+    winlatorludashi: {
+      default: "com.winlator.cmod",
+      pubgvn: "com.vng.pubgmobilevn",
+    },
     twitter: "com.twitter.android",
     xodopdfreadereditor: "com.xodo.pdf.reader",
     xrecorder: "videoeditor.videorecorder.screenrecorder",
@@ -184,6 +218,7 @@ const CONFIG = {
       morphe: "app.morphe.android.apps.youtube.music",
       default: "com.google.android.apps.youtube.music",
     },
+    x: "com.twitter.android",
   },
 
   // App-specific notices to display on App Cards
@@ -197,10 +232,6 @@ const CONFIG = {
         {
           label: "Morphe",
           url: "https://github.com/MorpheApp/MicroG-RE/releases/latest",
-        },
-        {
-          label: "ReVanced",
-          url: "https://github.com/ReVanced/GmsCore/releases/latest",
         },
       ],
     },
