@@ -22,16 +22,16 @@
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.32.0",
-    "prerelease": "v1.33.0-dev.4",
+    "prerelease": "v1.33.0-dev.5",
     "blocked": false,
-    "latest": "v1.33.0-dev.4"
+    "latest": "v1.33.0-dev.5"
   },
   "piko": {
     "repo": "crimera/piko",
     "stable": "v3.7.0",
-    "prerelease": "v3.7.0-dev.9",
+    "prerelease": "v3.8.0-dev.2",
     "blocked": false,
-    "latest": "v3.7.0"
+    "latest": "v3.8.0-dev.2"
   },
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
