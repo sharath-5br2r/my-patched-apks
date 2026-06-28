@@ -86,7 +86,8 @@ const CONFIG = {
     eyecon: "Eyecon Caller ID & Spam Block",
     camscanner: "CamScanner",
     inshorts: "Inshorts - News in 60 words",
-    warp: "1.1.1.1 + WARP"
+    warp: "1.1.1.1 + WARP",
+    acalendar: "aCalendar"
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -94,6 +95,7 @@ const CONFIG = {
   // app + patch + variant, app + patch + default, app + variant, app + default, app only
   appIds: {
     "1111warp": "com.cloudflare.onedotonedotonedotone",
+    acalendar: "org.withouthat.acalendar",
     adguard: "com.adguard.android",
     adobelightroom: "com.adobe.lrmobile",
     adobephotoshopmix: "com.adobe.psmobile",
@@ -647,13 +649,13 @@ function applyAppViewFilter(apps) {
     return apps.filter((app) => {
       const name = normalizeForSearch(app.appName);
       const keywords = CONFIG.appCategories[appViewFilter];
-      
+
       const includes = keywords.filter(k => !k.startsWith("!"));
       const excludes = keywords.filter(k => k.startsWith("!")).map(k => k.slice(1));
-      
+
       const isIncluded = includes.some((keyword) => name.includes(keyword));
       const isExcluded = excludes.some((keyword) => name.includes(keyword));
-      
+
       return isIncluded && !isExcluded;
     });
   }
