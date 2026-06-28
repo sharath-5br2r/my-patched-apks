@@ -115,7 +115,7 @@ jobs:
       - name: Sign APK with keystore
         run: |
           APK_IN=$(find levilauncher/app/build/outputs/apk/release -name "*.apk" | head -1)
-          APK_OUT="levilauncher-unlocked-bgmi-v$LEVILAUNCHER_TAG.apk"
+          APK_OUT="levilauncher-unlocked-bgmi-$LEVILAUNCHER_TAG.apk"
           java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign    --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in "$APK_IN" --out "$APK_OUT"
           
         env:
@@ -125,7 +125,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
-          path: levilauncher-unlocked-bgmi-v${{ env.LEVILAUNCHER_TAG }}.apk
+          path: levilauncher-unlocked-bgmi-${{ env.LEVILAUNCHER_TAG }}.apk
           archive: false
   build-geode:
     needs: build-levilauncher
@@ -175,7 +175,7 @@ jobs:
           echo "${{ secrets.KEYSTORE_P12 }}" | base64 --decode > ks.keystore   
           wget -qO sdk.zip "https://dl.google.com/android/repository/build-tools_r36_linux.zip"
           unzip -q -j sdk.zip android-16/lib/apksigner.jar
-          java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in $APK_PATH --out "./geode-pubgkr-v$TAG.apk"
+          java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in $APK_PATH --out "./geode-pubgkr-v$GEODE_TAG.apk"
         env:
           KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
