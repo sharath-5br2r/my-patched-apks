@@ -80,7 +80,7 @@ fi
 
 if [ "${TRIGGER_LATEST:-0}" = "1" ]; then
   jq --slurpfile active active.latest.json '
-    { "parallel-jobs": 1, "enable-module-update": true } as $force |
+    { "parallel-jobs": 1, "patches-version": "latest", "enable-module-update": true } as $force |
     ($force + . + $force) |
     map_values(
       if type == "object" then

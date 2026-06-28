@@ -1,5 +1,3 @@
-patches-version = "dev"
-
 [x-piko]
 enabled = true 
 app-name = "x"
@@ -85,10 +83,10 @@ uptodown-dlurl = "https://symfonium.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tolriq/symfonium-music-player-cast"
 archive-dlurl = "https://archive.org/download/geologically/apks/app.symfonik.music.player"
 
-[github-hoo-dles]
+[github-hoodles]
 enabled = true
 app-name = "github"
-rv-brand = "hoo-dles"
+rv-brand = "hoodles"
 build-mode = "apk"
 patches-source = "hoo-dles/morphe-patches"
 included-patches = "'AMOLED dark theme'"
@@ -98,6 +96,18 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/github/github-2"
 dpi = "nodpi anydpi"
 # archive-dlurl = "https://archive.org/download/geologically/apks/com.github.android"
 
+[prime-video-hoodles]
+enabled = true
+app-name = "prime-video"
+rv-brand = "hoodles"
+build-mode = "apk"
+version = "latest"
+arch = "arm64-v8a"
+patches-source = "hoo-dles/morphe-patches"
+included-patches = "'AMOLED dark theme'"
+cli-source = "MorpheApp/morphe-cli"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-prime-video/"
+uptodown-dlurl = "https://amazon-video.en.uptodown.com/android"
 
 [speedtest-xtra-arm64-v8a]
 enabled = true 
