@@ -54,19 +54,18 @@ jobs:
         run: bash .github/scripts/ci_compare_tags.sh
 
       - name: Generate configs (JSON)
-        if: ${{ steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1' }}
         id: generate_configs
         env:
           TAGS_OLD: ${{ steps.compare.outputs.tags_old }}
           TAGS_NEW: ${{ steps.compare.outputs.tags_new }}
-          TRIGGER_LATEST: ${{ steps.compare.outputs.TRIGGER_LATEST }}
+          TRIGGER_LATEST: 1
         run: bash .github/scripts/ci_generate_configs.sh
 
       - name: Resolve effective triggers
         id: effective_triggers
         env:
           CREATED: ${{ steps.ensure_patch_sources.outputs.created }}
-          RAW_TRIGGER_LATEST: ${{ steps.compare.outputs.TRIGGER_LATEST }}
+          RAW_TRIGGER_LATEST: 1
         run: bash .github/scripts/ci_resolve_triggers.sh
 #      - name: Notify telegram
 #        if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1') }}
@@ -89,10 +88,10 @@ jobs:
 
   build:
     needs: check_patch
-    if: ${{ always()  && needs.check_patch.result == 'success'  }}
+    if: ${{ always() && needs.check_patch.result == 'success' }}
     uses: ./.github/workflows/build.yml
     with:
-      config_file: "configs/config.toml"
+      config_file: ".github/configs/config.latest.updated.json"
     secrets: inherit
   build_custom:
     needs: [check_patch, build]

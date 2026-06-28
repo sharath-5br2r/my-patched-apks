@@ -51,7 +51,7 @@ if [ "${TRIGGER_STABLE:-0}" = "1" ]; then
       if type == "object" then
         . as $app |
         (($app["patches-source"] // "ReVanced/revanced-patches") | ascii_downcase | gsub("[\"'\''\\n\\r\\t]"; " ") | split(" ") | map(select(. != ""))) as $srcs |
-        if (($srcs - $active[0]) != $srcs) then $app else ($app | .enabled = false) end
+        if (($srcs - $active[0]) != $srcs) or $app.version == "latest" then $app else ($app | .enabled = false) end
       else . end
     )
   ' config.stable.json > .github/configs/config.stable.updated.json
@@ -72,7 +72,7 @@ if [ "${TRIGGER_PRERELEASE:-0}" = "1" ]; then
       if type == "object" then
         . as $app |
         (($app["patches-source"] // "ReVanced/revanced-patches") | ascii_downcase | gsub("[\"'\''\\n\\r\\t]"; " ") | split(" ") | map(select(. != ""))) as $srcs |
-        if (($srcs - $active[0]) != $srcs) then $app else ($app | .enabled = false) end
+        if (($srcs - $active[0]) != $srcs) or $app.version == "latest" then $app else ($app | .enabled = false) end
       else . end
     )
   ' config.dev.json > .github/configs/config.dev.updated.json
@@ -86,7 +86,7 @@ if [ "${TRIGGER_LATEST:-0}" = "1" ]; then
       if type == "object" then
         . as $app |
         (($app["patches-source"] // "ReVanced/revanced-patches") | ascii_downcase | gsub("[\"'\''\\n\\r\\t]"; " ") | split(" ") | map(select(. != ""))) as $srcs |
-        if (($srcs - $active[0]) != $srcs) then $app else ($app | .enabled = false) end
+        if (($srcs - $active[0]) != $srcs) or $app.version == "latest" then $app else ($app | .enabled = false) end
       else . end
     )
   ' base.json > .github/configs/config.latest.updated.json
