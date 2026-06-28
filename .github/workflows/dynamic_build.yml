@@ -277,6 +277,7 @@ jobs:
              echo -e "\"fcl-cod\": { \"exts\": [\"apk\"], \"name\": \"fcl-cod\",\"arch\": \"all\",\"patch\": \"cod\", \"version\": \"$FCL_TAG\" }" >> build.json
              echo  -e "Patched and signed the following APK:\n- fcl-cod-$FCL_TAG.apk" >> build.md
            fi
+           echo -e "}" >> build.json
       - name: Get output
         id: get_output
         run: bash .github/scripts/build_get_output.sh
