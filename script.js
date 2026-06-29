@@ -1115,8 +1115,9 @@ function getDynamicAppFilters(apps) {
   });
 
   const allWordEntries = Array.from(wordToAppKeys.entries());
+  const categoryKeys = new Set(Object.keys(CONFIG.appCategories));
   const dynamicFilters = allWordEntries
-    .filter(([, appKeys]) => appKeys.size >= SHARED_APP_WORD_MIN_COUNT)
+    .filter(([word, appKeys]) => appKeys.size >= SHARED_APP_WORD_MIN_COUNT && !categoryKeys.has(word))
     .sort((a, b) => a[0].localeCompare(b[0])) // Strictly alphabetical sort
     .map(([word]) => ({
       key: `word-${word}`,
