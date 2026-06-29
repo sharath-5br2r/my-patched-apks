@@ -2032,7 +2032,7 @@ function parseAssetDisplay(filename, arch, fileType) {
   const tokens = baseName.split("-").filter(Boolean);
   const archSubTokens = new Set(CONFIG.knownArchs.flatMap((a) => a.split("-")));
   const versionIndex = tokens.findIndex(
-    (token) => /^v\d+/i.test(token) && !archSubTokens.has(token.toLowerCase()),
+    (token) => /^(v\d+|vbuild)/i.test(token) && !archSubTokens.has(token.toLowerCase()),
   );
   const moduleIndex = tokens.findIndex(
     (token) => token.toLowerCase() === "module",
