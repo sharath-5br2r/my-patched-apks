@@ -35,10 +35,10 @@
   },
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
-    "stable": "v1.38.0",
-    "prerelease": "v1.38.0-dev.1",
+    "stable": "v1.38.1",
+    "prerelease": "v1.38.1-dev.1",
     "blocked": false,
-    "latest": "v1.38.0"
+    "latest": "v1.38.1"
   },
   "adobo": {
     "repo": "jkennethcarino/adobo",
@@ -135,10 +135,10 @@
   },
   "hoomans": {
     "repo": "arandomhooman/hoomans-morphe-patches",
-    "stable": "v1.33.0",
+    "stable": "v1.34.0",
     "prerelease": "v1.19.0",
     "blocked": false,
-    "latest": "v1.33.0"
+    "latest": "v1.34.0"
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",

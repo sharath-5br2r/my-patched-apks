@@ -84,7 +84,7 @@
     "archive-dlurl": "https://archive.org/download/geologically/apks/app.symfonik.music.player"
   },
   "github-hoodles": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "github",
     "rv-brand": "hoodles",
     "build-mode": "apk",
