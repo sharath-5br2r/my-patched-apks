@@ -138,6 +138,7 @@ const CONFIG = {
 
     hbomax: "com.wbd.hbomax",
     hellochineselearnchinese: "com.hellochinese",
+    holavpn: "org.hola.play",
 
     iconpacker: "cn.ommiao.iconpacker",
     instagram: "com.instagram.android",
