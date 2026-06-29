@@ -90,7 +90,10 @@ const CONFIG = {
     warp: "1.1.1.1 + WARP",
     acalendar: "aCalendar",
     at4k: "AT4K",
-    androidtv: "Android TV"
+    androidtv: "Android TV",
+    disneyplus: "Disney+",
+    hbomax: "HBO Max",
+    vix: "ViX"
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -98,6 +101,7 @@ const CONFIG = {
   // app + patch + variant, app + patch + default, app + variant, app + default, app only
   appIds: {
     "1111warp": "com.cloudflare.onedotonedotonedotone",
+    
     acalendar: "org.withouthat.acalendar",
     adguard: "com.adguard.android",
     adobelightroom: "com.adobe.lrmobile",
@@ -105,16 +109,23 @@ const CONFIG = {
     automate: "com.llamalab.automate",
     autosync: "com.ttxapps.autosync",
     at4klauncher: "com.overdevs.at4k",
+    
     batteryguru: "com.paget96.batteryguru",
+    
     calcnote: "com.appumstudios.calcnote",
     camscanner: "com.intsig.camscanner",
     cricbuzz: "com.cricbuzz.android",
     cryptomator: "org.cryptomator",
+    
     documentscanner: "com.cv.docscanner",
     duolingo: "com.duolingo",
+    disneyplus: "com.disney.disneyplus",
+    
     eyeconcalleridspamblock: "com.eyecon.global",
+    
     facebook: "com.facebook.katana",
     fingnetworktools: "com.overlook.android.fing",
+    
     googlekeyboard: "com.google.android.inputmethod.latin",
     googlenews: "com.google.android.apps.magazines",
     googlephotos: {
@@ -123,29 +134,38 @@ const CONFIG = {
       default: "com.google.android.apps.photos",
     },
     googlerecorder: "com.google.android.apps.recorder",
+    
+    hbomax: "com.wbd.hbomax",
     hellochineselearnchinese: "com.hellochinese",
+    
     iconpacker: "cn.ommiao.iconpacker",
     instagram: "com.instagram.android",
     inshortsnewsin60words: "com.nis.app",
     imdb: "com.imdb.mobile",
     luminawallpapers: "com.lumina.wallpapers",
+    
     macrodroid: "com.arlosoft.macrodroid",
     merriamwebsterdictionary: "com.merriamwebster",
     messenger: "com.facebook.orca",
     microsoftlens: "com.microsoft.office.officelens",
+    
     moonreader: "com.flyersoft.moonreader",
     moneymanager: "com.realbyteapps.moneymanagerfree",
+    
     niagaralauncher: "bitpit.launcher",
     novalauncher: "com.teslacoilsw.launcher",
+    
     pandora: "com.pandora.android",
+    peacock: "com.peacocktv.peacockandroid",
     photomath: "com.microblink.photomath",
     pinterest: "com.pinterest",
     plusmessenger: "org.telegram.plus",
     podcastaddict: "com.bambuna.podcastaddict",
+    primevideo: "com.amazon.amazonvideo.livingroom",
     protonmail: "ch.protonmail.android",
     protonvpn: "ch.protonvpn.android",
     poweramp: "com.maxmpz.audioplayer",
-    reddit: "com.reddit.frontpage",
+    
     sdmaid2se: "eu.darken.sdmse",
     showly: "com.michaldrabik.showly2",
     smartlauncher6: "ginlemon.flowerfree",
@@ -153,30 +173,38 @@ const CONFIG = {
     soundcloud: "com.soundcloud.android",
     speedtest: "org.zwanoo.android.speedtest",
     symfonium: "app.symfonik.music.player",
-
-    // Use an object for variant-specific IDs
+    
     telegram: {
       default: "org.telegram.messenger",
       foss: "org.telegram.messenger.web",
     },
-
     threads: "com.instagram.barcelona",
     ticktick: "com.ticktick.task",
     tiktok: "com.zhiliaoapp.musically",
     trakttv: "tv.trakt.trakt",
     truecaller: "com.truecaller",
+    tubi: "com.tubitv",
     tumblr: "com.tumblr",
     twitch: "tv.twitch.android.app",
+    
+    reddit: "com.reddit.frontpage",
     rumble: "com.rumble.battles",
-    viber: "com.viber.voip",
+    
     ventusky: "cz.ackee.ventusky",
-    wallcraft: "com.wallpaperscraft.wallpaper",
+    viber: "com.viber.voip",
+    vix: "com.univision.prendetv",
+    
     rar: "com.rarlab.rar",
-    wpsoffice: "cn.wps.moffice_eng",
+    
+    wallcraft: "com.wallpaperscraft.wallpaper",
     waze: "com.waze",
+    wpsoffice: "cn.wps.moffice_eng",
+
     twitter: "com.twitter.android",
+
     xodopdfreadereditor: "com.xodo.pdf.reader",
     xrecorder: "videoeditor.videorecorder.screenrecorder",
+
     youtube: {
       revanced: "app.revanced.android.youtube",
       rvx: "app.rvx.android.youtube",
@@ -184,6 +212,7 @@ const CONFIG = {
       morphe: "app.morphe.android.youtube",
       default: "com.google.android.youtube",
     },
+
     youtubemusic: {
       revanced: "app.revanced.android.apps.youtube.music",
       rvx: "app.rvx.android.apps.youtube.music",
