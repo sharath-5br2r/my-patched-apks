@@ -1558,7 +1558,7 @@ function buildObtainiumRegexFromAsset(asset) {
   if (!baseName) return null;
 
   // Generate the strict Obtainium regex
-  const regex = `^${escapeRegex(baseName)}-v?\\d.*\\.apk$`;
+  const regex = `^${escapeRegex(baseName)}-(v?\\d|vbuild).*\\.apk$`;
   return { regex, arch, assetName };
 }
 
