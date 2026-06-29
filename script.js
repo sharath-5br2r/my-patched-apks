@@ -144,7 +144,7 @@ const CONFIG = {
     inshortsnewsin60words: "com.nis.app",
     imdb: "com.imdb.mobile",
 
-    komoot: "de.komoot.android",
+    komoothikebikerun: "de.komoot.android",
 
     luminawallpapers: "com.lumina.wallpapers",
 
