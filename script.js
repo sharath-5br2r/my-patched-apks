@@ -93,7 +93,8 @@ const CONFIG = {
     androidtv: "Android TV",
     disneyplus: "Disney+",
     hbomax: "HBO Max",
-    vix: "ViX"
+    vix: "ViX",
+    komoot: "komoot - hike, bike & run"
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -101,7 +102,7 @@ const CONFIG = {
   // app + patch + variant, app + patch + default, app + variant, app + default, app only
   appIds: {
     "1111warp": "com.cloudflare.onedotonedotonedotone",
-    
+
     acalendar: "org.withouthat.acalendar",
     adguard: "com.adguard.android",
     adobelightroom: "com.adobe.lrmobile",
@@ -109,23 +110,23 @@ const CONFIG = {
     automate: "com.llamalab.automate",
     autosync: "com.ttxapps.autosync",
     at4klauncher: "com.overdevs.at4k",
-    
+
     batteryguru: "com.paget96.batteryguru",
-    
+
     calcnote: "com.appumstudios.calcnote",
     camscanner: "com.intsig.camscanner",
     cricbuzz: "com.cricbuzz.android",
     cryptomator: "org.cryptomator",
-    
+
     documentscanner: "com.cv.docscanner",
     duolingo: "com.duolingo",
     disneyplus: "com.disney.disneyplus",
-    
+
     eyeconcalleridspamblock: "com.eyecon.global",
-    
+
     facebook: "com.facebook.katana",
     fingnetworktools: "com.overlook.android.fing",
-    
+
     googlekeyboard: "com.google.android.inputmethod.latin",
     googlenews: "com.google.android.apps.magazines",
     googlephotos: {
@@ -134,27 +135,30 @@ const CONFIG = {
       default: "com.google.android.apps.photos",
     },
     googlerecorder: "com.google.android.apps.recorder",
-    
+
     hbomax: "com.wbd.hbomax",
     hellochineselearnchinese: "com.hellochinese",
-    
+
     iconpacker: "cn.ommiao.iconpacker",
     instagram: "com.instagram.android",
     inshortsnewsin60words: "com.nis.app",
     imdb: "com.imdb.mobile",
+
+    komoot: "de.komoot.android",
+
     luminawallpapers: "com.lumina.wallpapers",
-    
+
     macrodroid: "com.arlosoft.macrodroid",
     merriamwebsterdictionary: "com.merriamwebster",
     messenger: "com.facebook.orca",
     microsoftlens: "com.microsoft.office.officelens",
-    
+
     moonreader: "com.flyersoft.moonreader",
     moneymanager: "com.realbyteapps.moneymanagerfree",
-    
+
     niagaralauncher: "bitpit.launcher",
     novalauncher: "com.teslacoilsw.launcher",
-    
+
     pandora: "com.pandora.android",
     peacock: "com.peacocktv.peacockandroid",
     photomath: "com.microblink.photomath",
@@ -165,7 +169,7 @@ const CONFIG = {
     protonmail: "ch.protonmail.android",
     protonvpn: "ch.protonvpn.android",
     poweramp: "com.maxmpz.audioplayer",
-    
+
     sdmaid2se: "eu.darken.sdmse",
     showly: "com.michaldrabik.showly2",
     smartlauncher6: "ginlemon.flowerfree",
@@ -173,7 +177,7 @@ const CONFIG = {
     soundcloud: "com.soundcloud.android",
     speedtest: "org.zwanoo.android.speedtest",
     symfonium: "app.symfonik.music.player",
-    
+
     telegram: {
       default: "org.telegram.messenger",
       foss: "org.telegram.messenger.web",
@@ -186,16 +190,16 @@ const CONFIG = {
     tubi: "com.tubitv",
     tumblr: "com.tumblr",
     twitch: "tv.twitch.android.app",
-    
+
     reddit: "com.reddit.frontpage",
     rumble: "com.rumble.battles",
-    
+
     ventusky: "cz.ackee.ventusky",
     viber: "com.viber.voip",
     vix: "com.univision.prendetv",
-    
+
     rar: "com.rarlab.rar",
-    
+
     wallcraft: "com.wallpaperscraft.wallpaper",
     waze: "com.waze",
     wpsoffice: "cn.wps.moffice_eng",
