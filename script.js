@@ -1176,6 +1176,10 @@ function getAppNameWords(appName) {
 }
 
 function toFilterLabel(value) {
+  const lower = (value || "").toLowerCase();
+  if (CONFIG.brandOverrides[lower]) {
+    return CONFIG.brandOverrides[lower];
+  }
   return value.replace(/\b[a-z]/g, (char) => char.toUpperCase());
 }
 
