@@ -12,7 +12,7 @@ const CONFIG = {
   appCategories: {
     google: ["youtube", "google"],
     meta: ["threads", "instagram", "messenger", "facebook", "!plusmessenger"],
-    vpn: ["1111warp"]
+    vpn: ["1111warp", "vpn"]
   },
 
   // Words ignored in the dynamic app filters (must be lowercase)
