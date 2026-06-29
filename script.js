@@ -12,10 +12,11 @@ const CONFIG = {
   appCategories: {
     google: ["youtube", "google"],
     meta: ["threads", "instagram", "messenger", "facebook", "!plusmessenger"],
+    vpn: ["1111warp"]
   },
 
   // Words ignored in the dynamic app filters (must be lowercase)
-  sharedAppWordStoplist: new Set(["google", "messenger"]),
+  sharedAppWordStoplist: new Set(["messenger"]),
 
   // Known tokens indicating a patch name starts (must be lowercase)
   knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx"]),
