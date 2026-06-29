@@ -87,7 +87,8 @@ const CONFIG = {
     camscanner: "CamScanner",
     inshorts: "Inshorts - News in 60 words",
     warp: "1.1.1.1 + WARP",
-    acalendar: "aCalendar"
+    acalendar: "aCalendar",
+    at4k: "AT4K"
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -101,6 +102,7 @@ const CONFIG = {
     adobephotoshopmix: "com.adobe.psmobile",
     automate: "com.llamalab.automate",
     autosync: "com.ttxapps.autosync",
+    at4klauncher: "com.overdevs.at4k",
     batteryguru: "com.paget96.batteryguru",
     calcnote: "com.appumstudios.calcnote",
     camscanner: "com.intsig.camscanner",
@@ -140,6 +142,7 @@ const CONFIG = {
     podcastaddict: "com.bambuna.podcastaddict",
     protonmail: "ch.protonmail.android",
     protonvpn: "ch.protonvpn.android",
+    poweramp: "com.maxmpz.audioplayer",
     reddit: "com.reddit.frontpage",
     sdmaid2se: "eu.darken.sdmse",
     showly: "com.michaldrabik.showly2",
