@@ -1114,13 +1114,20 @@ function getDynamicAppFilters(apps) {
   });
 
   const allWordEntries = Array.from(wordToAppKeys.entries());
-  return allWordEntries
+  const dynamicFilters = allWordEntries
     .filter(([, appKeys]) => appKeys.size >= SHARED_APP_WORD_MIN_COUNT)
     .sort((a, b) => a[0].localeCompare(b[0])) // Strictly alphabetical sort
     .map(([word]) => ({
       key: `word-${word}`,
       label: toFilterLabel(word),
     }));
+
+  const categoryFilters = Object.keys(CONFIG.appCategories).map(key => ({
+    key: key,
+    label: toFilterLabel(key),
+  }));
+
+  return [...categoryFilters, ...dynamicFilters];
 }
 
 function renderDynamicAppFilterButtons(filters) {
