@@ -19,7 +19,7 @@ const CONFIG = {
   sharedAppWordStoplist: new Set(["messenger"]),
 
   // Known tokens indicating a patch name starts (must be lowercase)
-  knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx"]),
+  knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx", "xposed"]),
 
   // Known tokens indicating a variant (must be lowercase)
   variantKeywords: new Set([
