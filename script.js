@@ -124,6 +124,7 @@ const CONFIG = {
     documentscanner: "com.cv.docscanner",
     duolingo: "com.duolingo",
     disneyplus: "com.disney.disneyplus",
+    discord: "com.discord",
 
     eyeconcalleridspamblock: "com.eyecon.global",
 
