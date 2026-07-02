@@ -174,7 +174,7 @@ const CONFIG = {
     plusmessenger: "org.telegram.plus",
     podcastaddict: "com.bambuna.podcastaddict",
     poweramp: "com.maxmpz.audioplayer",
-    primevideo: "com.amazon.amazonvideo.livingroom",
+    primevideo: { androidtv: "com.amazon.amazonvideo.livingroom.mod" },
     protonmail: "ch.protonmail.android",
     protonvpn: "ch.protonvpn.android",
     projectivylauncher: "com.spocky.projengmenu",
