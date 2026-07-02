@@ -97,7 +97,8 @@ const CONFIG = {
     vix: "ViX",
     komoot: "komoot - hike, bike & run",
     vpnify: "VPNify",
-    snorelab: "SnoreLab"
+    snorelab: "SnoreLab",
+    myfitnesspal: "MyFitnessPal"
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -157,6 +158,7 @@ const CONFIG = {
     merriamwebsterdictionary: "com.merriamwebster",
     messenger: "com.facebook.orca",
     microsoftlens: "com.microsoft.office.officelens",
+    myfitnesspal: "com.myfitnesspal.android",
 
     moonreader: "com.flyersoft.moonreader",
     moneymanager: "com.realbyteapps.moneymanagerfree",
