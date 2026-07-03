@@ -142,9 +142,9 @@
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "stable": "v1.8.1",
-    "prerelease": "v1.8.2-dev.2",
+    "stable": "v1.9.0",
+    "prerelease": "v1.9.0-dev.1",
     "blocked": false,
-    "latest": "v1.8.2-dev.2"
+    "latest": "v1.9.0"
   }
 }
