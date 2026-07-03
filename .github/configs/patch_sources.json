@@ -15,9 +15,9 @@
   "anddea": {
     "repo": "anddea/revanced-patches",
     "stable": "v4.1.0",
-    "prerelease": "v4.2.0-dev.1",
+    "prerelease": "v4.2.0-dev.2",
     "blocked": false,
-    "latest": "v4.2.0-dev.1"
+    "latest": "v4.2.0-dev.2"
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
