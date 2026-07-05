@@ -50,7 +50,7 @@ jobs:
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "update releases cache"
+          commit_message: "update releases cache [skip ci]"
           file_pattern: releases.json
 
   trigger_notify_failure:
