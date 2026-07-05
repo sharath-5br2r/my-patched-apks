@@ -67,7 +67,7 @@ github-dlurl = "https://github.com/nvbangg/apks/releases/tag/com.some.app"
 direct-dlurl = "https://website/com.google.android.youtube-20.40.45-all.apk"
 
 module-prop-name = "some-app-module"                       # module prop name.
-dpi = "360-480dpi"                                         # used to select apk variant from apkmirror. default: nodpi
+dpi = "360-480dpi"                                         # used to select apk variant from apkmirror. 'auto' matches whatever is available. default: nodpi anydpi
 arch = "arm64-v8a"                                         # 'auto', 'arm64-v8a', 'arm-v7a', 'all', 'both'. 'both' downloads both arm64-v8a and arm-v7a. 'auto' tries all → arm64-v8a → arm-v7a, using the first available. default: auto
 ```
 
@@ -101,3 +101,20 @@ patches-version = "'latest' 'v1.2.3'"             # per-source versions
 > **Current Limitations**: 
 > Due to how the underlying CLIs handle arguments, `included-patches` and `excluded-patches` currently only apply to the **last** patch bundle in your `patches-source` list. 
 > Per-bundle selective inclusion/exclusion (e.g. including one patch from the first bundle, and excluding another from the second) is not currently supported in this config format. If you use multiple sources, it is recommended to apply all patches from the preceding bundles.
+
+## Xposed Modules (NPatch / LSPatch)
+
+You can natively inject Xposed modules into an app using `7723mod/NPatch` or `LSPatch` directly from your config. Simply set the `cli-source` to the NPatch repository and the `patches-source` to the Xposed module repository.
+
+```toml
+[Discord]
+cli-source = "7723mod/NPatch"                            # Use NPatch as the CLI
+cli-version = "latest"
+patches-source = "revenge-mod/revenge-xposed"            # Provide the Xposed module as the patches bundle
+patches-version = "latest"
+version = "auto"                                         # 'auto' safely falls back to 'latest' since modules don't list supported versions
+arch = "auto"
+github-dlurl = "https://github.com/discord/releases/..." # Or apkmirror, etc.
+```
+
+When the script detects `npatch` or `lspatch` in the CLI source, it will automatically bypass ReVanced CLI arguments and execute the correct injection command. You can also pass extra options to NPatch using `patcher-args = "-l 2"`.

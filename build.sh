@@ -100,23 +100,31 @@ for table_name in $(toml_get_table_names); do
 	read -r cli_jar patches_jar_all <<< "$PREBUILTS"
 	app_args[cli]=$cli_jar
 	app_args[ptjar]=$patches_jar_all
+	app_args[cli_source]=$cli_src
 
 	# Build aggregated patches_ref and changelog_url from all sources
 	patches_ref_all="" changelog_url_all=""
 	for i in "${!p_srcs[@]}"; do
 		psrc="${p_srcs[$i]}"
 		phost="${p_hosts[$i]:-${p_hosts[0]}}"
-		# Find the downloaded jar for this source to get actual version from filename
+		# Find the downloaded jar/apk for this source to get actual version
 		pdir=${psrc%/*}; pdir=${TEMP_DIR}/${pdir,,}-rv
-		pfile=$(find "$pdir" -name 'patches-*.rvp' -o -name 'patches-*.jar' -o -name '*.mpp' 2>/dev/null | sort | tail -1)
+		pfile=$(find "$pdir" -name 'patches-*.rvp' -o -name 'patches-*.jar' -o -name '*.mpp' -o -name '*.apk' 2>/dev/null | sort | tail -1)
 		if [ -n "$pfile" ]; then
 			pfilename=${pfile##*/}
-			pver_actual=${pfilename#*-}; pver_actual=${pver_actual%.*}
+			
+			if [ -f "${pdir}/tag_name.txt" ]; then
+				ptag=$(cat "${pdir}/tag_name.txt")
+			else
+				pver_actual=${pfilename#*-}; pver_actual=${pver_actual%.*}
+				ptag="v${pver_actual#v}"
+			fi
+			
 			patches_ref_all+="${psrc%%/*}/${pfilename} "
 			if [ "$phost" = github ]; then
-				changelog_url_all+="https://github.com/${psrc}/releases/tag/v${pver_actual#v} "
+				changelog_url_all+="https://github.com/${psrc}/releases/tag/${ptag} "
 			else
-				changelog_url_all+="https://gitlab.com/${psrc}/-/releases/v${pver_actual#v} "
+				changelog_url_all+="https://gitlab.com/${psrc}/-/releases/${ptag} "
 			fi
 		fi
 	done
@@ -206,11 +214,20 @@ changelog_merged=$(cat "$TEMP_DIR"/*/changelog.md 2>/dev/null || :)
 changelog_merged=$(awk '
 {
 	line=$0
-	if (line ~ /^CLI: /) {
+	if (line ~ /^(CLI|Patches): /) {
 		key=line
 		sub(/\r$/, "", key)
 		gsub(/[[:space:]]+$/, "", key)
-		if (seen[key]++) next
+		if (seen[key]++) {
+			skip_changelog = 1
+			next
+		}
+		skip_changelog = 0
+	} else if (skip_changelog) {
+		if (line ~ /^\[Changelog\]/ || line == "" || line == "\r") {
+			next
+		}
+		skip_changelog = 0
 	}
 	print line
 }' <<<"$changelog_merged")

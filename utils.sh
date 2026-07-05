@@ -5,7 +5,7 @@ CWD=$(pwd)
 TEMP_DIR="temp"
 BIN_DIR="bin"
 BUILD_DIR="build"
-DL_SRCS=("direct" "github" "archive" "apkmirror" "apkpure" "apkcombo" "uptodown")
+DL_SRCS=("direct" "github" "archive" "apkmirror" "uptodown" "apkpure" "apkcombo")
 BUILD_JSON_FILE="build.json"
 PATCH_OUTPUT=""
 
@@ -54,7 +54,7 @@ abort() {
 	kill -9 -- -$$ 2>/dev/null
 	exit 1
 }
-java() { env -i java --enable-native-access=ALL-UNNAMED "$@"; }
+java() { env -i PATH="$PATH" HOME="$HOME" LANG="${LANG:-en_US.UTF-8}" java --enable-native-access=ALL-UNNAMED "$@"; }
 
 source_release_api_base() {
 	local host=${1,,} src=$2 encoded
@@ -246,6 +246,13 @@ get_prebuilts() {
 					matches=$matches_new
 				fi
 			fi
+			if [ "$(jq 'length' <<<"$matches")" -gt 1 ]; then
+				local matches_new
+				matches_new=$(jq -e -r 'map(select(.name | contains("debug") | not))' <<<"$matches")
+				if [ "$(jq 'length' <<<"$matches_new")" -ge 1 ]; then
+					matches=$matches_new
+				fi
+			fi
 			if [ "$(jq 'length' <<<"$matches")" -eq 0 ]; then
 				epr "No asset was found"
 				return 1
@@ -266,9 +273,9 @@ get_prebuilts() {
 		else
 			grab_cl=false
 			name=$(basename "$file")
-			tag_name=$(cut -d'-' -f3- <<<"$name")
-			tag_name=v${tag_name%.*}
 		fi
+
+		echo "$tag_name" > "${dir}/tag_name.txt"
 
 		if [ "$grab_cl" = true ]; then
 			if [ "$host" = github ]; then
@@ -419,7 +426,7 @@ semver_validate() {
 	[ ${#ac} = 0 ]
 }
 get_patch_last_supported_ver() {
-	local list_patches=$1 pkg_name=$2 inc_sel=$3 _exc_sel=$4 _exclusive=$5 # TODO: resolve using all of these
+	local list_patches=$1 pkg_name=$2 inc_sel=$3 _exc_sel=$4 _exclusive=$5 cli_source=$6 # TODO: resolve using all of these
 	local op
 	if [ "$inc_sel" ]; then
 		if ! op=$(awk '{$1=$1}1' <<<"$list_patches"); then
@@ -438,7 +445,7 @@ get_patch_last_supported_ver() {
 			return
 		fi
 	fi
-	op=$(patches_list_versions "$cli_jar" "$patches_jar" "$pkg_name") || return 1
+	op=$(patches_list_versions "$cli_jar" "$patches_jar" "$pkg_name" "$cli_source") || return 1
 	op=$(sed -n '/Most common compatible versions:/,$p' <<<"$op" | sed '1d' | awk '{$1=$1}1')
 	if [ "$op" = "Any" ]; then return; fi
 	pcount=$(head -1 <<<"$op") pcount=${pcount#*(} pcount=${pcount% *}
@@ -449,7 +456,13 @@ get_patch_last_supported_ver() {
 }
 
 patches_list_versions() {
-	local cli_jar=$1 patches_jar=$2 pkg_name=$3 op
+	local cli_jar=$1 patches_jar=$2 pkg_name=$3 cli_source=$4 op
+	local cli_source_l="${cli_source,,}"
+	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
+		echo ""
+		return 0
+	fi
+
 	# Build arg strings for each jar in space-separated patches_jar
 	local IFS=$'\n'
 	local p_jars=($(echo "$patches_jar" | tr ' ' '\n' | grep -v '^$'))
@@ -475,7 +488,12 @@ patches_list_versions() {
 	echo "$op"
 }
 patches_list() {
-	local cli_jar=$1 patches_jar=$2 pkg_name=$3 op
+	local cli_jar=$1 patches_jar=$2 pkg_name=$3 cli_source=$4 op
+	local cli_source_l="${cli_source,,}"
+	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
+		echo "Name: xposed-module-dummy"
+		return 0
+	fi
 	# Build arg strings for each jar in space-separated patches_jar
 	local IFS=$'\n'
 	local p_jars=($(echo "$patches_jar" | tr ' ' '\n' | grep -v '^$'))
@@ -511,6 +529,11 @@ isoneof() {
 
 merge_splits() {
 	local bundle=$1 output=$2
+	if unzip -l "$bundle" 2>/dev/null | grep -q '^[[:space:]]*[0-9].*AndroidManifest\.xml$'; then
+		pr "Downloaded bundle is actually a standard APK. Bypassing merge."
+		mv -f "$bundle" "$output"
+		return 0
+	fi
 	pr "Merging splits"
 	#gh release download -R REAndroid/APKEditor -p '*jar'--skip-existing -O "$TEMP_DIR/apkeditor.jar" >/dev/null || return 1
 	gh_dl "$TEMP_DIR/apkeditor.jar" "https://github.com/REAndroid/APKEditor/releases/download/V1.4.9/APKEditor-1.4.9.jar" >/dev/null || return 1
@@ -595,26 +618,44 @@ apkmirror_search() {
 	fi
 
 	local appdpi=("nodpi" "anydpi")
+	local match_any_dpi=false
 	if [ "$dpi" ]; then
 		appdpi+=($dpi)
+		if isoneof "auto" "${appdpi[@]}"; then
+			match_any_dpi=true
+		fi
 	fi
 
+	local best_fallback_url=""
+
 	for ((n = 1; n < 40; n++)); do
-		node=$($HTMLQ "div.table-row.headerFont:nth-last-child($n)" -r "span:nth-child(n+3)" <<<"$resp")
+		node=$($HTMLQ "div.table-row.headerFont:nth-last-child($n)" <<<"$resp")
 		if [ -z "$node" ]; then break; fi
-		emptyCheck=$($HTMLQ -t -w "div.table-cell:nth-child(1) > a:nth-child(1)" <<<"$node" | xargs)
-		if [ -z "$emptyCheck" ]; then break; fi
-		app_table=$($HTMLQ --text --ignore-whitespace <<<"$node")
-		if [ "$(sed -n 3p <<<"$app_table")" != "$apk_bundle" ]; then continue; fi
-		dlurl=$($HTMLQ --base https://www.apkmirror.com --attribute href "div:nth-child(1) > a:nth-child(1)" <<<"$node")
-		if isoneof "$(sed -n 6p <<<"$app_table")" "${appdpi[@]}" &&
-			isoneof "$(sed -n 4p <<<"$app_table")" "${apparch[@]}"; then
-			echo "$dlurl"
-			return 0
+		
+		dlurl=$($HTMLQ --base https://www.apkmirror.com --attribute href "div.table-cell:nth-child(1) > a:nth-child(1)" <<<"$node")
+		if [ -z "$dlurl" ]; then break; fi
+
+		local node_apk_bundle node_arch node_dpi
+		node_apk_bundle=$($HTMLQ "div.table-cell:nth-child(1) span.apkm-badge:first-of-type" --text <<<"$node" | xargs)
+		[ -z "$node_apk_bundle" ] && node_apk_bundle="APK"
+
+		node_arch=$($HTMLQ "div.table-cell:nth-child(2)" --text <<<"$node" | xargs)
+		node_dpi=$($HTMLQ "div.table-cell:nth-child(4)" --text <<<"$node" | xargs)
+
+		if [ "$node_apk_bundle" != "$apk_bundle" ]; then continue; fi
+
+		if isoneof "$node_arch" "${apparch[@]}"; then
+			if isoneof "$node_dpi" "${appdpi[@]}"; then
+				echo "$dlurl"
+				return 0
+			elif [ "$match_any_dpi" = true ] && [ -z "$best_fallback_url" ]; then
+				best_fallback_url="$dlurl"
+			fi
 		fi
 	done
-	if [ "$n" -eq 2 ] && [ "$dlurl" ]; then
-		echo "$dlurl"
+
+	if [ -n "$best_fallback_url" ]; then
+		echo "$best_fallback_url"
 		return 0
 	fi
 	return 1
@@ -649,11 +690,17 @@ dl_apkmirror() {
 		fi
 	fi
 
+	local search_version="${version//./-}"
+	search_version="${search_version//_/-}"
+	search_version="${search_version,,}"
+	search_version="${search_version//[^a-z0-9-]/}"
+	search_version="${search_version//---/-}"
+
 	if [ -z "$release_url" ]; then
 		local apkmname
 		apkmname=$($HTMLQ "h1.marginZero" --text <<<"$__APKMIRROR_RESP__")
 		apkmname="${apkmname,,}" apkmname="${apkmname// /-}" apkmname="${apkmname//[^a-z0-9-]/}"
-		release_url="${url%/}/${apkmname}-${version//./-}-release/"
+		release_url="${url%/}/${apkmname}-${search_version}-release/"
 		_fs_get "$release_url" || true
 		resp="$html"
 		if [[ "$resp" == *"Page Not Found"* ]] || [[ "$resp" == *"404 Whoops"* ]] || [ -z "$resp" ]; then
@@ -668,7 +715,7 @@ dl_apkmirror() {
 			local page_url="$list_url"
 			[[ $page_num -gt 1 ]] && page_url="${list_url%%\?*}/page/$page_num/?${list_url#*\?}"
 			_fs_get "$page_url" || return 1
-			version_href=$(echo "$html" | grep -oP 'href="\K/apk/[^"]*'"${version//./-}"'[^"]*release[^"]*' | head -1) || true
+			version_href=$(echo "$html" | grep -oP 'href="\K/apk/[^"]*'"$search_version"'[^"]*release[^"]*' | head -1) || true
 			if [ -n "$version_href" ]; then
 				release_url="$base_url$version_href"
 				_fs_get "$release_url" || return 1
@@ -865,21 +912,33 @@ dl_apkcombo() {
 	local html="" dl_url final_url checkin page_url page compact_page
 
 	if [ -n "$version" ]; then
-		page_url="https://apkcombo.com/search/${__APKCOMBO_PKG__}/download/phone-${version}-apk"
+		local sfxs=("apk" "xapk" "apks")
 	else
-		page_url="https://apkcombo.com/search/${__APKCOMBO_PKG__}/download/apk"
+		local sfxs=("apk")
 	fi
 
-	_fs_get "$page_url" "https://apkcombo.com/" || return 1
-	page="$html"
-	compact_page=$(tr '\n' ' ' <<<"$page")
+	for sfx in "${sfxs[@]}"; do
+		if [ -n "$version" ]; then
+			page_url="https://apkcombo.com/search/${__APKCOMBO_PKG__}/download/phone-${version}-${sfx}"
+		else
+			page_url="https://apkcombo.com/search/${__APKCOMBO_PKG__}/download/apk"
+		fi
 
-	dl_url=$(echo "$page" | grep -oP '(?<=a href=")https://download\.apkcombo\.com/[^"]+' | head -1) || true
-	[ -z "$dl_url" ] && dl_url=$(echo "$page" | grep -oP '(?<=a href=")/r2[^"]+' | head -1) || true
-	[ -z "$dl_url" ] && dl_url=$(echo "$compact_page" | grep -oP '"download_url"\s*:\s*"\K[^"]+' | head -1 | sed 's#\\/#/#g') || true
-	[ -z "$dl_url" ] && dl_url=$(echo "$compact_page" | grep -oP '"url"\s*:\s*"\Khttps://download\.apkcombo\.com/[^"]+' | head -1 | sed 's#\\/#/#g') || true
-	[ -z "$dl_url" ] && dl_url=$(echo "$compact_page" | grep -oP 'https://download\.apkcombo\.com/[^"'"'"' <>]+' | head -1 | sed 's#\\/#/#g') || true
-	[ -z "$dl_url" ] && dl_url=$(echo "$compact_page" | grep -oP '/r2\?u=[^"'"'"' <>]+' | head -1 | sed 's#\\/#/#g') || true
+		_fs_get "$page_url" "https://apkcombo.com/" || continue
+		page="$html"
+		compact_page=$(tr '\n' ' ' <<<"$page")
+
+		dl_url=$(echo "$page" | grep -oP '(?<=a href=")https://download\.apkcombo\.com/[^"]+' | head -1) || true
+		[ -z "$dl_url" ] && dl_url=$(echo "$page" | grep -oP '(?<=a href=")/r2[^"]+' | head -1) || true
+		[ -z "$dl_url" ] && dl_url=$(echo "$compact_page" | grep -oP '"download_url"\s*:\s*"\K[^"]+' | head -1 | sed 's#\\/#/#g') || true
+		[ -z "$dl_url" ] && dl_url=$(echo "$compact_page" | grep -oP '"url"\s*:\s*"\Khttps://download\.apkcombo\.com/[^"]+' | head -1 | sed 's#\\/#/#g') || true
+		[ -z "$dl_url" ] && dl_url=$(echo "$compact_page" | grep -oP 'https://download\.apkcombo\.com/[^"'"'"' <>]+' | head -1 | sed 's#\\/#/#g') || true
+		[ -z "$dl_url" ] && dl_url=$(echo "$compact_page" | grep -oP '/r2\?u=[^"'"'"' <>]+' | head -1 | sed 's#\\/#/#g') || true
+
+		if [ -n "$dl_url" ]; then
+			break
+		fi
+	done
 
 	[ -z "$dl_url" ] && { epr "Could not find APK link on APKCombo"; return 1; }
 	[[ "$dl_url" != http* ]] && dl_url="https://apkcombo.com${dl_url}"
@@ -1107,17 +1166,43 @@ dl_direct() {
 	local url=$1 version=${2// /-} output=$3 arch=$4 _dpi=$5
 	req "$url" "${output}" || return 1
 }
-get_direct_vers() { cut -d- -f2 <<<"$__DIRECT_APKNAME__"; }
-get_direct_pkg_name() { cut -d- -f1 <<<"$__DIRECT_APKNAME__"; }
+get_direct_vers() { cut -d- -f2 <<<"$__DIRECT_APKNAME__" | sed 's/\.\(apk\|xapk\|apks\|apkm\)$//'; }
+get_direct_pkg_name() { cut -d- -f1 <<<"$__DIRECT_APKNAME__" | sed 's/\.\(apk\|xapk\|apks\|apkm\)$//'; }
 get_direct_resp() { __DIRECT_APKNAME__=$(awk -F/ '{print $NF}' <<<"$1"); }
 # --------------------------------------------------
 
 patch_apk() {
-	local stock_input=$1 patched_apk=$2 patcher_args=$3 cli_jar=$4 patches_jar=$5
+	local stock_input=$1 patched_apk=$2 patcher_args=$3 cli_jar=$4 patches_jar=$5 cli_source=$6
 	local tmp_dir="${CWD}/${patched_apk}-temporary-files"
 	local IFS=$'\n'
 	local p_jars=($(echo "$patches_jar" | tr ' ' '\n' | grep -v '^$'))
 	unset IFS
+
+	local cli_source_l="${cli_source,,}"
+	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
+		local p_args_modules=""
+		for j in "${p_jars[@]}"; do
+			p_args_modules+=" -m '$j'"
+		done
+		mkdir -p "$tmp_dir"
+		local cmd="java -jar '$cli_jar' '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
+		pr "$cmd"
+		PATCH_OUTPUT=$(eval "$cmd" 2>&1)
+		local ret=$?
+		echo "$PATCH_OUTPUT"
+		if [ $ret -eq 0 ]; then
+			local npatch_out
+			npatch_out=$(find "$tmp_dir" -type f -name "*.apk" | head -n 1)
+			if [ -n "$npatch_out" ] && [ -f "$npatch_out" ]; then
+				mv "$npatch_out" "$patched_apk"
+				rm -rf "$tmp_dir"
+				return 0
+			fi
+		fi
+		rm "$patched_apk" 2>/dev/null || :
+		rm -rf "$tmp_dir"
+		return 1
+	fi
 
 	local p_args_long="" p_args_short=""
 	for j in "${p_jars[@]}"; do
@@ -1156,7 +1241,9 @@ patch_apk() {
 	fi
 
 	echo "$PATCH_OUTPUT"
-	if [ $ret -eq 0 ]; then [ -f "$patched_apk" ]; else
+	if [ $ret -eq 0 ] && [ -f "$patched_apk" ]; then
+		return 0
+	else
 		rm "$patched_apk" 2>/dev/null || :
 		return 1
 	fi
@@ -1242,11 +1329,11 @@ build_rv() {
 	fi
 	pr "Package name of '${table}' is '$pkg_name'"
 	local list_patches
-	list_patches=$(patches_list "$cli_jar" "$patches_jar" "$pkg_name") || return 1
+	list_patches=$(patches_list "$cli_jar" "$patches_jar" "$pkg_name" "${args[cli_source]}") || return 1
 	local get_latest_ver=false
 	if [ "$version_mode" = auto ]; then
 		if ! version=$(get_patch_last_supported_ver "$list_patches" "$pkg_name" \
-			"${args[included_patches]}" "${args[excluded_patches]}" "${args[exclusive_patches]}"); then
+			"${args[included_patches]}" "${args[excluded_patches]}" "${args[exclusive_patches]}" "${args[cli_source]}"); then
 			epr "get_patch_last_supported_ver failed '$list_patches'"
 			return
 		elif [ -z "$version" ]; then get_latest_ver=true; fi
@@ -1295,6 +1382,57 @@ build_rv() {
 				pr "ERROR: Could not download '${table}' from '${dl_p}' with version '${version}', arch '${arch}', dpi '${args[dpi]}'"
 				continue
 			fi
+			if ! unzip -t "$stock_apk" >/dev/null 2>&1; then
+				epr "ERROR: Downloaded file from ${dl_p} is not a valid zip archive (Cloudflare block or bad file)!"
+				rm -f "$stock_apk"
+				continue
+			fi
+			if ! unzip -l "$stock_apk" 2>/dev/null | grep -q '^[[:space:]]*[0-9].*AndroidManifest\.xml$'; then
+				pr "WARNING: ${stock_apk} does not contain AndroidManifest.xml at root. Attempting to extract as XAPK/APKS..."
+				mv "$stock_apk" "${stock_apk}.xapk"
+				if ! _apkpure_install_xapk "${stock_apk}.xapk" "$stock_apk"; then
+					epr "ERROR: Failed to extract XAPK/APKS"
+					rm -f "${stock_apk}.xapk" "$stock_apk"
+					continue
+				fi
+				rm -f "${stock_apk}.xapk"
+			fi
+
+			local aapt_cmd="aapt"
+			if ! command -v aapt >/dev/null 2>&1 && [ -n "${ANDROID_SDK_ROOT:-}" ]; then
+				aapt_cmd=$(ls -1 $ANDROID_SDK_ROOT/build-tools/*/aapt 2>/dev/null | tail -1) || true
+			fi
+			if [ -n "$aapt_cmd" ] && [ -x "$aapt_cmd" ]; then
+				local downloaded_pkg downloaded_ver
+				downloaded_pkg=$("$aapt_cmd" dump badging "$stock_apk" 2>/dev/null | grep -oP "package: name='\K[^']+" | head -1) || true
+				downloaded_ver=$("$aapt_cmd" dump badging "$stock_apk" 2>/dev/null | grep -oP "versionName='\K[^']+" | head -1) || true
+				
+				if [ -z "$downloaded_pkg" ]; then
+					epr "ERROR: Downloaded file is not a valid APK or aapt failed to parse it. Rejecting..."
+					rm -f "$stock_apk"
+					continue
+				fi
+
+				if [ -n "$downloaded_pkg" ] && [ "$downloaded_pkg" != "$pkg_name" ] && [[ "$pkg_name" == *.* ]]; then
+					epr "ERROR: Downloaded APK package name ($downloaded_pkg) does not match expected ($pkg_name). Rejecting..."
+					rm -f "$stock_apk"
+					continue
+				fi
+
+				if [ -n "$downloaded_ver" ] && [[ "$dl_p" == "direct" ]]; then
+					if [ "$version" != "$downloaded_ver" ]; then
+						pr "Updating version from '${version}' to '${downloaded_ver}' based on APK info"
+						version="$downloaded_ver"
+						version_f=${version// /}
+						version_f=${version_f#v}
+						
+						local new_stock_apk="${TEMP_DIR}/${pkg_name}-${version_f}-${arch_f}.apk"
+						mv "$stock_apk" "$new_stock_apk"
+						stock_apk="$new_stock_apk"
+					fi
+				fi
+			fi
+
 			break
 		done
 	fi
@@ -1351,6 +1489,11 @@ build_rv() {
 				patcher_args+=("-d \"${microg_patch}\"")
 			fi
 		fi
+		if [ "$build_mode" = module ]; then
+			if [[ "${args[cli_source],,}" != *"revanced-cli"* ]]; then
+				patcher_args+=("--mount")
+			fi
+		fi
 
 		local stock_apk_to_patch="${stock_apk}.stripped.apk"
 		cp -f "$stock_apk" "$stock_apk_to_patch"
@@ -1368,7 +1511,7 @@ build_rv() {
 
 		local apk_output="${BUILD_DIR}/${app_name_l}-${rv_brand_f}-v${version_f}-${arch_f}.apk"
 		if [ "${NORB:-}" != true ] || { [ ! -f "$patched_apk" ] && [ ! -f "$apk_output" ]; }; then
-			if ! patch_apk "$stock_apk_to_patch" "$patched_apk" "${patcher_args[*]}" "${args[cli]}" "${args[ptjar]}"; then
+			if ! patch_apk "$stock_apk_to_patch" "$patched_apk" "${patcher_args[*]}" "${args[cli]}" "${args[ptjar]}" "${args[cli_source]}"; then
 				epr "Building '${table}' failed!"
 				return 0
 			fi
