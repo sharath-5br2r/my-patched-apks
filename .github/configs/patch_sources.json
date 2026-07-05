@@ -16,25 +16,29 @@
     "repo": "anddea/revanced-patches",
     "stable": "v4.1.0",
     "prerelease": "v4.2.0-dev.2",
-    "blocked": false
+    "blocked": false,
+    "latest": "v4.2.0-dev.2"
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.33.0",
-    "prerelease": "v1.33.0-dev.10",
-    "blocked": false
+    "prerelease": "v1.34.0-dev.1",
+    "blocked": false,
+    "latest": "v1.34.0-dev.1"
   },
   "piko": {
     "repo": "crimera/piko",
     "stable": "v3.7.0",
     "prerelease": "v3.8.0-dev.2",
-    "blocked": false
+    "blocked": false,
+    "latest": "v3.8.0-dev.2"
   },
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
     "stable": "v1.38.1",
     "prerelease": "v1.38.1-dev.1",
-    "blocked": false
+    "blocked": false,
+    "latest": "v1.38.1"
   },
   "adobo": {
     "repo": "jkennethcarino/adobo",
@@ -133,24 +137,28 @@
     "repo": "arandomhooman/hoomans-morphe-patches",
     "stable": "v1.42.0",
     "prerelease": "v1.42.0-dev.2",
-    "blocked": false
+    "blocked": false,
+    "latest": "v1.42.0"
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
     "stable": "v1.9.1",
     "prerelease": "v1.10.0-dev.1",
-    "blocked": false
+    "blocked": false,
+    "latest": "v1.10.0-dev.1"
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
     "stable": "v1.10.0",
     "prerelease": "v1.5.7-dev.3",
-    "blocked": false
+    "blocked": false,
+    "latest": "v1.10.0"
   },
   "revenge": {
     "repo": "revenge-mod/revenge-xposed",
     "stable": "1410",
     "prerelease": "",
-    "blocked": false
+    "blocked": false,
+    "latest": "1410"
   }
 }
