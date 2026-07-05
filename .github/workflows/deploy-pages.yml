@@ -10,7 +10,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
@@ -19,17 +21,28 @@ concurrency:
 jobs:
   deploy:
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
+          path: '.'
+
+      - name: Deploy to GitHub Pages (with Retries)
+        id: deployment
+        uses: Wandalen/wretry.action@v3.5.0
+        with:
+          action: actions/deploy-pages@v4
+          attempt_limit: 3
+          attempt_delay: 10000 # Wait 10 seconds between retries
 
   trigger_notify_failure:
     needs: [ deploy ]
