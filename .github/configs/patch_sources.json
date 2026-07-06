@@ -142,10 +142,10 @@
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "stable": "v1.10.0",
-    "prerelease": "v1.10.0-dev.3",
+    "stable": "v1.10.1",
+    "prerelease": "v1.11.0-dev.1",
     "blocked": false,
-    "latest": "v1.10.0"
+    "latest": "v1.11.0-dev.1"
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
