@@ -36,9 +36,9 @@
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
     "stable": "v1.38.1",
-    "prerelease": "v1.38.1-dev.1",
+    "prerelease": "v1.38.2-dev.1",
     "blocked": false,
-    "latest": "v1.38.1"
+    "latest": "v1.38.2-dev.1"
   },
   "adobo": {
     "repo": "jkennethcarino/adobo",
@@ -142,10 +142,10 @@
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "stable": "v1.9.1",
-    "prerelease": "v1.10.0-dev.1",
+    "stable": "v1.10.0",
+    "prerelease": "v1.10.0-dev.3",
     "blocked": false,
-    "latest": "v1.10.0-dev.1"
+    "latest": "v1.10.0"
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
