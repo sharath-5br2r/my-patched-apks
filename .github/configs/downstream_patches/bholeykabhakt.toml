@@ -8,4 +8,4 @@ patches-source = "BholeyKaBhakt/revanced-patches-xtra"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://speedtest-net-mobile.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/ookla/speedtest"
-
+dpi = "nodpi anydpi auto"

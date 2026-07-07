@@ -10,6 +10,7 @@ cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://moon-reader.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/moon/moon-reader"
 # archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.apps.photos"
+dpi = "nodpi anydpi auto"
 
 [symfonium-binarymend]
 enabled = true
@@ -22,4 +23,4 @@ cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://symfonium.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tolriq/symfonium-music-player-cast"
 archive-dlurl = "https://archive.org/download/geologically/apks/app.symfonik.music.player"
-
+dpi = "nodpi anydpi auto"

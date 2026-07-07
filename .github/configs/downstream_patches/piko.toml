@@ -10,7 +10,7 @@ cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://instagram.en.uptodown.com/android"
 #archive-dlurl = "https://archive.org/download/geologically/apks/com.instagram.android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
-
+dpi = "nodpi anydpi auto"
 [x-piko]
 enabled = true 
 app-name = "x"
@@ -24,4 +24,4 @@ patcher-args = "--continue-on-error"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter/"
-
+dpi = "nodpi anydpi auto"
