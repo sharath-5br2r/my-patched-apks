@@ -90,7 +90,7 @@ jobs:
         run: bash .github/scripts/ci_resolve_triggers.sh
 
       - name: Notify telegram
-        if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1' || steps.compare_apps.outputs.TRIGGER_APP_UPDATE == '1') }}
+        if: false #${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1' || steps.compare_apps.outputs.TRIGGER_APP_UPDATE == '1') }}
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TAGS_OLD: ${{ steps.compare.outputs.tags_old }}
@@ -119,29 +119,34 @@ jobs:
       config_file: ".github/configs/config.dev.updated.json"
     secrets: inherit
 
-  build_stable:
+  build_custom:
     needs: [check_patch, build_dev]
-    if: ${{ always() && needs.check_patch.outputs.trigger_stable == '1' && needs.check_patch.result == 'success' && needs.build_dev.result != 'cancelled' }}
+    if: ${{ always() && needs.build_dev.result != 'cancelled' }}
     uses: ./.github/workflows/build.yml
     with:
-      config_file: ".github/configs/config.stable.updated.json"
+      config_file: "custom"
     secrets: inherit
-
+  
+  build_dynamic:
+    needs: [check_patch, build_dev, build_custom]
+    if: ${{ always() && (needs.build_dev.result != 'cancelled' && needs.build_custom.result != 'cancelled') }}
+    uses: ./.github/workflows/dynamic_build.yml
+    secrets: inherit
   trigger_cleanup:
-    needs: [build_dev, build_stable]
-    if: ${{ always() && (needs.build_dev.result == 'success' || needs.build_stable.result == 'success') }}
+    needs: [build_dev, build_custom, build_dynamic]
+    if: ${{ always() && (needs.build_dev.result == 'success' || needs.build_custom.result == 'success' || needs.build_dynamic.result == 'success') }}
     uses: ./.github/workflows/cleanup.yml
     secrets: inherit
 
   trigger_website_update:
-    needs: [build_dev, build_stable, trigger_cleanup]
-    if: ${{ always() && (needs.build_dev.result == 'success' || needs.build_stable.result == 'success') }}
-    uses: ./.github/workflows/update-website.yml
+    needs: [build_dev, build_custom, build_dynamic]
+    if: ${{ always() && (needs.build_dev.result == 'success' || needs.build_custom.result == 'success' || needs.build_dynamic.result == 'success') }}
+    uses: ./.github/workflows/update-cache.yml
     secrets: inherit
 
   trigger_notify_failure:
-    needs: [check_patch, build_dev, build_stable]
-    if: ${{ failure() }}
+    needs: [check_patch, build_dev, build_custom, build_dynamic]
+    if: false
     uses: ./.github/workflows/notify.yml
     with:
       workflow_name: "CI"

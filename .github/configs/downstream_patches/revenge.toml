@@ -1,7 +1,7 @@
-[discord-xposed]
+[discord-revenge]
 enabled = true 
 app-name = "discord"
-rv-brand = "xposed"
+rv-brand = "revenge"
 build-mode = "apk"
 arch = "all"
 patches-source = "revenge-mod/revenge-xposed"
