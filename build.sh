@@ -3,7 +3,7 @@ if [ -f .env ]; then set -a; source .env; set +a ; fi
 set -euo pipefail
 shopt -s nullglob
 
-source .env
+if [ -f .env ]; then source .env; fi
 source utils.sh
 echo '{}' > "$BUILD_JSON_FILE"
 
