@@ -25,6 +25,8 @@ jobs:
           echo "FCL_OLD_TAG=$FCL_OLD_TAG" >> $GITHUB_ENV
           echo "LEVILAUNCHER_OLD_TAG=$LEVILAUNCHER_OLD_TAG" >> $GITHUB_ENV
           echo "GEODE_OLD_TAG=$GEODE_OLD_TAG" >> $GITHUB_ENV
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - name: Get New Tags
         id: get_new_tags
         run: |
@@ -34,6 +36,8 @@ jobs:
           echo "LEVILAUNCHER_TAG=$LEVILAUNCHER_TAG" >> $GITHUB_OUTPUT
           echo "GEODE_TAG=$GEODE_TAG" >> $GITHUB_OUTPUT
           echo "FCL_TAG=$FCL_TAG" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - name: Check whether to build
         id: check_build
         run: |
@@ -159,7 +163,7 @@ jobs:
           LEVILAUNCHER_TAG: ${{ needs.get-tags.outputs.LEVILAUNCHER_TAG }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
           KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
@@ -208,8 +212,8 @@ jobs:
           GEODE_TAG: ${{ needs.get-tags.outputs.GEODE_TAG }}
           KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
@@ -283,7 +287,7 @@ jobs:
       - name: Resolve version code
         id: version
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: bash .github/scripts/build_resolve_version.sh
     
       - name: Generate build.md and build.json
@@ -333,7 +337,7 @@ jobs:
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           files: |
               ./*/*.apk
           tag_name: ${{ steps.context.outputs.ARCHIVE_TAG }}
@@ -343,7 +347,7 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           body: ${{ steps.get_output.outputs.BUILD_LOG }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           files: |
              ./*/*.apk
           name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }}

@@ -56,7 +56,7 @@ jobs:
       - name: Resolve version code
         id: version
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: bash .github/scripts/build_resolve_version.sh
       - name: Decode Keystores
         run: |
@@ -98,7 +98,7 @@ jobs:
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           files: ./build/*
           tag_name: ${{ steps.context.outputs.ARCHIVE_TAG }}
           overwrite_files: true
@@ -107,7 +107,7 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           body: ${{ steps.get_output.outputs.BUILD_LOG }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           files: ./build/*
           name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }}
           tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}

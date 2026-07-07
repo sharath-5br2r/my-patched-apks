@@ -25,4 +25,4 @@ jobs:
           delete_workflows: true
           workflows_keep_day: 3
           releases_keep_keyword: stable/beta
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}

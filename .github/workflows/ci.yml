@@ -44,13 +44,13 @@ jobs:
           commit_message: "Create dummy patch_sources.json"
       - name: Update Morphe Experimental App versions
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: bash ./morphe-experimental.sh
       - name: Fetch latest tags
         if: steps.ensure_patch_sources.outputs.created == 'false'
         id: fetch_tags
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: bash .github/scripts/ci_fetch_tags.sh
 
       - name: Compare latest vs stored tags
