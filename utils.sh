@@ -589,7 +589,7 @@ get_apkmirror_resp() {
 	_fs_get "${1}" || return 1
 	__APKMIRROR_RESP__="$html"
 	__APKMIRROR_CAT__="${1##*/}"
-	__APKMIRROR_EXAMPLE_URL__="${args[apkmirror_example_url]:-}"
+	__APKMIRROR_EXAMPLE_URL__="${args[apkmirror_example_url]:-}"  || true
 }
 
 get_apkmirror_vers() {
