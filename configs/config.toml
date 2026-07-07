@@ -115,7 +115,6 @@ enabled = true
 app-name = "youtube-music"
 rv-brand = "morphe"
 build-mode = "both"
-arch = "multi"
 version = "9.26.51"
 included-patches = "'Theme'"
 patcher-args = "-OdarkThemeBackgroundColor=#000000 "

@@ -74,6 +74,8 @@ jobs:
           if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == "custom" ]]; then
             ./custom_patches.sh
           else
+            ./morphe-experimental.sh
+            ./configgen.sh
             ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
           fi
 
