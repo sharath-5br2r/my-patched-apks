@@ -59,8 +59,8 @@ jobs:
         run: bash .github/scripts/build_resolve_version.sh
       - name: Decode Keystores
         run: |
-           echo ${{ secrets.KEYSTORE }} | base64 -d > ks.keystore
-           echo ${{ secrets.KEYSTORE_P12 }} | base64 -d > ks-p12.keystore
+           echo "${{ secrets.KEYSTORE }}" | base64 -d > ks.keystore
+           echo "${{ secrets.KEYSTORE_P12 }}" | base64 -d > ks-p12.keystore
       - name: Build modules and apks
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
