@@ -19,7 +19,7 @@ patches-source = "Paresh-Maheshwari/paresh-patches"
 patches-source-host = "gitlab"
 cli-source = "MorpheApp/morphe-cli"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/proton-technologies-ag/protonvpn-secure-and-free-vpn"
-dpi = "120-640dpi"
+uptodown-dlurl = "https://protonvpn-secure-and-free-vpn.en.uptodown.com/android"
 prefer-dl-mode = "bundle"
 
 [jiohotstar-paresh]
