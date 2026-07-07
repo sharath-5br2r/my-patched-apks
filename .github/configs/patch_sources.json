@@ -20,19 +20,19 @@
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.33.0",
-    "prerelease": "v1.34.0-dev.3",
+    "prerelease": "0",
     "blocked": false
   },
   "piko": {
     "repo": "crimera/piko",
     "stable": "v3.7.0",
-    "prerelease": "v3.8.0-dev.3",
+    "prerelease": "0",
     "blocked": false
   },
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
     "stable": "v1.38.2",
-    "prerelease": "v1.38.2",
+    "prerelease": "0",
     "blocked": false
   },
   "adobo": {
@@ -56,14 +56,14 @@
   "binarymend": {
     "repo": "binarymend/morphe-patches",
     "stable": "v1.3.1",
-    "prerelease": "v1.3.1",
+    "prerelease": "0",
     "blocked": false
   },
   "paresh": {
     "repo": "Paresh-Maheshwari/paresh-patches",
     "host": "gitlab",
     "stable": "v1.18.0",
-    "prerelease": "v1.3.1",
+    "prerelease": "0",
     "blocked": false
   },
   "docbt": {
@@ -104,10 +104,10 @@
     "prerelease": "",
     "blocked": true
   },
-  "tiktok": {
+  "icysymmetra": {
     "repo": "icysymmetra/tiktok-patches-for-morphe",
     "stable": "v0.3.1",
-    "prerelease": "v0.3.1",
+    "prerelease": "0",
     "blocked": false
   },
   "x-shim": {
@@ -118,10 +118,10 @@
     "prerelease": "",
     "blocked": false
   },
-  "hoomans": {
+  "hooman": {
     "repo": "arandomhooman/hoomans-morphe-patches",
     "stable": "v1.42.0",
-    "prerelease": "v1.43.0-dev.1",
+    "prerelease": "",
     "blocked": false
   },
   "rushiranpise": {
@@ -139,7 +139,7 @@
   "revenge": {
     "repo": "revenge-mod/revenge-xposed",
     "stable": "1410",
-    "prerelease": "1410",
+    "prerelease": "",
     "blocked": false
   }
 }

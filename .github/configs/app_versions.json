@@ -4,42 +4,42 @@
     "keys": [
       "discord-revenge"
     ],
-    "version": "335.11 - Stable"
+    "version": "0"
   },
   "Prime-Video": {
     "keys": [
       "prime-video-hoodles"
     ],
-    "version": "3.0.462.1557"
+    "version": "0"
   },
   "Amazon-India": {
     "keys": [
       "amazon-india-signed"
     ],
-    "version": "32.12.0.300"
+    "version": "0"
   },
   "Amazon-Alexa": {
     "keys": [
       "amazon-alexa-signed"
     ],
-    "version": "2.2.690563.0"
+    "version": "0"
   },
   "Adobe-Acrobat": {
     "keys": [
       "adobe-acrobat-hooman"
     ],
-    "version": "26.4.4.44722"
+    "version": "0"
   },
   "Proton-VPN": {
     "keys": [
       "proton-vpn-paresh"
     ],
-    "version": "5.19.16.0"
+    "version": "0"
   },
   "X": {
     "keys": [
       "x-piko"
     ],
-    "version": "12.5.0-release.0"
+    "version": "0"
   }
 }
