@@ -8,10 +8,10 @@ source utils.sh
 set_prebuilts
 
 # Find all app configs
-CONFIG_FILES=$(find .github/configs/patches -name "*.toml")
+CONFIG_FILES=$(find .github/configs/downstream_patches -name "*.toml")
 
 if [ -z "$CONFIG_FILES" ]; then
-    echo "No config files found in .github/configs/patches"
+    echo "No config files found in .github/configs/downstream_patches"
     exit 0
 fi
 
