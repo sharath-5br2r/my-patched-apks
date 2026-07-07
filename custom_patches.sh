@@ -45,7 +45,8 @@ eden-pubg() {
 }
 
 winlator-pubgvn() {
-	dl_gh "Winlator-Ludashi" "StevenMXZ" "latest" "winlator-orig.apk" "build.apk"
+    tag=$(gh api repos/StevenMXZ/Winlator-Ludashi/releases/latest | jq -r '.tag_name')
+    wget -qO temp/winlator-orig.apk $(gh api repos/StevenMXZ/Winlator-Ludashi/releases/latest | jq -r '.assets[2].browser_download_url')
     java -jar ./temp/APKEditor.jar d -i temp/winlator-orig.apk -o temp/winlator-src -t xml -dex
     sed -i -e 's/package="com\.tencent\.ig"/package="com.vng.pubgmobile"/' -e 's/com\.tencent\.ig\.tileprovider/com.vng.pubgmobile.tileprovider/' -e 's/com\.tencent\.ig\.core\.WinlatorFilesProvider/com.vng.pubgmobile.core.WinlatorFilesProvider/' -e 's/com\.tencent\.ig\.androidx-startup/com.vng.pubgmobile.androidx-startup/' temp/winlator-src/AndroidManifest.xml
     java -jar ./temp/APKEditor.jar b -i temp/winlator-src -o temp/winlator-patched.apk
