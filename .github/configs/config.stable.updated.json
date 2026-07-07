@@ -51,7 +51,7 @@
     "dpi": "nodpi anydpi"
   },
   "prime-video-hoodles": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "prime-video",
     "rv-brand": "hoodles",
     "build-mode": "apk",
@@ -66,7 +66,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "adobe-acrobat-hooman": {
-    "enabled": true,
+    "enabled": false,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "adobe-acrobat",
     "rv-brand": "hooman",
@@ -130,7 +130,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "fing-paresh": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "fing",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -155,7 +155,7 @@
     "prefer-dl-mode": "bundle"
   },
   "jiohotstar-paresh": {
-    "enabled": false,
+    "enabled": true,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "jiohotstar",
     "rv-brand": "paresh",
@@ -179,7 +179,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "x-piko": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "x",
     "rv-brand": "piko",
     "build-mode": "apk",
@@ -194,7 +194,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "discord-revenge": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "discord",
     "rv-brand": "revenge",
     "build-mode": "apk",
@@ -207,7 +207,7 @@
     "uptodown-dlurl": "https://discord-chat-for-gamers.en.uptodown.com/android"
   },
   "amazon-india-signed": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-india",
     "rv-brand": "signed",
     "build-mode": "apk",
