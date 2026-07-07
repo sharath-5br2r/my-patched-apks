@@ -23,7 +23,7 @@ dolphin-sdk29() {
     java -jar ./temp/APKEditor.jar d -i temp/dolphin-orig.apk -o temp/dolphin-src -t xml -dex
     sed -i 's/android:targetSdkVersion="[^"]*"/android:targetSdkVersion="29"/g' temp/dolphin-src/AndroidManifest.xml
     java -jar ./temp/APKEditor.jar b -i temp/dolphin-src -o temp/dolphin-patched.apk
-    sign temp/dolphin-patched.apk ./build/dolphin-sdk29-v$DOLPHIN_VER.apk
+    sign temp/dolphin-patched.apk ./build/dolphin-sdk29-v$DOLPHIN_VER-all.apk
     echo -e "Patched Dolphin $DOLPHIN_VER with SDK 29" >> build.md
     echo -e "\"dolphin-sdk29\": { \"exts\": [\"apk\"], \"name\": \"dolphin-sdk29\",\"arch\": \"all\",\"patch\": \"sdk29\", \"version\": \"$DOLPHIN_VER\"}," >> build.json
     rm -f ./build/*.idsig
@@ -37,7 +37,7 @@ eden-pubg() {
     java -jar ./temp/APKEditor.jar d -i temp/eden-orig.apk -o temp/eden-src -t xml -dex
     sed -i 's/dev\.eden\.eden_emulator\.nightly/com.tencent.ig/g' temp/eden-src/AndroidManifest.xml
     java -jar ./temp/APKEditor.jar b -i temp/eden-src -o temp/eden-patched.apk
-    sign temp/eden-patched.apk ./build/eden-pubg-v$EDEN_NAME.apk
+    sign temp/eden-patched.apk ./build/eden-pubg-v$EDEN_NAME-arm64-v8a.apk
     rm -f ./build/*.idsig
     echo -e "Patched  Eden $EDEN_NAME with com.tencent.ig package name" >> build.md
     echo -e "\"eden-pubg\": { \"exts\": [\"apk\"], \"name\": \"eden-pubg\",\"arch\": \"arm64-v8a\",\"patch\": \"pubg\", \"version\": \"$EDEN_NAME\"}," >> build.json
@@ -50,7 +50,7 @@ winlator-pubgvn() {
     java -jar ./temp/APKEditor.jar d -i temp/winlator-orig.apk -o temp/winlator-src -t xml -dex
     sed -i -e 's/package="com\.tencent\.ig"/package="com.vng.pubgmobile"/' -e 's/com\.tencent\.ig\.tileprovider/com.vng.pubgmobile.tileprovider/' -e 's/com\.tencent\.ig\.core\.WinlatorFilesProvider/com.vng.pubgmobile.core.WinlatorFilesProvider/' -e 's/com\.tencent\.ig\.androidx-startup/com.vng.pubgmobile.androidx-startup/' temp/winlator-src/AndroidManifest.xml
     java -jar ./temp/APKEditor.jar b -i temp/winlator-src -o temp/winlator-patched.apk
-    sign temp/winlator-patched.apk ./build/winlator-pubgvn-$tag.apk
+    sign temp/winlator-patched.apk ./build/winlator-pubgvn-$tag-arm64-v8a.apk
     rm -f ./build/*.idsig
     echo -e "Patched Winlator-Ludashi $tag with com.vng.pubgmobile package name" >> build.md
     echo -e "\"winlator-pubgvn\": { \"exts\": [\"apk\"], \"name\": \"winlator-pubgvn\",\"arch\": \"arm64-v8a\",\"patch\": \"pubgvn\", \"version\": \"$tag\"}" >> build.json
