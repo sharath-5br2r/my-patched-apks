@@ -32,7 +32,7 @@ jobs:
     timeout-minutes: 120
     services:
       flaresolverr:
-        image:  ghcr.io/thephaseless/byparr:latest #ghcr.io/flaresolverr/flaresolverr:latest
+        image: ghcr.io/flaresolverr/flaresolverr:latest
         ports:
           - 8191:8191
     steps:
