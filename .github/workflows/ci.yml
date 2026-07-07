@@ -92,19 +92,6 @@ jobs:
           RAW_TRIGGER_APP_UPDATE: ${{ steps.compare_apps.outputs.TRIGGER_APP_UPDATE || '0' }}
         run: bash .github/scripts/ci_resolve_triggers.sh
 
-      - name: Notify telegram
-        if: false #${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1' || steps.compare_apps.outputs.TRIGGER_APP_UPDATE == '1') }}
-        env:
-          TG_TOKEN: ${{ secrets.TG_TOKEN }}
-          TAGS_OLD: ${{ steps.compare.outputs.tags_old }}
-          TAGS_NEW: ${{ steps.compare.outputs.tags_new }}
-          TRIGGER_STABLE: ${{ steps.compare.outputs.TRIGGER_STABLE }}
-          TRIGGER_PRERELEASE: ${{ steps.compare.outputs.TRIGGER_PRERELEASE }}
-          TRIGGER_APP_UPDATE: ${{ steps.compare_apps.outputs.TRIGGER_APP_UPDATE }}
-          EFFECTIVE_STABLE: ${{ steps.effective_triggers.outputs.TRIGGER_STABLE }}
-          EFFECTIVE_PRERELEASE: ${{ steps.effective_triggers.outputs.TRIGGER_PRERELEASE }}
-        run: bash .github/scripts/ci_notify_telegram.sh
-
       - name: Commit updated patch sources and configs
         if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1' || steps.compare_apps.outputs.TRIGGER_APP_UPDATE == '1') }}
         uses: stefanzweifel/git-auto-commit-action@v7
@@ -147,10 +134,4 @@ jobs:
     uses: ./.github/workflows/update-cache.yml
     secrets: inherit
 
-  trigger_notify_failure:
-    needs: [check_patch, build_dev, build_custom, build_dynamic]
-    if: false
-    uses: ./.github/workflows/notify.yml
-    with:
-      workflow_name: "CI"
-    secrets: inherit
+
