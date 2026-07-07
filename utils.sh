@@ -616,8 +616,8 @@ apkmirror_search() {
 	local resp="$1" dpi="$2" arch="$3" apk_bundle="$4" clean_search_version="$5" search_version="$6"
 	local dlurl="" node app_table emptyCheck
 
-	local apparch=('universal' 'noarch' 'arm64-v8a + armeabi-v7a')
-	if [ "$arch" != all ]; then
+	local apparch=('universal' 'noarch' 'arm64-v8a + x86_64' 'arm64-v8a + armeabi-v7a')
+	if [[ "$arch" != all ]] || [["$arch" != "multi"]]; then
 		apparch+=("$arch")
 	fi
 
