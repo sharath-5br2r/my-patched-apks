@@ -10,3 +10,5 @@ cmpr
 __pycache__/
 build.json
 /test
+.env
+*.keystore

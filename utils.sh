@@ -101,14 +101,14 @@ source_release_pick_from_list() {
 	case "$host" in
 		github)
 			if [ "$mode" = dev ]; then
-				jq -e -c 'map(select(.prerelease == true and .tag_name != null and .tag_name != "")) | sort_by(.published_at // .created_at // "") | reverse | .[0] // empty'
+			    jq -e -c 'map(select(.tag_name != null and .tag_name != "")) | sort_by(.published_at // .created_at // "") | reverse | .[0] // empty'
 			else
 				jq -e -c 'map(select(.prerelease != true and .tag_name != null and .tag_name != "")) | sort_by(.published_at // .created_at // "") | reverse | .[0] // empty'
 			fi
 			;;
 		gitlab)
 			if [ "$mode" = dev ]; then
-				jq -e -c 'map(select(.tag_name != null and .tag_name != "" and (.tag_name | test("(?i)(dev|alpha|beta|rc)")))) | sort_by(.released_at // .created_at // "") | reverse | .[0] // empty'
+				jq -e -c 'map(select(.tag_name != null and .tag_name != "")) | sort_by(.released_at // .created_at // "") | reverse | .[0] // empty'
 			else
 				jq -e -c 'map(select(.tag_name != null and .tag_name != "" and (.tag_name | test("(?i)(dev|alpha|beta|rc)") | not))) | sort_by(.released_at // .created_at // "") | reverse | .[0] // empty'
 			fi
@@ -130,13 +130,14 @@ get_prebuilts() {
 
 	local host=$cli_host src=$cli_src tag="CLI" ver=${cli_ver} fprefix="cli"
 	host=${host,,}
-	if ! isoneof "$host" github gitlab; then abort "source host '$host' is not supported"; fi
+	if ! isoneof "$host" github gitlab none; then abort "source host '$host' is not supported"; fi
 
 	local grab_cl=false
 	local dir=${src%/*}
 	dir=${TEMP_DIR}/${dir,,}-rv
 	[ -d "$dir" ] || mkdir "$dir"
 
+	if [[ "$host" != "none" ]]; then
 	local rv_rel release resp tag_name matches asset name url
 	rv_rel=$(source_release_api_base "$host" "$src") || return 1
 	if [ "$ver" = "dev" ]; then
@@ -192,7 +193,9 @@ get_prebuilts() {
 	fi
 
 	echo -n "$file "
-
+	else
+		pr "Not Getting anything as source is none"
+    fi
 	local IFS=$'\n'
 	local p_srcs=($(list_args "$patches_src_list" | tr -d \"\'))
 	local p_hosts=($(list_args "$patches_host_list" | tr -d \"\'))
@@ -204,14 +207,14 @@ get_prebuilts() {
 		local ver="${p_vers[$i]:-${p_vers[0]}}"
 		
 		host=${host,,}
-		if ! isoneof "$host" github gitlab; then abort "source host '$host' is not supported"; fi
+		if ! isoneof "$host" github gitlab none; then abort "source host '$host' is not supported"; fi
 		local tag="Patches" fprefix="patches"
 		local grab_cl=true
 		
 		local dir=${src%/*}
 		dir=${TEMP_DIR}/${dir,,}-rv
 		[ -d "$dir" ] || mkdir "$dir"
-		
+		if [[ $host != "none" ]]; then
 		local rv_rel release resp tag_name matches asset name url
 		rv_rel=$(source_release_api_base "$host" "$src") || return 1
 		if [ "$ver" = "dev" ]; then
@@ -298,6 +301,9 @@ get_prebuilts() {
 		fi
 		
 		echo -n "$file "
+		else
+			pr "Not Getting anything as source is none"
+		fi
 	done
 	echo
 }
@@ -454,7 +460,7 @@ get_patch_last_supported_ver() {
 patches_list_versions() {
 	local cli_jar=$1 patches_jar=$2 pkg_name=$3 cli_source=$4 op
 	local cli_source_l="${cli_source,,}"
-	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
+	if [[ "$cli_source_l" == *"npatch"* ]] || [[ $cli_source == "apksigner" ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
 		echo ""
 		return 0
 	fi
@@ -488,6 +494,9 @@ patches_list() {
 	local cli_source_l="${cli_source,,}"
 	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
 		echo "Name: xposed-module-dummy"
+		return 0
+	elif [[ "$cli_source_l" == "apksigner" ]]; then
+		echo "Name: apksigner-dummy"
 		return 0
 	fi
 	# Build arg strings for each jar in space-separated patches_jar
@@ -537,7 +546,7 @@ merge_splits() {
 		return 1
 	fi
 	# sign the merged stock apk
-	if ! OP=$(java -jar "$APKSIGNER" sign --ks ks-p12.keystore --ks-pass pass:123456789 --key-pass pass:123456789 --ks-key-alias jhc \
+	if ! OP=$(java -jar "$APKSIGNER" sign --ks ks-p12.keystore --ks-pass pass:$KEYSTORE_PASS --key-pass pass:$KEYSTORE_PASS --ks-key-alias $KEYSTORE_ALIAS \
 		--out "${output}" "${output}-unsigned"); then
 		epr "apksigner error: $OP"
 		return 1
@@ -808,7 +817,7 @@ dl_apkmirror() {
 	local node dlurl=""
 	node=$($HTMLQ "div.table-row.headerFont:nth-last-child(1)" -r "span:nth-child(n+3)" <<<"$resp")
 	if [ "$node" ]; then
-		for type in APK BUNDLE; do
+		for type in BUNDLE APK; do
 			if dlurl=$(apkmirror_search "$resp" "$dpi" "$arch" "$type" "$clean_search_version" "$search_version"); then
 				[ "$type" = "BUNDLE" ] && is_bundle=true || is_bundle=false
 				break
@@ -1258,13 +1267,25 @@ patch_apk() {
 	unset IFS
 
 	local cli_source_l="${cli_source,,}"
+	if [[ "$cli_source_l" == "apksigner" ]]; then
+	   	if ! OP=$(java -jar "$APKSIGNER" sign --ks ks-p12.keystore --ks-pass pass:$KEYSTORE_PASS --key-pass pass:$KEYSTORE_PASS --ks-key-alias $KEYSTORE_ALIAS \
+		--out "${patched_apk}" "${stock_input}"); then
+		epr "apksigner error: $OP"
+		return 1
+		fi
+		return 0
+	fi
 	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
 		local p_args_modules=""
 		for j in "${p_jars[@]}"; do
 			p_args_modules+=" -m '$j'"
 		done
 		mkdir -p "$tmp_dir"
-		local cmd="java -jar '$cli_jar' '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
+		if [[ "$cli_source_l" == *"npatch"* ]]; then
+			local cmd="java -cp "temp/bcprov.jar:$cli_jar" -Djava.security.properties=temp/bc.security top.nkbe.npatch.patch.NPatch -k ks.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
+		else
+			local cmd="java -jar '$cli_jar' -k ks-p12.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
+		fi
 		pr "$cmd"
 		PATCH_OUTPUT=$(eval "$cmd" 2>&1)
 		local ret=$?
@@ -1290,7 +1311,7 @@ patch_apk() {
 	done
 
 	local base_cmd="java -jar '$cli_jar' patch '$stock_input' --purge -t '$tmp_dir' -o '$patched_apk' --keystore=ks.keystore \
---keystore-entry-password=123456789 --keystore-password=123456789 --signer=jhc --keystore-entry-alias=jhc"
+--keystore-entry-password=$KEYSTORE_PASS --keystore-password=$KEYSTORE_PASS --signer=$KEYSTORE_ALIAS --keystore-entry-alias=$KEYSTORE_ALIAS"
 
 	local cmd_long="${base_cmd}${p_args_long} $patcher_args"
 	local cmd_short="${base_cmd}${p_args_short} $patcher_args"
@@ -1466,7 +1487,7 @@ build_rv() {
 				rm -f "$stock_apk"
 				continue
 			fi
-			if ! unzip -l "$stock_apk" 2>/dev/null | grep -q '^[[:space:]]*[0-9].*AndroidManifest\.xml$'; then
+			if ! unzip -l "$stock_apk" 2>/dev/null | grep '^[[:space:]]*[0-9].*AndroidManifest\.xml$'; then
 				pr "WARNING: ${stock_apk} does not contain AndroidManifest.xml at root. Attempting to extract as XAPK/APKS..."
 				mv "$stock_apk" "${stock_apk}.xapk"
 				if ! _apkpure_install_xapk "${stock_apk}.xapk" "$stock_apk"; then
