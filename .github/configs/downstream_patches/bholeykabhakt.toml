@@ -1,0 +1,11 @@
+[speedtest-xtra]
+enabled = true
+app-name = "speedtest"
+rv-brand = "xtra"
+build-mode = "apk"
+arch = "all"
+patches-source = "BholeyKaBhakt/revanced-patches-xtra"
+cli-source = "MorpheApp/morphe-cli"
+uptodown-dlurl = "https://speedtest-net-mobile.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/ookla/speedtest"
+

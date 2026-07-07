@@ -1,0 +1,10 @@
+[adobe-acrobat-hooman]
+enabled = true
+cli-source = "MorpheApp/morphe-cli"
+app-name = "adobe-acrobat"
+rv-brand = "hooman"
+version = "latest"
+build-mode = "apk"
+patches-source = "arandomhooman/hoomans-morphe-patches"
+uptodown-dlurl = "https://adobe-reader.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/adobe/adobe-acrobat/"

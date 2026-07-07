@@ -6,11 +6,40 @@
     ],
     "version": "335.11 - Stable"
   },
-  "Google Photos": {
+  "Prime-Video": {
     "keys": [
-      "google-photos-revanced",
-      "google-photos-morphe"
+      "prime-video-hoodles"
     ],
-    "version": "7.82.0.937646388"
+    "version": "0"
+  },
+  "Amazon-India": {
+    "keys": [
+      "amazon-india-signed"
+    ],
+    "version": "0"
+  },
+  "Amazon-Alexa": {
+    "keys": [
+      "amazon-alexa-signed"
+    ],
+    "version": "0"
+  },
+  "Adobe-Acrobat": {
+    "keys": [
+      "adobe-acrobat-hooman"
+    ],
+    "version": "0"
+  },
+  "Proton-VPN": {
+    "keys": [
+      "proton-vpn-paresh"
+    ],
+    "version": "0"
+  },
+  "X": {
+    "keys": [
+      "x-piko"
+    ],
+    "version": "0"
   }
 }

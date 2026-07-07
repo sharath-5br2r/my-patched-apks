@@ -151,6 +151,7 @@ for table_name in $(toml_get_table_names); do
 	app_args[app_name]=$(toml_get "$t" app-name) || app_args[app_name]=$table_name
 	app_args[patcher_args]=$(toml_get "$t" patcher-args) || app_args[patcher_args]=""
 	app_args[table]=$table_name
+	app_args[prefer_dl_mode]=$(toml_get "$t" prefer-dl-mode) || app_args[prefer_dl_mode]="apk"
 	app_args[build_mode]=$(toml_get "$t" build-mode) && {
 		if ! isoneof "${app_args[build_mode]}" both apk module; then
 			abort "ERROR: build-mode '${app_args[build_mode]}' is not a valid option for '${table_name}': only 'both', 'apk' or 'module' is allowed"

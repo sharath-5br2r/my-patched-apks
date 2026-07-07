@@ -817,7 +817,12 @@ dl_apkmirror() {
 	local node dlurl=""
 	node=$($HTMLQ "div.table-row.headerFont:nth-last-child(1)" -r "span:nth-child(n+3)" <<<"$resp")
 	if [ "$node" ]; then
-		for type in BUNDLE APK; do
+	    if [ "$prefer_dl_mode" = "bundle" ]; then
+		types="BUNDLE APK"
+	    else
+		types="APK BUNDLE"
+	    fi
+		for type in $types; do
 			if dlurl=$(apkmirror_search "$resp" "$dpi" "$arch" "$type" "$clean_search_version" "$search_version"); then
 				[ "$type" = "BUNDLE" ] && is_bundle=true || is_bundle=false
 				break
@@ -1399,6 +1404,7 @@ build_rv() {
 	local arch=${args[arch]}
 	local arch_f="${arch// /}"
 	local arch_list=("$arch_f")
+	local prefer_dl_mode=${args[prefer_dl_mode]}
 	[ "$arch_f" = "auto" ] && arch_list=("all" "arm64-v8a" "arm-v7a")
 
 	local p_patcher_args=()

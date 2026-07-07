@@ -1,0 +1,1 @@
+yq -o=toml eval-all '. as $item ireduce ({}; . * $item)' .github/configs/header.toml .github/configs/downstream_patches/*  > configs/config.toml

@@ -23,13 +23,6 @@ TRIGGER_PRERELEASE=$(jq -n --argjson old "$OLD_JSON" --argjson new "$NEW_JSON" '
   ] | if length > 0 then 1 else 0 end
 ')
 
-TRIGGER_LATEST=$(jq -n --argjson old "$OLD_JSON" --argjson new "$NEW_JSON" '
-  [ $new | to_entries[] | . as $e
-    | ($old[$e.key] // {}) as $o
-    | select($e.value.latest != "" and $e.value.latest != ($o.latest // ""))
-  ] | if length > 0 then 1 else 0 end
-')
-
 TRIGGER_BLOCKED=$(jq -n --argjson old "$OLD_JSON" --argjson new "$NEW_JSON" '
   [ $new | to_entries[] | . as $e
     | ($old[$e.key] // {}) as $o
@@ -41,7 +34,6 @@ echo "$NEW_JSON" > "$PATCH_FILE"
 
 echo "TRIGGER_STABLE=$TRIGGER_STABLE" >> "$GITHUB_OUTPUT"
 echo "TRIGGER_PRERELEASE=$TRIGGER_PRERELEASE" >> "$GITHUB_OUTPUT"
-echo "TRIGGER_LATEST=$TRIGGER_LATEST" >> "$GITHUB_OUTPUT"
 echo "TRIGGER_BLOCKED=$TRIGGER_BLOCKED" >> "$GITHUB_OUTPUT"
 
 DELIM1="$(openssl rand -hex 8)"

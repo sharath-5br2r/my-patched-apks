@@ -1,0 +1,25 @@
+
+[moonplus-reader-binarymend]
+enabled = true
+app-name = "moonplus-reader"
+rv-brand = "binarymend"
+build-mode = "apk"
+arch = "all"
+patches-source = "binarymend/morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+uptodown-dlurl = "https://moon-reader.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/moon/moon-reader"
+# archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.apps.photos"
+
+[symfonium-binarymend]
+enabled = true
+app-name = "symfonium"
+rv-brand = "binarymend"
+build-mode = "apk"
+arch = "all"
+patches-source = "binarymend/morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+uptodown-dlurl = "https://symfonium.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/tolriq/symfonium-music-player-cast"
+archive-dlurl = "https://archive.org/download/geologically/apks/app.symfonik.music.player"
+
