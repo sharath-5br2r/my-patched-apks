@@ -58,12 +58,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: get-tags
     if: ${{ needs.get-tags.outputs.TRIGGER_LEVILAUNCHER == 'true' }}
+    env:
+      LEVILAUNCHER_TAG: ${{ needs.get-tags.outputs.LEVILAUNCHER_TAG }}
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v7
       - name: Clone code
         run: |
-          git clone --depth 1 --branch ${{ needs.get-tags.outputs.LEVILAUNCHER_TAG }} https://github.com/0Sombra666/LeviLaunchroidUnlocked.git --recursive --shallow-submodules levilauncher
+          git clone --depth 1 --branch $LEVILAUNCHER_TAG https://github.com/0Sombra666/LeviLaunchroidUnlocked.git --recursive --shallow-submodules levilauncher
       - name: Prepare google-services.json
         run: |
           mkdir -p levilauncher/app
@@ -160,7 +163,6 @@ jobs:
           APK_OUT="levilauncher-unlocked-bgmi-$LEVILAUNCHER_TAG.apk"
           java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign    --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in "$APK_IN" --out "$APK_OUT" 
         env:
-          LEVILAUNCHER_TAG: ${{ needs.get-tags.outputs.LEVILAUNCHER_TAG }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
           KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -172,7 +174,9 @@ jobs:
   build-geode:
     needs: [build-levilauncher, get-tags]
     runs-on: ubuntu-latest
-    if: ${{ needs.get-tags.outputs.TRIGGER_GEODE == 'true' && needs.build-levilauncher.result != 'cancelled' }}
+    if: ${{ always() && (needs.get-tags.outputs.TRIGGER_GEODE == 'true' && needs.build-levilauncher.result != 'cancelled') }}
+    env:
+      GEODE_TAG: ${{ needs.get-tags.outputs.GEODE_TAG }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -209,7 +213,6 @@ jobs:
           unzip -q -j sdk.zip android-16/lib/apksigner.jar
           java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in $APK_PATH --out "./geode-pubgkr-v$GEODE_TAG.apk"
         env:
-          GEODE_TAG: ${{ needs.get-tags.outputs.GEODE_TAG }}
           KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -221,25 +224,19 @@ jobs:
           archive: false
   build-fcl:
     needs: [build-levilauncher, build-geode, get-tags]
-    if: ${{ needs.get-tags.outputs.TRIGGER_FCL == 'true' && needs.build-levilauncher.result != 'cancelled' && needs.build-geode.result != 'cancelled' }}
+    if: ${{ always() && (needs.get-tags.outputs.TRIGGER_FCL == 'true' && needs.build-levilauncher.result != 'cancelled' && needs.build-geode.result != 'cancelled') }}
     runs-on: ubuntu-latest
     env:
+      FCL_TAG: ${{ needs.get-tags.outputs.FCL_TAG }}
       OAUTH_API_KEY: ${{ secrets.FCL_OAUTH_KEY }}
       CURSE_API_KEY: "$2a$10$bL4bIL5pUWqfcO7KQtnMReakwtfHbNKh6v1uTpKlzhwoueEJQnPnm"
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
-      - name: Get FCL Tag
-        id: get_tags
-        run:  |
-            echo "FCL_TAG=$(gh release view -R FCL-Team/FoldCraftLauncher --json tagName --jq '.tagName' )" >> $GITHUB_ENV
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+ 
       - name: Clone Code
         run: |
-          git clone --depth 1 --branch ${{ env.FCL_TAG }} https://github.com/FCL-Team/FoldCraftLauncher.git --recursive --shallow-submodules fcl
+          git clone --depth 1 --branch $FCL_TAG https://github.com/FCL-Team/FoldCraftLauncher.git --recursive --shallow-submodules fcl
       - name: Setup Java JDK
         uses: actions/setup-java@v4
         with:
@@ -264,7 +261,6 @@ jobs:
           unzip -q -j sdk.zip android-16/lib/apksigner.jar
           java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in ./fcl/FCL/build/outputs/apk/release/*.apk --out "./fcl-cod-v$FCL_TAG.apk"
         env:
-          FCL_TAG: ${{ needs.get-tags.outputs.FCL_TAG }}
           KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
       - name: Upload Artifact
