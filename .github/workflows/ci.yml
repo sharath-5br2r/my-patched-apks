@@ -42,7 +42,10 @@ jobs:
           skip_checkout: true
           file_pattern: .github/configs/patch_sources.json
           commit_message: "Create dummy patch_sources.json"
-
+      - name: Update Morphe Experimental App versions
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash ./morphe-experimental.sh
       - name: Fetch latest tags
         if: steps.ensure_patch_sources.outputs.created == 'false'
         id: fetch_tags
