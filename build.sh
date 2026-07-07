@@ -201,11 +201,49 @@ for table_name in $(toml_get_table_names); do
 		fi
 		idx=$((idx + 1))
 		build_rv "$(declare -p app_args)" &
+	elif [ "${app_args[arch]}" = "multi" ]; then
+		app_args[table]="$table_name (multi)"
+		app_args[arch]="arm64-v8a"
+		module_prop_name_b=${app_args[module_prop_name]}
+		app_args[module_prop_name]="${module_prop_name_b}-arm64"
+		idx=$((idx + 1))
+		build_rv "$(declare -p app_args)" &
+		app_args[table]="$table_name (arm-v7a)"
+		app_args[arch]="arm-v7a"
+		app_args[module_prop_name]="${module_prop_name_b}-arm"
+		if ((idx >= PARALLEL_JOBS)); then
+			wait -n || true
+			idx=$((idx - 1))
+		fi
+		idx=$((idx + 1))
+		build_rv "$(declare -p app_args)" &
+		app_args[table]="$table_name (x86_64)"
+		app_args[arch]="x86_64"
+		app_args[module_prop_name]="${module_prop_name_b}-x86_64"
+		if ((idx >= PARALLEL_JOBS)); then
+			wait -n || true
+			idx=$((idx - 1))
+		fi
+		idx=$((idx + 1))
+		build_rv "$(declare -p app_args)" &
+		app_args[table]="$table_name (x86)"
+		app_args[arch]="x86"
+		app_args[module_prop_name]="${module_prop_name_b}-x86"
+		if ((idx >= PARALLEL_JOBS)); then
+			wait -n || true
+			idx=$((idx - 1))
+		fi
+		idx=$((idx + 1))
+		build_rv "$(declare -p app_args)" &
 	else
 		if [ "${app_args[arch]}" = "arm64-v8a" ]; then
 			app_args[module_prop_name]="${app_args[module_prop_name]}-arm64"
 		elif [ "${app_args[arch]}" = "arm-v7a" ]; then
 			app_args[module_prop_name]="${app_args[module_prop_name]}-arm"
+		elif [ "${app_args[arch]}" = "x86_64" ]; then
+			app_args[module_prop_name]="${app_args[module_prop_name]}-x86_64"
+		elif [ "${app_args[arch]}" = "x86" ]; then
+			app_args[module_prop_name]="${app_args[module_prop_name]}-x86"
 		fi
 		idx=$((idx + 1))
 		build_rv "$(declare -p app_args)" &

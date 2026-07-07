@@ -2,7 +2,7 @@
 enabled = true
 app-name = "gboard"
 rv-brand = "jsonwu1994"
-build-mode = "both"
+build-mode = "apk"
 patches-source =  "jasonwu1994/Gboard-patches"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://gboard-go.en.uptodown.com/android"
