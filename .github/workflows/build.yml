@@ -12,7 +12,7 @@ on:
         description: "Select the config file to use"
         required: true
         type: choice
-        default: ".github/configs/config.manual.toml"
+        default: "configs/config.toml"
         options:
           - "configs/config.toml"
           - "custom"
@@ -72,11 +72,11 @@ jobs:
         run: |
           set -euo pipefail
           if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == "custom" ]]; then
-            ./custom_patches.sh
+            bash ./custom_patches.sh
           else
-            ./morphe-experimental.sh
-            ./configgen.sh
-            ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
+            bash ./morphe-experimental.sh
+            bash ./configgen.sh
+            bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
           fi
 
       - name: Get output
