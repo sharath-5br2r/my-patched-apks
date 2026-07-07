@@ -37,11 +37,11 @@ while read -r id repo host enabled enabledStable enabledDev; do
   elif echo "$api_response" | jq -e 'type == "array"' >/dev/null 2>&1; then
     if [ "$host" = "gitlab" ]; then
       stable=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "" and (.tag_name | test("(?i)(dev|alpha|beta|rc)") | not))) | sort_by(.released_at // .created_at // "") | reverse | .[0].tag_name // "")')
-      pre=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "" and (.tag_name) | sort_by(.released_at // .created_at // "") | reverse | .[0].tag_name // "")')
+      Pre=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "")) | sort_by(.released_at // .created_at // "") | reverse | .[0].tag_name // "")')
       #pre=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "" and (.tag_name | test("(?i)(dev|alpha|beta|rc)")))) | sort_by(.released_at // .created_at // "") | reverse | .[0].tag_name // "")')
     else
       stable=$(echo "$api_response" | jq -r '(map(select(.prerelease == false and .tag_name != null and .tag_name != "")) | sort_by(.published_at) | reverse | .[0].tag_name // "")')
-      pre=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "")) | sort_by(.published_at) | reverse | .[0].tag_name // "")')
+      pre=$(echo "$api_response" | jq -r '(map(select(.tag_name != null and .tag_name != "" )) | sort_by(.published_at) | reverse | .[0].tag_name // "")')
       #pre=$(echo "$api_response" | jq -r '(map(select(.prerelease == true and .tag_name != null and .tag_name != "")) | sort_by(.published_at) | reverse | .[0].tag_name // "")')
     fi
 
