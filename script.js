@@ -166,9 +166,9 @@ const CONFIG = {
     merriamwebsterdictionary: "com.merriamwebster",
     messenger: "com.facebook.orca",
     microsoftlens: "com.microsoft.office.officelens",
-    myfitnesspal: "com.myfitnesspal.android",
     moonreader: "com.flyersoft.moonreader",
     moneymanager: "com.realbyteapps.moneymanagerfree",
+    myfitnesspal: "com.myfitnesspal.android",
 
     niagaralauncher: "bitpit.launcher",
     ninjavpn: "app.ninjavpn.android",
