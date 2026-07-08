@@ -97,7 +97,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
-          skip_checkout: true
+          commit_author: ${{ github.actor }} sharathsukash@gmail.com
           file_pattern: .github/configs/*.json
           commit_message: "Update patch sources, app versions and generated configs [skip ci]"
 
