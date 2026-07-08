@@ -1,0 +1,28 @@
+name: Cleanup Container
+description: Cleanup Container
+inputs:
+  cf_bypass_solver:
+    description: 'Cloudflare bypass solver: flaresolverr or cloudflarebypassforscraping'
+    required: false
+    default: 'cloudflarebypassforscraping'
+runs:
+  using: "composite"
+  steps:
+    - name: Stop FlareSolverr
+      if: inputs.cf_bypass_solver == 'flaresolverr'
+      shell: bash
+      run: |
+        docker logs flaresolverr || true
+        docker rm --force flaresolverr || true
+    - name: Stop Byparr
+      if: inputs.cf_bypass_solver == 'byparr'
+      shell: bash
+      run: |
+        docker logs byparr || true
+        docker rm --force byparr || true
+    - name: Stop CloudflareBypassForScraping
+      if: inputs.cf_bypass_solver == 'cloudflarebypassforscraping'
+      shell: bash
+      run: |
+        docker logs cloudflarebypass || true
+        docker rm --force cloudflarebypass || true

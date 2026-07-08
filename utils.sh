@@ -578,15 +578,69 @@ _fs_get() {
 		sleep 10
 	done
 	epr "FlareSolverr failed after $max_retries attempts: $url — falling back to plain request"
+	return 1
+}
+      
+
+_cfb_get() {
+	local url=$1 referer=${2:-}
+	local max_retries=5
+	local attempt
+    
+	local cfb_host
+	cfb_host=$(echo "$url" | sed -E 's#https?://([^/]+)/?.*#\1#')
+
+	local cfb_path
+	cfb_path=$(echo "$url" | sed -E 's#https?://[^/]+(/.*)#\1#')
+	[[ -z "$cfb_path" || "$cfb_path" == "$url" ]] && cfb_path="/"
+
+	for attempt in $(seq 1 $max_retries); do
+		local response_file
+		rm -f /tmp/cfb_response_headers.txt
+		response_file=$(mktemp)
+		local http_code
+		http_code=$(curl -s -o "$response_file" -w '%{http_code}' \
+			-D /tmp/cfb_response_headers.txt \
+			-H "x-hostname: $cfb_host" \
+			--max-time 120 \
+			"http://localhost:8000$cfb_path")
+		if [[ "$http_code" == "200" ]]; then
+			html=$(cat "$response_file")
+			if [[ -n "$html" ]]; then
+				export FS_COOKIES
+				FS_COOKIES=$(grep -i '^x-cf-bypasser-cookies:' /tmp/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
+				local cfb_ua
+				cfb_ua=$(grep -i '^x-cf-bypasser-user-agent:' /tmp/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
+				[[ -n "$cfb_ua" ]] && user_agent="$cfb_ua"
+				rm -f "$response_file" /tmp/cfb_response_headers.txt
+				return 0
+			fi
+		fi
+	done
+	red_log "[-] CloudflareBypassForScraping failed after $max_retries attempts: $url"
+	return 1
+}
+_fallback_get(){
+	local url=$1
 	html=$(req "$url" -) || return 1
 	FS_COOKIES=""
 	user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0"
+
 }
 
+_cf_get() {
+	if [[ "$CF_BYPASS_SOLVER" == "cloudflarebypassforscraping" ]]; then
+		_cfb_get "$@" || _fallback_get "$@"
+	elif [[ "$CF_BYPASS_SOLVER" == "none" ]]
+	    _fallback_get "$@"
+	else
+		_fs_get "$@" || _fallback_get "$@"
+	fi
+}
 # -------------------- apkmirror --------------------
 get_apkmirror_resp() {
 	local html=""
-	_fs_get "${1}" || return 1
+	_cf_get "${1}" || return 1
 	__APKMIRROR_RESP__="$html"
 	__APKMIRROR_CAT__="${1##*/}"
 	__APKMIRROR_EXAMPLE_URL__="${args[apkmirror_example_url]:-}" 
@@ -594,7 +648,7 @@ get_apkmirror_resp() {
 
 get_apkmirror_vers() {
 	local vers apkm_resp html=""
-	_fs_get "https://www.apkmirror.com/uploads/?appcategory=${__APKMIRROR_CAT__}" || return 1
+	_cf_get "https://www.apkmirror.com/uploads/?appcategory=${__APKMIRROR_CAT__}" || return 1
 	apkm_resp="$html"
 	vers=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$apkm_resp" | awk '{$1=$1}1')
 	if [ "$__AAV__" = false ]; then
@@ -707,7 +761,7 @@ dl_apkmirror() {
 		target_ver=$(echo "$version" | tr '.' '-' | grep -oP '\d+(-\d+)+')
 		if [ -n "$slug_ver" ] && [ -n "$target_ver" ]; then
 			release_url="${base_url}${example_path/$slug_ver/$target_ver}"
-				_fs_get "$release_url" || true
+				_cf_get "$release_url" || true
 			resp="$html"
 			if [[ "$resp" == *"Page Not Found"* ]] || [[ "$resp" == *"404 Whoops"* ]] || [ -z "$resp" ]; then
 					release_url=""
@@ -726,7 +780,7 @@ dl_apkmirror() {
 		apkmname=$($HTMLQ "h1.marginZero" --text <<<"$__APKMIRROR_RESP__")
 		apkmname="${apkmname,,}" apkmname="${apkmname// /-}" apkmname="${apkmname//[^a-z0-9-]/}"
 		release_url="${url%/}/${apkmname}-${search_version}-release/"
-		_fs_get "$release_url" || true
+		_cf_get "$release_url" || true
 		resp="$html"
 		if [[ "$resp" == *"Page Not Found"* ]] || [[ "$resp" == *"404 Whoops"* ]] || [ -z "$resp" ]; then
 			release_url=""
@@ -739,7 +793,7 @@ dl_apkmirror() {
 		for page_num in $(seq 1 10); do
 			local page_url="$list_url/"
 			[[ $page_num -gt 1 ]] && page_url="$list_url/page/$page_num/"
-			_fs_get "$page_url" || return 1
+			_cf_get "$page_url" || return 1
 			
 			
 			local html_flat=$(echo "$html" | tr -d '\n\r')
@@ -773,7 +827,7 @@ dl_apkmirror() {
 
 			if [ -n "$version_href" ]; then
 				release_url="$base_url$version_href"
-				_fs_get "$release_url" || return 1
+				_cf_get "$release_url" || return 1
 				resp="$html"
 				break
 			fi
@@ -782,7 +836,7 @@ dl_apkmirror() {
 		# Fallback to direct search if not found on first 5 pages
 		if [ -z "$release_url" ]; then
 			local search_list_url="https://www.apkmirror.com/?post_type=app_release&searchtype=apk&s=${__APKMIRROR_CAT__}+${version}"
-			_fs_get "$search_list_url" || true
+			_cf_get "$search_list_url" || true
 			if [ -n "$html" ] && [ "$html" != "null" ]; then
 				local search_links=""
 				if [[ "$html" != *"No results found matching your query"* ]]; then
@@ -802,7 +856,7 @@ dl_apkmirror() {
 
 				if [ -n "$version_href" ]; then
 					release_url="$base_url$version_href"
-					_fs_get "$release_url" || return 1
+					_cf_get "$release_url" || return 1
 					resp="$html"
 				fi
 			fi
@@ -830,7 +884,7 @@ dl_apkmirror() {
 		done
 		if [ -z "$dlurl" ]; then return 1; fi
 		
-		_fs_get "$dlurl" || return 1
+		_cf_get "$dlurl" || return 1
 		resp="$html"
 		
 	fi
@@ -847,7 +901,7 @@ dl_apkmirror() {
 	if [ -z "$btn_url" ]; then epr "Could not find download button on APKMirror"; return 1; fi
 	btn_url=$(echo "$btn_url" | sed 's/&amp;/\&/g')
 
-	_fs_get "$base_url$btn_url" || return 1
+	_cf_get "$base_url$btn_url" || return 1
 	local final_url
 	final_url=$($HTMLQ "a#download-link" --attribute href <<<"$html" 2>/dev/null | head -1) || true
 	[ -z "$final_url" ] && final_url=$(echo "$html" | grep -oP 'id="download-link"[^>]*href="\K[^"]+' | head -1) || true
@@ -891,7 +945,7 @@ get_apkpure_resp() {
 	__APKPURE_BASE_URL__="$url"
 	__APKPURE_PKG__=$(echo "$url" | grep -oP '[a-zA-Z][a-zA-Z0-9]*(\.[a-zA-Z][a-zA-Z0-9]*){1,}' | tail -1)
 	local html=""
-	_fs_get "${url}/downloading/" || return 1
+	_cf_get "${url}/downloading/" || return 1
 	__APKPURE_RESP__="$html"
 }
 
@@ -915,7 +969,7 @@ dl_apkpure() {
 		dl_page_url="${__APKPURE_BASE_URL__}/downloading"
 	fi
 
-	_fs_get "$dl_page_url" || return 1
+	_cf_get "$dl_page_url" || return 1
 
 	if [ -z "$version" ]; then
 		version=$(echo "$html" | sed 's/<h2[^>]*>/\n__H2__/g' | grep '__H2__' | sed 's/__H2__//' | grep -oP '[0-9]+\.[0-9][0-9.]*' | head -1) || true
@@ -992,7 +1046,7 @@ get_apkcombo_resp() {
 	__APKCOMBO_PKG__="${url##*/}"
 	__APKCOMBO_BASE_URL__="$url"
 	local html=""
-	_fs_get "https://apkcombo.com/search/${__APKCOMBO_PKG__}/download" || return 1
+	_cf_get "https://apkcombo.com/search/${__APKCOMBO_PKG__}/download" || return 1
 	__APKCOMBO_RESP__="$html"
 }
 get_apkcombo_vers() {
@@ -1017,7 +1071,7 @@ dl_apkcombo() {
 			page_url="https://apkcombo.com/search/${__APKCOMBO_PKG__}/download/apk"
 		fi
 
-		_fs_get "$page_url" "https://apkcombo.com/" || continue
+		_cf_get "$page_url" "https://apkcombo.com/" || continue
 		page="$html"
 		compact_page=$(tr '\n' ' ' <<<"$page")
 
