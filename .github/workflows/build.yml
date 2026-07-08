@@ -91,7 +91,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
-          skip_checkout: true
+          commit_author: Sharath <sharathsukash@gmail.com>
           file_pattern: README.md
           commit_message: "Update README for Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} [skip ci]"
 
