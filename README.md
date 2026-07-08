@@ -145,11 +145,11 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 #### SDK 29 Manifest Patch
 
 <details>
-<summary id="dolphin-sdk29">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2606.127-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="dolphin-sdk29">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2606.129-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260009)<br>
+[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260010)<br>
 Patches: 
 </blockquote>
 </details>
@@ -527,7 +527,7 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260009)<br>
+[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260010)<br>
 Patches: 
 </blockquote>
 </details>
