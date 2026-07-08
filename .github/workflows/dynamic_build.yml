@@ -160,7 +160,7 @@ jobs:
         id: sign_apk
         run: |
           APK_IN=$(find levilauncher/app/build/outputs/apk/release -name "*.apk" | head -1)
-          APK_OUT="levilauncher-unlocked-bgmi-$LEVILAUNCHER_TAG.apk"
+          APK_OUT="levilauncher-unlocked-bgmi-$LEVILAUNCHER_TAG-arm64-v8a.apk"
           java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign    --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in "$APK_IN" --out "$APK_OUT" 
         env:
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
@@ -169,7 +169,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
-          path: levilauncher-unlocked-bgmi-${{ needs.get-tags.outputs.LEVILAUNCHER_TAG }}.apk
+          path: levilauncher-unlocked-bgmi-${{ needs.get-tags.outputs.LEVILAUNCHER_TAG }}-arm64-v8a.apk
           archive: false
   build-geode:
     needs: [build-levilauncher, get-tags]
@@ -211,7 +211,7 @@ jobs:
           echo "${{ secrets.KEYSTORE_P12 }}" | base64 --decode > ks.keystore   
           wget -qO sdk.zip "https://dl.google.com/android/repository/build-tools_r36_linux.zip"
           unzip -q -j sdk.zip android-16/lib/apksigner.jar
-          java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in $APK_PATH --out "./geode-pubgkr-v$GEODE_TAG.apk"
+          java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in $APK_PATH --out "./geode-pubgkr-v$GEODE_TAG-all.apk"
         env:
           KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
@@ -220,7 +220,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
-          path: geode-pubgkr-v${{ needs.get-tags.outputs.GEODE_TAG }}.apk
+          path: geode-pubgkr-v${{ needs.get-tags.outputs.GEODE_TAG }}-all.apk
           archive: false
   build-fcl:
     needs: [build-levilauncher, build-geode, get-tags]
@@ -259,14 +259,14 @@ jobs:
           echo "${{ secrets.KEYSTORE_P12 }}" | base64 --decode > ks.keystore
           wget -qO sdk.zip "https://dl.google.com/android/repository/build-tools_r36_linux.zip"
           unzip -q -j sdk.zip android-16/lib/apksigner.jar
-          java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in ./fcl/FCL/build/outputs/apk/release/*.apk --out "./fcl-cod-v$FCL_TAG.apk"
+          java -cp "apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks ks.keystore --ks-type PKCS12 --ks-key-alias $KEYSTORE_ALIAS --ks-pass pass:$KEYSTORE_PASS --in ./fcl/FCL/build/outputs/apk/release/*.apk --out "./fcl-cod-v$FCL_TAG-all.apk"
         env:
           KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
-          path: ./fcl-cod-v${{ needs.get-tags.outputs.FCL_TAG }}.apk
+          path: ./fcl-cod-v${{ needs.get-tags.outputs.FCL_TAG }}-all.apk
           archive: false
   release:
     runs-on: ubuntu-latest
@@ -290,7 +290,7 @@ jobs:
         run: |
            echo -e "{" >> build.json
            if [ $TRIGGER_LEVILAUNCHER == "true" ]; then
-             echo -e "\"levilauncher-bgmi\": { \"exts\": [\"apk\"], \"name\": \"levilauncher-bgmi\",\"arch\": \"all\",\"patch\": \"bgmi\", \"version\": \"$LEVILAUNCHER_TAG\" }," >> build.json
+             echo -e "\"levilauncher-bgmi\": { \"exts\": [\"apk\"], \"name\": \"levilauncher-bgmi\",\"arch\": \"arm64-v8a\",\"patch\": \"bgmi\", \"version\": \"$LEVILAUNCHER_TAG\" }," >> build.json
              echo  -e "Patched and signed the following APK:\n- levilauncher-unlocked-bgmi-$LEVILAUNCHER_TAG.apk\n" >> build.md
            fi
            if [ $TRIGGER_GEODE == "true" ]; then

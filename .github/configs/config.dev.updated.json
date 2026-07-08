@@ -1,6 +1,7 @@
 {
   "parallel-jobs": 1,
-  "enable-module-update": true,
+  "patches-version": "dev",
+  "enable-module-update": false,
   "speedtest-xtra": {
     "enabled": false,
     "app-name": "speedtest",
@@ -130,7 +131,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "fing-paresh": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "fing",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -142,7 +143,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "proton-vpn-paresh": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "proton-vpn",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -155,7 +156,7 @@
     "prefer-dl-mode": "bundle"
   },
   "jiohotstar-paresh": {
-    "enabled": true,
+    "enabled": false,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "jiohotstar",
     "rv-brand": "paresh",
