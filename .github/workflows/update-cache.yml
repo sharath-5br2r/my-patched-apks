@@ -44,5 +44,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "update releases cache"
-          commit_author: Sharath sharathsukash@gmail.com
+          commit_author: Sharath <sharathsukash@gmail.com>
           file_pattern: releases.json
