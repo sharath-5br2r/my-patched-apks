@@ -15,7 +15,7 @@ sign() {
 }
 
 dolphin-sdk29() {
-    _fs_get https://dolphin-emu.org/download/
+    _cf_get https://dolphin-emu.org/download/
     DOLPHIN_APK_URL=$(echo $html | grep -Eo 'https://dl\.dolphin-emu\.org/builds/[a-z0-9/]+/dolphin-master-[0-9]+-[0-9]+\.apk' | awk -F'[-/.]' '{v=$(NF-2); b=$(NF-1);if (v>V || (v==V && b>B)) {V=v; B=b; U=$0}} END{print U}')
     DOLPHIN_NAME=$(basename "$DOLPHIN_APK_URL" .apk)
     DOLPHIN_VER=${DOLPHIN_NAME#*-*-}
