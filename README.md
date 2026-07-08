@@ -774,3 +774,4 @@ This automated builder would not be possible without the incredible work and ded
 - **The Patch Maintainers:** Huge appreciation to the development teams behind **ReVanced**, **MorpheApp**, **Anddea**, **RVX**, **Piko**, **De-Vanced**, and all the other independent developers who spend countless hours reverse-engineering, updating, and keeping these patches alive for everyone.
 
 _If you enjoy using these builds, please consider starring their upstream repositories and original apps and supporting the original patch developers!_
+# patched-apks-central
