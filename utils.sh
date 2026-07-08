@@ -596,11 +596,11 @@ _cfb_get() {
 
 	for attempt in $(seq 1 $max_retries); do
 		local response_file
-		rm -f /tmp/cfb_response_headers.txt
+		rm -f $TMPDIR/cfb_response_headers.txt
 		response_file=$(mktemp)
 		local http_code
 		http_code=$(curl -s -o "$response_file" -w '%{http_code}' \
-			-D /tmp/cfb_response_headers.txt \
+			-D $TMPDIR/cfb_response_headers.txt \
 			-H "x-hostname: $cfb_host" \
 			--max-time 120 \
 			"http://localhost:8000$cfb_path")
@@ -608,11 +608,11 @@ _cfb_get() {
 			html=$(cat "$response_file")
 			if [[ -n "$html" ]]; then
 				export FS_COOKIES
-				FS_COOKIES=$(grep -i '^x-cf-bypasser-cookies:' /tmp/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
+				FS_COOKIES=$(grep -i '^x-cf-bypasser-cookies:' $TMPDIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
 				local cfb_ua
-				cfb_ua=$(grep -i '^x-cf-bypasser-user-agent:' /tmp/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
+				cfb_ua=$(grep -i '^x-cf-bypasser-user-agent:' $TMPDIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
 				[[ -n "$cfb_ua" ]] && user_agent="$cfb_ua"
-				rm -f "$response_file" /tmp/cfb_response_headers.txt
+				rm -f "$response_file" $TMPDIR/cfb_response_headers.txt
 				return 0
 			fi
 		fi
@@ -621,8 +621,8 @@ _cfb_get() {
 	return 1
 }
 _fallback_get(){
-	wpr "Falling back to plain request for: $url"
 	local url=$1
+	wpr "Falling back to plain request for: $url"
 	html=$(req "$url" -) || return 1
 	FS_COOKIES=""
 	user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0"
