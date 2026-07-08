@@ -89,6 +89,11 @@ jobs:
           RAW_TRIGGER_PRERELEASE: ${{ steps.compare.outputs.TRIGGER_PRERELEASE || '0' }}
           RAW_TRIGGER_APP_UPDATE: ${{ steps.compare_apps.outputs.TRIGGER_APP_UPDATE || '0' }}
         run: bash .github/scripts/ci_resolve_triggers.sh
+      - name: Cleanup docker containers
+        uses: ./.github/actions/cleanup-container
+        if: always()
+        with:
+          cf_bypass_solver: "cloudflarebypassforscraping"
 
       - name: Commit updated patch sources and configs
         if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1' || steps.compare_apps.outputs.TRIGGER_APP_UPDATE == '1') }}
@@ -98,11 +103,6 @@ jobs:
           commit_author: Sharath <sharathsukash@gmail.com>
           file_pattern: .github/configs/*.json
           commit_message: "Update patch sources, app versions and generated configs [skip ci]"
-      - name: Cleanup docker containers
-        uses: ./.github/actions/cleanup-container
-        if: always()
-        with:
-          cf_bypass_solver: "cloudflarebypassforscraping"
 
   build_dev:
     needs: check_patch
