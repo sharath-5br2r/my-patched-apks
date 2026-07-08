@@ -631,7 +631,7 @@ _fallback_get(){
 _cf_get() {
 	if [[ "$CF_BYPASS_SOLVER" == "cloudflarebypassforscraping" ]]; then
 		_cfb_get "$@" || _fallback_get "$@"
-	elif [[ "$CF_BYPASS_SOLVER" == "none" ]]
+	elif [[ "$CF_BYPASS_SOLVER" == "none" ]]; then
 	    _fallback_get "$@"
 	else
 		_fs_get "$@" || _fallback_get "$@"
