@@ -11,19 +11,19 @@ const CONFIG = {
   // App Categories for the top filter buttons (maps filter-btn dataset to keywords)
   appCategories: {
     google: ["youtube", "google"],
-    meta: ["threads", "instagram", "messenger", "facebook"],
+    meta: ["threads", "instagram", "messenger", "facebook", "!plusmessenger"],
+    vpn: ["1111warp", "vpnify", "vpn"]
   },
 
   // Words ignored in the dynamic app filters (must be lowercase)
-  sharedAppWordStoplist: new Set(["google"]),
+  sharedAppWordStoplist: new Set(["messenger"]),
 
   // Known tokens indicating a patch name starts (must be lowercase)
   knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx", "jasonmu1994", "paresh", "piko", "binarymend", "hoodles", "xtra", "revenge", "hooman", "icysymmetra", "sdk29", "pubg", "bgmi", "pubgkr", "pubgvn", "sign", "ood"]),
 
   // Known tokens indicating a variant (must be lowercase)
   variantKeywords: new Set([
-    "x86_64",
-    "arm64-v8a",
+    
   ]),
 
   // Known architectures (used for regex parsing)
@@ -96,6 +96,18 @@ const CONFIG = {
     geode: "Geode Launcher",
     winlator: "Winlator Ludashi",
     fcl: "Fold Craft Launcher",
+    acalendar: "aCalendar",
+    at4k: "AT4K",
+    androidtv: "Android TV",
+    disneyplus: "Disney+",
+    hbomax: "HBO Max",
+    vix: "ViX",
+    komoot: "komoot - hike, bike & run",
+    vpnify: "VPNify",
+    snorelab: "SnoreLab",
+    myfitnesspal: "MyFitnessPal",
+    terabox: "TeraBox",
+    plutotv: "PlutoTV",
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -106,16 +118,23 @@ const CONFIG = {
     amazonalexa: "com.amazon.dee.app",
     amazonindia: "in.amazon.mShop.android.shopping",
     adobeacrobat: "com.adobe.reader",
+
+    acalendar: "org.withouthat.acalendar",
     adguard: "com.adguard.android",
+    adobeacrobat: "com.adobe.reader",
     adobelightroom: "com.adobe.lrmobile",
     adobephotoshopmix: "com.adobe.psmobile",
     automate: "com.llamalab.automate",
     autosync: "com.ttxapps.autosync",
+    at4klauncher: "com.overdevs.at4k",
+
     batteryguru: "com.paget96.batteryguru",
+
     calcnote: "com.appumstudios.calcnote",
     camscanner: "com.intsig.camscanner",
     cricbuzz: "com.cricbuzz.android",
     cryptomator: "org.cryptomator",
+
     documentscanner: "com.cv.docscanner",
     dolphinemulator: "org.dolphinemu.dolphinemu",
     duolingo: "com.duolingo",
@@ -123,7 +142,11 @@ const CONFIG = {
       default: "dev.eden_emulator.nightly",
       pubg: "com.tencent.ig,"
     },
+    disneyplus: "com.disney.disneyplus",
+    discord: "com.discord",
+
     eyeconcalleridspamblock: "com.eyecon.global",
+
     facebook: "com.facebook.katana",
     fingnetworktools: "com.overlook.android.fing",
     foldcraftlauncher: {
@@ -134,6 +157,9 @@ const CONFIG = {
       default: "com.geode.launcher",
       pubgkr: "com.pubg.krmobile"
     },
+
+    github: "com.github.android",
+    goodreads: "com.goodreads",
     googlekeyboard: "com.google.android.inputmethod.latin",
     googlenews: "com.google.android.apps.magazines",
     googlephotos: {
@@ -142,9 +168,14 @@ const CONFIG = {
       default: "com.google.android.apps.photos",
     },
     googlerecorder: "com.google.android.apps.recorder",
+
+    hbomax: "com.wbd.hbomax",
     hellochineselearnchinese: "com.hellochinese",
+    holavpn: "org.hola.play",
+
     iconpacker: "cn.ommiao.iconpacker",
     instagram: "com.instagram.android",
+    inshot: "com.camerasideas.instashot",
     inshortsnewsin60words: "com.nis.app",
     imdb: "com.imdb.mobile",
     jiohotstar: "in.startv.hotstar",
@@ -152,58 +183,88 @@ const CONFIG = {
       default: "org.levimc.launcher",
       bgmi: "com.pubg.imobile",
     },
+
+    komoothikebikerun: "de.komoot.android",
+
     luminawallpapers: "com.lumina.wallpapers",
+
     macrodroid: "com.arlosoft.macrodroid",
+    medium: "com.medium.reader",
     merriamwebsterdictionary: "com.merriamwebster",
     messenger: "com.facebook.orca",
     microsoftlens: "com.microsoft.office.officelens",
     moonreader: "com.flyersoft.moonreader",
     moneymanager: "com.realbyteapps.moneymanagerfree",
+    myfitnesspal: "com.myfitnesspal.android",
+
     niagaralauncher: "bitpit.launcher",
+    ninjavpn: "app.ninjavpn.android",
     novalauncher: "com.teslacoilsw.launcher",
+
     pandora: "com.pandora.android",
+    peacock: "com.peacocktv.peacockandroid",
     photomath: "com.microblink.photomath",
     pinterest: "com.pinterest",
     plusmessenger: "org.telegram.plus",
+    plutotv: { androidtv: "tv.pluto.android" },
     podcastaddict: "com.bambuna.podcastaddict",
+    poweramp: "com.maxmpz.audioplayer",
+    primevideo: {
+      default: "com.amazon.avod.thirdpartyclient",
+      androidtv: "com.amazon.amazonvideo.livingroom.mod"
+    },
     protonmail: "ch.protonmail.android",
     protonvpn: "ch.protonvpn.android",
-    reddit: "com.reddit.frontpage",
+    projectivylauncher: "com.spocky.projengmenu",
+
     sdmaid2se: "eu.darken.sdmse",
     showly: "com.michaldrabik.showly2",
     smartlauncher6: "ginlemon.flowerfree",
     solidexplorer: "pl.solidexplorer2",
     soundcloud: "com.soundcloud.android",
+    snorelab: "com.snorelab.app",
     speedtest: "org.zwanoo.android.speedtest",
     symfonium: "app.symfonik.music.player",
 
-    // Use an object for variant-specific IDs
     telegram: {
       default: "org.telegram.messenger",
       foss: "org.telegram.messenger.web",
     },
-
+    terabox: "com.dubox.drive",
     threads: "com.instagram.barcelona",
     ticktick: "com.ticktick.task",
     tiktok: "com.zhiliaoapp.musically",
+    todoist: "com.todoist",
     trakttv: "tv.trakt.trakt",
     truecaller: "com.truecaller",
+    tubi: "com.tubitv",
     tumblr: "com.tumblr",
     twitch: "tv.twitch.android.app",
+
+    reddit: "com.reddit.frontpage",
     rumble: "com.rumble.battles",
-    viber: "com.viber.voip",
+
     ventusky: "cz.ackee.ventusky",
-    wallcraft: "com.wallpaperscraft.wallpaper",
+    viber: "com.viber.voip",
+    vix: "com.univision.prendetv",
+    vpnify: "com.vpn.free.hotspot.secure.vpnify",
+
     rar: "com.rarlab.rar",
-    wpsoffice: "cn.wps.moffice_eng",
+
+    wallcraft: "com.wallpaperscraft.wallpaper",
     waze: "com.waze",
     winlatorludashi: {
       default: "com.winlator.cmod",
       pubgvn: "com.vng.pubgmobilevn",
     },
+    windscribevpn: "com.windscribe.vpn",
+    wpsoffice: "cn.wps.moffice_eng",
+
     twitter: "com.twitter.android",
+
     xodopdfreadereditor: "com.xodo.pdf.reader",
     xrecorder: "videoeditor.videorecorder.screenrecorder",
+
     youtube: {
       revanced: "app.revanced.android.youtube",
       rvx: "app.rvx.android.youtube",
@@ -677,9 +738,15 @@ function applyAppViewFilter(apps) {
   if (CONFIG.appCategories[appViewFilter]) {
     return apps.filter((app) => {
       const name = normalizeForSearch(app.appName);
-      return CONFIG.appCategories[appViewFilter].some((keyword) =>
-        name.includes(keyword),
-      );
+      const keywords = CONFIG.appCategories[appViewFilter];
+
+      const includes = keywords.filter(k => !k.startsWith("!"));
+      const excludes = keywords.filter(k => k.startsWith("!")).map(k => k.slice(1));
+
+      const isIncluded = includes.some((keyword) => name.includes(keyword));
+      const isExcluded = excludes.some((keyword) => name.includes(keyword));
+
+      return isIncluded && !isExcluded;
     });
   }
 
@@ -1098,13 +1165,21 @@ function getDynamicAppFilters(apps) {
   });
 
   const allWordEntries = Array.from(wordToAppKeys.entries());
-  return allWordEntries
-    .filter(([, appKeys]) => appKeys.size >= SHARED_APP_WORD_MIN_COUNT)
+  const categoryKeys = new Set(Object.keys(CONFIG.appCategories));
+  const dynamicFilters = allWordEntries
+    .filter(([word, appKeys]) => appKeys.size >= SHARED_APP_WORD_MIN_COUNT && !categoryKeys.has(word))
     .sort((a, b) => a[0].localeCompare(b[0])) // Strictly alphabetical sort
     .map(([word]) => ({
       key: `word-${word}`,
       label: toFilterLabel(word),
     }));
+
+  const categoryFilters = Object.keys(CONFIG.appCategories).map(key => ({
+    key: key,
+    label: toFilterLabel(key),
+  }));
+
+  return [...categoryFilters, ...dynamicFilters];
 }
 
 function renderDynamicAppFilterButtons(filters) {
@@ -1160,6 +1235,10 @@ function getAppNameWords(appName) {
 }
 
 function toFilterLabel(value) {
+  const lower = (value || "").toLowerCase();
+  if (CONFIG.brandOverrides[lower]) {
+    return CONFIG.brandOverrides[lower];
+  }
   return value.replace(/\b[a-z]/g, (char) => char.toUpperCase());
 }
 
@@ -1543,7 +1622,7 @@ function buildObtainiumRegexFromAsset(asset) {
   if (!baseName) return null;
 
   // Generate the strict Obtainium regex
-  const regex = `^${escapeRegex(baseName)}-v?\\d.*\\.apk$`;
+  const regex = `^${escapeRegex(baseName)}-(v\\w*\\d|\\d|vbuild).*\\.apk$`;
   return { regex, arch, assetName };
 }
 
@@ -2052,7 +2131,7 @@ function parseAssetDisplay(filename, arch, fileType) {
   const tokens = baseName.split("-").filter(Boolean);
   const archSubTokens = new Set(CONFIG.knownArchs.flatMap((a) => a.split("-")));
   const versionIndex = tokens.findIndex(
-    (token) => /^v\d+/i.test(token) && !archSubTokens.has(token.toLowerCase()),
+    (token) => /^(v\w*\d|vbuild)/i.test(token) && !archSubTokens.has(token.toLowerCase()),
   );
   const moduleIndex = tokens.findIndex(
     (token) => token.toLowerCase() === "module",
