@@ -7,11 +7,12 @@ enabled = true
 app-name = "speedtest"
 rv-brand = "xtra"
 build-mode = "apk"
-arch = "all"
+arch = "both64"
 patches-source = "BholeyKaBhakt/revanced-patches-xtra"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://speedtest-net-mobile.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/ookla/speedtest"
+dpi = "nodpi anydpi auto"
 
 [moonplus-reader-binarymend]
 enabled = true
@@ -23,8 +24,9 @@ patches-source = "binarymend/morphe-patches"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://moon-reader.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/moon/moon-reader"
-
 # archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.apps.photos"
+dpi = "nodpi anydpi auto"
+
 [symfonium-binarymend]
 enabled = true
 app-name = "symfonium"
@@ -36,6 +38,7 @@ cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://symfonium.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tolriq/symfonium-music-player-cast"
 archive-dlurl = "https://archive.org/download/geologically/apks/app.symfonik.music.player"
+dpi = "nodpi anydpi auto"
 
 [github-hoodles]
 enabled = true
@@ -63,6 +66,7 @@ included-patches = "'AMOLED dark theme'"
 cli-source = "MorpheApp/morphe-cli"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-prime-video/"
 uptodown-dlurl = "https://amazon-video.en.uptodown.com/android"
+dpi = "nodpi anydpi auto"
 
 [adobe-acrobat-hooman]
 enabled = true
@@ -74,6 +78,7 @@ build-mode = "apk"
 patches-source = "arandomhooman/hoomans-morphe-patches"
 uptodown-dlurl = "https://adobe-reader.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/adobe/adobe-acrobat/"
+dpi = "nodpi anydpi auto"
 
 [tiktok-icysymmetra]
 enabled = false
@@ -85,6 +90,7 @@ cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://tiktok.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly"
 archive-dlurl = "https://archive.org/download/geologically/apks/com.zhiliaoapp.musically"
+dpi = "nodpi anydpi auto"
 
 [gboard-jsonwu1994]
 enabled = true
@@ -95,6 +101,7 @@ patches-source = "jasonwu1994/Gboard-patches"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://gboard-go.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard"
+dpi = "nodpi anydpi auto"
 
 [youtube-morphe]
 enabled = true
@@ -108,6 +115,7 @@ patches-source = "MorpheApp/morphe-patches"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube"
+dpi = "nodpi anydpi auto"
 
 #archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.youtube"
 [youtube-music-morphe]
@@ -115,6 +123,7 @@ enabled = true
 app-name = "youtube-music"
 rv-brand = "morphe"
 build-mode = "both"
+arch = "both64"
 version = "9.26.51"
 included-patches = "'Theme'"
 patcher-args = "-OdarkThemeBackgroundColor=#000000 "
@@ -122,6 +131,7 @@ patches-source = "MorpheApp/morphe-patches"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube-music"
+dpi = "nodpi anydpi auto"
 
 [fing-paresh]
 enabled = true
@@ -133,6 +143,7 @@ patches-source-host = "gitlab"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://fing-network-tools.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/fing-limited/fing-network-tools"
+dpi = "nodpi anydpi auto"
 
 [proton-vpn-paresh]
 enabled = true
@@ -143,8 +154,8 @@ version = "latest"
 patches-source = "Paresh-Maheshwari/paresh-patches"
 patches-source-host = "gitlab"
 cli-source = "MorpheApp/morphe-cli"
+uptodown-dlurl = "https://protonvpn.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/proton-technologies-ag/protonvpn-secure-and-free-vpn"
-dpi = "120-640dpi"
 prefer-dl-mode = "bundle"
 
 [jiohotstar-paresh]
@@ -156,19 +167,21 @@ build-mode = "apk"
 patches-source = "Paresh-Maheshwari/paresh-patches"
 patches-source-host = "gitlab"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/jiostar-india-private-limited/jiohotstar-4/"
+dpi = "nodpi anydpi auto"
 
 [instagram-piko]
 enabled = true
 app-name = "instagram"
 rv-brand = "piko"
 build-mode = "apk"
-arch = "multi"
+arch = "both64"
 patches-source = "crimera/piko"
 patcher-args = "--continue-on-error"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://instagram.en.uptodown.com/android"
 #archive-dlurl = "https://archive.org/download/geologically/apks/com.instagram.android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
+dpi = "nodpi anydpi auto"
 
 [x-piko]
 enabled = true
@@ -183,17 +196,20 @@ patcher-args = "--continue-on-error"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://twitter.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/x-corp/twitter/"
+dpi = "nodpi anydpi auto"
 
-[discord-xposed]
+[discord-revenge]
 enabled = true
 app-name = "discord"
-rv-brand = "xposed"
+rv-brand = "revenge"
 build-mode = "apk"
 arch = "all"
 patches-source = "revenge-mod/revenge-xposed"
 cli-source = "7723mod/NPatch"
 apkcombo-dlurl = "https://apkcombo.com/discord/com.discord/"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/discord/discord-chat-for-gamers/"
+dpi = "nodpi anydpi auto"
+uptodown-dlurl = "https://discord-chat-for-gamers.en.uptodown.com/android"
 
 [amazon-india-signed]
 enabled = true
@@ -205,6 +221,7 @@ cli-source = "apksigner"
 cli-source-host = "none"
 uptodown-dlurl = "https://amazon-india.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-india-shop-pay/"
+dpi = "nodpi anydpi auto"
 
 [amazon-alexa-signed]
 enabled = true
@@ -214,4 +231,6 @@ build-mode = "apk"
 patches-source-host = "none"
 cli-source = "apksigner"
 cli-source-host = "none"
+uptodown-dlurl = "https://alexa.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-alexa/"
+dpi = "nodpi anydpi auto"
