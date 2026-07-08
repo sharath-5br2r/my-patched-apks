@@ -6,7 +6,7 @@
     "app-name": "speedtest",
     "rv-brand": "xtra",
     "build-mode": "apk",
-    "arch": "multi",
+    "arch": "both64",
     "patches-source": "BholeyKaBhakt/revanced-patches-xtra",
     "cli-source": "MorpheApp/morphe-cli",
     "uptodown-dlurl": "https://speedtest-net-mobile.en.uptodown.com/android",
@@ -23,19 +23,6 @@
     "cli-source": "MorpheApp/morphe-cli",
     "uptodown-dlurl": "https://moon-reader.en.uptodown.com/android",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/moon/moon-reader",
-    "dpi": "nodpi anydpi auto"
-  },
-  "symfonium-binarymend": {
-    "enabled": false,
-    "app-name": "symfonium",
-    "rv-brand": "binarymend",
-    "build-mode": "apk",
-    "arch": "all",
-    "patches-source": "binarymend/morphe-patches",
-    "cli-source": "MorpheApp/morphe-cli",
-    "uptodown-dlurl": "https://symfonium.en.uptodown.com/android",
-    "apkmirror-dlurl": "https://www.apkmirror.com/apk/tolriq/symfonium-music-player-cast",
-    "archive-dlurl": "https://archive.org/download/geologically/apks/app.symfonik.music.player",
     "dpi": "nodpi anydpi auto"
   },
   "github-hoodles": {
@@ -76,6 +63,31 @@
     "uptodown-dlurl": "https://adobe-reader.en.uptodown.com/android",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/adobe/adobe-acrobat/",
     "dpi": "nodpi anydpi auto"
+  },
+  "symfonium-hooman": {
+    "enabled": false,
+    "app-name": "symfonium",
+    "rv-brand": "hooman",
+    "build-mode": "apk",
+    "arch": "all",
+    "patches-source": "arandomhooman/hoomans-morphe-patches",
+    "cli-source": "MorpheApp/morphe-cli",
+    "uptodown-dlurl": "https://symfonium.en.uptodown.com/android",
+    "apkmirror-dlurl": "https://www.apkmirror.com/apk/tolriq/symfonium-music-player-cast",
+    "archive-dlurl": "https://archive.org/download/geologically/apks/app.symfonik.music.player",
+    "dpi": "nodpi anydpi auto"
+  },
+  "adm-hooman": {
+    "enabled": false,
+    "app-name": "adm",
+    "rv-brand": "hooman",
+    "build-mode": "apk",
+    "arch": "all",
+    "patches-source": "arandomhooman/hoomans-morphe-patches",
+    "cli-source": "MorpheApp/morphe-cli",
+    "dpi": "nodpi anydpi auto",
+    "uptodown-dlurl": "https://advanced-download-manager.en.uptodown.com/android",
+    "apkmirror-dlurl": "https://www.apkmirror.com/apk/admtorrent/advanced-download-manager/"
   },
   "tiktok-icysymmetra": {
     "enabled": false,
@@ -119,7 +131,7 @@
     "app-name": "youtube-music",
     "rv-brand": "morphe",
     "build-mode": "both",
-    "arch": "multi",
+    "arch": "both64",
     "version": "9.26.51",
     "included-patches": "'Theme'",
     "patcher-args": "-OdarkThemeBackgroundColor=#000000 ",
@@ -130,7 +142,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "fing-paresh": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "fing",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -142,7 +154,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "proton-vpn-paresh": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "proton-vpn",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -155,7 +167,7 @@
     "prefer-dl-mode": "bundle"
   },
   "jiohotstar-paresh": {
-    "enabled": true,
+    "enabled": false,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "jiohotstar",
     "rv-brand": "paresh",
@@ -170,7 +182,7 @@
     "app-name": "instagram",
     "rv-brand": "piko",
     "build-mode": "apk",
-    "arch": "multi",
+    "arch": "both64",
     "patches-source": "crimera/piko",
     "patcher-args": "--continue-on-error",
     "cli-source": "MorpheApp/morphe-cli",
@@ -179,7 +191,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "x-piko": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "x",
     "rv-brand": "piko",
     "build-mode": "apk",
@@ -206,23 +218,12 @@
     "dpi": "nodpi anydpi auto",
     "uptodown-dlurl": "https://discord-chat-for-gamers.en.uptodown.com/android"
   },
-  "amazon-india-signed": {
-    "enabled": false,
-    "app-name": "amazon-india",
-    "rv-brand": "signed",
-    "build-mode": "apk",
-    "patches-source-host": "none",
-    "cli-source": "apksigner",
-    "cli-source-host": "none",
-    "uptodown-dlurl": "https://amazon-india.en.uptodown.com/android",
-    "apkmirror-dlurl": "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-india-shop-pay/",
-    "dpi": "nodpi anydpi auto"
-  },
   "amazon-alexa-signed": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-alexa",
     "rv-brand": "signed",
     "build-mode": "apk",
+    "patches-source": "none",
     "patches-source-host": "none",
     "cli-source": "apksigner",
     "cli-source-host": "none",
