@@ -557,7 +557,7 @@ merge_splits() {
 
 _fs_get() {
 	local url=$1 referer=${2:-}
-	local max_retries=5 attempt
+	local max_retries=3 attempt
 	local fs_url="${FLARESOLVERR_URL:-http://localhost:8191}/v1"
 	local extra_headers=""
 	[ -n "$referer" ] && extra_headers=",\"headers\":{\"Referer\":\"$referer\"}"
@@ -565,7 +565,7 @@ _fs_get() {
 		local response status
 		response=$(curl -s -X POST "$fs_url" \
 			-H 'Content-Type: application/json' \
-			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":60000${extra_headers}}") || true
+			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":30000${extra_headers}}") || true
 		status=$(echo "$response" | jq -r '.status // empty')
 		if [[ "$status" == "ok" ]]; then
 			html=$(echo "$response" | jq -r '.solution.response // empty')
@@ -575,25 +575,42 @@ _fs_get() {
 			return 0
 		fi
 		wpr "FlareSolverr attempt $attempt/$max_retries failed for: $url"
-		sleep 10
+		sleep 5
 	done
 	epr "FlareSolverr failed after $max_retries attempts: $url — falling back to plain request"
 	return 1
 }
       
-
+_byparr_get() {
+	local url=$1 referer=${2:-}
+	local max_retries=3 attempt
+	local fs_url="${FLARESOLVERR_URL:-http://localhost:8192}/v1"
+	local extra_headers=""
+	[ -n "$referer" ] && extra_headers=",\"headers\":{\"Referer\":\"$referer\"}"
+	for attempt in $(seq 1 $max_retries); do
+		local response status
+		response=$(curl -s -X POST "$fs_url" \
+			-H 'Content-Type: application/json' \
+			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":30000${extra_headers}}") || true
+		status=$(echo "$response" | jq -r '.status // empty')
+		if [[ "$status" == "ok" ]]; then
+			html=$(echo "$response" | jq -r '.solution.response // empty')
+			export FS_COOKIES
+			FS_COOKIES=$(echo "$response" | jq -r '[.solution.cookies[] | .name + "=" + .value] | join("; ")')
+			user_agent=$(echo "$response" | jq -r '.solution.userAgent // empty')
+			return 0
+		fi
+		wpr "Byparr attempt $attempt/$max_retries failed for: $url"
+		sleep 5
+	done
+	epr "Byparr failed after $max_retries attempts: $url — falling back to plain request"
+	return 1
+}
 _cfb_get() {
 	local url=$1 referer=${2:-}
 	local max_retries=5
 	local attempt
     
-	local cfb_host
-	cfb_host=$(echo "$url" | sed -E 's#https?://([^/]+)/?.*#\1#')
-
-	local cfb_path
-	cfb_path=$(echo "$url" | sed -E 's#https?://[^/]+(/.*)#\1#')
-	[[ -z "$cfb_path" || "$cfb_path" == "$url" ]] && cfb_path="/"
-
 	for attempt in $(seq 1 $max_retries); do
 		local response_file
 		rm -f $TMPDIR/cfb_response_headers.txt
@@ -601,9 +618,9 @@ _cfb_get() {
 		local http_code
 		http_code=$(curl -s -o "$response_file" -w '%{http_code}' \
 			-D $TMPDIR/cfb_response_headers.txt \
-			-H "x-hostname: $cfb_host" \
+			-G --data-urlencode "url=$url"\
 			--max-time 120 \
-			"http://localhost:8000$cfb_path")
+			"http://localhost:8000/html")
 		if [[ "$http_code" == "200" ]]; then
 			html=$(cat "$response_file")
 			if [[ -n "$html" ]]; then
@@ -622,21 +639,32 @@ _cfb_get() {
 }
 _fallback_get(){
 	local url=$1
-	wpr "Falling back to plain request for: $url"
 	html=$(req "$url" -) || return 1
 	FS_COOKIES=""
 	user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0"
 
 }
-
+_FFS_FAILED=0
+_CFB_FAILED=0
+_BYPARR_FAILED=0
 _cf_get() {
-	if [[ "$CF_BYPASS_SOLVER" == "cloudflarebypassforscraping" ]]; then
-		_cfb_get "$@" || _fallback_get "$@"
-	elif [[ "$CF_BYPASS_SOLVER" == "none" ]]; then
-	    _fallback_get "$@"
-	else
-		_fs_get "$@" || _fallback_get "$@"
+	if [[ "$_FFS_FAILED" -eq 0 ]]; then
+		_fs_get "$@" && return 0
+		wpr "FlareSolverr failed, falling back to CFB"
+		_FFS_FAILED=1
+    fi
+	if [[ "$_CFB_FAILED" -eq 0 ]]; then
+		_cfb_get "$@" && return 0
+		wpr "CloudflareBypassForScraping failed, falling back to Byparr"
+		_CFB_FAILED=1
 	fi
+	if [[ "$_BYPARR_FAILED" -eq 0 ]]; then
+		_byparr_get "$@" && return 0
+		wpr "Byparr failed, falling back to plain request"
+		_BYPARR_FAILED=1
+	fi
+	_fallback_get "$@" && return 0
+	epr "All methods failed for: $1"
 }
 # -------------------- apkmirror --------------------
 get_apkmirror_resp() {

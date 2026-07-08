@@ -1,15 +1,9 @@
 name: Setup Container
 description: Setup Container
-inputs:
-  cf_bypass_solver:
-    description: 'Cloudflare bypass solver: flaresolverr or cloudflarebypassforscraping'
-    required: false
-    default: 'cloudflarebypassforscraping'
 runs:
   using: "composite"
   steps:
     - name: Start FlareSolverr
-      if: inputs.cf_bypass_solver == 'flaresolverr'
       shell: bash
       run: |
         docker run -d --name flaresolverr -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest
@@ -23,10 +17,10 @@ runs:
         done
         echo "CF_BYPASS_SOLVER=flaresolverr" >> "$GITHUB_ENV"
     - name: Start Byparr
-      if: inputs.cf_bypass_solver == 'byparr'
+      if: false
       shell: bash
       run: |
-        docker run -d --name byparr -p 8191:8191 ghcr.io/thephaseless/byparr:latest
+        docker run -d --name byparr -p 8192:8191 ghcr.io/thephaseless/byparr:latest
         echo "[*] Waiting for byparr to start..."
         for i in $(seq 1 30); do
           if curl -s http://localhost:8191/ > /dev/null 2>&1; then
@@ -35,9 +29,8 @@ runs:
           fi
           sleep 2
         done
-        echo "CF_BYPASS_SOLVER=flaresolverr" >> "$GITHUB_ENV"
+        echo "CF_BYPASS_SOLVER=byparr" >> "$GITHUB_ENV"
     - name: Start CloudflareBypassForScraping
-      if: inputs.cf_bypass_solver == 'cloudflarebypassforscraping'
       shell: bash
       run: |
         docker run -d --name cloudflarebypass -p 8000:8000 ghcr.io/sarperavci/cloudflarebypassforscraping:latest
