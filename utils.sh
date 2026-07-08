@@ -577,7 +577,7 @@ _fs_get() {
 		wpr "FlareSolverr attempt $attempt/$max_retries failed for: $url"
 		sleep 5
 	done
-	epr "FlareSolverr failed after $max_retries attempts: $url — falling back to plain request"
+	epr "FlareSolverr failed after $max_retries attempts: $url — falling back"
 	return 1
 }
       
@@ -603,7 +603,7 @@ _byparr_get() {
 		wpr "Byparr attempt $attempt/$max_retries failed for: $url"
 		sleep 5
 	done
-	epr "Byparr failed after $max_retries attempts: $url — falling back to plain request"
+	epr "Byparr failed after $max_retries attempts: $url — falling back"
 	return 1
 }
 _cfb_get() {
@@ -650,18 +650,18 @@ _BYPARR_FAILED=0
 _cf_get() {
 	if [[ "$_FFS_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED" == true ]]; then
 		_fs_get "$@" && return 0
-		wpr "FlareSolverr failed, falling back to CFB"
+		wpr "FlareSolverr failed, falling back to Byparr"
 		_FFS_FAILED=1
     fi
-	if [[ "$_CFB_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED" == true ]]; then
-		_cfb_get "$@" && return 0
-		wpr "CloudflareBypassForScraping failed, falling back to Byparr"
-		_CFB_FAILED=1
-	fi
 	if [[ "$_BYPARR_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_BYPARR_ENABLED" == true ]]; then
 		_byparr_get "$@" && return 0
-		wpr "Byparr failed, falling back to plain request"
+		wpr "Byparr failed, falling back to plain CFB"
 		_BYPARR_FAILED=1
+	fi
+	if [[ "$_CFB_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED" == true ]]; then
+		_cfb_get "$@" && return 0
+		wpr "CloudflareBypassForScraping failed, falling back to Plain Text"
+		_CFB_FAILED=1
 	fi
 	_fallback_get "$@" && return 0
 	epr "All methods failed for: $1"
