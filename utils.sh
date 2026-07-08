@@ -625,9 +625,9 @@ _cfb_get() {
 			html=$(cat "$response_file")
 			if [[ -n "$html" ]]; then
 				export FS_COOKIES
-				FS_COOKIES=$(grep -i '^x-cf-bypasser-cookies:' $TMPDIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
+				FS_COOKIES=$(grep -i '^x-cf-bypasser-cookies:' $TEMP_DIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
 				local cfb_ua
-				cfb_ua=$(grep -i '^x-cf-bypasser-user-agent:' $TMPDIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
+				cfb_ua=$(grep -i '^x-cf-bypasser-user-agent:' $TEMP_DIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
 				[[ -n "$cfb_ua" ]] && user_agent="$cfb_ua"
 				rm -f "$response_file" $TMPDIR/cfb_response_headers.txt
 				return 0
