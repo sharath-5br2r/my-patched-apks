@@ -9,3 +9,28 @@ patches-source = "arandomhooman/hoomans-morphe-patches"
 uptodown-dlurl = "https://adobe-reader.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/adobe/adobe-acrobat/"
 dpi = "nodpi anydpi auto"
+
+[symfonium-hooman]
+enabled = true
+app-name = "symfonium"
+rv-brand = "hooman"
+build-mode = "apk"
+arch = "all"
+patches-source = "arandomhooman/hoomans-morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+uptodown-dlurl = "https://symfonium.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/tolriq/symfonium-music-player-cast"
+archive-dlurl = "https://archive.org/download/geologically/apks/app.symfonik.music.player"
+dpi = "nodpi anydpi auto"
+
+[adm-hooman]
+enabled = true
+app-name = "adm"
+rv-brand = "hooman"
+build-mode = "apk"
+arch = "all"
+patches-source = "arandomhooman/hoomans-morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+dpi = "nodpi anydpi auto"
+uptodown-dlurl="https://advanced-download-manager.en.uptodown.com/android"
+apkmirror-dlurl="https://www.apkmirror.com/apk/admtorrent/advanced-download-manager/"

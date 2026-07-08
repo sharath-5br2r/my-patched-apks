@@ -16,6 +16,7 @@ on:
         options:
           - "configs/config.toml"
           - "custom"
+          - "configs/config.parallel.toml"
           - ".github/configs/config.manual.toml"
           - ".github/configs/config.dev.updated.json"
           - ".github/configs/config.stable.updated.json"
@@ -83,10 +84,12 @@ jobs:
         run: bash .github/scripts/build_get_output.sh
 
       - name: Update readme
+        if: ${{ ! contains(inputs.config_file, 'parallel') }}
         run: |
           python3 update-readme.py ${{ steps.version.outputs.NEXT_VER_CODE }} "$GITHUB_REPOSITORY"
 
       - name: Commit updated readme
+        if: ${{ ! contains(inputs.config_file, 'parallel') }}
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
@@ -101,6 +104,7 @@ jobs:
 
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
+        if: ${{ ! contains(inputs.config_file, 'parallel') }}
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           files: ./build/*
@@ -108,6 +112,7 @@ jobs:
           overwrite_files: true
 
       - name: Upload to release
+        if: ${{ ! contains(inputs.config_file, 'parallel') }}
         uses: softprops/action-gh-release@v3
         with:
           body: ${{ steps.get_output.outputs.BUILD_LOG }}
@@ -117,7 +122,9 @@ jobs:
           tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}
           overwrite_files: true
           prerelease: ${{ steps.context.outputs.IS_PRERELEASE == 'true' }}
-
+      - name: Upload to release (Parallel)
+        if: ${{ contains(inputs.config_file, 'parallel') }}
+        run: bash .github/scripts/parallel-upload-apks.sh
       - name: Notify telegram
         if: false
         env:

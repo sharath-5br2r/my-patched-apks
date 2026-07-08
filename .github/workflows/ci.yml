@@ -103,37 +103,43 @@ jobs:
           commit_author: Sharath <sharathsukash@gmail.com>
           file_pattern: .github/configs/*.json
           commit_message: "Update patch sources, app versions and generated configs [skip ci]"
-
-  build_dev:
+  build_parallel_dev:
     needs: check_patch
     if: ${{ needs.check_patch.outputs.trigger_prerelease == '1' }}
+    uses: ./.github/workflows/build.yml
+    with:
+      config_file: ".github/configs/config.dev.updated.parallel.json"
+    secrets: inherit
+  build_dev:
+    needs: [check_patch, build_parallel_dev]
+    if: ${{ always() && (needs.build_parallel_dev.result != 'cancelled' && needs.check_patch.outputs.trigger_prerelease == '1') }}
     uses: ./.github/workflows/build.yml
     with:
       config_file: ".github/configs/config.dev.updated.json"
     secrets: inherit
 
   build_custom:
-    needs: [check_patch, build_dev]
-    if: ${{ always() && needs.build_dev.result != 'cancelled' }}
+    needs: [check_patch, build_parallel_dev, build_dev]
+    if: ${{ always() && (needs.build_parallel_dev.result != 'cancelled' && needs.build_dev.result != 'cancelled') }}
     uses: ./.github/workflows/build.yml
     with:
       config_file: "custom"
     secrets: inherit
   
   build_dynamic:
-    needs: [check_patch, build_dev, build_custom]
-    if: ${{ always() && (needs.build_dev.result != 'cancelled' && needs.build_custom.result != 'cancelled') }}
+    needs: [check_patch, build_parallel_dev, build_dev, build_custom]
+    if: ${{ always() && (needs.build_parallel_dev.result != 'cancelled' && needs.build_dev.result != 'cancelled' && needs.build_custom.result != 'cancelled') }}
     uses: ./.github/workflows/dynamic_build.yml
     secrets: inherit
   trigger_cleanup:
-    needs: [build_dev, build_custom, build_dynamic]
-    if: ${{ always() && (needs.build_dev.result == 'success' || needs.build_custom.result == 'success' || needs.build_dynamic.result == 'success') }}
+    needs: [build_dev, build_custom, build_dynamic, build_parallel_dev]
+    if: ${{ always() && (needs.build_parallel_dev.result == 'success' || needs.build_dev.result == 'success' || needs.build_custom.result == 'success' || needs.build_dynamic.result == 'success') }}
     uses: ./.github/workflows/cleanup.yml
     secrets: inherit
 
   trigger_website_update:
-    needs: [build_dev, build_custom, build_dynamic]
-    if: ${{ always() && (needs.build_dev.result == 'success' || needs.build_custom.result == 'success' || needs.build_dynamic.result == 'success') }}
+    needs: [build_dev, build_custom, build_dynamic, build_parallel_dev]
+    if: ${{ always() && (needs.build_parallel_dev.result == 'success' || needs.build_dev.result == 'success' || needs.build_custom.result == 'success' || needs.build_dynamic.result == 'success') }}
     uses: ./.github/workflows/update-cache.yml
     secrets: inherit
 

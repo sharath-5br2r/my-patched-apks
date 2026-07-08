@@ -1,15 +1,3 @@
-[amazon-india-signed]
-enabled = true
-app-name = "amazon-india"
-rv-brand = "signed"
-build-mode = "apk"
-patches-source = "none"
-patches-source-host = "none"
-cli-source = "apksigner"
-cli-source-host = "none"
-uptodown-dlurl = "https://amazon-india.en.uptodown.com/android"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-india-shop-pay/"
-dpi = "nodpi anydpi auto"
 
 [amazon-alexa-signed]
 enabled = true
