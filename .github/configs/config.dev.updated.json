@@ -7,7 +7,7 @@
     "app-name": "speedtest",
     "rv-brand": "xtra",
     "build-mode": "apk",
-    "arch": "multi",
+    "arch": "both64",
     "patches-source": "BholeyKaBhakt/revanced-patches-xtra",
     "cli-source": "MorpheApp/morphe-cli",
     "uptodown-dlurl": "https://speedtest-net-mobile.en.uptodown.com/android",
@@ -102,7 +102,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "youtube-morphe": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -116,11 +116,11 @@
     "dpi": "nodpi anydpi auto"
   },
   "youtube-music-morphe": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube-music",
     "rv-brand": "morphe",
     "build-mode": "both",
-    "arch": "multi",
+    "arch": "both64",
     "version": "9.26.51",
     "included-patches": "'Theme'",
     "patcher-args": "-OdarkThemeBackgroundColor=#000000 ",
@@ -131,7 +131,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "fing-paresh": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "fing",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -143,7 +143,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "proton-vpn-paresh": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "proton-vpn",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -156,7 +156,7 @@
     "prefer-dl-mode": "bundle"
   },
   "jiohotstar-paresh": {
-    "enabled": true,
+    "enabled": false,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "jiohotstar",
     "rv-brand": "paresh",
@@ -171,7 +171,7 @@
     "app-name": "instagram",
     "rv-brand": "piko",
     "build-mode": "apk",
-    "arch": "multi",
+    "arch": "both64",
     "patches-source": "crimera/piko",
     "patcher-args": "--continue-on-error",
     "cli-source": "MorpheApp/morphe-cli",
