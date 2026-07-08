@@ -145,11 +145,12 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 #### SDK 29 Manifest Patch
 
 <details>
-<summary id="dolphin-sdk29">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="dolphin-sdk29">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2606.121-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
-[Release 2026-07-05](https://github.com/nullcpy/rvb/releases/tag/260003)<br>
-Patches: SDK 29 Manifest Patch
+
+[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260006)<br>
+Patches: 
 </blockquote>
 </details>
 
@@ -522,11 +523,12 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 #### Spoofed to PUBG:VN
 
 <details>
-<summary id="winlator-pubgvn">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="winlator-pubgvn">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-vv3.1.h-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
-[Release 2026-07-05](https://github.com/nullcpy/rvb/releases/tag/260005)<br>
-Patches: Spoofed to PUBG:VN `com.vng.pubgmobile` to enhance performance
+
+[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260006)<br>
+Patches: 
 </blockquote>
 </details>
 
