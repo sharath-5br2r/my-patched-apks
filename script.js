@@ -12,6 +12,8 @@ const CONFIG = {
   appCategories: {
     google: ["youtube", "google"],
     meta: ["threads", "instagram", "messenger", "facebook", "!plusmessenger"],
+    amazon: ["amazon", "primevideo"],
+    games: ["geode","levilauncher","fcl","eden","dolphin"],
     vpn: ["1111warp", "vpnify", "vpn"]
   },
 
@@ -78,7 +80,7 @@ const CONFIG = {
     camscanner: "CamScanner",
     inshorts: "Inshorts - News in 60 words",
     warp: "1.1.1.1 + WARP",
-    x: "X",
+    x: "X/Twitter",
     hoodles: "hoo-dles",
     jiohotstar: "JioHotstar",
     pubg: "PUBG Mobile Spoof",
@@ -279,7 +281,7 @@ const CONFIG = {
       morphe: "app.morphe.android.apps.youtube.music",
       default: "com.google.android.apps.youtube.music",
     },
-    x: "com.twitter.android",
+    xtwitter: "com.twitter.android",
   },
 
   // App-specific notices to display on App Cards
@@ -297,7 +299,20 @@ const CONFIG = {
       ],
     },
     {
-      triggers: ["x"],
+      triggers: ["amazon","primevideo"],
+      className: "amazon-note",
+      title: "Signing Compatibiliy",
+      text: "Due to a modification in hoodles patch, all Amazon Apps are needed to have the same signature. So install the apps from here which is resigned for compatibility.",
+      links: [
+        {
+          label: "Amazon Apps",
+          url: "."
+        }
+      ]
+      
+    },
+    {
+      triggers: ["twitter"],
       className: "x-login-note",
       title: "Login Issue",
       text: "Since October 2025, X has started checking whether the app is modified or if the phone integrity fails during login. These checks are server-side, not client-side.",
