@@ -629,7 +629,7 @@ _cfb_get() {
 				local cfb_ua
 				cfb_ua=$(grep -i '^x-cf-bypasser-user-agent:' $TEMP_DIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
 				[[ -n "$cfb_ua" ]] && user_agent="$cfb_ua"
-				rm -f "$response_file" $TMPDIR/cfb_response_headers.txt
+				rm -f "$response_file" $TEMP_DIR/cfb_response_headers.txt
 				return 0
 			fi
 		fi
