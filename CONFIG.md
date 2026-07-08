@@ -22,9 +22,9 @@ remove-rv-integrations-checks = true # remove checks from the revanced integrati
 dpi = "nodpi anydpi 120-640dpi"      # dpi packages to be searched in order. default: "nodpi anydpi"
 
 patches-source = "revanced/revanced-patches" # where to fetch patches bundle from. default: "MorpheApp/morphe-patches"
-patches-source-host = "github"               # source host for patches: "github" or "gitlab". default: "github"
-cli-source = "ReVanced/revanced-cli"             # where to fetch cli from. default: "MorpheApp/morphe-cli"
-cli-source-host = "github"                       # source host for cli: "github" or "gitlab". default: "github"
+patches-source-host = "github"               # source host for patches: "github" "gitlab" or "none". default: "github"
+cli-source = "ReVanced/revanced-cli"             # where to fetch cli from. default: "MorpheApp/morphe-cli. Special case when cli-source="apksigner", where it only signs the apk. The source hosts must be set to none.
+cli-source-host = "github"                       # source host for cli: "github" "gitlab" or "none". default: "github"
 # options like cli-source can also set per app
 rv-brand = "ReVanced Extended" # rebrand from 'ReVanced' to something different. default: patches-source owner
 
@@ -68,7 +68,7 @@ direct-dlurl = "https://website/com.google.android.youtube-20.40.45-all.apk"
 
 module-prop-name = "some-app-module"                       # module prop name.
 dpi = "360-480dpi"                                         # used to select apk variant from apkmirror. 'auto' matches whatever is available. default: nodpi anydpi
-arch = "arm64-v8a"                                         # 'auto', 'arm64-v8a', 'arm-v7a', 'all', 'both'. 'both' downloads both arm64-v8a and arm-v7a. 'auto' tries all → arm64-v8a → arm-v7a, using the first available. default: auto
+arch = "arm64-v8a"                                         # 'auto', 'arm64-v8a', 'arm-v7a', 'all', 'both'. 'botharm' downloads both arm64-v8a and arm-v7a. 'both64' downloads both arm64-v8a and x86_64. 'multi' downloads all 4 architectures. 'auto' tries all → arm64-v8a → arm-v7a, using the first available. default: auto
 ```
 
 ## Multiple Patch Sources
