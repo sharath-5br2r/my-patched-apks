@@ -27,19 +27,6 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/moon/moon-reader"
 # archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.apps.photos"
 dpi = "nodpi anydpi auto"
 
-[symfonium-binarymend]
-enabled = true
-app-name = "symfonium"
-rv-brand = "binarymend"
-build-mode = "apk"
-arch = "all"
-patches-source = "binarymend/morphe-patches"
-cli-source = "MorpheApp/morphe-cli"
-uptodown-dlurl = "https://symfonium.en.uptodown.com/android"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/tolriq/symfonium-music-player-cast"
-archive-dlurl = "https://archive.org/download/geologically/apks/app.symfonik.music.player"
-dpi = "nodpi anydpi auto"
-
 [github-hoodles]
 enabled = true
 app-name = "github"
@@ -79,6 +66,31 @@ patches-source = "arandomhooman/hoomans-morphe-patches"
 uptodown-dlurl = "https://adobe-reader.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/adobe/adobe-acrobat/"
 dpi = "nodpi anydpi auto"
+
+[symfonium-hooman]
+enabled = true
+app-name = "symfonium"
+rv-brand = "hooman"
+build-mode = "apk"
+arch = "all"
+patches-source = "arandomhooman/hoomans-morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+uptodown-dlurl = "https://symfonium.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/tolriq/symfonium-music-player-cast"
+archive-dlurl = "https://archive.org/download/geologically/apks/app.symfonik.music.player"
+dpi = "nodpi anydpi auto"
+
+[adm-hooman]
+enabled = true
+app-name = "adm"
+rv-brand = "hooman"
+build-mode = "apk"
+arch = "all"
+patches-source = "arandomhooman/hoomans-morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+dpi = "nodpi anydpi auto"
+uptodown-dlurl = "https://advanced-download-manager.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/admtorrent/advanced-download-manager/"
 
 [tiktok-icysymmetra]
 enabled = false
@@ -211,23 +223,12 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/discord/discord-chat-for-gamers
 dpi = "nodpi anydpi auto"
 uptodown-dlurl = "https://discord-chat-for-gamers.en.uptodown.com/android"
 
-[amazon-india-signed]
-enabled = true
-app-name = "amazon-india"
-rv-brand = "signed"
-build-mode = "apk"
-patches-source-host = "none"
-cli-source = "apksigner"
-cli-source-host = "none"
-uptodown-dlurl = "https://amazon-india.en.uptodown.com/android"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-india-shop-pay/"
-dpi = "nodpi anydpi auto"
-
 [amazon-alexa-signed]
 enabled = true
 app-name = "amazon-alexa"
 rv-brand = "signed"
 build-mode = "apk"
+patches-source = "none"
 patches-source-host = "none"
 cli-source = "apksigner"
 cli-source-host = "none"
