@@ -557,7 +557,7 @@ merge_splits() {
 
 _fs_get() {
 	local url=$1 referer=${2:-}
-	local max_retries=3 attempt
+	local max_retries=2 attempt
 	local fs_url="${FLARESOLVERR_URL:-http://localhost:8191}/v1"
 	local extra_headers=""
 	[ -n "$referer" ] && extra_headers=",\"headers\":{\"Referer\":\"$referer\"}"
@@ -565,7 +565,7 @@ _fs_get() {
 		local response status
 		response=$(curl -s -X POST "$fs_url" \
 			-H 'Content-Type: application/json' \
-			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":30000${extra_headers}}") || true
+			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":20000${extra_headers}}") || true
 		status=$(echo "$response" | jq -r '.status // empty')
 		if [[ "$status" == "ok" ]]; then
 			html=$(echo "$response" | jq -r '.solution.response // empty')
@@ -583,7 +583,7 @@ _fs_get() {
       
 _byparr_get() {
 	local url=$1 referer=${2:-}
-	local max_retries=3 attempt
+	local max_retries=2 attempt
 	local fs_url="${FLARESOLVERR_URL:-http://localhost:8192}/v1"
 	local extra_headers=""
 	[ -n "$referer" ] && extra_headers=",\"headers\":{\"Referer\":\"$referer\"}"
@@ -591,7 +591,7 @@ _byparr_get() {
 		local response status
 		response=$(curl -s -X POST "$fs_url" \
 			-H 'Content-Type: application/json' \
-			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":30000${extra_headers}}") || true
+			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":20000${extra_headers}}") || true
 		status=$(echo "$response" | jq -r '.status // empty')
 		if [[ "$status" == "ok" ]]; then
 			html=$(echo "$response" | jq -r '.solution.response // empty')
@@ -619,7 +619,7 @@ _cfb_get() {
 		http_code=$(curl -s -o "$response_file" -w '%{http_code}' \
 			-D $TEMP_DIR/cfb_response_headers.txt \
 			-G --data-urlencode "url=$url"\
-			--max-time 120 \
+			--max-time 60 \
 			"http://localhost:8000/html")
 		if [[ "$http_code" == "200" ]]; then
 			html=$(cat "$response_file")
