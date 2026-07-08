@@ -36,16 +36,17 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "21"
-      - name: Setup docker
-        uses: ./.github/actions/container-setup
-        with:
-          cf_bypass_solver: "cloudflarebypassforscraping"
       - name: Checkout
         uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
           submodules: true
+      - name: Setup docker
+        uses: ./.github/actions/container-setup
+        with:
+          cf_bypass_solver: "cloudflarebypassforscraping"
+
 
       - name: Resolve build context
         id: context
