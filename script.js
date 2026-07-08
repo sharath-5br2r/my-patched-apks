@@ -96,7 +96,6 @@ const CONFIG = {
     geode: "Geode Launcher",
     winlator: "Winlator Ludashi",
     fcl: "Fold Craft Launcher",
-    sign: "Resigned For Compatibility",
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -237,10 +236,10 @@ const CONFIG = {
       ],
     },
     {
-      triggers: ["twitter"],
-      className: "twitter-login-note",
+      triggers: ["x"],
+      className: "x-login-note",
       title: "Login Issue",
-      text: "Since October 2025, Twitter has started checking whether the app is modified or if the phone integrity fails during login. These checks are server-side, not client-side.",
+      text: "Since October 2025, X has started checking whether the app is modified or if the phone integrity fails during login. These checks are server-side, not client-side.",
       links: [
         { label: "Workarounds", url: "https://t.me/pikopatches/1/59772" },
       ],
