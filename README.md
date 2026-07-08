@@ -2618,12 +2618,12 @@ Patches: [hoo-dles/patches-1.38.2.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-morphe"><b>Default Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v20.51.39-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
+<summary id="youtube-morphe"><b>Default Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v21.26.360-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260016)<br>
-Patches: [MorpheApp/patches-1.34.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.3)
+[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260001)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.4)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -3466,12 +3466,12 @@ Patches: [wchill/patches-5.16.4.mpp](https://github.com/wchill/rvx-morphed/relea
 #### [Morphe](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-music-morphe"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v9.15.51-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
+<summary id="youtube-music-morphe"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v9.26.51-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260016)<br>
-Patches: [MorpheApp/patches-1.34.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.3)
+[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260001)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.4)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -3490,6 +3490,8 @@ Patches: [MorpheApp/patches-1.34.0-dev.3.mpp](https://github.com/MorpheApp/morph
 - Hide ads
 - Hide buttons
 - Hide category bar
+- Hide flyout menu components
+- Hide layout components
 - Hide music video ads
 - Miniplayer previous and next buttons
 - Navigation bar
