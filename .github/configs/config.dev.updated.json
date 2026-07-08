@@ -131,7 +131,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "fing-paresh": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "fing",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -143,7 +143,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "proton-vpn-paresh": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "proton-vpn",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -156,7 +156,7 @@
     "prefer-dl-mode": "bundle"
   },
   "jiohotstar-paresh": {
-    "enabled": false,
+    "enabled": true,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "jiohotstar",
     "rv-brand": "paresh",
@@ -220,7 +220,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "amazon-alexa-signed": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-alexa",
     "rv-brand": "signed",
     "build-mode": "apk",
