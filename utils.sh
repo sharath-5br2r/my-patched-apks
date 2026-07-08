@@ -613,11 +613,11 @@ _cfb_get() {
     
 	for attempt in $(seq 1 $max_retries); do
 		local response_file
-		rm -f $TMPDIR/cfb_response_headers.txt
+		rm -f $TEMP_DIR/cfb_response_headers.txt
 		response_file=$(mktemp)
 		local http_code
 		http_code=$(curl -s -o "$response_file" -w '%{http_code}' \
-			-D $TMPDIR/cfb_response_headers.txt \
+			-D $TEMP_DIR/cfb_response_headers.txt \
 			-G --data-urlencode "url=$url"\
 			--max-time 120 \
 			"http://localhost:8000/html")
