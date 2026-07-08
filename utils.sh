@@ -617,10 +617,11 @@ _cfb_get() {
 			fi
 		fi
 	done
-	red_log "[-] CloudflareBypassForScraping failed after $max_retries attempts: $url"
+	epr "CloudflareBypassForScraping failed after $max_retries attempts: $url"
 	return 1
 }
 _fallback_get(){
+	wpr "Falling back to plain request for: $url"
 	local url=$1
 	html=$(req "$url" -) || return 1
 	FS_COOKIES=""
