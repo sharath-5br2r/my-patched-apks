@@ -1660,7 +1660,10 @@ build_rv() {
 	local patcher_args patched_apk build_mode
 	local rv_brand_f=${args[rv_brand],,}
 	rv_brand_f=${rv_brand_f// /-}
-	if [[ -n "$rv_brand_f" && "$rv_brand_f" != "none" ]]; then
+	echo $rv_brand_f
+	if [ "$rv_brand_f" == "none" ]; then
+		rv_brand_f=""
+	else
 		rv_brand_f="-${rv_brand_f}"
 	fi
 	local patches_ref="${args[patches_ref]}"
