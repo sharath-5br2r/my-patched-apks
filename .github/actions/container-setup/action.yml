@@ -11,25 +11,25 @@ runs:
         for i in $(seq 1 30); do
           if curl -s http://localhost:8191/ > /dev/null 2>&1; then
             echo "[+] FlareSolverr is ready."
+            echo "CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED=true" >> "$GITHUB_ENV"
             break
           fi
           sleep 2
         done
-        echo "CF_BYPASS_SOLVER=flaresolverr" >> "$GITHUB_ENV"
     - name: Start Byparr
-      if: false
       shell: bash
       run: |
         docker run -d --name byparr -p 8192:8191 ghcr.io/thephaseless/byparr:latest
         echo "[*] Waiting for byparr to start..."
         for i in $(seq 1 30); do
-          if curl -s http://localhost:8191/ > /dev/null 2>&1; then
+          if curl -s http://localhost:8192/ > /dev/null 2>&1; then
             echo "[+] Byparr is ready."
+            echo "CF_BYPASS_SOLVER_BYPARR_ENABLED=true" >> "$GITHUB_ENV"
             break
           fi
           sleep 2
         done
-        echo "CF_BYPASS_SOLVER=byparr" >> "$GITHUB_ENV"
+        
     - name: Start CloudflareBypassForScraping
       shell: bash
       run: |
@@ -38,8 +38,9 @@ runs:
         for i in $(seq 1 30); do
           if curl -s http://localhost:8000/ > /dev/null 2>&1; then
             echo "[+] CloudflareBypassForScraping is ready."
+            echo "CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED=true" >> "$GITHUB_ENV"
             break
           fi
           sleep 2
         done
-        echo "CF_BYPASS_SOLVER=cloudflarebypassforscraping" >> "$GITHUB_ENV"
+        

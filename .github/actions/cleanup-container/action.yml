@@ -6,16 +6,18 @@ runs:
     - name: Stop FlareSolverr
       shell: bash
       run: |
+        echo "Logs of FlareSolverr:"
         docker logs flaresolverr || true
         docker rm --force flaresolverr || true
     - name: Stop Byparr
-      if: false
       shell: bash
       run: |
+        echo "Logs of Byparr:"
         docker logs byparr || true
         docker rm --force byparr || true
     - name: Stop CloudflareBypassForScraping
       shell: bash
       run: |
+        echo "Logs of CloudflareBypassForScraping:"
         docker logs cloudflarebypass || true
         docker rm --force cloudflarebypass || true
