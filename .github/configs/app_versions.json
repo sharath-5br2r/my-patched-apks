@@ -14,9 +14,9 @@
   },
   "Amazon-India": {
     "keys": [
-      "amazon-india-signed"
+      "amazon-india"
     ],
-    "version": "32.12.0.300"
+    "version": "0"
   },
   "Amazon-Alexa": {
     "keys": [
