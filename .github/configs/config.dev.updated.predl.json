@@ -47,7 +47,7 @@
     "patches-source": "MorpheApp/morphe-patches"
   },
   "levilauncher-unlocked-bgmi": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "bgmi",
     "build-mode": "apk",

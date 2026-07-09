@@ -169,7 +169,7 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 
 <blockquote>
 
-[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260017)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260020)<br>
 Patches: 
 </blockquote>
 </details>
@@ -223,8 +223,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 
 <blockquote>
 
-[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260016)<br>
-Patches: [MorpheApp/patches-1.34.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.5)
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260019)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.6.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.6)
 - Change package name
 </blockquote>
 </details>
@@ -262,8 +262,8 @@ Patches: [hoo-dles/patches-1.38.2.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260016)<br>
-Patches: [MorpheApp/patches-1.34.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.5)
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260019)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.6.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.6)
 - Change package name
 </blockquote>
 </details>
@@ -393,12 +393,13 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### Spoof to BGMI via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="levilauncher-unlocked-bgmi">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.0.0-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
+<summary id="levilauncher-unlocked-bgmi">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.5.4.01-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-05](https://github.com/nullcpy/rvb/releases/tag/260003)<br>
-Patches: Dynamic spoofing to BGMI `com.pubg.imobile' to enhance performance
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260019)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.6.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.6)
+- Change package name
 </blockquote>
 </details>
 
@@ -550,8 +551,8 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 
 <blockquote>
 
-[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260016)<br>
-Patches: [MorpheApp/patches-1.34.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.5)
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260019)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.6.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.6)
 - Change package name
 </blockquote>
 </details>
@@ -660,8 +661,8 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
   
 <blockquote>
 
-[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
-Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.4)
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260018)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.6.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.6)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -732,7 +733,6 @@ Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morph
 - Spoof video streams
 - Swipe controls
 - Theme
-- Video ads
 - Video quality
 - Voice over translation
 </blockquote>
@@ -752,8 +752,8 @@ Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
-Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.4)
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260018)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.6.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.6)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -771,10 +771,10 @@ Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morph
 - GmsCore support
 - Hide ads
 - Hide buttons
-- Hide category bar
+- Hide filter bar
 - Hide flyout menu components
 - Hide layout components
-- Hide music video ads
+- Hide music action buttons
 - Miniplayer previous and next buttons
 - Navigation bar
 - Network proxy
