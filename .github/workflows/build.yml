@@ -102,9 +102,7 @@ jobs:
       - name: Cleanup docker containers
         uses: ./.github/actions/cleanup-container
         if: always()
-        with:
-          cf_bypass_solver: "cloudflarebypassforscraping"
-
+        
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
         with:
