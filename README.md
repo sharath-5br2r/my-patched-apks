@@ -660,8 +660,8 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
   
 <blockquote>
 
-[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
-Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.4)
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260018)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.6.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.6)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -732,7 +732,6 @@ Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morph
 - Spoof video streams
 - Swipe controls
 - Theme
-- Video ads
 - Video quality
 - Voice over translation
 </blockquote>
@@ -752,8 +751,8 @@ Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
-Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.4)
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260018)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.6.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.6)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -771,10 +770,10 @@ Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morph
 - GmsCore support
 - Hide ads
 - Hide buttons
-- Hide category bar
+- Hide filter bar
 - Hide flyout menu components
 - Hide layout components
-- Hide music video ads
+- Hide music action buttons
 - Miniplayer previous and next buttons
 - Navigation bar
 - Network proxy
