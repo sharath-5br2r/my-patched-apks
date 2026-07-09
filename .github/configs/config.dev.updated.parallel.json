@@ -1,9 +1,9 @@
 {
-  "parallel-jobs": 1,
+  "parallel-jobs": 5,
   "patches-version": "dev",
   "enable-module-update": false,
   "amazon-india": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "com.amazon.mShop.android.shopping",
     "rv-brand": "none",
     "build-mode": "apk",
