@@ -1,7 +1,6 @@
 {
   "parallel-jobs": 5,
-  "patches-version": "dev",
-  "enable-module-update": false,
+  "enable-module-update": true,
   "eden-pubg": {
     "enabled": true,
     "app-name": "eden",
