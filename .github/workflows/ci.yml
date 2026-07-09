@@ -105,7 +105,7 @@ jobs:
           commit_message: "Update patch sources, app versions and generated configs [skip ci]"
   build_parallel_dev:
     needs: check_patch
-    if: ${{ needs.check_patch.outputs.trigger_prerelease == '1' }}
+    if: false # ${{ needs.check_patch.outputs.trigger_prerelease == '1' }}
     uses: ./.github/workflows/build.yml
     with:
       config_file: ".github/configs/config.dev.updated.parallel.json"
