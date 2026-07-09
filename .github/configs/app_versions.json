@@ -12,12 +12,6 @@
     ],
     "version": "3.0.462.2547"
   },
-  "Amazon India": {
-    "keys": [
-      "amazon-india"
-    ],
-    "version": "32.12.0.300"
-  },
   "Amazon Alexa": {
     "keys": [
       "amazon-alexa-signed"
