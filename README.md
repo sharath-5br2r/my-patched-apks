@@ -76,7 +76,7 @@ Thank you to everyone who helps keep this project alive!
 
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0-dev.1)
 - Unlock Pro
 </blockquote>
@@ -90,13 +90,13 @@ Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhoom
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="adm-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.0.0-gray?labelColor=1082c2&logo=android&logoColor=white&style=flat"></summary>
+<summary id="adm-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v14.0.39-gray?labelColor=1082c2&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0-dev.1)
-- Unlock Pro
+- Remove ads
 </blockquote>
 </details>
 
@@ -129,7 +129,7 @@ Patches:
 <summary id="amazon-alexa-signed">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2.2.694622.0-gray?labelColor=FF9900&logo=amazon&logoColor=white&style=flat"></summary>
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: 
 </blockquote>
 </details>
@@ -201,7 +201,7 @@ Patches: Spoofed to PUBG `com.tencent.ig` to enhance performance
   
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Fing Premium
 </blockquote>
@@ -239,7 +239,7 @@ Patches: Dynamic spoof to CODM
   
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [hoo-dles/patches-1.38.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.38.2)
 - AMOLED dark theme
 </blockquote>
@@ -298,7 +298,7 @@ Patches: [jasonwu1994/patches-1.2.0.mpp](https://github.com/jasonwu1994/Gboard-p
 
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [crimera/patches-3.8.0-dev.3.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.3)
 - Add settings
 - Allow user network certificate
@@ -366,7 +366,7 @@ Patches: [crimera/patches-3.8.0-dev.3.mpp](https://github.com/crimera/piko/relea
 
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Bypass signature check
 - Enable all codecs
@@ -408,7 +408,7 @@ Patches: Dynamic spoofing to BGMI `com.pubg.imobile' to enhance performance
   
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1)
 - Make UI look like Pro
 - Unlock Moon+ Reader Pro
@@ -428,7 +428,7 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [hoo-dles/patches-1.38.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.38.2)
 - Enable speed control
 - Skip ads
@@ -448,7 +448,7 @@ Patches: [hoo-dles/patches-1.38.2.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Disable telemetry
 - Proton VPN Premium
@@ -471,7 +471,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.12.0)
 - AdFree Account
 - Disable Logging(analytics)
@@ -487,13 +487,13 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="symfonium-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v14.0.0-gray?labelColor=FF5722&logo=android&logoColor=white&style=flat"></summary>
+<summary id="symfonium-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v14.1.0-gray?labelColor=FF5722&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0-dev.1)
-- Unlock Symfonium
+- Unlock Premium
 </blockquote>
 </details>
 
@@ -511,9 +511,8 @@ Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhoom
   
 <blockquote>
 
-[Release 2026-06-17](https://github.com/nullcpy/rvb/releases/tag/362)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.3.1)
-
 - Auto Translate comments
 - Copy comments without username
 - Custom offline videos limit
@@ -562,7 +561,7 @@ Patches:
   
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.3.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.3)
 - Abstract shim layer
 - Abstract shim layer for method
@@ -653,7 +652,7 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
   
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.4)
 - Add to queue
 - Alternative thumbnails
@@ -745,7 +744,7 @@ Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
 Patches: [MorpheApp/patches-1.34.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.4)
 - Bypass certificate checks
 - Change header
