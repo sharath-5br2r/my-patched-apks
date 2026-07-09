@@ -1,6 +1,8 @@
-youtube-music-morphe (x86_64): 9.26.51  
-youtube-music-morphe (arm64-v8a): 9.26.51  
-youtube-morphe (all): 21.26.360  
+geode-pubgkr (all): 1.8.0  
+eden-pubg (all): afead83  
+levilauncher-unlocked-bgmi (all): 1.5.4.01  
+fcl-cod (all): 1.3.1.7  
+winlator-pubgvn (all): 3.1  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest), required for Google APKs.  
