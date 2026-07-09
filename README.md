@@ -216,11 +216,13 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### Dynamic spoof to CODM
 
 <details>
-<summary id="fcl-cod">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="fcl-cod">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.3.1.7-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
-[Release 2026-07-05](https://github.com/nullcpy/rvb/releases/tag/260003)<br>
-Patches: Dynamic spoof to CODM
+
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260016)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.5)
+- Change package name
 </blockquote>
 </details>
 
@@ -253,11 +255,13 @@ Patches: [hoo-dles/patches-1.38.2.mpp](https://github.com/hoo-dles/morphe-patche
 
 #### Dynamic Spoof to PUBG:KR
 <details>
-<summary id="geode-pubgkr">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="geode-pubgkr">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.8.0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
-[Release 2026-07-05](https://github.com/nullcpy/rvb/releases/tag/260003)<br>
-Patches: Dynamic spoof to PUBG:KR `com.pubg.krmobile` to enhance performance
+
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260016)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.5)
+- Change package name
 </blockquote>
 </details>
 
@@ -543,8 +547,9 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 
 <blockquote>
 
-[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260012)<br>
-Patches: 
+[Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260016)<br>
+Patches: [MorpheApp/patches-1.34.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0-dev.5)
+- Change package name
 </blockquote>
 </details>
 
