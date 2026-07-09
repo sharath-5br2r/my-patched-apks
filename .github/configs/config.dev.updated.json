@@ -1,5 +1,5 @@
 {
-  "parallel-jobs": 1,
+  "parallel-jobs": 5,
   "patches-version": "dev",
   "enable-module-update": false,
   "speedtest-xtra": {
@@ -114,7 +114,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "youtube-morphe": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -128,7 +128,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "youtube-music-morphe": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube-music",
     "rv-brand": "morphe",
     "build-mode": "both",

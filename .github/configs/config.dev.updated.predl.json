@@ -1,0 +1,60 @@
+{
+  "parallel-jobs": 5,
+  "patches-version": "dev",
+  "enable-module-update": false,
+  "eden-pubg": {
+    "enabled": true,
+    "app-name": "eden",
+    "rv-brand": "pubg",
+    "build-mode": "apk",
+    "included-patches": "'Change Package Name'",
+    "patcher-args": "-OpackageName='com.tencent.ig'",
+    "patches-source": "MorpheApp/morphe-patches",
+    "cli-source": "MorpheApp/morphe-cli",
+    "local-dlurl": "downloads/eden.apk"
+  },
+  "winlator-pubgvn": {
+    "enabled": true,
+    "app-name": "winlator",
+    "rv-brand": "pubgvn",
+    "build-mode": "apk",
+    "included-patches": "'Change Package Name'",
+    "patcher-args": "-OpackageName='com.vng.pubgmobile'",
+    "cli-source": "MorpheApp/morphe-cli",
+    "local-dlurl": "downloads/winlator.apk",
+    "patches-source": "MorpheApp/morphe-patches"
+  },
+  "fcl-cod": {
+    "enabled": true,
+    "app-name": "fcl",
+    "rv-brand": "cod",
+    "build-mode": "apk",
+    "included-patches": "'Change Package Name'",
+    "patcher-args": "-OpackageName='com.activision.callofduty.shooter'",
+    "cli-source": "MorpheApp/morphe-cli",
+    "local-dlurl": "downloads/fcl.apk",
+    "patches-source": "MorpheApp/morphe-patches"
+  },
+  "geode-pubgkr": {
+    "enabled": true,
+    "app-name": "geode",
+    "rv-brand": "pubgkr",
+    "build-mode": "apk",
+    "included-patches": "'Change Package Name'",
+    "patcher-args": "-OpackageName='com.pubg.krmobile'",
+    "cli-source": "MorpheApp/morphe-cli",
+    "local-dlurl": "downloads/geode.apk",
+    "patches-source": "MorpheApp/morphe-patches"
+  },
+  "levilauncher-unlocked-bgmi": {
+    "enabled": true,
+    "app-name": "levilauncher-unlocked",
+    "rv-brand": "bgmi",
+    "build-mode": "apk",
+    "included-patches": "'Change Package Name'",
+    "patcher-args": "-OpackageName='com.pubg.imobile'",
+    "cli-source": "MorpheApp/morphe-cli",
+    "local-dlurl": "downloads/levilauncher.apk",
+    "patches-source": "MorpheApp/morphe-patches"
+  }
+}
