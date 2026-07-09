@@ -80,7 +80,7 @@ jobs:
             fi
             bash ./morphe-experimental.sh
             bash ./configgen.sh
-            bash -x ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
+            bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
           fi
 
       - name: Get output

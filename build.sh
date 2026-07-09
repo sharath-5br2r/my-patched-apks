@@ -28,18 +28,20 @@ java --version >/dev/null || abort "\`openjdk 17\` is not installed. install it 
 zip --version >/dev/null || abort "\`zip\` is not installed. install it with 'apt install zip' or equivalent"
 
 set_prebuilts
-AAPT2=$(command -v aapt2)
+AAPT2=$(command -v aapt2) || true
 if [ -z "$AAPT2" ]; then
-    echo "[!] aapt2 not found in PATH, searching in Android SDK..."
-	if [ -d "$ANDROID_HOME" ]; then
+    wpr "aapt2 not found in PATH, searching in Android SDK..."
+	set +u
+	if [[ -d "$ANDROID_HOME" ]]; then
     	AAPT2=$(find /usr/local/lib/android/sdk/build-tools -name aapt2 | sort -r | head -n 1)
 	else
 		epr "Cannot Find aapt2, please install Android SDK or add aapt2 to PATH"
-		if [ "$OS" = Android ]; then
+		if [ $(uname -o) = Android ]; then
 			epr "On Android, you can install aapt2 with 'pkg install aapt2' or 'apt install aapt2'"
 		fi
 		exit 1
 	fi
+	set -u
 fi
 
 
