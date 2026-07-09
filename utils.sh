@@ -647,21 +647,22 @@ _FFS_FAILED=0
 _CFB_FAILED=0
 _BYPARR_FAILED=0
 _unqueued_cf_get() {
+	if [[ "$_CFB_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED" == true ]]; then
+		_cfb_get "$@" && return 0
+		wpr "CloudflareBypassForScraping failed, falling back"
+		_CFB_FAILED=1
+	fi
 	if [[ "$_FFS_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED" == true ]]; then
 		_fs_get "$@" && return 0
-		wpr "FlareSolverr failed, falling back to Byparr"
+		wpr "FlareSolverr failed, falling back"
 		_FFS_FAILED=1
     fi
 	if [[ "$_BYPARR_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_BYPARR_ENABLED" == true ]]; then
 		_byparr_get "$@" && return 0
-		wpr "Byparr failed, falling back to plain CFB"
+		wpr "Byparr failed, falling back"
 		_BYPARR_FAILED=1
 	fi
-	if [[ "$_CFB_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED" == true ]]; then
-		_cfb_get "$@" && return 0
-		wpr "CloudflareBypassForScraping failed, falling back to Plain Text"
-		_CFB_FAILED=1
-	fi
+
 	_fallback_get "$@" && return 0
 	epr "All methods failed for: $1"
 }
@@ -1823,7 +1824,7 @@ module_prop() {
 name=${2}
 version=v${3}
 versionCode=${NEXT_VER_CODE}
-author=j-hc
+author=sharath
 description=${4}" >"${6}/module.prop"
 
 	if [ "$ENABLE_MODULE_UPDATE" = true ]; then echo "updateJson=${5}" >>"${6}/module.prop"; fi
