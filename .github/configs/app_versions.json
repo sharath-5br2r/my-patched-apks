@@ -12,25 +12,25 @@
     ],
     "version": "3.0.462.2547"
   },
-  "Amazon-India": {
+  "Amazon India": {
     "keys": [
       "amazon-india"
     ],
     "version": "32.12.0.300"
   },
-  "Amazon-Alexa": {
+  "Amazon Alexa": {
     "keys": [
       "amazon-alexa-signed"
     ],
     "version": "2.2.694622.0"
   },
-  "Adobe-Acrobat": {
+  "Adobe Acrobat": {
     "keys": [
       "adobe-acrobat-hooman"
     ],
     "version": "26.4.4.44722"
   },
-  "Proton-VPN": {
+  "Proton VPN": {
     "keys": [
       "proton-vpn-paresh"
     ],
@@ -41,5 +41,35 @@
       "x-piko"
     ],
     "version": "12.6.1-release.0"
+  },
+  "Eden": {
+    "keys": [
+      "eden-pubg"
+    ],
+    "version": "0"
+  },
+  "FCL": {
+    "keys": [
+      "fcl-cod"
+    ],
+    "version": "0"
+  },
+  "Winlator": {
+    "keys": [
+      "winlator-pubgvn"
+    ],
+    "version": "0"
+  },
+  "Geode": {
+    "keys": [
+      "geode-pubgkr"
+    ],
+    "version": "0"
+  },
+  "LeviLauncher": {
+    "keys": [
+      "levilauncher-bgmi"
+    ],
+    "version": "0"
   }
 }

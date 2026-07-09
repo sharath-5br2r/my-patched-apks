@@ -16,6 +16,7 @@ on:
         options:
           - "configs/config.toml"
           - "custom"
+          - "configs/config.predl.toml"
           - "configs/config.parallel.toml"
           - ".github/configs/config.manual.toml"
           - ".github/configs/config.dev.updated.json"
@@ -74,6 +75,9 @@ jobs:
           if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == "custom" ]]; then
             bash ./custom_patches.sh
           else
+            if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == *"predl"* ]]; then
+              bash ./prep_build_predl.sh
+            fi
             bash ./morphe-experimental.sh
             bash ./configgen.sh
             bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"

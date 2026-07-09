@@ -28,9 +28,9 @@ if [ "${TRIGGER_STABLE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [
   STABLE_CONFIGS=$(find $1 -name "*.toml" ! -name "*dev*.toml" | sort)
   if [ -n "$STABLE_CONFIGS" ]; then
     # shellcheck disable=SC2086
-    yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $STABLE_CONFIGS > config.stable.json
+    yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $STABLE_CONFIGS > config.stable$2.json
   else
-    echo "{}" > config.stable.json
+    echo "{}" > config.stable$2.json
   fi
 
   jq --slurpfile active active.stable.json --slurpfile activeApps active_apps.json '
@@ -44,16 +44,16 @@ if [ "${TRIGGER_STABLE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [
         if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
       else . end
     )
-  ' config.stable.json > .github/configs/config.stable.updated$2.json
+  ' config.stable$2.json > .github/configs/config.stable.updated$2.json
 fi
 
 if [ "${TRIGGER_PRERELEASE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
   DEV_CONFIGS=$(find $1 -name "*.toml" ! -name "*stable*.toml" | sort)
   if [ -n "$DEV_CONFIGS" ]; then
     # shellcheck disable=SC2086
-    yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $DEV_CONFIGS > config.dev.json
+    yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $DEV_CONFIGS > config.dev$2.json
   else
-    echo "{}" > config.dev.json
+    echo "{}" > config.dev$2.json
   fi
 
   jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json --argjson tags "$TAGS_NEW" '
@@ -78,8 +78,9 @@ if [ "${TRIGGER_PRERELEASE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] 
         if (($srcs - $active[0]) != $srcs) or (($activeApps[0] | index($k)) and $has_valid_dev) then . else (.value.enabled = false) end
       else . end
     )
-  ' config.dev.json > .github/configs/config.dev.updated$2.json
+  ' config.dev$2.json > .github/configs/config.dev.updated$2.json
 fi
 }
 genconfigs ./.github/configs/downstream_patches ""
 genconfigs ./.github/configs/parallel ".parallel"
+genconfigs ./.github/configs/config.predl.toml ".predl"

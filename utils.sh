@@ -5,7 +5,7 @@ CWD=$(pwd)
 TEMP_DIR="temp"
 BIN_DIR="bin"
 BUILD_DIR="build"
-DL_SRCS=("direct" "github" "archive" "apkmirror" "uptodown" "apkpure" "apkcombo")
+DL_SRCS=("local" "directv2" "direct" "github" "archive" "apkmirror" "uptodown" "apkpure" "apkcombo")
 BUILD_JSON_FILE="build.json"
 PATCH_OUTPUT=""
 
@@ -314,7 +314,6 @@ set_prebuilts() {
 	arch=$(uname -m)
 	if [ "$arch" = aarch64 ]; then arch=arm64; elif [ "${arch:0:5}" = "armv7" ]; then arch=arm; fi
 	HTMLQ="${BIN_DIR}/htmlq/htmlq-${arch}"
-	AAPT2="${BIN_DIR}/aapt2/aapt2-${arch}"
 	TOML="${BIN_DIR}/toml/tq-${arch}"
 }
 
@@ -1055,7 +1054,6 @@ _apkpure_install_xapk() {
 		epr "Downloaded XAPK is not a valid zip (Cloudflare block?): $xapk"
 		return 1
 	fi
-	gh_dl "$TEMP_DIR/apkeditor.jar" "https://github.com/REAndroid/APKEditor/releases/download/V1.4.9/APKEditor-1.4.9.jar" >/dev/null || return 1
 	if unzip -l "$xapk" 2>/dev/null | grep -q '^[[:space:]]*[0-9].*base\.apk$'; then
 		pr "Extracting base.apk from XAPK"
 		unzip -p "$xapk" base.apk > "$output" || return 1
@@ -1352,8 +1350,34 @@ dl_direct() {
 get_direct_vers() { cut -d- -f2 <<<"$__DIRECT_APKNAME__" | sed 's/\.\(apk\|xapk\|apks\|apkm\)$//'; }
 get_direct_pkg_name() { cut -d- -f1 <<<"$__DIRECT_APKNAME__" | sed 's/\.\(apk\|xapk\|apks\|apkm\)$//'; }
 get_direct_resp() { __DIRECT_APKNAME__=$(awk -F/ '{print $NF}' <<<"$1"); }
-# --------------------------------------------------
+#---------------------------direct-v2----------------------
 
+get_directv2_resp() {
+	local url=$1
+	temp_output=$(mktemp -u "$TEMP_DIR/direct-XXXXXX.apk")
+	wget -q "$url" -O "$temp_output" || return 1
+}
+get_directv2_vers() { $AAPT2 dump badging "$temp_output" | grep versionName | sed -n "s/.*versionName='\([^']*\)'.*/\1/p" | head -n 1; }
+get_directv2_pkg_name() { $AAPT2 dump packagename "$temp_output" | head -n 1; }
+dl_directv2() {
+	local url=$1 version=${2// /-} output=$3 arch=$4 _dpi=$5
+	mv "$temp_output" "$output" || return 1
+}
+#---------------------------local----------------------
+get_local_resp() {
+	local_file=$1
+	if [ ! -f "$local_file" ]; then
+		epr "File not found: $local_file"
+		return 1
+	fi
+}
+get_local_vers() { $AAPT2 dump badging "$local_file" | grep versionName | sed -n "s/.*versionName='\([^']*\)'.*/\1/p" | head -n 1; }
+get_local_pkg_name() { $AAPT2 dump packagename "$local_file" | head -n 1; }
+dl_local() {
+	local local_file=$1 version=${2// /-} output=$3 arch=$4 _dpi=$5
+	cp "$local_file" "$output" || return 1
+}
+#------------------------------------------------------
 patch_apk() {
 	local stock_input=$1 patched_apk=$2 patcher_args=$3 cli_jar=$4 patches_jar=$5 cli_source=$6
 	local tmp_dir="${CWD}/${patched_apk}-temporary-files"
@@ -1418,7 +1442,7 @@ patch_apk() {
 		cmd_short+=" -b"
 	fi
 
-	if [ "$OS" = Android ]; then
+	if [[ "$OS" = Android  ]] && [[ "${cli_name::8}" = revanced ]]; then
 		cmd_long+=" --custom-aapt2-binary='${AAPT2}'"
 		cmd_short+=" --custom-aapt2-binary='${AAPT2}'"
 	fi

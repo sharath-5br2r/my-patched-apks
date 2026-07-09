@@ -20,13 +20,30 @@ mkdir -p temp
 wget -qO temp/bcprov.jar "https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk18on/$bcversion/bcprov-jdk18on-$bcversion.jar"
 LAST_PROV=$(grep "^security.provider\." "$JAVA_HOME/conf/security/java.security"  | grep -oP '(?<=security\.provider\.)\d+' | sort -n | tail -1)
 echo "security.provider.$((LAST_PROV+1))=org.bouncycastle.jce.provider.BouncyCastleProvider"  > temp/bc.security
-    
+pr "Downloading APKEditor"
+wget -q $(gh api repos/REAndroid/APKEditor/releases/latest | jq -r '.assets[0].browser_download_url') -O ./temp/apkeditor.jar
 
 jq --version >/dev/null || abort "\`jq\` is not installed. install it with 'apt install jq' or equivalent"
 java --version >/dev/null || abort "\`openjdk 17\` is not installed. install it with 'apt install openjdk-17-jre' or equivalent"
 zip --version >/dev/null || abort "\`zip\` is not installed. install it with 'apt install zip' or equivalent"
 
 set_prebuilts
+AAPT2=$(command -v aapt2)
+if [ -z "$AAPT2" ]; then
+    echo "[!] aapt2 not found in PATH, searching in Android SDK..."
+	if [ -d "$ANDROID_HOME" ]; then
+    	AAPT2=$(find /usr/local/lib/android/sdk/build-tools -name aapt2 | sort -r | head -n 1)
+	else
+		epr "Cannot Find aapt2, please install Android SDK or add aapt2 to PATH"
+		if [ "$OS" = Android ]; then
+			epr "On Android, you can install aapt2 with 'pkg install aapt2' or 'apt install aapt2'"
+		fi
+		exit 1
+	fi
+fi
+
+
+echo "[+] Using aapt2: $AAPT2"
 
 vtf() { if ! isoneof "${1}" "true" "false"; then abort "ERROR: '${1}' is not a valid option for '${2}': only true or false is allowed"; fi; }
 
@@ -270,9 +287,8 @@ rm -rf temp/tmp.*
 if [ -z "$(ls -A1 "${BUILD_DIR}")" ]; then abort "All builds failed."; fi
 
 log "\n**Notes:**"
-log "• Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs."
+log "• Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest), required for Google APKs."
 log "• Use [Zygisk Detach](https://github.com/j-hc/zygisk-detach) to stop Play Store from updating Modules."
-log "\n[GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)\n"
 
 changelog_merged=$(cat "$TEMP_DIR"/*/changelog.md 2>/dev/null || :)
 changelog_merged=$(awk '

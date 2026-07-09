@@ -51,16 +51,19 @@ while IFS='|' read -r group app; do
     if [ -z "$group" ] || [ -z "$app" ]; then continue; fi
     echo "Checking version for $group ($app)..."
     
+    
     uptodown_url=$(jq -r ".\"$app\".\"uptodown-dlurl\" // empty" temp_all_configs.json)
     apkmirror_url=$(jq -r ".\"$app\".\"apkmirror-dlurl\" // empty" temp_all_configs.json)
     apkpure_url=$(jq -r ".\"$app\".\"apkpure-dlurl\" // empty" temp_all_configs.json)
     apkcombo_url=$(jq -r ".\"$app\".\"apkcombo-dlurl\" // empty" temp_all_configs.json)
+    local_url=$(jq -r ".\"$app\".\"local-dlurl\" // empty" temp_all_configs.json)
 
     dlurls=()
     [ -n "$uptodown_url" ] && dlurls+=("$uptodown_url")
     [ -n "$apkmirror_url" ] && dlurls+=("$apkmirror_url")
     [ -n "$apkpure_url" ] && dlurls+=("$apkpure_url")
     [ -n "$apkcombo_url" ] && dlurls+=("$apkcombo_url")
+    [ -n "$local_url" ] && dlurls+=("$local_url")
 
     if [ ${#dlurls[@]} -eq 0 ]; then
         echo "No dlurl for $app, skipping"
@@ -90,6 +93,16 @@ while IFS='|' read -r group app; do
                 get_apkcombo_resp "$dlurl" || { echo "Failed apkcombo resp for $app"; continue; }
                 vers=$(get_apkcombo_vers) || { echo "Failed apkcombo vers for $app"; continue; }
                 latest_ver=$(echo "$vers" | get_highest_ver) || true
+            elif [[ "$dlurl" == *"eden"* ]]; then
+                latest_ver=$(gh run list -R Eden-CI/Workflow -w nightly.yml --status success --limit 1 --json createdAt -q ".[0].createdAt") || { echo "Failed to fetch Eden version for $app"; continue; }
+            elif [[ "$dlurl" == *"fcl"* ]]; then
+                latest_ver=$(gh api repos/FCL-Team/FoldCraftLauncher/releases/latest --jq '.tag_name') || { echo "Failed to fetch FCL version for $app"; continue; }
+            elif [[ "$dlurl" == *"winlator"* ]]; then
+                latest_ver=$(gh api repos/StevenMXZ/Winlator-Ludashi/releases/latest --jq '.tag_name') || { echo "Failed to fetch Winlator version for $app"; continue; }
+            elif [[ "$dlurl" == *"geode"* ]]; then
+                latest_ver=$(gh api repos/geode-sdk/android-launcher/releases/latest --jq '.tag_name') || { echo "Failed to fetch Geode version for $app"; continue; }
+            elif [[ "$dlurl" == *"levilauncher"* ]]; then
+                latest_ver=$(gh api repos/0Sombera666/LeviLaunchroidUnlocked/releases
             fi
             
             if [ -n "$latest_ver" ]; then
@@ -108,6 +121,7 @@ while IFS='|' read -r group app; do
         echo "Could not find latest version for $group"
     fi
 done < check_list.txt
+
 
 if [ -s fetched_app_versions.jsonl ]; then
     FETCHED_JSON=$(jq -s 'reduce .[] as $item ({}; . * $item)' fetched_app_versions.jsonl)

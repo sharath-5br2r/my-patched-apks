@@ -1,5 +1,5 @@
 enable-module-updates = true
-parallel-jobs = 1
+parallel-jobs = 5
 patches-version = "dev"
 
 [amazon-india]
