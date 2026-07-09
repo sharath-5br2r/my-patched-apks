@@ -83,7 +83,24 @@ Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhoom
 </details>
 
 ---
+### [Advanced Download Manager](https://play.google.com/store/apps/details?id=com.dv.adm)
 
+`com.dv.adm`
+
+#### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
+
+<details>
+<summary id="adm-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.0.0-gray?labelColor=1082c2&logo=android&logoColor=white&style=flat"></summary>
+
+<blockquote>
+
+[Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
+Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0-dev.1)
+- Unlock Pro
+</blockquote>
+</details>
+
+---
 ### [Amazon India](https://play.google.com/store/apps/details?id=in.amazon.mShop.android.shopping)
 
 `in.amazon.mShop.android.shopping`
@@ -369,7 +386,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### Dynamic Spoof to BGMI
 
 <details>
-<summary id="levilauncher-unlocked-dynamic-spoof">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.0.0-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
+<summary id="levilauncher-unlocked-bgmi">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.0.0-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
@@ -467,15 +484,15 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 
 `app.symfonik.music.player`
 
-#### [Morphe (binarymend)](https://github.com/binarymend/morphe-patches)
+#### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="symfonium-binarymend">&emsp;<a href="https://sharath-5br2r.github.io/"><img src="https://img.shields.io/badge/version-v14.0.0-gray?labelColor=FF5722&logo=android&logoColor=white&style=flat"></summary>
+<summary id="symfonium-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v14.0.0-gray?labelColor=FF5722&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
 [Release 2026-07-08](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260005)<br>
-Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1)
+Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0-dev.1)
 - Unlock Symfonium
 </blockquote>
 </details>
@@ -780,4 +797,4 @@ This automated builder would not be possible without the incredible work and ded
 - **The Patch Maintainers:** Huge appreciation to the development teams behind **ReVanced**, **MorpheApp**, **Anddea**, **RVX**, **Piko**, **De-Vanced**, and all the other independent developers who spend countless hours reverse-engineering, updating, and keeping these patches alive for everyone.
 
 _If you enjoy using these builds, please consider starring their upstream repositories and original apps and supporting the original patch developers!_
-# patched-apks-central
+

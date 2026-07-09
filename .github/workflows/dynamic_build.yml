@@ -2,6 +2,12 @@ name: Build dynamic Patches
 permissions: write-all
 on:
   workflow_dispatch:
+    inputs:
+      run-all:
+        description: 'Run all jobs (including those that are not triggered by new tags)'
+        required: false
+        default: true
+        type: boolean
   workflow_call:
 
 jobs:
@@ -60,7 +66,7 @@ jobs:
   build-levilauncher:
     runs-on: ubuntu-latest
     needs: get-tags
-    if: ${{ needs.get-tags.outputs.TRIGGER_LEVILAUNCHER == 'true' }}
+    if: ${{ needs.get-tags.outputs.TRIGGER_LEVILAUNCHER == 'true' || github.event.inputs.run-all == true }}
     env:
       LEVILAUNCHER_TAG: ${{ needs.get-tags.outputs.LEVILAUNCHER_TAG }}
       
@@ -180,7 +186,7 @@ jobs:
   build-geode:
     needs: [build-levilauncher, get-tags]
     runs-on: ubuntu-latest
-    if: ${{ always() && (needs.get-tags.outputs.TRIGGER_GEODE == 'true' && needs.build-levilauncher.result != 'cancelled') }}
+    if: ${{ always() && ((needs.get-tags.outputs.TRIGGER_GEODE == 'true' || github.event.inputs.run-all == true) && needs.build-levilauncher.result != 'cancelled') }}
     env:
       GEODE_TAG: ${{ needs.get-tags.outputs.GEODE_TAG }}
     steps:
@@ -232,7 +238,7 @@ jobs:
           archive: false
   build-fcl:
     needs: [build-levilauncher, build-geode, get-tags]
-    if: ${{ always() && (needs.get-tags.outputs.TRIGGER_FCL == 'true' && needs.build-levilauncher.result != 'cancelled' && needs.build-geode.result != 'cancelled') }}
+    if: ${{ always() && ((needs.get-tags.outputs.TRIGGER_FCL == 'true' || github.event.inputs.run-all == true ) && needs.build-levilauncher.result != 'cancelled' && needs.build-geode.result != 'cancelled') }}
     runs-on: ubuntu-latest
     env:
       FCL_TAG: ${{ needs.get-tags.outputs.FCL_TAG }}
@@ -302,7 +308,7 @@ jobs:
         run: |
            echo -e "{" >> build.json
            if [ $TRIGGER_LEVILAUNCHER == "true" ]; then
-             echo -e "\"levilauncher-bgmi\": { \"exts\": [\"apk\"], \"name\": \"levilauncher-bgmi\",\"arch\": \"arm64-v8a\",\"patch\": \"bgmi\", \"version\": \"$LEVILAUNCHER_TAG\" }," >> build.json
+             echo -e "\"levilauncher-bgmi\": { \"exts\": [\"apk\"], \"name\": \"levilauncher-unlocked-bgmi\",\"arch\": \"arm64-v8a\",\"patch\": \"bgmi\", \"version\": \"$LEVILAUNCHER_TAG\" }," >> build.json
              echo  -e "Patched and signed the following APK:\n- levilauncher-unlocked-bgmi-$LEVILAUNCHER_TAG.apk\n" >> build.md
            fi
            if [ $TRIGGER_GEODE == "true" ]; then
