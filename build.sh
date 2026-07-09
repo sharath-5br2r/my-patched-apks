@@ -35,7 +35,7 @@ toml_prep "${1:-config.toml}" || abort "could not find config file '${1:-config.
 main_config_t=$(toml_get_table_main)
 COMPRESSION_LEVEL=$(toml_get "$main_config_t" compression-level) || COMPRESSION_LEVEL="9"
 if ! PARALLEL_JOBS=$(toml_get "$main_config_t" parallel-jobs); then
-	if [ "$OS" = Android ]; then PARALLEL_JOBS=1; else PARALLEL_JOBS=$(nproc); fi
+	PARALLEL_JOBS=$(nproc)
 fi
 REMOVE_RV_INTEGRATIONS_CHECKS=$(toml_get "$main_config_t" remove-rv-integrations-checks) || REMOVE_RV_INTEGRATIONS_CHECKS="false"
 DEF_PATCHES_VER=$(toml_get "$main_config_t" patches-version) || DEF_PATCHES_VER="latest"

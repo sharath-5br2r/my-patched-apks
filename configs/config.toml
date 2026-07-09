@@ -1,5 +1,5 @@
 enable-module-updates = true
-parallel-jobs = 1
+parallel-jobs = 4
 patches-version = "dev"
 
 [speedtest-xtra]
@@ -93,7 +93,7 @@ uptodown-dlurl = "https://advanced-download-manager.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/admtorrent/advanced-download-manager/"
 
 [tiktok-icysymmetra]
-enabled = false
+enabled = true
 app-name = "tiktok"
 rv-brand = "icysymmetra"
 build-mode = "apk"

@@ -647,7 +647,7 @@ _fallback_get(){
 _FFS_FAILED=0
 _CFB_FAILED=0
 _BYPARR_FAILED=0
-_cf_get() {
+_unqueued_cf_get() {
 	if [[ "$_FFS_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED" == true ]]; then
 		_fs_get "$@" && return 0
 		wpr "FlareSolverr failed, falling back to Byparr"
@@ -665,6 +665,13 @@ _cf_get() {
 	fi
 	_fallback_get "$@" && return 0
 	epr "All methods failed for: $1"
+}
+_cf_get() {
+	local lock=$TEMP_DIR/cf_get.lock
+	exec 200>"$lock"
+	flock -x 200
+	trap 'exec 200>&-' RETURN EXIT INT TERM
+	_unqueued_cf_get "$@"
 }
 # -------------------- apkmirror --------------------
 get_apkmirror_resp() {
