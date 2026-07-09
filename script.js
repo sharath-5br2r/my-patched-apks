@@ -44,6 +44,7 @@ const CONFIG = {
 
   // Brand name overrides (keys must be lowercase)
   brandOverrides: {
+    adm: "Advanced Download Manager",
     youtube: "YouTube",
     revanced: "ReVanced",
     morphe: "Morphe",
@@ -116,6 +117,7 @@ const CONFIG = {
   // Keys MUST be the fully normalized appName (lowercase, no spaces, no symbols)
   // app + patch + variant, app + patch + default, app + variant, app + default, app only
   appIds: {
+    advanceddownloadmanager: "com.dv.adm",
     "1111warp": "com.cloudflare.onedotonedotonedotone",
     amazonalexa: "com.amazon.dee.app",
     amazonindia: "in.amazon.mShop.android.shopping",
