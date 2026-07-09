@@ -102,7 +102,7 @@ while IFS='|' read -r group app; do
             elif [[ "$dlurl" == *"geode"* ]]; then
                 latest_ver=$(gh api repos/geode-sdk/android-launcher/releases/latest --jq '.tag_name') || { echo "Failed to fetch Geode version for $app"; continue; }
             elif [[ "$dlurl" == *"levilauncher"* ]]; then
-                latest_ver=$(gh api repos/0Sombera666/LeviLaunchroidUnlocked/releases/latest --jq '.tag_name') || { echo "Failed to fetch LeviLauncher version for $app"; continue; }
+                latest_ver=$(gh api repos/0Sombra666/LeviLaunchroidUnlocked/releases/latest --jq '.tag_name') || { echo "Failed to fetch LeviLauncher version for $app"; continue; }
             else
                 echo "Unknown dlurl for $app: $dlurl"
                 continue

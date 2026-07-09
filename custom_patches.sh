@@ -25,7 +25,7 @@ dolphin-sdk29() {
     java -jar ./temp/APKEditor.jar b -i temp/dolphin-src -o temp/dolphin-patched.apk
     sign temp/dolphin-patched.apk ./build/dolphin-sdk29-v$DOLPHIN_VER-all.apk
     echo -e "Patched Dolphin $DOLPHIN_VER with SDK 29" >> build.md
-    echo -e "\"dolphin-sdk29\": { \"exts\": [\"apk\"], \"name\": \"dolphin-sdk29\",\"arch\": \"all\",\"patch\": \"sdk29\", \"version\": \"$DOLPHIN_VER\"}," >> build.json
+    echo -e "\"dolphin-sdk29\": { \"exts\": [\"apk\"], \"name\": \"dolphin-sdk29\",\"arch\": \"all\",\"patch\": \"sdk29\", \"version\": \"$DOLPHIN_VER\"}" >> build.json
     rm -f ./build/*.idsig
     }
 
