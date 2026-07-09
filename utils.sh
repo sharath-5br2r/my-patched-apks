@@ -9,7 +9,7 @@ DL_SRCS=("local" "directv2" "direct" "github" "archive" "apkmirror" "uptodown" "
 BUILD_JSON_FILE="build.json"
 PATCH_OUTPUT=""
 
-if [ "${GITHUB_TOKEN-}" ]; then GH_HEADER="Authorization: token ${GITHUB_TOKEN}"; else GH_HEADER=; fi
+if [ "${GH_TOKEN-}" ]; then GH_HEADER="Authorization: token ${GH_TOKEN}"; else GH_HEADER=; fi
 NEXT_VER_CODE=${NEXT_VER_CODE:-$(date +'%Y%m%d')}
 OS=$(uname -o)
 

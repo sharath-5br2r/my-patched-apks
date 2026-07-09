@@ -16,6 +16,9 @@
 - Dynamic Fetching of Morphe experimental versions
 - Moved Keystore away from Repo
 - Disabled Telegram Notifications
+
+For local use and modifications, see [CONFIG.md](CONFIG.md) for instructions on how to configure the builder and add your own apps and patches.
+
 ---
 ## 🤝 Support the Project Upstream
 
@@ -108,7 +111,7 @@ Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhoom
 #### Signed APK
 
 <details>
-<summary id="amazon-india-signed">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v32.12.4.300-gray?labelColor=FF9900&logo=amazon&logoColor=white&style=flat"></summary>
+<summary id="amazon-india-signed">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v32.12.4.300-gray?labelColor=FF9900&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
@@ -126,7 +129,7 @@ Patches:
 #### Signed APK
 
 <details>
-<summary id="amazon-alexa-signed">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2.2.694622.0-gray?labelColor=FF9900&logo=amazon&logoColor=white&style=flat"></summary>
+<summary id="amazon-alexa-signed">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2.2.694622.0-gray?labelColor=add8e6&logo=android&logoColor=white&style=flat"></summary>
 <blockquote>
 
 [Release 2026-07-09](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
@@ -159,7 +162,7 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 
 `org.dolphinemu.dolphinemu`
 
-#### SDK 29 Manifest Patch
+#### SDK 29 Manifest Patch 
 
 <details>
 <summary id="dolphin-sdk29">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2606.134-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
@@ -177,7 +180,7 @@ Patches:
 
 `dev.eden.eden_emulator.nightly`
 
-#### PUBG Spoof
+#### PUBG Spoof via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 <details>
 <summary id="eden-nightly">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
@@ -213,7 +216,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 
 `com.tungsten.fcl`
 
-#### Dynamic spoof to CODM
+#### Spoof to CODM via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
 <summary id="fcl-cod">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.3.1.7-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
@@ -253,7 +256,7 @@ Patches: [hoo-dles/patches-1.38.2.mpp](https://github.com/hoo-dles/morphe-patche
 
 `com.geode.launcher`
 
-#### Dynamic Spoof to PUBG:KR
+#### Spoof to PUBG:KR via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 <details>
 <summary id="geode-pubgkr">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.8.0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
@@ -387,7 +390,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 
 `org.levimc.launcher`
 
-#### Dynamic Spoof to BGMI
+#### Spoof to BGMI via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
 <summary id="levilauncher-unlocked-bgmi">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.0.0-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
@@ -540,7 +543,7 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 
 `com.winlator.cmod`
 
-#### Spoofed to PUBG:VN
+#### Spoofed to PUBG:VN via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
 <summary id="winlator-pubgvn">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-vv3.1.h-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
