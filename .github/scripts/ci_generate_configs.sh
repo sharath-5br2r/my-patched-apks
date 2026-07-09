@@ -5,8 +5,6 @@ set -euo pipefail
 [ -n "${TAGS_NEW:-}" ] || TAGS_NEW='{}'
 [ -f active_apps.json ] || echo '[]' > active_apps.json
 
-CONFIG_DIR=".github/configs/parallel"
-outname=".parallel"
 jq -rn --argjson new "$TAGS_NEW" --argjson old "$TAGS_OLD" '
   [ $new | to_entries[] | . as $e
       | ($old[$e.key] // {}) as $o
@@ -21,12 +19,13 @@ jq -rn --argjson new "$TAGS_NEW" --argjson old "$TAGS_OLD" '
       | ($old[$e.key] // {}) as $o
       | select($e.value.prerelease != "" and $e.value.prerelease != ($o.prerelease // ""))
       | select($e.value.enabled != false and $e.value.enabledDev != false)
+      | select(($e.value.pre_date // "") > ($e.value.stable_date // ""))
       | $e.value.repo | ascii_downcase
   ]
 ' > active.prerelease.json
-
+genconfigs(){
 if [ "${TRIGGER_STABLE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
-  STABLE_CONFIGS=$(find $CONFIG_DIR -name "*.toml" ! -name "*dev*.toml" | sort)
+  STABLE_CONFIGS=$(find $1 -name "*.toml" ! -name "*dev*.toml" | sort)
   if [ -n "$STABLE_CONFIGS" ]; then
     # shellcheck disable=SC2086
     yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $STABLE_CONFIGS > config.stable.json
@@ -45,11 +44,11 @@ if [ "${TRIGGER_STABLE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [
         if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
       else . end
     )
-  ' config.stable.json > .github/configs/config.stable.updated${outname}.json
+  ' config.stable.json > .github/configs/config.stable.updated$2.json
 fi
 
-if [ "${TRIGGER_PRERELEASE:-0}" = "1" ]; then
-  DEV_CONFIGS=$(find $CONFIG_DIR -name "*.toml" ! -name "*stable*.toml" | sort)
+if [ "${TRIGGER_PRERELEASE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
+  DEV_CONFIGS=$(find $1 -name "*.toml" ! -name "*stable*.toml" | sort)
   if [ -n "$DEV_CONFIGS" ]; then
     # shellcheck disable=SC2086
     yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $DEV_CONFIGS > config.dev.json
@@ -57,7 +56,7 @@ if [ "${TRIGGER_PRERELEASE:-0}" = "1" ]; then
     echo "{}" > config.dev.json
   fi
 
-  jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json '
+  jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json --argjson tags "$TAGS_NEW" '
     { "parallel-jobs": 1, "patches-version": "dev", "enable-module-update": false } as $force |
     ($force + . + $force) |
     with_entries(
@@ -65,56 +64,22 @@ if [ "${TRIGGER_PRERELEASE:-0}" = "1" ]; then
         .key as $k |
         .value as $app |
         (($app["patches-source"] // "ReVanced/revanced-patches") | ascii_downcase | gsub("[\"'\''\\n\\r\\t]"; " ") | split(" ") | map(select(. != ""))) as $srcs |
-        if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
+        
+        # Check if the app has any source where pre_date > stable_date
+        (
+          $srcs | map(
+            . as $src |
+            ($tags | to_entries | map(select((.value.repo | ascii_downcase) == $src)) | .[0].value) as $t |
+            if $t == null then false
+            else ($t.pre_date // "") > ($t.stable_date // "") end
+          ) | any
+        ) as $has_valid_dev |
+
+        if (($srcs - $active[0]) != $srcs) or (($activeApps[0] | index($k)) and $has_valid_dev) then . else (.value.enabled = false) end
       else . end
     )
-  ' config.dev.json > .github/configs/config.dev.updated${outname}.json
+  ' config.dev.json > .github/configs/config.dev.updated$2.json
 fi
-
-CONFIG_DIR=".github/configs/downstream_patches"
-outname=""
-if [ "${TRIGGER_STABLE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
-  STABLE_CONFIGS=$(find $CONFIG_DIR -name "*.toml" ! -name "*dev*.toml" | sort)
-  if [ -n "$STABLE_CONFIGS" ]; then
-    # shellcheck disable=SC2086
-    yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $STABLE_CONFIGS > config.stable.json
-  else
-    echo "{}" > config.stable.json
-  fi
-
-  jq --slurpfile active active.stable.json --slurpfile activeApps active_apps.json '
-    { "parallel-jobs": 1, "enable-module-update": true } as $force |
-    ($force + . + $force) |
-    with_entries(
-      if .value | type == "object" then
-        .key as $k |
-        .value as $app |
-        (($app["patches-source"] // "ReVanced/revanced-patches") | ascii_downcase | gsub("[\"'\''\\n\\r\\t]"; " ") | split(" ") | map(select(. != ""))) as $srcs |
-        if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
-      else . end
-    )
-  ' config.stable.json > .github/configs/config.stable.updated${outname}.json
-fi
-
-if [ "${TRIGGER_PRERELEASE:-0}" = "1" ]; then
-  DEV_CONFIGS=$(find $CONFIG_DIR -name "*.toml" ! -name "*stable*.toml" | sort)
-  if [ -n "$DEV_CONFIGS" ]; then
-    # shellcheck disable=SC2086
-    yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $DEV_CONFIGS > config.dev.json
-  else
-    echo "{}" > config.dev.json
-  fi
-
-  jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json '
-    { "parallel-jobs": 1, "patches-version": "dev", "enable-module-update": false } as $force |
-    ($force + . + $force) |
-    with_entries(
-      if .value | type == "object" then
-        .key as $k |
-        .value as $app |
-        (($app["patches-source"] // "ReVanced/revanced-patches") | ascii_downcase | gsub("[\"'\''\\n\\r\\t]"; " ") | split(" ") | map(select(. != ""))) as $srcs |
-        if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
-      else . end
-    )
-  ' config.dev.json > .github/configs/config.dev.updated${outname}.json
-fi
+}
+genconfigs ./.github/configs/downstream_patches ""
+genconfigs ./.github/configs/parallel ".parallel"
