@@ -66,7 +66,7 @@ jobs:
   build-levilauncher:
     runs-on: ubuntu-latest
     needs: get-tags
-    if: ${{ needs.get-tags.outputs.TRIGGER_LEVILAUNCHER == 'true' || github.event.inputs.run-all == true }}
+    if: ${{ needs.get-tags.outputs.TRIGGER_LEVILAUNCHER == 'true' || github.event.inputs.run-all == 'true' }}
     env:
       LEVILAUNCHER_TAG: ${{ needs.get-tags.outputs.LEVILAUNCHER_TAG }}
       
@@ -153,7 +153,7 @@ jobs:
       - name: Patch
         run:  |
           sed -i 's/applicationId "org\.levimc\.launcher"/applicationId "com.pubg.imobile"/' levilauncher/app/build.gradle
-          sed -i 's#<string name="app_name">LeviLauncher Unlocked</string>#<string name="app_name">LeviLauncher Unlocked (BGMI)</string>#' levilauncher/app/src/main/res/values/strings.xml
+          sed -i 's#<string name="app_name">LeviLauncher Unlocked</string>#<string name="app_name">LeviLauncher</string>#' levilauncher/app/src/main/res/values/strings.xml
           
       - name: Build Release APKs
         run: |
@@ -186,7 +186,7 @@ jobs:
   build-geode:
     needs: [build-levilauncher, get-tags]
     runs-on: ubuntu-latest
-    if: ${{ always() && ((needs.get-tags.outputs.TRIGGER_GEODE == 'true' || github.event.inputs.run-all == true) && needs.build-levilauncher.result != 'cancelled') }}
+    if: ${{ always() && ((needs.get-tags.outputs.TRIGGER_GEODE == 'true' || github.event.inputs.run-all == 'true') && needs.build-levilauncher.result != 'cancelled') }}
     env:
       GEODE_TAG: ${{ needs.get-tags.outputs.GEODE_TAG }}
     steps:
@@ -212,8 +212,7 @@ jobs:
       - name: Patch
         run: |
           sed -i 's/applicationId = "com\.geode\.launcher"/applicationId = "com.pubg.krmobile"/' geode/app/build.gradle.kts
-          sed -i 's#<string name="app_name" translatable="false">Geode</string>#<string name="app_name" translatable="false">Geode (PUBG:KR)</string>#' geode/app/src/main/res/values/strings.xml
-
+        
       - name: Build project
         run: |
           ./geode/gradlew app:assembleRelease -p geode
@@ -238,7 +237,7 @@ jobs:
           archive: false
   build-fcl:
     needs: [build-levilauncher, build-geode, get-tags]
-    if: ${{ always() && ((needs.get-tags.outputs.TRIGGER_FCL == 'true' || github.event.inputs.run-all == true ) && needs.build-levilauncher.result != 'cancelled' && needs.build-geode.result != 'cancelled') }}
+    if: ${{ always() && ((needs.get-tags.outputs.TRIGGER_FCL == 'true' || github.event.inputs.run-all == 'true' ) && needs.build-levilauncher.result != 'cancelled' && needs.build-geode.result != 'cancelled') }}
     runs-on: ubuntu-latest
     env:
       FCL_TAG: ${{ needs.get-tags.outputs.FCL_TAG }}
@@ -265,7 +264,6 @@ jobs:
         run: |
           sed -i 's/signingConfig = signingConfigs\.getByName("FCLKey")/signingConfig = signingConfigs.getByName("FCLDebugKey")/' fcl/FCL/build.gradle.kts
           sed -i 's/applicationId = "com\.tungsten\.fcl"/applicationId = "com.activision.callofduty.shooter"/' fcl/FCL/build.gradle.kts
-          sed -i 's#<string name="app_name" translatable="false">Fold Craft Launcher</string>#<string name="app_name" translatable="false">Fold Craft Launcher (CoDM)</string>#' fcl/FCL/src/main/res/values/strings.xml
       - name: Build project
         run: |
           ./fcl/gradlew assemblerelease -Darch=all -p fcl
