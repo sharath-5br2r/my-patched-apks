@@ -65,7 +65,7 @@ jobs:
            echo "${{ secrets.KEYSTORE_P12 }}" | base64 -d > ks-p12.keystore
       - name: Build modules and apks
         env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           NEXT_VER_CODE: ${{ steps.version.outputs.NEXT_VER_CODE }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
@@ -80,7 +80,7 @@ jobs:
             fi
             bash ./morphe-experimental.sh
             bash ./configgen.sh
-            bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
+            bash -x ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
           fi
 
       - name: Get output

@@ -26,8 +26,6 @@ jobs:
           fetch-depth: 1
       - name: Setup Container
         uses: ./.github/actions/container-setup
-        with:
-          cf_bypass_solver: "cloudflarebypassforscraping"
       - name: Ensure patch_sources.json exists
         id: ensure_patch_sources
         run: bash .github/scripts/ci_ensure_patch_sources.sh
@@ -62,6 +60,8 @@ jobs:
         if: steps.ensure_patch_sources.outputs.created == 'false'
         id: fetch_app_versions
         run: bash .github/scripts/ci_fetch_app_versions.sh
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         
       - name: Compare App Versions
         if: steps.ensure_patch_sources.outputs.created == 'false'
@@ -92,8 +92,6 @@ jobs:
       - name: Cleanup docker containers
         uses: ./.github/actions/cleanup-container
         if: always()
-        with:
-          cf_bypass_solver: "cloudflarebypassforscraping"
 
       - name: Commit updated patch sources and configs
         if: ${{ steps.ensure_patch_sources.outputs.created == 'false' && (steps.compare.outputs.TRIGGER_STABLE == '1' || steps.compare.outputs.TRIGGER_PRERELEASE == '1' || steps.compare.outputs.TRIGGER_BLOCKED == '1' || steps.compare_apps.outputs.TRIGGER_APP_UPDATE == '1') }}
