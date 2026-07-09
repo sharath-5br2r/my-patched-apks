@@ -1,6 +1,5 @@
 enable-module-updates = true
 parallel-jobs = 5
-patches-version = "dev"
 
 [eden-pubg]
 enabled = true

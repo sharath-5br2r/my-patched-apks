@@ -1,3 +1,4 @@
-yq -o=toml eval-all '. as $item ireduce ({}; . * $item)' .github/configs/header.toml .github/configs/downstream_patches/*  > configs/config.toml
-yq -o=toml eval-all '. as $item ireduce ({}; . * $item)' .github/configs/header.toml .github/configs/parallel/*  > configs/config.parallel.toml
-yq -o=toml eval-all '. as $item ireduce ({}; . * $item)' .github/configs/header.toml .github/configs/config.predl.toml  > configs/config.predl.toml
+yq -o=toml eval-all '. as $item ireduce ({}; . * $item)' .github/configs/header.dev.toml .github/configs/downstream_patches/*  > configs/config.dev.toml
+yq -o=toml eval-all '. as $item ireduce ({}; . * $item)' .github/configs/header.stable.toml .github/configs/downstream_patches/*  > configs/config.stable.toml
+yq -o=toml eval-all '. as $item ireduce ({}; . * $item)' .github/configs/header.dev.toml .github/configs/downstream_patches/*  > configs/config.dev.predl.toml
+yq -o=toml eval-all '. as $item ireduce ({}; . * $item)' .github/configs/header.stable.toml .github/configs/config.predl.toml  > configs/config.stable.predl.toml

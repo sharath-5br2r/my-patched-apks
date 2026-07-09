@@ -82,5 +82,4 @@ if [ "${TRIGGER_PRERELEASE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] 
 fi
 }
 genconfigs ./.github/configs/downstream_patches ""
-genconfigs ./.github/configs/parallel ".parallel"
 genconfigs ./.github/configs/config.predl.toml ".predl"

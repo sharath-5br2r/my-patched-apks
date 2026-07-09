@@ -14,13 +14,17 @@ on:
         type: choice
         default: "configs/config.toml"
         options:
-          - "configs/config.toml"
-          - "custom"
-          - "configs/config.predl.toml"
-          - "configs/config.parallel.toml"
+          - "configs/config.dev.toml"
+          - "configs/config.stable.toml"
+          - "configs/config.dev.predl.toml"
+          - "configs/config.stable.predl.toml"
+          - "dev_custom"
+          - "stable_custom"
           - ".github/configs/config.manual.toml"
           - ".github/configs/config.dev.updated.json"
           - ".github/configs/config.stable.updated.json"
+          - ".github/configs/config.dev.updated.predl.json"
+          - ".github/configs/config.stable.updated.predl.json"
 
 concurrency:
   group: build
@@ -46,9 +50,6 @@ jobs:
           submodules: true
       - name: Setup docker
         uses: ./.github/actions/container-setup
-        with:
-          cf_bypass_solver: "cloudflarebypassforscraping"
-
 
       - name: Resolve build context
         id: context
@@ -72,7 +73,7 @@ jobs:
           KEYSTORE_ALIAS: sharath
         run: |
           set -euo pipefail
-          if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == "custom" ]]; then
+          if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == *"_custom"* ]]; then
             bash ./custom_patches.sh
           else
             if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == *"predl"* ]]; then
@@ -88,16 +89,14 @@ jobs:
         run: bash .github/scripts/build_get_output.sh
 
       - name: Update readme
-        if: ${{ ! contains(inputs.config_file, 'parallel') }}
         run: |
           python3 update-readme.py ${{ steps.version.outputs.NEXT_VER_CODE }} "$GITHUB_REPOSITORY"
 
       - name: Commit updated readme
-        if: ${{ ! contains(inputs.config_file, 'parallel') }}
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
-          commit_author: Sharath <sharathsukash@gmail.com>
+          commit_author: Sharath <sharathsukash@gmail.com> # Remove if not needed
           file_pattern: README.md
           commit_message: "Update README for Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} [skip ci]"
       - name: Cleanup docker containers
@@ -108,7 +107,6 @@ jobs:
 
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
-        if: ${{ ! contains(inputs.config_file, 'parallel') }}
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           files: ./build/*
@@ -116,7 +114,6 @@ jobs:
           overwrite_files: true
 
       - name: Upload to release
-        if: ${{ ! contains(inputs.config_file, 'parallel') }}
         uses: softprops/action-gh-release@v3
         with:
           body: ${{ steps.get_output.outputs.BUILD_LOG }}
@@ -126,12 +123,7 @@ jobs:
           tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}
           overwrite_files: true
           prerelease: ${{ steps.context.outputs.IS_PRERELEASE == 'true' }}
-      - name: Upload to release (Parallel)
-        if: ${{ contains(inputs.config_file, 'parallel') }}
-        run: bash .github/scripts/parallel-upload-apks.sh
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          
+
       - name: Notify telegram
         if: false
         env:

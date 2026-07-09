@@ -108,10 +108,10 @@ Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhoom
 
 `in.amazon.mShop.android.shopping`
 
-#### Signed APK
+#### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="amazon-india-signed">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v32.12.4.300-gray?labelColor=FF9900&logo=android&logoColor=white&style=flat"></summary>
+<summary id="amazon-india-rushiranpise">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v32.12.4.300-gray?labelColor=FF9900&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 

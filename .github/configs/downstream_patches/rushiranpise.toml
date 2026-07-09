@@ -1,0 +1,12 @@
+[amazon-india-rushiranpise]
+enabled = true
+app-name = "amazon-india"
+rv-brand = "rushiranpise"
+build-mode = "apk"
+include-patches = "'Dark Mode' 'Open Links in Browser'"
+exclude-patches = "'Hide Rufus Tab'"
+patches-source = "rushiranpise/morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+uptodown-dlurl = "https://amazon-india.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-india-shop-pay/"
+dpi = "nodpi anydpi auto"
