@@ -2,7 +2,7 @@
   "parallel-jobs": 5,
   "enable-module-update": true,
   "eden-pubg": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "eden",
     "rv-brand": "pubg",
     "build-mode": "apk",
@@ -13,7 +13,7 @@
     "local-dlurl": "downloads/eden.apk"
   },
   "winlator-pubgvn": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "winlator",
     "rv-brand": "pubgvn",
     "build-mode": "apk",
@@ -24,7 +24,7 @@
     "patches-source": "MorpheApp/morphe-patches"
   },
   "fcl-cod": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "fcl",
     "rv-brand": "cod",
     "build-mode": "apk",
@@ -35,7 +35,7 @@
     "patches-source": "MorpheApp/morphe-patches"
   },
   "geode-pubgkr": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "geode",
     "rv-brand": "pubgkr",
     "build-mode": "apk",
@@ -46,7 +46,7 @@
     "patches-source": "MorpheApp/morphe-patches"
   },
   "levilauncher-unlocked-bgmi": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "bgmi",
     "build-mode": "apk",
