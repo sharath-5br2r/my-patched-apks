@@ -1,5 +1,5 @@
 {
-  "parallel-jobs": 1,
+  "parallel-jobs": 5,
   "enable-module-update": true,
   "amazon-india": {
     "enabled": false,

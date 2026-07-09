@@ -1,5 +1,5 @@
 {
-  "parallel-jobs": 1,
+  "parallel-jobs": 5,
   "enable-module-update": true,
   "speedtest-xtra": {
     "enabled": false,
@@ -38,7 +38,7 @@
     "dpi": "nodpi anydpi"
   },
   "prime-video-hoodles": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "prime-video",
     "rv-brand": "hoodles",
     "build-mode": "apk",
