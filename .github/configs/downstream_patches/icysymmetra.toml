@@ -1,5 +1,5 @@
 [tiktok-icysymmetra]
-enabled = false
+enabled = true
 app-name = "tiktok"
 rv-brand = "icysymmetra"
 build-mode = "apk"
