@@ -126,6 +126,8 @@ jobs:
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_TARGET_CHAT: ${{ secrets.TG_TARGET_CHAT }}
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
           TITLE_SUFFIX: ${{ steps.context.outputs.TITLE_SUFFIX }}
           NEXT_VER_CODE: ${{ steps.version.outputs.NEXT_VER_CODE }}
           GITHUB_SERVER_URL: ${{ github.server_url }}

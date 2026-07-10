@@ -27,6 +27,8 @@ jobs:
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_TARGET_CHAT: ${{ secrets.TG_TARGET_CHAT }}
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
           EVENT_NAME: ${{ github.event_name }}
           ACTOR: ${{ github.actor }}
           REPO: ${{ github.repository }}
