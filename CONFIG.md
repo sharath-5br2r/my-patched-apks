@@ -46,9 +46,8 @@ compression-level = 9                # module zip compression level
 remove-rv-integrations-checks = true # remove checks from the revanced integrations
 dpi = "nodpi anydpi 120-640dpi"      # dpi packages to be searched in order. default: "nodpi anydpi"
 
-patches-source = "revanced/revanced-patches" # where to fetch patches bundle from. default: "MorpheApp/morphe-patches"
-patches-source-host = "github"               # source host for patches: "github" "gitlab" or "none". default: "github"
-cli-source = "ReVanced/revanced-cli"             # where to fetch cli from. default: "MorpheApp/morphe-cli"
+
+cli-source = "MorpheApp/morphe-cli"             # where to fetch cli from. default: "MorpheApp/morphe-cli"
 cli-source-host = "github"                       # source host for cli: "github" "gitlab" or "none". default: "github"
 # options like cli-source can also set per app
 rv-brand = "ReVanced Extended" # rebrand from 'ReVanced' to something different. default: patches-source owner. When "none" is set, there is no branding.
@@ -68,19 +67,11 @@ version = "auto"     # 'auto', 'latest', 'beta' or a version number (e.g. '17.40
 
 prefer_dl_mode = "apk" # Preference order to select apk from apkmirror. 'apk' or 'bundle'. default: apk. Made for Paresh Proton VPN which only works with bundle.
 
-# optional args to be passed to cli. can be used to set patch options
+# optional global args for all patches to be passed to cli.
 # multiline strings in the config is supported
 patcher-args = """\
-  -OdarkThemeBackgroundColor=#FF0F0F0F \
-  -Oanother-option=value \
+  --continue-on-error
   """
-
-excluded-patches = """\
-  'Some Patch' \
-  'Some Other Patch' \
-  """
-
-included-patches = "'Some Patch'"                          # whitespace seperated list of non-default patches to include. default: ""
 include-stock = "merged"                                   # 'merged', 'split' or 'disable'. default: merged
 exclusive-patches = false                                  # exclude all patches by default. default: false
 
@@ -99,38 +90,30 @@ local-dlurl = "/path/to/local/apkfile.apk"
 module-prop-name = "some-app-module"                       # module prop name.
 dpi = "360-480dpi"                                         # used to select apk variant from apkmirror. 'auto' matches whatever is available. default: nodpi anydpi
 arch = "arm64-v8a"                                         # 'auto', 'arm64-v8a', 'arm-v7a', 'all', 'both'. 'botharm' downloads both arm64-v8a and arm-v7a. 'both64' downloads both arm64-v8a and x86_64. 'multi' downloads all 4 architectures. 'auto' tries all → arm64-v8a → arm-v7a, using the first available. default: auto
-```
-
-## Multiple Patch Sources
-
-You can pass multiple patch bundles to the CLI by specifying `patches-source` as a quoted list (same format as `excluded-patches`).
-When using multiple sources, the CLI merges the patch bundles. However, please see the **Current Limitations** below regarding `included-patches` and `excluded-patches`.
-
-```toml
-# single-line format
-patches-source = "'MorpheApp/morphe-patches' 'other/patches'"
-
-# multiline format
-patches-source = """\
-  'MorpheApp/morphe-patches' \
-  'other/patches' \
+[[some-app.patches]]
+source = "revanced/revanced-patches" # where to fetch patches bundle from. default: "MorpheApp/morphe-patches"
+host = "github"               # source host for patches: "github" "gitlab" or "none". default: "github"
+version = "v2.160.0"           # 'latest', 'dev', or a version number. default is the value at root level.
+# optional patch specific args for to be passed to cli. can be used to set patch options
+args = """\
+  -OdarkThemeBackgroundColor=#FF0F0F0F \
+  -Oanother-option=value \
   """
 
-# If all sources are on the same host, a single string applies to all:
-patches-source-host = "github"
+excluded-patches = """\
+  'Some Patch' \
+  'Some Other Patch' \
+  """
 
-# If sources span different hosts, provide one value per source in order:
-patches-source-host = "'github' 'gitlab'"
+included-patches = "'Some Patch'"                          # whitespace seperated list of non-default patches to include. default: ""
+microg-autodetect = "true"         # whether to autodetect microg. default: true. If set to false, microg will be disabled and the app will be patched without microg support. Used when a app uses diffrent kind of microg/The patches have global microg supoort that isnt needed.
 
-# Same rule applies to patches-version:
-patches-version = "latest"                        # applies to all sources
-patches-version = "'latest' 'v1.2.3'"             # per-source versions
+## Second patch for the same app.Only compatible with the Morphe CLI. Not compatible with ReVanced CLI.
+[[some-app.patches]]
+source = "other/patches" 
+host = "github" 
+
 ```
-
-> [!WARNING]
-> **Current Limitations**: 
-> Due to how the underlying CLIs handle arguments, `included-patches` and `excluded-patches` currently only apply to the **last** patch bundle in your `patches-source` list. 
-> Per-bundle selective inclusion/exclusion (e.g. including one patch from the first bundle, and excluding another from the second) is not currently supported in this config format. If you use multiple sources, it is recommended to apply all patches from the preceding bundles.
 
 ## Xposed Modules (NPatch / LSPatch)
 
@@ -140,11 +123,14 @@ You can natively inject Xposed modules into an app using `7723mod/NPatch` or `LS
 [Discord]
 cli-source = "7723mod/NPatch"                            # Use NPatch as the CLI
 cli-version = "latest"
-patches-source = "revenge-mod/revenge-xposed"            # Provide the Xposed module as the patches bundle
-patches-version = "latest"
+
 version = "auto"                                         # 'auto' safely falls back to 'latest' since modules don't list supported versions
 arch = "auto"
 github-dlurl = "https://github.com/discord/releases/..." # Or apkmirror, etc.
+[[Discord.patches]]
+source = "revenge-mod/revenge-xposed"            # Provide the Xposed module as the patches bundle
+version = "latest"
+# Multiple Modules are supported, just add more [[Discord.patches]] sections with the same source and version.
 ```
 
 When the script detects `npatch` or `lspatch` in the CLI source, it will automatically bypass ReVanced CLI arguments and execute the correct injection command. You can also pass extra options to NPatch using `patcher-args = "-l 2"`.
@@ -154,11 +140,13 @@ To just sign an APK without patching, you can set the `cli-source` to `apksigner
 
 ```toml
 [Some-App]
-cli-source = "apksigner"                       patches-source = "none"                        # No patches needed
-patches-source-host = "none"                   # No patch source host needed. Otherwise the script will try to fetch patches from the specified host which fails the build.
+cli-source = "apksigner"                       
 cli-source-host = "none"                        # No cli source host needed. Apksigner is present locally. Otherwise the script will try to fetch cli from the specified host which fails the build.
 version = "auto"                                   # 'auto' safely falls back to 'latest' since no patches are applied
 github-dlurl = "https://github.com/some-app/releases/..." # Or apkmirror, etc.
+[[Some-App.patches]]
+source = "none"                        # No patches needed
+host = "none"                   # No patch source host needed. Otherwise the script will try to fetch patches from the specified host which fails the build.
 
 ```
 
