@@ -125,7 +125,7 @@ jobs:
     if: ${{ always() && ( needs.build_dev.result != 'cancelled' && needs.build_predl.result != 'cancelled') }}
     uses: ./.github/workflows/build.yml
     with:
-      config_file: "dev_custom"
+      config_file: "dev_custom.sh"
     secrets: inherit
   
   trigger_cleanup:
