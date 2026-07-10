@@ -19,7 +19,7 @@ export GH_TOKEN="your_github_token" #optional, used for github api calls to fetc
 >
 > Readme modifications are currently very complex and needs some level of markdown knowledge and shields.io knownledge. I myself used copilot autosuggestions to modify it to work with `update-readme.py` script. Instead use the genrated website at `https://username.github.io/repo-name` to view the app selection. It will be automatically updated with the latest versions of the apps.
 >
-> Stable versions are disabled by me personally due to it being redundant and my need of using latest patches. It is severly hardcoded and needs lots of modifcations to CI scripts and workflow files. Anyways I also made dev versions to include stable versions if they are the latest.
+> Stable versions are disabled by me personally due to it being redundant and my need of using latest patches. It eeds some modifcations to CI scripts and workflow files. Anyways I also made dev versions to include stable versions if they are the latest. They are still available manually.
 
 
 # Config
@@ -198,9 +198,11 @@ You can manually update this file if you need to force a specific version state,
 **Selective Checking:** If you only want the CI to check specific apps (instead of all enabled apps in your config), you can add `"_check_only_listed": true` to the top level of `app_versions.json`. When this is true, the script will only check for updates for the apps that already exist as keys in the file, saving time and resources.
 
 ## Running the Build Script Locally
+Some basic dependencies are there such as `bash`, `curl`, `jq`, `unzip`, `zip`, `java`, `yq` and `aapt2`. 
+
 There are some limitations while building apps that download from cloudflare protected sites (like APKMirror) on Termux. Also you might need to run FlareSolverr, Byparr or Cloudflare-bypass-for-scraping to bypass cloudflare protection. You can set the following environment variables in `.env` file to enable/disable them.
 
-Windows isnt supported currently and needs lot of script modifications to function. May work in future.
+Windows isnt supported currently and needs some script modifications to function. May work in future.
 
 MacOS is also not supported as I still need to include binaries for it. May work in future.
 
@@ -212,7 +214,7 @@ export CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED="false" # optional, 
 
 Update Morphe Experimental apps versions at `.github/configs/downstream_patches/morphe.toml` using the script `bash morphe-experimental.sh`
 
-Generate the required configs `configs/config.toml`, `configs/config.parallel.toml`, `configs/config.predl.toml` using `bash configgen.sh` and then run the build script with the generated config file as an argument. For example, to build all apps in `configs/config.toml`, run:
+Generate the required configs `configs/config.dev.toml`, `configs/config.stable.toml`, `configs/config.dev.predl.toml`, `configs/config.stable.predl.toml` using `bash configgen.sh` and then run the build script with the generated config file as an argument. For example, to build all apps in `configs/config.toml`, run:
 ```bash
 bash build.sh configs/config.toml
 ```

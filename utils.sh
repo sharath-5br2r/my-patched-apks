@@ -300,7 +300,12 @@ get_prebuilts() {
 			if ! (
 				mkdir -p "${file}-zip" || return 1
 				unzip -qo "${file}" -d "${file}-zip" || return 1
-				java -cp "${BIN_DIR}/paccer.jar:${BIN_DIR}/dexlib2.jar" com.jhc.Main "${file}-zip/extensions/shared.${extensions_ext}" "${file}-zip/extensions/shared-patched.${extensions_ext}" || return 1
+				if [[ $(uname -s ) == *"NT"* ]]; then
+					pathsep=";"
+				else
+					pathsep=":"
+				fi
+				java -cp "${BIN_DIR}/paccer.jar${pathsep}${BIN_DIR}/dexlib2.jar" com.jhc.Main "${file}-zip/extensions/shared.${extensions_ext}" "${file}-zip/extensions/shared-patched.${extensions_ext}" || return 1
 				mv -f "${file}-zip/extensions/shared-patched.${extensions_ext}" "${file}-zip/extensions/shared.${extensions_ext}" || return 1
 				rm "${file}" || return 1
 				cd "${file}-zip" || abort
