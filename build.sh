@@ -43,7 +43,7 @@ if [ -z "$AAPT2" ]; then
 	fi
 	set -u
 fi
-
+command -v yq > /dev/null 2>&1 || abort "\`yq\` is not installed. install it with 'apt install yq' or equivalent"
 
 echo "[+] Using aapt2: $AAPT2"
 

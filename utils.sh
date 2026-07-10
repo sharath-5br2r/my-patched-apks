@@ -15,8 +15,8 @@ OS=$(uname -o)
 
 toml_prep() {
 	if [ ! -f "$1" ]; then return 1; fi
-	if [ "${1##*.}" == toml ]; then
-		__TOML__=$($TOML --output json --file "$1" .)
+	if [ "${1##*.}" == toml ] || [ "${1##*.}" == yml ]; then
+		__TOML__=$(yq -o=json "$1" )
 	elif [ "${1##*.}" == json ]; then
 		__TOML__=$(cat "$1")
 	else abort "config extension not supported"; fi
@@ -321,11 +321,17 @@ get_prebuilts() {
 
 set_prebuilts() {
 	APKSIGNER="${BIN_DIR}/apksigner.jar"
-	local arch
+	local arch kernel ext
 	arch=$(uname -m)
+    kernel=$(uname -s)
+	if [ "$kernel" = Linux ]; then kernel=linux; fi 
 	if [ "$arch" = aarch64 ]; then arch=arm64; elif [ "${arch:0:5}" = "armv7" ]; then arch=arm; fi
-	HTMLQ="${BIN_DIR}/htmlq/htmlq-${arch}"
-	TOML="${BIN_DIR}/toml/tq-${arch}"
+	if [[ "$kernel" = *"NT"* ]]; then kernel=windows; ext=.exe; else ext=; fi
+	HTMLQ="${BIN_DIR}/htmlq/htmlq-${kernel}-${arch}${ext}"
+	if [ ! -f "$HTMLQ" ]; then
+	    epr "htmlq binary isnt currenly available for $kernel $arch. Currently not supported."
+		exit 1
+	fi
 }
 
 config_update() {
@@ -1412,8 +1418,10 @@ patch_apk() {
 			p_args_modules+=" -m '$j'"
 		done
 		mkdir -p "$tmp_dir"
+		local pathsep
+		if [[ "$(uname -s)" == *"NT"* ]]; then pathsep=";"; else pathsep=":"; fi
 		if [[ "$cli_source_l" == *"npatch"* ]]; then
-			local cmd="java -cp "temp/bcprov.jar:$cli_jar" -Djava.security.properties=temp/bc.security top.nkbe.npatch.patch.NPatch -k ks.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
+			local cmd="java -cp "temp/bcprov.jar$pathsep$cli_jar" -Djava.security.properties=temp/bc.security top.nkbe.npatch.patch.NPatch -k ks.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
 		else
 			local cmd="java -jar '$cli_jar' -k ks-p12.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
 		fi
