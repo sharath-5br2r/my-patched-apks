@@ -23,10 +23,10 @@
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
-    "stable": "v1.33.0",
+    "stable": "v1.34.0",
     "prerelease": "v1.34.0-dev.7",
     "blocked": false,
-    "stable_date": "2026-07-03T06:10:52Z",
+    "stable_date": "2026-07-10T07:06:08Z",
     "pre_date": "2026-07-09T16:25:42Z"
   },
   "piko": {
@@ -158,11 +158,11 @@
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "stable": "v1.10.1",
-    "prerelease": "v1.11.0-dev.4",
+    "stable": "v1.11.0",
+    "prerelease": "v1.11.0-dev.5",
     "blocked": false,
-    "stable_date": "2026-07-06T18:36:32Z",
-    "pre_date": "2026-07-09T11:18:14Z"
+    "stable_date": "2026-07-10T01:04:44Z",
+    "pre_date": "2026-07-10T01:01:08Z"
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",

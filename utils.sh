@@ -173,6 +173,13 @@ get_prebuilts() {
 				matches=$matches_new
 			fi
 		fi
+		if [ "$(jq 'length' <<<"$matches")" -gt 1 ]; then
+			local matches_new
+			matches_new=$(jq -e -r 'map(select(.name | contains("debug") | not))' <<<"$matches")
+			if [ "$(jq 'length' <<<"$matches_new")" -ge 1 ]; then
+				matches=$matches_new
+			fi
+		fi
 		if [ "$(jq 'length' <<<"$matches")" -eq 0 ]; then
 			epr "No asset was found"
 			return 1
@@ -996,6 +1003,7 @@ dl_apkmirror() {
 get_apkpure_resp() {
 	local url=$1
 	url="${url%/downloading*}"
+	url="${url%/download*}"
 	url="${url%/}"
 	__APKPURE_BASE_URL__="$url"
 	__APKPURE_PKG__=$(echo "$url" | grep -oP '[a-zA-Z][a-zA-Z0-9]*(\.[a-zA-Z][a-zA-Z0-9]*){1,}' | tail -1)
@@ -1021,7 +1029,7 @@ dl_apkpure() {
 	if [ -n "$version" ]; then
 		dl_page_url="${__APKPURE_BASE_URL__}/downloading/${version}"
 	else
-		dl_page_url="${__APKPURE_BASE_URL__}/downloading"
+		dl_page_url="${__APKPURE_BASE_URL__}/downloading/"
 	fi
 
 	_cf_get "$dl_page_url" || return 1
@@ -1191,6 +1199,7 @@ PYC
 		mv "${output}.extracted" "$output"
 	fi
 }
+
 
 # -------------------- uptodown --------------------
 get_uptodown_resp() {
