@@ -38,14 +38,19 @@ toml_get() {
 	else return 1; fi
 }
 
-pr() { echo >&2 -e "\033[0;32m[+] ${1}\033[0m"; }
+pr() { 
+	masked=$(echo $1 | sed "s/$KEYSTORE_PASS/****/g") 
+	echo >&2 -e "\033[0;32m[+] ${masked}\033[0m"; 
+	}
 epr() {
-	echo >&2 -e "\033[0;31m[-] ${1}\033[0m"
-	if [ "${GITHUB_REPOSITORY-}" ]; then echo >&2 -e "::error::utils.sh [-] ${1}\n"; fi
+	masked=$(echo $1 | sed "s/$KEYSTORE_PASS/****/g")
+	echo >&2 -e "\033[0;31m[-] ${masked}\033[0m"
+	if [ "${GITHUB_REPOSITORY-}" ]; then echo >&2 -e "::error::utils.sh [-] ${masked}\n"; fi
 }
 wpr() {
-	echo >&2 -e "\033[0;33m[!] ${1}\033[0m"
-	if [ "${GITHUB_REPOSITORY-}" ]; then echo >&2 -e "::warning::utils.sh [!] ${1}\n"; fi
+	masked=$(echo $1 | sed "s/$KEYSTORE_PASS/****/g")
+	echo >&2 -e "\033[0;33m[!] ${masked}\033[0m"
+	if [ "${GITHUB_REPOSITORY-}" ]; then echo >&2 -e "::warning::utils.sh [!] ${masked}\n"; fi
 }
 abort() {
 	epr "ABORT: ${1-}"
@@ -589,7 +594,7 @@ _fs_get() {
 		wpr "FlareSolverr attempt $attempt/$max_retries failed for: $url"
 		sleep 5
 	done
-	epr "FlareSolverr failed after $max_retries attempts: $url — falling back"
+	wpr "FlareSolverr failed after $max_retries attempts: $url — falling back"
 	return 1
 }
       
@@ -615,7 +620,7 @@ _byparr_get() {
 		wpr "Byparr attempt $attempt/$max_retries failed for: $url"
 		sleep 5
 	done
-	epr "Byparr failed after $max_retries attempts: $url — falling back"
+	wpr "Byparr failed after $max_retries attempts: $url — falling back"
 	return 1
 }
 _cfb_get() {
@@ -646,7 +651,7 @@ _cfb_get() {
 			fi
 		fi
 	done
-	epr "CloudflareBypassForScraping failed after $max_retries attempts: $url"
+	wpr "CloudflareBypassForScraping failed after $max_retries attempts: $url"
 	return 1
 }
 _fallback_get(){
@@ -662,20 +667,21 @@ _BYPARR_FAILED=0
 _unqueued_cf_get() {
 	if [[ "$_CFB_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED" == true ]]; then
 		_cfb_get "$@" && return 0
-		wpr "CloudflareBypassForScraping failed, falling back"
 		_CFB_FAILED=1
 	fi
 	if [[ "$_FFS_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED" == true ]]; then
 		_fs_get "$@" && return 0
-		wpr "FlareSolverr failed, falling back"
 		_FFS_FAILED=1
     fi
 	if [[ "$_BYPARR_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_BYPARR_ENABLED" == true ]]; then
 		_byparr_get "$@" && return 0
-		wpr "Byparr failed, falling back"
 		_BYPARR_FAILED=1
 	fi
-
+	if [[ "$CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED" == true || "$CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED" == true || "$CF_BYPASS_SOLVER_BYPARR_ENABLED" == true ]]; then
+    	wpr "All bypass solvers failed for: $1 — falling back to direct request"
+	else
+		wpr "No bypass solvers enabled, falling back to direct request for: $1"
+	fi
 	_fallback_get "$@" && return 0
 	epr "All methods failed for: $1"
 }
@@ -1447,8 +1453,8 @@ patch_apk() {
 		local list_patches
 		local patch_src=$(jq -r '.source' <<<"$json")
 		local per_patch_args=""
-		local excluded_patches=$(jq -r  'bjp.excluded_patches // ""' <<<"$json")
-		local included_patches=$(jq -r  '.included_patches // ""' <<<"$json")
+		local excluded_patches=$(jq -r  '."excluded-patches" // ""' <<<"$json")
+		local included_patches=$(jq -r  '."included-patches" // ""' <<<"$json")
 		#if [ -n "$excluded_patches" ] && [[ $excluded_patches != *"'"* ]]; then abort "patch names inside excluded-patches must be quoted"; fi
 		#if [ -n "$included_patches" ] && [[ $included_patches != *"'"* ]]; then abort "patch names inside included-patches must be quoted"; fi
 		if [ -n "$excluded_patches" ] ; then per_patch_args+="$(join_args "$excluded_patches" "-d") "; fi
@@ -1458,7 +1464,7 @@ patch_apk() {
 		local curr_patches_jar=$(jq -r --arg src "$patch_src" '{$src: .[$src]}' <<<"$patches_jar")
 		list_patches=$(patches_list "$cli_jar" "$curr_patches_jar" "$pkg_name" "${args[cli_source]}") || return 1
 		local microg_patch
-		local microg_autodetect=$(jq -r '.microg_autodetect // true' <<<"$json")
+		local microg_autodetect=$(jq -r '."microg-autodetect" // true' <<<"$json")
 		microg_patch=$(grep "^Name: " <<<"$list_patches" | grep -i "gmscore\|microg" || :) microg_patch=${microg_patch#*: }
 		if [ -n "$microg_patch" ] && [ "$microg_autodetect" = "true" ] && [[ ${p_patcher_args[*]} =~ $microg_patch ]]; then
 			wpr "You cant include/exclude microg patch as that's done by rvmm builder automatically."
@@ -1653,7 +1659,7 @@ build_rv() {
 				fi
 			fi
 			if ! dl_${dl_p} "${args[${dl_p}_dlurl]}" "$version" "$stock_apk" "$arch" "${args[dpi]}" "$get_latest_ver"; then
-				pr "ERROR: Could not download '${table}' from '${dl_p}' with version '${version}', arch '${arch}', dpi '${args[dpi]}'"
+				wpr "ERROR: Could not download '${table}' from '${dl_p}' with version '${version}', arch '${arch}', dpi '${args[dpi]}'"
 				continue
 			fi
 			if ! unzip -l "$stock_apk" >/dev/null 2>&1; then

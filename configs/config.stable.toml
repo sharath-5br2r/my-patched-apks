@@ -11,8 +11,7 @@ cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://speedtest-net-mobile.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/ookla/speedtest"
 dpi = "nodpi anydpi auto"
-
-[speedtest-xtra.patches]
+[[speedtest-xtra.patches]]
 source = "BholeyKaBhakt/revanced-patches-xtra"
 
 [moonplus-reader-binarymend]
@@ -251,6 +250,7 @@ dpi = "nodpi anydpi auto"
 source = "rushiranpise/morphe-patches"
 included-patches = "'Dark Mode' 'Open Links in Browser'"
 excluded-patches = "'Hide Rufus Tab'"
+microg-autodetect = "false"
 
 [amazon-alexa-signed]
 enabled = true
@@ -264,7 +264,6 @@ cli-source-host = "none"
 uptodown-dlurl = "https://alexa.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-alexa/"
 dpi = "nodpi anydpi auto"
-
-[amazon-alexa-signed.patches]
+[[amazon-alexa-signed.patches]]
 source = "none"
 host = "none"

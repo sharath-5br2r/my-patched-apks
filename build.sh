@@ -98,14 +98,14 @@ for table_name in $(toml_get_table_names); do
 	enabled=$(toml_get "$t" enabled) || enabled=true
 	vtf "$enabled" "enabled"
 	if [ "$enabled" = false ]; then continue; fi
-	if ((idx >= PARALLEL_JOBS)); then
-		wait -n || true
-		idx=$((idx - 1))
-	fi
 
+	# --- FIX 1: Clean/Isolate Loop-Specific Local Variables ---
+	unset app_args p_srcs p_hosts p_vers
 	declare -A app_args
+	declare -a p_srcs p_hosts p_vers
+
 	patches_data=$(jq -r ".patches | values" <<<"$t") || patches_data="[{\"source\": \"$DEF_PATCHES_SRC\"}]"
-	declare -a p_srcs p_hosts p_vers patches_src patches_src_host patches_ver
+	
 	# Read patches data into arrays
 	while IFS= read -r patch; do
 		patch_source=$(jq -r '.source // empty' <<< "$patch")
@@ -134,13 +134,12 @@ for table_name in $(toml_get_table_names); do
 	app_args[cli]=$cli_jar
 	app_args[ptjar]=$patches_jar_all
 	app_args[cli_source]=$cli_src
-    echo $patches_jar_all
+	
 	# Build aggregated patches_ref and changelog_url from all sources
 	patches_ref_all="" changelog_url_all=""
 	for i in "${!p_srcs[@]}"; do
 		psrc="${p_srcs[$i]}"
 		phost="${p_hosts[$i]:-${p_hosts[0]}}"
-		# Find the downloaded jar/apk for this source to get actual version
 		pdir=${psrc%/*}; pdir=${TEMP_DIR}/${pdir,,}-rv
 		pfile=$(find "$pdir" -name 'patches-*.rvp' -o -name 'patches-*.jar' -o -name '*.mpp' -o -name '*.apk' 2>/dev/null | sort | tail -1)
 		if [ -n "$pfile" ]; then
@@ -203,89 +202,58 @@ for table_name in $(toml_get_table_names); do
 	app_args[dpi]=$(toml_get "$t" dpi) || app_args[dpi]=""
 	table_name_f=${table_name,,}
 	table_name_f=${table_name_f// /-}
-	app_args[module_prop_name]=$(toml_get "$t" module-prop-name) || app_args[module_prop_name]="${table_name_f}-jhc"
+	module_prop_base=$(toml_get "$t" module-prop-name) || module_prop_base="${table_name_f}-jhc"
 
-	if [ "${app_args[arch]}" = botharm ]; then
-		app_args[table]="$table_name (arm64-v8a)"
-		app_args[arch]="arm64-v8a"
-		module_prop_name_b=${app_args[module_prop_name]}
-		app_args[module_prop_name]="${module_prop_name_b}-arm64"
-		idx=$((idx + 1))
-		build_rv "$(declare -p app_args)" &
-		app_args[table]="$table_name (arm-v7a)"
-		app_args[arch]="arm-v7a"
-		app_args[module_prop_name]="${module_prop_name_b}-arm"
+	# --- FIX 2: Helper Function to enforce Parallel limits & Snapshot State Safely ---
+	run_job_isolated() {
+		local target_arch="$1"
+		local target_table="$2"
+		local target_prop="${module_prop_base}-${3}"
+
+		# Check parallel window BEFORE changing parameters or spawning background jobs
 		if ((idx >= PARALLEL_JOBS)); then
 			wait -n || true
 			idx=$((idx - 1))
 		fi
+
+		# Explicitly clone and update the unique tracking variables inside a subshell scope
+		(
+			app_args[arch]="$target_arch"
+			app_args[table]="$target_table"
+			app_args[module_prop_name]="$target_prop"
+			build_rv "$(declare -p app_args)"
+		) &
 		idx=$((idx + 1))
-		build_rv "$(declare -p app_args)" &
-	elif [ "${app_args[arch]}" = both64 ]; then
-		app_args[table]="$table_name (arm64-v8a)"
-		app_args[arch]="arm64-v8a"
-		module_prop_name_b=${app_args[module_prop_name]}
-		app_args[module_prop_name]="${module_prop_name_b}-arm64"
-		idx=$((idx + 1))
-		build_rv "$(declare -p app_args)" &
-		app_args[table]="$table_name (x86_64)"
-		app_args[arch]="x86_64"
-		app_args[module_prop_name]="${module_prop_name_b}-x86_64"
-		if ((idx >= PARALLEL_JOBS)); then
-			wait -n || true
-			idx=$((idx - 1))
-		fi
-		idx=$((idx + 1))
-		build_rv "$(declare -p app_args)" &
+	}
+
+	# --- Execution Dispatching ---
+	if [ "${app_args[arch]}" = "botharm" ]; then
+		run_job_isolated "arm64-v8a" "$table_name (arm64-v8a)" "arm64"
+		run_job_isolated "arm-v7a"   "$table_name (arm-v7a)"   "arm"
+
+	elif [ "${app_args[arch]}" = "both64" ]; then
+		run_job_isolated "arm64-v8a" "$table_name (arm64-v8a)" "arm64"
+		run_job_isolated "x86_64"    "$table_name (x86_64)"    "x86_64"
+
 	elif [ "${app_args[arch]}" = "multi" ]; then
-		app_args[table]="$table_name (multi)"
-		app_args[arch]="arm64-v8a"
-		module_prop_name_b=${app_args[module_prop_name]}
-		app_args[module_prop_name]="${module_prop_name_b}-arm64"
-		idx=$((idx + 1))
-		build_rv "$(declare -p app_args)" &
-		app_args[table]="$table_name (arm-v7a)"
-		app_args[arch]="arm-v7a"
-		app_args[module_prop_name]="${module_prop_name_b}-arm"
-		if ((idx >= PARALLEL_JOBS)); then
-			wait -n || true
-			idx=$((idx - 1))
-		fi
-		idx=$((idx + 1))
-		build_rv "$(declare -p app_args)" &
-		app_args[table]="$table_name (x86_64)"
-		app_args[arch]="x86_64"
-		app_args[module_prop_name]="${module_prop_name_b}-x86_64"
-		if ((idx >= PARALLEL_JOBS)); then
-			wait -n || true
-			idx=$((idx - 1))
-		fi
-		idx=$((idx + 1))
-		build_rv "$(declare -p app_args)" &
-		app_args[table]="$table_name (x86)"
-		app_args[arch]="x86"
-		app_args[module_prop_name]="${module_prop_name_b}-x86"
-		if ((idx >= PARALLEL_JOBS)); then
-			wait -n || true
-			idx=$((idx - 1))
-		fi
-		idx=$((idx + 1))
-		build_rv "$(declare -p app_args)" &
+		run_job_isolated "arm64-v8a" "$table_name (multi)"     "arm64"
+		run_job_isolated "arm-v7a"   "$table_name (arm-v7a)"   "arm"
+		run_job_isolated "x86_64"    "$table_name (x86_64)"    "x86_64"
+		run_job_isolated "x86"       "$table_name (x86)"       "x86"
+
 	else
-		if [ "${app_args[arch]}" = "arm64-v8a" ]; then
-			app_args[module_prop_name]="${app_args[module_prop_name]}-arm64"
-		elif [ "${app_args[arch]}" = "arm-v7a" ]; then
-			app_args[module_prop_name]="${app_args[module_prop_name]}-arm"
-		elif [ "${app_args[arch]}" = "x86_64" ]; then
-			app_args[module_prop_name]="${app_args[module_prop_name]}-x86_64"
-		elif [ "${app_args[arch]}" = "x86" ]; then
-			app_args[module_prop_name]="${app_args[module_prop_name]}-x86"
-		fi
-		idx=$((idx + 1))
-		build_rv "$(declare -p app_args)" &
+		# Handle singular architectures explicitly
+		arch_suffix="arm64"
+		case "${app_args[arch]}" in
+			"arm-v7a") arch_suffix="arm" ;;
+			"x86_64")  arch_suffix="x86_64" ;;
+			"x86")     arch_suffix="x86" ;;
+		esac
+		run_job_isolated "${app_args[arch]}" "$table_name" "$arch_suffix"
 	fi
 done
 wait
+
 rm -rf temp/tmp.*
 if [ -z "$(ls -A1 "${BUILD_DIR}")" ]; then abort "All builds failed."; fi
 
