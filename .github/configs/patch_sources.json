@@ -195,5 +195,13 @@
     "blocked": false,
     "stable_date": "2026-06-26T23:30:02Z",
     "pre_date": "2026-06-26T23:30:02Z"
+  },
+  "quantavil": {
+    "repo": "quantavil/edge-morphe-patches",
+    "stable": "v1.32.0",
+    "stable_date": "2026-06-11T08:29:13Z",
+    "prerelease": "",
+    "pre_date": "",
+    "blocked": false
   }
 }

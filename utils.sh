@@ -240,6 +240,17 @@ get_prebuilts() {
 			matches=$(source_release_assets_json "$host" <<<"$release") || return 1
 			if [ "$(jq 'length' <<<"$matches")" -gt 1 ]; then
 				local matches_new
+				if echo "$cli_src" | grep -qiE "(npatch|lspatch)"; then
+					matches_new=$(jq -e -r 'map(select(.name | test("\\.apk$"; "i")))' <<<"$matches")
+				else
+					matches_new=$(jq -e -r 'map(select(.name | test("\\.(rvp|mpp|jar)$"; "i")))' <<<"$matches")
+				fi
+				if [ "$(jq 'length' <<<"$matches_new")" -ge 1 ]; then
+					matches=$matches_new
+				fi
+			fi
+			if [ "$(jq 'length' <<<"$matches")" -gt 1 ]; then
+				local matches_new
 				matches_new=$(jq -e -r 'map(select(.name | contains("-dev") | not))' <<<"$matches")
 				if [ "$(jq 'length' <<<"$matches_new")" -eq 1 ]; then
 					matches=$matches_new
@@ -958,7 +969,7 @@ dl_apkmirror() {
 			"${cookie_args[@]}" \
 			--timeout=300 \
 			"$final_url" || return 1
-		if ! unzip -t "${output}.apkm" >/dev/null 2>&1; then
+		if ! unzip -l "${output}.apkm" >/dev/null 2>&1; then
 			epr "Downloaded file is not a valid zip (apkm): $final_url"
 			return 1
 		fi
@@ -1051,7 +1062,7 @@ dl_apkpure() {
 
 _apkpure_install_xapk() {
 	local xapk=$1 output=$2
-	if ! unzip -t "$xapk" >/dev/null 2>&1; then
+	if ! unzip -l "$xapk" >/dev/null 2>&1; then
 		epr "Downloaded XAPK is not a valid zip (Cloudflare block?): $xapk"
 		return 1
 	fi
@@ -1163,7 +1174,7 @@ PYC
 	curl -L --fail -s -S --connect-timeout 30 --max-time 300 \
 		-H "User-Agent: ${user_agent:-Mozilla/5.0}" \
 		-H "Referer: $page_url" "$final_url" -o "$output" || return 1
-	if ! unzip -t "$output" >/dev/null 2>&1; then
+	if ! unzip -l "$output" >/dev/null 2>&1; then
 		epr "Downloaded file from APKCombo is not a valid zip"
 		return 1
 	fi
@@ -1603,7 +1614,7 @@ build_rv() {
 				pr "ERROR: Could not download '${table}' from '${dl_p}' with version '${version}', arch '${arch}', dpi '${args[dpi]}'"
 				continue
 			fi
-			if ! unzip -t "$stock_apk" >/dev/null 2>&1; then
+			if ! unzip -l "$stock_apk" >/dev/null 2>&1; then
 				epr "ERROR: Downloaded file from ${dl_p} is not a valid zip archive (Cloudflare block or bad file)!"
 				rm -f "$stock_apk"
 				continue
