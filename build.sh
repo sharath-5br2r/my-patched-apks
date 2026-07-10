@@ -45,7 +45,7 @@ if [ -z "$AAPT2" ]; then
 fi
 command -v yq > /dev/null 2>&1 || abort "\`yq\` is not installed. install it with 'apt install yq' or equivalent"
 
-echo "[+] Using aapt2: $AAPT2"
+pr "Using aapt2: $AAPT2"
 
 vtf() { if ! isoneof "${1}" "true" "false"; then abort "ERROR: '${1}' is not a valid option for '${2}': only true or false is allowed"; fi; }
 
@@ -94,6 +94,7 @@ idx=0
 for table_name in $(toml_get_table_names); do
 	if [ -z "$table_name" ]; then continue; fi
 	t=$(toml_get_table "$table_name")
+
 	enabled=$(toml_get "$t" enabled) || enabled=true
 	vtf "$enabled" "enabled"
 	if [ "$enabled" = false ]; then continue; fi
@@ -103,33 +104,37 @@ for table_name in $(toml_get_table_names); do
 	fi
 
 	declare -A app_args
-	patches_src=$(toml_get "$t" patches-source) || patches_src=$DEF_PATCHES_SRC
-	patches_src_host=$(toml_get "$t" patches-source-host) || patches_src_host=$DEF_PATCHES_SRC_HOST
-	patches_ver=$(toml_get "$t" patches-version) || patches_ver=$DEF_PATCHES_VER
+	patches_data=$(jq -r ".patches | values" <<<"$t") || patches_data="[{\"source\": \"$DEF_PATCHES_SRC\"}]"
+	declare -a p_srcs p_hosts p_vers patches_src patches_src_host patches_ver
+	# Read patches data into arrays
+	while IFS= read -r patch; do
+		patch_source=$(jq -r '.source // empty' <<< "$patch")
+		patch_host=$(jq -r ".host // \"$DEF_PATCHES_SRC_HOST\" " <<< "$patch")
+		patch_ver=$(jq -r ".version // \"$DEF_PATCHES_VER\" " <<< "$patch")
+		p_srcs+=("$patch_source")
+		p_hosts+=("$patch_host")
+		p_vers+=("$patch_ver")
+	done < <(jq -c '.[]' <<< "$patches_data" )
+
 	cli_src=$(toml_get "$t" cli-source) || cli_src=$DEF_CLI_SRC
 	cli_src_host=$(toml_get "$t" cli-source-host) || cli_src_host=$DEF_CLI_SRC_HOST
 	cli_ver=$(toml_get "$t" cli-version) || cli_ver=$DEF_CLI_VER
 	if ! isoneof "$cli_src_host" github gitlab none; then abort "ERROR: cli-source-host '$cli_src_host' is not a valid option for '$table_name': only 'github' or 'gitlab' or 'none' is allowed"; fi
 
-	# Parse patch sources: may be a single string or multiline (quoted list)
-	IFS=$'\n'
-	p_srcs=($(list_args "$patches_src" | tr -d \"\')); [ ${#p_srcs[@]} -eq 0 ] && p_srcs=("$patches_src")
-	p_hosts=($(list_args "$patches_src_host" | tr -d \"\')); [ ${#p_hosts[@]} -eq 0 ] && p_hosts=("$patches_src_host")
-	p_vers=($(list_args "$patches_ver" | tr -d \"\')); [ ${#p_vers[@]} -eq 0 ] && p_vers=("$patches_ver")
-	unset IFS
 	for h in "${p_hosts[@]}"; do
-		if ! isoneof "$h" github gitlab none; then abort "ERROR: patches-source-host '$h' is not a valid option for '$table_name': only 'github' or 'gitlab' or 'none' is allowed"; fi
+		if ! isoneof "$h" github gitlab none; then abort "ERROR: patches.host '$h' is not a valid option for '$table_name': only 'github' or 'gitlab' or 'none' is allowed"; fi
 	done
 
-	if ! PREBUILTS="$(get_prebuilts "$cli_src_host" "$cli_src" "$cli_ver" "$patches_src_host" "$patches_src" "$patches_ver")"; then
+	if ! PREBUILTS="$(get_prebuilts "$cli_src_host" "$cli_src" "$cli_ver" "$patches_data" )"; then
 		epr "Could not get prebuilts"
 		continue
 	fi
-	read -r cli_jar patches_jar_all <<< "$PREBUILTS"
+	cli_jar=$(echo "$PREBUILTS" | sed -n '1p')
+	patches_jar_all=$(echo "$PREBUILTS" | sed -n '2,$p')
 	app_args[cli]=$cli_jar
 	app_args[ptjar]=$patches_jar_all
 	app_args[cli_source]=$cli_src
-
+    echo $patches_jar_all
 	# Build aggregated patches_ref and changelog_url from all sources
 	patches_ref_all="" changelog_url_all=""
 	for i in "${!p_srcs[@]}"; do
@@ -156,15 +161,11 @@ for table_name in $(toml_get_table_names); do
 			fi
 		fi
 	done
-	app_args[patches_src]=${p_srcs[0]}
+	app_args[patches_data]=$patches_data
 	app_args[patches_ref]="${patches_ref_all% }"
 	app_args[changelog_url]="${changelog_url_all% }"
 	app_args[rv_brand]=$(toml_get "$t" rv-brand) || app_args[rv_brand]="${p_srcs[0]%%/*}"
 
-	app_args[excluded_patches]=$(toml_get "$t" excluded-patches) || app_args[excluded_patches]=""
-	if [ -n "${app_args[excluded_patches]}" ] && [[ ${app_args[excluded_patches]} != *'"'* ]]; then abort "patch names inside excluded-patches must be quoted"; fi
-	app_args[included_patches]=$(toml_get "$t" included-patches) || app_args[included_patches]=""
-	if [ -n "${app_args[included_patches]}" ] && [[ ${app_args[included_patches]} != *'"'* ]]; then abort "patch names inside included-patches must be quoted"; fi
 	app_args[exclusive_patches]=$(toml_get "$t" exclusive-patches) && vtf "${app_args[exclusive_patches]}" "exclusive-patches" || app_args[exclusive_patches]=false
 	app_args[version]=$(toml_get "$t" version) || app_args[version]="auto"
 	app_args[app_name]=$(toml_get "$t" app-name) || app_args[app_name]=$table_name

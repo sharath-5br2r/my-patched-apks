@@ -3,24 +3,27 @@ enabled = true
 app-name = "fing"
 rv-brand = "paresh"
 build-mode = "apk"
-patches-source = "Paresh-Maheshwari/paresh-patches"
 patches-source-host = "gitlab"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://fing-network-tools.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/fing-limited/fing-network-tools"
 dpi = "nodpi anydpi auto"
+[[fing-paresh.patches]]
+source = "Paresh-Maheshwari/paresh-patches"
+host = "gitlab"
+
 [proton-vpn-paresh]
 enabled = true
 app-name = "proton-vpn"
 rv-brand = "paresh"
 build-mode = "apk"
-version = "latest"
-patches-source = "Paresh-Maheshwari/paresh-patches"
-patches-source-host = "gitlab"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://protonvpn.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/proton-technologies-ag/protonvpn-secure-and-free-vpn"
 prefer-dl-mode = "bundle"
+[[proton-vpn-paresh.patches]]
+source = "Paresh-Maheshwari/paresh-patches"
+host = "gitlab"
 
 [jiohotstar-paresh]
 enabled = true
@@ -28,7 +31,8 @@ cli-source = "MorpheApp/morphe-cli"
 app-name = "jiohotstar"
 rv-brand = "paresh"
 build-mode = "apk"
-patches-source = "Paresh-Maheshwari/paresh-patches"
-patches-source-host = "gitlab"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/jiostar-india-private-limited/jiohotstar-4/"
 dpi = "nodpi anydpi auto"
+[[jiohotstar-paresh.patches]]
+source = "Paresh-Maheshwari/paresh-patches"
+host = "gitlab"

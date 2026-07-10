@@ -16,7 +16,7 @@ OS=$(uname -o)
 toml_prep() {
 	if [ ! -f "$1" ]; then return 1; fi
 	if [ "${1##*.}" == toml ] || [ "${1##*.}" == yml ]; then
-		__TOML__=$(yq -o=json "$1" )
+		__TOML__=$(yq -o=json -I=0 "$1" )
 	elif [ "${1##*.}" == json ]; then
 		__TOML__=$(cat "$1")
 	else abort "config extension not supported"; fi
@@ -118,10 +118,10 @@ source_release_pick_from_list() {
 }
 
 get_prebuilts() {
-	local cli_host=$1 cli_src=$2 cli_ver=$3 patches_host_list=$4 patches_src_list=$5 patches_ver_list=$6
+	local cli_host=$1 cli_src=$2 cli_ver=$3 patches_data=$4
 	
 	local first_patch_src
-	first_patch_src=$(list_args "$patches_src_list" | tr -d \"\' | head -n 1)
+	first_patch_src=$(jq -r '.[0].source // empty' <<<"$patches_data")
 	pr "Getting prebuilts (${first_patch_src%/*})" >&2
 
 	local cl_dir=${first_patch_src%/*}
@@ -192,15 +192,11 @@ get_prebuilts() {
 		tag_name=v${tag_name%.*}
 	fi
 
-	echo -n "$file "
+	echo "$file"
 	else
 		pr "Not Getting anything as source is none"
     fi
-	local IFS=$'\n'
-	local p_srcs=($(list_args "$patches_src_list" | tr -d \"\'))
-	local p_hosts=($(list_args "$patches_host_list" | tr -d \"\'))
-	local p_vers=($(list_args "$patches_ver_list" | tr -d \"\'))
-	unset IFS
+
 	for i in "${!p_srcs[@]}"; do
 		local host="${p_hosts[$i]:-${p_hosts[0]}}"
 		local src="${p_srcs[$i]}"
@@ -316,12 +312,11 @@ get_prebuilts() {
 			rm -r "${file}-zip" || :
 		fi
 		
-		echo -n "$file "
+		echo -e "{\"$src\":\"$file\"}"
 		else
 			pr "Not Getting anything as source is none"
 		fi
 	done
-	echo
 }
 
 set_prebuilts() {
@@ -487,9 +482,7 @@ patches_list_versions() {
 	fi
 
 	# Build arg strings for each jar in space-separated patches_jar
-	local IFS=$'\n'
-	local p_jars=($(echo "$patches_jar" | tr ' ' '\n' | grep -v '^$'))
-	unset IFS
+	local p_jars=($(echo "$patches_jar" | jq -r '.[]' | tr ' ' '\n' | grep -v '^$'))
 	local p_args_short="" p_args_long=""
 	for j in "${p_jars[@]}"; do
 		p_args_short+="-p '$j' "
@@ -521,9 +514,7 @@ patches_list() {
 		return 0
 	fi
 	# Build arg strings for each jar in space-separated patches_jar
-	local IFS=$'\n'
-	local p_jars=($(echo "$patches_jar" | tr ' ' '\n' | grep -v '^$'))
-	unset IFS
+	local p_jars=($(echo "$patches_jar" | jq -r '.[]' | tr ' ' '\n' | grep -v '^$'))
 	local p_args_short="" p_args_long="" p_args_pos=""
 	for j in "${p_jars[@]}"; do
 		p_args_short+="-p '$j' "
@@ -1402,7 +1393,8 @@ dl_local() {
 }
 #------------------------------------------------------
 patch_apk() {
-	local stock_input=$1 patched_apk=$2 patcher_args=$3 cli_jar=$4 patches_jar=$5 cli_source=$6
+	local stock_input=$1 patched_apk=$2 patcher_args=$3 cli_jar=$4 patches_jar=$5 cli_source=$6 
+	
 	local tmp_dir="${CWD}/${patched_apk}-temporary-files"
 	local IFS=$'\n'
 	local p_jars=($(echo "$patches_jar" | tr ' ' '\n' | grep -v '^$'))
@@ -1417,11 +1409,13 @@ patch_apk() {
 		fi
 		return 0
 	fi
+	
 	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
 		local p_args_modules=""
-		for j in "${p_jars[@]}"; do
-			p_args_modules+=" -m '$j'"
-		done
+		while read -r json; do
+			file=$(jq -r '.file' <<<"$json")
+			p_args_modules+=" -m '$file'"
+		done <<<"$p_jars"
 		mkdir -p "$tmp_dir"
 		local pathsep
 		if [[ "$(uname -s)" == *"NT"* ]]; then pathsep=";"; else pathsep=":"; fi
@@ -1449,10 +1443,39 @@ patch_apk() {
 	fi
 
 	local p_args_long="" p_args_short=""
-	for j in "${p_jars[@]}"; do
-		p_args_long+=" --patches '$j'"
-		p_args_short+=" -p '$j'"
-	done
+	while read -r json; do
+		local list_patches
+		local patch_src=$(jq -r '.source' <<<"$json")
+		local per_patch_args=""
+		local excluded_patches=$(jq -r  'bjp.excluded_patches // ""' <<<"$json")
+		local included_patches=$(jq -r  '.included_patches // ""' <<<"$json")
+		#if [ -n "$excluded_patches" ] && [[ $excluded_patches != *"'"* ]]; then abort "patch names inside excluded-patches must be quoted"; fi
+		#if [ -n "$included_patches" ] && [[ $included_patches != *"'"* ]]; then abort "patch names inside included-patches must be quoted"; fi
+		if [ -n "$excluded_patches" ] ; then per_patch_args+="$(join_args "$excluded_patches" "-d") "; fi
+		if [ -n "$included_patches" ] ; then per_patch_args+="$(join_args "$included_patches" "-e") "; fi
+		local per_patch_options=$(jq -r '.args // ""' <<<"$json")
+		per_patch_args+="$per_patch_options "
+		local curr_patches_jar=$(jq -r --arg src "$patch_src" '{$src: .[$src]}' <<<"$patches_jar")
+		list_patches=$(patches_list "$cli_jar" "$curr_patches_jar" "$pkg_name" "${args[cli_source]}") || return 1
+		local microg_patch
+		local microg_autodetect=$(jq -r '.microg_autodetect // true' <<<"$json")
+		microg_patch=$(grep "^Name: " <<<"$list_patches" | grep -i "gmscore\|microg" || :) microg_patch=${microg_patch#*: }
+		if [ -n "$microg_patch" ] && [ "$microg_autodetect" = "true" ] && [[ ${p_patcher_args[*]} =~ $microg_patch ]]; then
+			wpr "You cant include/exclude microg patch as that's done by rvmm builder automatically."
+			per_patch_args="${per_patch_args[@]//-[ei] ${microg_patch}/}"
+		fi
+		if [ -n "$microg_patch" ] && [ "$microg_autodetect" = "true" ]; then
+			if [ "$build_mode" = apk ]; then
+				per_patch_args+=" -e \"${microg_patch}\" "
+			elif [ "$build_mode" = module ]; then
+				per_patch_args+=" -d \"${microg_patch}\" "
+			fi
+		fi
+		local patch_jar=$(jq -r --arg src "$patch_src" '.[$src]' <<<"$curr_patches_jar")
+		p_args_long+=" --patches '$patch_jar' $per_patch_args"
+		p_args_short+=" -p $patch_jar' $per_patch_args"
+	done < <(jq -c '.[]' <<<"$patches_data")
+
 
 	local base_cmd="java -jar '$cli_jar' patch '$stock_input' --purge -t '$tmp_dir' -o '$patched_apk' --keystore=ks.keystore \
 --keystore-entry-password=$KEYSTORE_PASS --keystore-password=$KEYSTORE_PASS --signer=$KEYSTORE_ALIAS --keystore-entry-alias=$KEYSTORE_ALIAS"
@@ -1545,10 +1568,16 @@ build_rv() {
 	local arch_list=("$arch_f")
 	local prefer_dl_mode=${args[prefer_dl_mode]}
 	[ "$arch_f" = "auto" ] && arch_list=("all" "arm64-v8a" "arm-v7a")
-
+	local patches_data=${args[patches_data]}
 	local p_patcher_args=()
-	if [ "${args[excluded_patches]}" ]; then p_patcher_args+=("$(join_args "${args[excluded_patches]}" -d)"); fi
-	if [ "${args[included_patches]}" ]; then p_patcher_args+=("$(join_args "${args[included_patches]}" -e)"); fi
+	local all_excluded_patches=""
+	local all_included_patches=""
+	while read -r json; do
+		all_excluded_patches+="$(jq -r '.excluded_patches' <<<"$json" | tr '\n' ' ')"
+		all_included_patches+="$(jq -r '.included_patches' <<<"$json" | tr '\n' ' ')"
+	done < <(jq -c '.[]' <<<"$patches_data")
+	#if [ "${args[excluded_patches]}" ]; then p_patcher_args+=("$(join_args "${args[excluded_patches]}" -d)"); fi
+	#if [ "${args[included_patches]}" ]; then p_patcher_args+=("$(join_args "${args[included_patches]}" -e)"); fi
 	[ "${args[exclusive_patches]}" = true ] && p_patcher_args+=("--exclusive")
 
 	local tried_dl=()
@@ -1578,7 +1607,7 @@ build_rv() {
 	local get_latest_ver=false
 	if [ "$version_mode" = auto ]; then
 		if ! version=$(get_patch_last_supported_ver "$list_patches" "$pkg_name" \
-			"${args[included_patches]}" "${args[excluded_patches]}" "${args[exclusive_patches]}" "${args[cli_source]}"); then
+			"$all_included_patches" "$all_excluded_patches" "${args[exclusive_patches]}" "${args[cli_source]}"); then
 			epr "get_patch_last_supported_ver failed '$list_patches'"
 			return
 		elif [ -z "$version" ]; then get_latest_ver=true; fi
@@ -1708,10 +1737,6 @@ build_rv() {
 
 	local microg_patch
 	microg_patch=$(grep "^Name: " <<<"$list_patches" | grep -i "gmscore\|microg" || :) microg_patch=${microg_patch#*: }
-	if [ -n "$microg_patch" ] && [[ ${p_patcher_args[*]} =~ $microg_patch ]]; then
-		wpr "You cant include/exclude microg patch as that's done by rvmm builder automatically."
-		p_patcher_args=("${p_patcher_args[@]//-[ei] ${microg_patch}/}")
-	fi
 
 	local patcher_args patched_apk build_mode
 	local rv_brand_f=${args[rv_brand],,}
@@ -1732,13 +1757,7 @@ build_rv() {
 		else
 			patched_apk="${TEMP_DIR}/${app_name_l}${rv_brand_f}-${version_f}-${arch_f}.apk"
 		fi
-		if [ -n "$microg_patch" ]; then
-			if [ "$build_mode" = apk ]; then
-				patcher_args+=("-e \"${microg_patch}\"")
-			elif [ "$build_mode" = module ]; then
-				patcher_args+=("-d \"${microg_patch}\"")
-			fi
-		fi
+
 		if [ "$build_mode" = module ]; then
 			if [[ "${args[cli_source],,}" != *"revanced-cli"* ]]; then
 				patcher_args+=("--mount")
@@ -1761,7 +1780,7 @@ build_rv() {
 
 		local apk_output="${BUILD_DIR}/${app_name_l}${rv_brand_f}-v${version_f}-${arch_f}.apk"
 		if [ "${NORB:-}" != true ] || { [ ! -f "$patched_apk" ] && [ ! -f "$apk_output" ]; }; then
-			if ! patch_apk "$stock_apk_to_patch" "$patched_apk" "${patcher_args[*]}" "${args[cli]}" "${args[ptjar]}" "${args[cli_source]}"; then
+			if ! patch_apk "$stock_apk_to_patch" "$patched_apk" "${patcher_args[*]}" "${args[cli]}" "${args[ptjar]}" "${args[cli_source]}" "$patches_data"; then
 				epr "Building '${table}' failed!"
 				return 0
 			fi

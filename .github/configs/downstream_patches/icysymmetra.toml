@@ -3,9 +3,10 @@ enabled = true
 app-name = "tiktok"
 rv-brand = "icysymmetra"
 build-mode = "apk"
-patches-source = "icysymmetra/tiktok-patches-for-morphe"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://tiktok.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly"
 archive-dlurl = "https://archive.org/download/geologically/apks/com.zhiliaoapp.musically"
 dpi = "nodpi anydpi auto"
+[[tiktok-icysymmetra.patches]]
+source = "icysymmetra/tiktok-patches-for-morphe"
