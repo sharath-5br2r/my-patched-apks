@@ -125,7 +125,7 @@ jobs:
         if: false
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
-          TG_THREAD_ID: ${{ steps.context.outputs.TG_THREAD_ID }}
+          TG_TARGET_CHAT: ${{ secrets.TG_TARGET_CHAT }}
           TITLE_SUFFIX: ${{ steps.context.outputs.TITLE_SUFFIX }}
           NEXT_VER_CODE: ${{ steps.version.outputs.NEXT_VER_CODE }}
           GITHUB_SERVER_URL: ${{ github.server_url }}

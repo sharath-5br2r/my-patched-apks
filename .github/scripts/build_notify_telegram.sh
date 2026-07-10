@@ -33,41 +33,56 @@ fi
 
 MSG+="<b>APKs:</b>${APKS}"
 
-# Split MSG into ≤4096-char chunks on line boundaries (never breaks URLs)
-TG_LIMIT=4096
-CHUNK=""
-send_chunk() {
-  local text="$1"
-  curl -s -X POST \
-    --data-urlencode "parse_mode=HTML" \
-    --data-urlencode "disable_web_page_preview=true" \
-    --data-urlencode "text=${text}" \
-    --data-urlencode "chat_id=@rvb27" \
-    --data-urlencode "message_thread_id=${TG_THREAD_ID}" \
-    "https://api.telegram.org/bot${TG_TOKEN}/sendMessage"
-  curl -s -X POST \
-    --data-urlencode "parse_mode=HTML" \
-    --data-urlencode "disable_web_page_preview=true" \
-    --data-urlencode "text=${text}" \
-    --data-urlencode "chat_id=@rvb28" \
-    "https://api.telegram.org/bot${TG_TOKEN}/sendMessage"
-}
+# Define the target username or chat ID directly to the bot interaction 
+# Note: Ensure the bot has interacted with the user or is a member of the group/chat if it's a direct message setup.
+TARGET_USER="$TG_TARGET_CHAT"  # Replace with the actual username or chat ID
+python3 -m pip install --upgrade telethon
+# Inline Python script using Telethon to send chunks
+python3 - <<EOF
+import os
+import asyncio
+from telethon import TelegramClient
 
-while IFS= read -r LINE; do
-  # +1 for the newline we'll re-add between lines
-  CANDIDATE="${CHUNK:+${CHUNK}${NL}}${LINE}"
-  if [ "${#CANDIDATE}" -le "$TG_LIMIT" ]; then
-    CHUNK="$CANDIDATE"
-  else
-    # Flush current chunk and start a new one with this line
-    if [ -n "$CHUNK" ]; then
-      send_chunk "$CHUNK"
-    fi
-    CHUNK="$LINE"
-  fi
-done <<< "$MSG"
+api_id = int(os.environ['TG_API_ID'])
+api_hash = os.environ['TG_API_HASH']
+bot_token = os.environ['TG_TOKEN']
+reply_to = os.environ.get('TG_THREAD_ID') # Optional: thread ID if sending to a group topic
 
-# Send any remaining content
-if [ -n "$CHUNK" ]; then
-  send_chunk "$CHUNK"
-fi
+msg = """$MSG"""
+tg_limit = 4096
+
+async def main():
+    # Initialize the client as a Bot using the token
+    async with TelegramClient('bot_session', api_id, api_hash) as client:
+        await client.start(bot_token=bot_token)
+        
+        # Split message on line breaks without breaking links
+        lines = msg.split('\n')
+        chunk = ""
+        
+        for line in lines:
+            candidate = f"{chunk}\n{line}" if chunk else line
+            if len(candidate) <= tg_limit:
+                chunk = candidate
+            else:
+                if chunk:
+                    await client.send_message(
+                        '$TARGET_USER', 
+                        chunk, 
+                        parse_mode='html', 
+                        link_preview=False,
+                        reply_to=int(reply_to) if reply_to else None
+                    )
+                chunk = line
+                
+        if chunk:
+            await client.send_message(
+                '$TARGET_USER', 
+                chunk, 
+                parse_mode='html', 
+                link_preview=False,
+                reply_to=int(reply_to) if reply_to else None
+            )
+
+asyncio.run(main())
+EOF

@@ -60,10 +60,54 @@ else
   FULL_MSG="${FULL_MSG}${NL}${NL}ℹ️ _No apps are enabled. Build skipped._"
 fi
 
-curl -s -X POST \
-  --data-urlencode "parse_mode=Markdown" \
-  --data-urlencode "disable_web_page_preview=true" \
-  --data-urlencode "text=${FULL_MSG}" \
-  --data-urlencode "chat_id=@rvb27" \
-  --data-urlencode "message_thread_id=2747" \
-  "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" > /dev/null
+# Define Direct Target Chat (Username or Chat ID string)
+TARGET_CHAT="$TG_TARGET_CHAT"  # Replace with the actual username or chat ID
+python3 -m pip install --upgrade telethon
+# Execute Telethon script to deliver the message straight to the bot interaction 
+python3 - <<EOF
+import os
+import asyncio
+from telethon import TelegramClient
+
+api_id = int(os.environ['TG_API_ID'])
+api_hash = os.environ['TG_API_HASH']
+bot_token = os.environ['TG_TOKEN']
+reply_to = 2747  # Inherited from your message_thread_id parameter
+
+msg = """$FULL_MSG"""
+tg_limit = 4096
+
+async def main():
+    async with TelegramClient('bot_session_patches', api_id, api_hash) as client:
+        await client.start(bot_token=bot_token)
+        
+        # Safe chunking loop in case updates generate an exceptionally long message
+        lines = msg.split('\n')
+        chunk = ""
+        
+        for line in lines:
+            candidate = f"{chunk}\n{line}" if chunk else line
+            if len(candidate) <= tg_limit:
+                chunk = candidate
+            else:
+                if chunk:
+                    await client.send_message(
+                        '$TARGET_CHAT', 
+                        chunk, 
+                        parse_mode='markdown', 
+                        link_preview=False,
+                        reply_to=reply_to
+                    )
+                chunk = line
+                
+        if chunk:
+            await client.send_message(
+                '$TARGET_CHAT', 
+                chunk, 
+                parse_mode='markdown', 
+                        link_preview=False,
+                reply_to=reply_to
+            )
+
+asyncio.run(main())
+EOF
