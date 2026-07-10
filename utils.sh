@@ -632,7 +632,7 @@ _byparr_get() {
 }
 _cfb_get() {
 	local url=$1 referer=${2:-}
-	local max_retries=5
+	local max_retries=3
 	local attempt
     
 	for attempt in $(seq 1 $max_retries); do
@@ -643,7 +643,7 @@ _cfb_get() {
 		http_code=$(curl -s -o "$response_file" -w '%{http_code}' \
 			-D $TEMP_DIR/cfb_response_headers.txt \
 			-G --data-urlencode "url=$url"\
-			--max-time 60 \
+			--max-time 30 \
 			"http://localhost:8000/html")
 		if [[ "$http_code" == "200" ]]; then
 			html=$(cat "$response_file")
@@ -1676,7 +1676,7 @@ build_rv() {
 				rm -f "$stock_apk"
 				continue
 			fi
-			if ! unzip -l "$stock_apk" 2>/dev/null | grep '^[[:space:]]*[0-9].*AndroidManifest\.xml$'; then
+			if ! unzip -l "$stock_apk" 2>/dev/null | grep -q '^[[:space:]]*[0-9].*AndroidManifest\.xml$'; then
 				pr "WARNING: ${stock_apk} does not contain AndroidManifest.xml at root. Attempting to extract as XAPK/APKS..."
 				mv "$stock_apk" "${stock_apk}.xapk"
 				if ! _apkpure_install_xapk "${stock_apk}.xapk" "$stock_apk"; then
