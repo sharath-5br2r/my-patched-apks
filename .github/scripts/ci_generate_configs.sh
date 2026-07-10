@@ -23,7 +23,8 @@ jq -rn --argjson new "$TAGS_NEW" --argjson old "$TAGS_OLD" '
       | $e.value.repo | ascii_downcase
   ]
 ' > active.prerelease.json
-genconfigs_old(){
+
+genconfigs(){
 if [ "${TRIGGER_STABLE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
   STABLE_CONFIGS=$(find $1 -name "*.toml" ! -name "*dev*.toml" | sort)
   if [ -n "$STABLE_CONFIGS" ]; then
@@ -40,7 +41,8 @@ if [ "${TRIGGER_STABLE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [
       if .value | type == "object" then
         .key as $k |
         .value as $app |
-        (($app["patches-source"] // "ReVanced/revanced-patches") | ascii_downcase | gsub("[\"'\''\\n\\r\\t]"; " ") | split(" ") | map(select(. != ""))) as $srcs |
+        # Safely extracts sources from the new nested patches array format
+        (if ($app.patches | type == "array") then [$app.patches[].source | ascii_downcase] else ["revanced/revanced-patches"] end) as $srcs |
         if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
       else . end
     )
@@ -63,67 +65,7 @@ if [ "${TRIGGER_PRERELEASE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] 
       if .value | type == "object" then
         .key as $k |
         .value as $app |
-        (($app["patches-source"] // "ReVanced/revanced-patches") | ascii_downcase | gsub("[\"'\''\\n\\r\\t]"; " ") | split(" ") | map(select(. != ""))) as $srcs |
-        
-        # Check if the app has any source where pre_date > stable_date
-        (
-          $srcs | map(
-            . as $src |
-            ($tags | to_entries | map(select((.value.repo | ascii_downcase) == $src)) | .[0].value) as $t |
-            if $t == null then false
-            else ($t.pre_date // "") > ($t.stable_date // "") end
-          ) | any
-        ) as $has_valid_dev |
-
-        if (($srcs - $active[0]) != $srcs) or (($activeApps[0] | index($k)) and $has_valid_dev) then . else (.value.enabled = false) end
-      else . end
-    )
-  ' config.dev$2.json > .github/configs/config.dev.updated$2.json
-fi
-}
-genconfigs(){
-if [ "${TRIGGER_STABLE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
-  STABLE_CONFIGS=$(find $1 -name "*.toml" ! -name "*dev*.toml" | sort)
-  if [ -n "$STABLE_CONFIGS" ]; then
-    # shellcheck disable=SC2086
-    # Deep merges the array of tables across multiple files instead of overwriting them
-    yq -o=json eval-all '. as $item ireduce ({}; . *nappend $item)' $STABLE_CONFIGS > config.stable$2.json
-  else
-    echo "{}" > config.stable$2.json
-  fi
-
-  jq --slurpfile active active.stable.json --slurpfile activeApps active_apps.json '
-    { "parallel-jobs": 5, "enable-module-update": true } as $force |
-    ($force + . + $force) |
-    with_entries(
-      if .value | type == "object" then
-        .key as $k |
-        .value as $app |
-        # Directly extract sources from the patches array of tables; fall back if none provided
-        (if ($app.patches | type == "array") then [$app.patches[].source | ascii_downcase] else ["revanced/revanced-patches"] end) as $srcs |
-        if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
-      else . end
-    )
-  ' config.stable$2.json > .github/configs/config.stable.updated$2.json
-fi
-
-if [ "${TRIGGER_PRERELEASE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
-  DEV_CONFIGS=$(find $1 -name "*.toml" ! -name "*stable*.toml" | sort)
-  if [ -n "$DEV_CONFIGS" ]; then
-    # shellcheck disable=SC2086
-    yq -o=json eval-all '. as $item ireduce ({}; . *nappend $item)' $DEV_CONFIGS > config.dev$2.json
-  else
-    echo "{}" > config.dev$2.json
-  fi
-
-  jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json --argjson tags "$TAGS_NEW" '
-    { "parallel-jobs": 5, "patches-version": "dev", "enable-module-update": false } as $force |
-    ($force + . + $force) |
-    with_entries(
-      if .value | type == "object" then
-        .key as $k |
-        .value as $app |
-        # Directly extract sources from the patches array of tables for dev configs
+        # Safely extracts sources from the new nested patches array format
         (if ($app.patches | type == "array") then [$app.patches[].source | ascii_downcase] else ["revanced/revanced-patches"] end) as $srcs |
         
         # Check if the app has any source where pre_date > stable_date
@@ -144,5 +86,6 @@ fi
 }  
 
 
-genconfigs ./.github/configs/downstream_patches ""
+
+genconfigs ./.github/configs/downstream_patches ".downstream"
 genconfigs ./.github/configs/config.predl.toml ".predl"

@@ -111,7 +111,7 @@ jobs:
     if: ${{ always() && needs.check_patch.outputs.trigger_prerelease == '1' }}
     uses: ./.github/workflows/build.yml
     with:
-      config_file: ".github/configs/config.dev.updated.json"
+      config_file: ".github/configs/config.dev.updated.downstream.json"
     secrets: inherit
   build_predl:
     needs: [check_patch, build_dev]
