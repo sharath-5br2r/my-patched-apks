@@ -16,18 +16,18 @@
   "anddea": {
     "repo": "anddea/revanced-patches",
     "stable": "v4.1.0",
-    "prerelease": "v4.2.0-dev.2",
+    "prerelease": "v4.2.0-dev.3",
     "blocked": false,
     "stable_date": "2026-06-16T15:37:39Z",
-    "pre_date": "2026-07-03T18:34:13Z"
+    "pre_date": "2026-07-10T11:22:55Z"
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.34.0",
-    "prerelease": "v1.34.0-dev.7",
+    "prerelease": "v1.34.0",
     "blocked": false,
     "stable_date": "2026-07-10T07:06:08Z",
-    "pre_date": "2026-07-09T16:25:42Z"
+    "pre_date": "2026-07-10T07:06:08Z"
   },
   "piko": {
     "repo": "crimera/piko",
@@ -40,10 +40,10 @@
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
     "stable": "v1.38.2",
-    "prerelease": "v1.38.2",
+    "prerelease": "v1.39.0-dev.2",
     "blocked": false,
     "stable_date": "2026-07-06T17:17:45Z",
-    "pre_date": "2026-07-06T17:17:45Z"
+    "pre_date": "2026-07-10T04:44:07Z"
   },
   "adobo": {
     "repo": "jkennethcarino/adobo",
@@ -159,10 +159,10 @@
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
     "stable": "v1.11.0",
-    "prerelease": "v1.11.0-dev.5",
+    "prerelease": "v1.11.0",
     "blocked": false,
     "stable_date": "2026-07-10T01:04:44Z",
-    "pre_date": "2026-07-10T01:01:08Z"
+    "pre_date": "2026-07-10T01:04:44Z"
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
@@ -200,8 +200,8 @@
     "repo": "quantavil/edge-morphe-patches",
     "stable": "v1.32.0",
     "stable_date": "2026-06-11T08:29:13Z",
-    "prerelease": "",
-    "pre_date": "",
+    "prerelease": "v1.32.0",
+    "pre_date": "2026-06-11T08:29:13Z",
     "blocked": false
   }
 }
