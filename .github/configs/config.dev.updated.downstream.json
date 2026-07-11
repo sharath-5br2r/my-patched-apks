@@ -250,7 +250,7 @@
     ]
   },
   "x-piko": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "x",
     "rv-brand": "piko",
     "build-mode": "apk",
