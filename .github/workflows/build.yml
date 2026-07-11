@@ -122,6 +122,7 @@ jobs:
           prerelease: ${{ steps.context.outputs.IS_PRERELEASE == 'true' }}
 
       - name: Notify telegram
+        if: false
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_TARGET_CHAT: ${{ secrets.TG_TARGET_CHAT }}
