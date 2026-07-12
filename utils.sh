@@ -1587,8 +1587,8 @@ build_rv() {
 	local all_excluded_patches=""
 	local all_included_patches=""
 	while read -r json; do
-		all_excluded_patches+="$(jq -r '."excluded-patches"' <<<"$json" | tr '\n' ' ')"
-		all_included_patches+="$(jq -r '."included-patches"' <<<"$json" | tr '\n' ' ')"
+		all_excluded_patches+="$(jq -r '."excluded-patches" // ""' <<<"$json" | tr '\n' ' ')"
+		all_included_patches+="$(jq -r '."included-patches" // ""' <<<"$json" | tr '\n' ' ')"
 	done < <(jq -c '.[]' <<<"$patches_data")
 	#if [ "${args[excluded_patches]}" ]; then p_patcher_args+=("$(join_args "${args[excluded_patches]}" -d)"); fi
 	#if [ "${args[included_patches]}" ]; then p_patcher_args+=("$(join_args "${args[included_patches]}" -e)"); fi
