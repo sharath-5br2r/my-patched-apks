@@ -166,11 +166,11 @@
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.10.0",
-    "prerelease": "v1.10.0",
+    "stable": "v1.11.0",
+    "prerelease": "v1.11.0",
     "blocked": false,
-    "stable_date": "2026-07-04T18:45:00Z",
-    "pre_date": "2026-07-04T18:45:00Z"
+    "stable_date": "2026-07-12T03:29:06Z",
+    "pre_date": "2026-07-12T03:29:06Z"
   },
   "revenge": {
     "repo": "revenge-mod/revenge-xposed",
