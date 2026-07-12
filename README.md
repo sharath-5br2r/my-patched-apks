@@ -176,7 +176,7 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 
 <blockquote>
 
-[Release 2026-07-12](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260041)<br>
+[Release 2026-07-12](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260042)<br>
 Patches: 
 </blockquote>
 </details>
