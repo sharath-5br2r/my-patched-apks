@@ -87,5 +87,5 @@ fi
 
 
 
-genconfigs ./.github/configs/downstream_patches ".downstream"
-genconfigs ./.github/configs/config.predl.toml ".predl"
+genconfigs ./configs/patches ".downstream"
+genconfigs ./configs/config.predl.toml ".predl"

@@ -59,10 +59,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: bash .github/scripts/build_resolve_version.sh
-      - name: Decode Keystores
-        run: |
-           echo "${{ secrets.KEYSTORE }}" | base64 -d > ks.keystore
-           echo "${{ secrets.KEYSTORE_P12 }}" | base64 -d > ks-p12.keystore
       - name: Build modules and apks
         env:
           GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -70,16 +66,18 @@ jobs:
           NEXT_VER_CODE: ${{ steps.version.outputs.NEXT_VER_CODE }}
           KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
           KEYSTORE_ALIAS: sharath
+          KEYSTORE: ${{ secrets.KEYSTORE }}
+          KEYSTORE_P12: ${{ secrets.KEYSTORE_P12 }}
         run: |
           set -euo pipefail
           if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == *"_custom.sh" ]]; then
-            bash ./custom_patches.sh
+            bash ./scripts/custom_patches.sh
           else
             if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == *"predl"* ]]; then
-              bash ./prep_build_predl.sh
+              bash ./scripts/prep_build_predl.sh
             fi
-            bash ./morphe-experimental.sh
-            bash ./configgen.sh
+            bash ./scripts/morphe-experimental.sh
+            bash ./scripts/configgen.sh
             bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
           fi
 
@@ -120,18 +118,6 @@ jobs:
           tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}
           overwrite_files: true
           prerelease: ${{ steps.context.outputs.IS_PRERELEASE == 'true' }}
-
-      - name: Notify telegram
-        env:
-          TG_TOKEN: ${{ secrets.TG_TOKEN }}
-          TG_TARGET_CHAT: ${{ secrets.TG_TARGET_CHAT }}
-          TG_API_ID: ${{ secrets.TG_API_ID }}
-          TG_API_HASH: ${{ secrets.TG_API_HASH }}
-          TITLE_SUFFIX: ${{ steps.context.outputs.TITLE_SUFFIX }}
-          NEXT_VER_CODE: ${{ steps.version.outputs.NEXT_VER_CODE }}
-          GITHUB_SERVER_URL: ${{ github.server_url }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        run: bash .github/scripts/build_notify_telegram.sh
 
       - name: Update changelog and module update files
         env:

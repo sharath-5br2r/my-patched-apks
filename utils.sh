@@ -564,13 +564,12 @@ merge_splits() {
 		return 0
 	fi
 	pr "Merging splits"
-	gh_dl "$TEMP_DIR/apkeditor.jar" "https://github.com/REAndroid/APKEditor/releases/download/V1.4.9/APKEditor-1.4.9.jar" >/dev/null || return 1
 	if ! OP=$(java -jar "$TEMP_DIR/apkeditor.jar" merge -i "$bundle" -o "${output}-unsigned" -clean-meta -f 2>&1); then
 		epr "APKEditor error: $OP"
 		return 1
 	fi
 	# sign the merged stock apk
-	if ! OP=$(java -jar "$APKSIGNER" sign --ks ks-p12.keystore --ks-pass pass:$KEYSTORE_PASS --key-pass pass:$KEYSTORE_PASS --ks-key-alias $KEYSTORE_ALIAS \
+	if ! OP=$(java -jar "$APKSIGNER" sign --ks $TEMP_DIR/ks-p12.keystore --ks-pass pass:$KEYSTORE_PASS --key-pass pass:$KEYSTORE_PASS --ks-key-alias $KEYSTORE_ALIAS \
 		--out "${output}" "${output}-unsigned"); then
 		epr "apksigner error: $OP"
 		return 1
@@ -1092,7 +1091,7 @@ _apkpure_install_xapk() {
 			epr "APKEditor m error: $OP"
 			return 1
 		fi
-		if ! OP=$(java -jar "$APKSIGNER" sign --ks ks-p12.keystore --ks-pass pass:123456789 --key-pass pass:123456789 --ks-key-alias jhc \
+		if ! OP=$(java -jar "$APKSIGNER" sign --ks $TEMP_DIR/ks-p12.keystore --ks-pass pass:123456789 --key-pass pass:123456789 --ks-key-alias jhc \
 			--out "$output" "${output}-unsigned" 2>&1); then
 			epr "apksigner error: $OP"
 			return 1
@@ -1417,7 +1416,7 @@ patch_apk() {
 
 	local cli_source_l="${cli_source,,}"
 	if [[ "$cli_source_l" == "apksigner" ]]; then
-	   	if ! OP=$(java -jar "$APKSIGNER" sign --ks ks-p12.keystore --ks-pass pass:$KEYSTORE_PASS --key-pass pass:$KEYSTORE_PASS --ks-key-alias $KEYSTORE_ALIAS \
+	   	if ! OP=$(java -jar "$APKSIGNER" sign --ks $TEMP_DIR/ks-p12.keystore --ks-pass pass:$KEYSTORE_PASS --key-pass pass:$KEYSTORE_PASS --ks-key-alias $KEYSTORE_ALIAS \
 		--out "${patched_apk}" "${stock_input}"); then
 		epr "apksigner error: $OP"
 		return 1
@@ -1435,9 +1434,9 @@ patch_apk() {
 		local pathsep
 		if [[ "$(uname -s)" == *"NT"* ]]; then pathsep=";"; else pathsep=":"; fi
 		if [[ "$cli_source_l" == *"npatch"* ]]; then
-			local cmd="java -cp "temp/bcprov.jar$pathsep$cli_jar" -Djava.security.properties=temp/bc.security top.nkbe.npatch.patch.NPatch -k ks.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
+			local cmd="java -cp "temp/bcprov.jar$pathsep$cli_jar" -Djava.security.properties=temp/bc.security top.nkbe.npatch.patch.NPatch -k $TEMP_DIR/ks.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
 		else
-			local cmd="java -jar '$cli_jar' -k ks-p12.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
+			local cmd="java -jar '$cli_jar' -k $TEMP_DIR/ks-p12.keystore  $KEYSTORE_PASS $KEYSTORE_ALIAS $KEYSTORE_PASS '$stock_input' -o '$tmp_dir' $p_args_modules $patcher_args"
 		fi
 		pr "$cmd"
 		PATCH_OUTPUT=$(eval "$cmd" 2>&1)
@@ -1492,7 +1491,7 @@ patch_apk() {
 	done < <(jq -c '.[]' <<<"$patches_data")
 
 
-	local base_cmd="java -jar '$cli_jar' patch '$stock_input' --purge -t '$tmp_dir' -o '$patched_apk' --keystore=ks.keystore \
+	local base_cmd="java -jar '$cli_jar' patch '$stock_input' --purge -t '$tmp_dir' -o '$patched_apk' --keystore=$TEMP_DIR/ks.keystore \
 --keystore-entry-password=$KEYSTORE_PASS --keystore-password=$KEYSTORE_PASS --signer=$KEYSTORE_ALIAS --keystore-entry-alias=$KEYSTORE_ALIAS"
 
 	local cmd_long="${base_cmd}${p_args_long} $patcher_args"
