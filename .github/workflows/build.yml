@@ -18,6 +18,7 @@ on:
           - "configs/config.stable.toml"
           - "configs/config.dev.predl.toml"
           - "configs/config.stable.predl.toml"
+          - "configs/config.manual.toml"
           - "dev_custom.sh"
           - "stable_custom.sh"
           - ".github/configs/config.dev.updated.downstream.json"
