@@ -1788,8 +1788,6 @@ build_rv() {
 			zip -d "$stock_apk_to_patch" "lib/arm64-v8a/*" "lib/x86_64/*" "lib/armeabi-v7a/*" >/dev/null 2>&1 || :
 		elif [ "$arch" = "x86_64" ]; then
 			zip -d "$stock_apk_to_patch" "lib/arm64-v8a/*" "lib/armeabi-v7a/*" "lib/x86/*" >/dev/null 2>&1 || :
-		else
-			zip -d "$stock_apk_to_patch" "lib/x86_64/*" "lib/x86/*" >/dev/null 2>&1 || :
 		fi
 
 		local apk_output="${BUILD_DIR}/${app_name_l}${rv_brand_f}-v${version_f}-${arch_f}.apk"
@@ -1807,7 +1805,7 @@ build_rv() {
 				cp -f "$patched_apk" "$apk_output"
 			fi
 			pr "Built ${table} (non-root): '${apk_output}'"
-			write_build_info "${table% (*}" "${arch_f}" ".apk" "${app_name_l}-${rv_brand_f}" "$version_f" "$patches_ref" "$changelog_url"
+			write_build_info "${table% (*}" "${arch_f}" ".apk" "${app_name_l}${rv_brand_f}" "$version_f" "$patches_ref" "$changelog_url"
 			continue
 		fi
 		local base_template
@@ -1821,13 +1819,13 @@ build_rv() {
 		patches_ver="${patches_jar%% *}"; patches_ver="${patches_ver##*-}"
 		module_prop \
 			"${args[module_prop_name]}" \
-			"${app_name} ${args[rv_brand]}" \
+			"${app_name} ${rv_brand_f}" \
 			"${version_f} (patches ${patches_ver})" \
-			"${app_name} ${args[rv_brand]} module" \
+			"${app_name} ${rv_brand_f} module" \
 			"https://raw.githubusercontent.com/${GITHUB_REPOSITORY-}/update/${upj}" \
 			"$base_template"
 
-		local module_output="${app_name_l}-${rv_brand_f}-module-v${version_f}-${arch_f}.zip"
+		local module_output="${app_name_l}${rv_brand_f}-module-v${version_f}-${arch_f}.zip"
 		pr "Packing module ${table}"
 		cp -f "$patched_apk" "${base_template}/base.apk"
 
@@ -1849,7 +1847,7 @@ build_rv() {
 				elif [ "$arch" = "x86_64" ]; then
 					unzip -j "${stock_apk}.apkm" '*.apk' -x '*x86.apk' -x '*arm64_v8a.apk' -x '*armeabi_v7a.apk' -d "${base_template}/stock/" >/dev/null 2>&1
 				else
-					unzip -j "${stock_apk}.apkm" '*.apk' -x '*x86_64.apk' -x '*x86.apk' -d "${base_template}/stock/" >/dev/null 2>&1
+					unzip -j "${stock_apk}.apkm" '*.apk'  -d "${base_template}/stock/" >/dev/null 2>&1
 				fi
 			fi
 		fi
@@ -1858,7 +1856,7 @@ build_rv() {
 		zip -"$COMPRESSION_LEVEL" -FSqr "${CWD}/${BUILD_DIR}/${module_output}" .
 		popd >/dev/null || :
 		pr "Built ${table} (root): '${BUILD_DIR}/${module_output}'"
-		write_build_info "${table% (*}" "${arch_f}" ".zip" "${app_name_l}-${rv_brand_f}" "$version_f" "$patches_ref" "$changelog_url"
+		write_build_info "${table% (*}" "${arch_f}" ".zip" "${app_name_l}${rv_brand_f}" "$version_f" "$patches_ref" "$changelog_url"
 	done
 }
 
