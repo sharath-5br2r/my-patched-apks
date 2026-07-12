@@ -1487,7 +1487,7 @@ patch_apk() {
 		fi
 		local patch_jar=$(jq -r --arg src "$patch_src" '.[$src]' <<<"$curr_patches_jar")
 		p_args_long+=" --patches '$patch_jar' $per_patch_args"
-		p_args_short+=" -p $patch_jar' $per_patch_args"
+		p_args_short+=" -p '$patch_jar' $per_patch_args"
 	done < <(jq -c '.[]' <<<"$patches_data")
 
 
@@ -1587,8 +1587,8 @@ build_rv() {
 	local all_excluded_patches=""
 	local all_included_patches=""
 	while read -r json; do
-		all_excluded_patches+="$(jq -r '.excluded_patches' <<<"$json" | tr '\n' ' ')"
-		all_included_patches+="$(jq -r '.included_patches' <<<"$json" | tr '\n' ' ')"
+		all_excluded_patches+="$(jq -r '."excluded-patches"' <<<"$json" | tr '\n' ' ')"
+		all_included_patches+="$(jq -r '."included-patches"' <<<"$json" | tr '\n' ' ')"
 	done < <(jq -c '.[]' <<<"$patches_data")
 	#if [ "${args[excluded_patches]}" ]; then p_patcher_args+=("$(join_args "${args[excluded_patches]}" -d)"); fi
 	#if [ "${args[included_patches]}" ]; then p_patcher_args+=("$(join_args "${args[included_patches]}" -e)"); fi
