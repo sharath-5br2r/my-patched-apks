@@ -35,7 +35,7 @@
     ]
   },
   "github-hoodles": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "github",
     "rv-brand": "hoodles",
     "build-mode": "apk",
@@ -51,7 +51,7 @@
     ]
   },
   "prime-video-hoodles": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "prime-video",
     "rv-brand": "hoodles",
     "build-mode": "apk",
@@ -69,7 +69,7 @@
     ]
   },
   "adobe-acrobat-hooman": {
-    "enabled": false,
+    "enabled": true,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "adobe-acrobat",
     "rv-brand": "hooman",
@@ -85,7 +85,7 @@
     ]
   },
   "symfonium-hooman": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "symfonium",
     "rv-brand": "hooman",
     "build-mode": "apk",
@@ -101,7 +101,7 @@
     ]
   },
   "adm-hooman": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "adm",
     "rv-brand": "hooman",
     "build-mode": "apk",
@@ -148,7 +148,7 @@
     ]
   },
   "youtube-morphe": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -166,7 +166,7 @@
     ]
   },
   "youtube-music-morphe": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube-music",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -233,7 +233,7 @@
     ]
   },
   "instagram-piko": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "instagram",
     "rv-brand": "piko",
     "build-mode": "apk",
@@ -250,7 +250,7 @@
     ]
   },
   "x-piko": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "x",
     "rv-brand": "piko",
     "build-mode": "apk",
@@ -289,7 +289,7 @@
     ]
   },
   "amazon-india-rushiranpise": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "amazon-india",
     "rv-brand": "rushiranpise",
     "build-mode": "apk",

@@ -43,7 +43,7 @@ jobs:
       - name: Update Morphe Experimental App versions
         env:
           GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        run: bash ./morphe-experimental.sh
+        run: bash ./scripts/morphe-experimental.sh
       - name: Fetch latest tags
         if: steps.ensure_patch_sources.outputs.created == 'false'
         id: fetch_tags
