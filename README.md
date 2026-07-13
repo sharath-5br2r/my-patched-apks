@@ -139,7 +139,7 @@ Patches: [rushiranpise/patches-1.13.0-dev.1.mpp](https://github.com/rushiranpise
 <summary id="amazon-alexa-signed">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2.2.694622.0-gray?labelColor=add8e6&logo=android&logoColor=white&style=flat"></summary>
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260057)<br>
 Patches: 
 </blockquote>
 </details>
