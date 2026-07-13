@@ -8,3 +8,4 @@ if [ -n "${GITHUB_OUTPUT:-}" ]; then
 else
     export BUILD_LOG="$(cat build.md)"
 fi
+cp -f build.md build.tmp
