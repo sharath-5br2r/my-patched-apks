@@ -219,14 +219,6 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 
 ---
 
-### [Fold Craft Launcher](https://github.com/FCL-Team/FoldCraftLauncher)
-
-`com.tungsten.fcl`
-
-#### Spoof to CODM via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
-
-<details>
-<summary id="fcl-cod">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.3.1.7-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
@@ -757,6 +749,54 @@ Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patc
 <summary id="youtube-music-morphe"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v9.26.51-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
   
 <blockquote>
+
+[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260027)<br>
+Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
+- Bypass certificate checks
+- Change header
+- Change miniplayer color
+- Change start page
+- Check watch history domain name resolution
+- Custom branding
+- Disable DRC audio
+- Disable QUIC protocol
+- Downloads
+- Enable debugging
+- Enable exclusive audio playback
+- Enable forced miniplayer
+- Enable swipe to dismiss miniplayer
+- Force original audio
+- GmsCore support
+- Hide ads
+- Hide buttons
+- Hide filter bar
+- Hide flyout menu components
+- Hide layout components
+- Hide music action buttons
+- Miniplayer previous and next buttons
+- Navigation bar
+- Network proxy
+- Permanent repeat
+- Remove background playback restrictions
+- Sanitize sharing links
+- Scrobbling
+- SponsorBlock
+- Spoof video streams
+- Theme
+- Track crossfade
+</blockquote>
+</details>
+
+---
+
+### [Zalith Launcher 2 Plus](https://github.com/Star1xr/ZalithLauncher2Plus)
+
+`com.movtery.zalithlauncher.v2`
+
+#### Spoofed to CODM via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
+
+<details>
+<summary id="zalith-launcher-2-plus-cod">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.0.0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
 [Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260027)<br>
 Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
