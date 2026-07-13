@@ -15,7 +15,7 @@ sign() {
 }
 
 dolphin-sdk29() {
-    UPDATE_DOLPHIN=$(jq -r '.UPDATE_DOLPHIN // false' .github/scripts/predl_updates.json)
+    UPDATE_DOLPHIN=$(jq -r '.UPDATE_DOLPHIN // false' .github/scripts/predl_updates.json) || true
     if [[ $UPDATE_DOLPHIN != true ]] && [[ $GITHUB_EVENT_NAME != "workflow_dispatch" ]] && [[ -n $GITHUB_REPOSITORY ]] ; then
         echo "Dolphin-SDK29 update not required, skipping."
         return

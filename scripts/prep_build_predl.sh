@@ -1,11 +1,11 @@
 #!/bin/bash
 mkdir -p ./downloads
 # Download Apps
-UPDATE_EDEN=$(jq -r '.UPDATE_EDEN // false' .github/scripts/predl_updates.json)
-UPDATE_WINLATOR=$(jq -r '.UPDATE_WINLATOR // false' .github/scripts/predl_updates.json)
-UPDATE_ZALITH_LAUNCHER=$(jq -r '.UPDATE_ZALITH_LAUNCHER // false' .github/scripts/predl_updates.json)
-UPDATE_GEODE=$(jq -r '.UPDATE_GEODE // false' .github/scripts/predl_updates.json)
-UPDATE_LEVILAUNCHER=$(jq -r '.UPDATE_LEVILAUNCHER // false' .github/scripts/predl_updates.json)
+UPDATE_EDEN=$(jq -r '.UPDATE_EDEN // false' .github/scripts/predl_updates.json) || true
+UPDATE_WINLATOR=$(jq -r '.UPDATE_WINLATOR // false' .github/scripts/predl_updates.json) || true
+UPDATE_ZALITH_LAUNCHER=$(jq -r '.UPDATE_ZALITH_LAUNCHER // false' .github/scripts/predl_updates.json) || true
+UPDATE_GEODE=$(jq -r '.UPDATE_GEODE // false' .github/scripts/predl_updates.json) || true
+UPDATE_LEVILAUNCHER=$(jq -r '.UPDATE_LEVILAUNCHER // false' .github/scripts/predl_updates.json) || true
 
 if [[ $UPDATE_EDEN = true ]] || [[ $GITHUB_EVENT_NAME = "workflow_dispatch" ]] || [[ -z $GITHUB_REPOSITORY ]] ; then
   EDEN_ID=$(gh run list -R Eden-CI/Workflow -w nightly.yml --status success --limit 1 --json databaseId -q ".[0].databaseId")
