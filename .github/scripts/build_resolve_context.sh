@@ -23,15 +23,19 @@ fi
 
 if [ "$IS_DEV" = true ]; then
   if [ -n "${GITHUB_OUTPUT:-}" ]; then
-    echo "IS_DEV=true" >> "$GITHUB_OUTPUT"
+    echo "IS_PRERELEASE=true" >> "$GITHUB_OUTPUT"
+    echo "ARCHIVE_TAG=beta" >> "$GITHUB_OUTPUT"
   else
-    export IS_DEV=true
+    export IS_PRERELEASE=true
+    export ARCHIVE_TAG=beta
   fi
 else
   if [ -n "${GITHUB_OUTPUT:-}" ]; then
-    echo "IS_DEV=false" >> "$GITHUB_OUTPUT"
+    echo "IS_PRERELEASE=false" >> "$GITHUB_OUTPUT"
+    echo "ARCHIVE_TAG=stable" >> "$GITHUB_OUTPUT"
   else
-    export IS_DEV=false
+    export IS_PRERELEASE=false
+    export ARCHIVE_TAG=stable
   fi
 fi
 
