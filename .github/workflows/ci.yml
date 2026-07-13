@@ -97,7 +97,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
-          commit_author: Sharath <sharathsukash@gmail.com>
+          commit_author: Sharath <sharathsukash@gmail.com> # Remove if not needed, or replace with your own name/emails
           file_pattern: .github/configs/*.json
           commit_message: "Update patch sources, app versions and generated configs [skip ci]"
 

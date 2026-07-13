@@ -114,7 +114,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
-          commit_author: Sharath <sharathsukash@gmail.com> # Remove if not needed
+          commit_author: Sharath <sharathsukash@gmail.com> # Remove if not needed, or replace with your own name/emails
           file_pattern: README.md
           commit_message: "Update README for Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} [skip ci]"
       - name: Cleanup docker containers
@@ -149,6 +149,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: update
-          commit_author: Sharath <sharathsukash@gmail.com>
+          commit_author: Sharath <sharathsukash@gmail.com> # Remove if not needed, or replace with your own name/emails 
           file_pattern: build.md *-update.json
           commit_message: Bump version ${{ steps.version.outputs.NEXT_VER_CODE }}
