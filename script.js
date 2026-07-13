@@ -82,7 +82,7 @@ const CONFIG = {
     inshorts: "Inshorts - News in 60 words",
     warp: "1.1.1.1 + WARP",
     x: "X/Twitter",
-    hoodles: "hoo-dles",
+    hoodles: "hoo-dles patches for Morphe",
     jiohotstar: "JioHotstar",
     pubg: "PUBG Mobile Spoof",
     bgmi: "Battlegrounds Mobile India Spoof",
@@ -111,6 +111,10 @@ const CONFIG = {
     myfitnesspal: "MyFitnessPal",
     terabox: "TeraBox",
     plutotv: "PlutoTV",
+    binarymend: "binarymend patches for Morphe",
+    paresh: "Paresh patches for Morphe",
+    rushiranpise: "Rushir patches for Morphe",
+  
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -164,7 +168,10 @@ const CONFIG = {
 
     github: "com.github.android",
     goodreads: "com.goodreads",
-    googlekeyboard: "com.google.android.inputmethod.latin",
+    googlekeyboard:{
+      default: "com.google.android.inputmethod.latin",
+      jasonwu1994: "dev.jason.com.android.inputmethod.latin",
+    },
     googlenews: "com.google.android.apps.magazines",
     googlephotos: {
       revanced: "app.revanced.android.apps.photos",
@@ -284,6 +291,10 @@ const CONFIG = {
       default: "com.google.android.apps.youtube.music",
     },
     xtwitter: "com.twitter.android",
+    zalithlauncher2plus: {
+      default: "com.movtery.zalithlauncher.v2",
+      cod: "com.activision.callofduty.shooter",
+    }
   },
 
   // App-specific notices to display on App Cards
