@@ -2,7 +2,7 @@
   "patches-version": "dev",
   "enable-module-uodate": true,
   "eden-pubg": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "eden",
     "rv-brand": "pubg",
     "build-mode": "apk",
@@ -17,7 +17,7 @@
     ]
   },
   "winlator-pubgvn": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "winlator",
     "rv-brand": "pubgvn",
     "build-mode": "apk",
@@ -46,11 +46,10 @@
         "args": "-OpackageName='com.activision.callofduty.shooter'",
         "included-patches": "'Change Package Name'"
       }
-    ],
-    "enabled": false
+    ]
   },
   "geode-pubgkr": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "geode",
     "rv-brand": "pubgkr",
     "build-mode": "apk",
@@ -65,7 +64,7 @@
     ]
   },
   "levilauncher-unlocked-bgmi": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "bgmi",
     "build-mode": "apk",
