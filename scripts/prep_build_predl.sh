@@ -9,17 +9,22 @@ UPDATE_LEVILAUNCHER=$(jq -r '.UPDATE_LEVILAUNCHER // false' .github/scripts/pred
 
 if [[ $UPDATE_EDEN = "true" ]] || [[ $GITHUB_EVENT_NAME = "workflow_dispatch" ]] || [[ $GITHUB_ACTIONS == "false" ]] ; then
   EDEN_ID=$(gh run list -R Eden-CI/Workflow -w nightly.yml --status success --limit 1 --json databaseId -q ".[0].databaseId")
+  echo -e "\e[32m[+] Downloading Eden\e[0m"
   gh api "/repos/Eden-CI/Workflow/actions/artifacts/$(gh api repos/Eden-CI/Workflow/actions/runs/$EDEN_ID/artifacts --jq '.artifacts[] | select(.name| contains("standard.apk")) | .id')/zip" > downloads/eden.apk  
 fi
 if [[ $UPDATE_WINLATOR = "true" ]] || [[ $GITHUB_EVENT_NAME = "workflow_dispatch" ]] || [[ $GITHUB_ACTIONS == "false" ]] ; then
+  echo -e "\e[32m[+] Downloading Winlator\e[0m"
   wget -qO downloads/winlator.apk $(gh api repos/StevenMXZ/Winlator-Ludashi/releases/latest | jq -r '.assets[2].browser_download_url')
 fi
 if [[ $UPDATE_ZALITH_LAUNCHER = "true" ]] || [[ $GITHUB_EVENT_NAME = "workflow_dispatch" ]] || [[ $GITHUB_ACTIONS == "false" ]] ; then
+  echo -e "\e[32m[+] Downloading Zalith Launcher 2 Plus\e[0m"
   wget -qO downloads/zalith-launcher-2-plus.apk $(gh api repos/Star1xr/ZalithLauncher2Plus/releases/latest | jq -r '.assets[4].browser_download_url')
 fi
 if [[ $UPDATE_GEODE = "true" ]] || [[ $GITHUB_EVENT_NAME = "workflow_dispatch" ]] || [[ $GITHUB_ACTIONS == "false" ]] ; then
+  echo -e "\e[32m[+] Downloading Geode\e[0m"
   wget -qO downloads/geode.apk $(gh api repos/geode-sdk/android-launcher/releases/latest | jq -r '.assets[1].browser_download_url')
 fi
 if [[ $UPDATE_LEVILAUNCHER = "true" ]] || [[ $GITHUB_EVENT_NAME = "workflow_dispatch" ]] || [[ $GITHUB_ACTIONS == "false" ]] ; then
+  echo -e "\e[32m[+] Downloading LeviLauncher\e[0m"
   wget -qO downloads/levilauncher.apk $(gh api repos/0Sombra666/LeviLaunchroidUnlocked/releases/latest | jq -r '.assets[0].browser_download_url')
 fi  
