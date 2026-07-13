@@ -30,15 +30,15 @@
       }
     ]
   },
-  "zalithlauncher2-plus-cod": {
+  "zalith-launcher-2-plus-cod": {
     "enabled": true,
-    "app-name": "zalthlauncher2-plus",
+    "app-name": "zalth-launcher-2-plus",
     "rv-brand": "cod",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-cli",
-    "local-dlurl": "downloads/zalithlauncher2-plus.apk"
+    "local-dlurl": "downloads/zalith-launcher-2-plus.apk"
   },
-  "zalthlauncher2-plus-cod": {
+  "zalth-launcher-2-plus-cod": {
     "patches": [
       {
         "source": "MorpheApp/morphe-patches",

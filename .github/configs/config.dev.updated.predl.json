@@ -2,7 +2,7 @@
   "patches-version": "dev",
   "enable-module-uodate": true,
   "eden-pubg": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "eden",
     "rv-brand": "pubg",
     "build-mode": "apk",
@@ -17,7 +17,7 @@
     ]
   },
   "winlator-pubgvn": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "winlator",
     "rv-brand": "pubgvn",
     "build-mode": "apk",
@@ -31,25 +31,26 @@
       }
     ]
   },
-  "zalithlauncher2-plus-cod": {
+  "zalith-launcher-2-plus-cod": {
     "enabled": false,
-    "app-name": "zalthlauncher2-plus",
+    "app-name": "zalth-launcher-2-plus",
     "rv-brand": "cod",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-cli",
-    "local-dlurl": "downloads/zalithlauncher2-plus.apk"
+    "local-dlurl": "downloads/zalith-launcher-2-plus.apk"
   },
-  "zalthlauncher2-plus-cod": {
+  "zalth-launcher-2-plus-cod": {
     "patches": [
       {
         "source": "MorpheApp/morphe-patches",
         "args": "-OpackageName='com.activision.callofduty.shooter'",
         "included-patches": "'Change Package Name'"
       }
-    ]
+    ],
+    "enabled": false
   },
   "geode-pubgkr": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "geode",
     "rv-brand": "pubgkr",
     "build-mode": "apk",
@@ -64,7 +65,7 @@
     ]
   },
   "levilauncher-unlocked-bgmi": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "bgmi",
     "build-mode": "apk",
