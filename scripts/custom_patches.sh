@@ -16,7 +16,7 @@ sign() {
 
 dolphin-sdk29() {
     UPDATE_DOLPHIN=$(jq -r '.UPDATE_DOLPHIN // false' .github/scripts/predl_updates.json) || UPDATE_DOLPHIN="false"
-    if [[ $UPDATE_DOLPHIN == "true" ]] || [[ $GITHUB_EVENT_NAME == "workflow_dispatch" ]] || [[ $GITHUB_ACTIONS == "false" ]] ; then
+    if [[ $UPDATE_DOLPHIN == "true" ]] || [[ $GITHUB_EVENT_NAME == "workflow_dispatch" ]] || [[ $GITHUB_ACTIONS != "true" ]] ; then
         echo -e "\e[32m[+] Fetching Dolphin-SDK29\e[0m"
         _cf_get https://dolphin-emu.org/download/
         DOLPHIN_APK_URL=$(echo $html | grep -Eo 'https://dl\.dolphin-emu\.org/builds/[a-z0-9/]+/dolphin-master-[0-9]+-[0-9]+\.apk' | awk -F'[-/.]' '{v=$(NF-2); b=$(NF-1);if (v>V || (v==V && b>B)) {V=v; B=b; U=$0}} END{print U}')

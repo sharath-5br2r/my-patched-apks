@@ -24,12 +24,12 @@ included-patches = "'Change Package Name'"
 
 [zalith-launcher-2-plus-cod]
 enabled = true
-app-name = "zalth-launcher-2-plus"
+app-name = "zalith-launcher-2-plus"
 rv-brand = "cod"
 build-mode = "apk"
 cli-source = "MorpheApp/morphe-cli"
 local-dlurl = "downloads/zalith-launcher-2-plus.apk"
-[[zalth-launcher-2-plus-cod.patches]]
+[[zalith-launcher-2-plus-cod.patches]]
 source = "MorpheApp/morphe-patches"
 args = "-OpackageName='com.activision.callofduty.shooter'"
 included-patches = "'Change Package Name'"
