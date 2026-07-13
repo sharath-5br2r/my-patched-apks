@@ -1,10 +1,24 @@
+speedtest-xtra (arm64-v8a): 7.0.4  
+speedtest-xtra (x86_64): 7.0.4  
 github-hoodles (all): 1.267.0  
+moonplus-reader-binarymend (all): 10.5  
+symfonium-hooman (all): 14.1.0  
+adm-hooman (all): 14.0.39  
 prime-video-hoodles (arm64-v8a): 3.0.463  
 adobe-acrobat-hooman (arm64-v8a): 26.6.1  
-youtube-music-morphe (x86_64): 9.26.51  
+tiktok-icysymmetra (all): 43.8.3  
 youtube-music-morphe (arm64-v8a): 9.26.51  
+youtube-music-morphe (x86_64): 9.26.51  
 youtube-morphe (all): 21.26.360  
+proton-vpn-paresh (all): 5.19.16.0  
+fing-paresh (all): 12.12.0  
+jiohotstar-paresh (all): 26.04.27.10  
+instagram-piko (arm64-v8a): 435.0.0.37.76  
+instagram-piko (x86_64): 435.0.0.37.76  
 amazon-india-rushiranpise (all): 32.12.4.300  
+discord-revenge (all): 336.10-Stable  
+gboard-jsonwu1994 (arm64-v8a): 17.0.10.880768217-release-arm64-v8a  
+amazon-alexa-signed (arm-v7a): 2.2.694622.0  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest), required for Google APKs.  
