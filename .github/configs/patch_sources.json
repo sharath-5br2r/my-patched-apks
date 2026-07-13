@@ -48,10 +48,10 @@
   "adobo": {
     "repo": "jkennethcarino/adobo",
     "stable": "v1.2.0",
-    "prerelease": "v1.3.0-dev.4",
+    "prerelease": "v1.3.0-dev.5",
     "blocked": false,
     "stable_date": "2026-06-14T11:51:20Z",
-    "pre_date": "2026-07-12T15:19:57Z"
+    "pre_date": "2026-07-13T13:22:09Z"
   },
   "rvexp": {
     "repo": "Aunali321/ReVancedExperiments",
