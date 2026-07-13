@@ -68,7 +68,7 @@
     ]
   },
   "adobe-acrobat-hooman": {
-    "enabled": false,
+    "enabled": true,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "adobe-acrobat",
     "rv-brand": "hooman",
@@ -84,7 +84,7 @@
     ]
   },
   "symfonium-hooman": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "symfonium",
     "rv-brand": "hooman",
     "build-mode": "apk",
@@ -100,7 +100,7 @@
     ]
   },
   "adm-hooman": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "adm",
     "rv-brand": "hooman",
     "build-mode": "apk",
@@ -288,7 +288,7 @@
     ]
   },
   "amazon-india-rushiranpise": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "amazon-india",
     "rv-brand": "rushiranpise",
     "build-mode": "apk",

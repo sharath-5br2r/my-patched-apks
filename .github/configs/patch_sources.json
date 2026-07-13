@@ -24,34 +24,34 @@
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.34.0",
-    "prerelease": "v1.34.0",
+    "prerelease": "v1.35.0-dev.1",
     "blocked": false,
     "stable_date": "2026-07-10T07:06:08Z",
-    "pre_date": "2026-07-10T07:06:08Z"
+    "pre_date": "2026-07-12T11:11:38Z"
   },
   "piko": {
     "repo": "crimera/piko",
     "stable": "v3.7.0",
-    "prerelease": "v3.8.0-dev.3",
+    "prerelease": "v3.8.0-dev.4",
     "blocked": false,
     "stable_date": "2026-06-27T16:03:22Z",
-    "pre_date": "2026-07-05T13:02:07Z"
+    "pre_date": "2026-07-12T13:22:24Z"
   },
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
     "stable": "v1.38.2",
-    "prerelease": "v1.39.0-dev.3",
+    "prerelease": "v1.39.0-dev.4",
     "blocked": false,
     "stable_date": "2026-07-06T17:17:45Z",
-    "pre_date": "2026-07-10T23:03:15Z"
+    "pre_date": "2026-07-12T22:16:14Z"
   },
   "adobo": {
     "repo": "jkennethcarino/adobo",
     "stable": "v1.2.0",
-    "prerelease": "v1.3.0-dev.2",
+    "prerelease": "v1.3.0-dev.4",
     "blocked": false,
     "stable_date": "2026-06-14T11:51:20Z",
-    "pre_date": "2026-07-05T15:47:57Z"
+    "pre_date": "2026-07-12T15:19:57Z"
   },
   "rvexp": {
     "repo": "Aunali321/ReVancedExperiments",
@@ -150,27 +150,27 @@
   },
   "hooman": {
     "repo": "arandomhooman/hoomans-morphe-patches",
-    "stable": "v1.42.0",
-    "prerelease": "v1.43.0-dev.1",
+    "stable": "v1.43.0",
+    "prerelease": "v1.44.0-dev.1",
     "blocked": false,
-    "stable_date": "2026-07-05T04:02:14Z",
-    "pre_date": "2026-07-05T17:21:57Z"
+    "stable_date": "2026-07-12T21:44:53Z",
+    "pre_date": "2026-07-12T21:54:44Z"
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "stable": "v1.11.0",
-    "prerelease": "v1.11.0",
+    "stable": "v1.12.0",
+    "prerelease": "v1.13.0-dev.1",
     "blocked": false,
-    "stable_date": "2026-07-10T01:04:44Z",
-    "pre_date": "2026-07-10T01:04:44Z"
+    "stable_date": "2026-07-12T17:32:56Z",
+    "pre_date": "2026-07-13T05:33:26Z"
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.11.0",
-    "prerelease": "v1.11.0",
+    "stable": "v1.12.0",
+    "prerelease": "v1.12.0",
     "blocked": false,
-    "stable_date": "2026-07-12T03:29:06Z",
-    "pre_date": "2026-07-12T03:29:06Z"
+    "stable_date": "2026-07-12T19:54:20Z",
+    "pre_date": "2026-07-12T19:54:20Z"
   },
   "revenge": {
     "repo": "revenge-mod/revenge-xposed",

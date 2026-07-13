@@ -2,7 +2,7 @@
   "parallel-jobs": 5,
   "enable-module-update": true,
   "eden-pubg": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "eden",
     "rv-brand": "pubg",
     "build-mode": "apk",
@@ -32,7 +32,7 @@
     ]
   },
   "fcl-cod": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "fcl",
     "rv-brand": "cod",
     "build-mode": "apk",
