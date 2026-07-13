@@ -15,6 +15,8 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
       trigger_stable: ${{ steps.effective_triggers.outputs.TRIGGER_STABLE }}
       trigger_prerelease: ${{ steps.effective_triggers.outputs.TRIGGER_PRERELEASE }}
@@ -41,14 +43,10 @@ jobs:
           file_pattern: .github/configs/patch_sources.json
           commit_message: "Create dummy patch_sources.json"
       - name: Update Morphe Experimental App versions
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: bash ./scripts/morphe-experimental.sh
       - name: Fetch latest tags
         if: steps.ensure_patch_sources.outputs.created == 'false'
         id: fetch_tags
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: bash .github/scripts/ci_fetch_tags.sh
 
       - name: Compare latest vs stored tags
@@ -63,9 +61,7 @@ jobs:
         if: steps.ensure_patch_sources.outputs.created == 'false'
         id: fetch_app_versions
         run: bash .github/scripts/ci_fetch_app_versions.sh
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        
+ 
       - name: Compare App Versions
         if: steps.ensure_patch_sources.outputs.created == 'false'
         id: compare_apps
