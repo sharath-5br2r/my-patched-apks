@@ -1,7 +1,6 @@
 {
-  "parallel-jobs": 5,
   "patches-version": "dev",
-  "enable-module-update": false,
+  "enable-module-uodate": true,
   "speedtest-xtra": {
     "enabled": false,
     "app-name": "speedtest",
@@ -35,7 +34,7 @@
     ]
   },
   "github-hoodles": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "github",
     "rv-brand": "hoodles",
     "build-mode": "apk",
@@ -51,7 +50,7 @@
     ]
   },
   "prime-video-hoodles": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "prime-video",
     "rv-brand": "hoodles",
     "build-mode": "apk",
@@ -69,7 +68,7 @@
     ]
   },
   "adobe-acrobat-hooman": {
-    "enabled": true,
+    "enabled": false,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "adobe-acrobat",
     "rv-brand": "hooman",
@@ -85,7 +84,7 @@
     ]
   },
   "symfonium-hooman": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "symfonium",
     "rv-brand": "hooman",
     "build-mode": "apk",
@@ -101,7 +100,7 @@
     ]
   },
   "adm-hooman": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "adm",
     "rv-brand": "hooman",
     "build-mode": "apk",
@@ -233,7 +232,7 @@
     ]
   },
   "instagram-piko": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "instagram",
     "rv-brand": "piko",
     "build-mode": "apk",
@@ -250,7 +249,7 @@
     ]
   },
   "x-piko": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "x",
     "rv-brand": "piko",
     "build-mode": "apk",
@@ -289,7 +288,7 @@
     ]
   },
   "amazon-india-rushiranpise": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-india",
     "rv-brand": "rushiranpise",
     "build-mode": "apk",

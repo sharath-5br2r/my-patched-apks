@@ -1,5 +1,4 @@
 {
-  "parallel-jobs": 5,
   "enable-module-update": true,
   "speedtest-xtra": {
     "enabled": false,
@@ -68,7 +67,7 @@
     ]
   },
   "adobe-acrobat-hooman": {
-    "enabled": true,
+    "enabled": false,
     "cli-source": "MorpheApp/morphe-cli",
     "app-name": "adobe-acrobat",
     "rv-brand": "hooman",
@@ -84,7 +83,7 @@
     ]
   },
   "symfonium-hooman": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "symfonium",
     "rv-brand": "hooman",
     "build-mode": "apk",
@@ -100,7 +99,7 @@
     ]
   },
   "adm-hooman": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "adm",
     "rv-brand": "hooman",
     "build-mode": "apk",
@@ -288,7 +287,7 @@
     ]
   },
   "amazon-india-rushiranpise": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-india",
     "rv-brand": "rushiranpise",
     "build-mode": "apk",
