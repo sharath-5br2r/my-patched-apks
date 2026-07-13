@@ -17,7 +17,6 @@ build.json
 /configs/config.stable.predl.toml
 /configs/config.dev.toml
 /configs/config.stable.toml
-/.github/configs/predl_updates.json
 /.github/configs/app_versions.json
 /build.tmp
 /app_updates.json
