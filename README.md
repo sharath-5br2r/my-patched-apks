@@ -75,12 +75,12 @@ Thank you to everyone who helps keep this project alive!
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="adobe-acrobat-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v26.6.0-gray?labelColor=b30b00&logo=android&logoColor=white&style=flat"></summary>
+<summary id="adobe-acrobat-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v26.6.1-gray?labelColor=b30b00&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260027)<br>
-Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0-dev.1)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260053)<br>
+Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.44.0-dev.1)
 - Unlock Pro
 </blockquote>
 </details>
@@ -115,13 +115,13 @@ Patches: [arandomhooman/patches-1.43.0-dev.1.mpp](https://github.com/arandomhoom
 
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260024)<br>
-Patches: [rushiranpise/patches-1.11.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.11.0)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260053)<br>
+Patches: [rushiranpise/patches-1.13.0-dev.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.0-dev.1)
+- Dark mode
 - Disable search suggestions tracking
 - Disable video autoplay
 - Fix Amazon manifest conflicts
-- GmsCore support (MicroG)
-- Hide Rufus tab
+- Open links in browser
 - Remove ads
 - Sanitize share links
 </blockquote>
@@ -239,12 +239,12 @@ Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patc
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="github-hoodles">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.266.0-gray?labelColor=181717&logo=github&logoColor=white&style=flat"></summary>
+<summary id="github-hoodles">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.267.0-gray?labelColor=181717&logo=github&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260027)<br>
-Patches: [hoo-dles/patches-1.39.0-dev.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.2)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260053)<br>
+Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.4)
 </blockquote>
 </details>
 
@@ -430,12 +430,12 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="prime-video-hoodles">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v3.0.462-gray?labelColor=0578ff&logo=android&logoColor=white&style=flat"></summary>
+<summary id="prime-video-hoodles">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v3.0.463-gray?labelColor=0578ff&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260027)<br>
-Patches: [hoo-dles/patches-1.39.0-dev.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.2)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260053)<br>
+Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.4)
 - Enable speed control
 - Skip ads
 </blockquote>
@@ -659,8 +659,8 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
   
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260027)<br>
-Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260053)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.2)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -750,8 +750,8 @@ Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patc
   
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260027)<br>
-Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260053)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.2)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -760,6 +760,7 @@ Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patc
 - Custom branding
 - Disable DRC audio
 - Disable QUIC protocol
+- Disable dislike redirection
 - Downloads
 - Enable debugging
 - Enable exclusive audio playback
@@ -781,6 +782,7 @@ Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patc
 - Sanitize sharing links
 - Scrobbling
 - SponsorBlock
+- Spoof app version
 - Spoof video streams
 - Theme
 - Track crossfade
