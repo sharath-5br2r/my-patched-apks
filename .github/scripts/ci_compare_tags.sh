@@ -31,7 +31,27 @@ TRIGGER_BLOCKED=$(jq -n --argjson old "$OLD_JSON" --argjson new "$NEW_JSON" '
 ')
 
 echo "$NEW_JSON" > "$PATCH_FILE"
+if [ -n "${GITHUB_OUTPUT:-}" ]; then
+  echo "TRIGGER_STABLE=$TRIGGER_STABLE" >> "$GITHUB_OUTPUT"
+  echo "TRIGGER_PRERELEASE=$TRIGGER_PRERELEASE" >> "$GITHUB_OUTPUT"
+  echo "TRIGGER_BLOCKED=$TRIGGER_BLOCKED" >> "$GITHUB_OUTPUT"
 
+  DELIM1="$(openssl rand -hex 8)"
+  echo "tags_old<<${DELIM1}" >> "$GITHUB_OUTPUT"
+  echo "$OLD_JSON" >> "$GITHUB_OUTPUT"
+  echo "${DELIM1}" >> "$GITHUB_OUTPUT"
+
+  DELIM2="$(openssl rand -hex 8)"
+  echo "tags_new<<${DELIM2}" >> "$GITHUB_OUTPUT"
+  echo "$NEW_JSON" >> "$GITHUB_OUTPUT"
+  echo "${DELIM2}" >> "$GITHUB_OUTPUT"
+else
+  export $TAGS_NEW="$NEW_JSON"
+  export $TAGS_OLD="$OLD_JSON"
+  export TRIGGER_STABLE="$TRIGGER_STABLE"
+  export TRIGGER_PRERELEASE="$TRIGGER_PRERELEASE"
+  export TRIGGER_BLOCKED="$TRIGGER_BLOCKED"
+fi
 echo "TRIGGER_STABLE=$TRIGGER_STABLE" >> "$GITHUB_OUTPUT"
 echo "TRIGGER_PRERELEASE=$TRIGGER_PRERELEASE" >> "$GITHUB_OUTPUT"
 echo "TRIGGER_BLOCKED=$TRIGGER_BLOCKED" >> "$GITHUB_OUTPUT"

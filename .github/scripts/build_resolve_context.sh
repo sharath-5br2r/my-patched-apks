@@ -22,13 +22,16 @@ elif [[ "$CONFIG" == *.toml ]]; then
 fi
 
 if [ "$IS_DEV" = true ]; then
-  echo "IS_PRERELEASE=true" >> "$GITHUB_OUTPUT"
-  echo "TG_THREAD_ID=350" >> "$GITHUB_OUTPUT"
-  echo "TITLE_SUFFIX= (Pre-release)" >> "$GITHUB_OUTPUT"
-  echo "ARCHIVE_TAG=beta" >> "$GITHUB_OUTPUT"
+  if [ -n "${GITHUB_OUTPUT:-}" ]; then
+    echo "IS_DEV=true" >> "$GITHUB_OUTPUT"
+  else
+    export IS_DEV=true
+  fi
 else
-  echo "IS_PRERELEASE=false" >> "$GITHUB_OUTPUT"
-  echo "TG_THREAD_ID=262" >> "$GITHUB_OUTPUT"
-  echo "TITLE_SUFFIX=" >> "$GITHUB_OUTPUT"
-  echo "ARCHIVE_TAG=stable" >> "$GITHUB_OUTPUT"
+  if [ -n "${GITHUB_OUTPUT:-}" ]; then
+    echo "IS_DEV=false" >> "$GITHUB_OUTPUT"
+  else
+    export IS_DEV=false
+  fi
 fi
+

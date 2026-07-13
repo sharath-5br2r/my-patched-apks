@@ -9,7 +9,16 @@ if [ ! -f "$PATCH_FILE" ]; then
   "dummy_patch": { "enabled": false, "repo": "" }
 }
 EOF
-  echo "created=true" >> "$GITHUB_OUTPUT"
+  if [ -n "${GITHUB_OUTPUT:-}" ]; then
+    echo "created=true" >> "$GITHUB_OUTPUT"
+  else
+    export CREATED=true
+  fi
 else
-  echo "created=false" >> "$GITHUB_OUTPUT"
+  if [ -n "${GITHUB_OUTPUT:-}" ]; then
+    echo "created=false" >> "$GITHUB_OUTPUT"
+  else
+    export CREATED=false
+  fi
 fi
+

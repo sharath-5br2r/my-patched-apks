@@ -12,4 +12,8 @@ else
 fi
 
 NEXT_VER_CODE=$(printf "%s%04d" "$YEAR" "$BUILD_COUNT")
-echo "NEXT_VER_CODE=$NEXT_VER_CODE" >> "$GITHUB_OUTPUT"
+if [ -n "${GITHUB_OUTPUT:-}" ]; then
+    echo "NEXT_VER_CODE=$NEXT_VER_CODE" >> "$GITHUB_OUTPUT"
+else
+    export NEXT_VER_CODE="$NEXT_VER_CODE"
+fi

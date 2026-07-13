@@ -140,10 +140,12 @@ if [ -s fetched_app_versions.jsonl ]; then
 else
     FETCHED_JSON="{}"
 fi
-
-DELIM="$(openssl rand -hex 8)"
-echo "fetched<<${DELIM}" >> "$GITHUB_OUTPUT"
-echo "$FETCHED_JSON" >> "$GITHUB_OUTPUT"
-echo "${DELIM}" >> "$GITHUB_OUTPUT"
-
+if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+    DELIM="$(openssl rand -hex 8)"
+    echo "fetched<<${DELIM}" >> "$GITHUB_OUTPUT"
+    echo "$FETCHED_JSON" >> "$GITHUB_OUTPUT"
+    echo "${DELIM}" >> "$GITHUB_OUTPUT"
+else
+    export  FETCHED_APP_VERSIONS="$FETCHED_JSON"
+fi
 rm -f temp_all_configs.json fetched_app_versions.jsonl check_list.txt

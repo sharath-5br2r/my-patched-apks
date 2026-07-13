@@ -10,11 +10,17 @@ fetch_gitlab_releases() {
 }
 
 if echo "$BASE_JSON" | jq -e 'length == 0' >/dev/null; then
-  DELIM="$(openssl rand -hex 8)"
-  echo "latest<<${DELIM}" >> "$GITHUB_OUTPUT"
-  echo "$BASE_JSON" >> "$GITHUB_OUTPUT"
-  echo "${DELIM}" >> "$GITHUB_OUTPUT"
-  exit 0
+  if [ -n "${GITHUB_OUTPUT:-}" ]; then
+    DELIM="$(openssl rand -hex 8)"
+    echo "latest<<${DELIM}" >> "$GITHUB_OUTPUT"
+    echo "$BASE_JSON" >> "$GITHUB_OUTPUT"
+    echo "${DELIM}" >> "$GITHUB_OUTPUT"
+    exit 0
+  else
+    mkdir -p temp
+    echo "$BASE_JSON" >> temp/latest_patch_sources.json
+    exit 0
+  fi
 fi
 
 > updates.jsonl
@@ -75,7 +81,12 @@ else
    NEW_JSON="$BASE_JSON"
 fi
 
-DELIM="$(openssl rand -hex 8)"
-echo "latest<<${DELIM}" >> "$GITHUB_OUTPUT"
-echo "$NEW_JSON" >> "$GITHUB_OUTPUT"
-echo "${DELIM}" >> "$GITHUB_OUTPUT"
+if [ -n "${GITHUB_OUTPUT:-}" ]; then
+    DELIM="$(openssl rand -hex 8)"
+    echo "latest<<${DELIM}" >> "$GITHUB_OUTPUT"
+    echo "$NEW_JSON" >> "$GITHUB_OUTPUT"
+    echo "${DELIM}" >> "$GITHUB_OUTPUT"
+else
+    export LATEST_TAGS="$NEW_JSON"
+fi
+

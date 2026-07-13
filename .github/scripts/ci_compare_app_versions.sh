@@ -72,7 +72,9 @@ else
     echo "No app updates found."
 fi
 echo -n "{\"UPDATE_EDEN\": ${UPDATE_EDEN:-false}, \"UPDATE_WINLATOR\": ${UPDATE_WINLATOR:-false}, \"UPDATE_ZALITH_LAUNCHER\": ${UPDATE_ZALITH_LAUNCHER:-false}, \"UPDATE_GEODE\": ${UPDATE_GEODE:-false}, \"UPDATE_LEVILAUNCHER\": ${UPDATE_LEVILAUNCHER:-false}, \"UPDATE_DOLPHIN\": ${UPDATE_DOLPHIN:-false}
-}" > '.github/scripts/predl_updates.json'
+}" > '.github/configs/predl_updates.json'
 if [ -n "${GITHUB_OUTPUT:-}" ]; then
     echo "TRIGGER_APP_UPDATE=$TRIGGER_APP_UPDATE" >> "$GITHUB_OUTPUT"
+else
+    export TRIGGER_APP_UPDATE="$TRIGGER_APP_UPDATE"
 fi
