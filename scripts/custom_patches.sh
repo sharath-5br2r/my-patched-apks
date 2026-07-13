@@ -15,6 +15,12 @@ sign() {
 }
 
 dolphin-sdk29() {
+    UPDATE_DOLPHIN=$(jq -r '.UPDATE_DOLPHIN // false' .github/scripts/predl_updates.json)
+    if [[ $UPDATE_DOLPHIN != true ]] && [[ $GITHUB_EVENT_NAME != "workflow_dispatch" ]] && [[ -n $GITHUB_REPOSITORY ]] ; then
+        echo "Dolphin-SDK29 update not required, skipping."
+        return
+    fi
+    echo -e "\e[32m[+] Fetching Dolphin-SDK29\e[0m"
     _cf_get https://dolphin-emu.org/download/
     DOLPHIN_APK_URL=$(echo $html | grep -Eo 'https://dl\.dolphin-emu\.org/builds/[a-z0-9/]+/dolphin-master-[0-9]+-[0-9]+\.apk' | awk -F'[-/.]' '{v=$(NF-2); b=$(NF-1);if (v>V || (v==V && b>B)) {V=v; B=b; U=$0}} END{print U}')
     DOLPHIN_NAME=$(basename "$DOLPHIN_APK_URL" .apk)
@@ -27,7 +33,7 @@ dolphin-sdk29() {
     echo -e "Patched Dolphin $DOLPHIN_VER with SDK 29" >> build.md
     echo -e "\"dolphin-sdk29\": { \"exts\": [\"apk\"], \"name\": \"dolphin-sdk29\",\"arch\": \"all\",\"patch\": \"sdk29\", \"version\": \"$DOLPHIN_VER\"}" >> build.json
     rm -f ./build/*.idsig
-    }
+}
 
 dolphin-sdk29
 echo -e '}' >> build.json

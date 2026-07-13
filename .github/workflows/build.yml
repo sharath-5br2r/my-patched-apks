@@ -8,6 +8,26 @@ on:
         type: string
   workflow_dispatch:
     inputs:
+      update_eden:
+        description: "Update Eden"
+        type: boolean
+        default: false
+      update_winlator:
+        description: "Update Winlator"
+        type: boolean
+        default: false
+      update_zalith_launcher:
+        description: "Update Zalith Launcher"
+        type: boolean
+        default: false
+      update_geode:
+        description: "Update Geode"
+        type: boolean
+        default: false
+      update_levilauncher:
+        description: "Update LeviLauncher"
+        type: boolean
+        default: false
       config_file:
         description: "Select the config file to use"
         required: true

@@ -33,7 +33,19 @@ while IFS= read -r group; do
     if [ "$new_ver" != "$old_ver" ] && [ "$new_ver" != "null" ] && [ -n "$new_ver" ]; then
         echo "Update detected for $group: $old_ver -> $new_ver"
         TRIGGER_APP_UPDATE=1
-        
+        if [[ $group = *"eden"* ]]; then
+            export UPDATE_EDEN=true
+        elif [[ $group = *"winlator"* ]]; then
+            export UPDATE_WINLATOR=true
+        elif [[ $group = *"levilauncher-unlocked"* ]]; then
+            export UPDATE_LEVILAUNCHER=true
+        elif [[ $group = *"geode"* ]]; then
+            export UPDATE_GEODE=true
+        elif [[ $group = *"zalith-launcher-2-plus"* ]]; then
+            export UPDATE_ZALITH_LAUNCHER=true
+        elif [[ $group = *"dolphin"* ]]; then
+            export UPDATE_DOLPHIN=true
+        fi
         # Add all constituent keys to active_apps.json
         keys=$(jq -r ".\"$group\".keys[]? // \"$group\"" "$CURRENT_VERSIONS")
         for key in $keys; do
@@ -59,7 +71,8 @@ if [ "$TRIGGER_APP_UPDATE" = "1" ]; then
 else
     echo "No app updates found."
 fi
-
+echo -n "{\"UPDATE_EDEN\": ${UPDATE_EDEN:-false}, \"UPDATE_WINLATOR\": ${UPDATE_WINLATOR:-false}, \"UPDATE_ZALITH_LAUNCHER\": ${UPDATE_ZALITH_LAUNCHER:-false}, \"UPDATE_GEODE\": ${UPDATE_GEODE:-false}, \"UPDATE_LEVILAUNCHER\": ${UPDATE_LEVILAUNCHER:-false}, \"UPDATE_DOLPHIN\": ${UPDATE_DOLPHIN:-false}
+}" > '.github/scripts/predl_updates.json'
 if [ -n "${GITHUB_OUTPUT:-}" ]; then
     echo "TRIGGER_APP_UPDATE=$TRIGGER_APP_UPDATE" >> "$GITHUB_OUTPUT"
 fi

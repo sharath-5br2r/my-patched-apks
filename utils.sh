@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+if [ -f .env ]; then
+  echo >&2 -e "\033[0;32m[+] Using .env file for keystore and signing.\033[0m"
+  source .env
+fi
+if [ -z "${KEYSTORE:-}" ] || [ -z "${KEYSTORE_PASS:-}" ] || [ -z "${KEYSTORE_P12:-}" ] || [ -z "${KEYSTORE_ALIAS:-}" ]; then
+  echo >&2 -e "\033[0;33m[!] Keystore information is not fully set. Please ensure KEYSTORE, KEYSTORE_PASS, KEYSTORE_P12, and KEYSTORE_ALIAS are defined in .env or environment variables.\033[0m"
+  echo >&2 -e "\033[0;33m[!] Auto generating values for KEYSTORE, KEYSTORE_PASS, KEYSTORE_P12, and KEYSTORE_ALIAS.\033[0m"
+  if [ ${GITHUB_REPOSITORY:-} ]; then
+	echo >&2 -e "::warning::utils.sh [!] Keystore information is not fully set. Please ensure KEYSTORE, KEYSTORE_PASS, KEYSTORE_P12, and KEYSTORE_ALIAS are defined in .env or environment variables.\n"
+  fi
+  source .env.default
+fi
+
+set -u
 MODULE_TEMPLATE_DIR="module"
 CWD=$(pwd)
 TEMP_DIR="temp"
@@ -8,6 +22,8 @@ BUILD_DIR="build"
 DL_SRCS=("local" "directv2" "direct" "github" "archive" "apkmirror" "uptodown" "apkpure" "apkcombo")
 BUILD_JSON_FILE="build.json"
 PATCH_OUTPUT=""
+base64 -d <<<"$KEYSTORE_P12" >"$TEMP_DIR/ks-p12.keystore"
+base64 -d <<<"$KEYSTORE" >"$TEMP_DIR/ks.keystore"
 
 if [ "${GH_TOKEN-}" ]; then GH_HEADER="Authorization: token ${GH_TOKEN}"; else GH_HEADER=; fi
 NEXT_VER_CODE=${NEXT_VER_CODE:-$(date +'%Y%m%d')}
@@ -344,6 +360,21 @@ set_prebuilts() {
 	    epr "htmlq binary isnt currenly available for $kernel $arch. Currently not supported."
 		exit 1
 	fi
+	AAPT2=$(command -v aapt2) || true
+	if [ -z "$AAPT2" ]; then
+	wpr "aapt2 not found in PATH, searching in Android SDK..."
+	if [[ -d "${ANDROID_HOME:-}" ]]; then
+		AAPT2=$(find /usr/local/lib/android/sdk/build-tools -name aapt2 | sort -r | head -n 1)
+	else
+		epr "Cannot Find aapt2, please install Android SDK or add aapt2 to PATH"
+		if [ $(uname -o) = Android ]; then
+			epr "On Android, you can install aapt2 with 'pkg install aapt2' or 'apt install aapt2'"
+		fi
+		exit 1
+	fi
+	fi
+	pr "Using aapt2: $AAPT2"
+	command -v yq >/dev/null 2>&1 || abort "\`yq\` is not installed. install it with 'apt install yq' or equivalent"
 }
 
 config_update() {
@@ -671,19 +702,19 @@ _FFS_FAILED=0
 _CFB_FAILED=0
 _BYPARR_FAILED=0
 _unqueued_cf_get() {
-	if [[ "$_CFB_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED" == true ]]; then
+	if [[ "$_CFB_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED:-false}" == true ]]; then
 		_cfb_get "$@" && return 0
 		_CFB_FAILED=1
 	fi
-	if [[ "$_FFS_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED" == true ]]; then
+	if [[ "$_FFS_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED:-false}" == true ]]; then
 		_fs_get "$@" && return 0
 		_FFS_FAILED=1
     fi
-	if [[ "$_BYPARR_FAILED" -eq 0 && "$CF_BYPASS_SOLVER_BYPARR_ENABLED" == true ]]; then
+	if [[ "$_BYPARR_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_BYPARR_ENABLED:-false}" == true ]]; then
 		_byparr_get "$@" && return 0
 		_BYPARR_FAILED=1
 	fi
-	if [[ "$CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED" == true || "$CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED" == true || "$CF_BYPASS_SOLVER_BYPARR_ENABLED" == true ]]; then
+	if [[ "${CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_BYPARR_ENABLED:-false}" == true ]]; then
     	wpr "All bypass solvers failed for: $1 — falling back to direct request"
 	else
 		wpr "No bypass solvers enabled, falling back to direct request for: $1"
@@ -704,7 +735,9 @@ get_apkmirror_resp() {
 	_cf_get "${1}" || return 1
 	__APKMIRROR_RESP__="$html"
 	__APKMIRROR_CAT__="${1##*/}"
+	set +u
 	__APKMIRROR_EXAMPLE_URL__="${args[apkmirror_example_url]:-}" 
+	set -u
 }
 
 get_apkmirror_vers() {

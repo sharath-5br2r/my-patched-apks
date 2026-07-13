@@ -65,5 +65,11 @@
       "levilauncher-unlocked-bgmi"
     ],
     "version": "v1.5.4.01"
+  },
+  "Dolphin-SDK29": {
+    "keys": [
+      "dolphin-sdk29"
+    ],
+    "version": "0"
   }
 }

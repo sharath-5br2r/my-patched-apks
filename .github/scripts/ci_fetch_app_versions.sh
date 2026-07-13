@@ -8,7 +8,7 @@ source utils.sh
 set_prebuilts
 
 # Find all app configs
-CONFIG_FILES=$(find configs/patches configs/config.predl.toml -name "*.toml")
+CONFIG_FILES=$(find configs/patches configs/config.predl.toml configs/dummy.toml -name "*.toml")
 
 if [ -z "$CONFIG_FILES" ]; then
     echo "No config files found in configs/patches and or Not found config.predl.toml. Exiting."
@@ -99,7 +99,7 @@ while IFS='|' read -r group app; do
                 latest_ver=$(echo "$vers" | get_highest_ver) || true
             elif [[ "$dlurl" == *"eden"* ]]; then
                 latest_ver=$(gh run list -R Eden-CI/Workflow -w nightly.yml --status success --limit 1 --json createdAt -q ".[0].createdAt") || { echo "Failed to fetch Eden version for $app"; continue; }
-            elif [[ "$dlurl" == *"zalithlauncher2-plus"* ]]; then
+            elif [[ "$dlurl" == *"zalith-launcher-2-plus"* ]]; then
                 latest_ver=$(gh api repos/Star1xr/ZalithLauncher2Plus/releases/latest --jq '.tag_name') || { echo "Failed to fetch ZalithLauncher2Plus version for $app"; continue; }
             elif [[ "$dlurl" == *"winlator"* ]]; then
                 latest_ver=$(gh api repos/StevenMXZ/Winlator-Ludashi/releases/latest --jq '.tag_name') || { echo "Failed to fetch Winlator version for $app"; continue; }
@@ -107,6 +107,11 @@ while IFS='|' read -r group app; do
                 latest_ver=$(gh api repos/geode-sdk/android-launcher/releases/latest --jq '.tag_name') || { echo "Failed to fetch Geode version for $app"; continue; }
             elif [[ "$dlurl" == *"levilauncher"* ]]; then
                 latest_ver=$(gh api repos/0Sombra666/LeviLaunchroidUnlocked/releases/latest --jq '.tag_name') || { echo "Failed to fetch LeviLauncher version for $app"; continue; }
+            elif [[ "$dlurl" == *"dolphin-sdk29"* ]]; then
+                _cf_get https://dolphin-emu.org/download/
+                DOLPHIN_APK_URL=$(echo $html | grep -Eo 'https://dl\.dolphin-emu\.org/builds/[a-z0-9/]+/dolphin-master-[0-9]+-[0-9]+\.apk' | awk -F'[-/.]' '{v=$(NF-2); b=$(NF-1);if (v>V || (v==V && b>B)) {V=v; B=b; U=$0}} END{print U}')
+                DOLPHIN_NAME=$(basename "$DOLPHIN_APK_URL" .apk)
+                latest_ver=${DOLPHIN_NAME#*-*-}
             else
                 echo "Unknown dlurl for $app: $dlurl"
                 continue
