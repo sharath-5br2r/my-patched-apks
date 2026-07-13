@@ -1,3 +1,2 @@
 enable-module-updates = true
-parallel-jobs = 5
 patches-version = "dev"
