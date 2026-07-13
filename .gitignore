@@ -12,3 +12,4 @@ build.json
 /test
 .env
 *.keystore
+/configs/*
