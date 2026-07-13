@@ -22,6 +22,7 @@ BUILD_DIR="build"
 DL_SRCS=("local" "directv2" "direct" "github" "archive" "apkmirror" "uptodown" "apkpure" "apkcombo")
 BUILD_JSON_FILE="build.json"
 PATCH_OUTPUT=""
+mkdir -p "$TEMP_DIR" "$BIN_DIR" "$BUILD_DIR"
 base64 -d <<<"$KEYSTORE_P12" >"$TEMP_DIR/ks-p12.keystore"
 base64 -d <<<"$KEYSTORE" >"$TEMP_DIR/ks.keystore"
 
