@@ -144,7 +144,7 @@ const CONFIG = {
     duolingo: "com.duolingo",
     edennightly: {
       default: "dev.eden_emulator.nightly",
-      pubg: "com.tencent.ig,"
+      pubg: "com.tencent.ig"
     },
     disneyplus: "com.disney.disneyplus",
     discord: "com.discord",
@@ -259,7 +259,7 @@ const CONFIG = {
     waze: "com.waze",
     winlatorludashi: {
       default: "com.winlator.cmod",
-      pubgvn: "com.vng.pubgmobilevn",
+      pubgvn: "com.vng.pubgmobile",
     },
     windscribevpn: "com.windscribe.vpn",
     wpsoffice: "cn.wps.moffice_eng",
