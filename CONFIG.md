@@ -149,7 +149,7 @@ All main configurations are now stored in the `configs/patches/` directory for b
 All apps that require a pre download will be choosen from `configs/config.predl.toml` file.
 
 Note that predl is complex and needs some level of scripting.
-
++
 - `*.toml`: Contains the global settings and base configurations.
 - `*.stable.toml`: Configurations specifically merged into the `stable` build.
 - `*.dev.toml`: Configurations specifically merged into the `dev` (pre-release) build.

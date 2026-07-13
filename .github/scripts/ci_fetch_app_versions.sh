@@ -99,8 +99,8 @@ while IFS='|' read -r group app; do
                 latest_ver=$(echo "$vers" | get_highest_ver) || true
             elif [[ "$dlurl" == *"eden"* ]]; then
                 latest_ver=$(gh run list -R Eden-CI/Workflow -w nightly.yml --status success --limit 1 --json createdAt -q ".[0].createdAt") || { echo "Failed to fetch Eden version for $app"; continue; }
-            elif [[ "$dlurl" == *"fcl"* ]]; then
-                latest_ver=$(gh api repos/FCL-Team/FoldCraftLauncher/releases/latest --jq '.tag_name') || { echo "Failed to fetch FCL version for $app"; continue; }
+            elif [[ "$dlurl" == *"zalithlauncher2-plus"* ]]; then
+                latest_ver=$(gh api repos/Star1xr/ZalithLauncher2Plus/releases/latest --jq '.tag_name') || { echo "Failed to fetch ZalithLauncher2Plus version for $app"; continue; }
             elif [[ "$dlurl" == *"winlator"* ]]; then
                 latest_ver=$(gh api repos/StevenMXZ/Winlator-Ludashi/releases/latest --jq '.tag_name') || { echo "Failed to fetch Winlator version for $app"; continue; }
             elif [[ "$dlurl" == *"geode"* ]]; then
