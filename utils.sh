@@ -497,7 +497,7 @@ get_patch_last_supported_ver() {
 		fi
 		local ver vers="" NL=$'\n'
 		while IFS= read -r line; do
-			line="${line:1:${#line}-2}"
+			#line="${line:1:${#line}-2}"
 			ver=$(sed -n "/^Name: $line\$/,/^\$/p" <<<"$op" | sed -n "/^Compatible versions:\$/,/^\$/p" | tail -n +2)
 			vers=${ver}${NL}
 		done <<<"$(list_args "$inc_sel")"
