@@ -48,7 +48,7 @@ genconfigs() {
     )
   ' config.stable$2.json >.github/configs/config.stable.updated$2.json
   fi
-
+ if [ "${TRIGGER_PRERELEASE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
   jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json --argjson tags "$TAGS_NEW" '
     { "parallel-jobs": 2, "patches-version": "dev", "enable-module-update": false } as $force |
     ($force + . + $force) |
