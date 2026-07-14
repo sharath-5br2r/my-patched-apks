@@ -2,7 +2,7 @@
 
 <p align="center"><b>Automatically builds and publishes APKs & Magisk/KernelSU Modules whenever new patches are released.</b></p>
 
-<p align="center"> <a href="https://github.com/sharath-5br2r/actions"><img src="https://img.shields.io/badge/Actions-2f2f2f?style=flat&logo=github&logoColor=white"></a></p>
+<p align="center"> <a href="https://github.com/sharath-5br2r/actions">GitHub Actions</a></p>
 
 ---
 ## Changes from Upstream
@@ -52,7 +52,7 @@ Thank you to everyone who helps keep this project alive!
 
 ### 📦 Archive
 
-> This release [![Beta](https://img.shields.io/github/downloads-pre/sharath-5br2r/patched-apks-builder-2nd/beta/total?label=Beta&labelColor=b33939&color=gray&logo=github&logoColor=white&style=flat)](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/beta) acts as a permanent, continuously updated vault, ensuring downloads remain reliably available without interruption.
+> This release [Beta](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/beta) acts as a permanent, continuously updated vault, ensuring downloads remain reliably available without interruption.
 
 
 ---
@@ -62,9 +62,9 @@ Thank you to everyone who helps keep this project alive!
 `com.google.android.gms`
 
 > [!IMPORTANT]
-> Signing into Google account on APK (not Module) requires MicroG. Please install [![Morphe](https://img.shields.io/github/v/release/MorpheApp/MicroG-RE?label=Morphe&labelColor=1082c2&color=gray&style=flat&logo=monster&logoColor=white)](https://github.com/MorpheApp/MicroG-RE/releases/latest)  before trying to sign in.
+> Signing into Google account on APK (not Module) requires MicroG. Please install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest)  before trying to sign in.
 
-
+## Download Apps
 
 ---
 
@@ -75,7 +75,7 @@ Thank you to everyone who helps keep this project alive!
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="adobe-acrobat-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v26.6.1-gray?labelColor=b30b00&logo=android&logoColor=white&style=flat"></summary>
+<summary id="adobe-acrobat-hooman">Version: v26.6.1</summary>
 
 <blockquote>
 
@@ -93,7 +93,7 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="adm-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v14.0.39-gray?labelColor=1082c2&logo=android&logoColor=white&style=flat"></summary>
+<summary id="adm-hooman">Version: v14.0.39</summary>
 
 <blockquote>
 
@@ -111,7 +111,7 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="amazon-india-rushiranpise">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v32.12.4.300-gray?labelColor=FF9900&logo=android&logoColor=white&style=flat"></summary>
+<summary id="amazon-india-rushiranpise">Version: v32.12.4.300</summary>
 
 <blockquote>
 
@@ -136,7 +136,7 @@ Patches: [rushiranpise/patches-1.13.0-dev.1.mpp](https://github.com/rushiranpise
 #### Signed APK
 
 <details>
-<summary id="amazon-alexa-signed">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2.2.694622.0-gray?labelColor=add8e6&logo=android&logoColor=white&style=flat"></summary>
+<summary id="amazon-alexa-signed">Version: v2.2.694622.0</summary>
 <blockquote>
 
 [Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260057)<br>
@@ -153,7 +153,7 @@ Patches:
 #### [Revenge (revenge-mod)](https://github.com/revenge-mod/revenge-xposed)
 
 <details>
-<summary id="discord-revenge">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v336.10.Stable-gray?labelColor=5865f2&logo=android&logoColor=white&style=flat"></summary>
+<summary id="discord-revenge">Version: v336.10.Stable</summary>
 
 <blockquote>
 
@@ -172,7 +172,7 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 #### SDK 29 Manifest Patch 
 
 <details>
-<summary id="dolphin-sdk29">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2606.153-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="dolphin-sdk29">Version: v2606.153</summary>
 
 <blockquote>
 
@@ -189,7 +189,7 @@ Patches:
 
 #### PUBG Spoof via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 <details>
-<summary id="eden-nightly">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="eden-pubg">Version: v0</summary>
 
 <blockquote>
 [Release 2026-07-05](https://github.com/nullcpy/rvb/releases/tag/260003)<br>
@@ -207,7 +207,7 @@ Patches: Spoofed to PUBG `com.tencent.ig` to enhance performance
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="fing-paresh">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v12.12.0-gray?labelColor=377bfd&logo=android&logoColor=white&style=flat"></summary>
+<summary id="fing-paresh">Version: v12.12.0</summary>
   
 <blockquote>
 
@@ -239,7 +239,7 @@ Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patc
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="github-hoodles">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.267.0-gray?labelColor=181717&logo=github&logoColor=white&style=flat"></summary>
+<summary id="github-hoodles">Version: v1.267.0</summary>
   
 <blockquote>
 
@@ -256,7 +256,7 @@ Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-
 
 #### Spoof to PUBG:KR via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 <details>
-<summary id="geode-pubgkr">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.8.0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="geode-pubgkr">Version: v1.8.0</summary>
 
 <blockquote>
 
@@ -275,7 +275,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### [Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches)
 
 <details>
-<summary id="gboard-jasonwu1994">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v17.1.5.887912998.release-gray?labelColor=4285F4&logo=google&logoColor=white&style=flat"></summary>
+<summary id="gboard-jasonwu1994">Version: v17.1.5.887912998.release</summary>
   
 <blockquote>
 
@@ -299,7 +299,7 @@ Patches: [jasonwu1994/patches-1.2.0.mpp](https://github.com/jasonwu1994/Gboard-p
 #### [Morphe (Piko)](https://github.com/crimera/piko)
 
 <details>
-<summary id="instagram-piko">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v435.0.0.37.76-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
+<summary id="instagram-piko">Version: v435.0.0.37.76</summary>
 
 <blockquote>
 
@@ -369,7 +369,7 @@ Patches: [crimera/patches-3.8.0-dev.4.mpp](https://github.com/crimera/piko/relea
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="jiohotstar-paresh">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v26.04.27.10-gray?labelColor=000000&logo=android&logoColor=white&style=flat"></summary>
+<summary id="jiohotstar-paresh">Version: v26.04.27.10</summary>
 
 <blockquote>
 
@@ -393,7 +393,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### Spoof to BGMI via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="levilauncher-unlocked-bgmi">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.5.4.02-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
+<summary id="levilauncher-unlocked-bgmi">Version: v1.5.4.02</summary>
   
 <blockquote>
 
@@ -412,7 +412,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### [Morphe (binarymend)](https://github.com/binarymend/morphe-patches)
 
 <details>
-<summary id="moonplus-reader-binarymend">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v10.5-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
+<summary id="moonplus-reader-binarymend">Version: v10.5</summary>
   
 <blockquote>
 
@@ -432,7 +432,7 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="prime-video-hoodles">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v3.0.463-gray?labelColor=0578ff&logo=android&logoColor=white&style=flat"></summary>
+<summary id="prime-video-hoodles">Version: v3.0.463</summary>
 
 <blockquote>
 
@@ -452,7 +452,7 @@ Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="proton-vpn-paresh">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v5.19.16.0-gray?labelColor=6D4AFF&logo=protonvpn&logoColor=white&style=flat"></summary>
+<summary id="proton-vpn-paresh">Version: v5.19.16.0</summary>
   
 <blockquote>
 
@@ -475,7 +475,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (BholeyKaBhakt)](https://github.com/BholeyKaBhakt/revanced-patches-xtra)
 
 <details>
-<summary id="speedtest-xtra">&emsp;<a href="https://sharath-5br2r.github.io/"><img src="https://img.shields.io/badge/version-v7.0.4-gray?labelColor=242639&logo=android&logoColor=white&style=flat"></summary>
+<summary id="speedtest-xtra">Version: v7.0.4</summary>
   
 <blockquote>
 
@@ -495,7 +495,7 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="symfonium-hooman">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v14.1.0-gray?labelColor=FF5722&logo=android&logoColor=white&style=flat"></summary>
+<summary id="symfonium-hooman">Version: v14.1.0</summary>
 
 <blockquote>
 
@@ -515,7 +515,7 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 #### [Morphe (icysymmetra)](https://github.com/icysymmetra/tiktok-patches-for-morphe)
 
 <details>
-<summary id="tiktok-icysymmetra">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v43.8.3-gray?labelColor=000000&logo=tiktok&logoColor=white&style=flat"></summary>
+<summary id="tiktok-icysymmetra">Version: v43.8.3</summary>
   
 <blockquote>
 
@@ -547,7 +547,7 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 #### Spoofed to PUBG:VN via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="winlator-pubgvn">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-vv3.1.h-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="winlator-pubgvn">Version: vv3.1.h</summary>
 
 <blockquote>
 
@@ -566,7 +566,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### [Morphe (Piko)](https://github.com/crimera/piko)
 
 <details>
-<summary id="x-piko"><b>Default</b>&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v12.5.0.release.0-gray?labelColor=0F1419&logo=x&logoColor=white&style=flat"></summary>
+<summary id="x-piko">Version: v12.5.0.release.0</summary>
   
 <blockquote>
 
@@ -657,7 +657,7 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
 #### [Morphe](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-morphe"><b>Default Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v21.26.360-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
+<summary id="youtube-morphe">Version: v21.26.360</summary>
   
 <blockquote>
 
@@ -748,7 +748,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### [Morphe](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-music-morphe"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v9.26.51-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
+<summary id="youtube-music-morphe">Version: v9.26.51</summary>
   
 <blockquote>
 
@@ -800,43 +800,8 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### Spoofed to CODM via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="zalith-launcher-2-plus-cod">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2.4.9_hotfix1-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="zalith-launcher-2-plus-cod">Version: v2.4.9_hotfix1</summary>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260027)<br>
-Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
-- Bypass certificate checks
-- Change header
-- Change miniplayer color
-- Change start page
-- Check watch history domain name resolution
-- Custom branding
-- Disable DRC audio
-- Disable QUIC protocol
-- Downloads
-- Enable debugging
-- Enable exclusive audio playback
-- Enable forced miniplayer
-- Enable swipe to dismiss miniplayer
-- Force original audio
-- GmsCore support
-- Hide ads
-- Hide buttons
-- Hide filter bar
-- Hide flyout menu components
-- Hide layout components
-- Hide music action buttons
-- Miniplayer previous and next buttons
-- Navigation bar
-- Network proxy
-- Permanent repeat
-- Remove background playback restrictions
-- Sanitize sharing links
-- Scrobbling
-- SponsorBlock
-- Spoof video streams
-- Theme
-- Track crossfade
-</blockquote>
 <blockquote>
 
 [Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260061)<br>

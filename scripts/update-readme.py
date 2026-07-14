@@ -33,10 +33,13 @@ for key, info in build_data.items():
 
     for match in reversed(matches):
         old_details = match.group(0)
+        
+        # --- MODIFIED: Directly matches and swaps the flat Version string inside <summary> ---
         new_details = re.sub(
-            r'(src="[^"]*?-v)\d[^"]*?(-gray\?)',
-            rf"\g<1>{badge_version}\g<2>",
+            rf'(<summary id="{re.escape(key)}"[^>]*>Version:\s*v).*?(</summary>)',
+            rf"\g<1>{version}\g<2>",
             old_details,
+            flags=re.IGNORECASE | re.DOTALL
         )
 
         for ext in exts:
