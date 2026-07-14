@@ -172,11 +172,11 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 #### SDK 29 Manifest Patch 
 
 <details>
-<summary id="dolphin-sdk29">Version: v2606.153</summary>
+<summary id="dolphin-sdk29">Version: v2606-155</summary>
 
 <blockquote>
 
-[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260059)<br>
+[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260067)<br>
 Patches: 
 </blockquote>
 </details>
