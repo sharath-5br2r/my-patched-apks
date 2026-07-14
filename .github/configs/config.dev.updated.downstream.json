@@ -34,6 +34,43 @@
       }
     ]
   },
+  "gboard-jsonwu1994": {
+    "enabled": false,
+    "app-name": "gboard",
+    "rv-brand": "jsonwu1994",
+    "build-mode": "apk",
+    "arch": "arm64-v8a",
+    "cli-source": "MorpheApp/morphe-cli",
+    "uptodown-dlurl": "https://gboard-go.en.uptodown.com/android",
+    "apkmirror-dlurl": "https://www.apkmirror.com/apk/google-inc/gboard",
+    "dpi": "nodpi anydpi auto",
+    "patches": [
+      {
+        "source": "jasonwu1994/Gboard-patches"
+      },
+      {
+        "source": "rushiranpise/morphe-patches",
+        "included-patches": "'GmsCore support (MicroG)'"
+      }
+    ]
+  },
+  "gboard-jasonwu1994-root": {
+    "enabled": false,
+    "app-name": "gboard",
+    "rv-brand": "jasonmu1994-root",
+    "build-mode": "module",
+    "arch": "arm64-v8a",
+    "cli-source": "MorpheApp/morphe-cli",
+    "uptodown-dlurl": "https://gboard-go.en.uptodown.com/android",
+    "apkmirror-dlurl": "https://www.apkmirror.com/apk/google-inc/gboard",
+    "dpi": "nodpi anydpi auto",
+    "patches": [
+      {
+        "source": "jasonwu1994/Gboard-patches",
+        "excluded-patches": "'Package Rename'"
+      }
+    ]
+  },
   "github-hoodles": {
     "enabled": false,
     "app-name": "github",
@@ -132,23 +169,8 @@
       }
     ]
   },
-  "gboard-jsonwu1994": {
-    "enabled": false,
-    "app-name": "gboard",
-    "rv-brand": "jsonwu1994",
-    "build-mode": "apk",
-    "cli-source": "MorpheApp/morphe-cli",
-    "uptodown-dlurl": "https://gboard-go.en.uptodown.com/android",
-    "apkmirror-dlurl": "https://www.apkmirror.com/apk/google-inc/gboard",
-    "dpi": "nodpi anydpi auto",
-    "patches": [
-      {
-        "source": "jasonwu1994/Gboard-patches"
-      }
-    ]
-  },
   "youtube-morphe": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -166,7 +188,7 @@
     ]
   },
   "youtube-music-morphe": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube-music",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -272,7 +294,7 @@
     ]
   },
   "eden-pubg": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "eden",
     "rv-brand": "pubg",
     "build-mode": "apk",
@@ -287,7 +309,7 @@
     ]
   },
   "winlator-pubgvn": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "winlator",
     "rv-brand": "pubgvn",
     "build-mode": "apk",
@@ -302,7 +324,7 @@
     ]
   },
   "zalith-launcher-2-plus-cod": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "zalith-launcher-2-plus",
     "rv-brand": "cod",
     "build-mode": "apk",
@@ -317,7 +339,7 @@
     ]
   },
   "geode-pubgkr": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "geode",
     "rv-brand": "pubgkr",
     "build-mode": "apk",
@@ -332,7 +354,7 @@
     ]
   },
   "levilauncher-unlocked-bgmi": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "bgmi",
     "build-mode": "apk",
@@ -364,7 +386,7 @@
     ]
   },
   "amazon-india-rushiranpise": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-india",
     "rv-brand": "rushiranpise",
     "build-mode": "apk",
