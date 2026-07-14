@@ -15,15 +15,15 @@ source = "jasonwu1994/Gboard-patches"
 source = "rushiranpise/morphe-patches"
 included-patches = "'GmsCore support (MicroG)'"
 
-[gboard-jaasomwu1994-root]
+[gboard-jasonwu1994-root]
 enabled = true
 app-name = "gboard"
-rv-brand = "jaasomwu1994-root"
+rv-brand = "jasonmu1994-root"
 build-mode = "module"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://gboard-go.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard"
 dpi = "nodpi anydpi auto"
-[[gboard-jaasomwu1994-root.patches]]
-source = "jaasomwu1994/Gboard-patches"
+[[gboard-jasonwu1994-root.patches]]
+source = "jasonwu1994/Gboard-patches"
 excluded-patches = "'Package Rename'"
