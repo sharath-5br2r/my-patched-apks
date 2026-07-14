@@ -20,8 +20,6 @@ jobs:
     outputs:
       trigger_stable: ${{ steps.effective_triggers.outputs.TRIGGER_STABLE }}
       trigger_prerelease: ${{ steps.effective_triggers.outputs.TRIGGER_PRERELEASE }}
-      trigger_predl_stable: ${{ steps.effective_triggers.outputs.TRIGGER_PREDL_STABLE }}
-      trigger_predl_prerelease: ${{ steps.effective_triggers.outputs.TRIGGER_PREDL_PRERELEASE }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -109,30 +107,23 @@ jobs:
     with:
       config_file: ".github/configs/config.dev.updated.downstream.json"
     secrets: inherit
-  build_predl:
-    needs: [check_patch, build_dev]
-    if: ${{ always() && ( needs.build_dev.result != 'cancelled' && needs.check_patch.outputs.trigger_predl_prerelease == '1' ) }}
-    uses: ./.github/workflows/build.yml
-    with:
-      config_file: ".github/configs/config.dev.updated.predl.json"
-    secrets: inherit
   build_custom:
-    needs: [check_patch, build_dev, build_predl]
-    if: ${{ always() && ( needs.build_dev.result != 'cancelled' && needs.build_predl.result != 'cancelled') }}
+    needs: [check_patch, build_dev]
+    if: ${{ always() && ( needs.build_dev.result != 'cancelled' ) }}
     uses: ./.github/workflows/build.yml
     with:
       config_file: "dev_custom.sh"
     secrets: inherit
   
   trigger_cleanup:
-    needs: [build_dev, build_custom, build_predl]
-    if: ${{ always() && (needs.build_predl.result == 'success' || needs.build_dev.result == 'success' || needs.build_custom.result == 'success') }}
+    needs: [build_dev, build_custom]
+    if: ${{ always() && ( needs.build_dev.result == 'success' || needs.build_custom.result == 'success') }}
     uses: ./.github/workflows/cleanup.yml
     secrets: inherit
 
   trigger_website_update:
-    needs: [build_dev, build_custom, build_predl]
-    if: ${{ always() && ( needs.build_dev.result == 'success' || needs.build_custom.result == 'success' || needs.build_predl.result == 'success') }}
+    needs: [build_dev, build_custom]
+    if: ${{ always() && ( needs.build_dev.result == 'success' || needs.build_custom.result == 'success') }}
     uses: ./.github/workflows/update-cache.yml
     secrets: inherit
 

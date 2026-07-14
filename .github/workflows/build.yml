@@ -16,16 +16,16 @@ on:
         options:
           - "configs/config.dev.toml"
           - "configs/config.stable.toml"
-          - "configs/config.dev.predl.toml"
-          - "configs/config.stable.predl.toml"
           - "configs/config.manual.toml"
           - "dev_custom.sh"
           - "stable_custom.sh"
           - ".github/configs/config.dev.updated.downstream.json"
           - ".github/configs/config.stable.updated.downstream.json"
-          - ".github/configs/config.dev.updated.predl.json"
-          - ".github/configs/config.stable.updated.predl.json"
-
+          - "Enter Manually"
+      manual_config_file:
+        description: "Enter the config file path manually (only if 'Enter Manually' is selected above)"
+        required: false
+        type: string
 concurrency:
   group: build
   cancel-in-progress: false
@@ -50,10 +50,17 @@ jobs:
           submodules: true
       - name: Setup docker
         uses: ./.github/actions/container-setup
-
+      - name: Resolve config file
+        id: config
+        run: |
+          if [[ "${{ inputs.config_file }}" == "Enter Manually" ]]; then
+            echo "CONFIG_FILE=${{ inputs.manual_config_file }}" >> "$GITHUB_ENV"
+          else
+            echo "CONFIG_FILE=${{ inputs.config_file }}" >> "$GITHUB_ENV"
+          fi
       - name: Resolve build context
         id: context
-        run: bash .github/scripts/build_resolve_context.sh "${{ inputs.config_file }}"
+        run: bash .github/scripts/build_resolve_context.sh "${{ env.CONFIG_FILE }}"
 
       - name: Resolve version code
         id: version
@@ -74,9 +81,7 @@ jobs:
           if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == *"_custom.sh" ]]; then
             bash ./scripts/custom_patches.sh
           else
-            if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == *"predl"* ]]; then
-              bash ./scripts/prep_build_predl.sh
-            fi
+            bash ./scripts/prep_build_predl.sh
             bash ./scripts/morphe-experimental.sh
             bash ./scripts/configgen.sh
             bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"

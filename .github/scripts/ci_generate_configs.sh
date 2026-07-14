@@ -86,4 +86,3 @@ genconfigs() {
 }
 
 genconfigs ./configs/patches ".downstream"
-genconfigs ./configs/config.predl.toml ".predl"

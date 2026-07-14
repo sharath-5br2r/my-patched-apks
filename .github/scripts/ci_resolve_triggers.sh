@@ -32,15 +32,7 @@ if [ "$RAW_TRIGGER_STABLE" = "1" ] || [ "$RAW_TRIGGER_APP_UPDATE" = "1" ]; then
   fi
 fi
 
-if [ "$RAW_TRIGGER_STABLE" = "1" ] || [ "$RAW_TRIGGER_APP_UPDATE" = "1" ]; then
-  CFG=".github/configs/config.stable.updated.predl.json"
-  ENABLED_COUNT=$(jq '[.[] | objects | select(.enabled != false)] | length' "$CFG" || echo 0)
-  if [ "${ENABLED_COUNT:-0}" -gt 0 ]; then
-    TRIGGER_PREDL_STABLE=1
-  else
-    echo "::notice::Skipping predl stable build trigger: no enabled apps in $CFG"
-  fi
-fi
+
 if [ "$RAW_TRIGGER_PRERELEASE" = "1" ] || [ "$RAW_TRIGGER_APP_UPDATE" = "1" ]; then
   CFG=".github/configs/config.dev.updated.json"
   ENABLED_COUNT=$(jq '[.[] | objects | select(.enabled != false)] | length' "$CFG" || echo 0)
@@ -50,23 +42,11 @@ if [ "$RAW_TRIGGER_PRERELEASE" = "1" ] || [ "$RAW_TRIGGER_APP_UPDATE" = "1" ]; t
     echo "::notice::Skipping dev build trigger: no enabled apps in $CFG"
   fi
 fi
-if [ "$RAW_TRIGGER_PRERELEASE" = "1" ] || [ "$RAW_TRIGGER_APP_UPDATE" = "1" ]; then
-  CFG=".github/configs/config.dev.updated.predl.json"
-  ENABLED_COUNT=$(jq '[.[] | objects | select(.enabled != false)] | length' "$CFG" || echo 0)
-  if [ "${ENABLED_COUNT:-0}" -gt 0 ]; then
-    TRIGGER_PREDL_PRERELEASE=1
-  else
-    echo "::notice::Skipping predl dev build trigger: no enabled apps in $CFG"
-  fi
-fi
+
 if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
   echo "TRIGGER_STABLE=$TRIGGER_STABLE" >> "$GITHUB_OUTPUT"
   echo "TRIGGER_PRERELEASE=$TRIGGER_PRERELEASE" >> "$GITHUB_OUTPUT"
-  echo "TRIGGER_PREDL_STABLE=$TRIGGER_PREDL_STABLE" >> "$GITHUB_OUTPUT"
-  echo "TRIGGER_PREDL_PRERELEASE=$TRIGGER_PREDL_PRERELEASE" >> "$GITHUB_OUTPUT"
 else
   export TRIGGER_STABLE="$TRIGGER_STABLE"
   export TRIGGER_PRERELEASE="$TRIGGER_PRERELEASE"
-  export TRIGGER_PREDL_STABLE="$TRIGGER_PREDL_STABLE"
-  export TRIGGER_PREDL_PRERELEASE="$TRIGGER_PREDL_PRERELEASE"
 fi
