@@ -1,6 +1,6 @@
 {
   "patches-version": "dev",
-  "enable-module-uodate": true,
+  "enable-module-update": true,
   "speedtest-xtra": {
     "enabled": false,
     "app-name": "speedtest",
@@ -331,7 +331,7 @@
     ]
   },
   "levilauncher-unlocked-bgmi": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "bgmi",
     "build-mode": "apk",
@@ -363,7 +363,7 @@
     ]
   },
   "amazon-india-rushiranpise": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "amazon-india",
     "rv-brand": "rushiranpise",
     "build-mode": "apk",
@@ -385,8 +385,6 @@
     "app-name": "amazon-alexa",
     "rv-brand": "signed",
     "build-mode": "apk",
-    "patches-source": "none",
-    "patches-source-host": "none",
     "cli-source": "apksigner",
     "cli-source-host": "none",
     "arch": "all",
