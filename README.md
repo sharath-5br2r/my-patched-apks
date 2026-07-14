@@ -115,8 +115,8 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
-Patches: [rushiranpise/patches-1.13.0-dev.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.0-dev.1)
+[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260063)<br>
+Patches: [rushiranpise/patches-1.13.0-dev.2.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.0-dev.2)
 - Dark mode
 - Disable search suggestions tracking
 - Disable video autoplay
