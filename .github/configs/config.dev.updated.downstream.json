@@ -294,7 +294,7 @@
     ]
   },
   "eden-pubg": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "eden",
     "rv-brand": "pubg",
     "build-mode": "apk",
