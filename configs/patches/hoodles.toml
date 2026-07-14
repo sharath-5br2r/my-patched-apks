@@ -1,3 +1,5 @@
+enable-module-updates = true
+patches-version = "dev"
 [github-hoodles]
 enabled = true
 app-name = "github"

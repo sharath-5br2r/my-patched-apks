@@ -1,1 +1,2 @@
 enable-module-updates = true
+patches-version = "latest"

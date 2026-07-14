@@ -1,3 +1,5 @@
+enable-module-updates = true
+patches-version = "dev"
 [tiktok-icysymmetra]
 enabled = true
 app-name = "tiktok"

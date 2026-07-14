@@ -1,4 +1,5 @@
-
+enable-module-updates = true
+patches-version = "dev"
 [moonplus-reader-binarymend]
 enabled = true
 app-name = "moonplus-reader"

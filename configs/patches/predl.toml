@@ -1,3 +1,5 @@
+enable-module-updates = true
+patches-version = "dev"
 [eden-pubg]
 enabled = true
 app-name = "eden"

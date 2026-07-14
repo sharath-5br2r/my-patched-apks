@@ -1,3 +1,5 @@
+enable-module-updates = true
+patches-version = "dev"
 [amazon-india-rushiranpise]
 enabled = true
 app-name = "amazon-india"

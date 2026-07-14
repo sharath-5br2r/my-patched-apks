@@ -1,11 +1,10 @@
-
+enable-module-updates = true
+patches-version = "dev"
 [amazon-alexa-signed]
 enabled = true
 app-name = "amazon-alexa"
 rv-brand = "signed"
 build-mode = "apk"
-patches-source = "none"
-patches-source-host = "none"
 cli-source = "apksigner"
 cli-source-host = "none"
 arch = "all"

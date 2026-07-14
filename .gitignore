@@ -21,3 +21,5 @@ build.json
 /build.tmp
 /app_updates.json
 /active_apps.json
+/active.prerelease.json
+/active.stable.json
