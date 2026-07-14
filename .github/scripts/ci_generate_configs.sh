@@ -34,8 +34,8 @@ genconfigs() {
       echo "{}" >config.stable$2.json
     fi
 
-    jq --slurpfile active active.stable.json --slurpfile activeApps active_apps.json '
-    { "enable-module-update": true } as $force |
+  jq --slurpfile active active.stable.json --slurpfile activeApps active_apps.json '
+    { "parallel-jobs": 2, "enable-module-update": true } as $force |
     ($force + . + $force) |
     with_entries(
       if .value | type == "object" then
@@ -49,17 +49,8 @@ genconfigs() {
   ' config.stable$2.json >.github/configs/config.stable.updated$2.json
   fi
 
-  if [ "${TRIGGER_PRERELEASE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
-    DEV_CONFIGS=$(find $1 -name "*.toml" ! -name "*stable*.toml" | sort)
-    if [ -n "$DEV_CONFIGS" ]; then
-      # shellcheck disable=SC2086
-      yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $DEV_CONFIGS >config.dev$2.json
-    else
-      echo "{}" >config.dev$2.json
-    fi
-
-    jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json --argjson tags "$TAGS_NEW" '
-    { "patches-version": "dev", "enable-module-update": true } as $force |
+  jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json --argjson tags "$TAGS_NEW" '
+    { "parallel-jobs": 2, "patches-version": "dev", "enable-module-update": false } as $force |
     ($force + . + $force) |
     with_entries(
       if .value | type == "object" then

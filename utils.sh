@@ -1525,7 +1525,7 @@ patch_apk() {
 	done < <(jq -c '.[]' <<<"$patches_data")
 
 
-	local base_cmd="java -jar '$cli_jar' patch '$stock_input' --purge -t '$tmp_dir' -o '$patched_apk' --keystore=$TEMP_DIR/ks.keystore \
+	local base_cmd="java -jar '$cli_jar' patch '$stock_input'  -t '$tmp_dir' -o '$patched_apk' --keystore=$TEMP_DIR/ks.keystore \
 --keystore-entry-password=$KEYSTORE_PASS --keystore-password=$KEYSTORE_PASS --signer=$KEYSTORE_ALIAS --keystore-entry-alias=$KEYSTORE_ALIAS"
 
 	local cmd_long="${base_cmd}${p_args_long} $patcher_args"
