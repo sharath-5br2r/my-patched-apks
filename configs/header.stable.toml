@@ -1,2 +1,2 @@
-enable-module-updates = true
+enable-module-update = true
 patches-version = "latest"

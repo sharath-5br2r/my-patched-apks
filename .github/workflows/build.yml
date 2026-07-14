@@ -112,6 +112,7 @@ jobs:
           files: ./build/*
           tag_name: ${{ steps.context.outputs.ARCHIVE_TAG }}
           overwrite_files: true
+          prerelease: ${{ steps.context.outputs.IS_PRERELEASE == 'true' }}
 
       - name: Upload to release
         uses: softprops/action-gh-release@v3

@@ -19,7 +19,4 @@ build.json
 /configs/config.stable.toml
 /.github/configs/app_versions.json
 /build.tmp
-/app_updates.json
-/active_apps.json
-/active.prerelease.json
-/active.stable.json
+/*.json

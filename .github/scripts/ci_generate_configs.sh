@@ -59,7 +59,7 @@ genconfigs() {
     fi
 
     jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json --argjson tags "$TAGS_NEW" '
-    { "patches-version": "dev", "enable-module-uodate": true } as $force |
+    { "patches-version": "dev", "enable-module-update": true } as $force |
     ($force + . + $force) |
     with_entries(
       if .value | type == "object" then

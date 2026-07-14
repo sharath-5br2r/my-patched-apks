@@ -1,4 +1,4 @@
-enable-module-updates = true
+enable-module-update = true
 patches-version = "dev"
 [moonplus-reader-binarymend]
 enabled = true
