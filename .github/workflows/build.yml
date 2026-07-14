@@ -17,8 +17,6 @@ on:
           - "configs/config.dev.toml"
           - "configs/config.stable.toml"
           - "configs/config.manual.toml"
-          - "dev_custom.sh"
-          - "stable_custom.sh"
           - ".github/configs/config.dev.updated.downstream.json"
           - ".github/configs/config.stable.updated.downstream.json"
           - "Enter Manually"
@@ -78,9 +76,6 @@ jobs:
           KEYSTORE_P12: ${{ secrets.KEYSTORE_P12 }}
         run: |
           set -euo pipefail
-          if [[ "${{ steps.context.outputs.CONFIG_FILE }}" == *"_custom.sh" ]]; then
-            bash ./scripts/custom_patches.sh
-          else
             bash ./scripts/prep_build_predl.sh
             bash ./scripts/morphe-experimental.sh
             bash ./scripts/configgen.sh

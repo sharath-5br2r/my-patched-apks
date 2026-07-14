@@ -3,7 +3,8 @@ set -euo pipefail
 CONFIG="$1"
 
 if [ ! -f "$CONFIG" ]; then
-  echo "::warning::Config file not found: $CONFIG"
+  echo "::error::Config file not found: $CONFIG"
+  exit 1
 fi
 IS_DEV=false
 

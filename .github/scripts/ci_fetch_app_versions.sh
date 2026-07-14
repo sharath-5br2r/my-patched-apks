@@ -8,7 +8,7 @@ source utils.sh
 set_prebuilts
 
 # Find all app configs
-CONFIG_FILES=$(find configs/patches configs/dummy.toml -name "*.toml")
+CONFIG_FILES=$(find configs/patches -name "*.toml")
 
 if [ -z "$CONFIG_FILES" ]; then
     echo "No config files found in configs/patches. Exiting."
@@ -107,11 +107,6 @@ while IFS='|' read -r group app; do
                 latest_ver=$(gh api repos/geode-sdk/android-launcher/releases/latest --jq '.tag_name') || { echo "Failed to fetch Geode version for $app"; continue; }
             elif [[ "$dlurl" == *"levilauncher"* ]]; then
                 latest_ver=$(gh api repos/0Sombra666/LeviLaunchroidUnlocked/releases/latest --jq '.tag_name') || { echo "Failed to fetch LeviLauncher version for $app"; continue; }
-            elif [[ "$dlurl" == *"dolphin"* ]]; then
-                _cf_get https://dolphin-emu.org/download/
-                DOLPHIN_APK_URL=$(echo $html | grep -Eo 'https://dl\.dolphin-emu\.org/builds/[a-z0-9/]+/dolphin-master-[0-9]+-[0-9]+\.apk' | awk -F'[-/.]' '{v=$(NF-2); b=$(NF-1);if (v>V || (v==V && b>B)) {V=v; B=b; U=$0}} END{print U}')
-                DOLPHIN_NAME=$(basename "$DOLPHIN_APK_URL" .apk)
-                latest_ver=${DOLPHIN_NAME#*-*-}
             else
                 echo "Unknown dlurl for $app: $dlurl"
                 continue
