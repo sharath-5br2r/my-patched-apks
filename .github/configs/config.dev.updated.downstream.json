@@ -1,6 +1,7 @@
 {
+  "parallel-jobs": 2,
   "patches-version": "dev",
-  "enable-module-update": true,
+  "enable-module-update": false,
   "speedtest-xtra": {
     "enabled": false,
     "app-name": "speedtest",
@@ -147,7 +148,7 @@
     ]
   },
   "youtube-morphe": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -165,7 +166,7 @@
     ]
   },
   "youtube-music-morphe": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube-music",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -271,7 +272,7 @@
     ]
   },
   "eden-pubg": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "eden",
     "rv-brand": "pubg",
     "build-mode": "apk",
@@ -286,7 +287,7 @@
     ]
   },
   "winlator-pubgvn": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "winlator",
     "rv-brand": "pubgvn",
     "build-mode": "apk",
@@ -301,7 +302,7 @@
     ]
   },
   "zalith-launcher-2-plus-cod": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "zalith-launcher-2-plus",
     "rv-brand": "cod",
     "build-mode": "apk",
@@ -316,7 +317,7 @@
     ]
   },
   "geode-pubgkr": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "geode",
     "rv-brand": "pubgkr",
     "build-mode": "apk",
@@ -331,7 +332,7 @@
     ]
   },
   "levilauncher-unlocked-bgmi": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "bgmi",
     "build-mode": "apk",

@@ -1,5 +1,7 @@
 {
+  "parallel-jobs": 2,
   "enable-module-update": true,
+  "patches-version": "dev",
   "speedtest-xtra": {
     "enabled": false,
     "app-name": "speedtest",
@@ -200,7 +202,7 @@
     ]
   },
   "proton-vpn-paresh": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "proton-vpn",
     "rv-brand": "paresh",
     "build-mode": "apk",
@@ -330,7 +332,7 @@
     ]
   },
   "levilauncher-unlocked-bgmi": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "bgmi",
     "build-mode": "apk",
@@ -384,8 +386,6 @@
     "app-name": "amazon-alexa",
     "rv-brand": "signed",
     "build-mode": "apk",
-    "patches-source": "none",
-    "patches-source-host": "none",
     "cli-source": "apksigner",
     "cli-source-host": "none",
     "arch": "all",
