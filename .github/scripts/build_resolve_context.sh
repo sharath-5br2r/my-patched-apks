@@ -13,11 +13,11 @@ if [[ "$CONFIG" == *"dev"* ]]; then
   IS_DEV=true
 elif [[ "$CONFIG" == *.json ]]; then
   if [ "$(jq -r '."patches-version" // empty' "$CONFIG")" = "dev" ]; then
-    IS_DEV=false
+    IS_DEV=true
   fi
 elif [[ "$CONFIG" == *.toml ]]; then
   if awk '/^\[/ {exit} {print}' "$CONFIG" | grep -qE '^[[:space:]]*patches-version[[:space:]]*=[[:space:]]*"?dev"?'; then
-    IS_DEV=false
+    IS_DEV=true
   fi
 fi
 
