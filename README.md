@@ -162,24 +162,7 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 </blockquote>
 </details>
 
----
-### [Dolphin Emulator](https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu) 
 
-#### [Website](https://dolphin-emu.org/)
-
-`org.dolphinemu.dolphinemu`
-
-#### SDK 29 Manifest Patch 
-
-<details>
-<summary id="dolphin-sdk29">Version: v2606-155</summary>
-
-<blockquote>
-
-[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260067)<br>
-Patches: 
-</blockquote>
-</details>
 
 ---
 
@@ -272,10 +255,25 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 
 `com.google.android.inputmethod.latin`
 
-#### [Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches)
+#### [Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches) + [rushiranpise GmsCore patch](https://github.com/rushiranpise/morphe-patches)
 
 <details>
 <summary id="gboard-jasonwu1994">Version: v17.1.5.887912998.release</summary>
+  
+<blockquote>
+
+[Release 2026-06-14](https://github.com/nullcpy/rvb/releases/tag/351)<br>
+Patches: [jasonwu1994/patches-1.2.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.2.0)
+
+- Always-incognito mode
+- Enable OCR feature
+- Enable clipboard in incognito
+</blockquote>
+</details>
+
+#### [Morphe (jasonwu1994) Root](https://github.com/jasonwu1994/Gboard-patches)
+<details>
+<summary id="gboard-jasonwu1994-root">Version: v17.1.5.887912998.release</summary>
   
 <blockquote>
 
@@ -563,7 +561,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 
 `com.twitter.android`
 
-#### [Morphe (Piko)](https://github.com/crimera/piko)
+#### [Morphe (Piko)](https://github.com/crimera/piko) with [inotia00](https://gitlab.com/inotia00/x-shim) shim layer
 
 <details>
 <summary id="x-piko">Version: v12.5.0.release.0</summary>
