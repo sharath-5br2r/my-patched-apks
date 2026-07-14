@@ -1,10 +1,12 @@
 enable-module-update = true
 patches-version = "dev"
+parallel-jobs =1
 [gboard-jsonwu1994]
 enabled = true
 app-name = "gboard"
 rv-brand = "jsonwu1994"
 build-mode = "apk"
+arch = "arm64-v8a"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://gboard-go.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard"
@@ -20,6 +22,7 @@ enabled = true
 app-name = "gboard"
 rv-brand = "jasonmu1994-root"
 build-mode = "module"
+arch = "arm64-v8a"
 cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://gboard-go.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard"
