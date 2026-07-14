@@ -260,7 +260,7 @@ Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260056)<br>
+[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260061)<br>
 Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
 - Change package name
 </blockquote>
@@ -393,11 +393,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### Spoof to BGMI via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="levilauncher-unlocked-bgmi">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.5.4.01-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
+<summary id="levilauncher-unlocked-bgmi">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.5.4.02-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260056)<br>
+[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260061)<br>
 Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
 - Change package name
 </blockquote>
@@ -551,7 +551,7 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260056)<br>
+[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260061)<br>
 Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
 - Change package name
 </blockquote>
@@ -839,7 +839,7 @@ Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patc
 </blockquote>
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260056)<br>
+[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260061)<br>
 Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
 - Change package name
 </blockquote>
