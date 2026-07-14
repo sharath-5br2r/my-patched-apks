@@ -139,7 +139,7 @@ Patches: [rushiranpise/patches-1.13.0-dev.1.mpp](https://github.com/rushiranpise
 <summary id="amazon-alexa-signed">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2.2.694622.0-gray?labelColor=add8e6&logo=android&logoColor=white&style=flat"></summary>
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260057)<br>
 Patches: 
 </blockquote>
 </details>
@@ -260,8 +260,8 @@ Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-
 
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260029)<br>
-Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260056)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
 - Change package name
 </blockquote>
 </details>
@@ -397,8 +397,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260029)<br>
-Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260056)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
 - Change package name
 </blockquote>
 </details>
@@ -551,8 +551,8 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260029)<br>
-Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260056)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
 - Change package name
 </blockquote>
 </details>
@@ -661,8 +661,8 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.2)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260055)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -752,8 +752,8 @@ Patches: [MorpheApp/patches-1.35.0-dev.2.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.2)
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260055)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -800,7 +800,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.2.mpp](https://github.com/MorpheApp/morph
 #### Spoofed to CODM via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="zalith-launcher-2-plus-cod">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v1.0.0-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="zalith-launcher-2-plus-cod">&emsp;<a href="https://sharath-5br2r.github.io/patched-apks-builder-2nd"><img src="https://img.shields.io/badge/version-v2.4.9_hotfix1-gray?labelColor=00BFFF&logo=android&logoColor=white&style=flat"></summary>
 
 [Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260027)<br>
 Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
@@ -836,6 +836,12 @@ Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patc
 - Spoof video streams
 - Theme
 - Track crossfade
+</blockquote>
+<blockquote>
+
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260056)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
+- Change package name
 </blockquote>
 </details>
 
