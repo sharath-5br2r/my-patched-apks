@@ -35,7 +35,7 @@
     ]
   },
   "gboard-jsonwu1994": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "gboard",
     "rv-brand": "jsonwu1994",
     "build-mode": "apk",
@@ -50,7 +50,7 @@
       },
       {
         "source": "rushiranpise/morphe-patches",
-        "included-patches": "'GmsCore support (MicroG)'"
+        "included-patched": "'GmsCore Support (MicroG)'"
       }
     ]
   },
@@ -170,7 +170,7 @@
     ]
   },
   "youtube-morphe": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -188,7 +188,7 @@
     ]
   },
   "youtube-music-morphe": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube-music",
     "rv-brand": "morphe",
     "build-mode": "both",
@@ -294,7 +294,7 @@
     ]
   },
   "eden-pubg": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "eden",
     "rv-brand": "pubg",
     "build-mode": "apk",
@@ -309,7 +309,7 @@
     ]
   },
   "winlator-pubgvn": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "winlator",
     "rv-brand": "pubgvn",
     "build-mode": "apk",
@@ -324,7 +324,7 @@
     ]
   },
   "zalith-launcher-2-plus-cod": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "zalith-launcher-2-plus",
     "rv-brand": "cod",
     "build-mode": "apk",
@@ -339,7 +339,7 @@
     ]
   },
   "geode-pubgkr": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "geode",
     "rv-brand": "pubgkr",
     "build-mode": "apk",
@@ -354,7 +354,7 @@
     ]
   },
   "levilauncher-unlocked-bgmi": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "bgmi",
     "build-mode": "apk",
@@ -386,7 +386,7 @@
     ]
   },
   "amazon-india-rushiranpise": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "amazon-india",
     "rv-brand": "rushiranpise",
     "build-mode": "apk",
