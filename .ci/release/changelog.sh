@@ -48,6 +48,8 @@ nightly)
 	;;
 push | test)
 	echo "CI test build"
+	echo "at commit [\`$FORGEJO_REF\`](https://$FORGEJO_HOST/$FORGEJO_REPO/compare/$FORGEJO_BEFORE..$FORGEJO_LONGSHA)."
+	echo
 	;;
 esac
 echo
