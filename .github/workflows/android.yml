@@ -65,6 +65,10 @@ jobs:
 
       - name: Build
         run: JAVA_HOME=$JAVA_HOME_17_X64 ./.ci/build/android.sh -DCCACHE_PATH=${SCCACHE_PATH}
+      - name: Move APKs to format
+        run: |
+          file=$(ls artifacts/Eden-Android-*-optimised.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-optimised\.apk/eden-optimised-v\1-arm64.apk/')"
+          file=$(ls artifacts/Eden-Android-*-chromeos.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-chromeos\.apk/eden-chromeos-v\1-x86_64.apk/')"
 
       - name: Upload APK
         uses: actions/upload-artifact@v7

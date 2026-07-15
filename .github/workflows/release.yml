@@ -21,7 +21,7 @@ jobs:
     name: "Release"
 
     env:
-      #GH_TOKEN: "${{ secrets.CUSTOM_GITHUB_TOKEN }}"
+      GH_TOKEN: "${{ secrets.CUSTOM_GITHUB_TOKEN }}"
       # FJ_TOKEN: "${{ secrets.FORGEJO_TOKEN }}"
 
       # B2_TOKEN: "${{ secrets.B2_TOKEN }}"
@@ -35,7 +35,7 @@ jobs:
       # VPS_SSH_PRIV: "${{ secrets.VPS_SSH_PRIV }}"
       # VPS_SSH_PUB: "${{ secrets.VPS_SSH_PUB }}"
       # DISCORD_WEBHOOK: "${{ secrets.DISCORD_WEBHOOK }}"
-      # DEVEL: "${{ inputs.devel }}"
+      DEVEL: "${{ inputs.devel }}"
       STATUS: "${{ inputs.status }}"
       BUILD_ID: "${{ inputs.build-id }}"
     runs-on: ubuntu-latest
@@ -66,38 +66,62 @@ jobs:
         id: release_notes
         if: ${{ always() }}
         run: ./.ci/release.sh
-      - name: Release
-        id: release
-        if: ${{ env.RELEASE_GH == '1' }}
-        uses: softprops/action-gh-release@v2.5.0
+      # - name: Release
+      #   id: release
+      #   uses: softprops/action-gh-release@v2.5.0
+      #   with:
+      #     #name: "${{ env.GITHUB_TITLE }}"
+      #     tag_name: ${{ env.GITHUB_TAG }}
+      #     #repository: ${{ env.RELEASE_REPO }}
+      #     body_path: ./changelog.md
+      #     #token: ${{ env.GH_TOKEN }}
+      #     prerelease: false
+      #     draft: ${{ inputs.build-id == 'tag' }}
+      #     generate_release_notes: false
+      #     make_latest: true
+      #     files: |
+      #       artifacts/*
+
+      - name: Get Next Version Code
+        id: version
+        run: |
+          set -euo pipefail
+          YEAR=$(date -u +"%y")
+          TAG=$( { gh release list -R sharath-5br2r/patched-apks-builder-2nd --exclude-drafts -L 100 2>/dev/null || true; } | awk -F '\t' -v year="$YEAR" '$3 ~ "^" year "[0-9][0-9][0-9][0-9]$" {print $3}' | sort -nr | head -n1 )
+          if [ -n "$TAG" ]; then
+              BUILD_COUNT=${TAG:2:4}
+              BUILD_COUNT=$((10#$BUILD_COUNT + 1))
+          else
+              BUILD_COUNT=1
+          fi
+
+          NEXT_VER_CODE=$(printf "%s%04d" "$YEAR" "$BUILD_COUNT")
+          if [ -n "${GITHUB_OUTPUT:-}" ]; then
+              echo "NEXT_VER_CODE=$NEXT_VER_CODE" >> "$GITHUB_OUTPUT"
+          else
+              export NEXT_VER_CODE="$NEXT_VER_CODE"
+          fi
+      - name: Upload to release (Archive)
+        uses: softprops/action-gh-release@v3
         with:
-          #name: "${{ env.GITHUB_TITLE }}"
-          tag_name: ${{ env.GITHUB_TAG }}
-          #repository: ${{ env.RELEASE_REPO }}
-          body_path: ./changelog.md
-          #token: ${{ env.GH_TOKEN }}
-          prerelease: false
-          draft: ${{ inputs.build-id == 'tag' }}
-          generate_release_notes: false
-          make_latest: true
-          files: |
-            artifacts/*
-
-
-
-      - name: Release (PR Number)
-        if: ${{ env.RELEASE_PR == '1' }}
-        uses: softprops/action-gh-release@v2.5.0
+          files: artifacts/*.apk
+          tag_name: beta
+          overwrite_files: true
+          prerelease: true
+          repository: sharath-5br2r/patched-apks-builder-2nd
+          token: ${{ env.GH_TOKEN }}
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
         with:
-          name: "${{ env.GITHUB_TITLE }}"
-          tag_name: ${{ env.FORGEJO_PR_NUMBER }}
-          #repository: ${{ env.RELEASE_REPO }}
-          body_path: ./changelog.md
-          prerelease: false
-          draft: false
-          generate_release_notes: false
-          #token: ${{ env.GH_TOKEN }}
+          tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}
+          name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} 
+          prerelease: true
+          repository: sharath-5br2r/patched-apks-builder-2nd
+          overwrite_files: true
           make_latest: true
+          files: artifacts/*.apk
+          token: ${{ env.GH_TOKEN }}
+          body_path: changelog.md
 
       - name: Upload changelog
         if: ${{ always() }}
