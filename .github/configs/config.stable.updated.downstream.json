@@ -1,5 +1,5 @@
 {
-  "parallel-jobs": 2,
+  "parallel-jobs": 1,
   "enable-module-update": true,
   "patches-version": "dev",
   "speedtest-xtra": {
@@ -46,11 +46,13 @@
     "dpi": "nodpi anydpi auto",
     "patches": [
       {
-        "source": "jasonwu1994/Gboard-patches"
+        "source": "jasonwu1994/Gboard-patches",
+        "excluded-patches": "'Package Rename'"
       },
       {
         "source": "rushiranpise/morphe-patches",
-        "included-patches": "'GmsCore support (MicroG)'"
+        "included-patches": "'GmsCore Support (MicroG)'",
+        "args": "-OpackageName=dev.jason.com.google.android.inputmethod.latin"
       }
     ]
   },
@@ -294,7 +296,7 @@
     ]
   },
   "eden-pubg": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "eden",
     "rv-brand": "pubg",
     "build-mode": "apk",
