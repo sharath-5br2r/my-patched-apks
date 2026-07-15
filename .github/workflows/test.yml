@@ -6,6 +6,7 @@ on:
       - '*'
   workflow_dispatch:
 
+    
 env:
   DISABLE_ARM: ${{ vars.DISABLE_ARM }}
 

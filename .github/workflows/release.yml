@@ -57,6 +57,10 @@ jobs:
 
           . ./.ci/fj/load-env.sh
           . ./.ci/release/steps.sh | tee -a "$GITHUB_ENV"
+      - name: Move APKs to format
+        run: |
+          file=$(ls artifacts/Eden-Android-*-optimised.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-optimised\.apk/eden-optimised-v\1-arm64.apk/')"
+          file=$(ls artifacts/Eden-Android-*-chromeos.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-chromeos\.apk/eden-chromeos-v\1-x86_64.apk/')"
 
       # - name: Delete Previous PR Number
       #   if: ${{ env.RELEASE_PR == '1' }}
@@ -109,7 +113,7 @@ jobs:
           overwrite_files: true
           prerelease: true
           repository: sharath-5br2r/patched-apks-builder-2nd
-          token: ${{ env.GH_TOKEN }}
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
@@ -120,7 +124,7 @@ jobs:
           overwrite_files: true
           make_latest: true
           files: artifacts/*.apk
-          token: ${{ env.GH_TOKEN }}
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
           body_path: changelog.md
 
       - name: Upload changelog
