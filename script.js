@@ -25,7 +25,8 @@ const CONFIG = {
 
   // Known tokens indicating a variant (must be lowercase)
   variantKeywords: new Set([
-    
+    "root",
+    "gfp",
   ]),
 
   // Known architectures (used for regex parsing)
