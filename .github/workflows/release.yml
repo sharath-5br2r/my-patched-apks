@@ -59,10 +59,8 @@ jobs:
           . ./.ci/release/steps.sh | tee -a "$GITHUB_ENV"
       - name: Move APKs to format
         run: |
-          tree 
-          env
-          #file=$(ls artifacts/Eden-Android-*-optimised.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-optimised\.apk/eden-optimised-v\1-arm64.apk/')"
-          #file=$(ls artifacts/Eden-Android-*-chromeos.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-chromeos\.apk/eden-chromeos-v\1-x86_64.apk/')"
+          file=$(ls Eden-Android-*-optimised.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-optimised\.apk/eden-optimised-v\1-arm64.apk/')"
+          file=$(ls Eden-Android-*-chromeos.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-chromeos\.apk/eden-chromeos-v\1-x86_64.apk/')"
 
       # - name: Delete Previous PR Number
       #   if: ${{ env.RELEASE_PR == '1' }}
