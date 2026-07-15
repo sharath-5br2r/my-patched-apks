@@ -256,12 +256,8 @@ if falsy "$DISABLE_ANDROID"; then
 		|--------|-------|
 	EOF
 
-	android "Standard APK" "standard" "The standard build. Most users should use this."
-
-	if tagged; then
-		android "Genshin Spoof APK" "optimized" "Spoofs Eden as Genshin Impact, which may enable optimizations/frame generation on some flagship devices."
-		android "Legacy APK" "legacy" "For Snapdragon 865 and other unsupported chipsets"
-	fi
+	android "Genshin Spoof APK" "optimized" "Spoofs Eden as Genshin Impact, which may enable optimizations/frame generation on some flagship devices."
+	
 fi
 
 cat <<EOF
