@@ -561,6 +561,8 @@ patches_list() {
 	local p_jars=($(echo "$patches_jar" | jq -r '.[]' | tr ' ' '\n' | grep -v '^$'))
 	local p_args_short="" p_args_long="" p_args_pos=""
 	for j in "$p_jars"; do
+	    pr $p_jars
+		pr $j
 		p_args_short+="-p '$j' "
 		p_args_long+="--patches '$j' "
 		p_args_pos+="'$j' "
