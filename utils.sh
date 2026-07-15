@@ -560,12 +560,14 @@ patches_list() {
 	fi
 	# Build arg strings for each jar in space-separated patches_jar
 	local p_jars=($(echo "$patches_jar" | jq -r '.[]' | tr ' ' '\n' | grep -v '^$'))
+	pr $p_jars
 	local p_args_short="" p_args_long="" p_args_pos=""
 	for j in "${p_jars[@]}"; do
 		p_args_short+="-p '$j' "
 		p_args_long+="--patches '$j' "
 		p_args_pos+="'$j' "
 	done
+	pr $p_args_short
 	# Try positional (morphe-cli), then --patches with/without -b, then -p
 	if ! op=$(eval java -jar "'$cli_jar'" list-patches --with-packages --with-versions $p_args_pos --filter-package-name "'$pkg_name'" 2>&1); then
 		if ! op=$(eval java -jar "'$cli_jar'" list-patches $p_args_long --packages --versions --options -f "'$pkg_name'" -b 2>&1); then
