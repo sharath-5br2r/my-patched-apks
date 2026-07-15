@@ -155,7 +155,8 @@ const CONFIG = {
     duolingo: "com.duolingo",
     edennightly: {
       default: "dev.eden_emulator.nightly",
-      pubg: "com.tencent.ig"
+      pubg: "com.tencent.ig",
+      optimized: "com.miHoYo.Yuanshen",
     },
     disneyplus: "com.disney.disneyplus",
     discord: "com.discord",
