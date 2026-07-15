@@ -76,10 +76,11 @@ file_link() {
 android() {
 	type="$1"
 	flavor="$2"
-	notes="$3"
+	arch="$3"
+	notes="$4"
 
 	printf "| "
-	file_link "$type" "Android-${ARTIFACT_REF}-${flavor}.apk"
+	file_link "$type" "${flavor}-${ARTIFACT_REF}-${arch}.apk"
 	echo " | $notes |"
 }
 
@@ -186,66 +187,6 @@ if truthy "$EXPLAIN_TARGETS"; then
 	EOF
 fi
 
-cat <<EOF
-
-## Linux
-
-Linux packages are distributed via AppImage.
-EOF
-
-if opts && tagged; then
-	cat <<-EOF
-		[zsync](https://zsync.moria.org.uk/) files are provided for easier updating, such as via
-		[AM](https://github.com/ivan-hc/AM).
-
-		| Build Type | Standard | PGO (Recommended) | Notes |
-		|------------|----------|-----------|-------|
-	EOF
-else
-	cat <<-EOF
-
-		| Build Type |  | Notes |
-		|------------|--|-------|
-	EOF
-fi
-
-linux_matrix
-
-if [ "$1" = "tag" ]; then
-	cat <<-EOF
-
-		### Room Executables
-
-		These are statically linked Linux executables for the \`eden-room\` binary.
-
-	EOF
-
-	room_matrix
-fi
-
-# TODO: setup files
-cat <<EOF
-
-## Windows
-
-Windows packages are in-place zip files. Setup files are soon to come.
-
-EOF
-
-if opts && tagged; then
-	cat <<-EOF
-		| Build Type | Standard | PGO (Recommended) | Notes |
-		|------------|----------|-------------------|-------|
-	EOF
-else
-	cat <<-EOF
-
-		| Build Type |  | Notes |
-		|------------|--|-------|
-	EOF
-fi
-
-win_matrix
 
 if falsy "$DISABLE_ANDROID"; then
 	cat <<-EOF
@@ -255,8 +196,8 @@ if falsy "$DISABLE_ANDROID"; then
 		| Build  | Notes |
 		|--------|-------|
 	EOF
-
-	android "Genshin Spoof APK" "optimized" "Spoofs Eden as Genshin Impact, which may enable optimizations/frame generation on some flagship devices."
+    androud "ChromeOS/x86" "chromeos" "x86_64" "Eden Build for x86 64bit android systems/ChromeOS"
+	android "Genshin Spoof APK" "optimized" "arm64-v8a" "Spoofs Eden as Genshin Impact, which may enable optimizations/frame generation on some flagship devices."
 	
 fi
 
