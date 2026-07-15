@@ -88,7 +88,6 @@ jobs:
 
       - name: Get Next Version Code
         id: version
-        if: false
         run: |
           set -euo pipefail
           YEAR=$(date -u +"%y")
@@ -108,9 +107,8 @@ jobs:
           fi
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
-        if: false
         with:
-          files: artifacts/*.apk
+          files: ./*.apk
           tag_name: beta
           overwrite_files: true
           prerelease: true
@@ -126,7 +124,7 @@ jobs:
           repository: sharath-5br2r/patched-apks-builder-2nd
           overwrite_files: true
           make_latest: true
-          files: artifacts/*.apk
+          files: ./*.apk
           token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
           body_path: changelog.md
 
