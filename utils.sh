@@ -488,8 +488,9 @@ semver_validate() {
 	[ ${#ac} = 0 ]
 }
 get_patch_last_supported_ver() {
-	local list_patches=$1 pkg_name=$2 inc_sel=$3 _exc_sel=$4 _exclusive=$5 cli_source=$6 # TODO: resolve using all of these
+	local list_patches=$1 pkg_name=$2 inc_sel="$3" _exc_sel="$4" _exclusive=$5 cli_source=$6 # TODO: resolve using all of these
 	local op
+	pr list_patches=$1 pkg_name=$2 inc_sel="$3" _exc_sel="$4" _exclusive=$5 cli_source=$6 
 	if [ "$inc_sel" ]; then
 		if ! op=$(awk '{$1=$1}1' <<<"$list_patches"); then
 			epr "list-patches: '$op'"
