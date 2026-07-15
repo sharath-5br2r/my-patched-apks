@@ -1,6 +1,7 @@
 enable-module-update = true
 patches-version = "dev"
-parallel-jobs =1
+
+
 [gboard-jsonwu1994]
 enabled = true
 app-name = "gboard"
@@ -15,7 +16,7 @@ dpi = "nodpi anydpi auto"
 source = "jasonwu1994/Gboard-patches"
 [[gboard-jsonwu1994.patches]]
 source = "rushiranpise/morphe-patches"
-included-patches = "'GmsCore support (MicroG)'"
+included-patched = "'GmsCore Support (MicroG)'"
 
 [gboard-jasonwu1994-root]
 enabled = true
