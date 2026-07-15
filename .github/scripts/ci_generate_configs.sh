@@ -35,7 +35,7 @@ genconfigs() {
     fi
 
   jq --slurpfile active active.stable.json --slurpfile activeApps active_apps.json '
-    { "parallel-jobs": 2, "enable-module-update": true } as $force |
+    { "parallel-jobs": 1, "enable-module-update": true } as $force |
     ($force + . + $force) |
     with_entries(
       if .value | type == "object" then
@@ -58,7 +58,7 @@ genconfigs() {
      fi
     
   jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json --argjson tags "$TAGS_NEW" '
-    { "parallel-jobs": 2, "patches-version": "dev", "enable-module-update": false } as $force |
+    { "parallel-jobs": 1, "patches-version": "dev", "enable-module-update": false } as $force |
     ($force + . + $force) |
     with_entries(
       if .value | type == "object" then

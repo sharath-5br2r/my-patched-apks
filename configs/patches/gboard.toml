@@ -14,9 +14,11 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard"
 dpi = "nodpi anydpi auto"
 [[gboard-jsonwu1994.patches]]
 source = "jasonwu1994/Gboard-patches"
+excluded-patches = "'Package Rename'"
 [[gboard-jsonwu1994.patches]]
 source = "rushiranpise/morphe-patches"
-included-patched = "'GmsCore Support (MicroG)'"
+included-patches = "'GmsCore Support (MicroG)'"
+args = "-OpackageName=dev.jason.com.google.android.inputmethod.latin"
 
 [gboard-jasonwu1994-root]
 enabled = true
