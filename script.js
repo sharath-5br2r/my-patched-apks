@@ -148,7 +148,7 @@ const CONFIG = {
 
     documentscanner: "com.cv.docscanner",
     dolphinemulator: {
-      deafult: "org.dolphinemu.dolphinemu",
+      default: "org.dolphinemu.dolphinemu",
       gfp: "com.tencent.tmgp.pubgmhd",
     },
     duolingo: "com.duolingo",
