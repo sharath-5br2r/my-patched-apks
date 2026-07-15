@@ -21,7 +21,7 @@ const CONFIG = {
   sharedAppWordStoplist: new Set(["messenger"]),
 
   // Known tokens indicating a patch name starts (must be lowercase)
-  knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx", "jasonmu1994", "paresh", "piko", "binarymend", "hoodles", "xtra", "revenge", "hooman", "icysymmetra", "sdk29", "pubg", "bgmi", "pubgkr", "pubgvn", "sign", "ood"]),
+  knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx", "jasonmu1994", "paresh", "piko", "binarymend", "hoodles", "xtra", "revenge", "hooman", "icysymmetra", "sdk29", "pubg", "bgmi", "pubgkr", "pubgvn", "sign", "gfp", "cs" , "cod"]),
 
   // Known tokens indicating a variant (must be lowercase)
   variantKeywords: new Set([
@@ -90,6 +90,9 @@ const CONFIG = {
     pubgkr: "PUBG Mobile KR Spoof",
     pubgvn: "PUBG Mobile VN Spoof",
     sdk29: "SDK 29 Storage fix",
+    cs: "Custom Storage",
+    pr: "Pull Request",
+    gfp: "Game For Peace Spoof",
     dolphin: "Dolphin Emulator",
     eden: "Eden Nightly",
     xtra: "Xtra patches for Morphe",
@@ -144,7 +147,10 @@ const CONFIG = {
     cryptomator: "org.cryptomator",
 
     documentscanner: "com.cv.docscanner",
-    dolphinemulator: "org.dolphinemu.dolphinemu",
+    dolphinemulator: {
+      deafult: "org.dolphinemu.dolphinemu",
+      gfp: "com.tencent.tmgp.pubgmhd",
+    },
     duolingo: "com.duolingo",
     edennightly: {
       default: "dev.eden_emulator.nightly",
