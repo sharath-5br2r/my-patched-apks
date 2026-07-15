@@ -273,16 +273,33 @@ Patches: [jasonwu1994/patches-1.2.0.mpp](https://github.com/jasonwu1994/Gboard-p
 
 #### [Morphe (jasonwu1994) Root](https://github.com/jasonwu1994/Gboard-patches)
 <details>
-<summary id="gboard-jasonwu1994-root">Version: v17.1.5.887912998.release</summary>
+<summary id="gboard-jasonwu1994-root">Version: v17.0.10.880768217-release-arm64-v8a</summary>
   
 <blockquote>
 
-[Release 2026-06-14](https://github.com/nullcpy/rvb/releases/tag/351)<br>
-Patches: [jasonwu1994/patches-1.2.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.2.0)
-
-- Always-incognito mode
-- Enable OCR feature
-- Enable clipboard in incognito
+[Release 2026-07-15](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260070)<br>
+Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0)
+- AI Writing Tools
+- Add Gboard Signature Bypass
+- Chinese Online Voice Input
+- Clipboard Enhancements
+- Clipboard Entity Extraction
+- Clipboard Item Edit
+- Custom Symbols
+- Emojis, stickers & GIFs Tab Order
+- Enable Inline Autofill Suggestions
+- Enable Undo/Redo feature
+- English QWERTY Up-Flick Uppercase
+- Grammar Checker
+- Inline Suggestions
+- Key Shape Selection
+- Latin Globe Key Ignore Interval
+- Settings Homepage Override
+- Swipeable Custom Top Row
+- Web Clipboard
+- Zhuyin Bottom Row Key Sizes
+- Zhuyin Quick Traditional/Simplified Toggle
+- Zhuyin Slide Input
 </blockquote>
 </details>
 
