@@ -74,7 +74,7 @@
     ]
   },
   "github-hoodles": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "github",
     "rv-brand": "hoodles",
     "build-mode": "apk",
@@ -90,7 +90,7 @@
     ]
   },
   "prime-video-hoodles": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "prime-video",
     "rv-brand": "hoodles",
     "build-mode": "apk",

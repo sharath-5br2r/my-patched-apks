@@ -35,7 +35,7 @@
     ]
   },
   "gboard-jsonwu1994": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "gboard",
     "rv-brand": "jsonwu1994",
     "build-mode": "apk",
@@ -388,7 +388,7 @@
     ]
   },
   "amazon-india-rushiranpise": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-india",
     "rv-brand": "rushiranpise",
     "build-mode": "apk",
