@@ -59,8 +59,10 @@ jobs:
           . ./.ci/release/steps.sh | tee -a "$GITHUB_ENV"
       - name: Move APKs to format
         run: |
-          file=$(ls artifacts/Eden-Android-*-optimised.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-optimised\.apk/eden-optimised-v\1-arm64.apk/')"
-          file=$(ls artifacts/Eden-Android-*-chromeos.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-chromeos\.apk/eden-chromeos-v\1-x86_64.apk/')"
+          tree 
+          env
+          #file=$(ls artifacts/Eden-Android-*-optimised.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-optimised\.apk/eden-optimised-v\1-arm64.apk/')"
+          #file=$(ls artifacts/Eden-Android-*-chromeos.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-chromeos\.apk/eden-chromeos-v\1-x86_64.apk/')"
 
       # - name: Delete Previous PR Number
       #   if: ${{ env.RELEASE_PR == '1' }}
@@ -88,6 +90,7 @@ jobs:
 
       - name: Get Next Version Code
         id: version
+        if: false
         run: |
           set -euo pipefail
           YEAR=$(date -u +"%y")
@@ -107,6 +110,7 @@ jobs:
           fi
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
+        if: false
         with:
           files: artifacts/*.apk
           tag_name: beta
@@ -116,6 +120,7 @@ jobs:
           token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
       - name: Publish release
         uses: softprops/action-gh-release@v2
+        if: false
         with:
           tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}
           name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} 
