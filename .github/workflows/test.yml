@@ -5,6 +5,8 @@ on:
     branches:
       - '*'
   workflow_dispatch:
+  schedule:
+    - cron: "0 2/4 * * *"
 
 env:
   DISABLE_ARM: ${{ vars.DISABLE_ARM }}
