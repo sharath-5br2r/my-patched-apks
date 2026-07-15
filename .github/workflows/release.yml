@@ -116,7 +116,6 @@ jobs:
           token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
       - name: Publish release
         uses: softprops/action-gh-release@v2
-        if: false
         with:
           tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}
           name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} 
