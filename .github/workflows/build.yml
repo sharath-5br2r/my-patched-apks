@@ -76,11 +76,10 @@ jobs:
           KEYSTORE_P12: ${{ secrets.KEYSTORE_P12 }}
         run: |
           set -euo pipefail
-            bash ./scripts/prep_build_predl.sh
-            bash ./scripts/morphe-experimental.sh
-            bash ./scripts/configgen.sh
-            bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
-          fi
+          bash ./scripts/prep_build_predl.sh
+          bash ./scripts/morphe-experimental.sh
+          bash ./scripts/configgen.sh
+          bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
 
       - name: Get output
         id: get_output
