@@ -66,7 +66,7 @@ file_link() {
 	prefix="${3:-$PROJECT_PRETTYNAME}"
 
 	# TODO(crueter): Make this detect gh/b2
-	url="https://$B2_PUBLIC_URL/$GITHUB_TAG/$prefix-$artifact"
+	#url="https://$B2_PUBLIC_URL/$GITHUB_TAG/$prefix-$artifact"
 
 	printf "[%s](%s)" "$label" "$url"
 }

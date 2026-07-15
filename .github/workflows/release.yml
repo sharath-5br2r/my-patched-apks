@@ -21,21 +21,21 @@ jobs:
     name: "Release"
 
     env:
-      GH_TOKEN: "${{ secrets.CUSTOM_GITHUB_TOKEN }}"
-      FJ_TOKEN: "${{ secrets.FORGEJO_TOKEN }}"
+      #GH_TOKEN: "${{ secrets.CUSTOM_GITHUB_TOKEN }}"
+      # FJ_TOKEN: "${{ secrets.FORGEJO_TOKEN }}"
 
-      B2_TOKEN: "${{ secrets.B2_TOKEN }}"
-      B2_KEY: "${{ secrets.B2_KEY }}"
+      # B2_TOKEN: "${{ secrets.B2_TOKEN }}"
+      # B2_KEY: "${{ secrets.B2_KEY }}"
 
-      CF_ZONE_ID: "${{ secrets.CF_ZONE_ID }}"
-      CF_TOKEN: "${{ secrets.CF_TOKEN }}"
+      # CF_ZONE_ID: "${{ secrets.CF_ZONE_ID }}"
+      # CF_TOKEN: "${{ secrets.CF_TOKEN }}"
 
-      VPS_SSH_HOST: "${{ secrets.VPS_SSH_HOST }}"
-      VPS_SSH_PORT: "${{ secrets.VPS_SSH_PORT }}"
-      VPS_SSH_PRIV: "${{ secrets.VPS_SSH_PRIV }}"
-      VPS_SSH_PUB: "${{ secrets.VPS_SSH_PUB }}"
-      DISCORD_WEBHOOK: "${{ secrets.DISCORD_WEBHOOK }}"
-      DEVEL: "${{ inputs.devel }}"
+      # VPS_SSH_HOST: "${{ secrets.VPS_SSH_HOST }}"
+      # VPS_SSH_PORT: "${{ secrets.VPS_SSH_PORT }}"
+      # VPS_SSH_PRIV: "${{ secrets.VPS_SSH_PRIV }}"
+      # VPS_SSH_PUB: "${{ secrets.VPS_SSH_PUB }}"
+      # DISCORD_WEBHOOK: "${{ secrets.DISCORD_WEBHOOK }}"
+      # DEVEL: "${{ inputs.devel }}"
       STATUS: "${{ inputs.status }}"
       BUILD_ID: "${{ inputs.build-id }}"
     runs-on: ubuntu-latest
@@ -62,42 +62,42 @@ jobs:
       #   if: ${{ env.RELEASE_PR == '1' }}
       #   run: gh release delete "$FORGEJO_PR_NUMBER" --repo "$RELEASE_REPO" --cleanup-tag -y
       #   continue-on-error: true
-
-      # - name: Release
-      #   id: release
-      #   if: ${{ env.RELEASE_GH == '1' }}
-      #   uses: softprops/action-gh-release@v2.5.0
-      #   with:
-      #     name: "${{ env.GITHUB_TITLE }}"
-      #     tag_name: ${{ env.GITHUB_TAG }}
-      #     repository: ${{ env.RELEASE_REPO }}
-      #     body_path: ./changelog.md
-      #     token: ${{ env.GH_TOKEN }}
-      #     prerelease: false
-      #     draft: ${{ inputs.build-id == 'tag' }}
-      #     generate_release_notes: false
-      #     make_latest: true
-      #     files: |
-      #       artifacts/*
-
       - name: Release
-        id: release
+        id: release_notes
         if: ${{ always() }}
         run: ./.ci/release.sh
+      - name: Release
+        id: release
+        if: ${{ env.RELEASE_GH == '1' }}
+        uses: softprops/action-gh-release@v2.5.0
+        with:
+          #name: "${{ env.GITHUB_TITLE }}"
+          tag_name: ${{ env.GITHUB_TAG }}
+          #repository: ${{ env.RELEASE_REPO }}
+          body_path: ./changelog.md
+          #token: ${{ env.GH_TOKEN }}
+          prerelease: false
+          draft: ${{ inputs.build-id == 'tag' }}
+          generate_release_notes: false
+          make_latest: true
+          files: |
+            artifacts/*
 
-      # - name: Release (PR Number)
-      #   if: ${{ env.RELEASE_PR == '1' }}
-      #   uses: softprops/action-gh-release@v2.5.0
-      #   with:
-      #     name: "${{ env.GITHUB_TITLE }}"
-      #     tag_name: ${{ env.FORGEJO_PR_NUMBER }}
-      #     repository: ${{ env.RELEASE_REPO }}
-      #     body_path: ./changelog.md
-      #     prerelease: false
-      #     draft: false
-      #     generate_release_notes: false
-      #     token: ${{ env.GH_TOKEN }}
-      #     make_latest: true
+
+
+      - name: Release (PR Number)
+        if: ${{ env.RELEASE_PR == '1' }}
+        uses: softprops/action-gh-release@v2.5.0
+        with:
+          name: "${{ env.GITHUB_TITLE }}"
+          tag_name: ${{ env.FORGEJO_PR_NUMBER }}
+          #repository: ${{ env.RELEASE_REPO }}
+          body_path: ./changelog.md
+          prerelease: false
+          draft: false
+          generate_release_notes: false
+          #token: ${{ env.GH_TOKEN }}
+          make_latest: true
 
       - name: Upload changelog
         if: ${{ always() }}

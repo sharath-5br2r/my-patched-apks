@@ -37,44 +37,44 @@ _group "Generating changelog"
 cat changelog.md
 _end
 
-## build status ##
+# ## build status ##
 
-if [ "$SEND_STATUS" = "1" ]; then
-    _group "Sending build status"
-    python3 "$ROOTDIR"/.ci/release/status.py --"$STATUS"
-    _end
-fi
+# if [ "$SEND_STATUS" = "1" ]; then
+#     _group "Sending build status"
+#     python3 "$ROOTDIR"/.ci/release/status.py --"$STATUS"
+#     _end
+# fi
 
-## The actual release ##
+# ## The actual release ##
 
-if release && b2 && [ "$RELEASE_B2" = "true" ]; then
-    _group "Publishing to B2"
-    "$ROOTDIR"/.ci/store/b2/auth.sh
-    "$ROOTDIR"/.ci/store/b2/release.sh
-    _end
+# if release && b2 && [ "$RELEASE_B2" = "true" ]; then
+#     _group "Publishing to B2"
+#     "$ROOTDIR"/.ci/store/b2/auth.sh
+#     "$ROOTDIR"/.ci/store/b2/release.sh
+#     _end
 
-    # create an external release on Forgejo with the B2 URLs
-    if fj; then
-        _group "Forgejo Release"
-        "$ROOTDIR"/.ci/fj/release.sh true
-        _end
-    fi
-elif release && fj; then
-    # the darkest days are upon us...
-    _group "Forgejo Release"
-    "$ROOTDIR"/.ci/fj/release.sh false
-    _end
-fi
+#     # create an external release on Forgejo with the B2 URLs
+#     if fj; then
+#         _group "Forgejo Release"
+#         "$ROOTDIR"/.ci/fj/release.sh true
+#         _end
+#     fi
+# elif release && fj; then
+#     # the darkest days are upon us...
+#     _group "Forgejo Release"
+#     "$ROOTDIR"/.ci/fj/release.sh false
+#     _end
+# fi
 
 ## Miscellaneous dist handling ##
 
 ## Discord ##
 
-if [ "$RELEASE_DISCORD" = "1" ]; then
-    _group "Publishing to Discord"
-    "$ROOTDIR"/.ci/release/discord.sh
-    _end
-fi
+# if [ "$RELEASE_DISCORD" = "1" ]; then
+#     _group "Publishing to Discord"
+#     "$ROOTDIR"/.ci/release/discord.sh
+#     _end
+# fi
 
 ## Torrent ##
 

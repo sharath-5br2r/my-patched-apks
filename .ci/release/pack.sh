@@ -27,19 +27,19 @@ find "$ROOTDIR" \( \
 		-name '*.dmg' \
     \) -not -path "*artifacts*" -exec cp {} "$ARTIFACTS_DIR" \;
 
-if [ "$DEVEL" = false ]; then
-	if command -v apt-get >/dev/null 2>&1; then
-		sudo apt-get install -y mktorrent
-	fi
-	files_dir="${PROJECT_PRETTYNAME}-${GITHUB_TAG}"
-	ln -sf "$ARTIFACTS_DIR" "${files_dir}"
-	mktorrent -pv \
-		-a udp://tracker.opentrackr.org:1337/announce \
-		-w "https://$B2_PUBLIC_URL/" \
-		-o "$ARTIFACTS_DIR/${PROJECT_PRETTYNAME}-${ARTIFACT_REF}.torrent" \
-		-n "${GITHUB_TAG}" \
-		-l 20 \
-		"${files_dir}/"
-fi
+# if [ "$DEVEL" = false ]; then
+# 	if command -v apt-get >/dev/null 2>&1; then
+# 		sudo apt-get install -y mktorrent
+# 	fi
+# 	files_dir="${PROJECT_PRETTYNAME}-${GITHUB_TAG}"
+# 	ln -sf "$ARTIFACTS_DIR" "${files_dir}"
+# 	mktorrent -pv \
+# 		-a udp://tracker.opentrackr.org:1337/announce \
+# 		-w "https://$B2_PUBLIC_URL/" \
+# 		-o "$ARTIFACTS_DIR/${PROJECT_PRETTYNAME}-${ARTIFACT_REF}.torrent" \
+# 		-n "${GITHUB_TAG}" \
+# 		-l 20 \
+# 		"${files_dir}/"
+# fi
 
 ls -lh "$ARTIFACTS_DIR"
