@@ -240,7 +240,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 
 `com.google.android.inputmethod.latin`
 
-#### [Gboard patches for Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches) + [rushiranpise GmsCore patch](https://github.com/rushiranpise/morphe-patches)
+#### [Gboard patches for Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches) + [Rushi's GmsCore patch](https://github.com/rushiranpise/morphe-patches)
 
 <details>
 <summary id="gboard-morphe-gboard">Version: v17.0.10.880768217-release-arm64-v8a</summary>
