@@ -66,7 +66,7 @@ Thank you to everyone who helps keep this project alive!
 
 ## Download Apps
 
-### [DolphinCS-main](https://github.com/sharath-5br2r/DolphinCS-main) builds are published here and is available on releases here and website.
+### [DolphinCS-master](https://github.com/sharath-5br2r/DolphinCS-master) builds are published here and is available on releases here and website.
 
 Official Dolphin Emulator builds are available on [Dolphin Emulator](https://dolphin-emu.org/download/)
 
