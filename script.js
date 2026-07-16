@@ -192,7 +192,7 @@ const CONFIG = {
     goodreads: "com.goodreads",
     gboard:{
       default: "com.google.android.inputmethod.latin",
-      gboard: "dev.jason.com.android.inputmethod.latin",
+      morphegboard: "dev.jason.com.android.inputmethod.latin",
     },
     googlenews: "com.google.android.apps.magazines",
     googlephotos: {
