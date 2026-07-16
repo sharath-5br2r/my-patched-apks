@@ -151,7 +151,7 @@ for table_name in $(toml_get_table_names); do
   app_args[patches_data]=$patches_data
   app_args[patches_ref]="${patches_ref_all% }"
   app_args[changelog_url]="${changelog_url_all% }"
-  app_args[rv_brand]=$(toml_get "$t" rv-brand) || app_args[rv_brand]="${p_srcs[0]%%/*}"
+  app_args[rv_brand]=$(toml_get "$t" rv-brand) || app_args[rv_brand]="none"
 
   app_args[exclusive_patches]=$(toml_get "$t" exclusive-patches) && vtf "${app_args[exclusive_patches]}" "exclusive-patches" || app_args[exclusive_patches]=false
   app_args[version]=$(toml_get "$t" version) || app_args[version]="auto"
