@@ -197,20 +197,9 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 </blockquote>
 </details>
 
----
 
 
-<blockquote>
-
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260029)<br>
-Patches: [MorpheApp/patches-1.34.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.34.0)
-- Change package name
-</blockquote>
-</details>
-
----
-
-<a id="apps-g"></a>
+--- 
 
 ### [GitHub](https://play.google.com/store/apps/details?id=com.github.android)
 
