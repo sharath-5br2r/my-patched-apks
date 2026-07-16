@@ -83,7 +83,7 @@ Official Dolphin Emulator builds are available on [Dolphin Emulator](https://dol
 
 `com.adobe.reader`
 
-#### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
+#### [Hooman's patches (Morphe)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
 <summary id="adobe-acrobat-morphe-hooman">Version: v26.6.1</summary>
