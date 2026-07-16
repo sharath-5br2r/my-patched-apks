@@ -255,7 +255,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### [Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches) + [rushiranpise GmsCore patch](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="gboard-jasonwu1994-gmscore">Version: v17.1.5.887912998.release</summary>
+<summary id="gboard-jasonwu1994-gmscore">Version: v0</summary>
   
 <blockquote>
 
@@ -833,7 +833,7 @@ This automated builder would not be possible without the incredible work and ded
 - **[MorpheApp/morphe-cli](https://github.com/MorpheApp/morphe-cli)** and **[7727mod/NPatch](https://github.com/7727mod/NPatch)** for Patching tools.
 - **[REAndroid/APKEditor](https://github.com/REAndroid/APKEditor)**, **[htmlq](https://github.com/mgdm/htmlq)**, **[tomlq](https://github.com/cryptaliagy/tomlq)**, **[yq](https://github.com/mikefarah/yq)** to handle tasks like APK decompilation, HTML parsing, TOML parsing, and YAML parsing.
 - **Android SDK and NDK** for providing signing tools, and compiling dynamic patches
-- **[FlareSolverr](https://github.com/FlareSolverr/FlareSolverr)**, [Byparr](https://github.com/ThePhaseless/Byparr/) and **[CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping)** for bypassing Cloudflare protections on certain websites.
+- **[TRAWL](https://github.com/germondai/trawl)**, **[FlareSolverr](https://github.com/FlareSolverr/FlareSolverr)**, [Byparr](https://github.com/ThePhaseless/Byparr/) and **[CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping)** for bypassing Cloudflare protections on certain websites.
 - **The Patch Maintainers:** Huge appreciation to the development teams behind **ReVanced**, **MorpheApp**, **Anddea**, **RVX**, **Piko**, **De-Vanced**, and all the other independent developers who spend countless hours reverse-engineering, updating, and keeping these patches alive for everyone.
 
 _If you enjoy using these builds, please consider starring their upstream repositories and original apps and supporting the original patch developers!_
