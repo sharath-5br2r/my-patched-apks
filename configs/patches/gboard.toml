@@ -2,20 +2,20 @@ enable-module-update = true
 patches-version = "dev"
 
 
-[gboard-jsonwu1994]
+[gboard-jsonwu1994-gmscore]
 enabled = true
 app-name = "gboard"
-rv-brand = "jsonwu1994"
+rv-brand = "jsonwu1994-gmscore"
 build-mode = "apk"
 arch = "arm64-v8a"
 cli-source = "MorpheApp/morphe-desktop"
 uptodown-dlurl = "https://gboard-go.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard"
 dpi = "nodpi anydpi auto"
-[[gboard-jsonwu1994.patches]]
+[[gboard-jsonwu1994-gmscore.patches]]
 source = "jasonwu1994/Gboard-patches"
 excluded-patches = "'Package Rename'"
-[[gboard-jsonwu1994.patches]]
+[[gboard-jsonwu1994-gmscore.patches]]
 source = "rushiranpise/morphe-patches"
 included-patches = "'GmsCore Support (MicroG)'"
 args = "-OpackageName=dev.jason.com.google.android.inputmethod.latin"
