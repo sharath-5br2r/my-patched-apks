@@ -7,14 +7,13 @@
 ---
 ## Changes from Upstream
 - Streamlined apps to my requirement
-- Added support for custom patches using a script
+- Improved support for multiple patches and added support for local files, which can be preprocessed
 - Improved Support for local building (currently on on Linux/Android)
-- Full dynamic patch and recompile system for manifest patches of some open source apps.
 - Moved website code to this repo via the gh-pages branch
 - Improved selection of multi architecture builds
 - Stable Releases now count for prerelase builds(only preleases are available)
 - Dynamic Fetching of Morphe experimental versions
-- Moved Keystore away from Repo
+- Moved Keystore into .env, with support for custom keystore and fallback is the old keystore.
 - Disabled Telegram Notifications
 
 For local use and modifications, see [CONFIG.md](CONFIG.md) for instructions on how to configure the builder and add your own apps and patches.
