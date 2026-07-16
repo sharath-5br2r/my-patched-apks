@@ -69,7 +69,7 @@ file_link() {
 
 	# TODO(crueter): Make this detect gh/b2
 	#url="https://$B2_PUBLIC_URL/$GITHUB_TAG/$prefix-$artifact"
-
+    url="https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/download/${NEXT_VER_CODE}/${artifact}"
 	printf "[%s](%s)" "$label" "$url"
 }
 
