@@ -612,7 +612,7 @@ merge_splits() {
 	return 0
 }
 
-_fs_get() {
+_fs_8191_get() {
 	local url=$1 referer=${2:-}
 	local max_retries=2 attempt
 	local fs_url="${FLARESOLVERR_URL:-http://localhost:8191}/v1"
@@ -631,14 +631,14 @@ _fs_get() {
 			user_agent=$(echo "$response" | jq -r '.solution.userAgent // empty')
 			return 0
 		fi
-		wpr "FlareSolverr attempt $attempt/$max_retries failed for: $url"
+		wpr "FlareSolverr:8191 attempt $attempt/$max_retries failed for: $url"
 		sleep 5
 	done
-	wpr "FlareSolverr failed after $max_retries attempts: $url — falling back"
+	wpr "FlareSolverr:8191 failed after $max_retries attempts: $url — falling back"
 	return 1
 }
       
-_byparr_get() {
+_fs_8192_get() {
 	local url=$1 referer=${2:-}
 	local max_retries=2 attempt
 	local fs_url="${FLARESOLVERR_URL:-http://localhost:8192}/v1"
@@ -657,10 +657,10 @@ _byparr_get() {
 			user_agent=$(echo "$response" | jq -r '.solution.userAgent // empty')
 			return 0
 		fi
-		wpr "Byparr attempt $attempt/$max_retries failed for: $url"
+		wpr "FlareSolverr:8192 attempt $attempt/$max_retries failed for: $url"
 		sleep 5
 	done
-	wpr "Byparr failed after $max_retries attempts: $url — falling back"
+	wpr "FlareSolverr:8192 failed after $max_retries attempts: $url — falling back"
 	return 1
 }
 _cfb_get() {
@@ -701,23 +701,23 @@ _fallback_get(){
 	user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0"
 
 }
-_FFS_FAILED=0
+_FFS8191_FAILED=0
 _CFB_FAILED=0
-_BYPARR_FAILED=0
+_FFS8192_FAILED=0
 _unqueued_cf_get() {
 	if [[ "$_CFB_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED:-false}" == true ]]; then
 		_cfb_get "$@" && return 0
 		_CFB_FAILED=1
 	fi
-	if [[ "$_FFS_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED:-false}" == true ]]; then
-		_fs_get "$@" && return 0
-		_FFS_FAILED=1
+	if [[ "$_FFS8191_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_FS_8191_ENABLED:-false}" == true ]]; then
+		_fs_8191_get "$@" && return 0
+		_FFS8191_FAILED=1
     fi
-	if [[ "$_BYPARR_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_BYPARR_ENABLED:-false}" == true ]]; then
-		_byparr_get "$@" && return 0
-		_BYPARR_FAILED=1
+	if [[ "$_FFS8192_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_FS_8192_ENABLED:-false}" == true ]]; then
+		_fs_8192_get "$@" && return 0
+		_FFS8192_FAILED=1
 	fi
-	if [[ "${CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_BYPARR_ENABLED:-false}" == true ]]; then
+	if [[ "${CF_BYPASS_SOLVER_FS_8191_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_FS_8192_ENABLED:-false}" == true ]]; then
     	wpr "All bypass solvers failed for: $1 — falling back to direct request"
 	else
 		wpr "No bypass solvers enabled, falling back to direct request for: $1"

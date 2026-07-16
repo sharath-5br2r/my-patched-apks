@@ -1,23 +1,13 @@
 enable-module-update = true
 patches-version = "dev"
 [eden-pubg]
-enabled = true
-app-name = "eden"
-rv-brand = "pubg"
-build-mode = "apk"
-cli-source = "MorpheApp/morphe-cli"
-local-dlurl = "downloads/eden.apk"
-[[eden-pubg.patches]]
-source = "MorpheApp/morphe-patches"
-args = "-OpackageName='com.tencent.ig'"
-included-patches = "'Change Package Name'"
 
 [winlator-pubgvn]
 enabled = true
 app-name = "winlator"
 rv-brand = "pubgvn"
 build-mode = "apk"
-cli-source = "MorpheApp/morphe-cli"
+cli-source = "MorpheApp/morphe-desktop"
 local-dlurl = "downloads/winlator.apk"
 [[winlator-pubgvn.patches]]
 source = "MorpheApp/morphe-patches"
@@ -29,7 +19,7 @@ enabled = true
 app-name = "zalith-launcher-2-plus"
 rv-brand = "cod"
 build-mode = "apk"
-cli-source = "MorpheApp/morphe-cli"
+cli-source = "MorpheApp/morphe-desktop"
 local-dlurl = "downloads/zalith-launcher-2-plus.apk"
 [[zalith-launcher-2-plus-cod.patches]]
 source = "MorpheApp/morphe-patches"
@@ -41,7 +31,7 @@ enabled = true
 app-name = "geode"
 rv-brand = "pubgkr"
 build-mode = "apk"
-cli-source = "MorpheApp/morphe-cli"
+cli-source = "MorpheApp/morphe-desktop"
 local-dlurl = "downloads/geode.apk"
 [[geode-pubgkr.patches]]
 source = "MorpheApp/morphe-patches"
@@ -53,7 +43,7 @@ enabled = true
 app-name = "levilauncher-unlocked"
 rv-brand = "bgmi"
 build-mode = "apk"
-cli-source = "MorpheApp/morphe-cli"
+cli-source = "MorpheApp/morphe-desktop"
 local-dlurl = "downloads/levilauncher.apk"
 [[levilauncher-unlocked-bgmi.patches]]
 source = "MorpheApp/morphe-patches"

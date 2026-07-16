@@ -3,44 +3,17 @@ description: Setup Container
 runs:
   using: "composite"
   steps:
-    - name: Start FlareSolverr
+    - name: Start Redis and Trawl
       shell: bash
       run: |
-        docker run -d --name flaresolverr -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest
-        echo "[*] Waiting for FlareSolverr to start..."
+        docker run -d --name redis -p 6379:6379 redis:alpine
+        docker run -d --name Trawl -p 8191:8191 ghcr.io/germondai/trawl:latest -e REDIS_URL=redis://redis:6379
+        echo "[*] Waiting for Trawl to start..."
         for i in $(seq 1 30); do
           if curl -s http://localhost:8191/ > /dev/null 2>&1; then
-            echo "[+] FlareSolverr is ready."
-            echo "CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED=true" >> "$GITHUB_ENV"
+            echo "[+] Trawl is ready."
+            echo "CF_BYPASS_SOLVER_FS_8191_ENABLED=true" >> "$GITHUB_ENV"
             break
           fi
           sleep 2
         done
-    - name: Start Byparr
-      shell: bash
-      run: |
-        docker run -d --name byparr -p 8192:8191 ghcr.io/thephaseless/byparr:latest
-        echo "[*] Waiting for byparr to start..."
-        for i in $(seq 1 30); do
-          if curl -s http://localhost:8192/ > /dev/null 2>&1; then
-            echo "[+] Byparr is ready."
-            echo "CF_BYPASS_SOLVER_BYPARR_ENABLED=true" >> "$GITHUB_ENV"
-            break
-          fi
-          sleep 2
-        done
-        
-    - name: Start CloudflareBypassForScraping
-      shell: bash
-      run: |
-        docker run -d --name cloudflarebypass -p 8000:8000 ghcr.io/sarperavci/cloudflarebypassforscraping:latest
-        echo "[*] Waiting for CloudflareBypassForScraping to start..."
-        for i in $(seq 1 30); do
-          if curl -s http://localhost:8000/ > /dev/null 2>&1; then
-            echo "[+] CloudflareBypassForScraping is ready."
-            echo "CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED=true" >> "$GITHUB_ENV"
-            break
-          fi
-          sleep 2
-        done
-        
