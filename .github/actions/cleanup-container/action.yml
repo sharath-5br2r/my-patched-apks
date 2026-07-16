@@ -13,3 +13,8 @@ runs:
       run: |
         docker logs Trawl || true
         docker rm --force Trawl || true
+    - name: Stop cloudflarebypassforscraping
+      shell: bash
+      run: |
+        docker logs cloudflarebypassforscraping || true
+        docker rm --force cloudflarebypassforscraping || true

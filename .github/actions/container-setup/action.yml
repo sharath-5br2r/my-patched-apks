@@ -17,3 +17,16 @@ runs:
           fi
           sleep 2
         done
+    - name: Start cloudflarebypassforscraping
+      shell: bash
+      run: |
+        docker run -d --name cloudflarebypassforscraping -p 8000:8000 ghcr.io/sarperavci/cloudflarebypassforscraping:latest
+        echo "[*] Waiting for cloudflarebypassforscraping to start..."
+        for i in $(seq 1 30); do
+          if curl -s http://localhost:8000/ > /dev/null 2>&1; then
+            echo "[+] cloudflarebypassforscraping is ready."
+            echo "CF_BYPASS_SOLVER_FS_8000_ENABLED=true" >> "$GITHUB_ENV"
+            break
+          fi
+          sleep 2
+        done
