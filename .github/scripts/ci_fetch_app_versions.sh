@@ -97,8 +97,6 @@ while IFS='|' read -r group app; do
                 get_apkcombo_resp "$dlurl" || { echo "Failed apkcombo resp for $app"; continue; }
                 vers=$(get_apkcombo_vers) || { echo "Failed apkcombo vers for $app"; continue; }
                 latest_ver=$(echo "$vers" | get_highest_ver) || true
-            elif [[ "$dlurl" == *"eden"* ]]; then
-                latest_ver=$(gh run list -R Eden-CI/Workflow -w nightly.yml --status success --limit 1 --json createdAt -q ".[0].createdAt") || { echo "Failed to fetch Eden version for $app"; continue; }
             elif [[ "$dlurl" == *"zalith-launcher-2-plus"* ]]; then
                 latest_ver=$(gh api repos/Star1xr/ZalithLauncher2Plus/releases/latest --jq '.tag_name') || { echo "Failed to fetch ZalithLauncher2Plus version for $app"; continue; }
             elif [[ "$dlurl" == *"winlator"* ]]; then

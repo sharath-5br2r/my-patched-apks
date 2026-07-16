@@ -33,9 +33,7 @@ while IFS= read -r group; do
     if [ "$new_ver" != "$old_ver" ] && [ "$new_ver" != "null" ] && [ -n "$new_ver" ]; then
         echo "Update detected for $group: $old_ver -> $new_ver"
         TRIGGER_APP_UPDATE=1
-        if [[ $group = *"eden"* ]]; then
-            export UPDATE_EDEN=true
-        elif [[ $group = *"winlator"* ]]; then
+        if [[ $group = *"winlator"* ]]; then
             export UPDATE_WINLATOR=true
         elif [[ $group = *"levilauncher-unlocked"* ]]; then
             export UPDATE_LEVILAUNCHER=true
@@ -69,7 +67,7 @@ if [ "$TRIGGER_APP_UPDATE" = "1" ]; then
 else
     echo "No app updates found."
 fi
-echo -n "{\"UPDATE_EDEN\": ${UPDATE_EDEN:-false}, \"UPDATE_WINLATOR\": ${UPDATE_WINLATOR:-false}, \"UPDATE_ZALITH_LAUNCHER\": ${UPDATE_ZALITH_LAUNCHER:-false}, \"UPDATE_GEODE\": ${UPDATE_GEODE:-false}, \"UPDATE_LEVILAUNCHER\": ${UPDATE_LEVILAUNCHER:-false} }" > '.github/configs/predl_updates.json'
+echo -n "{\"UPDATE_WINLATOR\": ${UPDATE_WINLATOR:-false}, \"UPDATE_ZALITH_LAUNCHER\": ${UPDATE_ZALITH_LAUNCHER:-false}, \"UPDATE_GEODE\": ${UPDATE_GEODE:-false}, \"UPDATE_LEVILAUNCHER\": ${UPDATE_LEVILAUNCHER:-false} }" > '.github/configs/predl_updates.json'
 if [ -n "${GITHUB_OUTPUT:-}" ]; then
     echo "TRIGGER_APP_UPDATE=$TRIGGER_APP_UPDATE" >> "$GITHUB_OUTPUT"
 else
