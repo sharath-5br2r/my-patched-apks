@@ -198,7 +198,7 @@ if falsy "$DISABLE_ANDROID"; then
 		| Build  | Notes |
 		|--------|-------|
 	EOF
-    androud "ChromeOS/x86" "chromeos" "x86_64" "Eden Build for x86 64bit android systems/ChromeOS"
+    android "ChromeOS/x86" "chromeos" "x86_64" "Eden Build for x86 64bit android systems/ChromeOS"
 	android "Genshin Spoof APK" "optimized" "arm64-v8a" "Spoofs Eden as Genshin Impact, which may enable optimizations/frame generation on some flagship devices."
 	
 fi
