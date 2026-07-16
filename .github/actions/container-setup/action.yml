@@ -7,7 +7,7 @@ runs:
       shell: bash
       run: |
         docker run -d --name redis -p 6379:6379 redis:alpine
-        docker run -d --name Trawl -p 8191:8191 ghcr.io/germondai/trawl:latest -e REDIS_URL=redis://redis:6379
+        docker run -d -e REDIS_URL=redis://redis:6379 --name Trawl -p 8191:8191 ghcr.io/germondai/trawl:latest 
         echo "[*] Waiting for Trawl to start..."
         for i in $(seq 1 30); do
           if curl -s http://localhost:8191/ > /dev/null 2>&1; then
