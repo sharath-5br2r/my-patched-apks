@@ -12,10 +12,10 @@ cli-source = "MorpheApp/morphe-desktop"
 uptodown-dlurl = "https://gboard-go.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard"
 dpi = "nodpi anydpi auto"
-[[gboard-jasonwu1994-gmscore.patches]]
+[[gboard-jasonwu1994.patches]]
 source = "jasonwu1994/Gboard-patches"
 excluded-patches = "'Package Rename'"
-[[gboard-jasonwu1994-gmscore.patches]]
+[[gboard-jasonwu1994.patches]]
 source = "rushiranpise/morphe-patches"
 included-patches = "'GmsCore Support (MicroG)'"
 args = "-OpackageName=dev.jason.com.google.android.inputmethod.latin"
