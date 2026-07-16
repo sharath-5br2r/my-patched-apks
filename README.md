@@ -255,7 +255,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### [Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches) + [rushiranpise GmsCore patch](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="gboard-jasonwu1994">Version: v17.1.5.887912998.release</summary>
+<summary id="gboard-jasonwu1994-gmscore">Version: v17.1.5.887912998.release</summary>
   
 <blockquote>
 
