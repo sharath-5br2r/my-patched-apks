@@ -416,7 +416,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 </details>
 
 ---
-### [LeviLauncher Unlocked](https://github.com/0Sombera666/LeviLaunchroidUnlocked)
+### [LeviLauncher Unlocked](dhttps://github.com/0Sombra666/LeviLaunchroidUnlocked)
+[Original](https://github.com/LiteLDev/LeviLaunchroid)
 
 `org.levimc.launcher`
 
@@ -824,6 +825,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 ---
 
 ### [Zalith Launcher 2 Plus](https://github.com/Star1xr/ZalithLauncher2Plus)
+[Original](https://github.com/ZalithLauncher/ZalithLauncher2)
 
 `com.movtery.zalithlauncher.v2`
 
