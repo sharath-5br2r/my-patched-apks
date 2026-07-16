@@ -1,9 +1,9 @@
 enable-module-update = true
 patches-version = "dev"
-[speedtest-xtra]
+[speedtest-morphe-xtra]
 enabled = true
 app-name = "speedtest"
-rv-brand = "xtra"
+rv-brand = "morphe-xtra"
 build-mode = "apk"
 arch = "both64"
 cli-source = "MorpheApp/morphe-desktop"
