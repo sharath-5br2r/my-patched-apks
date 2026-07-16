@@ -15,7 +15,7 @@ source = "MorpheApp/morphe-patches"
 args = "-OdarkThemeBackgroundColor=#000000 "
 included-patches = "'Theme'"
 
-[youtube-music-exp-morphe]
+[youtube-music-morphe-exp]
 enabled = true
 app-name = "youtube-music"
 rv-brand = "morphe-exp"
@@ -26,7 +26,7 @@ cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube-music"
 dpi = "nodpi anydpi auto"
-[[youtube-music-exp-morphe.patches]]
+[[youtube-music-morphe-exp.patches]]
 source = "MorpheApp/morphe-patches"
 args = "-OdarkThemeBackgroundColor=#000000 "
 included-patches = "'Theme'"
