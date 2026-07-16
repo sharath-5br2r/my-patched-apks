@@ -38,7 +38,7 @@ remove-rv-integrations-checks = true # remove checks from the revanced integrati
 dpi = "nodpi anydpi 120-640dpi"      # dpi packages to be searched in order. default: "nodpi anydpi"
 
 
-cli-source = "MorpheApp/morphe-cli"             # where to fetch cli from. default: "MorpheApp/morphe-cli"
+cli-source = "MorpheApp/morphe-desktop"             # where to fetch cli from. default: "MorpheApp/morphe-desktop"
 cli-source-host = "github"                       # source host for cli: "github" "gitlab" or "none". default: "github"
 # options like cli-source can also set per app
 rv-brand = "ReVanced Extended" # rebrand from 'ReVanced' to something different. default: patches-source owner. When "none" is set, there is no branding.
