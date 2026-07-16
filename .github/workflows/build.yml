@@ -77,8 +77,6 @@ jobs:
         run: |
           set -euo pipefail
           bash ./scripts/prep_build_predl.sh
-          bash ./scripts/morphe-experimental.sh
-          bash ./scripts/configgen.sh
           bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
           tree
           cat build.md
