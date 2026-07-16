@@ -1,24 +1,24 @@
 enable-module-update = true
 patches-version = "dev"
-[youtube-morphe]
+[youtube-morphe-exp]
 enabled = true
 app-name = "youtube"
-rv-brand = "morphe"
+rv-brand = "morphe-exp"
 build-mode = "both"
 version = "21.26.360"
 cli-source = "MorpheApp/morphe-desktop"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube"
 dpi = "nodpi anydpi auto"
-[[youtube-morphe.patches]]
+[[youtube-morphe-exp.patches]]
 source = "MorpheApp/morphe-patches"
 args = "-OdarkThemeBackgroundColor=#000000 "
 included-patches = "'Theme'"
 
-[youtube-music-morphe]
+[youtube-music-exp-morphe]
 enabled = true
 app-name = "youtube-music"
-rv-brand = "morphe"
+rv-brand = "morphe-exp"
 build-mode = "both"
 arch = "both64"
 version = "9.26.51"
@@ -26,7 +26,7 @@ cli-source = "MorpheApp/morphe-cli"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube-music"
 dpi = "nodpi anydpi auto"
-[[youtube-music-morphe.patches]]
+[[youtube-music-exp-morphe.patches]]
 source = "MorpheApp/morphe-patches"
 args = "-OdarkThemeBackgroundColor=#000000 "
 included-patches = "'Theme'"
