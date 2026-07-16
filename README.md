@@ -90,7 +90,7 @@ Official Dolphin Emulator builds are available on [Dolphin Emulator](https://dol
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.44.0-dev.1)
 - Unlock Pro
 </blockquote>
@@ -108,7 +108,7 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.44.0-dev.1)
 - Remove ads
 </blockquote>
@@ -126,8 +126,8 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 
 <blockquote>
 
-[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260063)<br>
-Patches: [rushiranpise/patches-1.13.0-dev.2.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.0-dev.2)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [rushiranpise/patches-1.13.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.1)
 - Dark mode
 - Disable search suggestions tracking
 - Disable video autoplay
@@ -147,10 +147,10 @@ Patches: [rushiranpise/patches-1.13.0-dev.2.mpp](https://github.com/rushiranpise
 #### Signed APK
 
 <details>
-<summary id="amazon-alexa-signed">Version: v2.2.694622.0</summary>
+<summary id="amazon-alexa-signed">Version: v2.2.695641.0</summary>
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260057)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: 
 </blockquote>
 </details>
@@ -164,11 +164,11 @@ Patches:
 #### [Revenge (revenge-mod)](https://github.com/revenge-mod/revenge-xposed) via [Npatch](https://github.com/7723mod/NPatch)
 
 <details>
-<summary id="discord-npatch-revenge">Version: v336.10.Stable</summary>
+<summary id="discord-npatch-revenge">Version: v336.10-Stable</summary>
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xposed/releases/tag/1410)
 </blockquote>
 </details>
@@ -190,7 +190,7 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Fing Premium
 </blockquote>
@@ -211,8 +211,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
-Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.4)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 </blockquote>
 </details>
 
@@ -228,8 +228,8 @@ Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-
 
 <blockquote>
 
-[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260061)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Change package name
 </blockquote>
 </details>
@@ -247,8 +247,8 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260081)<br>
-Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0), [rushiranpise/patches-1.13.0-dev.5.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.0-dev.5)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0), [rushiranpise/patches-1.13.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.1)
 - AI Writing Tools
 - Add Gboard Signature Bypass
 - Chinese Online Voice Input
@@ -321,7 +321,7 @@ Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [crimera/patches-3.8.0-dev.4.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.4)
 - Add settings
 - Allow user network certificate
@@ -391,7 +391,7 @@ Patches: [crimera/patches-3.8.0-dev.4.mpp](https://github.com/crimera/piko/relea
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Bypass signature check
 - Enable all codecs
@@ -416,8 +416,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260061)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Change package name
 </blockquote>
 </details>
@@ -435,7 +435,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1)
 - Make UI look like Pro
 - Unlock Moon+ Reader Pro
@@ -455,8 +455,8 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
-Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0-dev.4)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable speed control
 - Skip ads
 </blockquote>
@@ -475,7 +475,7 @@ Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Disable telemetry
 - Proton VPN Premium
@@ -498,7 +498,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.12.0)
 - AdFree Account
 - Disable Logging(analytics)
@@ -518,7 +518,7 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.44.0-dev.1)
 - Unlock Premium
 </blockquote>
@@ -538,7 +538,7 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
 Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.3.1)
 - Auto Translate comments
 - Copy comments without username
@@ -566,12 +566,12 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 #### Spoofed to PUBG:VN via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="winlator-viamorphe-pubgvn">Version: vv3.1.h</summary>
+<summary id="winlator-viamorphe-pubgvn">Version: v3.1</summary>
 
 <blockquote>
 
-[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260061)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Change package name
 </blockquote>
 </details>
@@ -585,12 +585,12 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### [Piko (Morphe)](https://github.com/crimera/piko) with [inotia00](https://gitlab.com/inotia00/x-shim) shim layer
 
 <details>
-<summary id="x-morphe-piko">Version: v12.5.0.release.0</summary>
+<summary id="x-morphe-piko">Version: v12.8.0-release.0</summary>
   
 <blockquote>
 
-[Release 2026-07-10](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260024)<br>
-Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.3.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.3)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.4.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.4)
 - Abstract shim layer
 - Abstract shim layer for method
 - Abstract shim layer for native library
@@ -680,8 +680,8 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260055)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -759,84 +759,73 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 
 #### [anddea (Morphe)](https://github.com/anddea/revanced-patches)
 <details>
-<summary id="youtube-morphe-anddea">Version: v21.26.360</summary>
+<summary id="youtube-morphe-anddea">Version: v20.51.39</summary>
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260055)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
-- Add to queue
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.6)
 - Alternative thumbnails
-- Ambient mode
+- Ambient mode control
+- Bypass URL redirects
 - Bypass image region restrictions
-- Bypass link redirects
-- Captions
 - Change form factor
-- Change header
+- Change player flyout menu toggles
+- Change share sheet
 - Change start page
-- Check watch history domain name resolution
-- Copy video link
-- Custom branding
-- Custom player overlay opacity
-- Disable DRC audio
+- Custom Shorts action buttons
+- Custom double tap length
+- Description components
 - Disable QUIC protocol
-- Disable Shorts resuming on startup
-- Disable double tap actions
-- Disable fullscreen gestures
+- Disable forced auto audio tracks
+- Disable forced auto captions
 - Disable haptic feedback
 - Disable layout updates
-- Disable player popup panels
-- Disable rolling number animations
+- Disable resuming Miniplayer on startup
+- Disable resuming Shorts on startup
 - Disable sign in to TV popup
-- Disable video codecs
-- Double tap to seek
-- Downloads
-- Enable debugging
-- Exit fullscreen mode
-- Force original audio
+- Disable splash animation
+- Enable debug logging
+- Enable gradient loading screen
+- Force player buttons background
+- Fullscreen components
 - GmsCore support
-- Hide Shorts components
+- Hide action buttons
 - Hide ads
-- Hide autoplay preview
-- Hide end screen cards
-- Hide end screen suggested video
-- Hide info cards
+- Hide comments components
+- Hide feed components
+- Hide feed flyout menu
 - Hide layout components
-- Hide player flyout menu components
-- Hide player overlay buttons
-- Hide related video overlay
-- Hide related videos
-- Hide timestamp
-- Hide video action buttons
-- Loop video
-- Media notification controls
+- Hide player buttons
+- Hide player flyout menu
+- Hook YouTube Music actions
+- Hook download actions
 - Miniplayer
-- Navigation bar
-- Network proxy
-- Open Shorts in regular player
-- Open channel of live avatar
+- Navigation bar components
 - Open links externally
-- Open system share sheet
-- Open videos fullscreen
-- Override YouTube Music buttons
-- Play all
-- Playback speed
-- Reload video
+- Overlay buttons
+- Player components
 - Remove background playback restrictions
 - Remove viewer discretion dialog
 - Return YouTube Dislike
+- Return YouTube Username
 - Sanitize sharing links
-- Save to watch later
-- Seekbar
-- Shorts autoplay
+- Seekbar components
+- Set transcript cookies
+- Shorts components
+- Snack bar components
 - SponsorBlock
 - Spoof app version
-- Spoof device dimensions
-- Spoof video streams
+- Spoof watch history
 - Swipe controls
 - Theme
-- Video quality
-- Voice over translation
+- Toolbar components
+- Translations for YouTube
+- Video playback
+- Voice Over Translation
+- Visual preferences icons for YouTube
+- Reload video
+- Settings for YouTube
 </blockquote>
 </details>
 ---
@@ -853,8 +842,8 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260055)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -880,7 +869,8 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 - Miniplayer previous and next buttons
 - Navigation bar
 - Network proxy
-- Permanent repeat
+- Remember repeat state
+- Remember shuffle state
 - Remove background playback restrictions
 - Sanitize sharing links
 - Scrobbling
@@ -895,46 +885,47 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### [anddea (Morphe)](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-music-morphe-anddea">Version: v9.26.51</summary>
+<summary id="youtube-music-morphe-anddea">Version: v9.15.51</summary>
   
 <blockquote>
 
-[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260055)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
-- Bypass certificate checks
-- Change header
-- Change miniplayer color
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.6)
+- Bitrate default value
+- Bypass image region restrictions
+- Certificate spoof
+- Change share sheet
 - Change start page
-- Check watch history domain name resolution
-- Custom branding
-- Disable DRC audio
+- Dark theme
+- Disable Cairo splash animation
 - Disable QUIC protocol
 - Disable dislike redirection
-- Downloads
-- Enable debugging
-- Enable exclusive audio playback
-- Enable forced miniplayer
-- Enable swipe to dismiss miniplayer
-- Force original audio
+- Disable forced auto audio tracks
+- Disable forced auto captions
+- Enable debug logging
+- Enable landscape mode
+- Flyout menu components
 - GmsCore support
+- Hide account components
+- Hide action bar components
 - Hide ads
-- Hide buttons
-- Hide filter bar
-- Hide flyout menu components
 - Hide layout components
-- Hide music action buttons
-- Miniplayer previous and next buttons
-- Navigation bar
-- Network proxy
-- Permanent repeat
+- Navigation bar components
+- Player components
 - Remove background playback restrictions
+- Remove viewer discretion dialog
+- Restore old style library shelf
+- Return YouTube Dislike
+- Return YouTube Username
 - Sanitize sharing links
-- Scrobbling
 - SponsorBlock
-- Spoof app version
-- Spoof video streams
-- Theme
+- Spoof app version for lyrics
 - Track crossfade
+- Translations for YouTube Music
+- Video playback
+- Watch history
+- Visual preferences icons for YouTube Music
+- Settings for YouTube Music
 </blockquote>
 </details>
 
@@ -952,8 +943,8 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 
 <blockquote>
 
-[Release 2026-07-14](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260061)<br>
-Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Change package name
 </blockquote>
 </details>
