@@ -225,9 +225,9 @@ fi
 #		favorite torrent client (BitTorrent only!), and artifacts will be downloaded automatically.
 #	EOF
 
-	printf -- "- "
-	file_link "Torrent" "${ARTIFACT_REF}.torrent"
-	echo
-	echo
-
-fi
+#	printf -- "- "
+#	file_link "Torrent" "${ARTIFACT_REF}.torrent"
+#	echo
+#	echo
+#
+#fi
