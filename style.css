@@ -3,12 +3,12 @@
     --bg-secondary: #000000;
     --bg-tertiary: #000000;
     --text-primary: #ffffff;
-    --text-secondary: #7f7f7f;
-    --accent: #00ffff;
-    --accent-danger: #ff0000;
-    --accent-success: #00ff00;
-    --accent-warning: #ffff00;
-    --border: #000000;
+    --text-secondary: #ffffff;
+    --accent: #58a6ff;
+    --accent-danger: #ff6b6b;
+    --accent-success: #3fb950;
+    --accent-warning: #d29922;
+    --border: #30363d;
     --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
@@ -40,6 +40,7 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family:
+        system-ui,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
@@ -136,7 +137,9 @@ header {
 header h1 {
     font-size: clamp(2.2rem, 5vw, 3.4rem);
     margin-bottom: 18px;
-    color: var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent-success));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
@@ -191,7 +194,7 @@ header .subtitle {
 
 /* --- Update Status Pill --- */
 .update-pill {
-    --pill-color: #00ff00;
+    --pill-color: #2ea043;
     /* Default green */
     display: inline-flex;
     align-items: center;
@@ -217,17 +220,17 @@ header .subtitle {
 
 /* The 3 Color States */
 .update-pill.success {
-    --pill-color: #00ff00;
+    --pill-color: #2ea043;
     /* GitHub Green */
 }
 
 .update-pill.checking {
-    --pill-color: #ffff00;
+    --pill-color: #d29922;
     /* GitHub Yellow */
 }
 
 .update-pill.error {
-    --pill-color: #ff0000;
+    --pill-color: #f85149;
     /* GitHub Red */
 }
 

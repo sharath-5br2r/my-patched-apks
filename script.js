@@ -11,22 +11,49 @@ const CONFIG = {
   // App Categories for the top filter buttons (maps filter-btn dataset to keywords)
   appCategories: {
     google: ["youtube", "google"],
-    meta: ["threads", "instagram", "messenger", "facebook", "!plusmessenger"],
     amazon: ["amazon", "primevideo"],
-    games: ["geode","levilauncher","fcl","eden","dolphin"],
+    games: ["geode", "levilauncher", "eden", "zalithlauncher", "dolphin" ],
+    meta: ["threads", "instagram", "messenger", "facebook", "!plusmessenger"],
     vpn: ["1111warp", "vpnify", "vpn"]
   },
 
   // Words ignored in the dynamic app filters (must be lowercase)
-  sharedAppWordStoplist: new Set(["messenger"]),
+  sharedAppWordStoplist: new Set(["messenger", "document", "reader", "launcher", "emulator"]),
 
   // Known tokens indicating a patch name starts (must be lowercase)
-  knownPatchTokens: new Set(["revanced", "morphe", "anddea", "rvx", "jasonmu1994", "paresh", "piko", "binarymend", "hoodles", "xtra", "revenge", "hooman", "icysymmetra", "sdk29", "pubg", "bgmi", "pubgkr", "pubgvn", "sign", "gfp", "cs" , "cod"]),
+  knownPatchTokens: new Set([
+    "revanced",
+    "morphe",
+    "npatch",
+    "cs",
+    "signed",
+    "viamorphe",
+    "morphehooman",
+    "morpherushiranpise",
+    "npatchrevenge",
+    "morpheparesh",
+    "morphegboard",
+    "morphepiko",
+    "bgmi",
+    "morphebinarymend",
+    "morphehoodles",
+    "morphextra",
+    "pubgvn",
+    "morpheanddea",
+    "codm",
+  ]),
 
   // Known tokens indicating a variant (must be lowercase)
   variantKeywords: new Set([
+    "exp",
     "root",
     "gfp",
+    "chromeos",
+    "optimized",
+    "pubgkr",
+    "pubgvn",
+    "bgmi",
+    "codm",
   ]),
 
   // Known architectures (used for regex parsing)
@@ -40,16 +67,14 @@ const CONFIG = {
     "x86_64",
     "x86",
     "universal",
-    "all"
+    "all",
   ],
 
   // Brand name overrides (keys must be lowercase)
   brandOverrides: {
-    adm: "Advanced Download Manager",
     youtube: "YouTube",
     revanced: "ReVanced",
-    morphe: "Morphe",
-    ic: "TikTok",
+    tiktok: "TikTok",
     soundcloud: "SoundCloud",
     xrecorder: "XRecorder",
     calcnote: "CalcNote",
@@ -58,7 +83,7 @@ const CONFIG = {
     github: "GitHub",
     vpn: "VPN",
     rvx: "ReVanced Extended",
-    anddea: "ReVanced Advanced",
+    anddea: "ReVanced Extended(anddea)",
     exp: "Experimental",
     macrodroid: "MacroDroid",
     ticktick: "TickTick",
@@ -73,7 +98,7 @@ const CONFIG = {
     hellochinese: "HelloChinese: Learn Chinese",
     gplay: "Google Play",
     foss: "FOSS",
-    gboard: "Google Keyboard",
+    gboard: "Gboard",
     wps: "WPS",
     rar: "RAR",
     adguard: "AdGuard",
@@ -82,27 +107,6 @@ const CONFIG = {
     camscanner: "CamScanner",
     inshorts: "Inshorts - News in 60 words",
     warp: "1.1.1.1 + WARP",
-    x: "X/Twitter",
-    hoodles: "hoo-dles patches for Morphe",
-    jiohotstar: "JioHotstar",
-    pubg: "PUBG Mobile Spoof",
-    bgmi: "Battlegrounds Mobile India Spoof",
-    cod: "Call of Duty Mobile Spoof",
-    pubgkr: "PUBG Mobile KR Spoof",
-    pubgvn: "PUBG Mobile VN Spoof",
-    sdk29: "SDK 29 Storage fix",
-    cs: "Custom Storage",
-    pr: "Pull Request",
-    gfp: "Game For Peace Spoof",
-    dolphin: "Dolphin Emulator",
-    eden: "Eden Nightly",
-    xtra: "Xtra patches for Morphe",
-    revenge: "Revenge patches",
-    hooman: "Hooman's patches for Morphe",
-    icysymmetra: "TikTok patches for Morphe",
-    geode: "Geode Launcher",
-    winlator: "Winlator Ludashi",
-    fcl: "Fold Craft Launcher",
     acalendar: "aCalendar",
     at4k: "AT4K",
     androidtv: "Android TV",
@@ -115,10 +119,26 @@ const CONFIG = {
     myfitnesspal: "MyFitnessPal",
     terabox: "TeraBox",
     plutotv: "PlutoTV",
-    binarymend: "binarymend patches for Morphe",
-    paresh: "Paresh patches for Morphe",
-    rushiranpise: "Rushir patches for Morphe",
-  
+    accuweather: "AccuWeather",
+    pixiv: "pixiv",
+    mxplayer: "MX Player",
+    adm: "Advanced Download Manager",
+    dolphin: "Dolphin Emulator",
+    eden: "Eden Emulator",
+    geode: "Geode Launcher",
+    jiohotstar: "JioHotstar",
+    levilauncher: "LeviLauncher",
+    winlator: "Winlator Ludashi",
+    x: "X/Twitter",
+    viamorphe: "via Morphe",
+    gfp: "Game for Peace Spoof",
+    optimized: "Genshin Impact Spoof",
+    chromeos: "ChromeOS/x86",
+    codm: "Call of Duty Mobile Spoof",
+    pubgkr: "PUBG Mobile KR Spoof",
+    pubgvn: "PUBG Mobile VN Spoof",
+    bgmi: "Battlegrounds Mobile India Spoof"
+
   },
 
   // Map app slugs to true Android Package IDs for Obtainium
@@ -127,58 +147,52 @@ const CONFIG = {
   appIds: {
     advanceddownloadmanager: "com.dv.adm",
     "1111warp": "com.cloudflare.onedotonedotonedotone",
-    amazonalexa: "com.amazon.dee.app",
-    amazonindia: "in.amazon.mShop.android.shopping",
-    adobeacrobat: "com.adobe.reader",
 
     acalendar: "org.withouthat.acalendar",
     adguard: "com.adguard.android",
     adobeacrobat: "com.adobe.reader",
     adobelightroom: "com.adobe.lrmobile",
     adobephotoshopmix: "com.adobe.psmobile",
+    accuweather: "com.accuweather.android",
+    alldocumentreader: "alldocumentsreader.docuemntviewer",
+    amazonalexa: "com.amazon.dee.app",
+    amazonindia: "in.amazon.mShop.android.shopping",
+    at4klauncher: "com.overdevs.at4k",
     automate: "com.llamalab.automate",
     autosync: "com.ttxapps.autosync",
-    at4klauncher: "com.overdevs.at4k",
 
     batteryguru: "com.paget96.batteryguru",
+    betamaniac: "it.mirko.beta",
 
     calcnote: "com.appumstudios.calcnote",
     camscanner: "com.intsig.camscanner",
     cricbuzz: "com.cricbuzz.android",
     cryptomator: "org.cryptomator",
-
     documentscanner: "com.cv.docscanner",
+    duolingo: "com.duolingo",
+    disneyplus: "com.disney.disneyplus",
+    discord: "com.discord",
     dolphinemulator: {
       default: "org.dolphinemu.dolphinemu",
       gameforpeacespoof: "com.tencent.tmgp.pubgmhd",
     },
-    duolingo: "com.duolingo",
-    edennightly: {
-      default: "dev.eden_emulator.nightly",
-      pubg: "com.tencent.ig",
+    edenemulator: {
+      default: "dev.eden_emulator.eden",
       optimized: "com.miHoYo.Yuanshen",
     },
-    disneyplus: "com.disney.disneyplus",
-    discord: "com.discord",
-
     eyeconcalleridspamblock: "com.eyecon.global",
 
     facebook: "com.facebook.katana",
     fingnetworktools: "com.overlook.android.fing",
-    foldcraftlauncher: {
-      default: "com.tungsten.fcl",
-      cod: "com.activision.callofduty.shooter",
-    },
     geodelauncher: {
       default: "com.geode.launcher",
-      pubgkr: "com.pubg.krmobile"
+      pubgmobilekrspoof: "com.pubg.krmobile"
     },
-
     github: "com.github.android",
     goodreads: "com.goodreads",
-    googlekeyboard:{
+    gboard:{
       default: "com.google.android.inputmethod.latin",
-      jasonwu1994: "dev.jason.com.android.inputmethod.latin",
+      gboard: "dev.jason.com.android.inputmethod.latin",
     },
     googlenews: "com.google.android.apps.magazines",
     googlephotos: {
@@ -198,13 +212,13 @@ const CONFIG = {
     inshortsnewsin60words: "com.nis.app",
     imdb: "com.imdb.mobile",
     jiohotstar: "in.startv.hotstar",
-    levilauncherunlocked: {
-      default: "org.levimc.launcher",
-      bgmi: "com.pubg.imobile",
-    },
 
     komoothikebikerun: "de.komoot.android",
 
+    levilauncherunlocked: {
+      default: "org.levimc.launcher",
+      battlegroundsmobileindiaspoof: "com.pubg.imobile",
+    },
     luminawallpapers: "com.lumina.wallpapers",
 
     macrodroid: "com.arlosoft.macrodroid",
@@ -212,8 +226,10 @@ const CONFIG = {
     merriamwebsterdictionary: "com.merriamwebster",
     messenger: "com.facebook.orca",
     microsoftlens: "com.microsoft.office.officelens",
+    microsoftedge: "com.microsoft.emmx",
     moonreader: "com.flyersoft.moonreader",
     moneymanager: "com.realbyteapps.moneymanagerfree",
+    mxplayer: "com.mxtech.videoplayer.pro",
     myfitnesspal: "com.myfitnesspal.android",
 
     niagaralauncher: "bitpit.launcher",
@@ -224,6 +240,7 @@ const CONFIG = {
     peacock: "com.peacocktv.peacockandroid",
     photomath: "com.microblink.photomath",
     pinterest: "com.pinterest",
+    pixiv: "jp.pxv.android",
     plusmessenger: "org.telegram.plus",
     plutotv: { androidtv: "tv.pluto.android" },
     podcastaddict: "com.bambuna.podcastaddict",
@@ -250,6 +267,7 @@ const CONFIG = {
       foss: "org.telegram.messenger.web",
     },
     terabox: "com.dubox.drive",
+    theweatherchannel: "com.weather.Weather",
     threads: "com.instagram.barcelona",
     ticktick: "com.ticktick.task",
     tiktok: "com.zhiliaoapp.musically",
@@ -269,17 +287,16 @@ const CONFIG = {
     vpnify: "com.vpn.free.hotspot.secure.vpnify",
 
     rar: "com.rarlab.rar",
-
-    wallcraft: "com.wallpaperscraft.wallpaper",
-    waze: "com.waze",
     winlatorludashi: {
       default: "com.winlator.cmod",
-      pubgvn: "com.vng.pubgmobile",
-    },
+      pubgmobilevnspoof: "com.vng.pubgmobile",
+    }, 
+    wallcraft: "com.wallpaperscraft.wallpaper",
+    waze: "com.waze",
     windscribevpn: "com.windscribe.vpn",
     wpsoffice: "cn.wps.moffice_eng",
 
-    twitter: "com.twitter.android",
+    xtwitter: "com.twitter.android",
 
     xodopdfreadereditor: "com.xodo.pdf.reader",
     xrecorder: "videoeditor.videorecorder.screenrecorder",
@@ -298,20 +315,19 @@ const CONFIG = {
       morphe: "app.morphe.android.apps.youtube.music",
       default: "com.google.android.apps.youtube.music",
     },
-    xtwitter: "com.twitter.android",
     zalithlauncher2plus: {
       default: "com.movtery.zalithlauncher.v2",
-      cod: "com.activision.callofduty.shooter",
+      callofdutymobilespoof: "com.activision.callofduty.shooter",
     }
   },
 
   // App-specific notices to display on App Cards
   appNotices: [
     {
-      triggers: ["youtube", "google"], // App name keywords that trigger this notice
+      triggers: ["youtube", "google", "gboard"], // App name keywords that trigger this notice
       className: "microg-note", // Defines the CSS prefix
       title: "Login Issue",
-      text: "Signing into Google account on APK (not Module) requires MicroG. Please install one from below before trying to sign in.",
+      text: "Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.",
       links: [
         {
           label: "Morphe",
@@ -324,23 +340,43 @@ const CONFIG = {
       className: "amazon-note",
       title: "Signing Compatibiliy",
       text: "Due to a modification in hoodles patch, all Amazon Apps are needed to have the same signature. So install the apps from here which is resigned for compatibility.",
-      links: [
-        {
-          label: "Amazon Apps",
-          url: "."
-        }
-      ]
-      
+    },
+    {
+      triggers: ["geode"],
+      className: "geode-note",
+      title: "Reqirements",
+      text: "A copy of Geometry Dash is needed to launch Geode Launcher. Please install it from Play Store or any other source(cracked supported) before trying to launch Geode.",
+    },
+    {
+      triggers: ["levilauncher"],
+      className: "levilauncher-note",
+      title: "Reqirements",
+      text: "A copy of Minecraft Bedrock Edition is needed to launch LeviLauncher. Please install it from Play Store or any other source(cracked supported) before trying to launch LeviLauncher. Additionally you need APKs for other versions if you want to launch",
     },
     {
       triggers: ["twitter"],
-      className: "x-login-note",
+      className: "twitter-login-note",
       title: "Login Issue",
-      text: "Since October 2025, X has started checking whether the app is modified or if the phone integrity fails during login. These checks are server-side, not client-side.",
+      text: "Since October 2025, Twitter has started checking whether the app is modified or if the phone integrity fails during login. These checks are server-side, not client-side.",
       links: [
         { label: "Workarounds", url: "https://t.me/pikopatches/1/59772" },
       ],
     },
+    {
+      triggers: ['dolphin', 'eden', 'winlator', 'levilauncher', 'geode', 'zalithlauncher'],
+      className: "spoofing-note",
+      title: "About Package Spoofing",
+      text: "These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to procced. "
+    },
+    {
+      triggers: ['dolphin'],
+      className: "customstorage-note",
+      title: "Custom Storage Location Patch",
+      text: "Due to a patch that allows custom storage location, You will have to manually grant storage permission to the app from settings or use a file manager to move files.",
+      links: [
+        { label: "Source Code", url: "https://github.com/sharath-5br2r/DolphinCS-master" }
+      ]
+    }
   ],
 };
 
@@ -1135,22 +1171,26 @@ function renderNextChunk() {
 
   currentVisibleCount += RENDER_CHUNK_SIZE;
 }
-
 function createNoticeMarkup(notice) {
-  const linksMarkup = notice.links
-    .map(
-      (link) =>
-        `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`,
-    )
-    .join("\n                    ");
+  // Safe default fallback: if notice.links is missing, use an empty array
+  const links = notice.links || [];
+  
+  // Only render the wrapper div if there are actual links to display
+  const linksMarkup = links.length > 0 
+    ? `
+            <div class="app-notice-links">
+                ${links
+                  .map(
+                    (link) => `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`,
+                  )
+                  .join("\n                    ")}
+            </div>`
+    : ""; // Drops the empty container completely
 
   return `
         <div class="app-notice ${escapeHtml(notice.className)}">
             <div class="app-notice-title">${escapeHtml(notice.title)}</div>
-            <div class="app-notice-text">${escapeHtml(notice.text)}</div>
-            <div class="app-notice-links">
-                ${linksMarkup}
-            </div>
+            <div class="app-notice-text">${escapeHtml(notice.text)}</div>${linksMarkup}
         </div>
     `;
 }
