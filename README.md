@@ -86,7 +86,7 @@ Official Dolphin Emulator builds are available on [Dolphin Emulator](https://dol
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="adobe-acrobat-hooman">Version: v26.6.1</summary>
+<summary id="adobe-acrobat-morphe-hooman">Version: v26.6.1</summary>
 
 <blockquote>
 
@@ -101,10 +101,10 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 
 `com.dv.adm`
 
-#### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
+#### [Hooman's patches (Morphe)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="adm-hooman">Version: v14.0.39</summary>
+<summary id="adm-morphe-hooman">Version: v14.0.39</summary>
 
 <blockquote>
 
@@ -119,10 +119,10 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 
 `in.amazon.mShop.android.shopping`
 
-#### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
+#### [Rushi's patches (Morphe)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="amazon-india-rushiranpise">Version: v32.12.4.300</summary>
+<summary id="amazon-india-morphe-rushiranpise">Version: v32.12.4.300</summary>
 
 <blockquote>
 
@@ -161,10 +161,10 @@ Patches:
 
 `com.discord`
 
-#### [Revenge (revenge-mod)](https://github.com/revenge-mod/revenge-xposed)
+#### [Revenge (revenge-mod)](https://github.com/revenge-mod/revenge-xposed) via [Npatch](https://github.com/7723mod/NPatch)
 
 <details>
-<summary id="discord-revenge">Version: v336.10.Stable</summary>
+<summary id="discord-npatch-revenge">Version: v336.10.Stable</summary>
 
 <blockquote>
 
@@ -183,10 +183,10 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 
 `com.overlook.android.fing`
 
-#### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
+#### [Paresh patches (Morphe)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="fing-paresh">Version: v12.12.0</summary>
+<summary id="fing-morphe-paresh">Version: v12.12.0</summary>
   
 <blockquote>
 
@@ -204,10 +204,10 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 
 `com.github.android`
 
-#### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
+#### [hoo-dles patches (Morphe)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="github-hoodles">Version: v1.267.0</summary>
+<summary id="github-morphe-hoodles">Version: v1.267.0</summary>
   
 <blockquote>
 
@@ -224,7 +224,7 @@ Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-
 
 #### Spoof to PUBG:KR via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 <details>
-<summary id="geode-pubgkr">Version: v1.8.0</summary>
+<summary id="geode-viamorphe-pubgkr">Version: v1.8.0</summary>
 
 <blockquote>
 
@@ -240,10 +240,10 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 
 `com.google.android.inputmethod.latin`
 
-#### [Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches) + [rushiranpise GmsCore patch](https://github.com/rushiranpise/morphe-patches)
+#### [Gboard patches for Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches) + [rushiranpise GmsCore patch](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="gboard-jasonwu1994">Version: v17.0.10.880768217-release-arm64-v8a</summary>
+<summary id="gboard-morphe-gboard">Version: v17.0.10.880768217-release-arm64-v8a</summary>
   
 <blockquote>
 
@@ -274,9 +274,9 @@ Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-
 </blockquote>
 </details>
 
-#### [Morphe (jasonwu1994) Root](https://github.com/jasonwu1994/Gboard-patches)
+#### [Gboard patches for Morphe (jasonwu1994) Root](https://github.com/jasonwu1994/Gboard-patches)
 <details>
-<summary id="gboard-jasonwu1994-root">Version: v17.0.10.880768217-release-arm64-v8a</summary>
+<summary id="gboard-morphe-gboard-moroot">Version: v17.0.10.880768217-release-arm64-v8a</summary>
   
 <blockquote>
 
@@ -314,10 +314,10 @@ Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-
 `com.instagram.android`
 
 
-#### [Morphe (Piko)](https://github.com/crimera/piko)
+#### [Piko (Morphe)](https://github.com/crimera/piko)
 
 <details>
-<summary id="instagram-piko">Version: v435.0.0.37.76</summary>
+<summary id="instagram-morphe-piko">Version: v435.0.0.37.76</summary>
 
 <blockquote>
 
@@ -384,10 +384,10 @@ Patches: [crimera/patches-3.8.0-dev.4.mpp](https://github.com/crimera/piko/relea
 
 `in.startv.hotstar`
 
-#### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
+#### [Paresh patches (Morphe)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="jiohotstar-paresh">Version: v26.04.27.10</summary>
+<summary id="jiohotstar-morphe-paresh">Version: v26.04.27.10</summary>
 
 <blockquote>
 
@@ -412,7 +412,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### Spoof to BGMI via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="levilauncher-unlocked-bgmi">Version: v1.5.4.02</summary>
+<summary id="levilauncher-unlocked-viamorphe-bgmi">Version: v1.5.4.02</summary>
   
 <blockquote>
 
@@ -428,10 +428,10 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 
 `com.flyersoft.moonreader`
 
-#### [Morphe (binarymend)](https://github.com/binarymend/morphe-patches)
+#### [binarymend patches (Morphe)](https://github.com/binarymend/morphe-patches)
 
 <details>
-<summary id="moonplus-reader-binarymend">Version: v10.5</summary>
+<summary id="moonplus-reader-morphe-binarymend">Version: v10.5</summary>
   
 <blockquote>
 
@@ -448,10 +448,10 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 `com.amazon.avod.thirdpartyclient` `com.amazon.amazonvideo.livingroom`
 
-#### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
+#### [hoo-dles patches (Morphe)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="prime-video-hoodles">Version: v3.0.463</summary>
+<summary id="prime-video-morphe-hoodles">Version: v3.0.463</summary>
 
 <blockquote>
 
@@ -468,10 +468,10 @@ Patches: [hoo-dles/patches-1.39.0-dev.4.mpp](https://github.com/hoo-dles/morphe-
 
 `ch.protonvpn.android`
 
-#### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
+#### [Paresh patches (Morphe)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="proton-vpn-paresh">Version: v5.19.16.0</summary>
+<summary id="proton-vpn-morphe-paresh">Version: v5.19.16.0</summary>
   
 <blockquote>
 
@@ -491,10 +491,10 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 
 `org.zwanoo.android.speedtest`
 
-#### [Morphe (BholeyKaBhakt)](https://github.com/BholeyKaBhakt/revanced-patches-xtra)
+#### [Xtra Patches for Morphe (BholeyKaBhakt)](https://github.com/BholeyKaBhakt/revanced-patches-xtra)
 
 <details>
-<summary id="speedtest-xtra">Version: v7.0.4</summary>
+<summary id="speedtest-morphe-xtra">Version: v7.0.4</summary>
   
 <blockquote>
 
@@ -511,10 +511,10 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 
 `app.symfonik.music.player`
 
-#### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
+#### [Hooman's patches (Morphe)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="symfonium-hooman">Version: v14.1.0</summary>
+<summary id="symfonium-morphe-hooman">Version: v14.1.0</summary>
 
 <blockquote>
 
@@ -531,10 +531,10 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 
 `com.zhiliaoapp.musically`
 
-#### [Morphe (icysymmetra)](https://github.com/icysymmetra/tiktok-patches-for-morphe)
+#### [TikTok Patches for Morphe (icysymmetra)](https://github.com/icysymmetra/tiktok-patches-for-morphe)
 
 <details>
-<summary id="tiktok-icysymmetra">Version: v43.8.3</summary>
+<summary id="tiktok-morphe-tiktok">Version: v43.8.3</summary>
   
 <blockquote>
 
@@ -566,7 +566,7 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 #### Spoofed to PUBG:VN via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="winlator-pubgvn">Version: vv3.1.h</summary>
+<summary id="winlator-viamorphe-pubgvn">Version: vv3.1.h</summary>
 
 <blockquote>
 
@@ -582,10 +582,10 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 
 `com.twitter.android`
 
-#### [Morphe (Piko)](https://github.com/crimera/piko) with [inotia00](https://gitlab.com/inotia00/x-shim) shim layer
+#### [Piko (Morphe)](https://github.com/crimera/piko) with [inotia00](https://gitlab.com/inotia00/x-shim) shim layer
 
 <details>
-<summary id="x-piko">Version: v12.5.0.release.0</summary>
+<summary id="x-morphe-piko">Version: v12.5.0.release.0</summary>
   
 <blockquote>
 
@@ -673,10 +673,10 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
 
 `com.google.android.youtube`
 
-#### [Morphe](https://github.com/MorpheApp/morphe-patches)
+#### [Morphe Experimental](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-morphe">Version: v21.26.360</summary>
+<summary id="youtube-morphe-exp">Version: v21.26.360</summary>
   
 <blockquote>
 
@@ -757,6 +757,88 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 </blockquote>
 </details>
 
+#### [anddea (Morphe)](https://github.com/anddea/revanced-patches)
+<details>
+<summary id="youtube-morphe-anddea">Version: v21.26.360</summary>
+  
+<blockquote>
+
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260055)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
+- Add to queue
+- Alternative thumbnails
+- Ambient mode
+- Bypass image region restrictions
+- Bypass link redirects
+- Captions
+- Change form factor
+- Change header
+- Change start page
+- Check watch history domain name resolution
+- Copy video link
+- Custom branding
+- Custom player overlay opacity
+- Disable DRC audio
+- Disable QUIC protocol
+- Disable Shorts resuming on startup
+- Disable double tap actions
+- Disable fullscreen gestures
+- Disable haptic feedback
+- Disable layout updates
+- Disable player popup panels
+- Disable rolling number animations
+- Disable sign in to TV popup
+- Disable video codecs
+- Double tap to seek
+- Downloads
+- Enable debugging
+- Exit fullscreen mode
+- Force original audio
+- GmsCore support
+- Hide Shorts components
+- Hide ads
+- Hide autoplay preview
+- Hide end screen cards
+- Hide end screen suggested video
+- Hide info cards
+- Hide layout components
+- Hide player flyout menu components
+- Hide player overlay buttons
+- Hide related video overlay
+- Hide related videos
+- Hide timestamp
+- Hide video action buttons
+- Loop video
+- Media notification controls
+- Miniplayer
+- Navigation bar
+- Network proxy
+- Open Shorts in regular player
+- Open channel of live avatar
+- Open links externally
+- Open system share sheet
+- Open videos fullscreen
+- Override YouTube Music buttons
+- Play all
+- Playback speed
+- Reload video
+- Remove background playback restrictions
+- Remove viewer discretion dialog
+- Return YouTube Dislike
+- Sanitize sharing links
+- Save to watch later
+- Seekbar
+- Shorts autoplay
+- SponsorBlock
+- Spoof app version
+- Spoof device dimensions
+- Spoof video streams
+- Swipe controls
+- Theme
+- Video quality
+- Voice over translation
+</blockquote>
+</details>
 ---
 
 
@@ -764,10 +846,56 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 
 `com.google.android.apps.youtube.music`
 
-#### [Morphe](https://github.com/MorpheApp/morphe-patches)
+#### [Morphe Experimental](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-music-morphe">Version: v9.26.51</summary>
+<summary id="youtube-music-morphe-exp">Version: v9.26.51</summary>
+  
+<blockquote>
+
+[Release 2026-07-13](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260055)<br>
+Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0-dev.3)
+- Bypass certificate checks
+- Change header
+- Change miniplayer color
+- Change start page
+- Check watch history domain name resolution
+- Custom branding
+- Disable DRC audio
+- Disable QUIC protocol
+- Disable dislike redirection
+- Downloads
+- Enable debugging
+- Enable exclusive audio playback
+- Enable forced miniplayer
+- Enable swipe to dismiss miniplayer
+- Force original audio
+- GmsCore support
+- Hide ads
+- Hide buttons
+- Hide filter bar
+- Hide flyout menu components
+- Hide layout components
+- Hide music action buttons
+- Miniplayer previous and next buttons
+- Navigation bar
+- Network proxy
+- Permanent repeat
+- Remove background playback restrictions
+- Sanitize sharing links
+- Scrobbling
+- SponsorBlock
+- Spoof app version
+- Spoof video streams
+- Theme
+- Track crossfade
+</blockquote>
+</details>
+
+#### [anddea (Morphe)](https://github.com/MorpheApp/morphe-patches)
+
+<details>
+<summary id="youtube-music-morphe-anddea">Version: v9.26.51</summary>
   
 <blockquote>
 
@@ -820,7 +948,7 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### Spoofed to CODM via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="zalith-launcher-2-plus-cod">Version: v2.4.9_hotfix1</summary>
+<summary id="zalith-launcher-2-plus-viamorphe-codm">Version: v2.4.9_hotfix1</summary>
 
 <blockquote>
 
@@ -845,4 +973,5 @@ This automated builder would not be possible without the incredible work and ded
 - **The Patch Maintainers:** Huge appreciation to the development teams behind **ReVanced**, **MorpheApp**, **Anddea**, **RVX**, **Piko**, **De-Vanced**, and all the other independent developers who spend countless hours reverse-engineering, updating, and keeping these patches alive for everyone.
 
 _If you enjoy using these builds, please consider starring their upstream repositories and original apps and supporting the original patch developers!_
+
 
