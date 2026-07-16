@@ -59,7 +59,8 @@ jobs:
       - name: Resolve build context
         id: context
         run: bash .github/scripts/build_resolve_context.sh "${{ env.CONFIG_FILE }}"
-
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Resolve version code
         id: version
         env:
