@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 CONFIG="$1"
-
+bash ./scripts/morphe-experimental.sh
+bash ./scripts/configgen.sh
 if [ ! -f "$CONFIG" ]; then
   echo "::error::Config file not found: $CONFIG"
   exit 1
