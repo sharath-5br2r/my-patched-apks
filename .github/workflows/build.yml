@@ -79,6 +79,8 @@ jobs:
           set -euo pipefail
           bash ./scripts/prep_build_predl.sh
           bash ./build.sh "${{ steps.context.outputs.CONFIG_FILE }}"
+          cat *.json
+          cat *.md
 
       - name: Get output
         id: get_output
