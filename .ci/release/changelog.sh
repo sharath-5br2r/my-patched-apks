@@ -203,27 +203,27 @@ if falsy "$DISABLE_ANDROID"; then
 	
 fi
 
-cat <<EOF
+#cat <<EOF
 
-## macOS
+# ## macOS
 
-macOS comes in a DMG image. These builds are currently experimental, and you should expect major graphical glitches and crashes.
-In order to run the app, you *may* need to go to System Settings -> Privacy & Security -> Security -> Allow untrusted app.
+# macOS comes in a DMG image. These builds are currently experimental, and you should expect major graphical glitches and crashes.
+# In order to run the app, you *may* need to go to System Settings -> Privacy & Security -> Security -> Allow untrusted app.
 
-EOF
+# EOF
 
-printf -- "- "
-file_link "macOS DMG" "macOS-${ARTIFACT_REF}.dmg"
-echo
+# printf -- "- "
+# file_link "macOS DMG" "macOS-${ARTIFACT_REF}.dmg"
+# echo
 
-if tagged; then
-	cat <<-EOF
+#if tagged; then
+#	cat <<-EOF
 
-		## Torrent
+#		## Torrent
 
-		A torrent containing all artifacts. To use this, simply download the torrent and import it into your
-		favorite torrent client (BitTorrent only!), and artifacts will be downloaded automatically.
-	EOF
+#		A torrent containing all artifacts. To use this, simply download the torrent and import it into your
+#		favorite torrent client (BitTorrent only!), and artifacts will be downloaded automatically.
+#	EOF
 
 	printf -- "- "
 	file_link "Torrent" "${ARTIFACT_REF}.torrent"
