@@ -61,31 +61,6 @@ jobs:
         run: |
           file=$(ls Eden-Android-*-optimized.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-optimized\.apk/eden-optimized-v\1-arm64-v8a.apk/')"
           file=$(ls Eden-Android-*-chromeos.apk) && mv "$file" "$(echo "$file" | sed -E 's/Eden-Android-(.*)-chromeos\.apk/eden-chromeos-v\1-x86_64.apk/')"
-
-      # - name: Delete Previous PR Number
-      #   if: ${{ env.RELEASE_PR == '1' }}
-      #   run: gh release delete "$FORGEJO_PR_NUMBER" --repo "$RELEASE_REPO" --cleanup-tag -y
-      #   continue-on-error: true
-      - name: Release
-        id: release_notes
-        if: ${{ always() }}
-        run: ./.ci/release.sh
-      # - name: Release
-      #   id: release
-      #   uses: softprops/action-gh-release@v2.5.0
-      #   with:
-      #     #name: "${{ env.GITHUB_TITLE }}"
-      #     tag_name: ${{ env.GITHUB_TAG }}
-      #     #repository: ${{ env.RELEASE_REPO }}
-      #     body_path: ./changelog.md
-      #     #token: ${{ env.GH_TOKEN }}
-      #     prerelease: false
-      #     draft: ${{ inputs.build-id == 'tag' }}
-      #     generate_release_notes: false
-      #     make_latest: true
-      #     files: |
-      #       artifacts/*
-
       - name: Get Next Version Code
         id: version
         run: |
@@ -105,6 +80,33 @@ jobs:
           else
               export NEXT_VER_CODE="$NEXT_VER_CODE"
           fi
+      # - name: Delete Previous PR Number
+      #   if: ${{ env.RELEASE_PR == '1' }}
+      #   run: gh release delete "$FORGEJO_PR_NUMBER" --repo "$RELEASE_REPO" --cleanup-tag -y
+      #   continue-on-error: true
+      - name: Release
+        id: release_notes
+        if: ${{ always() }}
+        run: ./.ci/release.sh
+        env:
+         NEXT_VER_CODE: ${{ steps.version.outputs.NEXT_VER_CODE }}
+      # - name: Release
+      #   id: release
+      #   uses: softprops/action-gh-release@v2.5.0
+      #   with:
+      #     #name: "${{ env.GITHUB_TITLE }}"
+      #     tag_name: ${{ env.GITHUB_TAG }}
+      #     #repository: ${{ env.RELEASE_REPO }}
+      #     body_path: ./changelog.md
+      #     #token: ${{ env.GH_TOKEN }}
+      #     prerelease: false
+      #     draft: ${{ inputs.build-id == 'tag' }}
+      #     generate_release_notes: false
+      #     make_latest: true
+      #     files: |
+      #       artifacts/*
+
+
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
         with:
