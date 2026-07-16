@@ -66,6 +66,18 @@ Thank you to everyone who helps keep this project alive!
 
 ## Download Apps
 
+### [DolphinCS-main](https://github.com/sharath-5br2r/DolphinCS-main) builds are published here and is available on releases here and website.
+
+Official Dolphin Emulator builds are available on [Dolphin Emulator](https://dolphin-emu.org/download/)
+
+`com.dolphinemu.dolphinemu`
+
+---
+
+### [Eden Emulator](https://eden-emu.dev) is also automatically built [here](https://github.com/sharath-5br2r/Eden-Workflow) with only two variants(Optmised/Genshin Spoof and ChromeOS/x86_64) at every 4 hours and uploaded to the releases and website.
+
+`dev.eden.eden_emulator`
+
 ---
 
 ### [Adobe Acrobat](https://play.google.com/store/apps/details?id=com.adobe.reader)
@@ -164,21 +176,6 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 
 
 
----
-
-### [Eden Nightly](https://eden-emu.dev)
-
-`dev.eden.eden_emulator.nightly`
-
-#### PUBG Spoof via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
-<details>
-<summary id="eden-pubg">Version: v0</summary>
-
-<blockquote>
-[Release 2026-07-05](https://github.com/nullcpy/rvb/releases/tag/260003)<br>
-Patches: Spoofed to PUBG `com.tencent.ig` to enhance performance
-</blockquote>
-</details>
 
 ---
 

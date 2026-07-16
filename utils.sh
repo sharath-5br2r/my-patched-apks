@@ -614,7 +614,7 @@ merge_splits() {
 
 _fs_8191_get() {
 	local url=$1 referer=${2:-}
-	local max_retries=2 attempt
+	local max_retries=4 attempt
 	local fs_url="${FLARESOLVERR_URL:-http://localhost:8191}/v1"
 	local extra_headers=""
 	[ -n "$referer" ] && extra_headers=",\"headers\":{\"Referer\":\"$referer\"}"
@@ -640,7 +640,7 @@ _fs_8191_get() {
       
 _fs_8192_get() {
 	local url=$1 referer=${2:-}
-	local max_retries=2 attempt
+	local max_retries=4 attempt
 	local fs_url="${FLARESOLVERR_URL:-http://localhost:8192}/v1"
 	local extra_headers=""
 	[ -n "$referer" ] && extra_headers=",\"headers\":{\"Referer\":\"$referer\"}"
@@ -665,7 +665,7 @@ _fs_8192_get() {
 }
 _cfb_get() {
 	local url=$1 referer=${2:-}
-	local max_retries=3
+	local max_retries=4
 	local attempt
     
 	for attempt in $(seq 1 $max_retries); do

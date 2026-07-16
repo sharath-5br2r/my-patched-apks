@@ -1,17 +1,12 @@
 #!/bin/bash
 mkdir -p ./downloads
 # Download Apps
-UPDATE_EDEN=$(jq -r '.UPDATE_EDEN // false' .github/configs/predl_updates.json) || UPDATE_EDEN="false"
 UPDATE_WINLATOR=$(jq -r '.UPDATE_WINLATOR // false' .github/configs/predl_updates.json) || UPDATE_WINLATOR="false"
 UPDATE_ZALITH_LAUNCHER=$(jq -r '.UPDATE_ZALITH_LAUNCHER // false' .github/configs/predl_updates.json) || UPDATE_ZALITH_LAUNCHER="false"
 UPDATE_GEODE=$(jq -r '.UPDATE_GEODE // false' .github/configs/predl_updates.json) || UPDATE_GEODE="false"
 UPDATE_LEVILAUNCHER=$(jq -r '.UPDATE_LEVILAUNCHER // false' .github/configs/predl_updates.json) || UPDATE_LEVILAUNCHER="false"
 
-if [[ $UPDATE_EDEN = "true" ]] || [[ $GITHUB_EVENT_NAME = "workflow_dispatch" ]] || [[ $GITHUB_ACTIONS != "true" ]] ; then
-  EDEN_ID=$(gh run list -R Eden-CI/Workflow -w nightly.yml --status success --limit 1 --json databaseId -q ".[0].databaseId")
-  echo -e "\e[32m[+] Downloading Eden\e[0m"
-  gh api "/repos/Eden-CI/Workflow/actions/artifacts/$(gh api repos/Eden-CI/Workflow/actions/runs/$EDEN_ID/artifacts --jq '.artifacts[] | select(.name| contains("standard.apk")) | .id')/zip" > downloads/eden.apk  
-fi
+
 if [[ $UPDATE_WINLATOR = "true" ]] || [[ $GITHUB_EVENT_NAME = "workflow_dispatch" ]] || [[ $GITHUB_ACTIONS != "true" ]] ; then
   echo -e "\e[32m[+] Downloading Winlator\e[0m"
   wget -qO downloads/winlator.apk $(gh api repos/StevenMXZ/Winlator-Ludashi/releases/latest | jq -r '.assets[2].browser_download_url')

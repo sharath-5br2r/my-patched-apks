@@ -178,15 +178,15 @@ You can manually update this file if you need to force a specific version state,
 ## Running the Build Script Locally
 Some basic dependencies are there such as `bash`, `curl`, `jq`, `unzip`, `zip`, `java`, `yq` and `aapt2`. 
 
-There are some limitations while building apps that download from cloudflare protected sites (like APKMirror) on Termux. Also you might need to run FlareSolverr, Byparr or Cloudflare-bypass-for-scraping to bypass cloudflare protection. You can set the following environment variables in `.env` file to enable/disable them.
+There are some limitations while building apps that download from cloudflare protected sites (like APKMirror) on Termux. Also you might need to run FlareSolverr, Byparr, Trawl or Cloudflare-bypass-for-scraping to bypass cloudflare protection. You can set the following environment variables in `.env` file to enable/disable them.
 
 Windows isnt supported currently and needs some script modifications to function. May work in future.
 
 MacOS is also not supported as I still need to include binaries for it. May work in future.
 
 ```bash
-export CF_BYPASS_SOLVER_FLARESOLVERR_ENABLED="true" # optional, set to "false" to disable flaresolverr for cloudflare bypass. default: false.
-export CF_BYPASS_SOLVER_BYPARR_ENABLED="true" # optional, set to "false" to disable byparr for cloudflare bypass. default: false. Note: Byparr should be on port 8912. Proot is needed for byparr on termux
+export CF_BYPASS_SOLVER_FS_8191_ENABLED="true" # optional, set to "false" to disable flaresolverr compatible solver at 8191 for cloudflare bypass. default: false.
+export CF_BYPASS_SOLVER_FS_8192_ENABLED="true" # optional, set to "false" to disable flaresolverr compatible solver at 8192 for cloudflare bypass. default: false.
 export CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED="false" # optional, set to "true" to enable cloudflare-bypass-for-scraping for cloudflare bypass. default: false. Currently only possible on x86 machines
 ``` 
 
