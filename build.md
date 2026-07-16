@@ -1,4 +1,4 @@
-gboard-jsonwu1994 (arm64-v8a): 17.0.10.880768217-release-arm64-v8a  
+gboard-jsonwu1994-gmscore (arm64-v8a): 17.0.10.880768217-release-arm64-v8a  
 gboard-jasonwu1994-root (arm64-v8a): 17.0.10.880768217-release-arm64-v8a  
 
 **Notes:**  
