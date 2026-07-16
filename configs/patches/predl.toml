@@ -20,7 +20,7 @@ rv-brand = "viamorphe-codm"
 build-mode = "apk"
 cli-source = "MorpheApp/morphe-desktop"
 local-dlurl = "downloads/zalith-launcher-2-plus.apk"
-[[zalith-launcher-2-plus-viamorphe-cod.patches]]
+[[zalith-launcher-2-plus-viamorphe-codm.patches]]
 source = "MorpheApp/morphe-patches"
 args = "-OpackageName='com.activision.callofduty.shooter'"
 included-patches = "'Change Package Name'"
