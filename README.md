@@ -274,7 +274,7 @@ Patches: [jasonwu1994/patches-1.2.0.mpp](https://github.com/jasonwu1994/Gboard-p
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260070)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260076)<br>
 Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
