@@ -255,12 +255,34 @@ Patches: [MorpheApp/patches-1.35.0-dev.3.mpp](https://github.com/MorpheApp/morph
 #### [Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches) + [rushiranpise GmsCore patch](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="gboard-jasonwu1994">Version: v0</summary>
+<summary id="gboard-jasonwu1994">Version: v17.0.10.880768217-release-arm64-v8a</summary>
   
 <blockquote>
 
-[Release 2026-06-14](https://github.com/nullcpy/rvb/releases/tag/351)<br>
-Patches: 
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260081)<br>
+Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0), [rushiranpise/patches-1.13.0-dev.5.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.0-dev.5)
+- AI Writing Tools
+- Add Gboard Signature Bypass
+- Chinese Online Voice Input
+- Clipboard Enhancements
+- Clipboard Entity Extraction
+- Clipboard Item Edit
+- Custom Symbols
+- Emojis, stickers & GIFs Tab Order
+- Enable Inline Autofill Suggestions
+- Enable Undo/Redo feature
+- English QWERTY Up-Flick Uppercase
+- GmsCore support (MicroG)
+- Grammar Checker
+- Inline Suggestions
+- Key Shape Selection
+- Latin Globe Key Ignore Interval
+- Settings Homepage Override
+- Swipeable Custom Top Row
+- Web Clipboard
+- Zhuyin Bottom Row Key Sizes
+- Zhuyin Quick Traditional/Simplified Toggle
+- Zhuyin Slide Input
 </blockquote>
 </details>
 
@@ -270,7 +292,7 @@ Patches:
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260080)<br>
+[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260081)<br>
 Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
