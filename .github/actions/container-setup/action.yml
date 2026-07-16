@@ -25,7 +25,7 @@ runs:
         for i in $(seq 1 30); do
           if curl -s http://localhost:8000/ > /dev/null 2>&1; then
             echo "[+] cloudflarebypassforscraping is ready."
-            echo "CF_BYPASS_SOLVER_FS_8000_ENABLED=true" >> "$GITHUB_ENV"
+            echo "CF_BYPASS_SOLVER_CFB_ENABLED=true" >> "$GITHUB_ENV"
             break
           fi
           sleep 2

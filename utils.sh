@@ -705,7 +705,7 @@ _FFS8191_FAILED=0
 _CFB_FAILED=0
 _FFS8192_FAILED=0
 _unqueued_cf_get() {
-	if [[ "$_CFB_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED:-false}" == true ]]; then
+	if [[ "$_CFB_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_CFB_ENABLED:-false}" == true ]]; then
 		_cfb_get "$@" && return 0
 		_CFB_FAILED=1
 	fi
