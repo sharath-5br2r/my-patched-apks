@@ -86,7 +86,6 @@ for table_name in $(toml_get_table_names); do
   if [ "$enabled" = false ]; then continue; fi
 
   # --- FIX 1: Clean/Isolate Loop-Specific Local Variables ---
-  unset app_args p_srcs p_hosts p_vers
   declare -A app_args
   declare -a p_srcs p_hosts p_vers
 
