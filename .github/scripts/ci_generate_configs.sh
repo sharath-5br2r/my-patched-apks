@@ -66,18 +66,7 @@ genconfigs() {
         .value as $app |
         # Safely extracts sources from the new nested patches array format
         (if ($app.patches | type == "array") then [$app.patches[].source | ascii_downcase] else ["revanced/revanced-patches"] end) as $srcs |
-        
-        # Check if the app has any source where pre_date > stable_date
-        (
-          $srcs | map(
-            . as $src |
-            ($tags | to_entries | map(select((.value.repo | ascii_downcase) == $src)) | .[0].value) as $t |
-            if $t == null then false
-            else ($t.pre_date // "") >= ($t.stable_date // "") end
-          ) | any
-        ) as $has_valid_dev |
-
-        if (($srcs - $active[0]) != $srcs) or (($activeApps[0] | index($k)) and $has_valid_dev) then . else (.value.enabled = false) end
+        if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
       else . end
     )
   ' config.dev$2.json >.github/configs/config.dev.updated$2.json
