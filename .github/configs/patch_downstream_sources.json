@@ -2,18 +2,18 @@
   "anddea": {
     "repo": "anddea/revanced-patches",
     "stable": "v4.1.0",
-    "prerelease": "v4.2.0-dev.6",
+    "prerelease": "v4.2.0-dev.7",
     "blocked": false,
     "stable_date": "2026-06-16T15:37:39Z",
-    "pre_date": "2026-07-15T14:23:22Z"
+    "pre_date": "2026-07-16T16:12:10Z"
   },
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
-    "stable": "v1.34.0",
-    "prerelease": "v1.35.0-dev.5",
+    "stable": "v1.35.0",
+    "prerelease": "v1.35.0",
     "blocked": false,
-    "stable_date": "2026-07-10T07:06:08Z",
-    "pre_date": "2026-07-15T05:29:02Z"
+    "stable_date": "2026-07-16T09:04:26Z",
+    "pre_date": "2026-07-16T09:04:26Z"
   },
   "piko": {
     "repo": "crimera/piko",
@@ -26,10 +26,10 @@
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
     "stable": "v1.39.0",
-    "prerelease": "v1.39.0",
+    "prerelease": "v1.40.0-dev.1",
     "blocked": false,
     "stable_date": "2026-07-15T16:13:49Z",
-    "pre_date": "2026-07-15T16:13:49Z"
+    "pre_date": "2026-07-16T18:59:46Z"
   },
   "adobo": {
     "repo": "jkennethcarino/adobo",
@@ -105,11 +105,11 @@
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "stable": "v1.12.0",
-    "prerelease": "v1.13.0-dev.5",
+    "stable": "v1.13.1",
+    "prerelease": "v1.13.1",
     "blocked": false,
-    "stable_date": "2026-07-12T17:32:56Z",
-    "pre_date": "2026-07-15T11:30:54Z"
+    "stable_date": "2026-07-16T09:36:16Z",
+    "pre_date": "2026-07-16T09:36:16Z"
   },
   "revenge": {
     "repo": "revenge-mod/revenge-xposed",
