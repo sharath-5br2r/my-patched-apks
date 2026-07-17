@@ -175,7 +175,6 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 
 
 
-
 ---
 
 
@@ -404,7 +403,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 </details>
 
 ---
-### [LeviLauncher Unlocked](dhttps://github.com/0Sombra666/LeviLaunchroidUnlocked)
+
+### [LeviLauncher Unlocked](https://github.com/0Sombra666/LeviLaunchroidUnlocked)
 [Original](https://github.com/LiteLDev/LeviLaunchroid)
 
 `org.levimc.launcher`
