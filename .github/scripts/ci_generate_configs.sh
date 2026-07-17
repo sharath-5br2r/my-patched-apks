@@ -73,7 +73,7 @@ genconfigs() {
             . as $src |
             ($tags | to_entries | map(select((.value.repo | ascii_downcase) == $src)) | .[0].value) as $t |
             if $t == null then false
-            else ($t.pre_date // "") > ($t.stable_date // "") end
+            else ($t.pre_date // "") >= ($t.stable_date // "") end
           ) | any
         ) as $has_valid_dev |
 
