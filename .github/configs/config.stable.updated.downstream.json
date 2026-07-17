@@ -73,7 +73,7 @@
     ]
   },
   "gboard-morphe-gboard": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "gboard",
     "rv-brand": "morphe-gboard",
     "build-mode": "apk",
@@ -126,7 +126,7 @@
     ]
   },
   "prime-video-morphe-hoodles": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "prime-video",
     "rv-brand": "morphe-hoodles",
     "build-mode": "apk",
@@ -208,7 +208,7 @@
     ]
   },
   "youtube-morphe-exp": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
@@ -226,7 +226,7 @@
     ]
   },
   "youtube-music-morphe-exp": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube-music",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
@@ -310,7 +310,7 @@
     ]
   },
   "x-morphe-piko": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "x",
     "rv-brand": "morphe-piko",
     "build-mode": "apk",
@@ -332,7 +332,7 @@
     ]
   },
   "winlator-viamorphe-pubgvn": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "winlator",
     "rv-brand": "viamorphe-pubgvn",
     "build-mode": "apk",
@@ -362,7 +362,7 @@
     ]
   },
   "geode-viamorphe-pubgkr": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "geode",
     "rv-brand": "viamorphe-pubgkr",
     "build-mode": "apk",
@@ -409,7 +409,7 @@
     ]
   },
   "amazon-india-morphe-rushiranpise": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-india",
     "rv-brand": "morphe-rushiranpise",
     "build-mode": "apk",
@@ -427,7 +427,7 @@
     ]
   },
   "amazon-alexa-signed": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "amazon-alexa",
     "rv-brand": "signed",
     "build-mode": "apk",

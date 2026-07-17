@@ -10,13 +10,13 @@
     "keys": [
       "prime-video-morphe-hoodles"
     ],
-    "version": "3.0.463.657"
+    "version": "3.0.464.757"
   },
   "Amazon Alexa": {
     "keys": [
       "amazon-alexa-signed"
     ],
-    "version": "2.2.694622.0"
+    "version": "2.2.695641.0"
   },
   "Adobe Acrobat": {
     "keys": [
@@ -34,13 +34,13 @@
     "keys": [
       "x-morphe-piko"
     ],
-    "version": "12.7.1-release.0"
+    "version": "12.8.0-release.0"
   },
   "Zalith Launcher 2 Plus": {
     "keys": [
       "zalith-launcher-2-plus-viamorphe-codm"
     ],
-    "version": "build-78"
+    "version": "1.2"
   },
   "Winlator": {
     "keys": [
@@ -58,6 +58,6 @@
     "keys": [
       "levilauncher-unlocked-viamorphe-bgmi"
     ],
-    "version": "v1.5.4.02"
+    "version": "v1.5.6"
   }
 }

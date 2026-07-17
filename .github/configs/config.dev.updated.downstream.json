@@ -3,7 +3,7 @@
   "patches-version": "dev",
   "enable-module-update": false,
   "youtube-morphe-anddea": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube",
     "rv-brand": "morphe-anddea",
     "build-mode": "both",
@@ -22,7 +22,7 @@
     ]
   },
   "youtube-music-morphe-anddea": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube-music",
     "rv-brand": "morphe-anddea",
     "build-mode": "both",
@@ -110,7 +110,7 @@
     ]
   },
   "github-morphe-hoodles": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "github",
     "rv-brand": "morphe-hoodles",
     "build-mode": "apk",
@@ -310,7 +310,7 @@
     ]
   },
   "x-morphe-piko": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "x",
     "rv-brand": "morphe-piko",
     "build-mode": "apk",
