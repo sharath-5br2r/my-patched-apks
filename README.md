@@ -210,8 +210,9 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
-Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
+[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
+Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.2)
+- AMOLED dark theme
 </blockquote>
 </details>
 
@@ -455,8 +456,8 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 <blockquote>
 
-[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260007)<br>
-Patches: [hoo-dles/patches-1.40.0-dev.1.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.1)
+[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
+Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.2)
 - Enable speed control
 - Skip ads
 </blockquote>
