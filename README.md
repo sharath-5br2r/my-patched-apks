@@ -455,8 +455,8 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
-Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
+[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260007)<br>
+Patches: [hoo-dles/patches-1.40.0-dev.1.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.1)
 - Enable speed control
 - Skip ads
 </blockquote>
@@ -589,7 +589,7 @@ Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patc
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260007)<br>
 Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.4.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.4)
 - Abstract shim layer
 - Abstract shim layer for method
