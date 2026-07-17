@@ -310,7 +310,7 @@
     ]
   },
   "x-morphe-piko": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "x",
     "rv-brand": "morphe-piko",
     "build-mode": "apk",
@@ -347,7 +347,7 @@
     ]
   },
   "zalith-launcher-2-plus-viamorphe-codm": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "zalith-launcher-2-plus",
     "rv-brand": "viamorphe-codm",
     "build-mode": "apk",
@@ -377,7 +377,7 @@
     ]
   },
   "levilauncher-unlocked-viamorphe-bgmi": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "viamorphe-bgmi",
     "build-mode": "apk",
@@ -427,7 +427,7 @@
     ]
   },
   "amazon-alexa-signed": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-alexa",
     "rv-brand": "signed",
     "build-mode": "apk",
