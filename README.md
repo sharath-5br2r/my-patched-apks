@@ -228,7 +228,7 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260008)<br>
 Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Change package name
 </blockquote>
@@ -412,11 +412,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### Spoof to BGMI via [Morphe patches](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="levilauncher-unlocked-viamorphe-bgmi">Version: v1.5.4.02</summary>
+<summary id="levilauncher-unlocked-viamorphe-bgmi">Version: v1.5.6</summary>
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260008)<br>
 Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Change package name
 </blockquote>
@@ -570,7 +570,7 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260008)<br>
 Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Change package name
 </blockquote>
@@ -943,7 +943,7 @@ Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-pat
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260008)<br>
 Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
 - Change package name
 </blockquote>
