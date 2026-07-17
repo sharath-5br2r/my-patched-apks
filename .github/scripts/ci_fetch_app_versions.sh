@@ -21,7 +21,7 @@ yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $CONFIG_FILES > temp_al
 
 [ -f .github/configs/app_downstream_versions.json ] || echo '{}' > .github/configs/app_downstream_versions.json
 > fetched_app_versions.jsonl
-CHECK_ONLY_LISTED=$(jq -r '."_check_only_listed" // false' .github/configs/app_versions.json)
+CHECK_ONLY_LISTED=$(jq -r '."_check_only_listed" // false' .github/configs/app_downstream_versions.json)
 
 if [ "$CHECK_ONLY_LISTED" = "true" ]; then
     jq -r 'to_entries | map(select(.key | startswith("_") | not)) | .[] | "\(.key)|\(.value.keys[0])"' .github/configs/app_versions.json > check_list.txt
