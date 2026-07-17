@@ -828,6 +828,7 @@ Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-pat
 - Settings for YouTube
 </blockquote>
 </details>
+
 ---
 
 
