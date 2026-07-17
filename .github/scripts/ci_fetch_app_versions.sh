@@ -24,18 +24,18 @@ yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $CONFIG_FILES > temp_al
 CHECK_ONLY_LISTED=$(jq -r '."_check_only_listed" // false' .github/configs/app_downstream_versions.json)
 
 if [ "$CHECK_ONLY_LISTED" = "true" ]; then
-    jq -r 'to_entries | map(select(.key | startswith("_") | not)) | .[] | "\(.key)|\(.value.keys[0])"' .github/configs/app_versions.json > check_list.txt
+    jq -r 'to_entries | map(select(.key | startswith("_") | not)) | .[] | "\(.key)|\(.value.keys[0])"' .github/configs/app_downstream_versions.json > check_list.txt
 else
     # All enabled apps
     ENABLED_APPS=$(jq -r 'to_entries | map(select((.value | type == "object") and .value.enabled == true)) | .[].key' temp_all_configs.json)
     
     # Get all grouped apps to exclude them
-    GROUPED_APPS=$(jq -r 'to_entries | map(select(.key | startswith("_") | not)) | .[].value.keys[]?' .github/configs/app_versions.json 2>/dev/null || echo "")
+    GROUPED_APPS=$(jq -r 'to_entries | map(select(.key | startswith("_") | not)) | .[].value.keys[]?' .github/configs/app_downstrea._versions.json 2>/dev/null || echo "")
     
     > check_list.txt
     
     # Add groups first
-    jq -r 'to_entries | map(select(.key | startswith("_") | not)) | .[] | "\(.key)|\(.value.keys[0])"' .github/configs/app_versions.json >> check_list.txt
+    jq -r 'to_entries | map(select(.key | startswith("_") | not)) | .[] | "\(.key)|\(.value.keys[0])"' .github/configs/app_downstream_versions.json >> check_list.txt
     
     # Add non-grouped enabled apps
     for app in $ENABLED_APPS; do
