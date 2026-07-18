@@ -24,10 +24,10 @@
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.35.0",
-    "prerelease": "v1.35.0-dev.6",
+    "prerelease": "v1.36.0-dev.1",
     "blocked": false,
     "stable_date": "2026-07-16T09:04:26Z",
-    "pre_date": "2026-07-16T07:50:53Z"
+    "pre_date": "2026-07-18T06:39:30Z"
   },
   "piko": {
     "repo": "crimera/piko",
@@ -88,10 +88,10 @@
   },
   "docbt": {
     "repo": "docbt/patched-up",
-    "stable": "v1.9.0",
+    "stable": "v1.10.0",
     "prerelease": "v1.3.1-dev.2",
     "blocked": false,
-    "stable_date": "2026-06-20T03:31:38Z",
+    "stable_date": "2026-07-18T01:55:19Z",
     "pre_date": "2026-03-21T15:09:32Z"
   },
   "patcheddit": {
@@ -159,10 +159,10 @@
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
     "stable": "v1.13.1",
-    "prerelease": "v1.13.1-dev.1",
+    "prerelease": "v1.14.0-dev.2",
     "blocked": false,
     "stable_date": "2026-07-16T09:36:16Z",
-    "pre_date": "2026-07-16T09:33:06Z"
+    "pre_date": "2026-07-18T05:26:03Z"
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
@@ -182,11 +182,11 @@
   },
   "bufferk": {
     "repo": "bufferk/morphe-patches",
-    "stable": "v1.6.12",
-    "prerelease": "v1.6.15-dev.7",
+    "stable": "v1.7.1",
+    "prerelease": "v1.8.0-dev.1",
     "blocked": false,
-    "stable_date": "2026-07-05T17:14:24Z",
-    "pre_date": "2026-07-10T17:50:44Z"
+    "stable_date": "2026-07-18T09:23:06Z",
+    "pre_date": "2026-07-18T09:09:31Z"
   },
   "IMXEren": {
     "repo": "IMXEren/mix-patches",
