@@ -192,7 +192,7 @@ const CONFIG = {
     goodreads: "com.goodreads",
     gboard:{
       default: "com.google.android.inputmethod.latin",
-      gboard: "dev.jason.com.android.inputmethod.latin",
+      morphegboard: "dev.jason.com.google.android.inputmethod.latin",
     },
     googlenews: "com.google.android.apps.magazines",
     googlephotos: {
@@ -304,14 +304,14 @@ const CONFIG = {
     youtube: {
       revanced: "app.revanced.android.youtube",
       rvx: "app.rvx.android.youtube",
-      anddea: "anddea.youtube",
+      morpheanddea: "anddea.youtube",
       morphe: "app.morphe.android.youtube",
       default: "com.google.android.youtube",
     },
     youtubemusic: {
       revanced: "app.revanced.android.apps.youtube.music",
       rvx: "app.rvx.android.apps.youtube.music",
-      anddea: "anddea.youtube.music",
+      morpheanddea: "anddea.youtube.music",
       morphe: "app.morphe.android.apps.youtube.music",
       default: "com.google.android.apps.youtube.music",
     },
