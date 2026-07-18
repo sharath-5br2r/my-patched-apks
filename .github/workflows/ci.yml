@@ -37,7 +37,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
-          commit_author: Sharath <sharathsukash@gmail.com> # Remove if not needed, or replace with your own name/emails
+          commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com> # Remove if not needed, or replace with your own name/emails
           file_pattern: .github/configs/patch_downstrram_sources.json
           commit_message: "Create dummy patch_downstream_sources.json"
       - name: Update Morphe Experimental App versions
@@ -95,7 +95,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
-          commit_author: Sharath <sharathsukash@gmail.com> # Remove if not needed, or replace with your own name/emails
+          commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com> # Remove if not needed, or replace with your own name/emails
           file_pattern: .github/configs/*.json
           commit_message: "Update patch sources, app versions and generated configs [skip ci]"
 
