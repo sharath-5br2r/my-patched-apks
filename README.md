@@ -247,8 +247,8 @@ Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patc
   
 <blockquote>
 
-[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260014)<br>
-Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0), [rushiranpise/patches-1.14.0-dev.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.14.0-dev.1)
+[Release 2026-07-18](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260021)<br>
+Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0), [rushiranpise/patches-1.14.0-dev.2.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.14.0-dev.2)
 - AI Writing Tools
 - Add Gboard Signature Bypass
 - Chinese Online Voice Input
@@ -587,11 +587,11 @@ Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patc
 #### [Piko (Morphe)](https://github.com/crimera/piko) with [inotia00](https://gitlab.com/inotia00/x-shim) shim layer
 
 <details>
-<summary id="x-morphe-piko">Version: v12.8.0-release.0</summary>
+<summary id="x-morphe-piko">Version: v12.9.0-release.0</summary>
   
 <blockquote>
 
-[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260007)<br>
+[Release 2026-07-18](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260021)<br>
 Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.4.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.4)
 - Abstract shim layer
 - Abstract shim layer for method
