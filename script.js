@@ -5,7 +5,7 @@
  */
 const CONFIG = {
   owner: "sharath-5br2r",
-  repo: "patched-apks-builder-2nd",
+  repo: "my-patched-apks",
   cacheDuration: 5, // Cache duration in minutes
 
   // App Categories for the top filter buttons (maps filter-btn dataset to keywords)
