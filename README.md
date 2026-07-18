@@ -2,7 +2,7 @@
 
 <p align="center"><b>Automatically builds and publishes APKs & Magisk/KernelSU Modules whenever new patches are released.</b></p>
 
-<p align="center"> <a href="https://github.com/sharath-5br2r/actions">GitHub Actions</a></p>
+<p align="center"> <a href="../../actions">GitHub Actions</a></p>
 
 ---
 ## Changes from Upstream
@@ -51,7 +51,7 @@ Thank you to everyone who helps keep this project alive!
 
 ### 📦 Archive
 
-> This release [Beta](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/beta) acts as a permanent, continuously updated vault, ensuring downloads remain reliably available without interruption.
+> This release [Beta](../../releases/tag/beta) acts as a permanent, continuously updated vault, ensuring downloads remain reliably available without interruption.
 
 
 ---
@@ -65,7 +65,7 @@ Thank you to everyone who helps keep this project alive!
 
 ## Download Apps
 
-### [DolphinCS-master](https://github.com/sharath-5br2r/DolphinCS-master) builds are published here and is available on releases here and website.
+### [DolphinCS-master](../../../DolphinCS-master) builds are published here and is available on releases here and website.
 
 Official Dolphin Emulator builds are available on [Dolphin Emulator](https://dolphin-emu.org/download/)
 
@@ -73,7 +73,7 @@ Official Dolphin Emulator builds are available on [Dolphin Emulator](https://dol
 
 ---
 
-### [Eden Emulator](https://eden-emu.dev) is also automatically built [here](https://github.com/sharath-5br2r/Eden-Workflow) with only two variants(Optmised/Genshin Spoof and ChromeOS/x86_64) at every 4 hours and uploaded to the releases and website.
+### [Eden Emulator](https://eden-emu.dev) is also automatically built [here](../../../Eden-Workflow) with only two variants(Optmised/Genshin Spoof and ChromeOS/x86_64) at every 4 hours and uploaded to the releases and website.
 
 `dev.eden.eden_emulator`
 
