@@ -216,7 +216,7 @@
     ]
   },
   "youtube-morphe-exp": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
@@ -235,7 +235,7 @@
     ]
   },
   "youtube-music-morphe-exp": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube-music",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
@@ -348,7 +348,7 @@
     ]
   },
   "winlator-viamorphe-pubgvn": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "winlator",
     "rv-brand": "viamorphe",
     "build-mode": "apk",
@@ -380,7 +380,7 @@
     ]
   },
   "geode-viamorphe-pubgkr": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "geode",
     "rv-brand": "viamorphe",
     "build-mode": "apk",
@@ -396,7 +396,7 @@
     ]
   },
   "levilauncher-unlocked-viamorphe-bgmi": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "viamorphe",
     "build-mode": "apk",
@@ -430,7 +430,7 @@
     ]
   },
   "amazon-india-morphe-rushiranpise": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "amazon-india",
     "rv-brand": "morphe-rushiranpise",
     "build-mode": "apk",
