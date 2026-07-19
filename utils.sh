@@ -341,7 +341,7 @@ get_prebuilts() {
 			rm -r "${file}-zip" || :
 		fi
 		
-		echo -e "{\"$src\":\"$file\"}"
+		echo -e "{\"$src\": { file:\"$file\" , version:\"$tag_name\" }}" 
 		else
 			pr "Not Getting anything as source is none"
 		fi
@@ -527,7 +527,7 @@ patches_list_versions() {
 
 	# Build arg strings for each jar  from a json
 	local -a p_jars
-	mapfile -t p_jars < <(jq -r '.[]' <<<"$patches_jar")
+	mapfile -t p_jars < <(jq -r '.[] | .file' <<<"$patches_jar")
 	local p_args_short="" p_args_long=""
 	for j in "${p_jars[@]}"; do
 		p_args_short+="-p '$j' "
@@ -560,7 +560,7 @@ patches_list() {
 	fi
 	# Build arg strings for each jar  from a json
 	local -a p_jars
-	mapfile -t p_jars < <(jq -cr '.[]' <<<"$patches_jar")
+	mapfile -t p_jars < <(jq -cr '.[] | .file' <<<"$patches_jar")
 	local p_args_short="" p_args_long="" p_args_pos=""
 	for j in "${p_jars[@]}"; do
 		p_args_short+="-p '$j' "
@@ -1521,7 +1521,7 @@ patch_apk() {
 				per_patch_args+=" -d \"${microg_patch}\" "
 			fi
 		fi
-		local patch_jar=$(jq -r --arg src "$patch_src" '.[$src]' <<<"$curr_patches_jar")
+		local patch_jar=$(jq -r --arg src "$patch_src" '.[$src].file' <<<"$curr_patches_jar")
 		p_args_long+=" --patches '$patch_jar' $per_patch_args"
 		p_args_short+=" -p '$patch_jar' $per_patch_args"
 	done < <(jq -c '.[]' <<<"$patches_data")
@@ -1802,10 +1802,25 @@ build_rv() {
 	for build_mode in "${build_mode_arr[@]}"; do
 		patcher_args=("${p_patcher_args[@]}")
 		pr "Building '${table}' in '$build_mode' mode"
+		local patchbranding="" modulebranding=""
+		while read -r json; do
+			local branding=$(jq -r '."patch-branding" // ."source" // "" ' <<<"$json")
+			if [ -n "$branding" ]; then
+				local branding_f patchversion_f patchversion patchsrc 
+				branding_f=${branding// /-}
+				branding_f=${branding_f//'/'/-}
+				patchsrc=$(jq -r '."source" // "" ' <<<"$json")
+				patchversion=$(jq -r --arg src "$patchsrc" '."$src".version // "" ' <<<"$patches_jar")
+				patchversion_f=${patchversion// /-}
+				patchversion_f=${patchversion_f#v}
+				patchbranding+="$branding_f-v$patchversion_f-"
+				modulebranding+="$branding: $patchversion "
+			fi
+		done < <(jq -c '.[]' <<<"$patches_data")
 		if [ -n "$microg_patch" ]; then
-			patched_apk="${TEMP_DIR}/${app_name_l}${rv_brand_f}-${version_f}-${arch_f}-${build_mode}.apk"
+			patched_apk="${TEMP_DIR}/${app_name_l}${rv_brand_f}-${version_f}-${patchbranding}${arch_f}-${build_mode}.apk"
 		else
-			patched_apk="${TEMP_DIR}/${app_name_l}${rv_brand_f}-${version_f}-${arch_f}.apk"
+			patched_apk="${TEMP_DIR}/${app_name_l}${rv_brand_f}-${version_f}-${patchbranding}${arch_f}.apk"
 		fi
 
 		if [ "$build_mode" = module ]; then
@@ -1826,7 +1841,7 @@ build_rv() {
 			zip -d "$stock_apk_to_patch" "lib/arm64-v8a/*" "lib/armeabi-v7a/*" "lib/x86/*" >/dev/null 2>&1 || :
 		fi
 
-		local apk_output="${BUILD_DIR}/${app_name_l}${rv_brand_f}-v${version_f}-${arch_f}.apk"
+		local apk_output="${BUILD_DIR}/${app_name_l}${rv_brand_f}-v${version_f}-${patchbranding}${arch_f}.apk"
 		if [ "${NORB:-}" != true ] || { [ ! -f "$patched_apk" ] && [ ! -f "$apk_output" ]; }; then
 			if ! patch_apk "$stock_apk_to_patch" "$patched_apk" "${patcher_args[*]}" "${args[cli]}" "${args[ptjar]}" "${args[cli_source]}" "$patches_data"; then
 				epr "Building '${table}' failed!"
@@ -1856,12 +1871,12 @@ build_rv() {
 		module_prop \
 			"${args[module_prop_name]}" \
 			"${app_name} ${rv_brand_f}" \
-			"${version_f} (patches ${patches_ver})" \
+			"${version_f} (patches ${modulebranding})" \
 			"${app_name} ${rv_brand_f} module" \
 			"https://raw.githubusercontent.com/${GITHUB_REPOSITORY-}/update/${upj}" \
 			"$base_template"
 
-		local module_output="${app_name_l}${rv_brand_f}-module-v${version_f}-${arch_f}.zip"
+		local module_output="${app_name_l}${rv_brand_f}-module-v${version_f}-${patchbranding}${arch_f}.zip"
 		pr "Packing module ${table}"
 		cp -f "$patched_apk" "${base_template}/base.apk"
 
