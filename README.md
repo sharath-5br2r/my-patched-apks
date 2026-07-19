@@ -228,8 +228,8 @@ Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-
 
 <blockquote>
 
-[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260008)<br>
-Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
+[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
 - Change package name
 </blockquote>
 </details>
@@ -417,8 +417,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260008)<br>
-Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
+[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
 - Change package name
 </blockquote>
 </details>
@@ -456,7 +456,7 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 <blockquote>
 
-[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260017)<br>
+[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
 Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.2)
 - Enable speed control
 - Skip ads
@@ -571,8 +571,8 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 
 <blockquote>
 
-[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260008)<br>
-Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
+[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
 - Change package name
 </blockquote>
 </details>
@@ -677,12 +677,12 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
 #### [Morphe Experimental](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-morphe-exp">Version: v21.26.360</summary>
+<summary id="youtube-morphe-exp">Version: v21.28.204</summary>
   
 <blockquote>
 
-[Release 2026-07-18](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260023)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.1)
+[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -844,8 +844,8 @@ Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-pat
   
 <blockquote>
 
-[Release 2026-07-18](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260023)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.1)
+[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -946,8 +946,8 @@ Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-pat
 
 <blockquote>
 
-[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260008)<br>
-Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.35.0)
+[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
 - Change package name
 </blockquote>
 </details>
