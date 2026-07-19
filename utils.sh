@@ -1810,7 +1810,7 @@ build_rv() {
 		local patchbranding="" modulebranding=""
 		while read -r json; do
 			local branding=$(jq -r '."patch-branding" // ."source" // "" ' <<<"$json")
-			if [ -n "$branding" ]; then
+			if [ -n "$branding" ] && [ "$branding" != "none" ]; then
 				local branding_f patchversion_f patchversion patchsrc 
 				branding_f=${branding// /-}
 				branding_f=${branding_f//'/'/-}
@@ -1820,6 +1820,8 @@ build_rv() {
 				patchversion_f=${patchversion_f#v}
 				patchbranding+="$branding_f-v$patchversion_f-"
 				modulebranding+="$branding: $patchversion "
+			else
+			   local patchbranding="" modulebranding=""
 			fi
 		done < <(jq -c '.[]' <<<"$patches_data")
 		if [ -n "$microg_patch" ]; then
