@@ -14,9 +14,6 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard"
 dpi = "nodpi anydpi auto"
 [[gboard-morphe-gboard.patches]]
 source = "jasonwu1994/Gboard-patches"
-[[gboard-morphe-gboard.patches]]
-source = "rushiranpise/morphe-patches"
-included-patches = "'GmsCore Support (MicroG)'"
 
 
 [gboard-morphe-gboard-root]

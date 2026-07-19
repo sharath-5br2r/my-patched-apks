@@ -341,7 +341,7 @@ get_prebuilts() {
 			rm -r "${file}-zip" || :
 		fi
 		
-		echo -e "{\"$src\": { file:\"$file\" , version:\"$tag_name\" }}" 
+		echo -e "{\"$src\": {\"file\": \"$file\", \"version\": \"$tag_name\"}}" 
 		else
 			pr "Not Getting anything as source is none"
 		fi
@@ -1810,7 +1810,7 @@ build_rv() {
 				branding_f=${branding// /-}
 				branding_f=${branding_f//'/'/-}
 				patchsrc=$(jq -r '."source" // "" ' <<<"$json")
-				patchversion=$(jq -r --arg src "$patchsrc" '."$src".version // "" ' <<<"$patches_jar")
+				patchversion=$(jq -r  --arg src "$patchsrc" '.[$src].version // ""'  <<<"$patches_jar")
 				patchversion_f=${patchversion// /-}
 				patchversion_f=${patchversion_f#v}
 				patchbranding+="$branding_f-v$patchversion_f-"

@@ -116,7 +116,7 @@ for table_name in $(toml_get_table_names); do
     continue
   fi
   cli_jar=$(echo "$PREBUILTS" | sed -n '1p')
-  patches_jar_all=$(echo "$PREBUILTS" | sed -n '2,$p' | jq -s 'add' )
+  patches_jar_all=$(echo "$PREBUILTS" | sed -n '2,$p' | jq -s add )
   app_args[cli]=$cli_jar
   app_args[ptjar]=$patches_jar_all
   app_args[cli_source]=$cli_src
