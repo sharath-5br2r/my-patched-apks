@@ -1790,6 +1790,9 @@ build_rv() {
 
 	local patcher_args patched_apk build_mode
 	local rv_brand_f=${args[rv_brand],,}
+	if [ "$rv_brand" == "none" ]; then
+		rv_brand=""
+	fi
 	rv_brand_f=${rv_brand_f// /-}
 	if [ "$rv_brand_f" == "none" ]; then
 		rv_brand_f=""
@@ -1870,9 +1873,9 @@ build_rv() {
 		patches_ver="${patches_jar%% *}"; patches_ver="${patches_ver##*-}"
 		module_prop \
 			"${args[module_prop_name]}" \
-			"${app_name} ${rv_brand_f}" \
+			"${app_name} ${rv_brand}" \
 			"${version_f} (patches ${modulebranding})" \
-			"${app_name} ${rv_brand_f} module" \
+			"${app_name} ${rv_brand} module" \
 			"https://raw.githubusercontent.com/${GITHUB_REPOSITORY-}/update/${upj}" \
 			"$base_template"
 
