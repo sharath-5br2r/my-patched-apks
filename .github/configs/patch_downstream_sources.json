@@ -18,10 +18,10 @@
   "piko": {
     "repo": "crimera/piko",
     "stable": "v3.7.0",
-    "prerelease": "v3.8.0-dev.4",
+    "prerelease": "v3.8.0-dev.5",
     "blocked": false,
     "stable_date": "2026-06-27T16:03:22Z",
-    "pre_date": "2026-07-12T13:22:24Z"
+    "pre_date": "2026-07-19T17:03:30Z"
   },
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
@@ -105,11 +105,11 @@
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "stable": "v1.13.1",
-    "prerelease": "v1.14.0-dev.3",
+    "stable": "v1.14.0",
+    "prerelease": "v1.14.0",
     "blocked": false,
-    "stable_date": "2026-07-16T09:36:16Z",
-    "pre_date": "2026-07-19T08:42:31Z"
+    "stable_date": "2026-07-19T18:47:03Z",
+    "pre_date": "2026-07-19T18:47:03Z"
   },
   "revenge": {
     "repo": "revenge-mod/revenge-xposed",
