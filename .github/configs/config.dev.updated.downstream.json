@@ -5,7 +5,7 @@
   "youtube-morphe-anddea": {
     "enabled": false,
     "app-name": "youtube",
-    "rv-brand": "morphe-anddea",
+    "rv-brand": "morphe",
     "build-mode": "both",
     "arch": "all",
     "cli-source": "MorpheApp/morphe-desktop",
@@ -17,6 +17,7 @@
     "patches": [
       {
         "source": "anddea/revanced-patches",
+        "brand": "anddea",
         "args": "-e 'Theme' -OdarkThemeBackgroundColor=@android:color/black"
       }
     ]
@@ -24,7 +25,7 @@
   "youtube-music-morphe-anddea": {
     "enabled": false,
     "app-name": "youtube-music",
-    "rv-brand": "morphe-anddea",
+    "rv-brand": "morphe",
     "build-mode": "both",
     "arch": "both64",
     "cli-source": "MorpheApp/morphe-desktop",
@@ -36,6 +37,7 @@
     "patches": [
       {
         "source": "anddea/revanced-patches",
+        "brand": "anddea",
         "args": "-e 'Theme' -OdarkThemeBackgroundColor=@android:color/black"
       }
     ]
@@ -43,7 +45,7 @@
   "speedtest-morphe-xtra": {
     "enabled": false,
     "app-name": "speedtest",
-    "rv-brand": "morphe-xtra",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "arch": "both64",
     "cli-source": "MorpheApp/morphe-desktop",
@@ -52,14 +54,15 @@
     "dpi": "nodpi anydpi auto",
     "patches": [
       {
-        "source": "BholeyKaBhakt/revanced-patches-xtra"
+        "source": "BholeyKaBhakt/revanced-patches-xtra",
+        "brand": "xtra"
       }
     ]
   },
   "moonplus-reader-morphe-binarymend": {
     "enabled": false,
     "app-name": "moonplus-reader",
-    "rv-brand": "morphe-binarymend",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "arch": "all",
     "cli-source": "MorpheApp/morphe-desktop",
@@ -68,14 +71,15 @@
     "dpi": "nodpi anydpi auto",
     "patches": [
       {
-        "source": "binarymend/morphe-patches"
+        "source": "binarymend/morphe-patches",
+        "brand": "binarymend"
       }
     ]
   },
   "gboard-morphe-gboard": {
     "enabled": false,
     "app-name": "gboard",
-    "rv-brand": "morphe-gboard",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "arch": "arm64-v8a",
     "cli-source": "MorpheApp/morphe-desktop",
@@ -84,18 +88,15 @@
     "dpi": "nodpi anydpi auto",
     "patches": [
       {
-        "source": "jasonwu1994/Gboard-patches"
-      },
-      {
-        "source": "rushiranpise/morphe-patches",
-        "included-patches": "'GmsCore Support (MicroG)'"
+        "source": "jasonwu1994/Gboard-patches",
+        "branding": "jasonwu1994"
       }
     ]
   },
   "gboard-morphe-gboard-root": {
     "enabled": false,
     "app-name": "gboard",
-    "rv-brand": "morphe-gboard",
+    "rv-brand": "morphe",
     "build-mode": "module",
     "arch": "arm64-v8a",
     "cli-source": "MorpheApp/morphe-desktop",
@@ -105,14 +106,15 @@
     "patches": [
       {
         "source": "jasonwu1994/Gboard-patches",
-        "excluded-patches": "'Package Rename'"
+        "excluded-patches": "'Package Rename'",
+        "branding": "jasonwu1994"
       }
     ]
   },
   "github-morphe-hoodles": {
     "enabled": false,
     "app-name": "github",
-    "rv-brand": "morphe-hoodles",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-desktop",
     "uptodown-dlurl": "https://github-android.en.uptodown.com/android",
@@ -121,14 +123,15 @@
     "patches": [
       {
         "source": "hoo-dles/morphe-patches",
-        "included-patches": "'AMOLED dark theme'"
+        "included-patches": "'AMOLED dark theme'",
+        "brand": "hoodles"
       }
     ]
   },
   "prime-video-morphe-hoodles": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "prime-video",
-    "rv-brand": "morphe-hoodles",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "version": "latest",
     "arch": "arm64-v8a",
@@ -139,6 +142,7 @@
     "patches": [
       {
         "source": "hoo-dles/morphe-patches",
+        "brand": "hoodles",
         "excluded-patches": "'Rename Shared Permissions'"
       }
     ]
@@ -147,7 +151,7 @@
     "enabled": false,
     "cli-source": "MorpheApp/morphe-desktop",
     "app-name": "adobe-acrobat",
-    "rv-brand": "morphe-hooman",
+    "rv-brand": "morphe",
     "version": "26.6.1",
     "build-mode": "apk",
     "uptodown-dlurl": "https://adobe-reader.en.uptodown.com/android",
@@ -155,14 +159,15 @@
     "dpi": "nodpi anydpi auto",
     "patches": [
       {
-        "source": "arandomhooman/hoomans-morphe-patches"
+        "source": "arandomhooman/hoomans-morphe-patches",
+        "brand": "hooman"
       }
     ]
   },
   "symfonium-morphe-hooman": {
     "enabled": false,
     "app-name": "symfonium",
-    "rv-brand": "morphe-hooman",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "arch": "all",
     "cli-source": "MorpheApp/morphe-desktop",
@@ -171,14 +176,15 @@
     "dpi": "nodpi anydpi auto",
     "patches": [
       {
-        "source": "arandomhooman/hoomans-morphe-patches"
+        "source": "arandomhooman/hoomans-morphe-patches",
+        "brand": "hooman"
       }
     ]
   },
   "adm-morphe-hooman": {
     "enabled": false,
     "app-name": "adm",
-    "rv-brand": "morphe-hooman",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "arch": "all",
     "cli-source": "MorpheApp/morphe-desktop",
@@ -187,14 +193,15 @@
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/admtorrent/advanced-download-manager/",
     "patches": [
       {
-        "source": "arandomhooman/hoomans-morphe-patches"
+        "source": "arandomhooman/hoomans-morphe-patches",
+        "brand": "hooman"
       }
     ]
   },
   "tiktok-morphe-tiktok": {
     "enabled": false,
     "app-name": "tiktok",
-    "rv-brand": "morphe-tiktok",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-desktop",
     "uptodown-dlurl": "https://tiktok.en.uptodown.com/android",
@@ -203,7 +210,8 @@
     "dpi": "nodpi anydpi auto",
     "patches": [
       {
-        "source": "icysymmetra/tiktok-patches-for-morphe"
+        "source": "icysymmetra/tiktok-patches-for-morphe",
+        "brand": "icysymmetra"
       }
     ]
   },
@@ -221,7 +229,8 @@
       {
         "source": "MorpheApp/morphe-patches",
         "args": "-OdarkThemeBackgroundColor=#000000 ",
-        "included-patches": "'Theme'"
+        "included-patches": "'Theme'",
+        "brand": "morphe"
       }
     ]
   },
@@ -240,14 +249,15 @@
       {
         "source": "MorpheApp/morphe-patches",
         "args": "-OdarkThemeBackgroundColor=#000000 ",
-        "included-patches": "'Theme'"
+        "included-patches": "'Theme'",
+        "brand": "morphe"
       }
     ]
   },
   "fing-morphe-paresh": {
     "enabled": false,
     "app-name": "fing",
-    "rv-brand": "morphe-paresh",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "patches-source-host": "gitlab",
     "cli-source": "MorpheApp/morphe-desktop",
@@ -257,14 +267,15 @@
     "patches": [
       {
         "source": "Paresh-Maheshwari/paresh-patches",
-        "host": "gitlab"
+        "host": "gitlab",
+        "brand": "paresh"
       }
     ]
   },
   "proton-vpn-morphe-paresh": {
     "enabled": false,
     "app-name": "proton-vpn",
-    "rv-brand": "morphe-paresh",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-desktop",
     "uptodown-dlurl": "https://protonvpn.en.uptodown.com/android",
@@ -273,7 +284,8 @@
     "patches": [
       {
         "source": "Paresh-Maheshwari/paresh-patches",
-        "host": "gitlab"
+        "host": "gitlab",
+        "brand": "paresh"
       }
     ]
   },
@@ -281,21 +293,22 @@
     "enabled": false,
     "cli-source": "MorpheApp/morphe-desktop",
     "app-name": "jiohotstar",
-    "rv-brand": "morphe-paresh",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/jiostar-india-private-limited/jiohotstar-4/",
     "dpi": "nodpi anydpi auto",
     "patches": [
       {
         "source": "Paresh-Maheshwari/paresh-patches",
-        "host": "gitlab"
+        "host": "gitlab",
+        "brand": "paresh"
       }
     ]
   },
   "instagram-morphe-piko": {
     "enabled": false,
     "app-name": "instagram",
-    "rv-brand": "morphe-piko",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "arch": "both64",
     "patcher-args": "--continue-on-error",
@@ -305,14 +318,15 @@
     "dpi": "nodpi anydpi auto",
     "patches": [
       {
-        "source": "crimera/piko"
+        "source": "crimera/piko",
+        "brand": "piko"
       }
     ]
   },
   "x-morphe-piko": {
     "enabled": false,
     "app-name": "x",
-    "rv-brand": "morphe-piko",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "version": "latest",
     "patcher-args": "--continue-on-error",
@@ -323,18 +337,20 @@
     "patches": [
       {
         "source": "inotia00/x-shim",
-        "host": "gitlab"
+        "host": "gitlab",
+        "brand": "xshim"
       },
       {
         "source": "crimera/piko",
-        "included-patches": "'Dynamic Color'"
+        "included-patches": "'Dynamic Color'",
+        "brand": "piko"
       }
     ]
   },
   "winlator-viamorphe-pubgvn": {
     "enabled": true,
     "app-name": "winlator",
-    "rv-brand": "viamorphe-pubgvn",
+    "rv-brand": "viamorphe",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-desktop",
     "local-dlurl": "downloads/winlator.apk",
@@ -342,14 +358,15 @@
       {
         "source": "MorpheApp/morphe-patches",
         "args": "-OpackageName='com.vng.pubgmobile'",
-        "included-patches": "'Change Package Name'"
+        "included-patches": "'Change Package Name'",
+        "brand": "pubgvn"
       }
     ]
   },
   "zalith-launcher-2-plus-viamorphe-codm": {
     "enabled": true,
     "app-name": "zalith-launcher-2-plus",
-    "rv-brand": "viamorphe-codm",
+    "rv-brand": "viamorphe",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-desktop",
     "local-dlurl": "downloads/zalith-launcher-2-plus.apk",
@@ -357,14 +374,15 @@
       {
         "source": "MorpheApp/morphe-patches",
         "args": "-OpackageName='com.activision.callofduty.shooter'",
-        "included-patches": "'Change Package Name'"
+        "included-patches": "'Change Package Name'",
+        "brand": "codm"
       }
     ]
   },
   "geode-viamorphe-pubgkr": {
     "enabled": true,
     "app-name": "geode",
-    "rv-brand": "viamorphe-pubgkr",
+    "rv-brand": "viamorphe",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-desktop",
     "local-dlurl": "downloads/geode.apk",
@@ -372,14 +390,15 @@
       {
         "source": "MorpheApp/morphe-patches",
         "args": "-OpackageName='com.pubg.krmobile'",
-        "included-patches": "'Change Package Name'"
+        "included-patches": "'Change Package Name'",
+        "brand": "pubgkr"
       }
     ]
   },
   "levilauncher-unlocked-viamorphe-bgmi": {
     "enabled": true,
     "app-name": "levilauncher-unlocked",
-    "rv-brand": "viamorphe-bgmi",
+    "rv-brand": "viamorphe",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-desktop",
     "local-dlurl": "downloads/levilauncher.apk",
@@ -387,14 +406,15 @@
       {
         "source": "MorpheApp/morphe-patches",
         "args": "-OpackageName='com.pubg.imobile'",
-        "included-patches": "'Change Package Name'"
+        "included-patches": "'Change Package Name'",
+        "brand": "bgmi"
       }
     ]
   },
   "discord-npatch-revenge": {
     "enabled": false,
     "app-name": "discord",
-    "rv-brand": "npatch-revenge",
+    "rv-brand": "npatch",
     "build-mode": "apk",
     "arch": "all",
     "cli-source": "7723mod/NPatch",
@@ -404,12 +424,13 @@
     "uptodown-dlurl": "https://discord-chat-for-gamers.en.uptodown.com/android",
     "patches": [
       {
-        "source": "revenge-mod/revenge-xposed"
+        "source": "revenge-mod/revenge-xposed",
+        "brand": "revenge"
       }
     ]
   },
   "amazon-india-morphe-rushiranpise": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "amazon-india",
     "rv-brand": "morphe-rushiranpise",
     "build-mode": "apk",
@@ -422,7 +443,8 @@
         "source": "rushiranpise/morphe-patches",
         "included-patches": "'Dark Mode' 'Open Links in Browser'",
         "excluded-patches": "'Hide Rufus Tab'",
-        "microg-autodetect": "false"
+        "microg-autodetect": "false",
+        "brand": "rushiranpise"
       }
     ]
   },
