@@ -164,11 +164,11 @@ Patches:
 #### [Revenge (revenge-mod)](https://github.com/revenge-mod/revenge-xposed) via [Npatch](https://github.com/7723mod/NPatch)
 
 <details>
-<summary id="discord-npatch-revenge">Version: v336.10-Stable</summary>
+<summary id="discord-npatch-revenge">Version: v337.10-Stable</summary>
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
 Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xposed/releases/tag/1410)
 </blockquote>
 </details>
