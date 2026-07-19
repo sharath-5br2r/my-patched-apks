@@ -32,7 +32,7 @@ Thank you to everyone who helps keep this project alive!
 
 > [!NOTE]
 >
-> 🌐 **[Visit Download Website](https://sharath-5br2r.github.io/patched-apks-builder-2nd)**
+> 🌐 **[Visit Download Website](https://sharath-5br2r.github.io/my-patched-apks)**
 >
 > For the best experience, please download from the website. It features:
 >
