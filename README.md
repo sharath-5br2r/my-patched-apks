@@ -247,8 +247,8 @@ Patches: [MorpheApp/patches-1.35.0.mpp](https://github.com/MorpheApp/morphe-patc
   
 <blockquote>
 
-[Release 2026-07-18](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260021)<br>
-Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0), [rushiranpise/patches-1.14.0-dev.2.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.14.0-dev.2)
+[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
 - Chinese Online Voice Input
@@ -260,7 +260,6 @@ Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-
 - Enable Inline Autofill Suggestions
 - Enable Undo/Redo feature
 - English QWERTY Up-Flick Uppercase
-- GmsCore support (MicroG)
 - Grammar Checker
 - Inline Suggestions
 - Key Shape Selection
