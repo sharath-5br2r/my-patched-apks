@@ -1,10 +1,9 @@
-youtube-morphe-exp (all): 21.26.360  
-youtube-music-morphe-exp (arm64-v8a): 9.26.51  
-youtube-music-morphe-exp (x86_64): 9.26.51  
+gboard-morphe-gboard (arm64-v8a): 17.0.10.880768217-release-arm64-v8a  
+gboard-morphe-gboard-root (arm64-v8a): 17.0.10.880768217-release-arm64-v8a  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest), required for Google APKs.  
 • Use [Zygisk Detach](https://github.com/j-hc/zygisk-detach) to stop Play Store from updating Modules.  
 CLI: MorpheApp/morphe-desktop-1.11.0-all.jar  
-Patches: MorpheApp/patches-1.36.0-dev.1.mpp  
-[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.1)  
+Patches: jasonwu1994/patches-1.14.0.mpp  
+[Changelog](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0)  
