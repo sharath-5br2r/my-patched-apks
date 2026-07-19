@@ -126,7 +126,7 @@
     ]
   },
   "prime-video-morphe-hoodles": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "prime-video",
     "rv-brand": "morphe-hoodles",
     "build-mode": "apk",
@@ -208,11 +208,11 @@
     ]
   },
   "youtube-morphe-exp": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
-    "version": "21.26.360",
+    "version": "21.28.204",
     "cli-source": "MorpheApp/morphe-desktop",
     "uptodown-dlurl": "https://youtube.en.uptodown.com/android",
     "apkmirror-dlurl": "https://apkmirror.com/apk/google-inc/youtube",
@@ -226,7 +226,7 @@
     ]
   },
   "youtube-music-morphe-exp": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube-music",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
@@ -332,7 +332,7 @@
     ]
   },
   "winlator-viamorphe-pubgvn": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "winlator",
     "rv-brand": "viamorphe-pubgvn",
     "build-mode": "apk",
@@ -347,7 +347,7 @@
     ]
   },
   "zalith-launcher-2-plus-viamorphe-codm": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "zalith-launcher-2-plus",
     "rv-brand": "viamorphe-codm",
     "build-mode": "apk",
@@ -362,7 +362,7 @@
     ]
   },
   "geode-viamorphe-pubgkr": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "geode",
     "rv-brand": "viamorphe-pubgkr",
     "build-mode": "apk",
@@ -377,7 +377,7 @@
     ]
   },
   "levilauncher-unlocked-viamorphe-bgmi": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "viamorphe-bgmi",
     "build-mode": "apk",

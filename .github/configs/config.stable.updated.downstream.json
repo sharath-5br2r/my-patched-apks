@@ -126,7 +126,7 @@
     ]
   },
   "prime-video-morphe-hoodles": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "prime-video",
     "rv-brand": "morphe-hoodles",
     "build-mode": "apk",
@@ -212,7 +212,7 @@
     "app-name": "youtube",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
-    "version": "21.26.360",
+    "version": "21.28.204",
     "cli-source": "MorpheApp/morphe-desktop",
     "uptodown-dlurl": "https://youtube.en.uptodown.com/android",
     "apkmirror-dlurl": "https://apkmirror.com/apk/google-inc/youtube",
@@ -310,7 +310,7 @@
     ]
   },
   "x-morphe-piko": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "x",
     "rv-brand": "morphe-piko",
     "build-mode": "apk",
