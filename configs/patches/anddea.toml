@@ -4,7 +4,7 @@ patches-version = "dev"
 [youtube-morphe-anddea]
 enabled = true
 app-name = "youtube"
-rv-brand = "morphe-anddea"
+rv-brand = "morphe"
 build-mode = "both"
 arch = "all"
 cli-source = "MorpheApp/morphe-desktop"
@@ -15,12 +15,13 @@ dpi = "nodpi anydpi auto"
 archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.youtube"
 [[youtube-morphe-anddea.patches]]
 source = "anddea/revanced-patches"
+brand = "anddea"
 args = "-e 'Theme' -OdarkThemeBackgroundColor=@android:color/black"
 
 [youtube-music-morphe-anddea]
 enabled = true
 app-name = "youtube-music"
-rv-brand = "morphe-anddea"
+rv-brand = "morphe"
 build-mode = "both"
 arch = "both64"
 cli-source = "MorpheApp/morphe-desktop"
@@ -31,4 +32,5 @@ dpi = "nodpi anydpi auto"
 archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.apps.youtube.music"
 [[youtube-music-morphe-anddea.patches]]
 source = "anddea/revanced-patches"
+brand = "anddea"
 args = "-e 'Theme' -OdarkThemeBackgroundColor=@android:color/black"

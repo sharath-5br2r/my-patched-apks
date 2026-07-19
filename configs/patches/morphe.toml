@@ -15,6 +15,7 @@ dpi = "nodpi anydpi auto"
 source = "MorpheApp/morphe-patches"
 args = "-OdarkThemeBackgroundColor=#000000 "
 included-patches = "'Theme'"
+brand = "morphe"
 
 [youtube-music-morphe-exp]
 enabled = true
@@ -31,3 +32,4 @@ dpi = "nodpi anydpi auto"
 source = "MorpheApp/morphe-patches"
 args = "-OdarkThemeBackgroundColor=#000000 "
 included-patches = "'Theme'"
+brand = "morphe"

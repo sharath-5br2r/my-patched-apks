@@ -98,6 +98,7 @@ excluded-patches = """\
 
 included-patches = "'Some Patch'"                          # whitespace seperated list of non-default patches to include. default: ""
 microg-autodetect = "true"         # whether to autodetect microg. default: true. If set to false, microg will be disabled and the app will be patched without microg support. Used when a app uses diffrent kind of microg/The patches have global microg supoort that isnt needed.
+brand = "patch"                 # used to set the brand for the patch. default: patches-source. When "none" is set, there is no branding.
 
 ## Second patch for the same app.Only compatible with the Morphe CLI. Not compatible with ReVanced CLI.
 [[some-app.patches]]

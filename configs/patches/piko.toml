@@ -3,7 +3,7 @@ patches-version = "dev"
 [instagram-morphe-piko]
 enabled = true
 app-name = "instagram"
-rv-brand = "morphe-piko"
+rv-brand = "morphe"
 build-mode = "apk"
 arch = "both64"
 patcher-args = "--continue-on-error"
@@ -14,11 +14,12 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
 dpi = "nodpi anydpi auto"
 [[instagram-morphe-piko.patches]]
 source = "crimera/piko"
+brand = "piko"
 
 [x-morphe-piko]
 enabled = true 
 app-name = "x"
-rv-brand = "morphe-piko"
+rv-brand = "morphe"
 build-mode = "apk"
 version = "latest"
 patcher-args = "--continue-on-error"
@@ -29,6 +30,8 @@ dpi = "nodpi anydpi auto"
 [[x-morphe-piko.patches]]
 source = "inotia00/x-shim"
 host = "gitlab"
+brand = "xshim"
 [[x-morphe-piko.patches]]
 source = "crimera/piko"
 included-patches = "'Dynamic Color'"
+brand = "piko"

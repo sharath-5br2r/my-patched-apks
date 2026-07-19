@@ -3,7 +3,7 @@ patches-version = "dev"
 [tiktok-morphe-tiktok]
 enabled = true
 app-name = "tiktok"
-rv-brand = "morphe-tiktok"
+rv-brand = "morphe"
 build-mode = "apk"
 cli-source = "MorpheApp/morphe-desktop"
 uptodown-dlurl = "https://tiktok.en.uptodown.com/android"
@@ -12,3 +12,4 @@ archive-dlurl = "https://archive.org/download/geologically/apks/com.zhiliaoapp.m
 dpi = "nodpi anydpi auto"
 [[tiktok-morphe-tiktok.patches]]
 source = "icysymmetra/tiktok-patches-for-morphe"
+brand = "icysymmetra"

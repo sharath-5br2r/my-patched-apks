@@ -1809,7 +1809,7 @@ build_rv() {
 		pr "Building '${table}' in '$build_mode' mode"
 		local patchbranding="" modulebranding=""
 		while read -r json; do
-			local branding=$(jq -r '."patch-branding" // ."source" // "" ' <<<"$json")
+			local branding=$(jq -r '."brand" // ."source" // "" ' <<<"$json")
 			if [ -n "$branding" ] && [ "$branding" != "none" ]; then
 				local branding_f patchversion_f patchversion patchsrc 
 				branding_f=${branding// /-}

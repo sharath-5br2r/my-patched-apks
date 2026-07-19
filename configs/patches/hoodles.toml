@@ -3,7 +3,7 @@ patches-version = "dev"
 [github-morphe-hoodles]
 enabled = true
 app-name = "github"
-rv-brand = "morphe-hoodles"
+rv-brand = "morphe"
 build-mode = "apk"
 cli-source = "MorpheApp/morphe-desktop"
 uptodown-dlurl = "https://github-android.en.uptodown.com/android"
@@ -13,11 +13,12 @@ dpi = "nodpi anydpi"
 [[github-morphe-hoodles.patches]]
 source = "hoo-dles/morphe-patches"
 included-patches = "'AMOLED dark theme'"
+brand = "hoodles"
 
 [prime-video-morphe-hoodles]
 enabled = true
 app-name = "prime-video"
-rv-brand = "morphe-hoodles"
+rv-brand = "morphe"
 build-mode = "apk"
 version = "latest"
 arch = "arm64-v8a"
@@ -27,4 +28,5 @@ uptodown-dlurl = "https://amazon-video.en.uptodown.com/android"
 dpi = "nodpi anydpi auto"
 [[prime-video-morphe-hoodles.patches]]
 source = "hoo-dles/morphe-patches"
+brand = "hoodles"
 excluded-patches = "'Rename Shared Permissions'"

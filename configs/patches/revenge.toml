@@ -3,7 +3,7 @@ patches-version = "dev"
 [discord-npatch-revenge]
 enabled = true 
 app-name = "discord"
-rv-brand = "npatch-revenge"
+rv-brand = "npatch"
 build-mode = "apk"
 arch = "all"
 cli-source = "7723mod/NPatch"
@@ -13,3 +13,4 @@ dpi = "nodpi anydpi auto"
 uptodown-dlurl = "https://discord-chat-for-gamers.en.uptodown.com/android"
 [[discord-npatch-revenge.patches]]
 source = "revenge-mod/revenge-xposed"
+brand = "revenge"
