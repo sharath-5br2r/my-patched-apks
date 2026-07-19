@@ -1,9 +1,8 @@
-gboard-morphe-gboard (arm64-v8a): 17.0.10.880768217-release-arm64-v8a  
-gboard-morphe-gboard-root (arm64-v8a): 17.0.10.880768217-release-arm64-v8a  
+discord-npatch-revenge (all): 337.10-Stable  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest), required for Google APKs.  
 • Use [Zygisk Detach](https://github.com/j-hc/zygisk-detach) to stop Play Store from updating Modules.  
-CLI: MorpheApp/morphe-desktop-1.11.0-all.jar  
-Patches: jasonwu1994/patches-1.14.0.mpp  
-[Changelog](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0)  
+CLI: 7723mod/jar-v1.0.5-639-release.jar  
+Patches: revenge-mod/app-release.apk  
+[Changelog](https://github.com/revenge-mod/revenge-xposed/releases/tag/1410)  
