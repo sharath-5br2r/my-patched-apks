@@ -94,7 +94,7 @@ const CONFIG = {
     wps: "WPS",
     rar: "RAR",
     adguard: "AdGuard",
-    moonplus: "Moon+",
+    "moonplus-reader": "Moon+ Reader",
     eyecon: "Eyecon Caller ID & Spam Block",
     camscanner: "CamScanner",
     inshorts: "Inshorts - News in 60 words",
@@ -144,6 +144,7 @@ const CONFIG = {
     "discord": "Discord",
     "speedtest": "Speedtest",
     "symfonium": "Symfonium",
+    "adobe-acrobat": "Adobe Acrobat",
   },
 
   // Map exact app names to true Android Package IDs for Obtainium
@@ -1133,8 +1134,8 @@ function renderBuildMarkdown(build, app, patch) {
  * Renders the entire application catalog into GFM markdown
  */
 function generateMarkdown(catalog) {
-  let md = `#Catalog\n\n`;
-  md += `This is a dynamically generated catalog of pre-patched Android applications hosted in the repository", providing direct download links for various builds, including stable, beta, and specific variants. Each application entry includes detailed information about available versions, architectures, and release dates.\n\n`;
+  let md = `# Catalog\n\n`;
+  md += `This is a dynamically generated catalog of pre-patched Android applications hosted in the repository, providing direct download links for various builds, including stable, beta, and specific variants. Each application entry includes detailed information about available versions, architectures, and release dates.\n\n`;
   md += `📅 *Last generated on: ${new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })} (UTC)*\n\n`;
   
   md += `## 📦 Applications\n\n`;
@@ -1248,7 +1249,7 @@ function generateMarkdown(catalog) {
         md += `* Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:\n`;
         md += `  * **App Source URL:** \`https://github.com/${CONFIG.owner}/${CONFIG.repo}\`\n`;
         md += `  * **Filter Source:** \`Release Title and Asset\`\n`;
-        md += `  * **Asset Filter Regex:** \`${regexStr}\`\n\n`;
+        md += `  * **Asset Filter Regex:** \`\`\`regex\n${regexStr}\n\'\'\`\n\n`;
         md += `</details>\n\n`;
       }
 
