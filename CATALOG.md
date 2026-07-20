@@ -1,8 +1,8 @@
-# 📱 Patched Android Apps Catalog
+#Catalog
 
-Welcome! This is a dynamically generated catalog of pre-patched Android applications hosted in the repository [`sharath-5br2r/my-patched-apks`](https://github.com/sharath-5br2r/my-patched-apks).
+This is a dynamically generated catalog of pre-patched Android applications hosted in the repository", providing direct download links for various builds, including stable, beta, and specific variants. Each application entry includes detailed information about available versions, architectures, and release dates.
 
-📅 *Last generated on: Monday, July 20, 2026 at 10:35:57 PM (UTC)*
+📅 *Last generated on: Monday, July 20, 2026 at 05:16:17 PM (UTC)*
 
 ## 📦 Applications
 
@@ -240,7 +240,7 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
 * **Variant: Game for Peace Spoof**
 * **Version:** <code>vpr14739</code> (Build [260039](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260039)) - *Released Jul 20, 2026*
   * `Universal`:
-    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260039/dolphin-cs-gfp-vpr14739-all.apk)** - <code>dolphin-cs-gfp-vpr14739-all.apk</code> (20.69 MB)
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260039/dolphin-cs-gfp-vpr14739-all.apk)** - <code>dolphin-cs-gfp-vpr14739-all.apk</code> (20.69 MB) (3 downloads)
 
 <details>
 <summary>📂 Older Versions</summary>
@@ -308,22 +308,30 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
 ##### 🔵 Specific Variants / Spoofs
 
 * **Variant: ChromeOS/x86**
-* **Version:** <code>v89004124a5</code> (Build [260041](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260041)) - *Released Jul 20, 2026*
+* **Version:** <code>v89004124a5</code> (Build [260044](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260044)) - *Released Jul 20, 2026*
   * `x86_64`:
-    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260041/eden-chromeos-v89004124a5-x86_64.apk)** - <code>eden-chromeos-v89004124a5-x86_64.apk</code> (24.34 MB) (1 downloads)
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260044/eden-chromeos-v89004124a5-x86_64.apk)** - <code>eden-chromeos-v89004124a5-x86_64.apk</code> (24.34 MB)
 
 <details>
 <summary>📂 Older Versions</summary>
+
+* **Version:** <code>v89004124a5</code> (Build [260043](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260043)) - *Released Jul 20, 2026*
+  * `x86_64`:
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260043/eden-chromeos-v89004124a5-x86_64.apk)** - <code>eden-chromeos-v89004124a5-x86_64.apk</code> (24.34 MB)
+
+* **Version:** <code>v89004124a5</code> (Build [260041](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260041)) - *Released Jul 20, 2026*
+  * `x86_64`:
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260041/eden-chromeos-v89004124a5-x86_64.apk)** - <code>eden-chromeos-v89004124a5-x86_64.apk</code> (24.34 MB) (1 downloads)
 
 * **Version:** <code>v89004124a5</code> (Build [260040](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260040)) - *Released Jul 20, 2026*
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260040/eden-chromeos-v89004124a5-x86_64.apk)** - <code>eden-chromeos-v89004124a5-x86_64.apk</code> (24.34 MB)
 
-* **Version:** <code>v89004124a5</code> (Build [260038](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260038)) - *Released Jul 20, 2026*
+* **Version:** <code>v89004124a5</code> (Build [260038](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260038)) - *Released Jul 19, 2026*
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260038/eden-chromeos-v89004124a5-x86_64.apk)** - <code>eden-chromeos-v89004124a5-x86_64.apk</code> (24.34 MB)
 
-* **Version:** <code>v89004124a5</code> (Build [260036](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260036)) - *Released Jul 20, 2026*
+* **Version:** <code>v89004124a5</code> (Build [260036](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260036)) - *Released Jul 19, 2026*
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260036/eden-chromeos-v89004124a5-x86_64.apk)** - <code>eden-chromeos-v89004124a5-x86_64.apk</code> (24.34 MB)
 
@@ -343,11 +351,11 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260029/eden-chromeos-v89004124a5-x86_64.apk)** - <code>eden-chromeos-v89004124a5-x86_64.apk</code> (24.34 MB)
 
-* **Version:** <code>v89004124a5</code> (Build [260028](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260028)) - *Released Jul 19, 2026*
+* **Version:** <code>v89004124a5</code> (Build [260028](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260028)) - *Released Jul 18, 2026*
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260028/eden-chromeos-v89004124a5-x86_64.apk)** - <code>eden-chromeos-v89004124a5-x86_64.apk</code> (24.34 MB)
 
-* **Version:** <code>veb9280dedf</code> (Build [260027](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260027)) - *Released Jul 19, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [260027](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260027)) - *Released Jul 18, 2026*
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260027/eden-chromeos-veb9280dedf-x86_64.apk)** - <code>eden-chromeos-veb9280dedf-x86_64.apk</code> (24.34 MB)
 
@@ -367,11 +375,11 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260020/eden-chromeos-veb9280dedf-x86_64.apk)** - <code>eden-chromeos-veb9280dedf-x86_64.apk</code> (24.34 MB)
 
-* **Version:** <code>veb9280dedf</code> (Build [260019](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260019)) - *Released Jul 18, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [260019](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260019)) - *Released Jul 17, 2026*
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260019/eden-chromeos-veb9280dedf-x86_64.apk)** - <code>eden-chromeos-veb9280dedf-x86_64.apk</code> (24.34 MB)
 
-* **Version:** <code>veb9280dedf</code> (Build [260018](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260018)) - *Released Jul 18, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [260018](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260018)) - *Released Jul 17, 2026*
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260018/eden-chromeos-veb9280dedf-x86_64.apk)** - <code>eden-chromeos-veb9280dedf-x86_64.apk</code> (24.34 MB)
 
@@ -391,7 +399,7 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260010/eden-chromeos-veb9280dedf-x86_64.apk)** - <code>eden-chromeos-veb9280dedf-x86_64.apk</code> (24.34 MB)
 
-* **Version:** <code>veb9280dedf</code> (Build [260006](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260006)) - *Released Jul 17, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [260006](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260006)) - *Released Jul 16, 2026*
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260006/eden-chromeos-veb9280dedf-x86_64.apk)** - <code>eden-chromeos-veb9280dedf-x86_64.apk</code> (24.34 MB)
 
@@ -403,7 +411,7 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260001/eden-chromeos-v8b8034a2a0-x86_64.apk)** - <code>eden-chromeos-v8b8034a2a0-x86_64.apk</code> (24.33 MB)
 
-* **Version:** <code>veb9280dedf</code> (Build [veb9280dedf](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 19, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [veb9280dedf](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 18, 2026*
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/eden-chromeos-veb9280dedf-x86_64.apk)** - <code>eden-chromeos-veb9280dedf-x86_64.apk</code> (24.34 MB)
 
@@ -418,22 +426,30 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
 </details>
 
 * **Variant: Genshin Impact Spoof**
-* **Version:** <code>v89004124a5</code> (Build [260041](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260041)) - *Released Jul 20, 2026*
+* **Version:** <code>v89004124a5</code> (Build [260044](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260044)) - *Released Jul 20, 2026*
   * `ARM64`:
-    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260041/eden-optimized-v89004124a5-arm64-v8a.apk)** - <code>eden-optimized-v89004124a5-arm64-v8a.apk</code> (24.26 MB)
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260044/eden-optimized-v89004124a5-arm64-v8a.apk)** - <code>eden-optimized-v89004124a5-arm64-v8a.apk</code> (24.26 MB)
 
 <details>
 <summary>📂 Older Versions</summary>
+
+* **Version:** <code>v89004124a5</code> (Build [260043](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260043)) - *Released Jul 20, 2026*
+  * `ARM64`:
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260043/eden-optimized-v89004124a5-arm64-v8a.apk)** - <code>eden-optimized-v89004124a5-arm64-v8a.apk</code> (24.26 MB)
+
+* **Version:** <code>v89004124a5</code> (Build [260041](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260041)) - *Released Jul 20, 2026*
+  * `ARM64`:
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260041/eden-optimized-v89004124a5-arm64-v8a.apk)** - <code>eden-optimized-v89004124a5-arm64-v8a.apk</code> (24.26 MB)
 
 * **Version:** <code>v89004124a5</code> (Build [260040](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260040)) - *Released Jul 20, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260040/eden-optimized-v89004124a5-arm64-v8a.apk)** - <code>eden-optimized-v89004124a5-arm64-v8a.apk</code> (24.26 MB)
 
-* **Version:** <code>v89004124a5</code> (Build [260038](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260038)) - *Released Jul 20, 2026*
+* **Version:** <code>v89004124a5</code> (Build [260038](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260038)) - *Released Jul 19, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260038/eden-optimized-v89004124a5-arm64-v8a.apk)** - <code>eden-optimized-v89004124a5-arm64-v8a.apk</code> (24.26 MB)
 
-* **Version:** <code>v89004124a5</code> (Build [260036](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260036)) - *Released Jul 20, 2026*
+* **Version:** <code>v89004124a5</code> (Build [260036](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260036)) - *Released Jul 19, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260036/eden-optimized-v89004124a5-arm64-v8a.apk)** - <code>eden-optimized-v89004124a5-arm64-v8a.apk</code> (24.26 MB)
 
@@ -453,11 +469,11 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260029/eden-optimized-v89004124a5-arm64-v8a.apk)** - <code>eden-optimized-v89004124a5-arm64-v8a.apk</code> (24.26 MB)
 
-* **Version:** <code>v89004124a5</code> (Build [260028](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260028)) - *Released Jul 19, 2026*
+* **Version:** <code>v89004124a5</code> (Build [260028](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260028)) - *Released Jul 18, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260028/eden-optimized-v89004124a5-arm64-v8a.apk)** - <code>eden-optimized-v89004124a5-arm64-v8a.apk</code> (24.26 MB) (1 downloads)
 
-* **Version:** <code>veb9280dedf</code> (Build [260027](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260027)) - *Released Jul 19, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [260027](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260027)) - *Released Jul 18, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260027/eden-optimized-veb9280dedf-arm64-v8a.apk)** - <code>eden-optimized-veb9280dedf-arm64-v8a.apk</code> (24.26 MB)
 
@@ -477,11 +493,11 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260020/eden-optimized-veb9280dedf-arm64-v8a.apk)** - <code>eden-optimized-veb9280dedf-arm64-v8a.apk</code> (24.26 MB)
 
-* **Version:** <code>veb9280dedf</code> (Build [260019](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260019)) - *Released Jul 18, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [260019](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260019)) - *Released Jul 17, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260019/eden-optimized-veb9280dedf-arm64-v8a.apk)** - <code>eden-optimized-veb9280dedf-arm64-v8a.apk</code> (24.26 MB)
 
-* **Version:** <code>veb9280dedf</code> (Build [260018](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260018)) - *Released Jul 18, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [260018](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260018)) - *Released Jul 17, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260018/eden-optimized-veb9280dedf-arm64-v8a.apk)** - <code>eden-optimized-veb9280dedf-arm64-v8a.apk</code> (24.26 MB)
 
@@ -501,7 +517,7 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260010/eden-optimized-veb9280dedf-arm64-v8a.apk)** - <code>eden-optimized-veb9280dedf-arm64-v8a.apk</code> (24.26 MB)
 
-* **Version:** <code>veb9280dedf</code> (Build [260006](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260006)) - *Released Jul 17, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [260006](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260006)) - *Released Jul 16, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260006/eden-optimized-veb9280dedf-arm64-v8a.apk)** - <code>eden-optimized-veb9280dedf-arm64-v8a.apk</code> (24.26 MB) (3 downloads)
 
@@ -513,7 +529,7 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260001/eden-optimized-v8b8034a2a0-arm64-v8a.apk)** - <code>eden-optimized-v8b8034a2a0-arm64-v8a.apk</code> (24.24 MB) (3 downloads)
 
-* **Version:** <code>veb9280dedf</code> (Build [veb9280dedf](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 19, 2026*
+* **Version:** <code>veb9280dedf</code> (Build [veb9280dedf](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 18, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/eden-optimized-veb9280dedf-arm64-v8a.apk)** - <code>eden-optimized-veb9280dedf-arm64-v8a.apk</code> (24.26 MB)
 
@@ -865,7 +881,7 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
 
 ##### 🟡 Beta Releases
 
-* **Version:** <code>v435.0.0.37.76-piko-v3.8.0-dev.5</code> (Build [260037](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260037)) - *Released Jul 20, 2026*
+* **Version:** <code>v435.0.0.37.76-piko-v3.8.0-dev.5</code> (Build [260037](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260037)) - *Released Jul 19, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260037/instagram-morphe-v435.0.0.37.76-piko-v3.8.0-dev.5-arm64-v8a.apk)** - <code>instagram-morphe-v435.0.0.37.76-piko-v3.8.0-dev.5-arm64-v8a.apk</code> (143.91 MB)
   * `x86_64`:
@@ -880,7 +896,7 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260002/instagram-morphe-piko-v435.0.0.37.76-x86_64.apk)** - <code>instagram-morphe-piko-v435.0.0.37.76-x86_64.apk</code> (148.49 MB)
 
-* **Version:** <code>v435.0.0.37.76-piko-v3.8.0-dev.5</code> (Build [v435.0.0.37.76-piko-v3.8.0-dev.5](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 20, 2026*
+* **Version:** <code>v435.0.0.37.76-piko-v3.8.0-dev.5</code> (Build [v435.0.0.37.76-piko-v3.8.0-dev.5](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 19, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/instagram-morphe-v435.0.0.37.76-piko-v3.8.0-dev.5-arm64-v8a.apk)** - <code>instagram-morphe-v435.0.0.37.76-piko-v3.8.0-dev.5-arm64-v8a.apk</code> (143.91 MB)
   * `x86_64`:
@@ -1363,7 +1379,7 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
 
 ##### 🟡 Beta Releases
 
-* **Version:** <code>v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5</code> (Build [260037](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260037)) - *Released Jul 20, 2026*
+* **Version:** <code>v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5</code> (Build [260037](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260037)) - *Released Jul 19, 2026*
   * `Universal`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260037/x-morphe-v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5-all.apk)** - <code>x-morphe-v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5-all.apk</code> (252.04 MB)
 
@@ -1382,7 +1398,7 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `Universal`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260002/x-morphe-piko-v12.8.0-release.0-all.apk)** - <code>x-morphe-piko-v12.8.0-release.0-all.apk</code> (251.9 MB) (2 downloads)
 
-* **Version:** <code>v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5</code> (Build [v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 20, 2026*
+* **Version:** <code>v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5</code> (Build [v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 19, 2026*
   * `Universal`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/x-morphe-v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5-all.apk)** - <code>x-morphe-v12.9.0-release.0-xshim-v1.7.0-piko-v3.8.0-dev.5-all.apk</code> (252.04 MB)
 
@@ -1425,18 +1441,23 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
 >
 
 <details>
-<summary>🛠️ <b>morphe</b> (Latest: <code>v21.28.204-morphe-v1.36.0-dev.4</code>)</summary>
+<summary>🛠️ <b>morphe</b> (Latest: <code>v21.28.204-morphe-v1.36.0-dev.5</code>)</summary>
 
 ##### 🔵 Specific Variants / Spoofs
 
 * **Variant: Experimental**
+* **Version:** <code>v21.28.204-morphe-v1.36.0-dev.5</code> (Build [260042](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260042)) - *Released Jul 20, 2026*
+  * `Universal`:
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260042/youtube-morphe-exp-v21.28.204-morphe-v1.36.0-dev.5-all.apk)** - <code>youtube-morphe-exp-v21.28.204-morphe-v1.36.0-dev.5-all.apk</code> (200.4 MB)
+    * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260042/youtube-morphe-exp-module-v21.28.204-morphe-v1.36.0-dev.5-all.zip)** - <code>youtube-morphe-exp-module-v21.28.204-morphe-v1.36.0-dev.5-all.zip</code> (350.57 MB)
+
+<details>
+<summary>📂 Older Versions</summary>
+
 * **Version:** <code>v21.28.204-morphe-v1.36.0-dev.4</code> (Build [260035](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260035)) - *Released Jul 19, 2026*
   * `Universal`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260035/youtube-morphe-exp-v21.28.204-morphe-v1.36.0-dev.4-all.apk)** - <code>youtube-morphe-exp-v21.28.204-morphe-v1.36.0-dev.4-all.apk</code> (200.4 MB)
     * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260035/youtube-morphe-exp-module-v21.28.204-morphe-v1.36.0-dev.4-all.zip)** - <code>youtube-morphe-exp-module-v21.28.204-morphe-v1.36.0-dev.4-all.zip</code> (350.57 MB)
-
-<details>
-<summary>📂 Older Versions</summary>
 
 * **Version:** <code>v21.28.204-morphe-v1.36.0-dev.3</code> (Build [260032](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260032)) - *Released Jul 19, 2026*
   * `Universal`:
@@ -1462,6 +1483,11 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `Universal`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/youtube-morphe-exp-v21.28.204-MorpheApp-morphe-patches-v1.36.0-dev.3-all.apk)** - <code>youtube-morphe-exp-v21.28.204-MorpheApp-morphe-patches-v1.36.0-dev.3-all.apk</code> (200.39 MB)
     * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/youtube-morphe-exp-module-v21.28.204-MorpheApp-morphe-patches-v1.36.0-dev.3-all.zip)** - <code>youtube-morphe-exp-module-v21.28.204-MorpheApp-morphe-patches-v1.36.0-dev.3-all.zip</code> (350.57 MB)
+
+* **Version:** <code>v21.28.204-morphe-v1.36.0-dev.5</code> (Build [v21.28.204-morphe-v1.36.0-dev.5](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 20, 2026*
+  * `Universal`:
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/youtube-morphe-exp-v21.28.204-morphe-v1.36.0-dev.5-all.apk)** - <code>youtube-morphe-exp-v21.28.204-morphe-v1.36.0-dev.5-all.apk</code> (200.4 MB)
+    * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/youtube-morphe-exp-module-v21.28.204-morphe-v1.36.0-dev.5-all.zip)** - <code>youtube-morphe-exp-module-v21.28.204-morphe-v1.36.0-dev.5-all.zip</code> (350.57 MB)
 
 * **Version:** <code>v21.28.204-morphe-v1.36.0-dev.4</code> (Build [v21.28.204-morphe-v1.36.0-dev.4](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 19, 2026*
   * `Universal`:
@@ -1543,11 +1569,19 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
 >
 
 <details>
-<summary>🛠️ <b>morphe</b> (Latest: <code>v9.28.51-morphe-v1.36.0-dev.4</code>)</summary>
+<summary>🛠️ <b>morphe</b> (Latest: <code>v9.28.51-morphe-v1.36.0-dev.5</code>)</summary>
 
 ##### 🔵 Specific Variants / Spoofs
 
 * **Variant: Experimental**
+* **Version:** <code>v9.28.51-morphe-v1.36.0-dev.5</code> (Build [260042](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260042)) - *Released Jul 20, 2026*
+  * `ARM64`:
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260042/youtube-music-morphe-exp-v9.28.51-morphe-v1.36.0-dev.5-arm64-v8a.apk)** - <code>youtube-music-morphe-exp-v9.28.51-morphe-v1.36.0-dev.5-arm64-v8a.apk</code> (70.57 MB)
+    * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260042/youtube-music-morphe-exp-module-v9.28.51-morphe-v1.36.0-dev.5-arm64-v8a.zip)** - <code>youtube-music-morphe-exp-module-v9.28.51-morphe-v1.36.0-dev.5-arm64-v8a.zip</code> (78.19 MB)
+
+<details>
+<summary>📂 Older Versions</summary>
+
 * **Version:** <code>v9.28.51-morphe-v1.36.0-dev.4</code> (Build [260035](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260035)) - *Released Jul 19, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260035/youtube-music-morphe-exp-v9.28.51-morphe-v1.36.0-dev.4-arm64-v8a.apk)** - <code>youtube-music-morphe-exp-v9.28.51-morphe-v1.36.0-dev.4-arm64-v8a.apk</code> (70.57 MB) (1 downloads)
@@ -1555,9 +1589,6 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260035/youtube-music-morphe-exp-v9.28.51-morphe-v1.36.0-dev.4-x86_64.apk)** - <code>youtube-music-morphe-exp-v9.28.51-morphe-v1.36.0-dev.4-x86_64.apk</code> (36.05 MB)
     * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260035/youtube-music-morphe-exp-module-v9.28.51-morphe-v1.36.0-dev.4-x86_64.zip)** - <code>youtube-music-morphe-exp-module-v9.28.51-morphe-v1.36.0-dev.4-x86_64.zip</code> (62.75 MB)
-
-<details>
-<summary>📂 Older Versions</summary>
 
 * **Version:** <code>v9.26.51-morphe-v1.36.0-dev.3</code> (Build [260032](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260032)) - *Released Jul 19, 2026*
   * `ARM64`:
@@ -1590,6 +1621,11 @@ Welcome! This is a dynamically generated catalog of pre-patched Android applicat
   * `x86_64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260002/youtube-music-morphe-exp-v9.26.51-x86_64.apk)** - <code>youtube-music-morphe-exp-v9.26.51-x86_64.apk</code> (73.23 MB)
     * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260002/youtube-music-morphe-exp-module-v9.26.51-x86_64.zip)** - <code>youtube-music-morphe-exp-module-v9.26.51-x86_64.zip</code> (78.55 MB)
+
+* **Version:** <code>v9.28.51-morphe-v1.36.0-dev.5</code> (Build [v9.28.51-morphe-v1.36.0-dev.5](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 20, 2026*
+  * `ARM64`:
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/youtube-music-morphe-exp-v9.28.51-morphe-v1.36.0-dev.5-arm64-v8a.apk)** - <code>youtube-music-morphe-exp-v9.28.51-morphe-v1.36.0-dev.5-arm64-v8a.apk</code> (70.57 MB)
+    * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/youtube-music-morphe-exp-module-v9.28.51-morphe-v1.36.0-dev.5-arm64-v8a.zip)** - <code>youtube-music-morphe-exp-module-v9.28.51-morphe-v1.36.0-dev.5-arm64-v8a.zip</code> (78.19 MB)
 
 * **Version:** <code>v9.28.51-morphe-v1.36.0-dev.4</code> (Build [v9.28.51-morphe-v1.36.0-dev.4](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 19, 2026*
   * `ARM64`:
