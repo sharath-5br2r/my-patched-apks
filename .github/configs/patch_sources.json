@@ -24,18 +24,18 @@
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.35.0",
-    "prerelease": "v1.36.0-dev.1",
+    "prerelease": "v1.36.0-dev.5",
     "blocked": false,
     "stable_date": "2026-07-16T09:04:26Z",
-    "pre_date": "2026-07-18T06:39:30Z"
+    "pre_date": "2026-07-20T09:30:34Z"
   },
   "piko": {
     "repo": "crimera/piko",
     "stable": "v3.7.0",
-    "prerelease": "v3.8.0-dev.4",
+    "prerelease": "v3.8.0-dev.5",
     "blocked": false,
     "stable_date": "2026-06-27T16:03:22Z",
-    "pre_date": "2026-07-12T13:22:24Z"
+    "pre_date": "2026-07-19T17:03:30Z"
   },
   "hoodles": {
     "repo": "hoo-dles/morphe-patches",
@@ -48,10 +48,10 @@
   "adobo": {
     "repo": "jkennethcarino/adobo",
     "stable": "v1.2.0",
-    "prerelease": "v1.3.0-dev.9",
+    "prerelease": "v1.3.0-dev.11",
     "blocked": false,
     "stable_date": "2026-06-14T11:51:20Z",
-    "pre_date": "2026-07-15T15:38:52Z"
+    "pre_date": "2026-07-18T16:13:12Z"
   },
   "rvexp": {
     "repo": "Aunali321/ReVancedExperiments",
@@ -158,18 +158,18 @@
   },
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
-    "stable": "v1.13.1",
-    "prerelease": "v1.14.0-dev.2",
+    "stable": "v1.14.0",
+    "prerelease": "v1.14.0-dev.4",
     "blocked": false,
-    "stable_date": "2026-07-16T09:36:16Z",
-    "pre_date": "2026-07-18T05:26:03Z"
+    "stable_date": "2026-07-19T18:47:03Z",
+    "pre_date": "2026-07-19T18:37:10Z"
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.12.2",
+    "stable": "v1.13.0",
     "prerelease": "v1.5.7-dev.3",
     "blocked": false,
-    "stable_date": "2026-07-16T12:45:53Z",
+    "stable_date": "2026-07-20T11:28:09Z",
     "pre_date": "2026-06-26T16:45:34Z"
   },
   "revenge": {
@@ -182,11 +182,11 @@
   },
   "bufferk": {
     "repo": "bufferk/morphe-patches",
-    "stable": "v1.7.1",
+    "stable": "v1.8.0",
     "prerelease": "v1.8.0-dev.1",
     "blocked": false,
-    "stable_date": "2026-07-18T09:23:06Z",
-    "pre_date": "2026-07-18T09:09:31Z"
+    "stable_date": "2026-07-18T18:58:06Z",
+    "pre_date": "2026-07-18T11:46:49Z"
   },
   "IMXEren": {
     "repo": "IMXEren/mix-patches",
@@ -198,8 +198,8 @@
   },
   "quantavil": {
     "repo": "quantavil/edge-morphe-patches",
-    "stable": "v1.32.0",
-    "stable_date": "2026-06-11T08:29:13Z",
+    "stable": "v1.33.0",
+    "stable_date": "2026-07-19T19:24:38Z",
     "prerelease": "",
     "pre_date": "",
     "blocked": false
