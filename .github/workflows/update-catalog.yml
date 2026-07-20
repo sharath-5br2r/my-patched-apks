@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ci
+  group: catalog
   cancel-in-progress: true
 
 jobs:
