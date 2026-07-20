@@ -216,7 +216,7 @@
     ]
   },
   "youtube-morphe-exp": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
@@ -235,7 +235,7 @@
     ]
   },
   "youtube-music-morphe-exp": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "youtube-music",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
@@ -306,7 +306,7 @@
     ]
   },
   "instagram-morphe-piko": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "instagram",
     "rv-brand": "morphe",
     "build-mode": "apk",
@@ -324,7 +324,7 @@
     ]
   },
   "x-morphe-piko": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "x",
     "rv-brand": "morphe",
     "build-mode": "apk",
@@ -348,7 +348,7 @@
     ]
   },
   "winlator-viamorphe-pubgvn": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "winlator",
     "rv-brand": "viamorphe",
     "build-mode": "apk",
@@ -364,7 +364,7 @@
     ]
   },
   "zalith-launcher-2-plus-viamorphe-codm": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "zalith-launcher-2-plus",
     "rv-brand": "viamorphe",
     "build-mode": "apk",
@@ -380,7 +380,7 @@
     ]
   },
   "geode-viamorphe-pubgkr": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "geode",
     "rv-brand": "viamorphe",
     "build-mode": "apk",
@@ -396,7 +396,7 @@
     ]
   },
   "levilauncher-unlocked-viamorphe-bgmi": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "levilauncher-unlocked",
     "rv-brand": "viamorphe",
     "build-mode": "apk",
