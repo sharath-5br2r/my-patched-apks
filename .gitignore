@@ -20,3 +20,4 @@ build.json
 /.github/configs/app_versions.json
 /build.tmp
 /*.json
+!/releases.json

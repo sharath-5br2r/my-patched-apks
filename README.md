@@ -32,7 +32,7 @@ Thank you to everyone who helps keep this project alive!
 
 > [!NOTE]
 >
-> 🌐 **[Visit Download Website](https://sharath-5br2r.github.io/my-patched-apks)**
+> 🌐 **[Check Catalog](CATALOG.md)**
 >
 > For the best experience, please download from the website. It features:
 >
