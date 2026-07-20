@@ -682,8 +682,8 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
   
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260035)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.4)
+[Release 2026-07-20](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260042)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -845,8 +845,8 @@ Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-pat
   
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260035)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.4.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.4)
+[Release 2026-07-20](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260042)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
