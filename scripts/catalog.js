@@ -1249,7 +1249,7 @@ function generateMarkdown(catalog) {
         md += `* Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:\n`;
         md += `  * **App Source URL:** \`https://github.com/${CONFIG.owner}/${CONFIG.repo}\`\n`;
         md += `  * **Filter Source:** \`Release Title and Asset\`\n`;
-        md += `  * **Asset Filter Regex:** \`\`\`regex\n${regexStr}\n\'\'\`\n\n`;
+        md += `  * **Asset Filter Regex:** \n\`\`\`regex\n${regexStr}\n\'\'\`\n\n`;
         md += `</details>\n\n`;
       }
 
