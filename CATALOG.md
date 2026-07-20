@@ -1,15 +1,15 @@
-#Catalog
+# Catalog
 
-This is a dynamically generated catalog of pre-patched Android applications hosted in the repository", providing direct download links for various builds, including stable, beta, and specific variants. Each application entry includes detailed information about available versions, architectures, and release dates.
+This is a dynamically generated catalog of pre-patched Android applications hosted in the repository, providing direct download links for various builds, including stable, beta, and specific variants. Each application entry includes detailed information about available versions, architectures, and release dates.
 
-📅 *Last generated on: Monday, July 20, 2026 at 05:16:17 PM (UTC)*
+📅 *Last generated on: Monday, July 20, 2026 at 06:03:59 PM (UTC)*
 
 ## 📦 Applications
 
 <details>
-<summary>📱 <b>adobe-acrobat</b></summary>
+<summary>📱 <b>Adobe Acrobat</b></summary>
 
-### <a name="adobeacrobat"></a>adobe-acrobat
+### <a name="adobeacrobat"></a>Adobe Acrobat
 
 <details>
 <summary>🛠️ <b>morphe + hooman</b> (Latest: <code>v26.6.1</code>)</summary>
@@ -26,6 +26,20 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * **Version:** <code>v26.6.1</code> (Build [v26.6.1](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 16, 2026*
   * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/adobe-acrobat-morphe-hooman-v26.6.1-arm64-v8a.apk)** - <code>adobe-acrobat-morphe-hooman-v26.6.1-arm64-v8a.apk</code> (167.06 MB)
+
+</details>
+
+<details>
+<summary>🤖 <b>Obtainium Integration</b></summary>
+
+* **Package ID:** `com.adobe.reader`
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.adobe.reader%22%2C%22name%22%3A%22Adobe%20Acrobat%20morphe%20%2B%20hooman%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5E%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-morphe-hooman-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-arm64-%5B%5C%5C%5C%5Cw.-%5D*%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
+  * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
+  * **Filter Source:** `Release Title and Asset`
+  * **Asset Filter Regex:** ```regex
+^[\w.-]*-[\w.-]*-morphe-hooman-(v\w*\d|\d|vbuild)[\w.-]*-arm64-[\w.-]*\.apk$
+''`
 
 </details>
 
@@ -66,7 +80,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^adm-morphe-hooman-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^adm-morphe-hooman-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -119,7 +135,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^[\w.-]*-[\w.-]*-signed-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^[\w.-]*-[\w.-]*-signed-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -164,7 +182,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^[\w.-]*-[\w.-]*-morphe-rushiranpise-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^[\w.-]*-[\w.-]*-morphe-rushiranpise-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -209,7 +229,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^discord-npatch-revenge-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^discord-npatch-revenge-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -283,7 +305,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^dolphin-cs-gfp-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^dolphin-cs-gfp-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -551,7 +575,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^eden-chromeos-(v\w*\d|\d|vbuild)[\w.-]*-x86_64\.apk$`
+  * **Asset Filter Regex:** ```regex
+^eden-chromeos-(v\w*\d|\d|vbuild)[\w.-]*-x86_64\.apk$
+''`
 
 </details>
 
@@ -592,7 +618,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^fing-morphe-paresh-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^fing-morphe-paresh-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -646,7 +674,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^gboard-morphe-gboard-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*-arm64-[\w.-]*\.apk$`
+  * **Asset Filter Regex:** ```regex
+^gboard-morphe-gboard-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*-arm64-[\w.-]*\.apk$
+''`
 
 </details>
 
@@ -779,7 +809,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^geode-viamorphe-pubgkr-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-morphe-[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^geode-viamorphe-pubgkr-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-morphe-[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -816,7 +848,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^geode-viamorphe-pubgkr-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^geode-viamorphe-pubgkr-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -861,7 +895,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^github-morphe-hoodles-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^github-morphe-hoodles-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -918,7 +954,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^instagram-morphe-(v\w*\d|\d|vbuild)[\w.-]*-piko-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$`
+  * **Asset Filter Regex:** ```regex
+^instagram-morphe-(v\w*\d|\d|vbuild)[\w.-]*-piko-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$
+''`
 
 </details>
 
@@ -959,7 +997,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^jiohotstar-morphe-paresh-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^jiohotstar-morphe-paresh-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -1036,9 +1076,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 ---
 
 <details>
-<summary>📱 <b>Moon+-reader</b></summary>
+<summary>📱 <b>Moon+ Reader</b></summary>
 
-### <a name="moonreader"></a>Moon+-reader
+### <a name="moonreader"></a>Moon+ Reader
 
 <details>
 <summary>🛠️ <b>morphe + binarymend</b> (Latest: <code>v10.5</code>)</summary>
@@ -1115,7 +1155,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-morphe-hoodles-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-[\w.-]*-morphe-[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$`
+  * **Asset Filter Regex:** ```regex
+^[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-morphe-hoodles-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-[\w.-]*-morphe-[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$
+''`
 
 </details>
 
@@ -1189,7 +1231,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^speedtest-morphe-xtra-(v\w*\d|\d|vbuild)[\w.-]*-arm64-[\w.-]*\.apk$`
+  * **Asset Filter Regex:** ```regex
+^speedtest-morphe-xtra-(v\w*\d|\d|vbuild)[\w.-]*-arm64-[\w.-]*\.apk$
+''`
 
 </details>
 
@@ -1230,7 +1274,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^symfonium-morphe-hooman-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^symfonium-morphe-hooman-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -1271,7 +1317,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^tiktok-morphe-tiktok-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^tiktok-morphe-tiktok-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -1317,7 +1365,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^winlator-viamorphe-pubgvn-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-morphe-[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^winlator-viamorphe-pubgvn-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-morphe-[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -1354,7 +1404,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^winlator-viamorphe-pubgvn-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^winlator-viamorphe-pubgvn-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -1420,7 +1472,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^x-morphe-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-piko-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^x-morphe-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-piko-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -1514,7 +1568,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^youtube-morphe-exp-(v\w*\d|\d|vbuild)[\w.-]*-morphe-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^youtube-morphe-exp-(v\w*\d|\d|vbuild)[\w.-]*-morphe-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -1548,7 +1604,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^youtube-morphe-anddea-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$`
+  * **Asset Filter Regex:** ```regex
+^youtube-morphe-anddea-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+''`
 
 </details>
 
@@ -1669,7 +1727,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^youtube-[\w.-]*-morphe-exp-(v\w*\d|\d|vbuild)[\w.-]*-morphe-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$`
+  * **Asset Filter Regex:** ```regex
+^youtube-[\w.-]*-morphe-exp-(v\w*\d|\d|vbuild)[\w.-]*-morphe-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$
+''`
 
 </details>
 
@@ -1709,7 +1769,9 @@ This is a dynamically generated catalog of pre-patched Android applications host
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
-  * **Asset Filter Regex:** `^youtube-[\w.-]*-morphe-anddea-(v\w*\d|\d|vbuild)[\w.-]*-arm64-[\w.-]*\.apk$`
+  * **Asset Filter Regex:** ```regex
+^youtube-[\w.-]*-morphe-anddea-(v\w*\d|\d|vbuild)[\w.-]*-arm64-[\w.-]*\.apk$
+''`
 
 </details>
 
