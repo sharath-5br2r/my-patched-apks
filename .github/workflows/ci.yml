@@ -113,10 +113,10 @@ jobs:
     uses: ./.github/workflows/cleanup.yml
     secrets: inherit
 
-  trigger_website_update:
+  trigger_catalog_update:
     needs: [build_dev]
     if: ${{ always() && ( needs.build_dev.result == 'success') }}
-    uses: ./.github/workflows/update-cache.yml
+    uses: ./.github/workflows/update-catalog.yml
     secrets: inherit
 
 
