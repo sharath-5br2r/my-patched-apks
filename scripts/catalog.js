@@ -35,7 +35,7 @@ const CONFIG = {
     "pubgvn",
     "anddea",
     "xshim",
-    "jasomwu1994",
+    "jasonwu1994",
     "icysymmetra",
   ]),
 
