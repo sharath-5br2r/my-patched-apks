@@ -247,7 +247,7 @@ Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260004)<br>
 Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
