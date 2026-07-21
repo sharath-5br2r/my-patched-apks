@@ -1606,9 +1606,9 @@ function createObtainiumInstructions() {
       });
     });
 
-  const copyCode = (text) => {
+  const copyCode = (text, defaultLabel = "Copy") => {
     const escaped = escapeForOnclickCopy(text);
-    return `onclick="navigator.clipboard.writeText('${escaped}').then(() => { this.textContent='Copied!'; setTimeout(() => { this.textContent='Copy'; }, 2000); })" `;
+    return `onclick="navigator.clipboard.writeText('${escaped}').then(() => { this.textContent='Copied!'; setTimeout(() => { this.textContent='${defaultLabel}'; }, 2000); })" `;
   };
 
   const selectedExamplesMarkup =
@@ -1644,8 +1644,13 @@ function createObtainiumInstructions() {
               url: repoUrl,
               additionalSettings: JSON.stringify(additionalSettings),
             };
-            const oneClickUrl = `https://apps.obtainium.imranr.dev/redirect?r=${encodeURIComponent("obtainium://app/" + JSON.stringify(obtainiumConfig))}`;
-            obtainiumButtonHtml = `<a href="${oneClickUrl}" class="copy-btn obtainium-add-btn" target="_blank" rel="noopener noreferrer">Add to Obtainium</a>`;
+            const configStr = JSON.stringify(obtainiumConfig);
+            const directUrl = `obtainium://app/${encodeURIComponent(configStr)}`;
+            const oneClickUrl = `https://apps.obtainium.imranr.dev/redirect?r=${encodeURIComponent("obtainium://app/" + configStr)}`;
+            obtainiumButtonHtml = `
+              <a href="${directUrl}" class="copy-btn obtainium-add-btn direct-link" target="_blank" rel="noopener noreferrer">Add to Obtainium</a>
+              <a href="${oneClickUrl}" class="copy-btn obtainium-add-btn redirect-link" target="_blank" rel="noopener noreferrer">Add to Obtainium (Redirect)</a>
+            `;
           }
 
           return `
@@ -1654,7 +1659,7 @@ function createObtainiumInstructions() {
                         <div class="code-with-copy ${appId ? "" : "no-obtainium"}">
                             <code>${escapeHtml(regex)}</code>
                             ${obtainiumButtonHtml}
-                            <button type="button" class="copy-btn" ${copyCode(regex)}>Copy</button>
+                            <button type="button" class="copy-btn" ${copyCode(regex, "Copy Regex")}>Copy Regex</button>
                         </div>
                     </div>`;
         })
