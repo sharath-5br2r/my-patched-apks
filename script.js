@@ -6,7 +6,7 @@
 const CONFIG = {
   owner: "sharath-5br2r",
   repo: "my-patched-apks",
-  cacheDuration: 5, // Cache duration in minutes
+  cacheDuration: 1, // Cache duration in minutes
 
   // App Categories for the top filter buttons (maps filter-btn dataset to keywords)
   appCategories: {
@@ -171,7 +171,7 @@ const CONFIG = {
     "Adobe Lightroom": "com.adobe.lrmobile",
     "Adobe Photoshop Mix": "com.adobe.psmobile",
     "AccuWeather": "com.accuweather.android",
-    "All Document Reader": "alldocumentsreader.docuemntviewer",
+    "All Document Reader": "alldocumentsreader.documentviewer",
     "Amazon Alexa": "com.amazon.dee.app",
     "Amazon India": "in.amazon.mShop.android.shopping",
     "AT4K Launcher": "com.overdevs.at4k",
@@ -208,6 +208,10 @@ const CONFIG = {
       default: "com.google.android.inputmethod.latin",
       "Gboard Patches": "dev.jason.com.google.android.inputmethod.latin",
     },
+    "Google Keyboard": {
+      default: "com.google.android.inputmethod.latin",
+      "Gboard Patches": "dev.jason.com.google.android.inputmethod.latin",
+    },
     "Google News": "com.google.android.apps.magazines",
     "Google Photos": {
       "ReVanced": "app.revanced.android.apps.photos",
@@ -229,6 +233,10 @@ const CONFIG = {
       default: "org.levimc.launcher",
       "Battlegrounds Mobile India Spoof": "com.pubg.imobile",
     },
+    "LeviLauncher Unlocked": {
+      default: "org.levimc.launcher",
+      "Battlegrounds Mobile India Spoof": "com.pubg.imobile",
+    },
     "Lumina Wallpapers": "com.lumina.wallpapers",
     "MacroDroid": "com.arlosoft.macrodroid",
     "Medium": "com.medium.reader",
@@ -237,6 +245,7 @@ const CONFIG = {
     "Microsoft Lens": "com.microsoft.office.officelens",
     "Microsoft Edge": "com.microsoft.emmx",
     "Moon+": "com.flyersoft.moonreader",
+    "Moon+ Reader": "com.flyersoft.moonreader",
     "Money Manager": "com.realbyteapps.moneymanagerfree",
     "MX Player": "com.mxtech.videoplayer.pro",
     "MyFitnessPal": "com.myfitnesspal.android",
@@ -315,6 +324,10 @@ const CONFIG = {
       "ReVanced Extended(anddea)": "anddea.youtube.music",
       "Morphe": "app.morphe.android.apps.youtube.music",
       default: "com.google.android.apps.youtube.music",
+    },
+    "Zalith Launcher 2 Plus": {
+      default: "com.movtery.zalithlauncher.v2",
+      "Call of Duty Mobile Spoof": "com.activision.callofduty.shooter",
     },
     "ZalithLauncher": {
       default: "com.movtery.zalithlauncher.v2",
@@ -1701,59 +1714,74 @@ function createObtainiumInstructions() {
     `;
 }
 
+function tokenizeAndPreserveHyphens(str) {
+  const hyphenBrands = Object.keys(CONFIG.brandOverrides)
+    .filter(key => key.includes("-"))
+    .sort((a, b) => b.length - a.length);
+
+  let processed = str;
+  hyphenBrands.forEach((brand) => {
+    const escapedBrand = escapeRegex(brand);
+    const regex = new RegExp(escapedBrand, "gi");
+    processed = processed.replace(regex, (match) => {
+      return match.replace(/-/g, "TEMPHYPHEN");
+    });
+  });
+
+  const tokens = processed.split(/[^a-zA-Z0-9]+/).filter(Boolean);
+  return tokens.map(token => token.replace(/TEMPHYPHEN/g, "-"));
+}
+
 function buildObtainiumRegexFromAsset(asset) {
   if (!asset || !asset.name) return null;
   const assetName = asset.name;
   if (!assetName.toLowerCase().endsWith(".apk")) return null;
 
-  const baseName = assetName.replace(/\.apk$/i, "");
-  const tokens = baseName.split("-");
-  const parsed = asset.parsed || {};
+  const parsed = asset.parsed || parseAssetDisplay(assetName, "APK");
+  const cleanName = parsed.cleanName || assetName.replace(/\.apk$/i, "");
+  const appNameRaw = parsed.appNameRaw || parsed.appName || "";
 
-  // Build a set of lowercase keywords belonging to the app name (both display and slug parts)
-  const appParts = new Set([
-    ...(parsed.appName ? parsed.appName.toLowerCase().split(/[-_ ]+/).filter(Boolean) : []),
-    ...(parsed.appSlug ? parsed.appSlug.split(/[-_ ]+/).filter(Boolean) : [])
-  ]);
+  const allTokens = tokenizeAndPreserveHyphens(cleanName);
+  const appTokens = appNameRaw ? tokenizeAndPreserveHyphens(appNameRaw) : [];
 
-  const regexTokens = tokens.map((token) => {
-    // Strip leading/trailing quotes if present on the token
-    const cleanToken = token.replace(/^["']|["']$/g, "");
-    const lower = cleanToken.toLowerCase();
+  const regexTokens = [];
+  allTokens.forEach((token, index) => {
+    if (!token) return;
 
-    // Preserve exact app name parts
-    if (appParts.has(lower)) {
-      return escapeRegex(cleanToken);
+    // Always keep app name tokens
+    if (index < appTokens.length) {
+      regexTokens.push({ value: token, isRegex: false });
+      return;
     }
 
-    // Preserve explicit patch tokens
-    if (CONFIG.knownPatchTokens.has(lower)) {
-      return escapeRegex(cleanToken);
+    // Check if version token starting with v/V
+    if (isVersionToken(token)) {
+      const lastToken = regexTokens[regexTokens.length - 1];
+      if (!lastToken || lastToken.value !== "(v\\w*\\d|\\d|vbuild)") {
+        regexTokens.push({ value: "(v\\w*\\d|\\d|vbuild)", isRegex: true });
+      }
+      return;
     }
 
-    // Preserve explicit variant keywords
-    const isExplicitVar = CONFIG.variantKeywords.has(lower) || 
-                          (lower.startsWith('v') && CONFIG.variantKeywords.has(lower.slice(1))) ||
-                          CONFIG.brandOverrides[lower];
-    if (isExplicitVar) {
-      return escapeRegex(cleanToken);
-    }
+    // Keep if known patch token or known variant keyword
+    const lower = token.toLowerCase();
+    const isPatch = CONFIG.knownPatchTokens.has(lower);
+    const isVariant = CONFIG.variantKeywords.has(lower) || 
+                      (lower.startsWith("v") && CONFIG.variantKeywords.has(lower.slice(1)));
 
-    // Turn version tokens into wildcards
-    if (isVersionToken(cleanToken)) {
-      return "(v\\w*\\d|\\d|vbuild)[\\w.-]*";
+    if (isPatch || isVariant) {
+      regexTokens.push({ value: token, isRegex: false });
     }
-
-    // Keep explicit arch tags
-    if (CONFIG.knownArchs.includes(lower)) {
-      return escapeRegex(cleanToken);
-    }
-
-    // Unrecognized arbitrary names in-between are wildcarded
-    return "[\\w.-]*";
   });
 
-  const regex = `^${regexTokens.join("-")}\\.apk$`;
+  let regex;
+  if (regexTokens.length > 0) {
+    const escapedTokens = regexTokens.map(t => t.isRegex ? t.value : escapeRegex(t.value));
+    regex = `^.*${escapedTokens.join(".*")}.*\\.apk$`;
+  } else {
+    regex = `^.*\\.apk$`;
+  }
+
   return { regex, assetName };
 }
 
@@ -2515,6 +2543,9 @@ function parseAssetDisplay(filename, fileType) {
     displayVersion = cleanName.substring(versions[0].index);
   }
 
+  const allPatchesAndVariants = [...patches, ...variants].sort((a, b) => a.index - b.index);
+  const firstPatchOrVariantIndex = allPatchesAndVariants.length > 0 ? allPatchesAndVariants[0].index : cleanName.length;
+
   const result = {
     appName,
     patchName,
@@ -2522,6 +2553,12 @@ function parseAssetDisplay(filename, fileType) {
     patchSlug,
     variant: variantStr,
     version: displayVersion,
+    versionIndex: versions.length > 0 ? versions[0].index : -1,
+    firstPatchOrVariantIndex,
+    cleanName,
+    appNameRaw,
+    patchTokens: patches.map(p => p.token),
+    variantTokens: activeVariants.map(v => v.token),
     archLabel: formatArchitectureLabel(archCategory, fileType),
     fileType,
   };
