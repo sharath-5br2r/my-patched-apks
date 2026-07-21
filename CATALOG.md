@@ -2,7 +2,7 @@
 
 This is a dynamically generated catalog of pre-patched Android applications hosted in the repository, providing direct download links for various builds, including stable, beta, and specific variants. Each application entry includes detailed information about available versions, architectures, and release dates.
 
-📅 *Last generated on: Tuesday, July 21, 2026 at 05:58:01 AM (UTC)*
+📅 *Last generated on: Tuesday, July 21, 2026 at 05:59:52 AM (UTC)*
 
 ## 📦 Applications
 
@@ -501,7 +501,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 >
 
 <details>
-<summary>🛠️ <b>Google Keyboard + Morphe</b> (Latest: <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code>)</summary>
+<summary>🛠️ <b>Google Keyboard + Morphe + Gboard Patches</b> (Latest: <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code>)</summary>
 
 ##### 🟡 Beta Releases
 
@@ -535,7 +535,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 >
 
 <details>
-<summary>🛠️ <b>Google Keyboard + Morphe</b> (Latest: <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code>)</summary>
+<summary>🛠️ <b>Google Keyboard + Morphe + Gboard Patches</b> (Latest: <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code>)</summary>
 
 ##### 🟡 Beta Releases
 
