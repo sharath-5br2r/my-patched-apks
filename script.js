@@ -1594,36 +1594,50 @@ function createObtainiumInstructions() {
   const fallbackBuilds = patch ? getFilteredBuildsForFilter(patch, "all") : [];
   const sourceBuilds =
     filteredBuilds.length > 0 ? filteredBuilds : fallbackBuilds;
-  const patchAssets = sourceBuilds.flatMap((build) => build.assets || []);
 
   const regexMap = new Map();
-  patchAssets
-    .filter((asset) => (asset?.name || "").toLowerCase().endsWith(".apk"))
-    .forEach((asset) => {
-      const result = buildObtainiumRegexFromAsset(asset);
-      if (!result?.regex || regexMap.has(result.regex)) return;
+  sourceBuilds.forEach((build) => {
+    const isBuildPrerelease =
+      build.releaseType === "beta" ||
+      build.prerelease ||
+      build.isPrerelease;
 
-      const appLabel = asset?.parsed?.appName || app?.appName || "App";
-      const patchLabel =
-        asset?.parsed?.patchName || patch?.patchName || "patch";
-      const variantLabel = asset?.parsed?.variant
-        ? ` (${escapeHtml(asset.parsed.variant)})`
-        : "";
+    (build.assets || [])
+      .filter((asset) => (asset?.name || "").toLowerCase().endsWith(".apk"))
+      .forEach((asset) => {
+        const result = buildObtainiumRegexFromAsset(asset);
+        if (!result?.regex || regexMap.has(result.regex)) return;
 
-      // Extract normalized slugs for patch/variant-specific app ID lookup
-      const patchSlug =
-        asset?.parsed?.patchSlug || normalizeForSearch(patch?.patchName || "");
-      const variantSlug = asset?.parsed?.variant
-        ? normalizeForSearch(asset.parsed.variant)
-        : "default";
+        const appLabel = asset?.parsed?.appName || app?.appName || "App";
+        const patchLabel =
+          asset?.parsed?.patchName || patch?.patchName || "patch";
+        const variantLabel = asset?.parsed?.variant
+          ? ` (${escapeHtml(asset.parsed.variant)})`
+          : "";
 
-      // Save both the label and lookup keys
-      regexMap.set(result.regex, {
-        label: `${appLabel} ${patchLabel}${variantLabel}`,
-        patchSlug: patchSlug,
-        variantSlug: variantSlug,
+        // Extract normalized slugs for patch/variant-specific app ID lookup
+        const patchSlug =
+          asset?.parsed?.patchSlug || normalizeForSearch(patch?.patchName || "");
+        const variantSlug = asset?.parsed?.variant
+          ? normalizeForSearch(asset.parsed.variant)
+          : "default";
+
+        const isPrereleaseAsset =
+          isBuildPrerelease ||
+          modalBuildFilter === "beta" ||
+          modalBuildFilter.startsWith("variant") ||
+          modalBuildFilter === "variant" ||
+          Boolean(asset?.parsed?.variant);
+
+        // Save both the label, lookup keys, and prerelease flag
+        regexMap.set(result.regex, {
+          label: `${appLabel} ${patchLabel}${variantLabel}`,
+          patchSlug: patchSlug,
+          variantSlug: variantSlug,
+          isPrerelease: isPrereleaseAsset,
+        });
       });
-    });
+  });
 
   const copyCode = (text, defaultLabel = "Copy") => {
     const escaped = escapeForOnclickCopy(text);
@@ -1649,7 +1663,12 @@ function createObtainiumInstructions() {
             );
 
           const additionalSettings = { apkFilterRegEx: regex };
-          if (modalBuildFilter === "beta") {
+          if (
+            data.isPrerelease ||
+            modalBuildFilter === "beta" ||
+            modalBuildFilter.startsWith("variant") ||
+            modalBuildFilter === "variant"
+          ) {
             additionalSettings.includePrereleases = true;
           }
 
