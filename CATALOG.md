@@ -2,7 +2,7 @@
 
 This is a dynamically generated catalog of pre-patched Android applications hosted in the repository, providing direct download links for various builds, including stable, beta, and specific variants. Each application entry includes detailed information about available versions, architectures, and release dates.
 
-📅 *Last generated on: Tuesday, July 21, 2026 at 12:22:14 PM (UTC)*
+📅 *Last generated on: Tuesday, July 21, 2026 at 12:32:09 PM (UTC)*
 
 ## 📦 Applications
 
@@ -99,8 +99,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="amazonalexa"></a>Amazon Alexa
 
-> [!WARNING]
-> **Signing Compatibility**
+> **⚠️ Signing Compatibility**
 > Due to a modification in hoodles patch, all Amazon Apps are needed to have the same signature. So install the apps from here which is resigned for compatibility.
 >
 
@@ -148,8 +147,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="amazonindia"></a>Amazon India
 
-> [!WARNING]
-> **Signing Compatibility**
+> **⚠️ Signing Compatibility**
 > Due to a modification in hoodles patch, all Amazon Apps are needed to have the same signature. So install the apps from here which is resigned for compatibility.
 >
 
@@ -241,12 +239,10 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="dolphinemulator"></a>Dolphin Emulator
 
-> [!WARNING]
-> **About Package Spoofing**
+> **ℹ️ About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
-> [!NOTE]
-> **Custom Storage Location Patch**
+> **ℹ️ Custom Storage Location Patch**
 > Due to a patch that allows custom storage location, You will have to manually grant storage permission to the app from settings or use a file manager to move files.
 > Links: [Source Code](https://github.com/sharath-5br2r/DolphinCS-master)
 >
@@ -296,8 +292,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="edenemulator"></a>Eden Emulator
 
-> [!WARNING]
-> **About Package Spoofing**
+> **ℹ️ About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
 
@@ -404,12 +399,10 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="geodelauncher"></a>Geode Launcher
 
-> [!NOTE]
-> **Requirements**
+> **⚠️ Requirements**
 > A copy of Geometry Dash is needed to launch Geode Launcher. Please install it from Play Store or any other source(cracked supported) before trying to launch Geode.
 >
-> [!WARNING]
-> **About Package Spoofing**
+> **ℹ️ About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
 
@@ -502,8 +495,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="googlekeyboard"></a>Google Keyboard
 
-> [!NOTE]
-> **Login Issue**
+> **⚠️ Login Issue**
 > Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.
 > Links: [Morphe](https://github.com/MorpheApp/MicroG-RE/releases/latest)
 >
@@ -631,12 +623,10 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="levilauncherunlocked"></a>LeviLauncher Unlocked
 
-> [!NOTE]
-> **Requirements**
+> **⚠️ Requirements**
 > A copy of Minecraft Bedrock Edition is needed to launch LeviLauncher. Please install it from Play Store or any other source(cracked supported) before trying to launch LeviLauncher. Additionally you need APKs for other versions if you want to launch
 >
-> [!WARNING]
-> **About Package Spoofing**
+> **ℹ️ About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
 
@@ -923,8 +913,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="winlatorludashi"></a>Winlator Ludashi
 
-> [!WARNING]
-> **About Package Spoofing**
+> **ℹ️ About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
 
@@ -973,8 +962,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="xtwitter"></a>X/Twitter
 
-> [!WARNING]
-> **Login Issue**
+> **⚠️ Login Issue**
 > Since October 2025, Twitter has started checking whether the app is modified or if the phone integrity fails during login. These checks are server-side, not client-side.
 > Links: [Workarounds](https://t.me/pikopatches/1/59772)
 >
@@ -1023,8 +1011,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="youtube"></a>YouTube
 
-> [!NOTE]
-> **Login Issue**
+> **⚠️ Login Issue**
 > Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.
 > Links: [Morphe](https://github.com/MorpheApp/MicroG-RE/releases/latest)
 >
@@ -1113,8 +1100,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="youtubemusic"></a>YouTube Music
 
-> [!NOTE]
-> **Login Issue**
+> **⚠️ Login Issue**
 > Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.
 > Links: [Morphe](https://github.com/MorpheApp/MicroG-RE/releases/latest)
 >

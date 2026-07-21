@@ -323,7 +323,7 @@ const CONFIG = {
   appNotices: [
     {
       triggers: ["youtube", "google", "gboard"],
-      type: "note",
+      type: "warning",
       className: "microg-note",
       title: "Login Issue",
       text: "Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.",
@@ -343,14 +343,14 @@ const CONFIG = {
     },
     {
       triggers: ["geode"],
-      type: "note",
+      type: "warning",
       className: "geode-note",
       title: "Requirements",
       text: "A copy of Geometry Dash is needed to launch Geode Launcher. Please install it from Play Store or any other source(cracked supported) before trying to launch Geode.",
     },
     {
       triggers: ["levilauncher"],
-      type: "note",
+      type: "warning",
       className: "levilauncher-note",
       title: "Requirements",
       text: "A copy of Minecraft Bedrock Edition is needed to launch LeviLauncher. Please install it from Play Store or any other source(cracked supported) before trying to launch LeviLauncher. Additionally you need APKs for other versions if you want to launch",
@@ -367,7 +367,7 @@ const CONFIG = {
     },
     {
       triggers: ['dolphin', 'eden', 'winlator', 'levilauncher', 'geode', 'zalithlauncher'],
-      type: "warning",
+      type: "note",
       className: "spoofing-note",
       title: "About Package Spoofing",
       text: "These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. "
@@ -1183,9 +1183,8 @@ function generateMarkdown(catalog) {
 
     if (notices.length > 0) {
       notices.forEach((notice) => {
-        const type = (notice.type || "warning").toUpperCase();
-        md += `> [!${type}]\n`;
-        md += `> **${notice.title}**\n`;
+        const emoji = notice.type === "warning" ? "⚠️" : "ℹ️";
+        md += `> **${emoji} ${notice.title}**\n`;
         md += `> ${notice.text}\n`;
         if (notice.links && notice.links.length > 0) {
           const linksStr = notice.links.map(l => `[${l.label}](${l.url})`).join(", ");
