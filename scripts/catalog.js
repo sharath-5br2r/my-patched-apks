@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+// based on https://github.com/nullcpy/nullcpy.github.io/blob/main/script.js
 const fs = require('fs');
 const path = require('path');
 
@@ -32,6 +34,9 @@ const CONFIG = {
     "xtra",
     "pubgvn",
     "anddea",
+    "xshim",
+    "jasomwu1994",
+    "icysymmetra",
   ]),
 
   // Known tokens indicating a variant (must be lowercase)
@@ -41,7 +46,6 @@ const CONFIG = {
     "gfp",
     "chromeos",
     "optimized",
-    "optmosed", // Typo support for eden-optmosed
     "pubgkr",
     "pubgvn",
     "bgmi",
@@ -67,6 +71,7 @@ const CONFIG = {
     youtube: "YouTube",
     revanced: "ReVanced",
     tiktok: "TikTok",
+    icysymmetra: "TikTok Patches",
     soundcloud: "SoundCloud",
     xrecorder: "XRecorder",
     calcnote: "CalcNote",
@@ -90,7 +95,9 @@ const CONFIG = {
     hellochinese: "HelloChinese: Learn Chinese",
     gplay: "Google Play",
     foss: "FOSS",
-    gboard: "Gboard",
+    gboard: "Google Keyboard",
+    jasonwu1994: "Gboard Patches",
+    morphe: "Morphe",
     wps: "WPS",
     rar: "RAR",
     adguard: "AdGuard",
@@ -116,12 +123,17 @@ const CONFIG = {
     mxplayer: "MX Player",
     adm: "Advanced Download Manager",
     dolphin: "Dolphin Emulator",
+    cs: "Custom Storage",
+    napatch: "NPatch",
+    revenge: "Revenge",
+    paresh: "Paresh",
     eden: "Eden Emulator",
     geode: "Geode Launcher",
     jiohotstar: "JioHotstar",
     levilauncher: "LeviLauncher",
     winlator: "Winlator Ludashi",
     x: "X/Twitter",
+    xshim: "X-Shim",
     viamorphe: "via Morphe",
     gfp: "Game for Peace Spoof",
     optimized: "Genshin Impact Spoof",
@@ -137,7 +149,6 @@ const CONFIG = {
     "zalith-launcher-2-plus": "Zalith Launcher 2 Plus",
     "instagram": "Instagram",
     "levilauncher-unlocked": "LeviLauncher Unlocked",
-    "gboard-morphe-gboard-v17.0.10.880768217-release-arm64-v8a-arm64-v8a": "Gboard",
     "amazon-india": "Amazon India",
     "amazon-alexa": "Amazon Alexa",
     "proton-vpn": "Proton VPN",
@@ -192,12 +203,12 @@ const CONFIG = {
     "Goodreads": "com.goodreads",
     "Gboard": {
       default: "com.google.android.inputmethod.latin",
-      "morphegboard": "dev.jason.com.google.android.inputmethod.latin",
+      "Gboard Patches": "dev.jason.com.google.android.inputmethod.latin",
     },
     "Google News": "com.google.android.apps.magazines",
     "Google Photos": {
       "ReVanced": "app.revanced.android.apps.photos",
-      "via Morphe": "app.morphe.android.apps.photos",
+      "Morphe": "app.morphe.android.apps.photos",
       default: "com.google.android.apps.photos",
     },
     "Google Recorder": "com.google.android.apps.recorder",
@@ -245,7 +256,7 @@ const CONFIG = {
       "Android TV": "com.amazon.amazonvideo.livingroom.mod"
     },
     "ProtonMail": "ch.protonmail.android",
-    "ProtonVPN": "ch.protonvpn.android",
+    "Proton VPN": "ch.protonvpn.android",
     "Project Ivy Launcher": "com.spocky.projengmenu",
     "SD Maid 2/SE": "eu.darken.sdmse",
     "Showly": "com.michaldrabik.showly2",
@@ -293,14 +304,14 @@ const CONFIG = {
       "ReVanced": "app.revanced.android.youtube",
       "ReVanced Extended": "app.rvx.android.youtube",
       "ReVanced Extended(anddea)": "anddea.youtube",
-      "via Morphe": "app.morphe.android.youtube",
+      "Morphe": "app.morphe.android.youtube",
       default: "com.google.android.youtube",
     },
     "YouTube Music": {
       "ReVanced": "app.revanced.android.apps.youtube.music",
       "ReVanced Extended": "app.rvx.android.apps.youtube.music",
       "ReVanced Extended(anddea)": "anddea.youtube.music",
-      "via Morphe": "app.morphe.android.apps.youtube.music",
+      "Morphe": "app.morphe.android.apps.youtube.music",
       default: "com.google.android.apps.youtube.music",
     },
     "ZalithLauncher": {
