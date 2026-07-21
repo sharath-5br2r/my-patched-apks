@@ -41,20 +41,29 @@ genconfigs() {
       if .value | type == "object" then
         .key as $k |
         .value as $app |
+        # Check if local-dlurl is the ONLY dlurl provided
+        ([ $app | keys[] | select(contains("dlurl")) ] == ["local-dlurl"]) as $onlyLocalDl |
         # Safely extracts sources from the new nested patches array format
         (if ($app.patches | type == "array") then [$app.patches[].source | ascii_downcase] else ["revanced/revanced-patches"] end) as $srcs |
-        if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
+        if $onlyLocalDl then
+          if ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
+        elif (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then 
+          . 
+        else 
+          (.value.enabled = false) 
+        end
       else . end
     )
   ' config.stable$2.json >.github/configs/config.stable.updated$2.json
   fi
+
  if [ "${TRIGGER_PRERELEASE:-0}" = "1" ] || [ "${TRIGGER_APP_UPDATE:-0}" = "1" ] || [ "${TRIGGER_BLOCKED:-0}" = "1" ]; then
      DEV_CONFIGS=$(find $1 -name "*.toml" ! -name "*stable*.toml" | sort)
      if [ -n "$DEV_CONFIGS" ]; then
       # shellcheck disable=SC2086
       yq -o=json eval-all '. as $item ireduce ({}; . * $item)' $DEV_CONFIGS >config.dev$2.json
      else
-      echo "{}" >config.stable$2.json
+      echo "{}" >config.dev$2.json
      fi
     
   jq --slurpfile active active.prerelease.json --slurpfile activeApps active_apps.json --argjson tags "$TAGS_NEW" '
@@ -64,9 +73,17 @@ genconfigs() {
       if .value | type == "object" then
         .key as $k |
         .value as $app |
+        # Check if local-dlurl is the ONLY dlurl provided
+        ([ $app | keys[] | select(contains("dlurl")) ] == ["local-dlurl"]) as $onlyLocalDl |
         # Safely extracts sources from the new nested patches array format
         (if ($app.patches | type == "array") then [$app.patches[].source | ascii_downcase] else ["revanced/revanced-patches"] end) as $srcs |
-        if (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
+        if $onlyLocalDl then
+          if ($activeApps[0] | index($k)) then . else (.value.enabled = false) end
+        elif (($srcs - $active[0]) != $srcs) or ($activeApps[0] | index($k)) then 
+          . 
+        else 
+          (.value.enabled = false) 
+        end
       else . end
     )
   ' config.dev$2.json >.github/configs/config.dev.updated$2.json
