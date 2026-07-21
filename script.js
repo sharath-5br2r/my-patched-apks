@@ -207,10 +207,16 @@ const CONFIG = {
     "Gboard": {
       default: "com.google.android.inputmethod.latin",
       "Gboard Patches": "dev.jason.com.google.android.inputmethod.latin",
+      "gboard-patches": "dev.jason.com.google.android.inputmethod.latin",
+      "jasonwu1994": "dev.jason.com.google.android.inputmethod.latin",
+      "jason": "dev.jason.com.google.android.inputmethod.latin",
     },
     "Google Keyboard": {
       default: "com.google.android.inputmethod.latin",
       "Gboard Patches": "dev.jason.com.google.android.inputmethod.latin",
+      "gboard-patches": "dev.jason.com.google.android.inputmethod.latin",
+      "jasonwu1994": "dev.jason.com.google.android.inputmethod.latin",
+      "jason": "dev.jason.com.google.android.inputmethod.latin",
     },
     "Google News": "com.google.android.apps.magazines",
     "Google Photos": {
@@ -1812,11 +1818,18 @@ function resolveObtainiumAppId(appKeyOrName, patchNameOrSlug, variantNameOrSlug)
   if (typeof appConfig === "string") return appConfig;
   if (typeof appConfig !== "object") return null;
 
-  // 1. Resolve nested patch configs by splitting on ' + ' combinations
+  // 1. Resolve nested patch configs by splitting on ' + ' and hyphen/space combinations
   let patchConfig = null;
   if (patchNameOrSlug) {
-    const individualPatches = patchNameOrSlug.split(" + ");
-    for (const p of individualPatches) {
+    const rawTokens = Array.from(
+      new Set([
+        patchNameOrSlug,
+        ...patchNameOrSlug.split(" + "),
+        ...patchNameOrSlug.split(/[-_\s+]+/),
+      ])
+    ).filter(Boolean);
+
+    for (const p of rawTokens) {
       const normalizedP = normalizeForSearch(p);
       patchConfig = appConfig[p] || appConfig[normalizedP];
       if (!patchConfig) {
