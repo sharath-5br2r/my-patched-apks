@@ -318,16 +318,16 @@ const CONFIG = {
     "Xodo PDF Reader & Editor": "com.xodo.pdf.reader",
     "XRecorder": "videoeditor.videorecorder.screenrecorder",
     "YouTube": {
-      "ReVanced": "app.revanced.android.youtube",
-      "ReVanced Extended": "app.rvx.android.youtube",
       "ReVanced Extended(anddea)": "anddea.youtube",
+      "ReVanced Extended": "app.rvx.android.youtube",
+      "ReVanced": "app.revanced.android.youtube",
       "Morphe": "app.morphe.android.youtube",
       default: "com.google.android.youtube",
     },
     "YouTube Music": {
-      "ReVanced": "app.revanced.android.apps.youtube.music",
-      "ReVanced Extended": "app.rvx.android.apps.youtube.music",
       "ReVanced Extended(anddea)": "anddea.youtube.music",
+      "ReVanced Extended": "app.rvx.android.apps.youtube.music",
+      "ReVanced": "app.revanced.android.apps.youtube.music",
       "Morphe": "app.morphe.android.apps.youtube.music",
       default: "com.google.android.apps.youtube.music",
     },
@@ -1775,7 +1775,7 @@ function buildObtainiumRegexFromAsset(asset) {
 
     // Always keep app name tokens
     if (index < appTokens.length) {
-      regexTokens.push({ value: token, isRegex: false });
+      regexTokens.push({ value: token, isRegex: false, type: "app" });
       return;
     }
 
@@ -1783,7 +1783,7 @@ function buildObtainiumRegexFromAsset(asset) {
     if (isVersionToken(token)) {
       const lastToken = regexTokens[regexTokens.length - 1];
       if (!lastToken || lastToken.value !== "(v\\w*\\d|\\d|vbuild)") {
-        regexTokens.push({ value: "(v\\w*\\d|\\d|vbuild)", isRegex: true });
+        regexTokens.push({ value: "(v\\w*\\d|\\d|vbuild)", isRegex: true, type: "version" });
       }
       return;
     }
@@ -1795,14 +1795,24 @@ function buildObtainiumRegexFromAsset(asset) {
                       (lower.startsWith("v") && CONFIG.variantKeywords.has(lower.slice(1)));
 
     if (isPatch || isVariant) {
-      regexTokens.push({ value: token, isRegex: false });
+      regexTokens.push({ value: token, isRegex: false, type: "patch" });
     }
   });
 
   let regex;
   if (regexTokens.length > 0) {
-    const escapedTokens = regexTokens.map(t => t.isRegex ? t.value : escapeRegex(t.value));
-    regex = `^.*${escapedTokens.join(".*")}.*\\.apk$`;
+    let regexStr = "";
+    regexTokens.forEach((t, i) => {
+      const tokenVal = t.isRegex ? t.value : escapeRegex(t.value);
+      if (i === 0) {
+        regexStr += tokenVal;
+      } else {
+        const prevToken = regexTokens[i - 1];
+        const sep = (prevToken.type === "app" && t.type === "patch") ? "-" : ".*";
+        regexStr += sep + tokenVal;
+      }
+    });
+    regex = `^.*${regexStr}.*\\.apk$`;
   } else {
     regex = `^.*\\.apk$`;
   }
@@ -1837,75 +1847,101 @@ function resolveObtainiumAppId(appKeyOrName, patchNameOrSlug, variantNameOrSlug)
   if (typeof appConfig === "string") return appConfig;
   if (typeof appConfig !== "object") return null;
 
-  // 1. Resolve nested patch configs by splitting on ' + ' and hyphen/space combinations
-  let patchConfig = null;
-  if (patchNameOrSlug) {
-    const rawTokens = Array.from(
-      new Set([
-        patchNameOrSlug,
-        ...patchNameOrSlug.split(" + "),
-        ...patchNameOrSlug.split(/[-_\s+]+/),
-      ])
-    ).filter(Boolean);
+  const patchRaw = String(patchNameOrSlug || "");
+  const variantRaw = String(variantNameOrSlug || "");
 
-    for (const p of rawTokens) {
-      const normalizedP = normalizeForSearch(p);
-      patchConfig = appConfig[p] || appConfig[normalizedP];
-      if (!patchConfig) {
-        const matchedPatchKey = Object.keys(appConfig).find(
-          (k) => normalizeForSearch(k) === normalizedP
-        );
-        if (matchedPatchKey) {
-          patchConfig = appConfig[matchedPatchKey];
-        }
-      }
-      if (patchConfig) break;
-    }
-  }
+  const patchNorm = normalizeForSearch(patchRaw);
+  const variantNorm = normalizeForSearch(variantRaw);
+  const combinedNorm = normalizeForSearch(`${patchRaw} ${variantRaw}`);
 
-  const resolvedVariant = variantNameOrSlug || "default";
-  const individualVariants = resolvedVariant.split(" + ");
+  const patchOverride = CONFIG.brandOverrides[patchNorm]
+    ? normalizeForSearch(CONFIG.brandOverrides[patchNorm])
+    : "";
+  const variantOverride = CONFIG.brandOverrides[variantNorm]
+    ? normalizeForSearch(CONFIG.brandOverrides[variantNorm])
+    : "";
 
-  if (patchConfig) {
-    if (typeof patchConfig === "string") return patchConfig;
-    if (typeof patchConfig === "object" && patchConfig !== null) {
-      // Evaluate matching variant configurations under the nested patch
-      for (const v of individualVariants) {
-        const normalizedV = normalizeForSearch(v);
-        let val = patchConfig[v] || patchConfig[normalizedV];
-        if (!val) {
-          const matchedVariantKey = Object.keys(patchConfig).find(
-            (k) => normalizeForSearch(k) === normalizedV
-          );
-          if (matchedVariantKey) {
-            val = patchConfig[matchedVariantKey];
-          }
-        }
-        if (val) return val;
-      }
-      return patchConfig.default || null;
-    }
-  }
+  const patchTokens = patchRaw
+    ? [patchRaw, ...patchRaw.split(" + "), ...patchRaw.split(/[-_\s+()/]+/)]
+    : [];
+  const variantTokens = variantRaw
+    ? [variantRaw, ...variantRaw.split(" + "), ...variantRaw.split(/[-_\s+()/]+/)]
+    : [];
 
-  // 2. Fallback to direct flat/nested variant lookups on app config level
-  for (const v of individualVariants) {
-    const normalizedV = normalizeForSearch(v);
-    let variantConfig = appConfig[v] || appConfig[normalizedV];
-    if (!variantConfig) {
-      const matchedVariantKey = Object.keys(appConfig).find(
-        (k) => normalizeForSearch(k) === normalizedV
+  const allTokensNorm = Array.from(
+    new Set([
+      ...patchTokens.map(normalizeForSearch),
+      ...variantTokens.map(normalizeForSearch),
+      patchNorm,
+      variantNorm,
+      combinedNorm,
+      patchOverride,
+      variantOverride,
+    ])
+  ).filter(Boolean);
+
+  function resolveConfigObj(configObj) {
+    if (typeof configObj === "string") return configObj;
+    if (typeof configObj !== "object" || configObj === null) return null;
+
+    const keys = Object.keys(configObj);
+
+    // Evaluate keys in exact declaration order in the object
+    for (const key of keys) {
+      if (key === "default") continue;
+      const normK = normalizeForSearch(key);
+      if (!normK) continue;
+
+      const keyWords = key
+        .split(/[-_\s+()/]+/)
+        .map(normalizeForSearch)
+        .filter(Boolean);
+
+      // 1. Exact normalized match
+      const isExact =
+        normK === patchNorm ||
+        normK === variantNorm ||
+        normK === combinedNorm ||
+        allTokensNorm.includes(normK);
+
+      // 2. Key contains input token (e.g. "revancedextendedanddea".includes("anddea"))
+      const normKContainsInput = allTokensNorm.some(
+        (t) => t.length >= 3 && normK.includes(t)
       );
-      if (matchedVariantKey) {
-        variantConfig = appConfig[matchedVariantKey];
+
+      // 3. Input contains key (e.g. "revancedextendedanddea".includes("revancedextended"))
+      const inputContainsNormK = allTokensNorm.some(
+        (t) => normK.length >= 3 && t.includes(normK)
+      );
+
+      // 4. Any non-generic key word is present in input
+      const keyWordsInInput = keyWords.some(
+        (w) => w.length >= 3 && allTokensNorm.some((t) => t.includes(w) || w.includes(t))
+      );
+
+      // Distinguishing check: If key is specific to "anddea", but input lacks "anddea", skip it.
+      const isAnddeaKey = normK.includes("anddea");
+      const isAnddeaInput = allTokensNorm.some((t) => t.includes("anddea"));
+      if (isAnddeaKey && !isAnddeaInput) {
+        continue;
+      }
+
+      if (isExact || normKContainsInput || inputContainsNormK || keyWordsInInput) {
+        const res = resolveConfigObj(configObj[key]);
+        if (res) return res;
       }
     }
-    if (typeof variantConfig === "string") return variantConfig;
-    if (typeof variantConfig === "object" && variantConfig !== null) {
-      return variantConfig.default || null;
+
+    // Default fallback
+    if (configObj.default) {
+      const res = resolveConfigObj(configObj.default);
+      if (res) return res;
     }
+
+    return null;
   }
 
-  return appConfig.default || null;
+  return resolveConfigObj(appConfig);
 }
 
 function renderOpenPatchModal() {
