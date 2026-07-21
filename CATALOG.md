@@ -2,7 +2,7 @@
 
 This is a dynamically generated catalog of pre-patched Android applications hosted in the repository, providing direct download links for various builds, including stable, beta, and specific variants. Each application entry includes detailed information about available versions, architectures, and release dates.
 
-📅 *Last generated on: Tuesday, July 21, 2026 at 05:59:52 AM (UTC)*
+📅 *Last generated on: Tuesday, July 21, 2026 at 12:22:14 PM (UTC)*
 
 ## 📦 Applications
 
@@ -33,13 +33,13 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.adobe.reader`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.adobe.reader%22%2C%22name%22%3A%22Adobe%20Acrobat%20Morphe%20%2B%20hooman%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5E%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-hooman-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-arm64-%5B%5C%5C%5C%5Cw.-%5D*%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.adobe.reader%22%2C%22name%22%3A%22Adobe%20Acrobat%20Morphe%20%2B%20hooman%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eadobe-acrobat-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-hooman-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-arm64-%5B%5C%5Cw.-%5D*%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
   * **Asset Filter Regex:** 
 ```regex
-^[\w.-]*-[\w.-]*-morphe-(v\w*\d|\d|vbuild)[\w.-]*-hooman-(v\w*\d|\d|vbuild)[\w.-]*-arm64-[\w.-]*\.apk$
+^adobe-acrobat-morphe-(v\w*\d|\d|vbuild)[\w.-]*-hooman-(v\w*\d|\d|vbuild)[\w.-]*-arm64-[\w.-]*\.apk$
 ```
 
 </details>
@@ -77,7 +77,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.dv.adm`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.dv.adm%22%2C%22name%22%3A%22Advanced%20Download%20Manager%20Morphe%20%2B%20hooman%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eadm-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-hooman-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.dv.adm%22%2C%22name%22%3A%22Advanced%20Download%20Manager%20Morphe%20%2B%20hooman%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eadm-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-hooman-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -99,7 +99,8 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="amazonalexa"></a>Amazon Alexa
 
-> **⚠️ Signing Compatibility**
+> [!WARNING]
+> **Signing Compatibility**
 > Due to a modification in hoodles patch, all Amazon Apps are needed to have the same signature. So install the apps from here which is resigned for compatibility.
 >
 
@@ -125,13 +126,13 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.amazon.dee.app`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.amazon.dee.app%22%2C%22name%22%3A%22Amazon%20Alexa%20signed%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5E%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-signed-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.amazon.dee.app%22%2C%22name%22%3A%22Amazon%20Alexa%20signed%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eamazon-alexa-signed-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
   * **Asset Filter Regex:** 
 ```regex
-^[\w.-]*-[\w.-]*-signed-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+^amazon-alexa-signed-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
 ```
 
 </details>
@@ -147,7 +148,8 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="amazonindia"></a>Amazon India
 
-> **⚠️ Signing Compatibility**
+> [!WARNING]
+> **Signing Compatibility**
 > Due to a modification in hoodles patch, all Amazon Apps are needed to have the same signature. So install the apps from here which is resigned for compatibility.
 >
 
@@ -173,13 +175,13 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `in.amazon.mShop.android.shopping`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22in.amazon.mShop.android.shopping%22%2C%22name%22%3A%22Amazon%20India%20Morphe%20%2B%20rushiranpise%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5E%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-morphe-rushiranpise-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-rushiranpise-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22in.amazon.mShop.android.shopping%22%2C%22name%22%3A%22Amazon%20India%20Morphe%20%2B%20rushiranpise%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eamazon-india-morphe-rushiranpise-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-rushiranpise-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
   * **Asset Filter Regex:** 
 ```regex
-^[\w.-]*-[\w.-]*-morphe-rushiranpise-(v\w*\d|\d|vbuild)[\w.-]*-rushiranpise-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+^amazon-india-morphe-rushiranpise-(v\w*\d|\d|vbuild)[\w.-]*-rushiranpise-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
 ```
 
 </details>
@@ -217,7 +219,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.discord`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.discord%22%2C%22name%22%3A%22Discord%20npatch%20%2B%20Revenge%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ediscord-npatch-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-revenge-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.discord%22%2C%22name%22%3A%22Discord%20npatch%20%2B%20Revenge%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Ediscord-npatch-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-revenge-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -239,10 +241,12 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="dolphinemulator"></a>Dolphin Emulator
 
-> **⚠️ About Package Spoofing**
+> [!WARNING]
+> **About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
-> **⚠️ Custom Storage Location Patch**
+> [!NOTE]
+> **Custom Storage Location Patch**
 > Due to a patch that allows custom storage location, You will have to manually grant storage permission to the app from settings or use a file manager to move files.
 > Links: [Source Code](https://github.com/sharath-5br2r/DolphinCS-master)
 >
@@ -270,7 +274,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `org.dolphinemu.dolphinemu`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22org.dolphinemu.dolphinemu%22%2C%22name%22%3A%22Dolphin%20Emulator%20Custom%20Storage%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Edolphin-cs-gfp-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22org.dolphinemu.dolphinemu%22%2C%22name%22%3A%22Dolphin%20Emulator%20Custom%20Storage%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Edolphin-cs-gfp-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -292,7 +296,8 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="edenemulator"></a>Eden Emulator
 
-> **⚠️ About Package Spoofing**
+> [!WARNING]
+> **About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
 
@@ -333,7 +338,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `dev.eden_emulator.eden`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22dev.eden_emulator.eden%22%2C%22name%22%3A%22Eden%20Emulator%20Patched%20Build%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eeden-chromeos-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-x86_64%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22dev.eden_emulator.eden%22%2C%22name%22%3A%22Eden%20Emulator%20Patched%20Build%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eeden-chromeos-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-x86_64%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -377,7 +382,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.overlook.android.fing`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.overlook.android.fing%22%2C%22name%22%3A%22Fing%20-%20Network%20Tools%20Morphe%20%2B%20Paresh%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Efing-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-paresh-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.overlook.android.fing%22%2C%22name%22%3A%22Fing%20-%20Network%20Tools%20Morphe%20%2B%20Paresh%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Efing-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-paresh-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -399,10 +404,12 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="geodelauncher"></a>Geode Launcher
 
-> **⚠️ Requirements**
+> [!NOTE]
+> **Requirements**
 > A copy of Geometry Dash is needed to launch Geode Launcher. Please install it from Play Store or any other source(cracked supported) before trying to launch Geode.
 >
-> **⚠️ About Package Spoofing**
+> [!WARNING]
+> **About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
 
@@ -429,7 +436,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.geode.launcher`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.geode.launcher%22%2C%22name%22%3A%22Geode%20Launcher%20via%20Morphe%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egeode-viamorphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-pubgkr-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.geode.launcher%22%2C%22name%22%3A%22Geode%20Launcher%20via%20Morphe%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Egeode-viamorphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-pubgkr-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -473,7 +480,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.github.android`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.github.android%22%2C%22name%22%3A%22GitHub%20Morphe%20%2B%20hoodles%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egithub-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-hoodles-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.github.android%22%2C%22name%22%3A%22GitHub%20Morphe%20%2B%20hoodles%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Egithub-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-hoodles-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -491,22 +498,24 @@ This is a dynamically generated catalog of pre-patched Android applications host
 ---
 
 <details>
-<summary>📱 <b>Google Keyboard-Morphe-module-v17.0.10.880768217-release-arm64-v8a-Gboard Patches-v1.14.0-arm64-v8a</b></summary>
+<summary>📱 <b>Google Keyboard</b></summary>
 
-### <a name="googlekeyboardmorphemodulev17010880768217releasearm64v8agboardpatchesv1140arm64v8a"></a>Google Keyboard-Morphe-module-v17.0.10.880768217-release-arm64-v8a-Gboard Patches-v1.14.0-arm64-v8a
+### <a name="googlekeyboard"></a>Google Keyboard
 
-> **⚠️ Login Issue**
+> [!NOTE]
+> **Login Issue**
 > Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.
 > Links: [Morphe](https://github.com/MorpheApp/MicroG-RE/releases/latest)
 >
 
 <details>
-<summary>🛠️ <b>Google Keyboard + Morphe + Gboard Patches</b> (Latest: <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code>)</summary>
+<summary>🛠️ <b>Morphe + Gboard Patches</b> (Latest: <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code>)</summary>
 
 ##### 🟡 Beta Releases
 
 * **Version:** <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code> (Build [260004](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260004)) - *Released Jul 21, 2026*
   * `ARM64`:
+    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260004/gboard-morphe-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.apk)** - <code>gboard-morphe-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.apk</code> (78.66 MB)
     * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260004/gboard-morphe-module-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.zip)** - <code>gboard-morphe-module-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.zip</code> (82.97 MB)
 
 <details>
@@ -514,41 +523,8 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 * **Version:** <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code> (Build [v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 21, 2026*
   * `ARM64`:
-    * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/gboard-morphe-module-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.zip)** - <code>gboard-morphe-module-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.zip</code> (82.97 MB)
-
-</details>
-
-</details>
-
-</details>
-
----
-
-<details>
-<summary>📱 <b>Google Keyboard-Morphe-v17.0.10.880768217-release-arm64-v8a-Gboard Patches-v1.14.0-arm64-v8a</b></summary>
-
-### <a name="googlekeyboardmorphev17010880768217releasearm64v8agboardpatchesv1140arm64v8a"></a>Google Keyboard-Morphe-v17.0.10.880768217-release-arm64-v8a-Gboard Patches-v1.14.0-arm64-v8a
-
-> **⚠️ Login Issue**
-> Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.
-> Links: [Morphe](https://github.com/MorpheApp/MicroG-RE/releases/latest)
->
-
-<details>
-<summary>🛠️ <b>Google Keyboard + Morphe + Gboard Patches</b> (Latest: <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code>)</summary>
-
-##### 🟡 Beta Releases
-
-* **Version:** <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code> (Build [260004](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260004)) - *Released Jul 21, 2026*
-  * `ARM64`:
-    * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/260004/gboard-morphe-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.apk)** - <code>gboard-morphe-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.apk</code> (78.66 MB)
-
-<details>
-<summary>📂 Older Versions</summary>
-
-* **Version:** <code>v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0</code> (Build [v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/beta)) - *Released Jul 21, 2026*
-  * `ARM64`:
     * **[Download APK](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/gboard-morphe-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.apk)** - <code>gboard-morphe-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.apk</code> (78.66 MB)
+    * **[Download Module](https://github.com/sharath-5br2r/my-patched-apks/releases/download/beta/gboard-morphe-module-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.zip)** - <code>gboard-morphe-module-v17.0.10.880768217-release-arm64-v8a-jasonwu1994-v1.14.0-arm64-v8a.zip</code> (82.97 MB)
 
 </details>
 
@@ -589,7 +565,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.instagram.android`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.instagram.android%22%2C%22name%22%3A%22Instagram%20Morphe%20%2B%20piko%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Einstagram-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-piko-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-arm64-%5B%5C%5C%5C%5Cw.-%5D*%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.instagram.android%22%2C%22name%22%3A%22Instagram%20Morphe%20%2B%20piko%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Einstagram-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-piko-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-arm64-%5B%5C%5Cw.-%5D*%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -633,7 +609,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `in.startv.hotstar`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22in.startv.hotstar%22%2C%22name%22%3A%22JioHotstar%20Morphe%20%2B%20Paresh%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ejiohotstar-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-paresh-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22in.startv.hotstar%22%2C%22name%22%3A%22JioHotstar%20Morphe%20%2B%20Paresh%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Ejiohotstar-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-paresh-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -655,10 +631,12 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="levilauncherunlocked"></a>LeviLauncher Unlocked
 
-> **⚠️ Requirements**
+> [!NOTE]
+> **Requirements**
 > A copy of Minecraft Bedrock Edition is needed to launch LeviLauncher. Please install it from Play Store or any other source(cracked supported) before trying to launch LeviLauncher. Additionally you need APKs for other versions if you want to launch
 >
-> **⚠️ About Package Spoofing**
+> [!WARNING]
+> **About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
 
@@ -743,13 +721,13 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.amazon.avod.thirdpartyclient`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.amazon.avod.thirdpartyclient%22%2C%22name%22%3A%22Prime%20Video%20Morphe%20%2B%20hoodles%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5E%5B%5C%5C%5C%5Cw.-%5D*-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-hoodles-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-arm64-%5B%5C%5C%5C%5Cw.-%5D*%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.amazon.avod.thirdpartyclient%22%2C%22name%22%3A%22Prime%20Video%20Morphe%20%2B%20hoodles%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eprime-video-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-hoodles-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-arm64-%5B%5C%5Cw.-%5D*%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
   * **Asset Filter Regex:** 
 ```regex
-^[\w.-]*-(v\w*\d|\d|vbuild)[\w.-]*-morphe-(v\w*\d|\d|vbuild)[\w.-]*-hoodles-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$
+^prime-video-morphe-(v\w*\d|\d|vbuild)[\w.-]*-hoodles-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$
 ```
 
 </details>
@@ -787,13 +765,13 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `ch.protonvpn.android`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22ch.protonvpn.android%22%2C%22name%22%3A%22Proton%20VPN%20Morphe%20%2B%20Paresh%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5E%5B%5C%5C%5C%5Cw.-%5D*-vpn-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-paresh-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22ch.protonvpn.android%22%2C%22name%22%3A%22Proton%20VPN%20Morphe%20%2B%20Paresh%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eproton-vpn-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-paresh-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
   * **Asset Filter Regex:** 
 ```regex
-^[\w.-]*-vpn-morphe-(v\w*\d|\d|vbuild)[\w.-]*-paresh-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
+^proton-vpn-morphe-(v\w*\d|\d|vbuild)[\w.-]*-paresh-(v\w*\d|\d|vbuild)[\w.-]*-all\.apk$
 ```
 
 </details>
@@ -835,7 +813,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `org.zwanoo.android.speedtest`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22org.zwanoo.android.speedtest%22%2C%22name%22%3A%22Speedtest%20Morphe%20%2B%20xtra%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Espeedtest-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-xtra-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-arm64-%5B%5C%5C%5C%5Cw.-%5D*%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22org.zwanoo.android.speedtest%22%2C%22name%22%3A%22Speedtest%20Morphe%20%2B%20xtra%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Espeedtest-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-xtra-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-arm64-%5B%5C%5Cw.-%5D*%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -879,7 +857,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `app.symfonik.music.player`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.symfonik.music.player%22%2C%22name%22%3A%22Symfonium%20Morphe%20%2B%20hooman%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esymfonium-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-hooman-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.symfonik.music.player%22%2C%22name%22%3A%22Symfonium%20Morphe%20%2B%20hooman%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Esymfonium-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-hooman-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -923,7 +901,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.zhiliaoapp.musically`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.zhiliaoapp.musically%22%2C%22name%22%3A%22TikTok%20Morphe%20%2B%20TikTok%20Patches%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etiktok-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-icysymmetra-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.zhiliaoapp.musically%22%2C%22name%22%3A%22TikTok%20Morphe%20%2B%20TikTok%20Patches%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Etiktok-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-icysymmetra-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -945,7 +923,8 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="winlatorludashi"></a>Winlator Ludashi
 
-> **⚠️ About Package Spoofing**
+> [!WARNING]
+> **About Package Spoofing**
 > These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. 
 >
 
@@ -972,7 +951,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.vng.pubgmobile`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.vng.pubgmobile%22%2C%22name%22%3A%22Winlator%20Ludashi%20via%20Morphe%20%2B%20PUBG%20Mobile%20VN%20Spoof%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ewinlator-viamorphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-pubgvn-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.vng.pubgmobile%22%2C%22name%22%3A%22Winlator%20Ludashi%20via%20Morphe%20%2B%20PUBG%20Mobile%20VN%20Spoof%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Ewinlator-viamorphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-pubgvn-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -994,7 +973,8 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="xtwitter"></a>X/Twitter
 
-> **⚠️ Login Issue**
+> [!WARNING]
+> **Login Issue**
 > Since October 2025, Twitter has started checking whether the app is modified or if the phone integrity fails during login. These checks are server-side, not client-side.
 > Links: [Workarounds](https://t.me/pikopatches/1/59772)
 >
@@ -1021,7 +1001,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `com.twitter.android`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.twitter.android%22%2C%22name%22%3A%22X%2FTwitter%20Morphe%20%2B%20X-Shim%20%2B%20piko%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ex-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-xshim-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-piko-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22com.twitter.android%22%2C%22name%22%3A%22X%2FTwitter%20Morphe%20%2B%20X-Shim%20%2B%20piko%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Ex-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-xshim-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-piko-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -1043,7 +1023,8 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="youtube"></a>YouTube
 
-> **⚠️ Login Issue**
+> [!NOTE]
+> **Login Issue**
 > Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.
 > Links: [Morphe](https://github.com/MorpheApp/MicroG-RE/releases/latest)
 >
@@ -1073,7 +1054,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `app.morphe.android.youtube`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.morphe.android.youtube%22%2C%22name%22%3A%22YouTube%20Morphe%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-morphe-exp-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.morphe.android.youtube%22%2C%22name%22%3A%22YouTube%20Morphe%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eyoutube-morphe-exp-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -1110,7 +1091,7 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `app.morphe.android.youtube`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.morphe.android.youtube%22%2C%22name%22%3A%22YouTube%20Morphe%20%2B%20ReVanced%20Extended(anddea)%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-anddea-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-all%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.morphe.android.youtube%22%2C%22name%22%3A%22YouTube%20Morphe%20%2B%20ReVanced%20Extended(anddea)%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eyoutube-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-anddea-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-all%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
@@ -1132,7 +1113,8 @@ This is a dynamically generated catalog of pre-patched Android applications host
 
 ### <a name="youtubemusic"></a>YouTube Music
 
-> **⚠️ Login Issue**
+> [!NOTE]
+> **Login Issue**
 > Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.
 > Links: [Morphe](https://github.com/MorpheApp/MicroG-RE/releases/latest)
 >
@@ -1168,13 +1150,13 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `app.morphe.android.apps.youtube.music`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.morphe.android.apps.youtube.music%22%2C%22name%22%3A%22YouTube%20Music%20Morphe%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-%5B%5C%5C%5C%5Cw.-%5D*-morphe-exp-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-arm64-%5B%5C%5C%5C%5Cw.-%5D*%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.morphe.android.apps.youtube.music%22%2C%22name%22%3A%22YouTube%20Music%20Morphe%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eyoutube-music-morphe-exp-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-arm64-%5B%5C%5Cw.-%5D*%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
   * **Asset Filter Regex:** 
 ```regex
-^youtube-[\w.-]*-morphe-exp-(v\w*\d|\d|vbuild)[\w.-]*-morphe-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$
+^youtube-music-morphe-exp-(v\w*\d|\d|vbuild)[\w.-]*-morphe-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$
 ```
 
 </details>
@@ -1211,13 +1193,13 @@ This is a dynamically generated catalog of pre-patched Android applications host
 <summary>🤖 <b>Obtainium Integration</b></summary>
 
 * **Package ID:** `app.morphe.android.apps.youtube.music`
-* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.morphe.android.apps.youtube.music%22%2C%22name%22%3A%22YouTube%20Music%20Morphe%20%2B%20ReVanced%20Extended(anddea)%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-%5B%5C%5C%5C%5Cw.-%5D*-morphe-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-anddea-(v%5C%5C%5C%5Cw*%5C%5C%5C%5Cd%7C%5C%5C%5C%5Cd%7Cvbuild)%5B%5C%5C%5C%5Cw.-%5D*-%5B%5C%5C%5C%5Cw.-%5D*-arm64-%5B%5C%5C%5C%5Cw.-%5D*%5C%5C%5C%5C.apk%24%5C%22%7D%22%7D)**
+* **[Add to Obtainium (One-Click Import)](https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%7B%22id%22%3A%22app.morphe.android.apps.youtube.music%22%2C%22name%22%3A%22YouTube%20Music%20Morphe%20%2B%20ReVanced%20Extended(anddea)%22%2C%22author%22%3A%22sharath-5br2r%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fsharath-5br2r%2Fmy-patched-apks%22%2C%22additionalSettings%22%3A%7B%22apkFilterRegEx%22%3A%22%5Eyoutube-music-morphe-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-anddea-(v%5C%5Cw*%5C%5Cd%7C%5C%5Cd%7Cvbuild)%5B%5C%5Cw.-%5D*-%5B%5C%5Cw.-%5D*-arm64-%5B%5C%5Cw.-%5D*%5C%5C.apk%24%22%7D%7D)**
 * Add this app directly to [Obtainium](https://github.com/Adolfintel/Obtainium) to receive automatic updates:
   * **App Source URL:** `https://github.com/sharath-5br2r/my-patched-apks`
   * **Filter Source:** `Release Title and Asset`
   * **Asset Filter Regex:** 
 ```regex
-^youtube-[\w.-]*-morphe-(v\w*\d|\d|vbuild)[\w.-]*-anddea-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$
+^youtube-music-morphe-(v\w*\d|\d|vbuild)[\w.-]*-anddea-(v\w*\d|\d|vbuild)[\w.-]*-[\w.-]*-arm64-[\w.-]*\.apk$
 ```
 
 </details>

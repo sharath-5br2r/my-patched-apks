@@ -27,7 +27,6 @@ const CONFIG = {
     "rushiranpise",
     "revenge",
     "paresh",
-    "gboard",
     "piko",
     "binarymend",
     "hoodles",
@@ -324,6 +323,7 @@ const CONFIG = {
   appNotices: [
     {
       triggers: ["youtube", "google", "gboard"],
+      type: "note",
       className: "microg-note",
       title: "Login Issue",
       text: "Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.",
@@ -336,24 +336,28 @@ const CONFIG = {
     },
     {
       triggers: ["amazon","primevideo"],
+      type: "warning",
       className: "amazon-note",
       title: "Signing Compatibility",
       text: "Due to a modification in hoodles patch, all Amazon Apps are needed to have the same signature. So install the apps from here which is resigned for compatibility.",
     },
     {
       triggers: ["geode"],
+      type: "note",
       className: "geode-note",
       title: "Requirements",
       text: "A copy of Geometry Dash is needed to launch Geode Launcher. Please install it from Play Store or any other source(cracked supported) before trying to launch Geode.",
     },
     {
       triggers: ["levilauncher"],
+      type: "note",
       className: "levilauncher-note",
       title: "Requirements",
       text: "A copy of Minecraft Bedrock Edition is needed to launch LeviLauncher. Please install it from Play Store or any other source(cracked supported) before trying to launch LeviLauncher. Additionally you need APKs for other versions if you want to launch",
     },
     {
       triggers: ["twitter"],
+      type: "warning",
       className: "twitter-login-note",
       title: "Login Issue",
       text: "Since October 2025, Twitter has started checking whether the app is modified or if the phone integrity fails during login. These checks are server-side, not client-side.",
@@ -363,12 +367,14 @@ const CONFIG = {
     },
     {
       triggers: ['dolphin', 'eden', 'winlator', 'levilauncher', 'geode', 'zalithlauncher'],
+      type: "warning",
       className: "spoofing-note",
       title: "About Package Spoofing",
       text: "These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. "
     },
     {
       triggers: ['dolphin'],
+      type: "note",
       className: "customstorage-note",
       title: "Custom Storage Location Patch",
       text: "Due to a patch that allows custom storage location, You will have to manually grant storage permission to the app from settings or use a file manager to move files.",
@@ -597,12 +603,16 @@ function parseAssetDisplay(filename, fileType) {
   const versions = findVersionTokens(cleanName, minVersionStartIndex);
 
   // App name boundary: Strictly up to the first explicit patch token match, version token, or variant token!
-  // This solves the bug where variants like "chromeos" or "optimized" were wrongly grouped as separate apps.
-  const firstPatchIndex = patches.length > 0 ? patches[0].index : cleanName.length;
-  const firstVersionIndex = versions.length > 0 ? versions[0].index : cleanName.length;
-  
-  // We only boundary check variant keywords if they are NOT at the index 0 (which would mean an empty app name)
-  const firstVariantIndex = (variants.length > 0 && variants[0].index > 0) ? variants[0].index : cleanName.length;
+  // We find the first of each token that occurs strictly after index 0 to prevent an empty app name
+  // when a file starts with one of these keywords (e.g., 'gboard-morphe-...').
+  const validPatch = patches.find(p => p.index > 0);
+  const firstPatchIndex = validPatch ? validPatch.index : cleanName.length;
+
+  const validVersion = versions.find(v => v.index > 0);
+  const firstVersionIndex = validVersion ? validVersion.index : cleanName.length;
+
+  const validVariant = variants.find(v => v.index > 0);
+  const firstVariantIndex = validVariant ? validVariant.index : cleanName.length;
   
   const appBoundary = Math.min(firstPatchIndex, firstVersionIndex, firstVariantIndex);
 
@@ -667,17 +677,25 @@ function buildObtainiumRegexFromAsset(asset) {
   const tokens = baseName.split("-");
   const parsed = asset.parsed;
 
-  const regexTokens = tokens.map((token) => {
-    const lower = token.toLowerCase();
+  // Build a set of lowercase keywords belonging to the app name (both display and slug parts)
+  const appParts = new Set([
+    ...parsed.appName.toLowerCase().split(/[-_ ]+/).filter(Boolean),
+    ...(parsed.appSlug ? parsed.appSlug.split(/[-_ ]+/).filter(Boolean) : [])
+  ]);
 
-    // Preserve exact app name slugs
-    if (parsed.appSlug.split("-").includes(lower)) {
-      return escapeRegex(token);
+  const regexTokens = tokens.map((token) => {
+    // Strip leading/trailing quotes if present on the token
+    const cleanToken = token.replace(/^["']|["']$/g, "");
+    const lower = cleanToken.toLowerCase();
+
+    // Preserve exact app name parts
+    if (appParts.has(lower)) {
+      return escapeRegex(cleanToken);
     }
 
     // Preserve explicit patch tokens
     if (CONFIG.knownPatchTokens.has(lower)) {
-      return escapeRegex(token);
+      return escapeRegex(cleanToken);
     }
 
     // Preserve explicit variant keywords
@@ -685,17 +703,17 @@ function buildObtainiumRegexFromAsset(asset) {
                           (lower.startsWith('v') && CONFIG.variantKeywords.has(lower.slice(1))) ||
                           CONFIG.brandOverrides[lower];
     if (isExplicitVar) {
-      return escapeRegex(token);
+      return escapeRegex(cleanToken);
     }
 
     // Turn version tokens into wildcards
-    if (isVersionToken(token)) {
+    if (isVersionToken(cleanToken)) {
       return "(v\\w*\\d|\\d|vbuild)[\\w.-]*";
     }
 
     // Keep explicit arch tags
     if (CONFIG.knownArchs.includes(lower)) {
-      return escapeRegex(token);
+      return escapeRegex(cleanToken);
     }
 
     // Unrecognized arbitrary names in-between are wildcarded
@@ -1165,7 +1183,9 @@ function generateMarkdown(catalog) {
 
     if (notices.length > 0) {
       notices.forEach((notice) => {
-        md += `> **⚠️ ${notice.title}**\n`;
+        const type = (notice.type || "warning").toUpperCase();
+        md += `> [!${type}]\n`;
+        md += `> **${notice.title}**\n`;
         md += `> ${notice.text}\n`;
         if (notice.links && notice.links.length > 0) {
           const linksStr = notice.links.map(l => `[${l.label}](${l.url})`).join(", ");
@@ -1247,9 +1267,9 @@ function generateMarkdown(catalog) {
           name: `${app.appName} ${patch.patchName}`,
           author: CONFIG.owner,
           url: `https://github.com/${CONFIG.owner}/${CONFIG.repo}`,
-          additionalSettings: JSON.stringify({
+          additionalSettings: {
             apkFilterRegEx: regexStr
-          })
+          }
         };
         const oneClickUrl = `https://apps.obtainium.imranr.dev/redirect?r=${encodeURIComponent("obtainium://app/" + JSON.stringify(obtainiumConfig))}`;
 
