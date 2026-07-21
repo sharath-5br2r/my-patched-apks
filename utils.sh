@@ -1461,12 +1461,12 @@ patch_apk() {
 	fi
 	
 	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
-		local p_args_modules=""
-		while read -r json; do
-			file=$(jq -r '.file' <<<"$json")
-			p_args_modules+=" -m '$file'"
-		done <<<"$p_jars"
-		mkdir -p "$tmp_dir"
+	    local -a p_jars
+	    mapfile -t p_jars < <(jq -r '.[] | .file' <<<"$patches_jar")
+	    local p_args_modules=""
+	    for j in "${p_jars[@]}"; do
+		    p_args_modules+="-m '$j' "
+	    done
 		local pathsep
 		if [[ "$(uname -s)" == *"NT"* ]]; then pathsep=";"; else pathsep=":"; fi
 		if [[ "$cli_source_l" == *"npatch"* ]]; then
