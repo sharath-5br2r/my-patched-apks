@@ -1,4 +1,4 @@
-name: Update Releases Catalog File
+name: Update Releases Catalog Website
 
 on:
   workflow_call:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
         with: 
-          ref: main
+          ref: gh-pages
 
       - name: Fetch releases from GitHub API
         env:
@@ -39,12 +39,10 @@ jobs:
 
           echo "Fetched $COUNT releases. Updating cache."
           mv releases_new.json releases.json
-      - name: Generate Updtaead Catalog
-        run: |
-          node scripts/catalog.js
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "update releases catalog"
           commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com> # Remove if not needed, or replace with your own name/emails
           file_pattern: releases.json CATALOG.md
+          branch: gh-pages
