@@ -558,23 +558,32 @@ function setupEventListeners() {
   }
 
   document.getElementById("builds").addEventListener("click", (e) => {
+    const trigger = e.target.closest(".patch-open-box");
+    if (trigger) {
+      e.preventDefault();
+      e.stopPropagation();
+      openPatchModal(
+        trigger.dataset.appKey,
+        trigger.dataset.patchKey,
+        trigger.dataset.filter || "all",
+      );
+      return;
+    }
+
     const collapsedCard = e.target.closest(".app-card:not([open])");
     if (collapsedCard && !e.target.closest(".app-card-summary")) {
       collapsedCard.open = true;
       return;
     }
-
-    const trigger = e.target.closest(".patch-open-box");
-    if (!trigger) return;
-
-    openPatchModal(
-      trigger.dataset.appKey,
-      trigger.dataset.patchKey,
-      trigger.dataset.filter || "all",
-    );
   });
 
   document.getElementById("patchModal").addEventListener("click", (e) => {
+    const downloadBtn = e.target.closest(".download-btn");
+    if (downloadBtn) {
+      e.stopPropagation();
+      return;
+    }
+
     const filterBtn = e.target.closest(".modal-filter-btn");
     if (filterBtn) {
       if (filterBtn.disabled) return;
@@ -1223,9 +1232,11 @@ function createAppCard(app) {
 
   return `
         <details class="build-card app-card">
-            <summary class="build-header app-card-summary">
-                <div class="app-name">${escapeHtml(app.appName)}</div>
-                <span class="patch-count">${app.patches.length} patch${app.patches.length > 1 ? "es" : ""}</span>
+            <summary class="app-card-summary">
+                <div class="build-header">
+                    <div class="app-name">${escapeHtml(app.appName)}</div>
+                    <span class="patch-count">${app.patches.length} patch${app.patches.length > 1 ? "es" : ""}</span>
+                </div>
             </summary>
             <div class="app-card-body">
                 ${noticesMarkup}
@@ -1447,16 +1458,16 @@ function createPatchMarkup(app, patch) {
 
   return `
         <div class="patch-entry">
-            <span class="patch-trigger-left">
-                <span class="patch-chip-group">
+            <div class="patch-trigger-left">
+                <div class="patch-chip-group">
                     ${patchChipsMarkup}
                     ${buildCountBadge}
                     ${dlBadge}
-                </span>
-                <span class="patch-meta-grid">
+                </div>
+                <div class="patch-meta-grid">
                     ${patchMetaBoxes.join("")}
-                </span>
-            </span>
+                </div>
+            </div>
         </div>
     `;
 }
@@ -2169,6 +2180,8 @@ function createModalBuildMarkup(build, openByDefault = false) {
       downloadsMarkup += `
                 <a href="${asset.browser_download_url}"
                    class="download-btn ${arch}"
+                   target="_blank"
+                   rel="noopener noreferrer"
                    download
                    title="${asset.name}">
                     <span class="asset-left">
@@ -2210,14 +2223,16 @@ function createModalBuildMarkup(build, openByDefault = false) {
 
   return `
         <details class="modal-build-card" ${openByDefault ? "open" : ""}>
-            <summary class="modal-build-header">
-                <div class="modal-build-header-left">
-                    <div class="modal-build-title">${titleText}</div>
-                    <div class="modal-build-date">${dateText}</div>
+            <summary class="modal-build-summary">
+                <div class="modal-build-header">
+                    <div class="modal-build-header-left">
+                        <div class="modal-build-title">${titleText}</div>
+                        <div class="modal-build-date">${dateText}</div>
+                    </div>
+                    <span class="badge-group">
+                        ${badgeGroupMarkup}
+                    </span>
                 </div>
-                <span class="badge-group">
-                    ${badgeGroupMarkup}
-                </span>
             </summary>
             <div class="modal-build-downloads">
                 ${downloadsMarkup || '<p style="color: var(--text-secondary); font-size: 0.9rem;">No downloads available</p>'}
@@ -2232,6 +2247,7 @@ function groupAssetsByArchitecture(assets) {
     arm64: [],
     arm32: [],
     universal: [],
+    x86_64: [],
     x86: [],
     other: [],
   };
@@ -2242,7 +2258,7 @@ function groupAssetsByArchitecture(assets) {
   });
 
   const filtered = {};
-  ["arm64", "arm32", "universal", "x86", "other"].forEach((arch) => {
+  ["arm64", "arm32", "universal", "x86_64", "x86", "other"].forEach((arch) => {
     if (groups[arch].length > 0) {
       const sorted = groups[arch].sort((a, b) => {
         const aIsApk = a.name.toLowerCase().endsWith(".apk") ? 0 : 1;
@@ -2514,6 +2530,7 @@ function capitalizeArch(arch) {
     arm64: "ARM64",
     arm32: "ARM32",
     universal: "Universal",
+    x86_64: "x86_64",
     x86: "X86",
     other: "Other",
   };

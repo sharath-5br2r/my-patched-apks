@@ -1067,18 +1067,21 @@ body.light-mode .obtainium-instructions a.obtainium-add-btn {
     overflow: hidden;
 }
 
+.modal-build-summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.modal-build-summary::-webkit-details-marker {
+    display: none;
+}
+
 .modal-build-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 10px;
-    list-style: none;
-    cursor: pointer;
     padding: 10px;
-}
-
-.modal-build-header::-webkit-details-marker {
-    display: none;
 }
 
 .modal-build-header-left {
@@ -1273,13 +1276,15 @@ body.light-mode .variant-badge {
     color: #000;
 }
 
-.download-btn.x86 {
+.download-btn.x86,
+.download-btn.x86_64 {
     background: rgba(208, 153, 34, 0.2);
     border: 1px solid #d0a324;
     color: #d0a324;
 }
 
-.download-btn.x86:hover {
+.download-btn.x86:hover,
+.download-btn.x86_64:hover {
     background: #d0a324;
     color: #000;
 }
