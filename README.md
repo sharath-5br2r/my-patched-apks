@@ -678,12 +678,12 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
 #### [Morphe Experimental](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-morphe-exp">Version: v21.28.204</summary>
+<summary id="youtube-morphe-exp">Version: v21.04.223</summary>
   
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260006)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.7.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.7)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -747,6 +747,7 @@ Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morph
 - Sanitize sharing links
 - Save to watch later
 - Seekbar
+- Settings menu filter
 - Shorts autoplay
 - SponsorBlock
 - Spoof app version
@@ -845,8 +846,8 @@ Patches: [anddea/patches-4.2.0-dev.7.mpp](https://github.com/anddea/revanced-pat
   
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260006)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.7.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.7)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -879,6 +880,7 @@ Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morph
 - Return YouTube Dislike
 - Sanitize sharing links
 - Scrobbling
+- Settings menu filter
 - SponsorBlock
 - Spoof app version
 - Spoof video streams
