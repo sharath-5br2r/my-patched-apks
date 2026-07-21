@@ -150,7 +150,7 @@ Patches: [rushiranpise/patches-1.14.0.mpp](https://github.com/rushiranpise/morph
 <summary id="amazon-alexa-signed">Version: v2.2.695641.0</summary>
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260002)<br>
 Patches: 
 </blockquote>
 </details>
