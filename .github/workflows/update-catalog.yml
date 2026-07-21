@@ -3,7 +3,7 @@ name: Update Releases Catalog Website
 on:
   workflow_call:
   schedule:
-    - cron: "0 2 * * *" # 02:00 AM UTC everyday
+    - cron: "0 * * * *" # 02:00 AM UTC everyday
   workflow_dispatch:
 
 concurrency:
@@ -44,5 +44,5 @@ jobs:
         with:
           commit_message: "update releases catalog"
           commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com> # Remove if not needed, or replace with your own name/emails
-          file_pattern: releases.json CATALOG.md
+          file_pattern: releases.json
           branch: gh-pages
