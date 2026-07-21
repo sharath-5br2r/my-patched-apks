@@ -28,19 +28,19 @@ const CONFIG = {
     "cs",
     "signed",
     "viamorphe",
-    "morphehooman",
-    "morpherushiranpise",
-    "npatchrevenge",
-    "morpheparesh",
-    "morphegboard",
-    "morphepiko",
-    "bgmi",
-    "morphebinarymend",
-    "morphehoodles",
-    "morphextra",
+    "hooman",
+    "rushiranpise",
+    "revenge",
+    "paresh",
+    "piko",
+    "binarymend",
+    "hoodles",
+    "xtra",
     "pubgvn",
-    "morpheanddea",
-    "codm",
+    "anddea",
+    "xshim",
+    "jasonwu1994",
+    "icysymmetra",
   ]),
 
   // Known tokens indicating a variant (must be lowercase)
@@ -75,6 +75,7 @@ const CONFIG = {
     youtube: "YouTube",
     revanced: "ReVanced",
     tiktok: "TikTok",
+    icysymmetra: "TikTok Patches",
     soundcloud: "SoundCloud",
     xrecorder: "XRecorder",
     calcnote: "CalcNote",
@@ -98,11 +99,13 @@ const CONFIG = {
     hellochinese: "HelloChinese: Learn Chinese",
     gplay: "Google Play",
     foss: "FOSS",
-    gboard: "Gboard",
+    gboard: "Google Keyboard",
+    jasonwu1994: "Gboard Patches",
+    morphe: "Morphe",
     wps: "WPS",
     rar: "RAR",
     adguard: "AdGuard",
-    moonplus: "Moon+",
+    "moonplus-reader": "Moon+ Reader",
     eyecon: "Eyecon Caller ID & Spam Block",
     camscanner: "CamScanner",
     inshorts: "Inshorts - News in 60 words",
@@ -124,200 +127,198 @@ const CONFIG = {
     mxplayer: "MX Player",
     adm: "Advanced Download Manager",
     dolphin: "Dolphin Emulator",
+    cs: "Custom Storage",
+    napatch: "NPatch",
+    revenge: "Revenge",
+    paresh: "Paresh",
     eden: "Eden Emulator",
     geode: "Geode Launcher",
     jiohotstar: "JioHotstar",
     levilauncher: "LeviLauncher",
     winlator: "Winlator Ludashi",
     x: "X/Twitter",
+    xshim: "X-Shim",
     viamorphe: "via Morphe",
     gfp: "Game for Peace Spoof",
     optimized: "Genshin Impact Spoof",
+    optmosed: "Genshin Impact Spoof", // Mapping of the typo to display name
     chromeos: "ChromeOS/x86",
     codm: "Call of Duty Mobile Spoof",
     pubgkr: "PUBG Mobile KR Spoof",
     pubgvn: "PUBG Mobile VN Spoof",
-    bgmi: "Battlegrounds Mobile India Spoof"
-
+    bgmi: "Battlegrounds Mobile India Spoof",
+    symfonium: "Symfonium",
+    "youtube-music": "YouTube Music",
+    "prime-video": "Prime Video",
+    "zalith-launcher-2-plus": "Zalith Launcher 2 Plus",
+    "instagram": "Instagram",
+    "levilauncher-unlocked": "LeviLauncher Unlocked",
+    "amazon-india": "Amazon India",
+    "amazon-alexa": "Amazon Alexa",
+    "proton-vpn": "Proton VPN",
+    "discord": "Discord",
+    "speedtest": "Speedtest",
+    "adobe-acrobat": "Adobe Acrobat",
   },
 
-  // Map app slugs to true Android Package IDs for Obtainium
-  // Keys MUST be the fully normalized appName (lowercase, no spaces, no symbols)
-  // app + patch + variant, app + patch + default, app + variant, app + default, app only
+  // Map exact app names to true Android Package IDs for Obtainium
   appIds: {
-    advanceddownloadmanager: "com.dv.adm",
-    "1111warp": "com.cloudflare.onedotonedotonedotone",
-
-    acalendar: "org.withouthat.acalendar",
-    adguard: "com.adguard.android",
-    adobeacrobat: "com.adobe.reader",
-    adobelightroom: "com.adobe.lrmobile",
-    adobephotoshopmix: "com.adobe.psmobile",
-    accuweather: "com.accuweather.android",
-    alldocumentreader: "alldocumentsreader.docuemntviewer",
-    amazonalexa: "com.amazon.dee.app",
-    amazonindia: "in.amazon.mShop.android.shopping",
-    at4klauncher: "com.overdevs.at4k",
-    automate: "com.llamalab.automate",
-    autosync: "com.ttxapps.autosync",
-
-    batteryguru: "com.paget96.batteryguru",
-    betamaniac: "it.mirko.beta",
-
-    calcnote: "com.appumstudios.calcnote",
-    camscanner: "com.intsig.camscanner",
-    cricbuzz: "com.cricbuzz.android",
-    cryptomator: "org.cryptomator",
-    documentscanner: "com.cv.docscanner",
-    duolingo: "com.duolingo",
-    disneyplus: "com.disney.disneyplus",
-    discord: "com.discord",
-    dolphinemulator: {
+    "Advanced Download Manager": "com.dv.adm",
+    "1.1.1.1 + WARP": "com.cloudflare.onedotonedotonedotone",
+    "aCalendar": "org.withouthat.acalendar",
+    "AdGuard": "com.adguard.android",
+    "Adobe Acrobat": "com.adobe.reader",
+    "Adobe Lightroom": "com.adobe.lrmobile",
+    "Adobe Photoshop Mix": "com.adobe.psmobile",
+    "AccuWeather": "com.accuweather.android",
+    "All Document Reader": "alldocumentsreader.docuemntviewer",
+    "Amazon Alexa": "com.amazon.dee.app",
+    "Amazon India": "in.amazon.mShop.android.shopping",
+    "AT4K Launcher": "com.overdevs.at4k",
+    "Automate": "com.llamalab.automate",
+    "Autosync": "com.ttxapps.autosync",
+    "Battery Guru": "com.paget96.batteryguru",
+    "Betamaniac": "it.mirko.beta",
+    "CalcNote": "com.appumstudios.calcnote",
+    "CamScanner": "com.intsig.camscanner",
+    "Cricbuzz": "com.cricbuzz.android",
+    "Cryptomator": "org.cryptomator",
+    "Document Scanner": "com.cv.docscanner",
+    "Duolingo": "com.duolingo",
+    "Disney+": "com.disney.disneyplus",
+    "Discord": "com.discord",
+    "Dolphin Emulator": {
       default: "org.dolphinemu.dolphinemu",
-      gameforpeacespoof: "com.tencent.tmgp.pubgmhd",
+      "Game for Peace Spoof": "com.tencent.tmgp.pubgmhd",
     },
-    edenemulator: {
+    "Eden Emulator": {
       default: "dev.eden_emulator.eden",
-      optimized: "com.miHoYo.Yuanshen",
+      "Genshin Impact Spoof": "com.miHoYo.Yuanshen",
     },
-    eyeconcalleridspamblock: "com.eyecon.global",
-
-    facebook: "com.facebook.katana",
-    fingnetworktools: "com.overlook.android.fing",
-    geodelauncher: {
+    "Eyecon Caller ID & Spam Block": "com.eyecon.global",
+    "Facebook": "com.facebook.katana",
+    "Fing - Network Tools": "com.overlook.android.fing",
+    "Geode Launcher": {
       default: "com.geode.launcher",
-      pubgmobilekrspoof: "com.pubg.krmobile"
+      "PUBG Mobile KR Spoof": "com.pubg.krmobile"
     },
-    github: "com.github.android",
-    goodreads: "com.goodreads",
-    gboard:{
+    "GitHub": "com.github.android",
+    "Goodreads": "com.goodreads",
+    "Gboard": {
       default: "com.google.android.inputmethod.latin",
-      morphegboard: "dev.jason.com.google.android.inputmethod.latin",
+      "Gboard Patches": "dev.jason.com.google.android.inputmethod.latin",
     },
-    googlenews: "com.google.android.apps.magazines",
-    googlephotos: {
-      revanced: "app.revanced.android.apps.photos",
-      morphe: "app.morphe.android.apps.photos",
+    "Google News": "com.google.android.apps.magazines",
+    "Google Photos": {
+      "ReVanced": "app.revanced.android.apps.photos",
+      "Morphe": "app.morphe.android.apps.photos",
       default: "com.google.android.apps.photos",
     },
-    googlerecorder: "com.google.android.apps.recorder",
-
-    hbomax: "com.wbd.hbomax",
-    hellochineselearnchinese: "com.hellochinese",
-    holavpn: "org.hola.play",
-
-    iconpacker: "cn.ommiao.iconpacker",
-    instagram: "com.instagram.android",
-    inshot: "com.camerasideas.instashot",
-    inshortsnewsin60words: "com.nis.app",
-    imdb: "com.imdb.mobile",
-    jiohotstar: "in.startv.hotstar",
-
-    komoothikebikerun: "de.komoot.android",
-
-    levilauncherunlocked: {
+    "Google Recorder": "com.google.android.apps.recorder",
+    "HBO Max": "com.wbd.hbomax",
+    "HelloChinese: Learn Chinese": "com.hellochinese",
+    "Hola VPN": "org.hola.play",
+    "Icon Packer": "cn.ommiao.iconpacker",
+    "Instagram": "com.instagram.android",
+    "InShot": "com.camerasideas.instashot",
+    "Inshorts - News in 60 words": "com.nis.app",
+    "IMDb": "com.imdb.mobile",
+    "JioHotstar": "in.startv.hotstar",
+    "komoot - hike, bike & run": "de.komoot.android",
+    "LeviLauncher": {
       default: "org.levimc.launcher",
-      battlegroundsmobileindiaspoof: "com.pubg.imobile",
+      "Battlegrounds Mobile India Spoof": "com.pubg.imobile",
     },
-    luminawallpapers: "com.lumina.wallpapers",
-
-    macrodroid: "com.arlosoft.macrodroid",
-    medium: "com.medium.reader",
-    merriamwebsterdictionary: "com.merriamwebster",
-    messenger: "com.facebook.orca",
-    microsoftlens: "com.microsoft.office.officelens",
-    microsoftedge: "com.microsoft.emmx",
-    moonreader: "com.flyersoft.moonreader",
-    moneymanager: "com.realbyteapps.moneymanagerfree",
-    mxplayer: "com.mxtech.videoplayer.pro",
-    myfitnesspal: "com.myfitnesspal.android",
-
-    niagaralauncher: "bitpit.launcher",
-    ninjavpn: "app.ninjavpn.android",
-    novalauncher: "com.teslacoilsw.launcher",
-
-    pandora: "com.pandora.android",
-    peacock: "com.peacocktv.peacockandroid",
-    photomath: "com.microblink.photomath",
-    pinterest: "com.pinterest",
-    pixiv: "jp.pxv.android",
-    plusmessenger: "org.telegram.plus",
-    plutotv: { androidtv: "tv.pluto.android" },
-    podcastaddict: "com.bambuna.podcastaddict",
-    poweramp: "com.maxmpz.audioplayer",
-    primevideo: {
+    "Lumina Wallpapers": "com.lumina.wallpapers",
+    "MacroDroid": "com.arlosoft.macrodroid",
+    "Medium": "com.medium.reader",
+    "Merriam-Webster Dictionary": "com.merriamwebster",
+    "Messenger": "com.facebook.orca",
+    "Microsoft Lens": "com.microsoft.office.officelens",
+    "Microsoft Edge": "com.microsoft.emmx",
+    "Moon+": "com.flyersoft.moonreader",
+    "Money Manager": "com.realbyteapps.moneymanagerfree",
+    "MX Player": "com.mxtech.videoplayer.pro",
+    "MyFitnessPal": "com.myfitnesspal.android",
+    "Niagara Launcher": "bitpit.launcher",
+    "Ninja VPN": "app.ninjavpn.android",
+    "Nova Launcher": "com.teslacoilsw.launcher",
+    "Pandora": "com.pandora.android",
+    "Peacock": "com.peacocktv.peacockandroid",
+    "Photomath": "com.microblink.photomath",
+    "Pinterest": "com.pinterest",
+    "pixiv": "jp.pxv.android",
+    "Plus Messenger": "org.telegram.plus",
+    "PlutoTV": { 
+      "Android TV": "tv.pluto.android" 
+    },
+    "Podcast Addict": "com.bambuna.podcastaddict",
+    "Poweramp": "com.maxmpz.audioplayer",
+    "Prime Video": {
       default: "com.amazon.avod.thirdpartyclient",
-      androidtv: "com.amazon.amazonvideo.livingroom.mod"
+      "Android TV": "com.amazon.amazonvideo.livingroom.mod"
     },
-    protonmail: "ch.protonmail.android",
-    protonvpn: "ch.protonvpn.android",
-    projectivylauncher: "com.spocky.projengmenu",
-
-    sdmaid2se: "eu.darken.sdmse",
-    showly: "com.michaldrabik.showly2",
-    smartlauncher6: "ginlemon.flowerfree",
-    solidexplorer: "pl.solidexplorer2",
-    soundcloud: "com.soundcloud.android",
-    snorelab: "com.snorelab.app",
-    speedtest: "org.zwanoo.android.speedtest",
-    symfonium: "app.symfonik.music.player",
-
-    telegram: {
+    "ProtonMail": "ch.protonmail.android",
+    "Proton VPN": "ch.protonvpn.android",
+    "Project Ivy Launcher": "com.spocky.projengmenu",
+    "SD Maid 2/SE": "eu.darken.sdmse",
+    "Showly": "com.michaldrabik.showly2",
+    "Smart Launcher 6": "ginlemon.flowerfree",
+    "Solid Explorer": "pl.solidexplorer2",
+    "SoundCloud": "com.soundcloud.android",
+    "SnoreLab": "com.snorelab.app",
+    "Speedtest": "org.zwanoo.android.speedtest",
+    "Symfonium": "app.symfonik.music.player",
+    "Telegram": {
       default: "org.telegram.messenger",
-      foss: "org.telegram.messenger.web",
+      "FOSS": "org.telegram.messenger.web",
     },
-    terabox: "com.dubox.drive",
-    theweatherchannel: "com.weather.Weather",
-    threads: "com.instagram.barcelona",
-    ticktick: "com.ticktick.task",
-    tiktok: "com.zhiliaoapp.musically",
-    todoist: "com.todoist",
-    trakttv: "tv.trakt.trakt",
-    truecaller: "com.truecaller",
-    tubi: "com.tubitv",
-    tumblr: "com.tumblr",
-    twitch: "tv.twitch.android.app",
-
-    reddit: "com.reddit.frontpage",
-    rumble: "com.rumble.battles",
-
-    ventusky: "cz.ackee.ventusky",
-    viber: "com.viber.voip",
-    vix: "com.univision.prendetv",
-    vpnify: "com.vpn.free.hotspot.secure.vpnify",
-
-    rar: "com.rarlab.rar",
-    winlatorludashi: {
+    "TeraBox": "com.dubox.drive",
+    "The Weather Channel": "com.weather.Weather",
+    "Threads": "com.instagram.barcelona",
+    "TickTick": "com.ticktick.task",
+    "TikTok": "com.zhiliaoapp.musically",
+    "Todoist": "com.todoist",
+    "trakt.TV": "tv.trakt.trakt",
+    "Truecaller": "com.truecaller",
+    "Tubi": "com.tubitv",
+    "Tumblr": "com.tumblr",
+    "Twitch": "tv.twitch.android.app",
+    "Reddit": "com.reddit.frontpage",
+    "Rumble": "com.rumble.battles",
+    "Ventusky": "cz.ackee.ventusky",
+    "Viber": "com.viber.voip",
+    "ViX": "com.univision.prendetv",
+    "VPNify": "com.vpn.free.hotspot.secure.vpnify",
+    "RAR": "com.rarlab.rar",
+    "Winlator Ludashi": {
       default: "com.winlator.cmod",
-      pubgmobilevnspoof: "com.vng.pubgmobile",
-    }, 
-    wallcraft: "com.wallpaperscraft.wallpaper",
-    waze: "com.waze",
-    windscribevpn: "com.windscribe.vpn",
-    wpsoffice: "cn.wps.moffice_eng",
-
-    xtwitter: "com.twitter.android",
-
-    xodopdfreadereditor: "com.xodo.pdf.reader",
-    xrecorder: "videoeditor.videorecorder.screenrecorder",
-
-    youtube: {
-      revanced: "app.revanced.android.youtube",
-      rvx: "app.rvx.android.youtube",
-      morpheanddea: "anddea.youtube",
-      morphe: "app.morphe.android.youtube",
+      "PUBG Mobile VN Spoof": "com.vng.pubgmobile",
+    },
+    "Wallcraft": "com.wallpaperscraft.wallpaper",
+    "Waze": "com.waze",
+    "Windscribe VPN": "com.windscribe.vpn",
+    "WPS": "cn.wps.moffice_eng",
+    "X/Twitter": "com.twitter.android",
+    "Xodo PDF Reader & Editor": "com.xodo.pdf.reader",
+    "XRecorder": "videoeditor.videorecorder.screenrecorder",
+    "YouTube": {
+      "ReVanced": "app.revanced.android.youtube",
+      "ReVanced Extended": "app.rvx.android.youtube",
+      "ReVanced Extended(anddea)": "anddea.youtube",
+      "Morphe": "app.morphe.android.youtube",
       default: "com.google.android.youtube",
     },
-    youtubemusic: {
-      revanced: "app.revanced.android.apps.youtube.music",
-      rvx: "app.rvx.android.apps.youtube.music",
-      morpheanddea: "anddea.youtube.music",
-      morphe: "app.morphe.android.apps.youtube.music",
+    "YouTube Music": {
+      "ReVanced": "app.revanced.android.apps.youtube.music",
+      "ReVanced Extended": "app.rvx.android.apps.youtube.music",
+      "ReVanced Extended(anddea)": "anddea.youtube.music",
+      "Morphe": "app.morphe.android.apps.youtube.music",
       default: "com.google.android.apps.youtube.music",
     },
-    zalithlauncher2plus: {
+    "ZalithLauncher": {
       default: "com.movtery.zalithlauncher.v2",
-      callofdutymobilespoof: "com.activision.callofduty.shooter",
+      "Call of Duty Mobile Spoof": "com.activision.callofduty.shooter",
     }
   },
 
@@ -325,6 +326,7 @@ const CONFIG = {
   appNotices: [
     {
       triggers: ["youtube", "google", "gboard"], // App name keywords that trigger this notice
+      type: "note",
       className: "microg-note", // Defines the CSS prefix
       title: "Login Issue",
       text: "Signing into Google account on APK (not Module) requires MicroG. Please install from below before trying to sign in.",
@@ -337,24 +339,28 @@ const CONFIG = {
     },
     {
       triggers: ["amazon","primevideo"],
+      type: "warning",
       className: "amazon-note",
-      title: "Signing Compatibiliy",
+      title: "Signing Compatibility",
       text: "Due to a modification in hoodles patch, all Amazon Apps are needed to have the same signature. So install the apps from here which is resigned for compatibility.",
     },
     {
       triggers: ["geode"],
+      type: "note",
       className: "geode-note",
-      title: "Reqirements",
+      title: "Requirements",
       text: "A copy of Geometry Dash is needed to launch Geode Launcher. Please install it from Play Store or any other source(cracked supported) before trying to launch Geode.",
     },
     {
       triggers: ["levilauncher"],
+      type: "note",
       className: "levilauncher-note",
-      title: "Reqirements",
+      title: "Requirements",
       text: "A copy of Minecraft Bedrock Edition is needed to launch LeviLauncher. Please install it from Play Store or any other source(cracked supported) before trying to launch LeviLauncher. Additionally you need APKs for other versions if you want to launch",
     },
     {
       triggers: ["twitter"],
+      type: "warning",
       className: "twitter-login-note",
       title: "Login Issue",
       text: "Since October 2025, Twitter has started checking whether the app is modified or if the phone integrity fails during login. These checks are server-side, not client-side.",
@@ -364,12 +370,14 @@ const CONFIG = {
     },
     {
       triggers: ['dolphin', 'eden', 'winlator', 'levilauncher', 'geode', 'zalithlauncher'],
+      type: "warning",
       className: "spoofing-note",
       title: "About Package Spoofing",
-      text: "These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to procced. "
+      text: "These apps are spoofed into other apps to trick OEM software into optimizing them. You will have to uninstall the spoof target(eg: PUBG Mobile) to proceed. "
     },
     {
       triggers: ['dolphin'],
+      type: "note",
       className: "customstorage-note",
       title: "Custom Storage Location Patch",
       text: "Due to a patch that allows custom storage location, You will have to manually grant storage permission to the app from settings or use a file manager to move files.",
@@ -858,9 +866,9 @@ function buildAppCatalog(releases, query = "") {
     if (release.tag_name === "beta") releaseType = "beta";
 
     (release.assets || []).forEach((asset) => {
-      const arch = detectArchitecture(asset.name);
       const fileType = getFileType(asset.name);
-      const parsed = parseAssetDisplay(asset.name, arch, fileType);
+      const parsed = parseAssetDisplay(asset.name, fileType);
+      const arch = detectArchitecture(asset.name);
 
       if (!assetMatchesSearch(parsed, asset, release, query, normalizedQuery)) {
         return;
@@ -1187,9 +1195,12 @@ function createNoticeMarkup(notice) {
             </div>`
     : ""; // Drops the empty container completely
 
+  const emoji = notice.type === "warning" ? "⚠️" : "ℹ️";
+  const typeClass = notice.type === "warning" ? "notice-warning" : "notice-note";
+
   return `
-        <div class="app-notice ${escapeHtml(notice.className)}">
-            <div class="app-notice-title">${escapeHtml(notice.title)}</div>
+        <div class="app-notice ${typeClass} ${escapeHtml(notice.className)}">
+            <div class="app-notice-title">${emoji} ${escapeHtml(notice.title)}</div>
             <div class="app-notice-text">${escapeHtml(notice.text)}</div>${linksMarkup}
         </div>
     `;
@@ -1352,7 +1363,9 @@ function createPatchMarkup(app, patch) {
       label: "Stable",
       html: `
             <button class="patch-open-box stable" data-app-key="${app.appKey}" data-patch-key="${patch.patchKey}" data-filter="stable" type="button">
-                <span class="patch-meta-label">Stable</span>
+                <span class="patch-meta-label">
+                    <span class="channel-label stable">Stable</span>
+                </span>
                 <span class="patch-meta-value">${escapeHtml(patch.latestStable.version)}</span>
                 ${buildMarkup}
                 <span class="patch-meta-date">${formatDate(patch.latestStable.publishedAt)}</span>
@@ -1369,7 +1382,9 @@ function createPatchMarkup(app, patch) {
       label: "Beta",
       html: `
             <button class="patch-open-box beta" data-app-key="${app.appKey}" data-patch-key="${patch.patchKey}" data-filter="beta" type="button">
-                <span class="patch-meta-label">Beta</span>
+                <span class="patch-meta-label">
+                    <span class="channel-label beta">Beta</span>
+                </span>
                 <span class="patch-meta-value">${escapeHtml(patch.latestBeta.version)}</span>
                 ${buildMarkup}
                 <span class="patch-meta-date">${formatDate(patch.latestBeta.publishedAt)}</span>
@@ -1389,7 +1404,10 @@ function createPatchMarkup(app, patch) {
         label: variant,
         html: `
                 <button class="patch-open-box variant" data-app-key="${app.appKey}" data-patch-key="${patch.patchKey}" data-filter="variant-${variant}" type="button">
-                    <span class="patch-meta-label">${escapeHtml(variant)}</span>
+                    <span class="patch-meta-label">
+                        <span class="channel-label ${latestVariantBuild.releaseType}">${escapeHtml(latestVariantBuild.releaseType)}</span>
+                        <span class="variant-label">${escapeHtml(variant.split(" + ").join("+"))}</span>
+                    </span>
                     <span class="patch-meta-value">${escapeHtml(latestVariantBuild.version)}</span>
                     ${buildMarkup}
                     <span class="patch-meta-date">${formatDate(latestVariantBuild.publishedAt)}</span>
@@ -1422,11 +1440,16 @@ function createPatchMarkup(app, patch) {
       ? `<span class="patch-downloads-count" title="${formatCompactNumber(patchDownloads)} Downloads">${dlIcon}${formatCompactNumber(patchDownloads)}</span>`
       : "";
 
+  const patchChipsMarkup = patch.patchName
+    .split(" + ")
+    .map((name) => `<span class="patch-chip">${escapeHtml(name)}</span>`)
+    .join("");
+
   return `
         <div class="patch-entry">
             <span class="patch-trigger-left">
                 <span class="patch-chip-group">
-                    <span class="patch-chip">${escapeHtml(patch.patchName)}</span>
+                    ${patchChipsMarkup}
                     ${buildCountBadge}
                     ${dlBadge}
                 </span>
@@ -1664,49 +1687,58 @@ function createObtainiumInstructions() {
 
 function buildObtainiumRegexFromAsset(asset) {
   if (!asset || !asset.name) return null;
-
   const assetName = asset.name;
   if (!assetName.toLowerCase().endsWith(".apk")) return null;
 
-  const nameWithoutExt = assetName.replace(/\.apk$/i, "");
-  const arch = extractArchFromAssetName(nameWithoutExt);
-  const nameWithoutArch = arch
-    ? nameWithoutExt.replace(new RegExp(`-${escapeRegex(arch)}$`, "i"), "")
-    : nameWithoutExt;
+  const baseName = assetName.replace(/\.apk$/i, "");
+  const tokens = baseName.split("-");
+  const parsed = asset.parsed || {};
 
-  let baseName = nameWithoutArch;
+  // Build a set of lowercase keywords belonging to the app name (both display and slug parts)
+  const appParts = new Set([
+    ...(parsed.appName ? parsed.appName.toLowerCase().split(/[-_ ]+/).filter(Boolean) : []),
+    ...(parsed.appSlug ? parsed.appSlug.split(/[-_ ]+/).filter(Boolean) : [])
+  ]);
 
-  // Use the highly accurate version string we already extracted during parsing
-  if (
-    asset.parsed &&
-    asset.parsed.version &&
-    asset.parsed.version !== "Version unknown"
-  ) {
-    const versionIndex = nameWithoutArch.lastIndexOf(
-      `-${asset.parsed.version}`,
-    );
-    if (versionIndex !== -1) {
-      baseName = nameWithoutArch.substring(0, versionIndex);
+  const regexTokens = tokens.map((token) => {
+    // Strip leading/trailing quotes if present on the token
+    const cleanToken = token.replace(/^["']|["']$/g, "");
+    const lower = cleanToken.toLowerCase();
+
+    // Preserve exact app name parts
+    if (appParts.has(lower)) {
+      return escapeRegex(cleanToken);
     }
-  } else {
-    // Fallback for edge cases: Requires a dot in the version to prevent false positives like "-6"
-    baseName = nameWithoutArch
-      .replace(/-v?\d+(?:\.\d+)[\w.-]*$/i, "")
-      .replace(/-+$/g, "");
-  }
 
-  if (!baseName) return null;
+    // Preserve explicit patch tokens
+    if (CONFIG.knownPatchTokens.has(lower)) {
+      return escapeRegex(cleanToken);
+    }
 
-  // Generate the strict Obtainium regex
-  const regex = `^${escapeRegex(baseName)}-(v\\w*\\d|\\d|vbuild).*\\.apk$`;
-  return { regex, arch, assetName };
-}
+    // Preserve explicit variant keywords
+    const isExplicitVar = CONFIG.variantKeywords.has(lower) || 
+                          (lower.startsWith('v') && CONFIG.variantKeywords.has(lower.slice(1))) ||
+                          CONFIG.brandOverrides[lower];
+    if (isExplicitVar) {
+      return escapeRegex(cleanToken);
+    }
 
-function extractArchFromAssetName(nameWithoutExt) {
-  const lowerName = (nameWithoutExt || "").toLowerCase();
-  return (
-    CONFIG.knownArchs.find((arch) => lowerName.endsWith(`-${arch}`)) || null
-  );
+    // Turn version tokens into wildcards
+    if (isVersionToken(cleanToken)) {
+      return "(v\\w*\\d|\\d|vbuild)[\\w.-]*";
+    }
+
+    // Keep explicit arch tags
+    if (CONFIG.knownArchs.includes(lower)) {
+      return escapeRegex(cleanToken);
+    }
+
+    // Unrecognized arbitrary names in-between are wildcarded
+    return "[\\w.-]*";
+  });
+
+  const regex = `^${regexTokens.join("-")}\\.apk$`;
+  return { regex, assetName };
 }
 
 function escapeRegex(value) {
@@ -1719,33 +1751,85 @@ function escapeForOnclickCopy(value) {
     .replace(/'/g, "\\'");
 }
 
-function resolveObtainiumAppId(appKey, patchSlug, variantSlug) {
-  const appConfig = CONFIG.appIds[appKey];
+function resolveObtainiumAppId(appKeyOrName, patchNameOrSlug, variantNameOrSlug) {
+  let appConfig = CONFIG.appIds[appKeyOrName];
+  if (!appConfig) {
+    // Try normalized match across all keys of CONFIG.appIds
+    const normalizedKey = normalizeForSearch(appKeyOrName);
+    const matchedKey = Object.keys(CONFIG.appIds).find(
+      (k) => normalizeForSearch(k) === normalizedKey
+    );
+    if (matchedKey) {
+      appConfig = CONFIG.appIds[matchedKey];
+    }
+  }
   if (!appConfig) return null;
 
-  if (typeof appConfig === "string") {
-    return appConfig;
+  if (typeof appConfig === "string") return appConfig;
+  if (typeof appConfig !== "object") return null;
+
+  // 1. Resolve nested patch configs by splitting on ' + ' combinations
+  let patchConfig = null;
+  if (patchNameOrSlug) {
+    const individualPatches = patchNameOrSlug.split(" + ");
+    for (const p of individualPatches) {
+      const normalizedP = normalizeForSearch(p);
+      patchConfig = appConfig[p] || appConfig[normalizedP];
+      if (!patchConfig) {
+        const matchedPatchKey = Object.keys(appConfig).find(
+          (k) => normalizeForSearch(k) === normalizedP
+        );
+        if (matchedPatchKey) {
+          patchConfig = appConfig[matchedPatchKey];
+        }
+      }
+      if (patchConfig) break;
+    }
   }
 
-  if (typeof appConfig !== "object") {
-    return null;
+  const resolvedVariant = variantNameOrSlug || "default";
+  const individualVariants = resolvedVariant.split(" + ");
+
+  if (patchConfig) {
+    if (typeof patchConfig === "string") return patchConfig;
+    if (typeof patchConfig === "object" && patchConfig !== null) {
+      // Evaluate matching variant configurations under the nested patch
+      for (const v of individualVariants) {
+        const normalizedV = normalizeForSearch(v);
+        let val = patchConfig[v] || patchConfig[normalizedV];
+        if (!val) {
+          const matchedVariantKey = Object.keys(patchConfig).find(
+            (k) => normalizeForSearch(k) === normalizedV
+          );
+          if (matchedVariantKey) {
+            val = patchConfig[matchedVariantKey];
+          }
+        }
+        if (val) return val;
+      }
+      return patchConfig.default || null;
+    }
   }
 
-  const normalizedPatchSlug = normalizeForSearch(patchSlug || "");
-  const normalizedVariantSlug =
-    normalizeForSearch(variantSlug || "default") || "default";
-
-  const patchConfig = normalizedPatchSlug
-    ? appConfig[normalizedPatchSlug]
-    : null;
-  if (typeof patchConfig === "string") {
-    return patchConfig;
+  // 2. Fallback to direct flat/nested variant lookups on app config level
+  for (const v of individualVariants) {
+    const normalizedV = normalizeForSearch(v);
+    let variantConfig = appConfig[v] || appConfig[normalizedV];
+    if (!variantConfig) {
+      const matchedVariantKey = Object.keys(appConfig).find(
+        (k) => normalizeForSearch(k) === normalizedV
+      );
+      if (matchedVariantKey) {
+        variantConfig = appConfig[matchedVariantKey];
+      }
+    }
+    if (typeof variantConfig === "string") return variantConfig;
+    if (typeof variantConfig === "object" && variantConfig !== null) {
+      return variantConfig.default || null;
+    }
   }
-  if (typeof patchConfig === "object" && patchConfig !== null) {
-    return patchConfig[normalizedVariantSlug] || patchConfig.default || null;
-  }
 
-  return appConfig[normalizedVariantSlug] || appConfig.default || null;
+  return appConfig.default || null;
 }
 
 function renderOpenPatchModal() {
@@ -1819,6 +1903,7 @@ function getLatestVariantBuild(patch, variantName) {
             build: build.build,
             publishedAt: build.publishedAt,
             isArchiveFallback: false,
+            releaseType: build.releaseType,
           };
         }
       } else {
@@ -1829,6 +1914,7 @@ function getLatestVariantBuild(patch, variantName) {
             build: build.build,
             publishedAt: build.publishedAt,
             isArchiveFallback: true,
+            releaseType: build.releaseType,
           };
         }
       }
@@ -1945,10 +2031,15 @@ function updateModalFilterButtons(patch = null) {
 
   if (filterButtonsContainer) {
     filterButtonsContainer
-      .querySelectorAll(".variant-btn, .version-btn")
+      .querySelectorAll(".variant-btn, .version-btn, .filter-separator")
       .forEach((btn) => btn.remove());
 
     if (variants.length > 0) {
+      const separator = document.createElement("span");
+      separator.className = "filter-separator";
+      separator.textContent = "•";
+      filterButtonsContainer.appendChild(separator);
+
       variants.forEach((variant) => {
         const btn = document.createElement("button");
         btn.type = "button";
@@ -2165,6 +2256,34 @@ function groupAssetsByArchitecture(assets) {
   return filtered;
 }
 
+function extractArchitecture(filename) {
+  const clean = filename.replace(/\.(apk|zip)$/i, "");
+  const lower = clean.toLowerCase();
+  const sortedArchs = [...CONFIG.knownArchs].sort((a, b) => b.length - a.length);
+  for (const arch of sortedArchs) {
+    const escapedArch = escapeRegex(arch);
+    const regexes = [
+      new RegExp(`[-_]${escapedArch}$`, 'i') // Trailing matches only
+    ];
+    for (const r of regexes) {
+      if (r.test(lower) || lower === arch) {
+        return arch;
+      }
+    }
+  }
+  return "universal";
+}
+
+function detectArchitecture(filename) {
+  const arch = extractArchitecture(filename);
+  if (arch === "arm64-v8a" || arch === "arm64" || arch === "aarch64") return "arm64";
+  if (arch === "armeabi-v7a" || arch === "arm-v7a" || arch === "arm32") return "arm32";
+  if (arch === "universal" || arch === "all") return "universal";
+  if (arch === "x86_64") return "x86_64";
+  if (arch === "x86") return "x86";
+  return "other";
+}
+
 function getFileType(filename) {
   const lower = filename.toLowerCase();
   if (lower.endsWith(".apk")) return "APK";
@@ -2172,145 +2291,222 @@ function getFileType(filename) {
   return "File";
 }
 
-function detectArchitecture(filename) {
-  const name = (filename || "").toLowerCase();
-  if (
-    name.includes("arm64") ||
-    name.includes("aarch64") ||
-    name.includes("arm64-v8a")
-  )
-    return "arm64";
-  if (
-    (name.includes("arm") && !name.includes("arm64")) ||
-    name.includes("arm-v7a") ||
-    name.includes("armeabi")
-  )
-    return "arm32";
-  if (
-    name.includes("universal") ||
-    name.includes("-all.") ||
-    /^(?!.*arm|x86|x64|i386)[^-]*\.apk$/.test(name)
-  )
-    return "universal";
-  if (name.includes("x86_64") || name.includes("x64") || name.includes("x86"))
-    return "x86";
-  return "other";
-}
-
-// Cached Parsing Logic
-function parseAssetDisplay(filename, arch, fileType) {
-  if (parseCache.has(filename)) {
-    return parseCache.get(filename);
-  }
-
-  const baseName = filename.replace(/\.(apk|zip)$/i, "");
-  const tokens = baseName.split("-").filter(Boolean);
-  const archSubTokens = new Set(CONFIG.knownArchs.flatMap((a) => a.split("-")));
-  const versionIndex = tokens.findIndex(
-    (token) => /^(v\w*\d|vbuild)/i.test(token) && !archSubTokens.has(token.toLowerCase()),
-  );
-  const moduleIndex = tokens.findIndex(
-    (token) => token.toLowerCase() === "module",
-  );
-  const stopIndexCandidates = [versionIndex, moduleIndex].filter(
-    (index) => index >= 0,
-  );
-  const stopIndex =
-    stopIndexCandidates.length > 0
-      ? Math.min(...stopIndexCandidates)
-      : tokens.length;
-  const preMetaTokens = tokens.slice(0, stopIndex);
-
-  const knownPatchTokens = CONFIG.knownPatchTokens;
-  const variantKeywords = CONFIG.variantKeywords;
-
-  let patchStartIndex = preMetaTokens.findIndex((token) =>
-    knownPatchTokens.has(token.toLowerCase()),
-  );
-  if (patchStartIndex < 0) {
-    patchStartIndex = Math.max(preMetaTokens.length - 1, 0);
-  }
-
-  const appTokens = preMetaTokens.slice(0, patchStartIndex);
-  let patchTokens = preMetaTokens.slice(patchStartIndex);
-
-  let variant = null;
-  while (
-    patchTokens.length > 1 &&
-    variantKeywords.has(patchTokens[patchTokens.length - 1].toLowerCase())
-  ) {
-    variant = patchTokens[patchTokens.length - 1];
-    patchTokens = patchTokens.slice(0, -1);
-  }
-
-  let version = "Version unknown";
-  if (versionIndex >= 0) {
-    const versionParts = [tokens[versionIndex]];
-    for (let i = versionIndex + 1; i < tokens.length; i++) {
-      const t = tokens[i].toLowerCase();
-      const isArchToken = CONFIG.knownArchs.some((a) =>
-        a.split("-").includes(t),
-      );
-      if (t === "module" || t === "universal" || isArchToken) {
-        break;
-      }
-      versionParts.push(tokens[i]);
-    }
-    version = versionParts.join("-");
-  }
-  const appSlug = (appTokens.length > 0 ? appTokens : preMetaTokens)
-    .join("-")
-    .toLowerCase();
-  const patchSlug = (
-    patchTokens.length > 0 ? patchTokens : ["patched", "build"]
-  )
-    .join("-")
-    .toLowerCase();
-
-  const result = {
-    appName: formatBrandDisplayName(
-      appTokens.length > 0
-        ? appTokens.join(" ")
-        : preMetaTokens.join(" ") || baseName,
-    ),
-    patchName: formatBrandDisplayName(
-      patchTokens.length > 0 ? patchTokens.join(" ") : "Patched Build",
-    ),
-    appSlug,
-    patchSlug,
-    variant: variant ? formatBrandDisplayName(variant) : null,
-    version,
-    archLabel: formatArchitectureLabel(arch, fileType),
-    fileType,
-  };
-
-  parseCache.set(filename, result);
-  return result;
-}
-
-function toTitleWords(value) {
-  return (value || "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/\b\w/g, (char) => char.toUpperCase());
-}
-
-function formatBrandDisplayName(value) {
-  return toTitleWords(value)
-    .split(" ")
-    .map((token) => CONFIG.brandOverrides[token.toLowerCase()] || token)
-    .join(" ");
-}
-
 function formatArchitectureLabel(arch, fileType) {
   const labels = {
     arm64: "ARM64",
     arm32: "ARM32",
     universal: "Universal",
-    x86: "x86/x64",
+    x86_64: "x86_64",
+    x86: "x86",
     other: fileType,
   };
   return labels[arch] || arch.toUpperCase();
+}
+
+/**
+ * Auto-capitalization is disabled. Casing mappings are parsed exactly as defined inside CONFIG.brandOverrides.
+ */
+function formatBrandDisplayName(value) {
+  if (!value) return "";
+  const lowerValue = value.toLowerCase();
+  if (CONFIG.brandOverrides[lowerValue]) {
+    return CONFIG.brandOverrides[lowerValue];
+  }
+  return value
+    .split(" ")
+    .map((spaceToken) => {
+      const lowerSpaceToken = spaceToken.toLowerCase();
+      if (CONFIG.brandOverrides[lowerSpaceToken]) {
+        return CONFIG.brandOverrides[lowerSpaceToken];
+      }
+      if (spaceToken.includes("-")) {
+        return spaceToken
+          .split("-")
+          .map((hyphenToken) => {
+            const lowerHyphenToken = hyphenToken.toLowerCase();
+            return CONFIG.brandOverrides[lowerHyphenToken] || hyphenToken;
+          })
+          .join("-");
+      }
+      return spaceToken;
+    })
+    .join(" ");
+}
+
+/**
+ * Checks if a token acts as an arbitrary version string.
+ * Dynamically evaluates exclusions against defined config maps (including knownArchs) to avoid hardcoded rules.
+ */
+function isVersionToken(token) {
+  const lower = token.toLowerCase();
+  if (!token.startsWith('v') && !token.startsWith('V')) return false;
+
+  // Dynamic config exclusions
+  if (CONFIG.knownPatchTokens.has(lower)) return false;
+  if (CONFIG.variantKeywords.has(lower) || CONFIG.variantKeywords.has(lower.slice(1))) return false;
+  if (CONFIG.brandOverrides[lower]) return false;
+  if (CONFIG.appIds[lower]) return false;
+
+  const archSubTokens = new Set(CONFIG.knownArchs.flatMap((a) => a.split("-")));
+  if (archSubTokens.has(lower)) return false;
+
+  return true;
+}
+
+/**
+ * Checks if a subsequent token should be combined as part of the currently active version.
+ */
+function isVersionPart(token) {
+  const lower = token.toLowerCase();
+  if (CONFIG.knownPatchTokens.has(lower)) return false;
+  if (CONFIG.variantKeywords.has(lower) || CONFIG.variantKeywords.has(lower.slice(1))) return false;
+  if (/^\d+$/.test(token)) return true;
+
+  const versionWords = new Set(["beta", "alpha", "rc", "release", "build", "stable", "dev", "final", "patch", "ver"]);
+  return versionWords.has(lower);
+}
+
+/**
+ * Finds a bounded token in a string using word delimiters to avoid split dependencies.
+ */
+function findBoundToken(str, token) {
+  const escaped = escapeRegex(token);
+  const regex = new RegExp(`(^|[-_])${escaped}([-_]|$)`, 'i');
+  const match = str.match(regex);
+  if (match) {
+    return {
+      token,
+      index: match.index + (match[1] ? match[1].length : 0),
+      length: token.length
+    };
+  }
+  return null;
+}
+
+/**
+ * Parses all valid, bounded version-starting tokens from a string.
+ * Ignores any potential version tokens occurring before the minStartIndex boundary.
+ */
+function findVersionTokens(str, minStartIndex = 0) {
+  const regex = /(?:^|[-_])([vV][a-zA-Z0-9.]+)(?=[-_]|$)/g;
+  let match;
+  const versions = [];
+  while ((match = regex.exec(str)) !== null) {
+    const token = match[1];
+    const fullMatch = match[0];
+    const index = match.index + (fullMatch.startsWith('-') || fullMatch.startsWith('_') ? 1 : 0);
+    
+    // Skip any tokens occurring before the strict post-patch index boundary
+    if (index < minStartIndex) continue;
+
+    if (isVersionToken(token)) {
+      versions.push({
+        token,
+        index,
+        length: token.length
+      });
+    }
+  }
+  return versions.sort((a, b) => a.index - b.index);
+}
+
+/**
+ * Parse single file asset details
+ */
+function parseAssetDisplay(filename, fileType) {
+  if (parseCache.has(filename)) return parseCache.get(filename);
+
+  const baseName = filename.replace(/\.(apk|zip)$/i, "");
+  
+  // Extract and isolate exact raw matching architecture suffix dynamically
+  const rawArch = extractArchitecture(filename);
+  const archCategory = detectArchitecture(filename);
+  
+  // Identify the exact starting index of the very last matching arch suffix
+  let archSuffixIndex = baseName.length;
+  if (rawArch && rawArch !== "universal") {
+    const idxDash = baseName.toLowerCase().lastIndexOf("-" + rawArch.toLowerCase());
+    const idxUnder = baseName.toLowerCase().lastIndexOf("_" + rawArch.toLowerCase());
+    const idx = Math.max(idxDash, idxUnder);
+    if (idx !== -1 && idx === baseName.length - rawArch.length - 1) {
+      archSuffixIndex = idx;
+    }
+  }
+
+  // Pre-strip architecture suffix from cleanName
+  const cleanName = baseName.substring(0, archSuffixIndex);
+
+  // Parse bounded tokens directly instead of splitting by hyphens
+  const patches = [];
+  CONFIG.knownPatchTokens.forEach((token) => {
+    const match = findBoundToken(cleanName, token);
+    if (match) patches.push(match);
+  });
+  patches.sort((a, b) => a.index - b.index);
+
+  const variants = [];
+  CONFIG.variantKeywords.forEach((token) => {
+    const match = findBoundToken(cleanName, token);
+    if (match) variants.push(match);
+  });
+  variants.sort((a, b) => a.index - b.index);
+
+  // Versions strictly start after the first matched patch token
+  const minVersionStartIndex = patches.length > 0 ? (patches[0].index + patches[0].length) : 0;
+  const versions = findVersionTokens(cleanName, minVersionStartIndex);
+
+  // App name boundary: Strictly up to the first explicit patch token match, version token, or variant token!
+  // We find the first of each token that occurs strictly after index 0 to prevent an empty app name
+  // when a file starts with one of these keywords (e.g., 'gboard-morphe-...').
+  const validPatch = patches.find(p => p.index > 0);
+  const firstPatchIndex = validPatch ? validPatch.index : cleanName.length;
+
+  const validVersion = versions.find(v => v.index > 0);
+  const firstVersionIndex = validVersion ? validVersion.index : cleanName.length;
+
+  const validVariant = variants.find(v => v.index > 0);
+  const firstVariantIndex = validVariant ? validVariant.index : cleanName.length;
+  
+  const appBoundary = Math.min(firstPatchIndex, firstVersionIndex, firstVariantIndex);
+
+  let appNameRaw = cleanName.substring(0, appBoundary).replace(/[-_]+$/g, "");
+  if (!appNameRaw) appNameRaw = baseName;
+
+  const appName = formatBrandDisplayName(appNameRaw.replace(/_+/g, " "));
+  
+  // Concatenate multiple patches cleanly with ' + '
+  const patchName = patches.length > 0 
+    ? patches.map(p => formatBrandDisplayName(p.token)).join(" + ") 
+    : "Patched Build";
+    
+  const appSlug = appNameRaw.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const patchSlug = patches.length > 0 ? patches.map(p => p.token).join("-").toLowerCase() : "patched";
+
+  // Concatenate multiple variants cleanly with ' + '
+  const activeVariants = variants.filter(v => v.index >= appBoundary);
+  const variantStr = activeVariants.length > 0 
+    ? activeVariants.map(v => formatBrandDisplayName(v.token)).join(" + ") 
+    : null;
+
+  // Version starts at the first valid non-patch/variant v and terminates right before arch suffix
+  let displayVersion = "Version unknown";
+  if (versions.length > 0) {
+    displayVersion = cleanName.substring(versions[0].index);
+  }
+
+  const result = {
+    appName,
+    patchName,
+    appSlug,
+    patchSlug,
+    variant: variantStr,
+    version: displayVersion,
+    archLabel: formatArchitectureLabel(archCategory, fileType),
+    fileType,
+  };
+
+  parseCache.set(filename, result);
+  return result;
 }
 
 function capitalizeArch(arch) {
