@@ -1,10 +1,8 @@
-youtube-morphe-exp (all): 21.29.363-SECONDARY  
-youtube-music-morphe-exp (arm64-v8a): 9.28.51  
-youtube-music-morphe-exp (x86_64): 9.28.51  
+discord-npatch-revenge (all): 338.13-Stable  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest), required for Google APKs.  
 • Use [Zygisk Detach](https://github.com/j-hc/zygisk-detach) to stop Play Store from updating Modules.  
-CLI: MorpheApp/morphe-desktop-1.11.0-all.jar  
-Patches: MorpheApp/patches-1.36.0-dev.7.mpp  
-[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.7)  
+CLI: 7723mod/jar-v1.0.5-639-release.jar  
+Patches: revenge-mod/app-release.apk  
+[Changelog](https://github.com/revenge-mod/revenge-xposed/releases/tag/1410)  
