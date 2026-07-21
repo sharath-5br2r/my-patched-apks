@@ -678,7 +678,7 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
 #### [Morphe Experimental](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-morphe-exp">Version: v21.04.223</summary>
+<summary id="youtube-morphe-exp">Version: v21.29.363-SECONDARY</summary>
   
 <blockquote>
 
