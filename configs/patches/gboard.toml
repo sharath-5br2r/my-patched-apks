@@ -14,7 +14,7 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/gboard"
 dpi = "nodpi anydpi auto"
 [[gboard-morphe-gboard.patches]]
 source = "jasonwu1994/Gboard-patches"
-branding = "jasonwu1994"
+brand = "jasonwu1994"
 
 
 [gboard-morphe-gboard-root]
@@ -30,4 +30,4 @@ dpi = "nodpi anydpi auto"
 [[gboard-morphe-gboard-root.patches]]
 source = "jasonwu1994/Gboard-patches"
 excluded-patches = "'Package Rename'"
-branding = "jasonwu1994"
+brand = "jasonwu1994"
