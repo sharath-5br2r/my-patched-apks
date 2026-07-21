@@ -90,8 +90,8 @@ Official Dolphin Emulator builds are available on [Dolphin Emulator](https://dol
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
-Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.44.0-dev.1)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [arandomhooman/patches-1.43.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.1)
 - Unlock Pro
 </blockquote>
 </details>
@@ -108,8 +108,8 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
-Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.44.0-dev.1)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [arandomhooman/patches-1.43.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.1)
 - Remove ads
 </blockquote>
 </details>
@@ -126,8 +126,8 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
-Patches: [rushiranpise/patches-1.13.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.13.1)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [rushiranpise/patches-1.14.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.14.0)
 - Dark mode
 - Disable search suggestions tracking
 - Disable video autoplay
@@ -168,7 +168,7 @@ Patches:
 
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xposed/releases/tag/1410)
 </blockquote>
 </details>
@@ -189,7 +189,7 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Fing Premium
 </blockquote>
@@ -210,7 +210,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-17](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260011)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.2)
 - AMOLED dark theme
 </blockquote>
@@ -228,8 +228,8 @@ Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-
 
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
 - Change package name
 </blockquote>
 </details>
@@ -247,7 +247,7 @@ Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v1.14.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
@@ -321,7 +321,7 @@ Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-
 
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260037)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [crimera/patches-3.8.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.5)
 - Add settings
 - Allow user network certificate
@@ -392,7 +392,7 @@ Patches: [crimera/patches-3.8.0-dev.5.mpp](https://github.com/crimera/piko/relea
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Bypass signature check
 - Enable all codecs
@@ -418,8 +418,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
 - Change package name
 </blockquote>
 </details>
@@ -437,7 +437,7 @@ Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1)
 - Make UI look like Pro
 - Unlock Moon+ Reader Pro
@@ -457,7 +457,7 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.2)
 - Enable speed control
 - Skip ads
@@ -477,7 +477,7 @@ Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Disable telemetry
 - Proton VPN Premium
@@ -500,7 +500,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.12.0)
 - AdFree Account
 - Disable Logging(analytics)
@@ -520,8 +520,8 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
-Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.44.0-dev.1)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [arandomhooman/patches-1.43.1.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.1)
 - Unlock Premium
 </blockquote>
 </details>
@@ -540,7 +540,7 @@ Patches: [arandomhooman/patches-1.44.0-dev.1.mpp](https://github.com/arandomhoom
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.3.1)
 - Auto Translate comments
 - Copy comments without username
@@ -572,8 +572,8 @@ Patches: [icysymmetra/patches-0.3.1.mpp](https://github.com/icysymmetra/tiktok-p
 
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
 - Change package name
 </blockquote>
 </details>
@@ -591,7 +591,7 @@ Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260037)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.5)
 - Abstract shim layer
 - Abstract shim layer for method
@@ -682,7 +682,7 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
   
 <blockquote>
 
-[Release 2026-07-20](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260042)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
 - Add to queue
 - Alternative thumbnails
@@ -765,8 +765,8 @@ Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
-Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.6)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [anddea/patches-4.2.0-dev.7.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.7)
 - Alternative thumbnails
 - Ambient mode control
 - Bypass URL redirects
@@ -845,7 +845,7 @@ Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-pat
   
 <blockquote>
 
-[Release 2026-07-20](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260042)<br>
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
 Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
 - Bypass certificate checks
 - Change header
@@ -893,8 +893,8 @@ Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-16](https://github.com/sharath-5br2r/patched-apks-builder-2nd/releases/tag/260002)<br>
-Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.6)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [anddea/patches-4.2.0-dev.7.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.7)
 - Bitrate default value
 - Bypass image region restrictions
 - Certificate spoof
@@ -947,8 +947,8 @@ Patches: [anddea/patches-4.2.0-dev.6.mpp](https://github.com/anddea/revanced-pat
 
 <blockquote>
 
-[Release 2026-07-19](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.3.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.3)
+[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.5)
 - Change package name
 </blockquote>
 </details>
