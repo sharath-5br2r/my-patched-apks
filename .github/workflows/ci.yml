@@ -121,6 +121,11 @@ jobs:
     with:
       config_file: ".github/configs/config.dev.updated.downstream.json"
     secrets: inherit
+  build_eden:
+    needs: [check_patch]
+    if: ${{ always() && needs.check_patch.outputs.trigger_stable == '1' }}
+    uses: sharath-5br2r/patched-apks-builder-2nd/.github/workflows/test.yml@Eden-CI
+    
   trigger_cleanup:
     needs: [build_dev]
     if: ${{ always() && ( needs.build_dev.result == 'success') }}
