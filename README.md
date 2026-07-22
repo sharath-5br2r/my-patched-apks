@@ -1,4 +1,4 @@
-<div align="center"><h1><br>ReVanced <img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon.png">, Morphe <img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon1.png"> , Xposed and Eden Builder</h1></div>
+<div align="center"><h1>ReVanced <img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon.png">, Morphe <img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon1.png"> , Xposed and Eden Builder</h1></div>
 
 <p align="center"><b>Automatically builds and publishes APKs & Magisk/KernelSU Modules whenever new patches are released.</b></p>
 
