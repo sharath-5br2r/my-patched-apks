@@ -587,11 +587,11 @@ Patches: [MorpheApp/patches-1.36.0-dev.5.mpp](https://github.com/MorpheApp/morph
 #### [Piko (Morphe)](https://github.com/crimera/piko) with [inotia00](https://gitlab.com/inotia00/x-shim) shim layer
 
 <details>
-<summary id="x-morphe-piko">Version: v12.9.0-release.0</summary>
+<summary id="x-morphe-piko">Version: v12.9.1-release.0</summary>
   
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260012)<br>
 Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.5)
 - Abstract shim layer
 - Abstract shim layer for method
