@@ -125,16 +125,16 @@ jobs:
     needs: [check_patch]
     if: ${{ always() && needs.check_patch.outputs.trigger_stable == '1' }}
     uses: sharath-5br2r/patched-apks-builder-2nd/.github/workflows/test.yml@Eden-CI
-    
+
   trigger_cleanup:
-    needs: [build_dev]
-    if: ${{ always() && ( needs.build_dev.result == 'success') }}
+    needs: [build_dev, build_eden]
+    if: ${{ always() && ( needs.build_dev.result == 'success' || needs.build_eden.result == 'success' ) }}
     uses: ./.github/workflows/cleanup.yml
     secrets: inherit
 
   trigger_catalog_update:
-    needs: [build_dev]
-    if: ${{ always() && ( needs.build_dev.result == 'success') }}
+    needs: [build_dev, build_eden]
+    if: ${{ always() && ( needs.build_dev.result == 'success' || needs.build_eden.result == 'success' ) }}
     uses: ./.github/workflows/update-catalog.yml
     secrets: inherit
 
