@@ -34,6 +34,22 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    services:
+      redis:
+        image: redis:alpine
+        ports:
+          - 6379:6379
+      trawl:
+        image: ghcr.io/germondai/trawl:latest
+        ports:
+          - 8191:8191
+        env:
+          REDIS_URL: redis://redis:6379
+        options: --shm-size=1gb
+      cloudflarebypassforscraping:
+        image: ghcr.io/sarperavci/cloudflarebypassforscraping:latest
+        ports:
+         - 8000:8000
     steps:
       - name: Setup java
         uses: actions/setup-java@v5
@@ -46,8 +62,6 @@ jobs:
           ref: main
           fetch-depth: 0
           submodules: true
-      - name: Setup docker
-        uses: ./.github/actions/container-setup
       - name: Resolve build context
         id: context
         run: bash .github/scripts/build_resolve_context.sh "${{ inputs.CONFIG_FILE }}"
@@ -67,6 +81,8 @@ jobs:
           KEYSTORE_ALIAS: sharath
           KEYSTORE: ${{ secrets.KEYSTORE }}
           KEYSTORE_P12: ${{ secrets.KEYSTORE_P12 }}
+          CF_BYPASS_SOLVER_FS_8191_ENABLED: true
+          CF_BYPASS_SOLVER_CFB_ENABLED: true
         run: |
           set -euo pipefail
           bash ./scripts/prep_build_predl.sh
@@ -89,10 +105,6 @@ jobs:
           commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com> # Remove if not needed, or replace with your own name/emails
           file_pattern: README.md
           commit_message: "Update README for Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} [skip ci]"
-
-      - name: Cleanup docker containers
-        uses: ./.github/actions/cleanup-container
-        if: always()
 
       - name: Upload to release
         uses: softprops/action-gh-release@v3
