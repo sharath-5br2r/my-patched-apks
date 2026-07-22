@@ -168,7 +168,7 @@ Patches:
 
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260009)<br>
+[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260017)<br>
 Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xposed/releases/tag/1410)
 </blockquote>
 </details>
