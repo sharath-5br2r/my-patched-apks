@@ -448,7 +448,7 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 ### [Prime Video](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)
 
-`com.amazon.avod.thirdpartyclient` `com.amazon.amazonvideo.livingroom`
+`com.amazon.avod.thirdpartyclient` 
 
 #### [hoo-dles patches (Morphe)](https://github.com/hoo-dles/morphe-patches)
 
