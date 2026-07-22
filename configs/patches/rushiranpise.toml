@@ -3,7 +3,7 @@ patches-version = "dev"
 [amazon-india-morphe-rushiranpise]
 enabled = true
 app-name = "amazon-india"
-rv-brand = "morphe-rushiranpise"
+rv-brand = "morphe"
 build-mode = "apk"
 cli-source = "MorpheApp/morphe-desktop"
 uptodown-dlurl = "https://amazon-india.en.uptodown.com/android"
