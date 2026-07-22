@@ -216,7 +216,7 @@
     ]
   },
   "youtube-morphe-exp": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
@@ -235,7 +235,7 @@
     ]
   },
   "youtube-music-morphe-exp": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "youtube-music",
     "rv-brand": "morphe-exp",
     "build-mode": "both",
@@ -324,7 +324,7 @@
     ]
   },
   "x-morphe-piko": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "x",
     "rv-brand": "morphe",
     "build-mode": "apk",
@@ -432,7 +432,7 @@
   "amazon-india-morphe-rushiranpise": {
     "enabled": false,
     "app-name": "amazon-india",
-    "rv-brand": "morphe-rushiranpise",
+    "rv-brand": "morphe",
     "build-mode": "apk",
     "cli-source": "MorpheApp/morphe-desktop",
     "uptodown-dlurl": "https://amazon-india.en.uptodown.com/android",
