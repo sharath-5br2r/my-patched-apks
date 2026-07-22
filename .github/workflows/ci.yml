@@ -122,8 +122,8 @@ jobs:
       config_file: ".github/configs/config.dev.updated.downstream.json"
     secrets: inherit
   build_eden:
-    needs: [check_patch]
-    if: ${{ always() }}
+    needs: [check_patch, build_dev]
+    if: ${{ always() && (needs.build_dev.result != 'cancelled') }}
     uses: sharath-5br2r/my-patched-apks/.github/workflows/test.yml@Eden-CI
 
   trigger_cleanup:
