@@ -5,16 +5,27 @@
 <p align="center"> <a href="../../actions">GitHub Actions</a></p>
 
 ---
-## Changes from Upstream
-- Streamlined apps to my requirement
-- Improved support for multiple patches and added support for local files, which can be preprocessed
-- Improved Support for local building (currently on on Linux/Android)
-- Moved website code to this repo via the gh-pages branch
-- Improved selection of multi architecture builds
-- Stable Releases now count for prerelase builds(only preleases are available)
-- Dynamic Fetching of Morphe experimental versions
-- Moved Keystore into .env, with support for custom keystore and fallback is the old keystore.
-- Disabled Telegram Notifications
+
+## Notable Changes
+
+- Isolated config files from upstream.
+- Added Support for dirctv2-dlurl and local-dlurl using aapt2 which can also be used for predl (i.e. using a unrecogonised source and preprocessing it)
+- Completely removed telegram support
+- Now considering both stable and prerelase patches for prerelease builds and completely removed stable patch builds.
+- Added typeable manual config file trigger tk build only a particular toml manually.
+- Added support for second flaresolverr compatible scraper along with cloudflarebypassforscraping.
+- Moved BKS support from a apt based install into a maven+classpath based injection for local building.
+- Added the entirety of [Eden-CI/Workflow](../Eden-CI) and modifed it to support this repo.
+- Added the website code (nullcpy.github.io) as a [branch](../gh-pages) and significantly modifed it to support this repo.
+- Added support for your own keystore with a fallback of j-hc's keystore if not available. The one in this repo is my private keystore via GitHub secrets.
+- Removed Termux build wrapper, and instead you can still build manually on termux.
+- Added signficant Config changes
+- Improved x86 support
+- Significantly improved local build support
+- Actual Morphe experimental version support
+- Reduced local on tree binaries and replaced tomlq with yq
+- Added sign only apps for shared compatiblilty
+- Added version names in apk files
 
 For local use and modifications, see [CONFIG.md](CONFIG.md) for instructions on how to configure the builder and add your own apps and patches.
 
@@ -144,7 +155,7 @@ Patches: [rushiranpise/patches-1.14.0.mpp](https://github.com/rushiranpise/morph
 
 `com.amazon.dee.app`
 
-#### Signed APK
+#### Signed APK (required when you need to install Alexa with patched prime video or Amazon)
 
 <details>
 <summary id="amazon-alexa-signed">Version: v2.2.695641.0</summary>
@@ -961,7 +972,7 @@ Patches: [MorpheApp/patches-1.36.0-dev.8.mpp](https://github.com/MorpheApp/morph
 
 This automated builder would not be possible without the incredible work and dedication of the open-source Android community. A massive thank you to:
 
-- **[nullcpy/faim-ahamed05](https://github.com/nullcpy/rvb)**,**[peternmuller](https://github.com/peternmuller)**, **[nvbangg](https://github.com/nvbangg/revanced-morphe-builder)**, and **[j-hc](https://github.com/j-hc)** for their phenomenal foundational build scripts, CI/CD pipelines, and automation logic that power the core of this repository.
+- **[nullcpy/fahim-ahamed05](https://github.com/nullcpy/rvb)**,**[peternmuller](https://github.com/peternmuller)**, **[nvbangg](https://github.com/nvbangg/revanced-morphe-builder)**, and **[j-hc](https://github.com/j-hc)** for their phenomenal foundational build scripts, CI/CD pipelines, and automation logic that power the core of this repository.
 - **[FiorenMas](https://github.com/FiorenMas/Revanced-and-Revanced-Extended-Non-Root)** for Cloudflare bypass logic and Xposed Module Support.
 - **[MorpheApp/morphe-cli](https://github.com/MorpheApp/morphe-cli)** and **[7727mod/NPatch](https://github.com/7727mod/NPatch)** for Patching tools.
 - **[REAndroid/APKEditor](https://github.com/REAndroid/APKEditor)**, **[htmlq](https://github.com/mgdm/htmlq)**, **[yq](https://github.com/mikefarah/yq)** to handle tasks like APK decompilation, HTML parsing, TOML parsing, and YAML parsing.
