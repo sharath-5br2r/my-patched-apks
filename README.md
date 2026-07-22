@@ -1,8 +1,8 @@
-<div align="center"><h1><br>ReVanced, Xposed , custom patches & Morphe Builder</h1></div>
+<div align="center"><h1><br>ReVanced <img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon.png">, Morphe <img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon1.png"> , Xposed and Eden Builder</h1></div>
 
 <p align="center"><b>Automatically builds and publishes APKs & Magisk/KernelSU Modules whenever new patches are released.</b></p>
 
-<p align="center"> <a href="../../actions">GitHub Actions</a></p>
+<p align="center"> <a href="../../Issues">Issues </a>, <a href="../../actions">GitHub Actions</a></p>
 
 ---
 
@@ -50,13 +50,15 @@ Thank you to everyone who helps keep this project alive!
 > - 📱 **The complete list of every supported app.**
 > - 📦 Clear separation between **Variant** builds.
 > - 🏷️ Beautifully organized version numbers and download tracking.
-> - 🔄 Step-by-step instructions on how to set up automatic updates using **Obtainium** and easy **Add to Obtainium** button.
+> - 🔄 Step-by-step instructions on how to set up automatic updates using **Obtainium** and easy **Add to Obtainium** buttons.
 >
 > **🤖 Fully Automated Builds**
 >
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
+> - 🛠️ **Builder Issues and 💬General Help:** The builder is highly unstable and is frequently modifed. If you want new features or new apps or encounter a patching related bug, **[open an Issue here on GitHub](../../issues/new/choose)**
+
 
 ---
 
