@@ -124,7 +124,7 @@ jobs:
   build_eden:
     needs: [check_patch]
     if: ${{ always() && needs.check_patch.outputs.trigger_stable == '1' }}
-    uses: sharath-5br2r/patched-apks-builder-2nd/.github/workflows/test.yml@Eden-CI
+    uses: sharath-5br2r/my-patched-apks/.github/workflows/test.yml@Eden-CI
 
   trigger_cleanup:
     needs: [build_dev, build_eden]
