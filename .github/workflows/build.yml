@@ -112,7 +112,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
         with:
-          ref: Eden-C
+          ref: Eden-CI
 
       - name: Download Forgejo environment
         uses: actions/download-artifact@v8
