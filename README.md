@@ -43,7 +43,7 @@ Thank you to everyone who helps keep this project alive!
 
 > [!NOTE]
 >
-> 🌐 **[Check Catalog](CATALOG.md)**
+> 🌐 **[Check Catalog Website](https://sharath-5br2r.github.io/my-patched-apks)**
 >
 > For the best experience, please download from the website. It features:
 >
