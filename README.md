@@ -73,7 +73,7 @@ Official Dolphin Emulator builds are available on [Dolphin Emulator](https://dol
 
 ---
 
-### [Eden Emulator](https://eden-emu.dev) is also automatically built [here](../../../Eden-Workflow) with only two variants(Optmised/Genshin Spoof and ChromeOS/x86_64) at every 4 hours and uploaded to the releases and website.
+### [Eden Emulator](https://eden-emu.dev) is also automatically built [here](../Eden-CI) with only two variants(Optmised/Genshin Spoof and ChromeOS/x86_64) at every 4 hours and uploaded to the releases and website.
 
 `dev.eden.eden_emulator`
 
