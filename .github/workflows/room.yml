@@ -27,6 +27,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          ref: Eden-CI
 
       - name: Clone
         uses: actions/download-artifact@v8

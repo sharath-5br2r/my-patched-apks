@@ -40,7 +40,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
+        with:
+          ref: Eden-CI
       - id: set
         run: ./.ci/matrix/appimage.sh
 

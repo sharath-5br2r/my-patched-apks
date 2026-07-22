@@ -43,6 +43,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
+          ref: Eden-CI
 
       - name: Download artifacts
         uses: actions/download-artifact@v8
