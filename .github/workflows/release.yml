@@ -115,19 +115,15 @@ jobs:
           tag_name: beta
           overwrite_files: true
           prerelease: true
-          repository: sharath-5br2r/patched-apks-builder-2nd
-          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}
           name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} 
           prerelease: true
-          repository: sharath-5br2r/patched-apks-builder-2nd
           overwrite_files: true
           make_latest: true
           files: ./*.apk
-          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
           body_path: changelog.md
 
       - name: Upload changelog
