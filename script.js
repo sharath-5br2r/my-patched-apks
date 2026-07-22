@@ -6,7 +6,7 @@
 const CONFIG = {
   owner: "sharath-5br2r",
   repo: "my-patched-apks",
-  cacheDuration: 5, // Cache duration in minutes
+  cacheDuration: 1, // Cache duration in minutes
 
   // App Categories for the top filter buttons (maps filter-btn dataset to keywords)
   appCategories: {
@@ -171,7 +171,7 @@ const CONFIG = {
     "Adobe Lightroom": "com.adobe.lrmobile",
     "Adobe Photoshop Mix": "com.adobe.psmobile",
     "AccuWeather": "com.accuweather.android",
-    "All Document Reader": "alldocumentsreader.docuemntviewer",
+    "All Document Reader": "alldocumentsreader.documentviewer",
     "Amazon Alexa": "com.amazon.dee.app",
     "Amazon India": "in.amazon.mShop.android.shopping",
     "AT4K Launcher": "com.overdevs.at4k",
@@ -207,6 +207,16 @@ const CONFIG = {
     "Gboard": {
       default: "com.google.android.inputmethod.latin",
       "Gboard Patches": "dev.jason.com.google.android.inputmethod.latin",
+      "gboard-patches": "dev.jason.com.google.android.inputmethod.latin",
+      "jasonwu1994": "dev.jason.com.google.android.inputmethod.latin",
+      "jason": "dev.jason.com.google.android.inputmethod.latin",
+    },
+    "Google Keyboard": {
+      default: "com.google.android.inputmethod.latin",
+      "Gboard Patches": "dev.jason.com.google.android.inputmethod.latin",
+      "gboard-patches": "dev.jason.com.google.android.inputmethod.latin",
+      "jasonwu1994": "dev.jason.com.google.android.inputmethod.latin",
+      "jason": "dev.jason.com.google.android.inputmethod.latin",
     },
     "Google News": "com.google.android.apps.magazines",
     "Google Photos": {
@@ -229,6 +239,10 @@ const CONFIG = {
       default: "org.levimc.launcher",
       "Battlegrounds Mobile India Spoof": "com.pubg.imobile",
     },
+    "LeviLauncher Unlocked": {
+      default: "org.levimc.launcher",
+      "Battlegrounds Mobile India Spoof": "com.pubg.imobile",
+    },
     "Lumina Wallpapers": "com.lumina.wallpapers",
     "MacroDroid": "com.arlosoft.macrodroid",
     "Medium": "com.medium.reader",
@@ -237,6 +251,7 @@ const CONFIG = {
     "Microsoft Lens": "com.microsoft.office.officelens",
     "Microsoft Edge": "com.microsoft.emmx",
     "Moon+": "com.flyersoft.moonreader",
+    "Moon+ Reader": "com.flyersoft.moonreader",
     "Money Manager": "com.realbyteapps.moneymanagerfree",
     "MX Player": "com.mxtech.videoplayer.pro",
     "MyFitnessPal": "com.myfitnesspal.android",
@@ -303,18 +318,22 @@ const CONFIG = {
     "Xodo PDF Reader & Editor": "com.xodo.pdf.reader",
     "XRecorder": "videoeditor.videorecorder.screenrecorder",
     "YouTube": {
-      "ReVanced": "app.revanced.android.youtube",
-      "ReVanced Extended": "app.rvx.android.youtube",
       "ReVanced Extended(anddea)": "anddea.youtube",
+      "ReVanced Extended": "app.rvx.android.youtube",
+      "ReVanced": "app.revanced.android.youtube",
       "Morphe": "app.morphe.android.youtube",
       default: "com.google.android.youtube",
     },
     "YouTube Music": {
-      "ReVanced": "app.revanced.android.apps.youtube.music",
-      "ReVanced Extended": "app.rvx.android.apps.youtube.music",
       "ReVanced Extended(anddea)": "anddea.youtube.music",
+      "ReVanced Extended": "app.rvx.android.apps.youtube.music",
+      "ReVanced": "app.revanced.android.apps.youtube.music",
       "Morphe": "app.morphe.android.apps.youtube.music",
       default: "com.google.android.apps.youtube.music",
+    },
+    "Zalith Launcher 2 Plus": {
+      default: "com.movtery.zalithlauncher.v2",
+      "Call of Duty Mobile Spoof": "com.activision.callofduty.shooter",
     },
     "ZalithLauncher": {
       default: "com.movtery.zalithlauncher.v2",
@@ -1575,36 +1594,50 @@ function createObtainiumInstructions() {
   const fallbackBuilds = patch ? getFilteredBuildsForFilter(patch, "all") : [];
   const sourceBuilds =
     filteredBuilds.length > 0 ? filteredBuilds : fallbackBuilds;
-  const patchAssets = sourceBuilds.flatMap((build) => build.assets || []);
 
   const regexMap = new Map();
-  patchAssets
-    .filter((asset) => (asset?.name || "").toLowerCase().endsWith(".apk"))
-    .forEach((asset) => {
-      const result = buildObtainiumRegexFromAsset(asset);
-      if (!result?.regex || regexMap.has(result.regex)) return;
+  sourceBuilds.forEach((build) => {
+    const isBuildPrerelease =
+      build.releaseType === "beta" ||
+      build.prerelease ||
+      build.isPrerelease;
 
-      const appLabel = asset?.parsed?.appName || app?.appName || "App";
-      const patchLabel =
-        asset?.parsed?.patchName || patch?.patchName || "patch";
-      const variantLabel = asset?.parsed?.variant
-        ? ` (${escapeHtml(asset.parsed.variant)})`
-        : "";
+    (build.assets || [])
+      .filter((asset) => (asset?.name || "").toLowerCase().endsWith(".apk"))
+      .forEach((asset) => {
+        const result = buildObtainiumRegexFromAsset(asset);
+        if (!result?.regex || regexMap.has(result.regex)) return;
 
-      // Extract normalized slugs for patch/variant-specific app ID lookup
-      const patchSlug =
-        asset?.parsed?.patchSlug || normalizeForSearch(patch?.patchName || "");
-      const variantSlug = asset?.parsed?.variant
-        ? normalizeForSearch(asset.parsed.variant)
-        : "default";
+        const appLabel = asset?.parsed?.appName || app?.appName || "App";
+        const patchLabel =
+          asset?.parsed?.patchName || patch?.patchName || "patch";
+        const variantLabel = asset?.parsed?.variant
+          ? ` (${escapeHtml(asset.parsed.variant)})`
+          : "";
 
-      // Save both the label and lookup keys
-      regexMap.set(result.regex, {
-        label: `${appLabel} ${patchLabel}${variantLabel}`,
-        patchSlug: patchSlug,
-        variantSlug: variantSlug,
+        // Extract normalized slugs for patch/variant-specific app ID lookup
+        const patchSlug =
+          asset?.parsed?.patchSlug || normalizeForSearch(patch?.patchName || "");
+        const variantSlug = asset?.parsed?.variant
+          ? normalizeForSearch(asset.parsed.variant)
+          : "default";
+
+        const isPrereleaseAsset =
+          isBuildPrerelease ||
+          modalBuildFilter === "beta" ||
+          modalBuildFilter.startsWith("variant") ||
+          modalBuildFilter === "variant" ||
+          Boolean(asset?.parsed?.variant);
+
+        // Save both the label, lookup keys, and prerelease flag
+        regexMap.set(result.regex, {
+          label: `${appLabel} ${patchLabel}${variantLabel}`,
+          patchSlug: patchSlug,
+          variantSlug: variantSlug,
+          isPrerelease: isPrereleaseAsset,
+        });
       });
-    });
+  });
 
   const copyCode = (text, defaultLabel = "Copy") => {
     const escaped = escapeForOnclickCopy(text);
@@ -1630,7 +1663,12 @@ function createObtainiumInstructions() {
             );
 
           const additionalSettings = { apkFilterRegEx: regex };
-          if (modalBuildFilter === "beta") {
+          if (
+            data.isPrerelease ||
+            modalBuildFilter === "beta" ||
+            modalBuildFilter.startsWith("variant") ||
+            modalBuildFilter === "variant"
+          ) {
             additionalSettings.includePrereleases = true;
           }
 
@@ -1701,59 +1739,84 @@ function createObtainiumInstructions() {
     `;
 }
 
+function tokenizeAndPreserveHyphens(str) {
+  const hyphenBrands = Object.keys(CONFIG.brandOverrides)
+    .filter(key => key.includes("-"))
+    .sort((a, b) => b.length - a.length);
+
+  let processed = str;
+  hyphenBrands.forEach((brand) => {
+    const escapedBrand = escapeRegex(brand);
+    const regex = new RegExp(escapedBrand, "gi");
+    processed = processed.replace(regex, (match) => {
+      return match.replace(/-/g, "TEMPHYPHEN");
+    });
+  });
+
+  const tokens = processed.split(/[^a-zA-Z0-9]+/).filter(Boolean);
+  return tokens.map(token => token.replace(/TEMPHYPHEN/g, "-"));
+}
+
 function buildObtainiumRegexFromAsset(asset) {
   if (!asset || !asset.name) return null;
   const assetName = asset.name;
   if (!assetName.toLowerCase().endsWith(".apk")) return null;
 
-  const baseName = assetName.replace(/\.apk$/i, "");
-  const tokens = baseName.split("-");
-  const parsed = asset.parsed || {};
+  const parsed = asset.parsed || parseAssetDisplay(assetName, "APK");
+  const cleanName = parsed.cleanName || assetName.replace(/\.apk$/i, "");
+  const appNameRaw = parsed.appNameRaw || parsed.appName || "";
 
-  // Build a set of lowercase keywords belonging to the app name (both display and slug parts)
-  const appParts = new Set([
-    ...(parsed.appName ? parsed.appName.toLowerCase().split(/[-_ ]+/).filter(Boolean) : []),
-    ...(parsed.appSlug ? parsed.appSlug.split(/[-_ ]+/).filter(Boolean) : [])
-  ]);
+  const allTokens = tokenizeAndPreserveHyphens(cleanName);
+  const appTokens = appNameRaw ? tokenizeAndPreserveHyphens(appNameRaw) : [];
 
-  const regexTokens = tokens.map((token) => {
-    // Strip leading/trailing quotes if present on the token
-    const cleanToken = token.replace(/^["']|["']$/g, "");
-    const lower = cleanToken.toLowerCase();
+  const regexTokens = [];
+  allTokens.forEach((token, index) => {
+    if (!token) return;
 
-    // Preserve exact app name parts
-    if (appParts.has(lower)) {
-      return escapeRegex(cleanToken);
+    // Always keep app name tokens
+    if (index < appTokens.length) {
+      regexTokens.push({ value: token, isRegex: false, type: "app" });
+      return;
     }
 
-    // Preserve explicit patch tokens
-    if (CONFIG.knownPatchTokens.has(lower)) {
-      return escapeRegex(cleanToken);
+    // Check if version token starting with v/V
+    if (isVersionToken(token)) {
+      const lastToken = regexTokens[regexTokens.length - 1];
+      if (!lastToken || lastToken.value !== "(v\\w*\\d|\\d|vbuild)") {
+        regexTokens.push({ value: "(v\\w*\\d|\\d|vbuild)", isRegex: true, type: "version" });
+      }
+      return;
     }
 
-    // Preserve explicit variant keywords
-    const isExplicitVar = CONFIG.variantKeywords.has(lower) || 
-                          (lower.startsWith('v') && CONFIG.variantKeywords.has(lower.slice(1))) ||
-                          CONFIG.brandOverrides[lower];
-    if (isExplicitVar) {
-      return escapeRegex(cleanToken);
-    }
+    // Keep if known patch token or known variant keyword
+    const lower = token.toLowerCase();
+    const isPatch = CONFIG.knownPatchTokens.has(lower);
+    const isVariant = CONFIG.variantKeywords.has(lower) || 
+                      (lower.startsWith("v") && CONFIG.variantKeywords.has(lower.slice(1)));
 
-    // Turn version tokens into wildcards
-    if (isVersionToken(cleanToken)) {
-      return "(v\\w*\\d|\\d|vbuild)[\\w.-]*";
+    if (isPatch || isVariant) {
+      regexTokens.push({ value: token, isRegex: false, type: "patch" });
     }
-
-    // Keep explicit arch tags
-    if (CONFIG.knownArchs.includes(lower)) {
-      return escapeRegex(cleanToken);
-    }
-
-    // Unrecognized arbitrary names in-between are wildcarded
-    return "[\\w.-]*";
   });
 
-  const regex = `^${regexTokens.join("-")}\\.apk$`;
+  let regex;
+  if (regexTokens.length > 0) {
+    let regexStr = "";
+    regexTokens.forEach((t, i) => {
+      const tokenVal = t.isRegex ? t.value : escapeRegex(t.value);
+      if (i === 0) {
+        regexStr += tokenVal;
+      } else {
+        const prevToken = regexTokens[i - 1];
+        const sep = (prevToken.type === "app" && t.type === "patch") ? "-" : ".*";
+        regexStr += sep + tokenVal;
+      }
+    });
+    regex = `^.*${regexStr}.*\\.apk$`;
+  } else {
+    regex = `^.*\\.apk$`;
+  }
+
   return { regex, assetName };
 }
 
@@ -1784,68 +1847,101 @@ function resolveObtainiumAppId(appKeyOrName, patchNameOrSlug, variantNameOrSlug)
   if (typeof appConfig === "string") return appConfig;
   if (typeof appConfig !== "object") return null;
 
-  // 1. Resolve nested patch configs by splitting on ' + ' combinations
-  let patchConfig = null;
-  if (patchNameOrSlug) {
-    const individualPatches = patchNameOrSlug.split(" + ");
-    for (const p of individualPatches) {
-      const normalizedP = normalizeForSearch(p);
-      patchConfig = appConfig[p] || appConfig[normalizedP];
-      if (!patchConfig) {
-        const matchedPatchKey = Object.keys(appConfig).find(
-          (k) => normalizeForSearch(k) === normalizedP
-        );
-        if (matchedPatchKey) {
-          patchConfig = appConfig[matchedPatchKey];
-        }
-      }
-      if (patchConfig) break;
-    }
-  }
+  const patchRaw = String(patchNameOrSlug || "");
+  const variantRaw = String(variantNameOrSlug || "");
 
-  const resolvedVariant = variantNameOrSlug || "default";
-  const individualVariants = resolvedVariant.split(" + ");
+  const patchNorm = normalizeForSearch(patchRaw);
+  const variantNorm = normalizeForSearch(variantRaw);
+  const combinedNorm = normalizeForSearch(`${patchRaw} ${variantRaw}`);
 
-  if (patchConfig) {
-    if (typeof patchConfig === "string") return patchConfig;
-    if (typeof patchConfig === "object" && patchConfig !== null) {
-      // Evaluate matching variant configurations under the nested patch
-      for (const v of individualVariants) {
-        const normalizedV = normalizeForSearch(v);
-        let val = patchConfig[v] || patchConfig[normalizedV];
-        if (!val) {
-          const matchedVariantKey = Object.keys(patchConfig).find(
-            (k) => normalizeForSearch(k) === normalizedV
-          );
-          if (matchedVariantKey) {
-            val = patchConfig[matchedVariantKey];
-          }
-        }
-        if (val) return val;
-      }
-      return patchConfig.default || null;
-    }
-  }
+  const patchOverride = CONFIG.brandOverrides[patchNorm]
+    ? normalizeForSearch(CONFIG.brandOverrides[patchNorm])
+    : "";
+  const variantOverride = CONFIG.brandOverrides[variantNorm]
+    ? normalizeForSearch(CONFIG.brandOverrides[variantNorm])
+    : "";
 
-  // 2. Fallback to direct flat/nested variant lookups on app config level
-  for (const v of individualVariants) {
-    const normalizedV = normalizeForSearch(v);
-    let variantConfig = appConfig[v] || appConfig[normalizedV];
-    if (!variantConfig) {
-      const matchedVariantKey = Object.keys(appConfig).find(
-        (k) => normalizeForSearch(k) === normalizedV
+  const patchTokens = patchRaw
+    ? [patchRaw, ...patchRaw.split(" + "), ...patchRaw.split(/[-_\s+()/]+/)]
+    : [];
+  const variantTokens = variantRaw
+    ? [variantRaw, ...variantRaw.split(" + "), ...variantRaw.split(/[-_\s+()/]+/)]
+    : [];
+
+  const allTokensNorm = Array.from(
+    new Set([
+      ...patchTokens.map(normalizeForSearch),
+      ...variantTokens.map(normalizeForSearch),
+      patchNorm,
+      variantNorm,
+      combinedNorm,
+      patchOverride,
+      variantOverride,
+    ])
+  ).filter(Boolean);
+
+  function resolveConfigObj(configObj) {
+    if (typeof configObj === "string") return configObj;
+    if (typeof configObj !== "object" || configObj === null) return null;
+
+    const keys = Object.keys(configObj);
+
+    // Evaluate keys in exact declaration order in the object
+    for (const key of keys) {
+      if (key === "default") continue;
+      const normK = normalizeForSearch(key);
+      if (!normK) continue;
+
+      const keyWords = key
+        .split(/[-_\s+()/]+/)
+        .map(normalizeForSearch)
+        .filter(Boolean);
+
+      // 1. Exact normalized match
+      const isExact =
+        normK === patchNorm ||
+        normK === variantNorm ||
+        normK === combinedNorm ||
+        allTokensNorm.includes(normK);
+
+      // 2. Key contains input token (e.g. "revancedextendedanddea".includes("anddea"))
+      const normKContainsInput = allTokensNorm.some(
+        (t) => t.length >= 3 && normK.includes(t)
       );
-      if (matchedVariantKey) {
-        variantConfig = appConfig[matchedVariantKey];
+
+      // 3. Input contains key (e.g. "revancedextendedanddea".includes("revancedextended"))
+      const inputContainsNormK = allTokensNorm.some(
+        (t) => normK.length >= 3 && t.includes(normK)
+      );
+
+      // 4. Any non-generic key word is present in input
+      const keyWordsInInput = keyWords.some(
+        (w) => w.length >= 3 && allTokensNorm.some((t) => t.includes(w) || w.includes(t))
+      );
+
+      // Distinguishing check: If key is specific to "anddea", but input lacks "anddea", skip it.
+      const isAnddeaKey = normK.includes("anddea");
+      const isAnddeaInput = allTokensNorm.some((t) => t.includes("anddea"));
+      if (isAnddeaKey && !isAnddeaInput) {
+        continue;
+      }
+
+      if (isExact || normKContainsInput || inputContainsNormK || keyWordsInInput) {
+        const res = resolveConfigObj(configObj[key]);
+        if (res) return res;
       }
     }
-    if (typeof variantConfig === "string") return variantConfig;
-    if (typeof variantConfig === "object" && variantConfig !== null) {
-      return variantConfig.default || null;
+
+    // Default fallback
+    if (configObj.default) {
+      const res = resolveConfigObj(configObj.default);
+      if (res) return res;
     }
+
+    return null;
   }
 
-  return appConfig.default || null;
+  return resolveConfigObj(appConfig);
 }
 
 function renderOpenPatchModal() {
@@ -2515,6 +2611,9 @@ function parseAssetDisplay(filename, fileType) {
     displayVersion = cleanName.substring(versions[0].index);
   }
 
+  const allPatchesAndVariants = [...patches, ...variants].sort((a, b) => a.index - b.index);
+  const firstPatchOrVariantIndex = allPatchesAndVariants.length > 0 ? allPatchesAndVariants[0].index : cleanName.length;
+
   const result = {
     appName,
     patchName,
@@ -2522,6 +2621,12 @@ function parseAssetDisplay(filename, fileType) {
     patchSlug,
     variant: variantStr,
     version: displayVersion,
+    versionIndex: versions.length > 0 ? versions[0].index : -1,
+    firstPatchOrVariantIndex,
+    cleanName,
+    appNameRaw,
+    patchTokens: patches.map(p => p.token),
+    variantTokens: activeVariants.map(v => v.token),
     archLabel: formatArchitectureLabel(archCategory, fileType),
     fileType,
   };
