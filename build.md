@@ -1,7 +1,6 @@
-winlator-viamorphe-pubgvn (all): 3.1  
-zalith-launcher-2-plus-viamorphe-codm (all): 2.4.10  
-geode-viamorphe-pubgkr (all): 1.8.0  
-levilauncher-unlocked-viamorphe-bgmi (all): 1.5.6  
+youtube-morphe-exp (all): 21.29.366  
+youtube-music-morphe-exp (arm64-v8a): 9.28.51  
+youtube-music-morphe-exp (x86_64): 9.28.51  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest), required for Google APKs.  
