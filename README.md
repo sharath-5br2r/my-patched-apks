@@ -604,7 +604,7 @@ Patches: [MorpheApp/patches-1.36.0-dev.8.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260012)<br>
+[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260022)<br>
 Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.5)
 - Abstract shim layer
 - Abstract shim layer for method
