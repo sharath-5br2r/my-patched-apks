@@ -123,7 +123,7 @@ jobs:
     secrets: inherit
   build_eden:
     needs: [check_patch]
-    if: ${{ always() && needs.check_patch.outputs.trigger_stable == '1' }}
+    if: ${{ always() }}
     uses: sharath-5br2r/my-patched-apks/.github/workflows/test.yml@Eden-CI
 
   trigger_cleanup:
