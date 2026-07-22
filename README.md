@@ -256,7 +256,7 @@ Patches: [MorpheApp/patches-1.36.0-dev.8.mpp](https://github.com/MorpheApp/morph
 #### [Gboard patches for Morphe (jasonwu1994)](https://github.com/jasonwu1994/Gboard-patches) + [Rushi's GmsCore patch](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="gboard-morphe-gboard">Version: v17.0.10.880768217-release-arm64-v8a</summary>
+<summary id="gboard-morphe-jasonwu1994">Version: v17.0.10.880768217-release-arm64-v8a</summary>
   
 <blockquote>
 
@@ -289,7 +289,7 @@ Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-
 
 #### [Gboard patches for Morphe (jasonwu1994) Root](https://github.com/jasonwu1994/Gboard-patches)
 <details>
-<summary id="gboard-morphe-gboard-moroot">Version: v17.0.10.880768217-release-arm64-v8a</summary>
+<summary id="gboard-morphe-jasonwu1994-root">Version: v17.0.10.880768217-release-arm64-v8a</summary>
   
 <blockquote>
 
