@@ -166,15 +166,15 @@ The CI workflow automatically detects when a new version of an app is released o
 ### How it Works
 1. **Version Fetching**: During the CI run, it reads all enabled apps from the `configs/patches/*.toml` and `configs/config.predl.toml` configurations and queries the URLs (`uptodown-dlurl`, `apkmirror-dlurl`, etc.).
 [!NOTE]
-> For `local-dlurl` and predl, complex detection is made at `.github/scripts/ci_fetch_app_versions.sh` script. It will check the predl config to determine the version.
+> For `local-dlurl` with predl, complex detection is made at `.github/scripts/ci_fetch_app_versions.sh` script. It will check the predl config to determine the version.
 
-2. **Comparison**: It checks the newly fetched versions against the currently stored versions in `.github/configs/app_versions.json`.
+2. **Comparison**: It checks the newly fetched versions against the currently stored versions in `.github/configs/app_downstream_versions.json`.
 3. **Triggering**: If a new version is detected, the app is added to a temporary `active_apps.json` list, and the CI is triggered to build it.
 ### Tracking File
-App versions are permanently tracked and committed to `.github/configs/app_versions.json`.
+App versions are permanently tracked and committed to `.github/configs/app_downstream_versions.json`.
 You can manually update this file if you need to force a specific version state, but the CI will automatically manage it during scheduled runs.
 
-**Selective Checking:** If you only want the CI to check specific apps (instead of all enabled apps in your config), you can add `"_check_only_listed": true` to the top level of `app_versions.json`. When this is true, the script will only check for updates for the apps that already exist as keys in the file, saving time and resources.
+**Selective Checking:** If you only want the CI to check specific apps (instead of all enabled apps in your config), you can add `"_check_only_listed": true` to the top level of `app_downstream_versions.json`. When this is true, the script will only check for updates for the apps that already exist as keys in the file, saving time and resources.
 
 ## Running the Build Script Locally
 Some basic dependencies are there such as `bash`, `curl`, `jq`, `unzip`, `zip`, `java`, `yq` and `aapt2`. 
