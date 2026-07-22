@@ -30,7 +30,7 @@ else
     ENABLED_APPS=$(jq -r 'to_entries | map(select((.value | type == "object") and .value.enabled == true)) | .[].key' temp_all_configs.json)
     
     # Get all grouped apps to exclude them
-    GROUPED_APPS=$(jq -r 'to_entries | map(select(.key | startswith("_") | not)) | .[].value.keys[]?' .github/configs/app_downstrea._versions.json 2>/dev/null || echo "")
+    GROUPED_APPS=$(jq -r 'to_entries | map(select(.key | startswith("_") | not)) | .[].value.keys[]?' .github/configs/app_downstream_versions.json 2>/dev/null || echo "")
     
     > check_list.txt
     

@@ -46,8 +46,8 @@ if [ -n "${GITHUB_OUTPUT:-}" ]; then
   echo "$NEW_JSON" >> "$GITHUB_OUTPUT"
   echo "${DELIM2}" >> "$GITHUB_OUTPUT"
 else
-  export $TAGS_NEW="$NEW_JSON"
-  export $TAGS_OLD="$OLD_JSON"
+  export TAGS_NEW="$NEW_JSON"
+  export TAGS_OLD="$OLD_JSON"
   export TRIGGER_STABLE="$TRIGGER_STABLE"
   export TRIGGER_PRERELEASE="$TRIGGER_PRERELEASE"
   export TRIGGER_BLOCKED="$TRIGGER_BLOCKED"

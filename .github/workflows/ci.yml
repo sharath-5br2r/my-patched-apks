@@ -55,7 +55,7 @@ jobs:
         with:
           branch: main
           commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com> # Remove if not needed, or replace with your own name/emails
-          file_pattern: .github/configs/patch_downstrram_sources.json
+          file_pattern: .github/configs/patch_downstream_sources.json
           commit_message: "Create dummy patch_downstream_sources.json"
       - name: Update Morphe Experimental App versions
         run: bash ./scripts/morphe-experimental.sh
