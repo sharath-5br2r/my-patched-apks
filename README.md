@@ -678,12 +678,12 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
 #### [Morphe Experimental](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-morphe-exp">Version: v21.29.363-SECONDARY</summary>
+<summary id="youtube-morphe-exp">Version: v21.29.366</summary>
   
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260006)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.7.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.7)
+[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260015)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.8.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.8)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -846,8 +846,8 @@ Patches: [anddea/patches-4.2.0-dev.7.mpp](https://github.com/anddea/revanced-pat
   
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260006)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.7.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.7)
+[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260015)<br>
+Patches: [MorpheApp/patches-1.36.0-dev.8.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.8)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
