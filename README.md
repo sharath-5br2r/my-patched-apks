@@ -223,8 +223,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
-Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.2)
+[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260026)<br>
+Patches: [hoo-dles/patches-1.40.0-dev.3.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.3)
 - AMOLED dark theme
 </blockquote>
 </details>
@@ -470,8 +470,8 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
-Patches: [hoo-dles/patches-1.40.0-dev.2.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.2)
+[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260026)<br>
+Patches: [hoo-dles/patches-1.40.0-dev.3.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.3)
 - Enable speed control
 - Skip ads
 </blockquote>
