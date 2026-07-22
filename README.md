@@ -1,3 +1,19 @@
+# Patched APKs Catalog
+This is a fork of [nullcpy.github.io](https://github.com/nullcpy/nullcpy.github.io) modifed to use this repo instead.
+
+Changes:
+- Dispatches are replaced with branch based commits
+- Support for my apps
+- Support Multiple patches and variants in single apk file.
+- Distinct beta and variant display
+- Advanced Obtainium Regex
+- Improved x86_64 Support
+- Improved notes system
+- Explicit app name and varaints instead of slugs in pkg name detection.
+- Added obtainium deep link (obtainium://) along with usual redirect.
+
+# Original Readme
+
 <div align="center"><a href="https://github.com/Safouene1/support-palestine-banner/blob/master/Markdown-pages/Support.md"><img src="https://raw.githubusercontent.com/Safouene1/support-palestine-banner/master/banner-support.svg" alt="Support Palestine" style="width: 100%;"></a></div>
 
 [![NullStore social preview](social-preview.svg)](https://nullcpy.github.io/)
