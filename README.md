@@ -223,8 +223,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260026)<br>
-Patches: [hoo-dles/patches-1.40.0-dev.3.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.3)
+[Release 2026-07-23](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+Patches: [hoo-dles/patches-1.40.0-dev.4.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.4)
 - AMOLED dark theme
 </blockquote>
 </details>
@@ -470,8 +470,8 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 
 <blockquote>
 
-[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260026)<br>
-Patches: [hoo-dles/patches-1.40.0-dev.3.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.3)
+[Release 2026-07-23](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
+Patches: [hoo-dles/patches-1.40.0-dev.4.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.4)
 - Enable speed control
 - Skip ads
 </blockquote>
@@ -600,11 +600,11 @@ Patches: [MorpheApp/patches-1.36.0-dev.8.mpp](https://github.com/MorpheApp/morph
 #### [Piko (Morphe)](https://github.com/crimera/piko) with [inotia00](https://gitlab.com/inotia00/x-shim) shim layer
 
 <details>
-<summary id="x-morphe-piko">Version: v12.9.1-release.0</summary>
+<summary id="x-morphe-piko">Version: v12.10.1-release.0</summary>
   
 <blockquote>
 
-[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260022)<br>
+[Release 2026-07-23](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
 Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.5)
 - Abstract shim layer
 - Abstract shim layer for method
