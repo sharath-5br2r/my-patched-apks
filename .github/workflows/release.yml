@@ -110,7 +110,10 @@ jobs:
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
         with:
-          files: ./*
+          files: |
+            ./*.zip 
+            ./*.apk
+            ./*.AppImage
           tag_name: beta
           overwrite_files: true
           prerelease: true
