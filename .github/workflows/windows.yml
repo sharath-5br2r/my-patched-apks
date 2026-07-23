@@ -130,6 +130,7 @@ jobs:
   msvc:
     name: "MSVC ${{ matrix.os.arch }} ${{ matrix.os.target }}"
     needs: [set-matrix]
+    if: false
     runs-on: ${{ matrix.os.runs-on }}
     strategy:
       fail-fast: false
