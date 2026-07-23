@@ -121,11 +121,14 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.version.outputs.NEXT_VER_CODE }}
-          name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} 
+          name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }} (Eden)
           prerelease: true
           overwrite_files: true
           make_latest: true
-          files: ./*
+          files: |
+            ./*.zip 
+            ./*.apk
+            ./*.AppImage
           body_path: changelog.md
 
       - name: Upload changelog
