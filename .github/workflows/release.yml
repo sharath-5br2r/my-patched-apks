@@ -110,7 +110,7 @@ jobs:
       - name: Upload to release (Archive)
         uses: softprops/action-gh-release@v3
         with:
-          files: ./*.apk
+          files: ./*
           tag_name: beta
           overwrite_files: true
           prerelease: true
@@ -122,7 +122,7 @@ jobs:
           prerelease: true
           overwrite_files: true
           make_latest: true
-          files: ./*.apk
+          files: ./*
           body_path: changelog.md
 
       - name: Upload changelog
