@@ -68,6 +68,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+         ref: Eden-CI
 
       - name: Setup
         uses: ./.github/workflows/setup@Eden-CI
