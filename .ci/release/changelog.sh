@@ -112,12 +112,6 @@ linux_field() {
 
 linux_matrix() {
 	linux_field amd64 "amd64"
-	if tagged && opts; then
-		linux_field legacy "Legacy amd64" "Pre-Ryzen or Haswell CPUs (expect sadness)"
-		linux_field steamdeck "Steam Deck" "Zen 2"
-		linux_field rog-ally "Zen 4" "Zen 4 (AMD Z1/Z2, ROG Ally X, Legion Go S)"
-	fi
-
 	falsy "$DISABLE_ARM" && linux_field aarch64 "ARM (aarch64)"
 }
 
@@ -151,10 +145,7 @@ win_field() {
 	printf "| %s | " "$pretty_arch"
 	file_link "Standard zip" "Windows-${ARTIFACT_REF}-${arch}-${compiler}-standard.zip"
 	printf " | "
-
-	if tagged && opts; then
-		file_link "PGO zip" "Windows-${ARTIFACT_REF}-${arch}-clang-pgo.zip"
-	fi
+    file_link "PGO zip" "Windows-${ARTIFACT_REF}-${arch}-clang-pgo.zip"
 
 	echo " | $notes |"
 }
@@ -162,11 +153,6 @@ win_field() {
 win_matrix() {
 	msvc_field
 	win_field amd64 "amd64/x86_64 v3" "Built with MinGW. Requires Ryzen, 4th gen Intel, or newer"
-
-	if tagged || truthy "${FORCE_PGO}"; then
-		win_field rog-ally "Zen 4" "Requires Zen 4 or newer (e.g. ROG Ally X, Legion Go S). Incompatible with Intel"
-	fi
-
 	win_field arm64 "aarch64/arm64" "Snapdragon devices"
 }
 
@@ -188,7 +174,64 @@ if truthy "$EXPLAIN_TARGETS"; then
 		PGO builds usually perform ~10-30% better than standard builds, and are thus generally recommended for all users.
 	EOF
 fi
+Linux
 
+Linux packages are distributed via AppImage.
+EOF
+
+if opts && tagged; then
+	cat <<-EOF
+		[zsync](https://zsync.moria.org.uk/) files are provided for easier updating, such as via
+		[AM](https://github.com/ivan-hc/AM).
+
+		| Build Type | Standard | PGO (Recommended) | Notes |
+		|------------|----------|-----------|-------|
+	EOF
+else
+	cat <<-EOF
+
+		| Build Type |  | Notes |
+		|------------|--|-------|
+	EOF
+fi
+
+linux_matrix
+
+if [ "$1" = "tag" ]; then
+	cat <<-EOF
+
+		### Room Executables
+
+		These are statically linked Linux executables for the \`eden-room\` binary.
+
+	EOF
+
+	room_matrix
+fi
+
+# TODO: setup files
+cat <<EOF
+
+## Windows
+
+Windows packages are in-place zip files. Setup files are soon to come.
+
+EOF
+
+if opts && tagged; then
+	cat <<-EOF
+		| Build Type | Standard | PGO (Recommended) | Notes |
+		|------------|----------|-------------------|-------|
+	EOF
+else
+	cat <<-EOF
+
+		| Build Type |  | Notes |
+		|------------|--|-------|
+	EOF
+fi
+
+win_matrix
 
 if falsy "$DISABLE_ANDROID"; then
 	cat <<-EOF
