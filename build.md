@@ -1,19 +1,17 @@
-github-morphe-hoodles (all): 1.267.0  
-prime-video-morphe-hoodles (arm64-v8a): 3.0.463  
+proton-vpn-morphe-paresh (all): 5.19.16.0  
+instagram-morphe-piko (arm64-v8a): 435.0.0.37.76  
+instagram-morphe-piko (x86_64): 435.0.0.37.76  
 x-morphe-piko (all): 12.10.1-release.0  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest), required for Google APKs.  
 • Use [Zygisk Detach](https://github.com/j-hc/zygisk-detach) to stop Play Store from updating Modules.  
 CLI: MorpheApp/morphe-desktop-1.11.0-all.jar  
-Patches: hoo-dles/patches-1.40.0-dev.4.mpp  
-[Changelog](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0-dev.4)
+Patches: crimera/patches-3.8.0-dev.6.mpp  
+[Changelog](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.6)
 
 Patches: inotia00/patches-1.7.0.mpp  
 [Changelog](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0)
 
-Patches: crimera/patches-3.8.0-dev.5.mpp  
-[Changelog](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.5)
-
-Patches: rushiranpise/patches-1.15.0-dev.1.mpp  
-[Changelog](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.0-dev.1)  
+Patches: Paresh-Maheshwari/patches-1.19.0.mpp  
+[Changelog](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)  
