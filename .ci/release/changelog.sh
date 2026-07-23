@@ -176,7 +176,7 @@ if truthy "$EXPLAIN_TARGETS"; then
 fi
 
 cat <<EOF
-Linux
+#Linux
 
 Linux packages are distributed via AppImage.
 EOF
