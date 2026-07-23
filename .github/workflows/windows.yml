@@ -73,7 +73,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Setup
-        uses: sharath-5br2r/my-patched-apks/.github/workflows/setup@Eden-CI
+        uses: ./.github/workflows/setup
         with:
           key: MSYS2-${{ matrix.os.msystem }}-${{ matrix.os.arch }}-${{ matrix.os.program }}
           version: ${{ inputs.cpm-cache-version }}
@@ -148,7 +148,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Setup
-        uses: sharath-5br2r/my-patched-apks/.github/workflows/setup@Eden-CI
+        uses: ./.github/workflows/setup
         with:
           key: Windows-${{ matrix.os.arch }}-${{ matrix.os.program }}
           version: ${{ inputs.cpm-cache-version }}
