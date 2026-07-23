@@ -29,7 +29,7 @@ fi
 
 export ADD_HOOKS
 export OUTPATH="$ARTIFACTS_DIR"
-export OUTNAME="${PROJECT_PRETTYNAME}-Linux-${ARTIFACT_REF}-${FULL_ARCH}.AppImage"
+export OUTNAME="${PROJECT_PRETTYNAME}-Linux-v${ARTIFACT_REF}-${FULL_ARCH}.AppImage"
 
 _zsync="${PROJECT_PRETTYNAME}-Linux-${FULL_ARCH}.AppImage.zsync"
 
