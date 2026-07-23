@@ -70,7 +70,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Setup
-        uses: ./.github/workflows/setup
+        uses: sharath-5br2r/my-patched-apks/.github/workflows/setup@Eden-CI
         with:
           key: ${{ runner.os }}-${{ matrix.os.arch }}-${{ matrix.compiler.program }}
           version: ${{ inputs.cpm-cache-version }}
