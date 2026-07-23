@@ -82,7 +82,7 @@ android() {
 	notes="$4"
 
 	printf "| "
-	file_link "$type" "${flavor}-${ARTIFACT_REF}-${arch}.apk"
+	file_link "$type" "${flavor}-v${ARTIFACT_REF}-${arch}.apk"
 	echo " | $notes |"
 }
 
@@ -92,7 +92,7 @@ linux_field() {
 	notes="${3}"
 
 	printf "| %s | " "$pretty_arch"
-    file_link "PGO AppImage" "Linux-${ARTIFACT_REF}-${arch}-clang-pgo.AppImage"
+    file_link "PGO AppImage" "Linux-v${ARTIFACT_REF}-${arch}-clang-pgo.AppImage"
 	printf " ("
 	file_link "zsync" "Linux-${arch}-clang-pgo.AppImage.zsync"
 	printf ")"
@@ -113,7 +113,7 @@ room_matrix() {
 
 msvc_field() {
 	printf "| amd64/x86_64 (MSVC) | "
-	file_link "MSVC zip" "Windows-${ARTIFACT_REF}-amd64-msvc-standard.zip"
+	file_link "MSVC zip" "Windows-v${ARTIFACT_REF}-amd64-msvc-standard.zip"
 	if tagged && opts; then
 		printf " | "
 	fi
@@ -133,7 +133,7 @@ win_field() {
 	fi
 
 	printf "| %s | " "$pretty_arch"
-    file_link "PGO zip" "Windows-${ARTIFACT_REF}-${arch}-clang-pgo.zip"
+    file_link "PGO zip" "Windows-v${ARTIFACT_REF}-${arch}-clang-pgo.zip"
 
 	echo " | $notes |"
 }
