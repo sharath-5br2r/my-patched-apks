@@ -14,9 +14,9 @@ arch() {
 amd=$(arch ubuntu-latest amd64)
 arm=$(arch ubuntu-24.04-arm aarch64)
 
-legacy=$(arch ubuntu-latest legacy)
-steam=$(arch ubuntu-latest steamdeck)
-ally=$(arch ubuntu-latest rog-ally)
+#legacy=$(arch ubuntu-latest legacy)
+#steam=$(arch ubuntu-latest steamdeck)
+#ally=$(arch ubuntu-latest rog-ally)
 
 arches="[$amd, $arm"
 if use_extra; then
