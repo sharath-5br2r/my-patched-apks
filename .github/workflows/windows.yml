@@ -73,14 +73,14 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Setup
-        uses: ./.github/workflows/setup
+        uses: sharath-5br2r/my-patched-apks/.github/workflows/setup@Eden-CI
         with:
           key: MSYS2-${{ matrix.os.msystem }}-${{ matrix.os.arch }}-${{ matrix.os.program }}
           version: ${{ inputs.cpm-cache-version }}
 
       - name: Load payload environment
         shell: bash
-        run: . ./.ci/fj/load-env.sh
+        run: ./.ci/fj/load-env.sh
 
       - name: Setup MSYS2
         id: msys2
