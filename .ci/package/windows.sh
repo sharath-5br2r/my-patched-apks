@@ -76,7 +76,7 @@ if [ "$PLATFORM" = "msys" ] && [ "$STATIC" != "ON" ]; then
 fi
 
 # ?ploo
-ZIP_NAME="${PROJECT_PRETTYNAME}-Windows-${ARTIFACT_REF}-${ARCH}.zip"
+ZIP_NAME="${PROJECT_PRETTYNAME}-Windows-v${ARTIFACT_REF}-${ARCH}.zip"
 
 cp -r ./* "$TMP_DIR"/
 cp -r "$ROOTDIR"/LICENSE* "$ROOTDIR"/README* "$TMP_DIR"/
