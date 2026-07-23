@@ -18,11 +18,7 @@ arm=$(arch ubuntu-24.04-arm aarch64)
 #steam=$(arch ubuntu-latest steamdeck)
 #ally=$(arch ubuntu-latest rog-ally)
 
-arches="[$amd, $arm"
-if use_extra; then
-	arches="$arches, $legacy, $steam, $ally"
-fi
-arches="$arches]"
+arches="[$amd, $arm]"
 
 echo "Architectures: $arches"
 echo "matrix=${arches}" >>"$GITHUB_OUTPUT"
@@ -35,16 +31,10 @@ compiler() {
 	EOF
 }
 
-gcc=$(compiler gcc standard)
+#gcc=$(compiler gcc standard)
 pgo=$(compiler clang pgo)
 
-compilers="[$gcc"
-
-if use_extra; then
-	compilers="$compilers, $pgo"
-fi
-
-compilers="$compilers]"
+compilers="[$pgo]"
 
 echo "Compilers: $compilers"
 echo "compiler=${compilers}" >>"$GITHUB_OUTPUT"
