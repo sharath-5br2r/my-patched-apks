@@ -52,6 +52,7 @@ jobs:
         target: ${{ fromJson(needs.and-matrix.outputs.targets) }}
     env:
       TARGET: "${{ matrix.target.flavor }}"
+      ARCH: "${{ matrix.target.arch }}"
     steps:
       - name: Checkout
         uses: actions/checkout@v7
