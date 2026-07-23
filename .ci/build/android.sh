@@ -14,7 +14,7 @@ RETURN=0
 usage() {
     cat <<EOF
 Usage: $0 [-t|--target FLAVOR] [-b|--build-type BUILD_TYPE]
-       [-h|--help] [-r|--release] [extra options]
+       [-h|--help] [-r|--release] [-a|--arch] [extra options]
 
 Build script for Android.
 Associated variables can be set outside the script,
@@ -30,6 +30,9 @@ Options:
     -b, --build-type <TYPE>	Build type (variable: TYPE)
                           	Valid values are: Release, RelWithDebInfo, Debug
                           	Default: Debug
+	-a, --arch <ARCH>       Architecture (variable: ARCH)
+	                        Valid values are: x86_64, arm64
+							Default: arm64
 
 Extra arguments are passed to CMake (e.g. -DCMAKE_OPTION_NAME=VALUE)
 Set the CCACHE variable to "true" to enable build caching.
@@ -56,12 +59,17 @@ type() {
 
     TYPE="$1"
 }
+arch() {
+    [ -z "$1" ] && die "You must specify a valid arch"
 
+	ARCH="$1"
+}
 while true; do
 	case "$1" in
 		-r|--release) DEVEL=false ;;
 		-t|--target) target "$2"; shift ;;
 		-b|--build-type) type "$2"; shift ;;
+		-a|--arch) arch "$2"; shift ;;
 		-h|--help) usage ;;
 		*) break ;;
 	esac
@@ -72,6 +80,7 @@ done
 : "${TARGET:=standard}"
 : "${TYPE:=Release}"
 : "${DEVEL:=true}"
+: "${ARCH:=arm64}"
 
 TARGET_LOWER=$(echo "$TARGET" | tr '[:upper:]' '[:lower:]')
 
@@ -86,6 +95,11 @@ esac
 case "$TYPE" in
 	RelWithDebInfo|Release|Debug) ;;
 	*) die "Invalid build type $TYPE."
+esac
+
+case "$ARCH" in
+   x86_64|arm64) ;;
+   *) die "Invalid arch type $ARCH."
 esac
 
 if [ -n "${ANDROID_KEYSTORE_B64}" ]; then
@@ -121,7 +135,7 @@ fi
 
 cd "$ARTIFACTS_DIR"
 
-mv ./*.apk "${PROJECT_PRETTYNAME}-Android-v${ARTIFACT_REF}-${TARGET_LOWER}.apk"
+mv ./*.apk "${PROJECT_PRETTYNAME}-Android-v${ARTIFACT_REF}-${TARGET_LOWER}-${ARCH}.apk"
 
 cd "$ROOTDIR"
 
