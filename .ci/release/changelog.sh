@@ -174,6 +174,8 @@ if truthy "$EXPLAIN_TARGETS"; then
 		PGO builds usually perform ~10-30% better than standard builds, and are thus generally recommended for all users.
 	EOF
 fi
+
+cat <<EOF
 Linux
 
 Linux packages are distributed via AppImage.
