@@ -72,7 +72,7 @@ jobs:
          ref: Eden-CI
 
       - name: Setup
-        uses: ./.github/workflows/setup@Eden-CI
+        uses: ./.github/workflows/setup
         with:
           key: ${{ runner.os }}-${{ matrix.os.arch }}-${{ matrix.compiler.program }}
           version: ${{ inputs.cpm-cache-version }}
