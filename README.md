@@ -334,11 +334,10 @@ Patches: [jasonwu1994/patches-1.14.0.mpp](https://github.com/jasonwu1994/Gboard-
 
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
-Patches: [crimera/patches-3.8.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.5)
+[Release 2026-07-23](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260032)<br>
+Patches: [crimera/patches-3.8.0-dev.6.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.6)
 - Add settings
 - Allow user network certificate
-- Amoled theme
 - Change like animation
 - Change version code
 - Copy comment
@@ -490,7 +489,7 @@ Patches: [hoo-dles/patches-1.40.0-dev.4.mpp](https://github.com/hoo-dles/morphe-
   
 <blockquote>
 
-[Release 2026-07-21](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260001)<br>
+[Release 2026-07-23](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260032)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Disable telemetry
 - Proton VPN Premium
@@ -604,8 +603,8 @@ Patches: [MorpheApp/patches-1.36.0-dev.8.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260030)<br>
-Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.5)
+[Release 2026-07-23](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260032)<br>
+Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.6.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.6)
 - Abstract shim layer
 - Abstract shim layer for method
 - Abstract shim layer for native library
