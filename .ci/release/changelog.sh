@@ -92,20 +92,10 @@ linux_field() {
 	notes="${3}"
 
 	printf "| %s | " "$pretty_arch"
-	file_link "Standard AppImage" "Linux-${ARTIFACT_REF}-${arch}-gcc-standard.AppImage"
-
-	if tagged; then
-		printf " ("
-		file_link "zsync" "Linux-${arch}-gcc-standard.AppImage.zsync"
-		printf ") | "
-
-		if opts; then
-			file_link "PGO AppImage" "Linux-${ARTIFACT_REF}-${arch}-clang-pgo.AppImage"
-			printf " ("
-			file_link "zsync" "Linux-${arch}-clang-pgo.AppImage.zsync"
-			printf ")"
-		fi
-	fi
+    file_link "PGO AppImage" "Linux-${ARTIFACT_REF}-${arch}-clang-pgo.AppImage"
+	printf " ("
+	file_link "zsync" "Linux-${arch}-clang-pgo.AppImage.zsync"
+	printf ")"
 
 	echo " | $notes |"
 }
@@ -143,15 +133,12 @@ win_field() {
 	fi
 
 	printf "| %s | " "$pretty_arch"
-	file_link "Standard zip" "Windows-${ARTIFACT_REF}-${arch}-${compiler}-standard.zip"
-	printf " | "
     file_link "PGO zip" "Windows-${ARTIFACT_REF}-${arch}-clang-pgo.zip"
 
 	echo " | $notes |"
 }
 
 win_matrix() {
-	msvc_field
 	win_field amd64 "amd64/x86_64 v3" "Built with MinGW. Requires Ryzen, 4th gen Intel, or newer"
 	win_field arm64 "aarch64/arm64" "Snapdragon devices"
 }
