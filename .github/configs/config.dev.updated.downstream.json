@@ -324,7 +324,7 @@
     ]
   },
   "x-morphe-piko": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "x",
     "rv-brand": "morphe",
     "build-mode": "apk",
@@ -430,7 +430,7 @@
     ]
   },
   "amazon-india-morphe-rushiranpise": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "amazon-india",
     "rv-brand": "morphe",
     "build-mode": "apk",
