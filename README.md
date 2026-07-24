@@ -599,11 +599,11 @@ Patches: [MorpheApp/patches-1.36.0-dev.8.mpp](https://github.com/MorpheApp/morph
 #### [Piko (Morphe)](https://github.com/crimera/piko) with [inotia00](https://gitlab.com/inotia00/x-shim) shim layer
 
 <details>
-<summary id="x-morphe-piko">Version: v12.10.1-release.0</summary>
+<summary id="x-morphe-piko">Version: v12.11.0-release.0</summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260032)<br>
+[Release 2026-07-24](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260047)<br>
 Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/releases/v1.7.0), [crimera/patches-3.8.0-dev.6.mpp](https://github.com/crimera/piko/releases/tag/v3.8.0-dev.6)
 - Abstract shim layer
 - Abstract shim layer for method
@@ -694,8 +694,8 @@ Patches: [inotia00/patches-1.7.0.mpp](https://gitlab.com/inotia00/x-shim/-/relea
   
 <blockquote>
 
-[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260019)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.10.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.10)
+[Release 2026-07-24](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260047)<br>
+Patches: [MorpheApp/patches-1.37.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.0-dev.1)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -858,8 +858,8 @@ Patches: [anddea/patches-4.2.0-dev.7.mpp](https://github.com/anddea/revanced-pat
   
 <blockquote>
 
-[Release 2026-07-22](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260019)<br>
-Patches: [MorpheApp/patches-1.36.0-dev.10.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.36.0-dev.10)
+[Release 2026-07-24](https://github.com/sharath-5br2r/my-patched-apks/releases/tag/260047)<br>
+Patches: [MorpheApp/patches-1.37.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.0-dev.1)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
