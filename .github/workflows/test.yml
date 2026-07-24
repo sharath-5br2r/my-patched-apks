@@ -15,7 +15,7 @@ jobs:
       cancel-in-progress: true
     uses: ./.github/workflows/build.yml
     with:
-      devel: true
+      devel: false
       build-id: 'test'
     secrets: inherit
 
@@ -30,7 +30,7 @@ jobs:
       discussions: write
     uses: ./.github/workflows/release.yml
     with:
-      devel: true
+      devel: false
       build-id: 'test'
       status: ${{ needs.build.result }}
     secrets: inherit
