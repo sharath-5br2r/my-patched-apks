@@ -31,10 +31,10 @@ compiler() {
 	EOF
 }
 
-#gcc=$(compiler gcc standard)
-pgo=$(compiler clang pgo)
+gcc=$(compiler gcc standard)
+#pgo=$(compiler clang pgo)
 
-compilers="[$pgo]"
+compilers="[$gcc]"
 
 echo "Compilers: $compilers"
 echo "compiler=${compilers}" >>"$GITHUB_OUTPUT"
