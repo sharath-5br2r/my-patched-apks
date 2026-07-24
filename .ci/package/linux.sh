@@ -35,8 +35,8 @@ _zsync="${PROJECT_PRETTYNAME}-Linux-${FULL_ARCH}.AppImage.zsync"
 
 # Thanks, Microsoft.
 # TODO(crueter): Proper fj/b2 handling.
-# UPINFO="zsync|https://${RELEASE_HOST}/${RELEASE_REPO}/releases/download/latest/${_zsync}"
-UPINFO="zsync|https://${B2_PUBLIC_URL}/latest/${_zsync}"
+UPINFO="zsync|https://github.com/${GITHUB_REPOSITORY}/releases/download/latest/${_zsync}"
+#UPINFO="zsync|https://${B2_PUBLIC_URL}/latest/${_zsync}"
 
 # shellcheck disable=SC2153
 if [ "$BUILD_ID" = 'nightly' ]; then
