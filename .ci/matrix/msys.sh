@@ -25,14 +25,14 @@ target() {
 }
 
 # TODO(crueter): dedupe in some way?
-#amd_gcc="$(target "$AMD64" "$GCC")"
-amd_pgo="$(target "$AMD64" "$PGO")"
+amd_gcc="$(target "$AMD64" "$GCC")"
+#amd_pgo="$(target "$AMD64" "$PGO")"
 #ally_gcc="$(target "$ALLY" "$GCC")"
 #ally_pgo="$(target "$ALLY" "$PGO")"
-#arm_clang="$(target "$ARM64" "$CLANG")"
-arm_pgo="$(target "$ARM64" "$PGO")"
+arm_clang="$(target "$ARM64" "$CLANG")"
+#arm_pgo="$(target "$ARM64" "$PGO")"
 
-MATRIX="[${amd_pgo}, ${arm_pgo}]"
+MATRIX="[${amd_gcc}, ${arm_clang}]"
 
 echo "MSYS Matrix: $MATRIX"
 echo "matrix=${MATRIX}" >>"$GITHUB_OUTPUT"
